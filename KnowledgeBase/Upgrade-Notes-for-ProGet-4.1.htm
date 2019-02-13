@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1122" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="proget, upgrade-notes" />
+    <title>Upgrade Notes for ProGet 4.1</title>
+    <style type="text/css">
+        .major {
+            color: #c0504d;
+        }
+    </style>
+</head>
+<body>
+        <p class="announcement">
+                <b>Upgrading from a version older than 4.x?</b> It is strongly recommended that you first review <a href="/support/kb/1153/upgrading-from-proget-v2-and-v3">Upgrading from ProGet v2 and v3 </a>before proceeding.
+            </p>
+    <p><a href="/proget/4.1">ProGet 4.1</a> is minor release with the following changes:</p>
+    <ul>
+        <li>Feed replication</li>
+        <li>PowerShellGet Feed Type</li>
+        <li>Various bug fixes</li>
+        <li>New API</li>
+    </ul>
+
+    <h2>Upgrade Impact</h2>
+    <p>
+        Because the changes are additive, the upgrade risks are negligible: there is a minor database schema change, and you can mitigate this risk by 
+        <a href="/support/documentation/proget/administration/backing-up">backing-up your ProGet instance</a> prior to upgrade.
+    </p>
+    <!--
+    <h3>Risk Mitigation</h3>
+    <p>Because pipelines are newly generated from existing workflows, there is some risk with broken approvals and event listeners. Custom extensions may also behave differently due to several SDK Changes. To mitigate these risks: </p>
+    <ul>
+        <li>Make sure that your BuildMaster database is backed up prior to upgrade</li>
+        <li>Make sure that the installation's \Extensions directory is backed up prior to upgrade</li>
+        <li>Test deployment plans in earlier environments prior to deploying to production</li>
+    </ul>
+        -->
+
+    <h2>Upgrade Process</h2>
+    <p>
+        ProGet may be upgraded by simply running the latest installer. The agents will automatically update when the service starts again.
+    </p>
+
+
+    <h2>Rollback</h2>
+    <p>
+        Because there are database changes, a rollback will require uninstalling ProGet, and then <a href="/support/documentation/proget/administration/backing-up">restoring your ProGet instance</a>.
+    </p>
+</body>
+</html>

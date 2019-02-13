@@ -1,0 +1,256 @@
+#header,
+#footer.content-container {
+  display: none;
+}
+* {
+  box-sizing: border-box;
+}
+.content-container .circle-button {
+  margin: 30px auto 40px auto;
+  text-align: center;
+}
+.content-container .circle-button a.download {
+  background-color: none;
+  padding: 12px 20px;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  border-radius: 100px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.content-container .circle-button a.download:hover {
+  background-color: #ffffff;
+  color: #48729d;
+}
+.content-container.top {
+  padding-top: 0;
+  min-height: 700px;
+  position: relative;
+}
+.content-container.top .hero-bar {
+  height: 60px;
+  background-color: #48729d;
+}
+.content-container.top .hero-bar img {
+  height: 30px;
+  margin: 14px 30px;
+}
+.content-container.top .far-right {
+  float: right;
+  margin-left: 40px;
+  margin-right: 16%;
+}
+.content-container.top .far-right .product-shot {
+  margin: 56px auto 20px 0px;
+}
+.content-container.top .far-right .product-shot img {
+  box-shadow: 1px 2px 4px #353535;
+}
+.content-container.top .far-right .circle-button a.download {
+  display: block;
+  padding: 12px 12px;
+  width: 300px;
+  margin: 6px 50px 10px 8px;
+  background-color: #282b3a;
+  color: #ffffff;
+  border: 3px solid #282b3a;
+  box-shadow: 2px 2px 4px #353535;
+}
+.content-container.top .far-right .circle-button a.download:hover {
+  background-color: #ffffff;
+  border: 3px solid #ffffff;
+  color: #282b3a;
+  box-shadow: none;
+}
+.content-container.top .far-right .circle-button a.download.orange {
+  background-color: #db2916;
+  border: 3px solid #db2916;
+}
+.content-container.top .far-right .circle-button a.download.orange:hover {
+  background-color: #b21d1d;
+  border: 3px solid #b21d1d;
+  color: #ffffff;
+  box-shadow: 2px 2px 4px #353535;
+}
+.content-container.top .content.above-fold {
+  margin-left: 16%;
+}
+.content-container.top .content.above-fold .left {
+  max-width: 800px;
+  padding-top: 4px;
+  margin-top: 30px;
+}
+.content-container.top .content.above-fold .left h1 {
+  color: #282b3a;
+  font-size: 300%;
+  font-weight: 800;
+  line-height: 62px;
+  margin-right: 20px;
+  margin-top: 28px;
+}
+.content-container.top .content.above-fold .left h2 {
+  margin-top: 62px;
+  margin-right: 20px;
+  padding-bottom: 16px;
+  color: #282b3a;
+  font-size: 30px;
+  line-height: 42px;
+  font-weight: 500;
+}
+.content-container.top .content.above-fold .left ul.will-learn {
+  margin-right: 20px;
+  margin-left: 20px;
+  color: #282b3a;
+  padding-bottom: 30px;
+  font-size: 18px;
+  line-height: 36px;
+}
+.content-container.top .content.above-fold .left ul.will-learn li {
+  list-style: disc;
+  font-size: 19px;
+}
+.content-container.case-study {
+  background-color: #b6c6d1;
+  padding-bottom: 60px;
+  padding-top: 70px;
+  height: 700px;
+}
+.content-container.case-study .content .container {
+  position: relative;
+}
+.content-container.case-study .content .container h4 {
+  font-size: 26px;
+  font-weight: bold;
+}
+.content-container.case-study .content .container p {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  margin-top: 12px;
+}
+.content-container.case-study .content .container .top-left {
+  position: absolute;
+  background-color: #48729d;
+  padding: 10px 100px 10px 50px;
+  top: 4px;
+  left: 0px;
+  width: 640px;
+  color: #ffffff;
+}
+.content-container.case-study .content .container .top-left h4 {
+  color: #ffffff;
+}
+.content-container.case-study .content .container .centered {
+  position: absolute;
+  background-color: #ffffff;
+  padding: 10px 50px;
+  bottom: -550px;
+  right: 0px;
+  left: 565px;
+  color: #48729d;
+  z-index: 1;
+}
+.content-container.case-study .content .container .centered h4 {
+  color: #48729d;
+}
+.content-container.case-study .content .container .bottom-left {
+  position: absolute;
+  bottom: 60px;
+  left: 0px;
+}
+.content-container.case-study .content .container .bottom-left .circle-button a.download {
+  background-color: #db2916;
+  color: #ffffff;
+  padding: 12px 70px;
+  border: 3px solid #db2916;
+  box-shadow: 1px 1px 4px #282b3a;
+}
+.content-container.case-study .content .container .bottom-left .circle-button a.download:hover {
+  background-color: #b21d1d;
+  border: 3px solid #b21d1d;
+  color: #282b3a;
+  box-shadow: none;
+}
+.content-container#land {
+  background: url(/support/whitepapers/ci-cd-buildmaster/background.png) no-repeat left;
+  position: relative;
+}
+.content-container#land .content {
+  position: relative;
+}
+.content-container#land .content h3 {
+  text-align: center;
+  color: #ffffff;
+  margin: 24px 0 54px 0;
+  text-shadow: 2px 2px 2px #353535;
+  font-weight: 800;
+  font-size: 380%;
+}
+.content-container#land .content .product-shot {
+  margin-top: 10px;
+  height: auto;
+  width: 550px;
+  position: relative;
+  box-shadow: 2px 2px 4px #353535;
+}
+.content-container#land .content .product-shot ul li {
+  list-style-type: none;
+}
+.content-container#land .content .product-shot ul li img {
+  width: 100%;
+}
+.content-container#land .content #sign-up {
+  float: right;
+  z-index: 3;
+  height: 370px;
+  width: 350px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #282b3a;
+  border: 1px solid #48729d;
+  box-shadow: 2px 2px 4px #353535;
+}
+.content-container#land .content #sign-up img {
+  width: 80px;
+  margin: 10px 10px 0 10px;
+  float: right;
+}
+.content-container#land .content #sign-up p {
+  color: #ffffff;
+  font-size: 32px;
+  margin: 0 0 30px 10px;
+}
+.content-container#land .content #sign-up label {
+  color: #ffffff;
+  font-size: 95%;
+  margin: 0;
+}
+.content-container#land .content #sign-up form {
+  width: 304px;
+  display: block;
+}
+.content-container#land .content #sign-up fieldset {
+  margin: 0;
+}
+.content-container#land .content #sign-up input {
+  box-sizing: content-box;
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 5px 12px;
+  color: #444444;
+  background-color: #f6f6f6;
+  border: none;
+}
+.content-container#land .content #sign-up input.submit-button {
+  background-color: #db2916;
+  padding: 10px 12px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+}
+.content-container#land .content #sign-up input.submit-button:hover {
+  background-color: #b21d1d;
+}

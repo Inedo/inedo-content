@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html []>
+<html>
+  <head>
+    <meta name="id" content="1151" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="buildmaster, upgrade-notes" />
+    <title>Upgrading from BuildMaster v3 and v4</title>
+  </head>
+  <body>
+      <p>BuildMaster v3 and v4 are <strong>semi-retired </strong>, which means that we will provide very limited support to users who have not yet upgraded, and will provide assistance in performing upgrades. However, we will no longer ship maintenance releases, patches, or other changes.</p>
+      <p>This means you should upgrade when possible, and this article provides guidance on how to upgrade from these older versions.</p>
+
+    <ol>
+        <li>Decide: Upgrade or Retire?</li>
+        <li>Plan to update to 4.9.10</li>
+        <li>Backup,upgrade to 4.9.10, then test</li>
+        <li>Upgrade SQL Server, if necessary</li>
+        <li>Plan to upgrade to v6</li>
+        <li>Upgrade to v6</li>
+    </ol>
+   
+    <h2>1. Upgrade or Retire?</h2>
+    <p>As an alternative to upgrading, you start with a fresh instance of BuildMaster, "retire" your old version, and manually migrate your applications. While retiring your old instance will offer a fresh start, if you don't dedicate sufficient resources to the migration effort, you'll end up with two actively installations of BuildMaster. The "legacy" instance will go the way of COBOL… which may mean it could stick around beyond your retirement, and left in the hands of your poor predecessors to maintain. </p>
+   
+    <p>
+        If you've configured a lot of relatively small applications with relatively infrequent deployments, you should definitely upgrade. While you won't be able to test or otherwise verify each of these applications, they will probably still work… and if they don't, you can fix them on an as-needed basis.
+    </p>
+    
+      <h2>2. Plan to Upgrade to 4.9.10</h2>
+    <p>BuildMaster v5 was a transformative change to the product, and deprecated several legacy features and introduced some breaking changes, including a platform change (.NET 4.0 to 4.5). - BuildMaster v6 wasn't nearly as big of a change, however.</p>
+    <p>
+        BuildMaster 4.9.10 will provide upgrade guidance by identifying deprecated features and blockers that would prevent you from successfully upgrading to v6.
+    </p>
+      <div class="attention technical">
+          <p>
+              Note that, because v6 was published much later than 4.9.10 was released, it will refer to BuildMaster v5 instead of v6. The same guidance applies, and you should still plan to directly upgrade to v6 from 4.9. 
+          </p>
+      </div>
+    <p>
+        Regardless of what version you're currently on, you should plan to upgrade directly to 4.9.10. Do not plan to do "incremental" upgrades, as that will only increase the risk of agent auto-updates failing and other problems. 
+    </p>
+    <p>
+        Depending on what version you're currently using, there may be a lot of changes between that and 4.9.10. Although we've already fixed all of the reported v3 and v4 bugs, you should still plan to do a full regression test after upgrading to 4.9.10. You will need to use this same plan when upgrading to v6.
+    </p>
+    <h3>
+        Develop Regression Test Plan
+    </h3>
+    <p>
+        Immediately after upgrading to 4.9.10, and then to v6, you should run a fairly comprehensive regression test. While it's impractical to test deployment of production applications, you can certainly set up a "test application" that validates a lot of the functionality you're using, and make sure it behaves the same after each upgrade.
+    </p>
+    <h3>
+        Ensure all servers are "green"
+    </h3>
+    <p>
+        If you have servers configured in BuildMaster that are no longer in use, they should be deactivated or deleted. Otherwise, BuildMaster will attempt to contact and upgrade these servers after you upgrade, and that may cause more headaches later
+    </p>
+    <h3>
+        Upgrading from v3 to v4.9.10
+    </h3>
+    <p>
+        BuildMaster v4 introduced three notable breaking changes that probably won't impact you, but that are worth noting nonetheless:
+    </p>
+    <ul>
+        <li><b>Changed platform to .NET 4.0 (from .Net 2.0)</b>; this is already preinstalled on all supported Windows servers</li>
+        <li><b>Removed support for mono-and WCF-based agents</b>; you should migrate to Self-hosed or SSH agents (provided by Linux estension in v3) prior to upgrade</li>
+        <li><b>Changed date storage from local to UTC time</b>; this will cause timestamps recorded during daylight savings time to be off by one hour</li>
+    </ul>
+    <p>
+        Because of the platform change, you will need to manually update all agents. <a href="/support/kb/1064">See KB #1064: Upgrading Agents for BuildMaster 4.0</a> for guidance. 
+    </p>
+    <p>
+            In addition, several extensions were deprecated or renamed in v4: 
+    </p>
+    <ul>
+        <li>DotNet2 - now included in WindowsSDK extension</li>
+        <li>GeneralRecipes – renamed to Tutorials, but will be deprecated in v5</li>
+        <li>HTTP and Linux - now included in the core product</li>
+        <li>SFTP – deprecated in favor of the SSH agent</li>
+    </ul>
+           
+   
+    <h3> SDK &amp; API Changes </h3>
+    <p>
+        If you have custom BuildMaster extensions or other tools that interact with the BuildMaster API, you may need to recompile extensions and/or tweak your tools to function with v4.9.10, and then again for v6. Depending on how extensively you use, it may be worth it to wait until after you upgrade to v6
+    </p>
+    <h2>
+    3. Backup, Upgrade to 4.9.10, then Test     
+    </h2>
+    <p>
+            Prior to performing the upgrade, you should perform a backup of your installation. The current <a href="/support/documentation/buildmaster/administration/backing-up">backing-Up BuildMaster</a> instructions will be relevant, with the exception of the "Encryption Key"; this was introduced in v5.
+    </p>
+    <p>
+            To upgrade, simply run the 4.9.10 installer. Do not select the automatic backup option, as you will have already backed up the installation. Once the installation completes, the service will start, the agents will begin automatically updating.
+    </p>
+    <p>
+            Prior to executing your test plan, make sure all of the agents are in a "ready" state. Like with all v3 and v4 upgrades, the auto-update process may take some time. If you're seeing a lot of failures, and restarting the BuildMaster service doesn't help, you may need to manually upgrade the agents. The good news is, in v5 this process is much smoother.
+    </p>
+    <p>
+            After the agents are "green", run your test plan to identify issues to resolve.
+    </p>
+      <h2>4. Upgrade SQL Server if necessary</h2>
+
+          <p>BuildMaster v3 and v4 bundled SQL Server 2005 Express, which is no longer supported by Microsoft. As such, we have stopped supporting it in our products.</p>
+
+          <p>If you're still using SQL Server 2005, you will need to upgrade it to at least SQL Server 2008, though you should use the latest version when possible to ensure patches and updates from Microsoft.</p>
+
+          <p>Because this is often handled by a DBA or infrastructure team, this article will not discuss how to upgrade SQL Server. We're happy to help if you'd like assistance, please <a href="/contact">contact us</a> as needed.</p>
+
+    <h2>
+        5. Plan to upgrade to the latest v6</h2>
+        <p>
+                BuildMaster 4.9.10 has a significant number of non-functional changes from code/database refactoring in preparation for the v5 release. As such, we recommend continuing to use this version until you are confident that it works as well as the previous version. We have had very few issues reported from users about these non-functional changes.
+        </p>
+        <p>
+                Once you are confident that BuildMaster 4.9.10 is functioning adequately, you can begin planning for v6.
+        </p>
+        <p>
+                The first step in doing this is follow the upgrade guidance provided in the software by identifying deprecated features and blockers that would have prevented you from successfully upgrading to v5. These will apply when you upgrade to v6.
+        </p>
+        <p>
+                After that, you should review the upgrade notes to learn about the major changes that were introduced through v5 and the upgrade notes for v6. 
+        </p>
+        <ul>
+                <li><a href="/support/kb/1117">Upgrade Notes for BuildMaster v5</a></li>
+                <li><a href="/support/kb/1156">Upgrade Notes for BuildMaster 6.0</a></li>
+                <!--<li><a href="/support/kb/1163">Upgrade Notes for BuildMaster 6.1</a></li>-->
+            </ul>
+      <p>
+          Just remember: plan to upgrade directly to the latest v6. The changes in the v5 article primarily serve as informational, to let you know what to expect between v4 and v6.
+      </p>
+            <h3>
+                Upgrade to the latest v6
+            </h3>
+            <p>
+                    Prior to performing the upgrade, you should perform a backup of your installation. The current <a href="/support/documentation/buildmaster/administration/backing-up">backing-Up BuildMaster</a> instructions will be relevant, with the exception of the "Encryption Key"; this was introduced in v5.
+            </p>
+            <p>
+                    To upgrade, simply run the the Inedo Hub installer. This should detect your current installation and be able to upgrade it. 
+                </p>
+            <p>
+                Do not select the automatic backup option, as you will have already backed up the installation. Once the installation completes, the service will start, the agents will begin automatically updating. 
+            </p>
+            <p>
+                    Prior to executing your test plan, make sure all of the agents are in a "ready" state. Like with all v3 and v4 upgrades, the auto-update process may take some time. If you're seeing a lot of failures, and restarting the BuildMaster service doesn't help, you may need to manually upgrade the agents. The good news is, we've greatly improved this process since.
+            </p>
+            <p>
+                    After the agents are "green", run your test plan to identify issues to resolve.
+            </p>
+      <h3>Next Steps: Legacy Feature Migration</h3>
+      <p>
+          From here, you should start planning to move away from legacy features in BuildMaster. Take a look at <a href="/support/kb/1144">KB #1144: BuildMaster Legacy Features</a> for some guidance on how to do this.
+      </p>
+  </body>
+</html>

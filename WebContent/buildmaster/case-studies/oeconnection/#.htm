@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BuildMaster Case Study for OEConnection | Inedo</title>
+    <meta name="MasterPageFile" content="buildmaster.htm" />
+    <link rel="stylesheet" type="text/css" href="/resources/styles/individual-case-studies.css" />
+</head>
+<body>
+
+    <img style="margin-top: 30px" src="/buildmaster/case-studies/oeconnection/header.png" width="680" alt="BuildMaster Case Study for OEConecction" />
+   
+    <p class="summary">When we first began working with <a href="http://www.linkedin.com/in/markarainey">Mark Rainey</a>, Team Lead in Configuration Management for OEConnection, in early 2010, the word DevOps wasn't as common as it is today. But, Mark recognized the benefits of the methodology that was emerging on the scene. Working closely with BuildMaster he changed OEConnection's release philosophy in a big way.</p>
+    <p class="question">Tell us about OEConnection:</p>
+    <p class="answer"><a href="http://www.oeconnection.com/">OEConnection</a> is an award-winning technology leader and innovator of original equipment (OE) replacement parts solutions. As the automotive industry's largest OE parts marketplace, OEConnection connects more than 35,000 North American buyers and sellers to seamlessly market, manage, and move an average of over 6 million original equipment parts transactions monthly.</p>
+    <p class="answer">Serving the industries of Automotive, Heavy-Duty truck, and beyond, OEConnection equips some of the world's largest original equipment manufacturers, their franchised dealers/distributors, and their customers with timely and accurate online parts marketing, procurement, and wholesale management solutions.</p>
+    <p class="question">Can you give me an overview of how you developed software before <a href="/buildmaster/overview">BuildMaster</a>?</p>
+    <img class="flavor-image left" src="/buildmaster/case-studies/oeconnection/pump.jpg" alt="" />
+    <p class="answer">Prior to BuildMaster we were on monthly release cycle with one "mega build" per month. The entire build-release process, from change request documents for web config files, to keeping track of all the releases and how they relate to one another, was completely manual. The team working on it would normally have to work all weekend to get the deploy into production and get the bugs worked out. As you can imagine we also lost entire teams of people regularly because of this. No one wants to work all weekend.   </p>
+    <p class="answer">This was causing so much pain for OEConnection that I was brought on to simplify and automate the processes.</p>
+    <p class="question">What lead to you considering BuildMaster?</p>
+    <p class="answer">One of my teammates saw an ad for BuildMaster on <a href="http://thedailywtf.com/">The Daily WTF</a>, and it was the first I'd heard of it. BuildMaster seemed perfect for us based on OE Connection's culture and processes. What I found was that I could mirror the same manual processes we were already doing, except automate it with BuildMaster, so there wasn't necessarily a process change so much as just automating that process, which was ideal. </p>
+    <p class="answer"> That's when we purchased BuildMaster, commissioned Inedo's professional services, and we worked it out piece by piece.  </p>
+    <p class="question">What are some of the benefits switching to BuildMaster ensures for our end users?</p>
+    <p class="quote right">"It has provided us the flexibility to manage our releases"</p>
+    <p class="answer">The nice thing about BuildMaster is that it is not only a build tool, but it is also a deployment tool. It gave us the ability to <a href="http://inedo.com/buildmaster/features/deployment-automation">manage the releases electronically</a>, whereas in its manual state it was very messy and error prone.  Now we have a nice dashboard so we can see the stage per each release, and the status of approvals. It has provided us the flexibility to manage our releases, because we do over 450 releases into production a year. </p>
+    <p class="answer">To be more specific, we previously had 2 full time employees spending two full days to plan for release. Now it doesn't take any time, because it's all in BuildMaster. We just have a quick meeting. There has been a definite savings of 48 hours a week or so, which is 200 developer hours/month. It's also worth mentioning that with our old way of doing things, while the team prepared for production nothing could be approved and it had a ripple effect of delaying other aspects of deployment as well. That also has been taken care of by BuildMaster.</p>
+    <p class="answer">Finally, with all the canned actions BuildMaster has made available it is easy for our deploy analysts who aren't necessarily developers to implement build and deploy processes. One doesn't need to know much about programming. It's a very easy, intuitive interface to understand and implement a process in, but also keeps our developers focused on development.  That was the key driver; I was looking for a tool that would be easy to maintain over the long run.</p>
+    <p class="question">How has your team used BuildMaster? </p>
+    <p class="answer">One of the first things I did with BuildMaster was create a custom workflow for our approval process.</p>
+    <p class="quote left">"t's a very easy, intuitive interface to understand and implement a process in, but also keeps our developers focused on development."</p>
+
+    <p class="answer">Our process looks like this: We go through development and then the release coordinator approves before we send it to the QA environment. Once QA is done, the QA testers sign off on their test in BuildMaster, and then our SDLC requires the product management team and the development managers to sign off on the release before it moves to production.  Then in production, the QA team does another smoke test in BuildMaster in production again. Finally, and only after they sign off, that's when we push it to release all the way.</p>
+    <p class="answer"> To put things into perspective, this entire process occurred via email thread previously, and we have 50 named users and 50 approvals-only users.  It saved a lot of time.</p>
+    <p class="answer">Otherwise, we've recently started diving into CI builds to get them up and running for all .net solutions and then move on to our java and legacy code.  We will be able to generate CI builds into development environment which will enable developers to do their work faster. Right now developers still have to manually do the builds and then manually go out to their dev servers. All the time they're wasting deploying will potentially turn into time spent strictly on development work. That's a big project we're hoping to accomplish in 2013.  At that point we'll have the full cycle in BuildMaster.</p>
+    <img class="flavor-image right" src="/buildmaster/case-studies/oeconnection/piston.jpg" alt="" />
+    <p class="question">Was using the CI Builds part of the initial plan?</p>
+    <p class="answer">Yes, this feature in BuildMaster was one of the key buying points as it would enable us to do our CI project as we had planned from the beginning.  I'm predicting that once we have that in place and we open up BuildMaster use to the developers there's going to be another big productivity shift.</p>
+    <p class="question">We pride ourselves on <a href="http://inedo.com/buildmaster/integration">integrating with a number of best-of-breed tools</a> so our users can adopt BuildMaster with their existing toolsets. Can you tell me what tools you already used that integrated nicely with BuildMaster? </p>
+    <p class="answer">We're a .net and Java mixed shop.  For .net we hooked TFS, MSBuild, Artifactory, and MSSQL right into BuildMaster.  For Java, we were already using SVN, Jenkins, Maven, and Postgres.  Some miscellaneous tools include Ruby, MySQL, and GIT.  Having all those integrations was also another draw for BuildMaster.</p>
+    <p class="question">Have you noticed changes in culture since deploying BuildMaster? </p>
+    <p class="answer">Certainly. With our monthly "mega build" you could say we followed a Waterfall methodology, very slow moving. Now with BuildMaster we have one regular deploy a week. It's allowing us to become more agile and react to customer needs faster.  It's made a lot of people happy. </p>
+    <p class="answer">In a lot of ways, we're a new, different company now.  We've been able to use BuildMaster strategically.  We're using it as a strategic investment/tool to push business goals of the company.</p>
+    <p class="quote left">"Without BuildMaster we wouldn't have been able to do a lot of what we wanted to accomplish this year."</p>
+    <p class="answer">All things equal, what we've accomplished with BuildMaster would have taken far longer without it.  This means we're pushing more builds and creating more products, faster than we ever have in the previous history of the company.   The more we can get out into production, the more revenue coming in. Without BuildMaster we wouldn't have been able to do a lot of what we wanted to accomplish this year. </p>
+    <p class="answer">It's also nice when you have people coming up and talking to you now, instead of yelling because we're not always in such a mad dash anymore. People are happier and happy people are productive people.</p>
+    <p class="question">OEConnection took advantage of our professional services engagement options and had a member of Inedo's team on site for 3 full months. This was a big project! Obviously, not everyone needs the professional services but some do. OEConnection has and seems to have been reaping significant benefits from the start. What would you say to firms that really need to make changes, whether big or small but are hesitating to pull the trigger?</p>
+    <p class="answer">Both the investment in BuildMaster and Inedo's professional services as dedicated resources to get OEConnection up and running with BuildMaster as soon as possible stem from the philosophy I strongly believe in, which is that developers should be writing applications that drive a company's strategy and revenue, not worrying about processes. Furthermore, the sooner we were integrated, the sooner we had a return on investment.</p>
+    <p class="answer">To speak more specifically on "springing" for a lengthy professional services engagement, it was simple math: we were doing everything manually and were already short-staffed. We took the list of everything we had to implement and noted that if in addition to my day job I had to the BuildMaster integration manually it would take over a year to implement. During that year of implementation the company would continue to experience pain in their deployment. However, if we got a dedicated resource that's an expert in the tool (BuildMaster), we could show them how we wanted our deployment process and we could knock it out in three months. The justification was that the return on investment could be realized sooner. That's exactly what we accomplished. </p>
+    <p class="quote right">"The justification was that the return on investment could be realized sooner. That's exactly what we accomplished."</p>
+    <p class="answer">However, if you're asking how we were able to commit to making such a sweeping change in general, one of the key things I told our Vice President was that "to create capacity you have to make capacity." If you're not going to put the effort into automating and simplifying your devops arrangement, the employees, clients, and eventually company will suffer for it and possibly be passed by. </p>
+    <p class="answer">After integration, BuildMaster is so easy to use I could turn it over to business analysts or QA people and have them set up processes. The bottom line was that you don't need to be developer to use BuildMaster and that's how I believe companies should operate: developer should focus on development and the others should focus on processes and be provided tools to make everyone's roles easier. </p>
+    <p class="question">What would you say to someone evaluating BuildMaster for their company?</p>
+    <p class="answer">
+        Every company has their own way of doing things.  Depending on how your company is set up, different tool
+        sets will meet different needs to fit that culture. The nice thing about BuildMaster is that it fit the culture here at OE Connection really well. The way BuildMaster has been designed and the flexibility within it makes it something that probably a
+        <img class="flavor-image right" src="/buildmaster/case-studies/oeconnection/radiator.jpg" alt="" />
+        lot of companies could take advantage of.
+    </p>
+    <p class="question">Thank you very much. Would you recommend BuildMaster to others?</p>
+    <p class="answer">Absolutely. As one of our deploy analysts says, "I don't go to work every day, I go to fun." He's a BuildMaster user.</p>
+
+</body>
+
+</html>
+
+

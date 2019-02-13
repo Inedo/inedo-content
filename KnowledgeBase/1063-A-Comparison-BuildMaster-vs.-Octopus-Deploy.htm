@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML []>
+<html>
+<head>
+    <meta name="id" content="1063" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>A Comparison: BuildMaster vs. Octopus Deploy</title>
+</head>
+<body>
+    <p>
+        <a href="http://octopusdeploy.com/">Octopus Deploy</a> and <a href="/buildmaster">BuildMaster</a> are two different products that can both be used to automate deployments. There are a lot of technical differences, but the overall approach to the problem is the best starting point for comparing the two.
+    </p>
+   <h2>Packages vs Applications</h2>
+<p>Octopus Deploy uses a package-based approach for release automation. This means that your applications must first be able to be broken-down into small, discrete, and independently-versioned "packages", and then be built and tested by a continuous integration server like Team City or Jenkins. Octopus will then take that package directly from the CI server (or a package repository like ProGet) and deploy it to the servers you specify.</p>
+<p>BuildMaster uses a process-based approach, which provides for a lot more flexibility in where application code comes from, and how it is deployed. You can import build artifacts directly from a CI server, or even build them yourself using a build plan. This means you can perform end-to-end continuous delivery of smaller applications, or manage complex &ndash; even mainframe &ndash; releases of larger, monolithic applications.</p>
+<p class="info"><strong>Packages can be great</strong>! In fact, our <a href="/hedgehog">Hedgehog</a> product uses a package-based approach for release automation. Hedgehog uses the same Inedo Execution Engine, Inedo Agents, and Inedo SDK, and is designed to be used in conjunction with our other products, including BuildMaster.</p>
+<h3>Companies: Octopus Deploy vs Inedo</h3>
+<p>Octopus Deploy is a single-product company, which means they focus on a very specific need and fulfill a singular aspect of your software delivery and DevOps processes: application deployment. You can use their product for other things, but it'd be like using Microsoft Word to make a spreadsheet.</p>
+<p>At Inedo, we publish a suite of DevOps tools to serve a broader segment of your software delivery and DevOps processes. Our products even have some functional overlap, which means you can use the right tool for the right application, and easily migrate between tools if the requirements change later.</p>
+<h2>Userbase: Release Engineers vs Entire Team</h2>
+<p>Octopus Deploy is designed to deploy packages from a continuous integration tool. This function is typically performed by release engineers, and not too many other members of the organization will use the tool. This is likely why the product is licensed per server/target, instead of per user.</p>
+<p>BuildMaster, however, was designed to be used by all members of the software delivery process - from developers (for integration), to testers (to approve a release package), and even managers (to see statuses and dashboards). This is why we license per user.</p>
+<h2>Free/Community Edition</h2>
+<p>As of v4, Octopus Deploy has <a href="https://octopus.com/blog/removing-free-tier">discontinued their free version</a>, largely because they have a very inexpensive starting tier, and let you scale up licensing as you use it.</p>
+<p>BuildMaster has a powerful free version: the only restriction is all users in the free version are administrators (i.e. have unlimited access). This rarely effects small and single-team use, whereas a multi-team enterprise will rarely have a problem budgeting for our paid edition (which also includes enterprise support).</p>
+<h2>Basic Deployment vs The Inedo Execution Engine (OtterScript)</h2>
+<p>Octopus Deploy runs one or more "steps" when deploying a package. The primary step is the <a href="https://octopus.com/docs/deployment-process/deploying-packages">Deploy Package Step</a>, which copies the package contents to a target directory, and depending on which "features" are selected, performs basic configuration for IIS website, Windows Service, etc. You can run <a href="https://octopus.com/docs/deploying-applications/custom-scripts">custom PowerShell Scripts</a> before and/or after each step to fill in any gaps, and run steps in parallel.</p>
+<p>BuildMaster, on the other hand, uses the Inedo Execution Engine to execute a deployment plan you create using <a href="/support/documentation/various/execution-engine/otterscript">OtterScript</a>, which is a domain-specific language designed specifically for our products.</p>
+<p>These deployment plans will contain various statements and "operations" (e.g. IIS::Ensure-Site, or Deploy-Artifact) organized into blocks such as if/else, try/catch, for each, etc. If you're already familiar with general scripting or programming concepts, the Visual Plan Editor will be trivial to learn.</p>
+<p><img style="border: 1px solid #808080;" src="/otter/otter-text.gif" /></p>
+<p>In addition, the execution engine was designed to seamlessly integrate with PowerShell, and offers not only basic PowerShell execution (similar to Octopus, through the <a href="/support/documentation/otter/modeling-infrastructure/powershell#calling-powershell-scripts">PSCall Operation</a>), but other tight integration points:</p>
+<h4>Inline PowerShell Execution</h4>
+<p>You can use <a href="/support/documentation/otter/reference/operations/powershell/psexec">PSExec</a> and <a href="/support/documentation/various/execution-engine/otterscript/strings-and-literals#string-syntax">swim strings</a> to directly incorporate and execute PowerShell:</p>
+<pre>
+psexec >>
+  # delete all but the latest 3 logs in the log directory
+  Get-ChildItem "E:\Site\Logs\$ApplicationName" |
+     Sort-Object $.CreatedDate -descending |
+     Select-Object -skip 3 |
+     Remove-Item
+>>;
+</pre>
+
+<p>The execution engine will seamlessly replace variables within your PowerShell script, so in the example above $ApplicationName might be defined as a <a href="/support/documentation/otter/global-components/configuration-variables">configuration variable</a>.</p>
+<h4>Evaluating PowerShell Literals</h4>
+<p>With <a href="/support/documentation/otter/modeling-infrastructure/powershell#evaluating-powershell-literals">PSEval</a>, you can quickly evaluate PowerShell expressions as variable values. For example, say that you wanted to convert the value stored in one variable ($minutes) to milliseconds. You could PSEval the simple expression $minutes * 60 * 1000:</p>
+<pre>set $milliseconds = $PSEval($minutes * 60 * 1000);</pre>
+<p>$PSEval actually runs the expression on the server currently in context, so use it inside of an <a href="/support/documentation/otter/execution-engine/statements-and-blocks/if-else">If/Else Block</a> to perform different operations depending on the results of the expression on that server.</p>
+<h2>Conclusion</h2>
+<p>Although Octopus Deploy and BuildMaster can both be used to automate deployments, their approach is quite different. When exploring deployment automation tools, you should consider a simultaneous evaluation of both products.</p>
+</body>
+</html>

@@ -1,0 +1,710 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="MasterPageFile" content="~/MasterPages/BlankNoForm.Master" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Buy Code Offsets</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <meta name="include-client-resources" content="knockoutjs" />
+    <meta name="require-ssl" content="true" />
+
+
+    <script type="text/javascript" src="/offset/model.js"></script>
+
+    <script type="text/javascript">
+
+        //<![CDATA[
+
+        $(function () {
+
+
+            $(".close-button").on("click", function (event) {
+                event.stopPropagation();
+                $(".selected").removeClass("selected");
+            });
+
+            var vm = new CodeOffsetsViewModel();
+            ko.applyBindings(vm);
+
+
+            $("form").submit(function (e) {
+
+                //vm.working(true);
+
+                e.preventDefault();
+
+                var $form = $(this);
+                $.ajax({
+                    url: $form.attr('action'),
+                    data: $form.serialize(),
+                    type: 'POST',
+                    async: true
+                }).done(function (data, textStatus, jqXHR) {
+
+                    if (data.shipment.Object_State == 'VALID' && data.shipment.Object_Id) {
+
+                        window.location = '/offset/pay?key=' + data.shipment.Object_Id;
+
+                    }
+                    else {
+                        alert('There was an error creating the shipment details.');
+                    }
+
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+
+                    alert('Error: ' + jqXHR.responseText);
+
+                }).always(function () {
+                    //vm.working(false);
+                });
+
+                return false;
+            });
+
+        });
+
+        // ]]>
+    </script>
+
+</head>
+<body>
+
+
+    <div id="menu-container" class="content-container nav">
+
+        <div id="menu">
+            <ul>
+                <li><a href="/offset/#the-offsets">The Bills</a></li>
+                <li><a href="#orderform"><b>Buy Offsets</b></a></li>
+                <li><a href="/offset/#who">Partner Org</a></li>
+                <li><a href="/company" target="blank">About Us</a></li>
+               
+            </ul>
+            <div class="circle small grey">
+                <img src="images/menu-icon.svg" />
+                <div class="semi-circle">
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="mobile-navigation">
+            <input id="1" name="accordian" type="checkbox" />
+            <label for="1">
+                <img src="images/menu-icon.svg" />
+            </label>
+            <article>
+                <ul>
+                    <li><a href="#the-offsets">The Bills</a></li>
+                    <li><a href="#orderform">Buy Offsets</a></li>
+                    <li><a href="/offset/#who">Partner Org</a></li>
+                    <li><a href="/company" target="blank">About Us</a></li>
+                  
+                </ul>
+            </article>
+        </div>
+    </div>
+
+
+
+    <div class="content-container buy-page" id="top-banner">
+        <div id="heading">
+            <a href="/offset">
+                <img class="logo" src="images/white-logo.svg" />
+            </a>
+            <h1>code offsets</h1>
+
+
+            <div id="inedo">
+                <a href="http://inedo.com"><img class="inedo-logo" src="images/inedo-black-logo.png" /></a>
+                <h3>brought to you by</h3>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div id="orderform" class="content-container">
+        <div class="content red">
+
+
+            <div class="banner">
+                <div class="upper-banner">
+                    <h2>Sorry!</h2>
+                </div>
+                <div class="under-banner">
+                    <div class="banner-fold"></div>
+                </div>
+            </div>
+            <p>
+                We are taking a break from providing Code Offsets.
+                If you'd like to see them back <a href="/contact">please let us know</a>.
+                <!--Inedo Team, toget this page working again, un-comment the 2 p tags below. and remove the style=display:none from the element with the id listing.  DO NOT uncomment anything that starts with a ko as that is part of the knock out functionality. Thanks, PR-->  
+                </p>
+            <!--<p>
+                <b>Shipping is free</b> within the US, but it's just a bit extra for overseas.
+            </p>
+            <p>
+                Different <b>bonus bills</b> (sent in archival cases) are included for free, for each $50, $75, and $100 purchased.
+            </p>-->
+
+            <!-- ko if: totalDenominationQuant -->
+            <div id="cart-opener">
+                <div id="cart-title">
+                    <img src="images/shopping-cart-icon-white.png" />
+                    <h3>Your Cart</h3>
+                    <div id="cart-toggle">
+                        <!-- ko ifnot: cartVisible -->
+                        <h5 class="open-button" data-bind="click: openCartClick">&#10006;</h5>
+                        <!--/ko-->
+                        <!-- ko if: cartVisible -->
+                        <h5 class="close-button" data-bind="click: closeCartClick">&#10006;</h5>
+                        <!--/ko-->
+                    </div>
+                </div>
+                <h4 class=" price">Total: $<span data-bind="text:totalPrice"></span>.00</h4>
+                <p class="note">* $<span data-bind="text:internationalShipping"> </span>.00 added shipping for orders outside the US</p>
+
+                <div data-bind="if:cartVisible" id="cart">
+
+                    <div class="items-in-cart">
+                        <p data-bind="if:packOfOnesQuant"><span data-bind="text:packOfOnesQuant"></span> One Pack<span data-bind="if:onePackPlural">s</span>------<span data-bind="click:removeOnesClick">&#10006;</span></p>
+                        <p data-bind="if:packOfTwosQuant"><span data-bind="text:packOfTwosQuant"></span> Two Pack<span data-bind="if:twoPackPlural">s</span>------<span data-bind="click:removeTwosClick">&#10006;</span></p>
+                        <p data-bind="if:packOfFivesQuant"><span data-bind="text:packOfFivesQuant"></span> Five Pack<span data-bind="if:fivePackPlural">s</span>------<span data-bind="click:removeFivesClick">&#10006;</span></p>
+                        <p data-bind="if:packOfTensQuant"><span data-bind="text:packOfTensQuant"></span> Ten Pack<span data-bind="if:tenPackPlural">s</span>------<span data-bind="click:removeTensClick">&#10006;</span></p>
+                        <p data-bind="if:packOfTwentiesQuant"><span data-bind="text:packOfTwentiesQuant"></span> Twenty Pack<span data-bind="if:twentyPackPlural">s</span>------<span data-bind="click:removeTwentiesClick">&#10006;</span></p>
+                        <p data-bind="if:mixedFiftyQuant"><span data-bind="text:mixedFiftyQuant"></span> Fifty LOC Pack<span data-bind="if:mixedFiftyPackPlural">s</span>------<span data-bind="click:removeMixedFiftyClick">&#10006;</span></p>
+                        <p data-bind="if:mixedHundredQuant"><span data-bind="text:mixedHundredQuant"></span> Hundred LOC Pack<span data-bind="if:mixedHundredPackPlural">s</span>------<span data-bind="click:removeMixedHundredClick">&#10006;</span></p>
+                        <p data-bind="if:mixedFiveHundredQuant"><span data-bind="text:mixedFiveHundredQuant"></span> Five Hundred LOC Pack<span data-bind="if:mixedFiveHundredPackPlural">s</span>------<span data-bind="click:removeMixedFiveHundredClick">&#10006;</span></p>
+                        <p data-bind="if:mixedCollectQuant"><span data-bind="text:mixedCollectQuant"></span> The 1688 Pack<span data-bind="if:mixedCollectPackPlural">s</span>------<span data-bind="click:removeMixedCollectClick">&#10006;</span></p>
+                        <p data-bind="if:bonusHundredsQuant"><span data-bind="text:bonusHundredsQuant"></span> Bonus Hundred Bill<span data-bind="if:bonusHundredsPlural">s</span></p>
+                        <p data-bind="if:bonusFiveHundredsQuant"><span data-bind="text:bonusFiveHundredsQuant"></span> Bonus Five Hundred Bill<span data-bind="if:bonusFiveHundredsPlural">s</span></p>
+                        <p data-bind="if:bonusThousandsQuant"><span data-bind="text:bonusThousandsQuant"></span> Bonus Thousand Bill<span data-bind="if:bonusThousandsPlural">s</span></p>
+                        <p class="shipping-note" data-bind="ifnot:domestic">$<span data-bind="text:internationalShipping"> </span>.00 International Shipping</p>
+
+                    </div>
+
+                </div>
+                <!-- ko if: listingVisible -->
+                <h4 class="check-out-button" data-bind="click:toShippingInfoClick">Head to Check Out &#8594;</h4>
+                <!--/ko-->
+                <!-- ko if: shippingInfoVisible -->
+                <h4 class="check-out-button" data-bind="click:backToListing">&#8592; Back to the Store</h4>
+                <!--/ko-->
+
+            </div>
+            <!--/ko-->
+
+            <div id="listing" data-bind="if:listingVisible" class="active-order" style="display:none;">
+
+                <div class="list-item-container">
+
+                    <div class="list-item">
+                        <h3>Ones</h3>
+                        <h4 class="price" data-bind="if:domestic">$10.00 </h4>
+                        <p>Pack of 20 Ones</p>
+                        <select name="Pack-of-Ones" data-bind="options: qtyOptions, value: packOfOnesQuant"></select>
+                    </div>
+                    <div class="offset-shot">
+                        <img src="images/pack-ones.jpg" />
+                    </div>
+                    <div class="add-to-cart" data-bind="click: addOnesClick">
+                        <p>Add to Cart</p>
+                    </div>
+
+
+                </div>
+                <div class="list-item-container">
+                    <div class="list-item">
+                        <h3>Twos</h3>
+                        <h4 class="price" data-bind="if:domestic">$15.00 </h4>
+                        <p>Pack of 25 Twos</p>
+                        <select name="Pack-of-Twos" data-bind="options: qtyOptions, value: packOfTwosQuant"></select>
+                    </div>
+                    <div class="offset-shot">
+                        <img src="images/pack-twos.jpg" />
+
+                    </div>
+                    <div class="add-to-cart" data-bind="click: addTwosClick">
+                        <p>Add to Cart</p>
+                    </div>
+                </div>
+                <div class="list-item-container">
+                    <div class="list-item">
+                        <h3>50 LOC</h3>
+                        <h4 class="price" data-bind="if:domestic">$20.00 </h4>
+                        <p>Pack of 15 Ones, 5 Twos, 3 Fives, 1 Ten</p>
+                        <select name="Mixed-Fifty" data-bind="options: qtyOptions, value: mixedFiftyQuant"></select>
+                    </div>
+                    <div class="offset-shot">
+                        <img src="images/fifty-loc.jpg" />
+
+                    </div>
+                    <div class="add-to-cart" data-bind="click: addMixedFiftyClick">
+                        <p>Add to Cart</p>
+                    </div>
+                </div>
+                <div class="list-item-container">
+                    <div class="list-item">
+                        <h3>Fives</h3>
+                        <h4 class="price" data-bind="if:domestic">$25.00 </h4>
+                        <p>Pack of 20 Fives</p>
+                        <select name="Pack-of-Fives" data-bind="options: qtyOptions, value: packOfFivesQuant"></select>
+                    </div>
+                    <div class="offset-shot">
+                        <img src="images/pack-fives.jpg" />
+
+                    </div>
+                    <div class="add-to-cart" data-bind="click: addFivesClick">
+                        <p>Add to Cart</p>
+                    </div>
+                </div>
+                <div class="list-item-container">
+                    <div class="list-item">
+                        <h3>100 LOC</h3>
+                        <h4 class="price" data-bind="if:domestic">$30.00 </h4>
+                        <p>Pack of 20 Ones, 10 Twos, 4 Fives, 2 Tens, 1 Twenty</p>
+                        <select name="Mixed-Hundred" data-bind="options: qtyOptions, value: mixedHundredQuant"></select>
+                    </div>
+                    <div class="offset-shot">
+                        <img src="images/hundred-loc.jpg" />
+
+                    </div>
+                    <div class="add-to-cart" data-bind="click: addMixedHundredClick">
+                        <p>Add to Cart</p>
+                    </div>
+                </div>
+                <div class="list-item-container">
+                    <div class="list-item">
+                        <h3>Tens</h3>
+                        <h4 class="price" data-bind="if:domestic">$35.00 </h4>
+                        <p>Pack of 25 Tens</p>
+                        <select name="Pack-of-Tens" data-bind="options: qtyOptions, value: packOfTensQuant"></select>
+                    </div>
+                    <div class="offset-shot">
+                        <img src="images/pack-tens.jpg" />
+
+                    </div>
+                    <div class="add-to-cart" data-bind="click: addTensClick">
+                        <p>Add to Cart</p>
+                    </div>
+                </div>
+                <div class="list-item-container">
+                    <div class="list-item">
+                        <h3>Twenties</h3>
+                        <h4 class="price" data-bind="if:domestic">$50.00 </h4>
+                        <p>Pack of 25 Twenties</p>
+                        <select name="Pack-of-Twenties" data-bind="options: qtyOptions, value: packOfTwentiesQuant"></select>
+                    </div>
+                    <div class="offset-shot">
+                        <img src="images/pack-twenties.jpg" />
+
+                    </div>
+                    <div class="add-to-cart" data-bind="click: addTwentiesClick">
+                        <p>Add to Cart</p>
+                    </div>
+                </div>
+                <div id="mixed-five-hundred" class="list-item-container">
+                    <div class="list-item">
+                        <h3>500 LOC</h3>
+                        <h4 class="price" data-bind="if:domestic">$65.00 </h4>
+                        <p>50 Ones, 20 Twos, 10 Fives, 8 Tens, 4 Twenties, 2 Fifties, 1 Hundred</p>
+                        <select name="Mixed-Five-Hundred" data-bind="options: qtyOptions, value: mixedFiveHundredQuant"></select>
+                    </div>
+                    <div class="offset-shot">
+                        <img src="images/five-hundred-loc.jpg" />
+
+                    </div>
+                    <div class="add-to-cart" data-bind="click: addMixedFiveHundredClick">
+                        <p>Add to Cart</p>
+                    </div>
+                </div>
+
+                <div class="list-item-container">
+                    <div class="list-item">
+                        <h3>1688 LOC</h3>
+                        <h4 class="price" data-bind="if:domestic">$75.00 </h4>
+                        <p>One of each bill stored in archival cases</p>
+                        <select name="mixed-Collect" data-bind="options: qtyOptions, value: mixedCollectQuant"></select>
+                    </div>
+                    <div class="offset-shot">
+                        <img src="images/pack-archivable.jpg" />
+
+                    </div>
+                    <div class="add-to-cart" data-bind="click: addMixedCollectClick">
+                        <p>Add to Cart</p>
+                    </div>
+                </div>
+                <div class="list-item-container not-available">
+                    <div class="list-item">
+                        <h3>The Book</h3>
+                        <h4 class="price" data-bind="if:domestic">$100.00 </h4>
+                        <p>A leather binder with each denomenation displayed.</p>
+                        <select name="mixed-Collect" data-bind="options: qtyOptions, value: mixedCollectQuant"></select>
+                    </div>
+                    <div class="offset-shot">
+                        <img src="images/mix-of-offsets.jpg" />
+
+                    </div>
+                    <div class="add-to-cart" data-bind="click: addOnesClick">
+                        <p>Add to Cart</p>
+                    </div>
+                </div>
+            </div>
+            <form action="/offset/create-shipment" method="post">
+
+                <div id="shipping-info" data-bind="if: shippingInfoVisible">
+
+                    <div id="domestic-international-split">
+                        <p>Before we complete your order, we need your shipping information.</p>
+
+                        <div class="dial-holder">
+                            <div class="order-button active" id="domestic-dial"  data-bind="click: setDomesticClick"></div>
+                            <p class="button-label">Orders inside the US</p>
+                        </div>
+                        <div class="dial-holder">
+                            <div class="order-button" id="international-dial" data-bind="click: setInternationalClick"></div>
+                            <p class="button-label">Orders outside the US</p>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <h3 id="shipping-address"><span data-bind="if:domestic">US</span><span data-bind="ifnot:domestic">International</span> Shipping Address</h3>
+
+                    <div>
+                        <label>Name:</label>
+                        <input class="required" name="name" />
+                    </div>
+                    <div>
+                        <label>Company:</label>
+                        <input name="company" />
+                    </div>
+
+                    <div class="required">
+                        <label>Email Address:</label>
+                        <input name="email" type="text" />
+                    </div>
+
+                    <div class="required">
+                        <label>Street Address:</label>
+                        <input name="street1" type="text" placeholder="1000 MAIN ST" />
+                    </div>
+                    <div>
+                        <label>Address Line 2:</label>
+                        <input name="street2" type="text" placeholder="APT 1000" />
+                    </div>
+                    <div class="required">
+                        <label>City:</label>
+                        <input name="city" type="text" placeholder="SPRINGFIELD" />
+                    </div>
+                    <div>
+                        <label data-bind="if:domestic">State:</label>
+                        <label data-bind="ifnot:domestic">Province / Region:</label>
+                        <input name="state" type="text" placeholder="IL" />
+                    </div>
+                    <div>
+                        <label data-bind="if:domestic">ZIP Code:</label>
+                        <label data-bind="ifnot:domestic">Postal Code:</label>
+                        <input name="zip" type="text" placeholder="90210" />
+                    </div>
+                    <div data-bind="ifnot:domestic">
+                        <label>Country:</label>
+                        <select name="country">
+                            <option></option>
+                            <option value="">Country...</option>
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeria">Algeria</option>
+                            <option value="American Samoa">American Samoa</option>
+                            <option value="Andorra">Andorra</option>
+                            <option value="Angola">Angola</option>
+                            <option value="Anguilla">Anguilla</option>
+                            <option value="Antigua &amp; Barbuda">Antigua &amp; Barbuda</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Armenia">Armenia</option>
+                            <option value="Aruba">Aruba</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Azerbaijan">Azerbaijan</option>
+                            <option value="Bahamas">Bahamas</option>
+                            <option value="Bahrain">Bahrain</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Barbados">Barbados</option>
+                            <option value="Belarus">Belarus</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Belize">Belize</option>
+                            <option value="Benin">Benin</option>
+                            <option value="Bermuda">Bermuda</option>
+                            <option value="Bhutan">Bhutan</option>
+                            <option value="Bolivia">Bolivia</option>
+                            <option value="Bonaire">Bonaire</option>
+                            <option value="Bosnia &amp; Herzegovina">Bosnia &amp; Herzegovina</option>
+                            <option value="Botswana">Botswana</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+                            <option value="Brunei">Brunei</option>
+                            <option value="Bulgaria">Bulgaria</option>
+                            <option value="Burkina Faso">Burkina Faso</option>
+                            <option value="Burundi">Burundi</option>
+                            <option value="Cambodia">Cambodia</option>
+                            <option value="Cameroon">Cameroon</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Canary Islands">Canary Islands</option>
+                            <option value="Cape Verde">Cape Verde</option>
+                            <option value="Cayman Islands">Cayman Islands</option>
+                            <option value="Central African Republic">Central African Republic</option>
+                            <option value="Chad">Chad</option>
+                            <option value="Channel Islands">Channel Islands</option>
+                            <option value="Chile">Chile</option>
+                            <option value="China">China</option>
+                            <option value="Christmas Island">Christmas Island</option>
+                            <option value="Cocos Island">Cocos Island</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Comoros">Comoros</option>
+                            <option value="Congo">Congo</option>
+                            <option value="Cook Islands">Cook Islands</option>
+                            <option value="Costa Rica">Costa Rica</option>
+                            <option value=" Cote d'Ivoire ">Cote d'Ivoire</option>
+                            <option value="Croatia">Croatia</option>
+                            <option value="Cuba">Cuba</option>
+                            <option value="Curacao">Curacao</option>
+                            <option value="Cyprus">Cyprus</option>
+                            <option value="Czech Republic">Czech Republic</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Djibouti">Djibouti</option>
+                            <option value="Dominica">Dominica</option>
+                            <option value="Dominican Republic">Dominican Republic</option>
+                            <option value="East Timor">East Timor</option>
+                            <option value="Ecuador">Ecuador</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="El Salvador">El Salvador</option>
+                            <option value="Equatorial Guinea">Equatorial Guinea</option>
+                            <option value="Eritrea">Eritrea</option>
+                            <option value="Estonia">Estonia</option>
+                            <option value="Ethiopia">Ethiopia</option>
+                            <option value="Falkland Islands">Falkland Islands</option>
+                            <option value="Faroe Islands">Faroe Islands</option>
+                            <option value="Fiji">Fiji</option>
+                            <option value="Finland">Finland</option>
+                            <option value="France">France</option>
+                            <option value="French Guiana">French Guiana</option>
+                            <option value="French Polynesia">French Polynesia</option>
+                            <option value="French Southern Ter">French Southern Ter</option>
+                            <option value="Gabon">Gabon</option>
+                            <option value="Gambia">Gambia</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Ghana">Ghana</option>
+                            <option value="Gibraltar">Gibraltar</option>
+                            <option value="Great Britain">Great Britain</option>
+                            <option value="Greece">Greece</option>
+                            <option value="Greenland">Greenland</option>
+                            <option value="Grenada">Grenada</option>
+                            <option value="Guadeloupe">Guadeloupe</option>
+                            <option value="Guam">Guam</option>
+                            <option value="Guatemala">Guatemala</option>
+                            <option value="Guinea">Guinea</option>
+                            <option value="Guyana">Guyana</option>
+                            <option value="Haiti">Haiti</option>
+                            <option value="Hawaii">Hawaii</option>
+                            <option value="Honduras">Honduras</option>
+                            <option value="Hong Kong">Hong Kong</option>
+                            <option value="Hungary">Hungary</option>
+                            <option value="Iceland">Iceland</option>
+                            <option value="India">India</option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="Iran">Iran</option>
+                            <option value="Iraq">Iraq</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Isle of Man">Isle of Man</option>
+                            <option value="Israel">Israel</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Jamaica">Jamaica</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Jordan">Jordan</option>
+                            <option value="Kazakhstan">Kazakhstan</option>
+                            <option value="Kenya">Kenya</option>
+                            <option value="Kiribati">Kiribati</option>
+                            <option value="Korea North">Korea North</option>
+                            <option value="Korea South">Korea South</option>
+                            <option value="Kuwait">Kuwait</option>
+                            <option value="Kyrgyzstan">Kyrgyzstan</option>
+                            <option value="Laos">Laos</option>
+                            <option value="Latvia">Latvia</option>
+                            <option value="Lebanon">Lebanon</option>
+                            <option value="Lesotho">Lesotho</option>
+                            <option value="Liberia">Liberia</option>
+                            <option value="Libya">Libya</option>
+                            <option value="Liechtenstein">Liechtenstein</option>
+                            <option value="Lithuania">Lithuania</option>
+                            <option value="Luxembourg">Luxembourg</option>
+                            <option value="Macau">Macau</option>
+                            <option value="Macedonia">Macedonia</option>
+                            <option value="Madagascar">Madagascar</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Malawi">Malawi</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="Mali">Mali</option>
+                            <option value="Malta">Malta</option>
+                            <option value="Marshall Islands">Marshall Islands</option>
+                            <option value="Martinique">Martinique</option>
+                            <option value="Mauritania">Mauritania</option>
+                            <option value="Mauritius">Mauritius</option>
+                            <option value="Mayotte">Mayotte</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Midway Islands">Midway Islands</option>
+                            <option value="Moldova">Moldova</option>
+                            <option value="Monaco">Monaco</option>
+                            <option value="Mongolia">Mongolia</option>
+                            <option value="Montserrat">Montserrat</option>
+                            <option value="Morocco">Morocco</option>
+                            <option value="Mozambique">Mozambique</option>
+                            <option value="Myanmar">Myanmar</option>
+                            <option value="Namibia">Namibia</option>
+                            <option value="Nauru">Nauru</option>
+                            <option value="Nepal">Nepal</option>
+                            <option value="Netherland Antilles">Netherland Antilles</option>
+                            <option value="Netherlands">Netherlands (Holland, Europe)</option>
+                            <option value="Nevis">Nevis</option>
+                            <option value="New Caledonia">New Caledonia</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Nicaragua">Nicaragua</option>
+                            <option value="Niger">Niger</option>
+                            <option value="Nigeria">Nigeria</option>
+                            <option value="Niue">Niue</option>
+                            <option value="Norfolk Island">Norfolk Island</option>
+                            <option value="Norway">Norway</option>
+                            <option value="Oman">Oman</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Palau Island">Palau Island</option>
+                            <option value="Palestine">Palestine</option>
+                            <option value="Panama">Panama</option>
+                            <option value="Papua New Guinea">Papua New Guinea</option>
+                            <option value="Paraguay">Paraguay</option>
+                            <option value="Peru">Peru</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="Pitcairn Island">Pitcairn Island</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Puerto Rico">Puerto Rico</option>
+                            <option value="Qatar">Qatar</option>
+                            <option value="Republic of Montenegro">Republic of Montenegro</option>
+                            <option value="Republic of Serbia">Republic of Serbia</option>
+                            <option value="Reunion">Reunion</option>
+                            <option value="Romania">Romania</option>
+                            <option value="Russia">Russia</option>
+                            <option value="Rwanda">Rwanda</option>
+                            <option value="St Barthelemy">St Barthelemy</option>
+                            <option value="St Eustatius">St Eustatius</option>
+                            <option value="St Helena">St Helena</option>
+                            <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                            <option value="St Lucia">St Lucia</option>
+                            <option value="St Maarten">St Maarten</option>
+                            <option value="St Pierre &amp; Miquelon">St Pierre &amp; Miquelon</option>
+                            <option value="St Vincent &amp; Grenadines">St Vincent &amp; Grenadines</option>
+                            <option value="Saipan">Saipan</option>
+                            <option value="Samoa">Samoa</option>
+                            <option value="Samoa American">Samoa American</option>
+                            <option value="San Marino">San Marino</option>
+                            <option value="Sao Tome &amp; Principe">Sao Tome &amp; Principe</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="Senegal">Senegal</option>
+                            <option value="Serbia">Serbia</option>
+                            <option value="Seychelles">Seychelles</option>
+                            <option value="Sierra Leone">Sierra Leone</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Slovakia">Slovakia</option>
+                            <option value="Slovenia">Slovenia</option>
+                            <option value="Solomon Islands">Solomon Islands</option>
+                            <option value="Somalia">Somalia</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Sri Lanka">Sri Lanka</option>
+                            <option value="Sudan">Sudan</option>
+                            <option value="Suriname">Suriname</option>
+                            <option value="Swaziland">Swaziland</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value="Syria">Syria</option>
+                            <option value="Tahiti">Tahiti</option>
+                            <option value="Taiwan">Taiwan</option>
+                            <option value="Tajikistan">Tajikistan</option>
+                            <option value="Tanzania">Tanzania</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="Togo">Togo</option>
+                            <option value="Tokelau">Tokelau</option>
+                            <option value="Tonga">Tonga</option>
+                            <option value="Trinidad &amp; Tobago">Trinidad &amp; Tobago</option>
+                            <option value="Tunisia">Tunisia</option>
+                            <option value="Turkey">Turkey</option>
+                            <option value="Turkmenistan">Turkmenistan</option>
+                            <option value="Turks &amp; Caicos Is">Turks &amp; Caicos Is</option>
+                            <option value="Tuvalu">Tuvalu</option>
+                            <option value="Uganda">Uganda</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="United Arab Emirates">United Arab Emirates</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United States of America">United States of America</option>
+                            <option value="Uruguay">Uruguay</option>
+                            <option value="Uzbekistan">Uzbekistan</option>
+                            <option value="Vanuatu">Vanuatu</option>
+                            <option value="Vatican City State">Vatican City State</option>
+                            <option value="Venezuela">Venezuela</option>
+                            <option value="Vietnam">Vietnam</option>
+                            <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+                            <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+                            <option value="Wake Island">Wake Island</option>
+                            <option value="Wallis &amp; Futana Is">Wallis &amp; Futana Is</option>
+                            <option value="Yemen">Yemen</option>
+                            <option value="Zaire">Zaire</option>
+                            <option value="Zambia">Zambia</option>
+                            <option value="Zimbabwe">Zimbabwe</option>
+                        </select>
+                    </div>
+                    <input class="check-out-button" type="submit" value="Complete Order" />
+
+                    <input type="hidden" name="domestic" data-bind="value:domestic" />
+                    <input type="hidden" name="shippingBox" data-bind="value:shippingBox" />
+                    <input type="hidden" name="orderWeight" data-bind="value:orderWeight" />
+                    <!--<input type="hidden" name="net_weight" data-bind="value:orderWeight" />
+                    <input type="hidden" name="quantity" data-bind="value:totalQuant" />-->
+
+                    
+
+                    <!-- note the total metadata string is limited to 100 chars max ! -->
+                    <input type="hidden" name="metadata:P01" data-bind="value:packOfOnesQuant" />
+                    <input type="hidden" name="metadata:P02" data-bind="value:packOfTwosQuant" />
+                    <input type="hidden" name="metadata:P05" data-bind="value:packOfFivesQuant" />
+                    <input type="hidden" name="metadata:P10" data-bind="value:packOfTensQuant" />
+                    <input type="hidden" name="metadata:P20" data-bind="value:packOfTwentiesQuant" />
+                    <input type="hidden" name="metadata:M50" data-bind="value:mixedFiftyQuant" />
+                    <input type="hidden" name="metadata:M1H" data-bind="value:mixedHundredQuant" />
+                    <input type="hidden" name="metadata:M5H" data-bind="value:mixedFiveHundredQuant" />
+                    <input type="hidden" name="metadata:MCP" data-bind="value:mixedCollectQuant" />
+                    <input type="hidden" name="metadata:CB1" data-bind="value:bookQuant" />
+                  
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+    <div id="footer" class="content-container">
+        <div class="content">
+            
+                    © <a href="/">Inedo, LLC</a> |
+                    Website Content <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+                    | <a href="/contact">Contact Us</a>
+                </div>
+            </div>
+    
+
+</body>
+</html>

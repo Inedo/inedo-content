@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extensionAdditionalInfo>
+  <info><![CDATA[
+    <p>
+	  This extension contains an action for running unit tests using the
+	  Gallio Unit Testing Framework.
+	</p>]]></info>
+  <actionInfo id="Inedo.BuildMasterExtensions.Gallio.GallioUnitTestAction" name="Execute Gallio Test Runner" summary="Runs a series of tests using the Gallio test runner."><![CDATA[]]></actionInfo>
+</extensionAdditionalInfo>

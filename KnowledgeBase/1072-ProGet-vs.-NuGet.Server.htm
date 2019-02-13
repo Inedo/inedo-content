@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html >
+<html>
+  <head>
+    <meta name="id" content="1072" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="proget, nuget" />
+    <title>ProGet vs. NuGet.Server</title>
+  </head>
+  <body>
+       <p>
+          <a href="https://www.nuget.org/packages/NuGet.Server">NuGet.Server</a> is a free and open-source package that's designed to be incorporated into a .NET web application and host a single, NuGet feed.
+           With a bit of set-up and some customization, you can use NuGet.Server to build a lightweight, standalone NuGet Server that hosts a single feed. It's like a network share drive for your packages, but hosted over HTTP/S.
+       </p>
+       <p>
+          On the other hand, ProGet started as a private NuGet package repository manager but has grown into a full blown Universal Package Manger with many multiple feed types and many enterprise level features. 
+       </p>
+
+   <h2>Multiple Feed types </h2>
+       <p>
+          ProGet supports not only in-house packages, but a growing list of external repositories including NuGet, npm, Bower, Chocolately, and Maven. 
+           ProGet also supports Universal feeds and Packages giving users the same value and control of package mangers for you applications 
+       </p>
+
+   <h2>Connectors</h2>
+       <p>
+          ProGet's feed connectors allow users to mange external feeds through filtering and by maintaining a local cache. 
+           Connectors save time and increase efficiency among commonly used packages and ensures package availability even during times of external outages. 
+       </p>
+   
+
+   <h2>Symbol and Source Server</h2>
+       <p>
+         ProGet comes built-in with a NuGet symbol/source server that makes .pdb files stored in a feed's packages accessible directly from a debugger such as Visual Studio.
+       </p>
+   <h2>Enterprise </h2>
+       <p>
+          ProGet Enterprise is a <a href="/support/documentation/proget/core-concepts/high-availability"> High Availability </a> instance that provides stability even at heavy load times,
+            keeping performance standards high and maintaining usability at the enterprise level.
+           Ensuring access to your packages whenever you need them. 
+       </p>
+
+   <h2>Security </h2>
+       <p>
+          <a href="/support/documentation/proget/administration/security">Users and Groups</a> add a level of granular control and security within ProGet. By associating users with a group or groups, organization are able to permit and restrict access to appropriate users. ProGet supports AD Domain Forest, LDAP and the built-in user directory.
+
+       </p>
+
+
+  <em> <p> If your interested in a very basic tool with only support for NuGet feeds, check out <a href="http://nugetserver.net/"> NuGet Server</a> </p> </em> 
+</body>
+</html>

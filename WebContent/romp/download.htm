@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Romp Downloads &amp; Source Code</title>
+    <meta name="keywords" content="romp, installation" />
+    <meta name="require-ssl" content="true" />
+    <meta name="MasterPageFile" content="romp.htm" />
+    <style type="text/css">
+        .all-content {
+            width: 800px;
+            margin-left: 100px;
+        }
+
+            .all-content p {
+                margin: 10px auto;
+            }
+
+        .downloaf-box {
+            border: solid 1px #2e2e2e;
+            padding: 20px;
+            text-align: right;
+            margin-top: 46px;
+        }
+
+            .downloaf-box .left {
+                float: left;
+                margin-right: 20px;
+                text-align: left;
+            }
+
+                .downloaf-box .left h3 {
+                    margin-top: 0;
+                    font-size: 26px;
+                    margin-bottom: 10px;
+                    font-weight: 700;
+                }
+
+            .downloaf-box .right .download {
+                font-size: 14px;
+                padding: 12px 20px;
+                line-height: 74px;
+            }
+    </style>
+
+
+
+    <script type="text/javascript">
+        setTimeout(function () {
+            var a = document.createElement("script");
+            var b = document.getElementsByTagName("script")[0];
+            a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0053/9152.js?" + Math.floor(new Date().getTime() / 3600000);
+            a.async = true; a.type = "text/javascript"; b.parentNode.insertBefore(a, b)
+        }, 1);
+    </script>
+
+</head>
+<body>
+
+    <style>
+        .content-container#banner {
+            min-height: 150px;
+        }
+
+        #banner .circle-button {
+            display: none;
+        }
+    </style>
+    <div class="all-content">
+        <h1>Downloads &amp; Source Code</h1>
+        <p>
+            Romp lets development and operations teams work closely together by enabling developers to specify exactly what infrastructure configuration their application requires so that operations can easily inspect these packages and deploy them in a simple but controlled manner.
+        </p>
+        <p>
+            Romp is free and open source software, and is <a href="https://github.com/Inedo/Romp/blob/master/LICENSE" target="_blank">licensed under the Apache License 2.0</a>.
+        </p>
+
+        <div class="downloaf-box">
+            <div class="left">
+                <h3>Latest Version: ${Romp.ReleaseNumber}</h3>
+                <div><a href="https://github.com/inedo/romp" target="_blank">Source Code</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; File size: 3mb</div>
+            </div>
+            <div class="right">
+                <div><a class="download" href="/romp/download/installer/${Romp.ReleaseNumber}" onclick="_gaq.push(['_trackEvent', 'romp', 'download', 'nosql']);">Download Romp Installer</a></div>
+            </div>
+        </div>
+
+        <!--<div class="downloaf-box">
+            <div class="left">
+                <h3>Romp</h3>
+                <div>
+                    <a href="https://github.com/inedo/romp" target="_blank">Source Code</a>
+                    &nbsp; &bull; &nbsp;
+                    <a href="https://chocolatey.org/packages/romp" target="_blank">Download from Chocolatey</a>
+                </div>
+            </div>
+            <div class="right">
+                <div><a class="download" href="https://github.com/inedo/romp/releases" target="_blank" onclick="_gaq.push(['_trackEvent', 'romp', 'download', 'github']);">Download from GitHub</a></div>
+
+            </div>
+        </div>-->
+        <p>
+            Romp is primarily a command-line tool that lets you create and install packages. 
+        </p>
+
+        <div class="downloaf-box">
+            <div class="left">
+                <h3>Romp for Visual Studio - <i>Preview</i></h3>
+                <div>
+                    <a href="https://github.com/Inedo/VsRomp" target="_blank">Source Code</a>
+                    &nbsp; &bull; &nbsp;
+                    <a href="/support/documentation/romp/extensibility/visual-studio" target="_blank">Documentation</a>
+                </div>
+            </div>
+            <div class="right">
+                <div><a class="download" href="https://github.com/Inedo/VsRomp/releases" target="_blank" onclick="_gaq.push(['_trackEvent', 'vsromp-extension', 'download', 'visualstudio']);">Download the Tech Preview</a></div>
+
+            </div>
+        </div>
+        <p>
+            <strong>Note: this is currently a technical preview</strong> - Romp for Visual Studio is a plugin that makes it even easier to build Romp packages for your application components.
+        </p>
+
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1115" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="proget,artifactory" />
+    <title>A Comparison: Artifactory vs ProGet</title>
+</head>
+<body>
+    <p>
+        <a href="http://www.jfrog.com/artifactory/">Artifactory</a> and <a href="/proget">ProGet</a> are both enterprise level Universal Package (artifact) Repositories and are quite similar in function; in fact, if you read the marketing bullets they’d probably sound identical.
+        Before we developed ProGet we were Artifactory users, which gave us the unique ability to learn from JFrog’s tool and take into consideration some of the challenges when building our own product.
+    </p>
+
+
+    <h2>Packages vs. Artifacts</h2>
+
+    <p>
+        This is the fundamental difference between ProGet and Artifactory. ProGet was originally designed as a NuGet package manager and Artifactory for Maven. Packages and artifact inherently mean different things.
+    </p>
+
+    <p>
+        Artifacts are simply an output or collection of files (ex. JAR, WAR, DLLS, RPM etc.) and one of those files may contain metadata (eg. POM file).
+        Whereas packages are single archive files of a well-defined format (ex. NuGet) that contain files appropriate for the package type (ex. DLL, PDB).
+        This fundamental difference has impacted the way each tool was developed; Artifactory has repositories and ProGet has feeds.
+        Repositories are conceptually structured like a disk; similar to folder and files, whereas feeds have API search, query, and access packages.
+    </p>
+
+
+    <h2>Built on .NET for .NET</h2>
+
+    <p>
+        ProGet was originally developed as a package manager for NuGet.
+        With our roots in .NET, features like the Built-in Symbol Server and Chocolatey support often make it the leading choice for those who develop primarily or sole on .NET.
+        ProGet also has a limited – but powerful – free version that suits the needs of many teams large and small alike.
+    </p>
+
+
+
+    <h2> JFrog vs. Inedo</h2>
+
+    <p>
+        Another aspect worth noting is the company focus.
+        With their three tools Artifactory, Bintray, and Mission Control, JFrog’s main concentration is on artifact management.
+        Their tools answer a specific need and fulfill a singular aspect of your DevOps toolchain.
+        At Inedo, we are the makers of multiple DevOps products spanning a boarder segment of your toolchain and offer a more holistic approach to your software development process.
+    </p>
+
+
+    <h2> Battle of the Brands</h2>
+
+    <p>
+        JFrog and Inedo are both five letter names, one’s green and the other’s red.
+        JFrog is full of fun puns like “once you leap forward, you won’t go back” and with their awesome art like the <a href="https://twitter.com/jfrog/status/639110969466097665">"Bat Frog"</a> and <a href="https://twitter.com/jbaruch/status/657606783297417217">“Frog Father”</a>
+        we’ll concede, they’re the clear winner in the pun department.
+        But with our tool <a href="/otter"> Otter</a>, we 'otta' have a lot more puns coming soon!
+    </p>
+
+
+    <h2> Best of Both worlds: ProGet + Artifactory</h2>
+
+    <p>
+        Artifactory is feature heavy and contains many different feed types; in contrast,
+        ProGet has similar feeds types (with more on the horizon) but excels in specific areas like .NET/NuGet support with its built-in Symbol Server.
+        Artifactory has a more developed Maven/Java support compared to ProGet’s Maven support.
+        For those who develop on both Java and .NET a combination of both tools complement each other nicely and provide the “best of both worlds”.
+    </p>
+
+
+    <h2 id="terminology">Artifactory Terminology vs ProGet Terminology</h2>
+
+    <p>If you're already familiar with Artifactory, this may help explain similar concepts.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Artifactory</th>
+                <th>ProGet</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Artifact</td>
+                <td><a href="/support/documentation/proget/core-concepts/packages">Package</a></td>
+                <td>Essentially one of two things: a library or an application</td>
+            </tr>
+            <tr>
+                <td>Remote Repository</td>
+                <td><a href="/support/documentation/proget/core-concepts/connectors">Connector</a></td>
+                <td>This is where filtering and regulation of assets occurs </td>
+            </tr>
+            <tr>
+                <td>Virtual Repository</td>
+                <td><a href="/support/documentation/proget/feed-types/nuget">Feed</a></td>
+                <td>ProGet started as a NuGet repository Manager, it uses the NuGet terminology “Feeds”</td>
+            </tr>
+            <tr>
+                <td>Generic Repository</td>
+                <td><a href="/support/documentation/proget/feed-types/universal">Universal Feed</a></td>
+                <td>Designed for application package management </td>
+            </tr>
+            <tr>
+                <td>High Availability</td>
+                <td><a href="/support/documentation/proget/core-concepts/high-availability">Enterprise</a></td>
+                <td>Both have automatic failover, ProGet doesn’t require session affinity</td>
+            </tr>
+
+        </tbody>
+    </table>
+ 
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Create Den Item</title>
+    <link rel="stylesheet" type="text/css" href="/my/den.css" />
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+</head>
+<body>
+    <div id="banner" class="content-container">
+        <div class="content">
+            <div class="button-set left">
+                <div class="button">
+                    <a href="${DenUrl}">&#xab; Back to Den</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="content">
+            <h3>Create New Item</h3>
+
+            <form action="/my/den/create-item/post" method="post">
+                <inedo:if-error>
+                    <div class="info">
+                        <p><inedo:error-message /></p>
+                    </div>
+                </inedo:if-error>
+
+                <label for="name" class="field">
+                    <b>Name:</b>
+                    <input type="text" id="name" name="name" value="${Name}" required="" maxlength="255" pattern="^[0-9A-Za-z_-]+$" />
+                </label>
+
+                <label for="type" class="field">
+                    <b>Type:</b>
+                    <select id="type" name="type" required="">
+                        <option value="">Choose a type...</option>
+                        <inedo:type-option value="Extension">Extension</inedo:type-option>
+                        <inedo:type-option value="Raft">Raft</inedo:type-option>
+                        <inedo:type-option value="Tool">Tool</inedo:type-option>
+                    </select>
+                </label>
+
+                <label for="description" class="field">
+                    <b>Description:</b>
+                    <inedo:description-editor />
+                </label>
+
+                <label for="githubUrl" class="field">
+                    <b>GitHub URL:</b>
+                    <input type="url" id="githubUrl" name="githubUrl" value="${GitHubUrl}" required="" maxlength="255" pattern="^https://github\.com/.+" />
+                </label>
+
+                <input type="submit" value="Create Item" />
+
+                ${HiddenFields}
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+@import "..\resources\styles\library";
+
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@inedo-lightblue: #10466E;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+
+
+.content-container#banner {
+    padding: 30px 0;
+    margin: 0;
+    
+    background-color: #a8ca35;
+    text-align: center;
+
+    .banner-sec {
+        background-color: #a8ca35;
+        img {
+            width: 325px;
+        }
+    }
+}
+
+.content-container#den-mini-nav {
+    background-color: #353535;
+    padding: 5px 0;
+    .content {
+        ul {
+            text-align: center;
+            list-style: none;
+            padding: 0;
+            list-style-type: none;
+            margin: 0;
+        }
+
+        li {
+            display: inline-block;
+            font-size: 85%;
+            padding: 0;
+            margin: 0 20px;
+        }
+
+        a {
+            color: @inedo-lightgrey;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+
+        a:hover {
+            color: #a8ca35;
+        }
+    }
+}
+
+.content-container#search-area {
+    .content {
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        input {
+            margin: 20px 0 20px 190px;
+            height: 24px;
+            font-size: 14px;
+            padding: 5px 10px;
+            width: 600px;
+        }
+    }
+}
+
+.content-container#den-filter-bar {
+    .content {
+        .tags {
+            position: absolute;
+
+            ul {
+                margin: 0;
+                padding: 5px 0 0 0;
+                font-weight: 400;
+                font-size: 14px;
+            }
+
+            li {
+                //display: block;
+                list-style-type: none;
+                margin: 10px 0;
+                padding: 0;
+                color: #10466e;
+                box-shadow: 1px 1px 4px @inedo-darkgrey;
+                background-color: @inedo-white;
+                text-align: center;
+            }
+
+            a {
+                display: inline-block;
+                text-decoration: none;
+                padding: 5px 10px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            a:hover, a.selected {
+                color: @inedo-white;
+                background-color: @inedo-darkgrey;
+            }
+        }
+    }
+}
+
+.content-container#items {
+    min-height: 1100px;
+
+    .content {
+        .row {
+            margin-left: 200px;
+
+            .extension-box {
+                float: left;
+                width: 240px;
+                height: 273px;
+                margin: 12px;
+                box-shadow: 1px 1px 4px @inedo-darkgrey;
+                position: relative;
+
+                .identity-logo-container {
+                    max-height: 24px;
+                    max-width: 24px;
+                    position: absolute;
+                    right: 0;
+                    top: 5px;
+
+                    img {
+                        max-height: 20px;
+                        max-width: 20px;
+                        display: inline;
+                        padding: 0;
+                        margin: 0;
+
+                        &.uninclused {
+                            filter: grayscale(100%);
+                            opacity: 0.3;
+                        }
+                    }
+                }
+
+                img {
+                    width: 190px;
+                    max-height: 125px;
+                    display: block;
+                    margin: 0 25px;
+                }
+
+                .extension-info {
+                    color: @inedo-darkgrey;
+                    height: 110px;
+
+                    p {
+                        padding: 0 10px 0 10px;
+                        margin: 0;
+                        font-size: 13px;
+                        padding-bottom: 5px;
+                    }
+
+                    .title {
+                        padding-top: 5px;
+                        font-weight: bold;
+                    }
+
+                    .description {
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 4;
+                        display: -webkit-box;
+                        max-height: 1.5 * 13px * 4;
+                        overflow-y: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+
+                .supported-by {
+                    background-color: @inedo-grey;
+                    width: 240px;
+                    height: 30px;
+                    margin-top: 8px;
+
+                    img {
+                        max-height: 18px;
+                        max-width: 49px;
+                        position: absolute;
+                        margin: 5px 5px 0 180px;
+
+                        &.community {
+                            max-width: 90px;
+                            margin: 7px 5px 0 140px
+                        }
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.content-container#submit {
+    h3 {
+        text-align: center;
+        border-bottom: 3px solid #a8ca35;
+        padding-bottom: 20px;
+        margin: 20px 160px;
+        color:#a8ca35;
+    }
+            .button-set {
+            padding-top: 10px;
+            .button {
+                background-color: @inedo-white;
+                border: 3px solid #a8ca35;
+                    a {
+                        text-decoration: none;
+                        color:#a8ca35;
+                        font-weight: bolder;
+                    }
+            }
+        }
+}
+
+@media print {
+    #banner {
+        display: none !important;
+    }
+
+    #den-mini-nav {
+        display: none !important;
+    }
+
+    #submit {
+        display: none !important;
+    }
+
+    .extension-box {
+        page-break-inside: avoid;
+    }
+}

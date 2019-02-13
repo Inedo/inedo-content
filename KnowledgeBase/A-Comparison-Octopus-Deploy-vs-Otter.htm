@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta name="id" content="1114" />
+      <meta name="description" content="" />
+      <meta name="keywords" content="otter,proget,octopus-deploy" />
+      <title>A Comparison: Octopus Deploy vs Otter</title>
+  </head>
+  <body>
+  <style>
+      .main-content h2 {font-size:180%;}
+      .main-content h3 {font-size: 170%; }
+  </style>
+    <p>
+		Although <a href="http://octopusdeploy.com/">Octopus Deploy</a> and <a href="/otter">Otter</a> are different types of products, they can both be used to automate ASP.NET Sites and Windows Services. 
+        A side-by-side comparison would be a bit like Air Jordan vs Tesla: they’re different tools that can help you get to the same place, albeit in different manner. 
+        Moreover, there's nothing wrong with having and using both.
+	</p>
+    <p>
+		Already familiar with Octopus Deploy? The <a href="#terminology">terminology comparison</a> may help you get a quicker understanding of Otter.
+	</p>
+	<h2>Deployment Automation vs Infrastructure as Code</h2>
+	
+    <p>
+		<strong>Deployment Automation</strong> tools perform a one-way, one-time "push" of a set of packages to a group of servers. As part of this process, various scripts may executed to configure the package, such as IIS, Windows Service Manager, etc. 
+	</p>
+	<p>
+		<strong>Infrastructure as Code</strong> tools continuously ensure that a group of servers is configured in a specific manner; this includes a specific version of a package, as well as configuration for hosts such as IIS, Windows Service Host, etc.
+	</p>
+	<p>
+		Although neither category of tool is designed for <strong>Application Release Automation</strong>, many organizations simply don’t have the need for orchestrating complex, multi-team release processes, and can simply use base application package deployment instead.
+	</p>
+	<p>
+		However, as both Development and Operations teams and solutions become more integrated, Infrastructure as Code is quickly becoming a preferred vehicle for application package deployment because it offers:
+	</p>
+	<ul>
+		<li>
+		<strong>Drift (Change) Detection</strong> - Infrastructure as Code tools will automatically detect (and optionally remediate) any unplanned changes to an application or configuration; with Deployment Automation, you rely that nothing has changed since the last one-off deployment
+		</li>
+		<li>
+		<strong>Built-in Scalability</strong> - with Infrastructure as Code, you can simply set-up a new server, assign the appropriate role to it, and the tool will ensure it has all the necessary configuration and applications; a Deployment Automation would require a special one-off deployment
+		</li>
+		<li>
+		<strong>Literally "code"</strong> - although you can certainly store the scripts by a Deployment Automation tool in source control, the configuration of which steps and scripts to run (as well as the variables, etc) are not versioned, and are only editable in the web UI; with Infrastructure as Code, the configuration is literally code (and with Otter, it can be easily edited in the UI as well) 
+		</li>
+		<li>
+		<strong>Unified Configuration</strong> - an Infrastructure as Code approach allows both Development and Operations teams to see how servers are configured, and how that may impact applications and performance; with Deployment Automation, server configuration is often embedded within the application deployment scripts
+		</li>
+	</ul>
+    <h2>Basic Deployment Steps vs Execution Engine</h2>
+    <p>
+		Octopus Deploy runs one or more "steps" when deploying a package. The primary step is the <a href="http://docs.octopusdeploy.com/display/OD/Deploying+packages">Deploy NuGet Package Step</a>, which copies the package contents to a target directory, and depending on which"features" are selected, performs rudimentary configuration for IIS website, Windows Service, etc. <a href="http://docs.octopusdeploy.com/display/OD/Custom+scripts">Custom PowerShell Scripts</a> are executed before and/or after the step runs to fill in any gaps.
+	</p>
+	<p>
+		Otter, on the other hand, uses an <a href="/support/documentation/otter/execution-engine/overview">advanced execution engine</a> that's capable of running thousands of different operations and scripts on thousands of different servers. The execution engine has a lot of features to enable this flexibility and scalability, and the features to be easy to learn, especially if you're already familiar with general scripting or programming concepts.
+	</p>
+	<p>
+		<img src="/otter/otter-text.gif" alt="Visual Editor" />
+	</p>
+	<p>
+		<a href="/support/documentation/otter/core-concepts/plans">Configuration plans</a> direct the execution engine, and provide an easy-to-understand, visual representation of configuration and orchestration, while also being the "code" behind your Infrastructure as Code.
+	</p>
+	<h2>PowerShell Integration</h2>
+    <p>
+		PowerShell is the standard for automating configuration on Windows servers.
+	</p>
+	 <p>
+		Octopus Deploy offers <a target="blank" href="http://docs.octopusdeploy.com/display/OD/Custom+scripts">a few options</a> for executing a user- or community-written PowerShell script:  before, after deployment, or on error. You can also create a custom "step" using PowerShell.
+	</p>
+	 <p>
+		Otter, on the other hand, was designed to seamlessly integrate with PowerShell, and offers not only basic PowerShell execution (similar to Octopus, through the <a href="\support\documentation\otter\modeling-infrastructure\powershell#calling-powershell-scripts">PSCall Operation</a>), but other tight integration points: 
+	</p>
+	<h3>Inline PowerShell Execution</h3>
+	<p>
+	Within Otter's "Infrastructure as Code" plans, you can use <a href="/support/documentation/otter/reference/operations/powershell/psexec">PSExec</a> and <a href="/support/documentation/otter/reference/otter-script/strings-and-literals#string-syntax">swim strings</a> to directly incorporate and execute PowerShell: 
+	</p>
+	<p>
+	<pre>psexec >>
+  # delete all but the latest 3 logs in the log directory
+  Get-ChildItem "E:\Site\Logs\$ApplicationName" |
+     Sort-Object $.CreatedDate -descending |
+     Select-Object -skip 3 |
+     Remove-Item
+>>;
+	</pre>
+	</p>
+	
+	<p>
+	Otter will seamlessly replace variables within your PowerShell script, so in the example above $ApplicationName might be defined as a <a href="/support/documentation/otter/global-components/configuration-variables">configuration variable</a>.
+	</p>
+	<h3>Evaluating PowerShell Literals</h3>
+	<p>
+	With Otter's <a href="/support/documentation/otter/reference/operations/powershell/pseval">PSEval</a>, you can quickly evaluate PowerShell expressions as variable values. For example, say that you wanted to convert the value stored in one variable ($minutes) to milliseconds. You could PSEval the simple expression $minutes * 60 * 1000: 
+	</p>
+	<p>
+		<pre>set $milliseconds = $PSEval($minutes * 60 * 1000);</pre>
+	</p>
+	<p>
+	$PSEval actually runs the expression on the server currently in context, so use it inside of an <a href="/support/documentation/otter/execution-engine/statements-and-blocks/if-else">If/Else Block</a> to perform different operations depending on the results of the expression on that server. 
+	</p>
+	<h3>Animals: Octopuses vs Otters</h3>
+	<p>
+	Octopuses (or <a target="blank" href="http://grammarist.com/usage/octopi-octopuses/">octopi</a> if you if you prefer) and otters are both incredible species, known not only for their mischievousness and playfulness, but their cunningness and unexpected brawn. Though many would argue that otters win hands-down in the adorableness department, octopuses can be <a target="blank" href="http://blogs.discovermagazine.com/d-brief/2015/06/16/adorable-octopus-name">just as cute</a>.
+	</p>
+	<h3>Otter for Orchestration</h3>
+	<p>
+	Using Infrastructure as Code for all automation tasks isn't appropriate, and that's why Otter offers orchestration plans as well.
+	</p>
+	<p>
+	Orchestration plans are quite a bit simpler: they just use the same, advanced <a href="/support/documentation/otter/execution-engine">execution engine</a> to execute operations and scripts on servers. Unlike configuration plans, orchestration plans don't run continuously. Instead, you scheduled them to run (either in the future, or on a recurring basis) using an <a href="/support/documentation/otter/core-concepts/jobs">orchestration job</a>. 
+	</p>
+	<p>
+	This simplicity also makes them hard to describe in detail, because they can be used to do just about anything:
+	</p>
+	<ul>
+		<li>Installing patches or other changes to 1000's of servers</li>
+		<li>Spinning up and configuring multiple virtual servers</li>
+		<li>Execute existing scripts in a controlled and visible manner</li>
+		<li>Provisioning bare-metal hardware</li>
+		<li>Deploying <a href="/proget">ProGet packages</a></li>
+	</ul>
+	
+	<h3 id="terminology">Terminology Map</h3>
+	
+    <table>
+      <tr>
+        <th>Octopus</th>
+        <th>Otter</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td>
+          Tentacle
+        </td>
+        <td>
+			Agent
+		</td>
+        <td>
+
+		</td>
+      </tr>
+      <tr>
+        <td>
+          Package
+        </td>
+        <td>
+		Package
+		</td>
+        <td>
+		In both cases, packages are stored in a repository, such as universal package manager like ProGet
+		</td>
+      </tr>
+      <tr>
+        <td>
+         Environment
+        </td>
+        <td>
+		 Environment
+		</td>
+        <td>
+		Otter offers nested environments, which helps with visualization and privileges
+		</td>
+      </tr>
+	  <tr>
+        <td>
+         Role
+        </td>
+        <td>
+		Server Role
+		</td>
+        <td>
+		</td>
+      </tr>
+	  <tr>
+        <td>
+         Variables
+        </td>
+        <td>
+		Variables
+		</td>
+        <td>
+		Octopus Deploy has only string (scalar) variables. Otter offers three types: strings, lists, and dictionaries.
+		</td>
+      </tr>
+	  <tr>
+        <td>
+         Steps
+        </td>
+        <td>
+		Plans / Operations
+
+		</td>
+        <td>
+		Steps in Octopus range from the all-encompassing Deploy NuGet Package Step to a simple custom PowerShell script; in Otter, these may be handled with plans and/or operations
+		</td>
+      </tr>
+	  <tr>
+        <td>
+         Password prompt
+        </td>
+        <td>
+		Resource credentials 
+
+		</td>
+        <td>
+		Otter securely stores credentials, optionally restricting access to them by environment, so that passwords can be safely managed without prompts
+		</td>
+      </tr>
+	  <tr>
+        <td>
+         Scheduled Deployments
+        </td>
+        <td>
+		Scheduled Jobs
+		</td>
+        <td>
+		Otter can be configured to automatically remediate configuration drift, or you can schedule when the remediation occurs.
+		</td>
+      </tr>
+	  	  <tr>
+        <td>
+         Run steps in parallel
+        </td>
+        <td>
+		<a href="/support/documentation/otter/execution-engine/statements-and-blocks/general-blocks#async">Asynchronous Blocks</a>
+		</td>
+        <td>
+		With Otter’s Execution Engine, Operations can be run in
+		</td>
+      </tr>
+    </table>
+  </body>
+</html>

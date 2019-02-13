@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1154" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="otter, upgrade-notes" />
+    <title>Upgrade Notes for Otter 2.0</title>
+    <style type="text/css">
+        .green {
+            color: mediumseagreen;
+        }
+        .red {
+            color: #c0504d;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="/otter/2.0">Otter 2.0</a> is major release with the following changes:</p>
+    <ul>
+        <li>Automatic Agent Updates (<span class="green">new feature</span>)</li>
+        <li>Installed Universal Packages shown in Packages Tab (<span class="green">new feature</span>)</li>
+        <li>Plan &amp; Asset Versioning (<span class="green">new feature</span>)</li>
+        <li>Updated UI</li>
+        <li>Custom Extensions should use Inedo.SDK instead of Inedo.Otter.SDK</li>
+    </ul>
+
+    <h2>Breaking Changes</h2>
+    <p>
+        The changes from Otter v1 to Otter v2 are minimal; however there are breaking changes in some cases:
+    </p>
+
+    <h3>Custom Extensions - Inedo SDK</h3>
+    <p>
+        Any custom extensions <b>must</b> be rebuilt against the <a target="_blank" href="/support/documentation/various/inedo-sdk/the-sdk">InedoSDK</a>.
+        This can be accomplished simply by removing the Inedo.Otter.SDK NuGet package from your project and then installing the
+        <a target="_blank" href="https://www.nuget.org/packages/Inedo.SDK/">Inedo.SDK</a> NuGet package. Visit the <a target="_blank" href="/support/documentation/various/inedo-sdk/creating">creating an extension</a>
+        documentation for more information on formatting the output and installing the extension.
+    </p>
+    <p>
+        The required code changes are:
+    </p>
+    <ul>
+        <li>
+            <b>Namespaces</b> - rename namespaces such that any reference to <code>Inedo.Otter.XXXXX</code>
+            is changed to <code>Inedo.XXXXX</code>. The list of namespaces is found in the <a target="_blank" href="/support/sdk-reference/inedosdk">SDK Reference</a>
+        </li>
+        <li>
+            <b><code>RemoteCollectAsync(IRemoteOperationExecutionContext)</code></b> - this method override should be updated
+            to accept <code>IRemoteOperationCollectionContext</code> instead
+        </li>
+    </ul>
+    <p>
+        Additionally, the <code>DB</code> class was removed. There is no current workaround for this besides querying the database
+        directly. Common infrastructure and components (e.g. servers, roles, configuration values) should be 
+        accessed via the <code><a href="/support/sdk-reference/inedosdk/Inedo/SDK">SDK</a></code> class.
+    </p>
+
+    <h2>New Features &amp; Non-Functional Changes</h2>
+    <h3>Automated Agent Update</h3>
+    <p>
+        Prior to Otter v2, the Inedo Agent needed to be manually installed on servers. Now, the upgrade can be performed
+        within the software from the Servers page.
+    </p>
+    <h3>Plan &amp; Asset Versioning</h3>
+    <p>
+        Otter v2 now includes versioning for its Database Raft, and exposes versions for rafts that already supported
+        versioning in the past e.g. the Git raft.
+    </p>
+    <h3>New UI</h3>
+    <p>
+        Otter v2 has a new style, but should feel very familiar to users of v1. The UX should be mostly the same, and only the links
+        on the Administration Overview page have been modified.
+    </p>
+	<h3>Git Raft</h3>
+	<p>
+		The Git Raft has been moved to the Git extension, which must be downloaded either within Otter from the Extensions page or 
+		from <a target="_blank" href="/den/inedox/git">the Inedo Den</a> and installed manually.
+	</p>
+
+    <h2>Risk Mitigation</h2>
+    <p>Because configuration plan logic has been updated, there is a potential for unintentional changes/bugs to be introduced. To mitigate these risks: </p>
+    <ul>
+        <li>There are minor database schema changes, so make sure to <a href="/support/documentation/otter/administration/backing-up">back up your Otter instance</a> in order to do a rollback.</li>
+        <li>
+            Make sure that the installation's <code>\Extensions</code> directory (<code>Extensions.ExtensionsPath</code> in Advanced Settings)
+            is backed up prior to upgrade
+        </li>
+        <li>Test configuration and orchestration plans in earlier environments prior to working against production servers</li>
+    </ul>
+
+    <h2>Upgrade Process</h2>
+    <p>
+        Otter may be upgraded by simply running the latest installer. The agents do not need to be updated.
+    </p>
+
+
+    <h2>Rollback</h2>
+    <p>
+        Because there are database changes, a rollback will require uninstalling Otter, and then <a href="/support/documentation/otter/administration/backing-up">restoring your Otter instance</a>.
+    </p>
+</body>
+</html>

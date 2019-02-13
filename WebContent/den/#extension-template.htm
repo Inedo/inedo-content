@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Extension Test</title>
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+    <link rel="stylesheet" type="text/css" href="/den/extension-test.css" />
+</head>
+<body>
+    <div id="banner" class="content-container">
+        <div class="content">
+            <div class="button-set left">
+                <div class="button">
+                    <a href="/den/all-items">&#xab; Back to the Den</a>
+                </div>
+            </div>
+                <div class="button-set right">
+                    <div class="button">
+                        <a href="/den/submit">Submit your own &#xbb;</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+    <div id="top-info" class="content-container">
+        <div class="content">
+            <div id="amazon" class="extension-box ${ProductCode}">
+                <img src="/den/logos/${ExtensionName}-large.png" />    
+                    <div class="extension-info">
+                        <h2>${ExtensionName}</h2>
+                        <p>${ExtensionDescription}</p>
+                        <div class="extension-links">
+                            <ul>
+                                <li>Latest Version: &nbsp;${LatestVersion}</li>
+                                <li><a href="${DownloadUrl}">Download</a></li>
+                                <li><a href="${ProjectUrl}">View on GitHub</a></li>
+                                <li class="lastchild"><img src="/den/${SupportedBy}-supported-large.png" alt="${SupportedBy} supported" /></li>
+                            </ul>
+                        </div>
+                    </div>                
+            </div>           
+        </div>
+    </div>
+    <div style="clear:both"></div>
+
+    <div id="extension-sidebar" class="content-container">
+        <div class="content">
+            <div class="sidebar">
+                <inedo:related-content />
+            </div>
+        </div>
+    </div>
+
+    <div id="main-info" class="content-container">
+        <div class="content">
+            <div class="tab-content">                
+                
+                <inedo:tab-block>
+                    <tab name="Installation">
+                        <h4>Default Extension Installation</h4>
+                        <div class="attention analogy">
+                            <img src="/resources/images/icons/analogy.png" />
+                            <p>
+                                If your product installation can access the internet <i>(specifically the <code>https://inedo.com/den/feed</code> URL)</i>,
+                                simply navigate to the <b>Admin &gt; Extensions</b> page to browse and install the latest available extension versions.
+                            </p>
+                        </div>
+                        <h4>Offline or Previous Version Extension Installation</h4>
+                        <p>
+                            For installations that are restricted from accessing the internet, or if you with to install a version other
+                            than the latest, extensions can also be installed manually:
+                        </p>
+                        <ol>
+                            <li>
+                                Download the desired version of the extension:
+                                <ul>
+                                    <li><a href="${DownloadUrl}">latest version</a> - <i>(v${LatestVersion})</i></li>
+                                    <li>a specific version from the <b>Releases</b> tab</li>
+                                    <li>a pre-release version from the <a href="https://proget.inedo.com/feed/Extensions">public ProGet feed</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                Copy the extension file (<code>${ExtensionName}.${FileExtension}</code>) to
+                                the extensions path. Visit the Admin &gt; Advanced Settings page within your product instance to determine where
+                                extensions are stored by examining the <b>Extensions.ExtensionsPath</b> setting.
+                            </li>
+                            <li>
+                                Ensure the file is named <i>exactly</i> <code>${ExtensionName}.${FileExtension}</code> in the extensions directory, and that
+                                <i>no other files with the same name</i> exist in that directory, even with a different extension. For example, make sure to delete an existing
+                                <code>${ExtensionName}.inedox</code> file if you are installing <code>${ExtensionName}.upack</code>
+                            </li>
+                            <li>
+                                Restart the product's Windows service: Admin &gt; Service &gt; Stop then Start (e.g. <code>INEDOBMSVC</code>, <code>INEDOPROGETSVC</code>)
+                            </li>
+                            <li>
+                                Restart the product's Web application, either the IIS application pool or the Integrated Web Server service: Admin &gt; Service &gt; Restart Web App
+                            </li>
+                            <li>
+                                Verify that the new extension has been loaded (Admin &gt; Extensions)
+                            </li>
+                        </ol>
+                    </tab>
+                    <tab name="Releases">
+                        <div class="attention technical">
+                            <img src="/resources/images/icons/technical.png" />
+                            <p>
+                                Issues tracking, release notes, and downloads are available on the <a href="${ProjectUrl}/releases">GitHub Releases</a> page.
+                                They are also listed below for convenience.
+                            </p>
+                        </div>
+                        <inedo:extension-notes />
+                    </tab>
+                    <tab name="Documentation">
+                        <div class="attention technical">
+                            <img src="/resources/images/icons/technical.png" />
+                            <p>
+                                Documentation for this extension is in the process of being migrated to GitHub.
+                            </p>
+                            <p>
+                                Visit the <a href="${ProjectUrl}/wiki">GitHub Wiki</a> of this extension for documentation, 
+                                or the <a href="/support/tutorials">Tutorials</a> section for more information.
+                            </p>
+                        </div>
+                    </tab>
+                    <tab name="Pre-Releases">
+                        <p>
+                            To access pre-release versions of this extension, you can configure your product installation
+                            to use Inedo's <a href="https://proget.inedo.com">public ProGet instance</a> to download extension packages.
+                        </p>
+                        <p>
+                            To configure your product installation to point to the pre-release feed, visit the Admin &gt; Advanced Settings page
+                            within the product installation and set the <b>Extensions.UpdateFeedUrl</b> value to:
+                        </p>
+                        <p style="background-color: #f2f2f2; padding: 10px;">
+                            <code>https://proget.inedo.com/upack/Extensions/</code>
+                        </p>
+
+                        <div class="attention best-practice">
+                            <img src="/resources/images/icons/best-practices.png" />
+                            <p>
+                                This feed has a connector configured to the default URL (i.e. <code>https://inedo.com/den/feed</code>), so
+                                if there are no pre-release versions, the latest will always be available.
+                            </p>
+                        </div>
+                    </tab>
+                </inedo:tab-block>
+
+            </div>
+            
+        </div>
+        
+    </div>
+
+
+
+
+</body>
+</html>

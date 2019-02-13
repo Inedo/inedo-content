@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html []>
+<html>
+  <head>
+    <meta name="id" content="1023" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="buildmaster, teamcity" />
+    <title>A Comparison Between BuildMaster vs. TeamCity</title>
+  </head>
+  <body>
+      <p>
+          <a href="http://www.jetbrains.com/teamcity/">TeamCity</a> and BuildMaster are different products, that solve different problems, and both are commonly used as part of a modern <a href="">DevOps Toolchain</a>. A side-by-side comparison would be a bit like Word and Excel:
+          both can be used to create forms that you'll print out, but if that's the only thing your business uses Microsoft Office for, you're certainly not doing it right.
+      </p>
+      <p>Already familiar with Jenkins? The <a href="#terminology">terminology comparison</a> may help you get a quicker understanding of BuildMaster.</p>
+  
+      <h2>Continuous Integration <br /> &nbsp; vs Application Release Automation</h2>
+
+      <p>This can really be boiled down to: Builds vs. Releases.&nbsp;</p>
+
+      <p>
+          Fundamentally, Builds and Releases vary in two distinct ways: Builds meet developer or development needs, and Releases fulfill the IT organization requirements, and deliver end results.
+          By separating tools into these unique, and separately functioning categories, you are able to address and solve, the individual problem or requirement associated with each.
+      </p>
+      <p>
+          Although CI and ARA are two distinct separate processes, to address two distinct problems, some seek a single, multi-purpose tool to do it all. Obviously, no such tool exists. Just as a Swiss army knife is no replacement for a toolbox, TeamCity is simply not suitable for implementing a modern DevOps process.
+      </p>
+      <h2>Build Jobs as the Center of DevOps?</h2>
+
+      <p>Like all Continuous Integration tools, TeamCity is focused on build automation. This is implemented primarily through <a href="https://confluence.jetbrains.com/display/TCD10/Project">Projects</a> and <a href="https://confluence.jetbrains.com/display/TCD10/Build+Configuration">Build Configurations</a>, which define <a href="https://confluence.jetbrains.com/display/TCD10/Configuring+Build+Steps">Build Steps</a>: the source control, build, and other third-party tools used to checkout, compile, and test source code.</p>
+
+      <p>Of course, since a build step could just be an arbitrary script, a job could be used to do anything. And thus, TeamCity could be used for anything&hellip; especially as a DevOps Swiss army knife!</p>
+
+      <p>But just as an all-purpose <a href="https://en.wikipedia.org/wiki/Job_scheduler">Job Scheduler</a> would be a poor choice for build automation jobs, TeamCity is an equally-poor choice for an all-purpose job scheduler. It lacks the features all other job schedulers have because it was never designed as a job scheduler.</p>
+
+      <p>Moreover, both job schedulers and build automation tools are poor choices for application release automation, and deployment.</p>
+      
+      <h2>
+          Deployers are not for Deployment
+      </h2>
+      <p>One category of the built-in Build Steps is <a href="https://confluence.jetbrains.com/display/TCD10/Deployers">Deployers</a>. Although the name implies that they might be used for application deployment, the intended usecase is much more limited: &ldquo;Deployer build runners enable TeamCity to upload artifacts to external locations in a number of ways.&rdquo;</p>
+
+      <p>There&rsquo;s a lot more involved with deploying applications than uploading artifacts; not just additional automation tasks such as service stops/starts, but process orchestration, such as approval gates, manual intervention, security, and so on.</p>
+      <h2>
+          TeamCity <em>with</em> BuildMaster
+      </h2>
+      
+      <p>Although TeamCity &nbsp;is a poor choice for release automation, it&rsquo;s definitely a proven build automation tool. 
+      This is exactly why BuildMaster has a tight integration with it; with the TeamCity &nbsp;extension, you can import build artifacts into BuildMaster,
+       apply the necessary approvals, additional testing, and deploy to production.</p>
+      
+      
+      <h2 id="terminology">TeamCity Terminology vs BuildMaster Terminology</h2>
+       <table border="1" cellspacing="0" cellpadding="2" width="700">
+      <tbody>
+        <tr>
+          <td valign="top" width="158">
+            <strong>TeamCity</strong>
+          </td>
+          <td valign="top" width="240">
+            <strong>BuildMaster</strong>
+          </td>
+          <td valign="top" width="393">
+            <strong>Additional Notes</strong>
+          </td>
+        </tr>
+        
+        <tr>
+          <td valign="top" width="158"><a href="https://confluence.jetbrains.com/display/TCD10/Project">Projects</a></td>
+          <td valign="top" width="240">Applications</td>
+            <td valign="top" width="393"></td>
+        </tr>
+       
+        <tr>
+          <td valign="top" width="158"> <a href="https://confluence.jetbrains.com/display/TCD10/Build+Configuration">Build Configuration</a></td>
+          <td valign="top" width="240">
+            <a href="/support/documentation/buildmaster/deployment-plans">Deployment Plan</a>
+          </td>
+            <td valign="top" width="393"></td>
+        </tr>
+          <tr>
+              <td valign="top" width="158"><a href="https://confluence.jetbrains.com/display/TCD10/Configuring+Build+Steps"> Build Step</a></td>
+              <td valign="top" width="240">
+                  Operation
+              </td>
+              <td valign="top" width="393"></td>
+          </tr>
+        <tr>
+          <td valign="top" width="158">Build</td>
+          <td valign="top" width="240">Release Package</td>
+            <td valign="top" width="393"></td>
+        </tr>
+       
+        
+        <tr>
+          <td valign="top" width="158"><a href="https://confluence.jetbrains.com/display/TCD10/Custom+Build+Trigger">Build Triggers</a></td>
+          <td valign="top" width="240">Release Package Triggers</td>
+            <td valign="top" width="393"></td>
+        </tr>
+       
+        <tr>
+          <td valign="top" width="158">
+            <a href="https://confluence.jetbrains.com/display/TCD10/Typical+Plugins">Plugins</a></td>
+          <td valign="top" width="240">
+            <a href="/buildmaster/extensions">Extensions</a>
+          </td>
+            <td valign="top" width="393"></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

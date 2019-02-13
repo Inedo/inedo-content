@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1150" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="proget, upgrade-notes" />
+    <title>Upgrade Notes for ProGet 5.0</title>
+    <style type="text/css">
+        .major {
+            color: #c0504d;
+        }
+    </style>
+</head>
+<body>
+ 
+
+    <p><a href="/proget/5.0">ProGet 5.0</a> is a major release with the following changes:</p>
+    <ul>
+        <li>New UI (<span class="major">new feature</span>)</li>
+        <li>Webhooks (<span class="major">new feature</span>)</li>
+        <li>NuGet feeds support SemVer 2.0</li>
+        <li>Targets .NET Framework 4.5.2 (<span class="major">configuration change</span>)</li>
+        <li>New SDK</li>
+    </ul>
+
+    <h2>Upgrade Impact</h2>
+    Although this is a major release, the upgrade represents little risk for most users.
+    Please see the <a href="/support/kb/1153">Upgrade from v2 and v3</a> if you are upgrading
+    from a version lower than 4.0.
+
+    <h3>New UI</h3>
+    <p>
+        ProGet v5.0 introduces a modified look &amp; feel that should be very familiar to users of ProGet v4.
+        The only major usability changes are:
+        <ul>
+            <li>Vulnerabilities &amp; License Rules headings are combined under "Compliance"</li>
+            <li>"Docker feeds" are now under their own heading "Containers"</li>
+            <li>Administration Overview links have been reorganized</li>
+        </ul>
+    </p>
+    <h3>Webhooks</h3>
+    <p>
+        Webhooks are a new feature; see the <a href="/support/documentation/proget/advanced/webhooks">Webhooks Documentation</a> for more information.
+    </p>
+
+    <h3>NuGet SemVer 2.0</h3>
+    <p>
+        Newly created NuGet feeds will support SemVer 2.0. Visit the <a href="/support/documentation/proget/feeds/nuget#legacy">Legacy (Quirks) documentation</a> to learn about migration for existing feeds.
+    </p>
+
+    <h3>Installation targets .NET Framework 4.5.2</h3>
+    <p>
+        ProGet v4 required NET 4.5.0, but Microsoft no longer supports that version of the framework.
+        .NET Framework 4.5.2 (or newer) is now required to install ProGet.
+    </p>
+
+    <h3>SDK Changes</h3>
+    <p>ProGet now serves extensions built against the Inedo SDK, so all custom extensions must be rebuilt before
+    they can be used in ProGet v5.0. Learn more about  <a href="/support/documentation/various/inedo-sdk/the-sdk">the Inedo SDK</a> by visiting the documentation. </p>
+
+    <h3>Reinstall Extensions</h3>
+    <p>
+        After upgrade, you may need to reinstall extensions by first deleting the files in your extensions path, and then going to Admin &gt; Extensions, and installing them from the Inedo Den.
+    </p>
+
+    <h4>Package &amp; Feed Adapters removed</h4>
+    <p>
+    </p>
+    <h4><code>PackageStore</code> replaced with <code>FileSystem</code> in SDK</h4>
+    <p>
+    </p>
+
+    <h2>Upgrade Process</h2>
+    <p>
+            ProGet may be upgraded by running the latest installer; make sure the database gets backed up (the installer will prompt
+            for this as well). Note that during upgrade, several schema changes will be applied.
+    </p>
+
+    <h2>Rollback</h2>
+    <p>
+        See <a href="/support/documentation/proget/administration/backing-up">restoring your ProGet instance</a> for how to rollback.
+    </p>
+
+</body>
+</html>

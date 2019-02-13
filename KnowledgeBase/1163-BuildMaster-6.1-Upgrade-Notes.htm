@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1163" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="buildmaster, upgrade-notes" />
+    <title>BuildMaster 6.1 Upgrade Notes</title>
+    <link type="text/css" rel="stylesheet" href="/support/documentation/_resources/documentation2.css" />
+
+    <style type="text/css">
+        .green {
+            color: mediumseagreen;
+        }
+
+        .red {
+            color: #c0504d;
+        }
+
+        code.type {
+            color: rgb(43, 145, 175);
+        }
+
+        code.keyword {
+            color: #0000ff;
+        }
+
+        kbd {
+            -moz-border-radius: 3px;
+            -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+            -webkit-border-radius: 3px;
+            -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+            color: #333;
+            display: inline-block;
+            font-family: Arial,Helvetica,sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            margin: 0 .1em;
+            padding: .1em .6em;
+            text-shadow: 0 1px 0 #fff;
+        }
+    </style>
+</head>
+<body>
+    <h3>Upgrade Notes</h3>
+    <p><a href="/buildmaster/6.1">BuildMaster 6.1</a> is a minor version with the following changes:</p>
+    <ul>
+        <li>add Git repository monitors and hooks (<span class="green">new feature</span>) (<a href="#ci">details</a>)</li>
+        <li>add variable value renderers (<span class="green">new feature</span>) (<a href="#variable-value-renderers">details</a>)</li>
+        <li>add CI Badge API (<span class="green">new feature</span>) (<a href="#badges">details</a>)</li>
+        <li>add opt-in Loupe integration (<span class="green">new feature</span>) (<a href="#ceip">details</a>)</li>
+        <li>rename "release packages" to "builds" (<span class="red">major UI change</span>) (<a href="#builds">details</a>)</li>
+        <li>Legacy BuildMaster SDK change (<a href="#sdk">details</a>)</li>
+    </ul>
+
+    <p>
+        For the complete listing of issues added to this release, see the release notes on the <a href="/buildmaster/versions">All Versions page</a>.
+    </p>
+
+    <div class="attention technical">
+        <p>If upgrading from a pre-6.0 version, please see:</p>
+        <ul>
+            <li><a href="/support/kb/1156">BuildMaster v6.0 Upgrade Notes</a></li>
+            <li><a href="/support/kb/1117">Upgrading from v5</a> </li>
+            <li><a href="/support/kb/1151">Upgrading from v3 or v4</a></li>
+        </ul>
+    </div>
+
+    <h3 id="builds">Rename "Release Packages" to "Builds"</h3>
+    <p>
+        This is effectively a UI-only change. While API arguments or properties that reference "packages" should be considered deprecated, any non-native endpoint
+        that references them (e.g. <code>/packages/deploy</code>, <code>packageId</code> or <code>packageNumber</code>) will still accept and return those properties.
+        Going forward, <code>buildId</code> and <code>buildNumber</code> should be used.
+    </p>
+    <p>
+        Compatibility with the Native API may break in this case, however most of the endpoints referenced "builds" originally.
+    </p>
+    <p>
+        For a word from Inedo's founder on the reasoning behind this change, check out his latest
+        <a target="_blank" href="/blog/i-messed-up-were-getting-back-to-builds">blog article</a>.
+    </p>
+
+    <h3>New Features</h3>
+    <p>
+        BuildMaster 6.1 includes several new CI/CD features, including:
+    </p>
+
+    <h4 id="ci">Repository Monitors &amp; Hooks</h4>
+    <p>
+        Support for monitoring Git repository changes at custom intervals and custom plans to execute once they are detected,
+        offerring far more than was possible in existing legacy build triggers. Additionally, support has been added to accept incoming
+        webhook events from GitHub and GitLab. See the
+        <a target="_blank" href="/support/documentation/buildmaster/core-concepts/builds-and-ci#continuous-integration">documentation</a>
+        for more information and examples, and also the <a target="_blank" href="https://github.com/inedo/inedox-git/wiki">Git extension wiki</a> for 
+        hook configuration of a specific host.
+    </p>
+
+    <h4 id="variable-value-renderers">Custom Variable Value Rendering</h4>
+    <p>
+        Support for rendering a release or build configuration variable with custom HTML. See the
+        <a target="_blank" href="/support/documentation/buildmaster/global-components/configuration-variables#value-renderers">documentation</a>
+        for more information and examples.
+    </p>
+
+    <h4 id="badges">CI Badges</h4>
+    <p>
+        Support for generating CI badges and links using the CI Badge API. See the
+        <a target="_blank" href="/support/documentation/buildmaster/reference/api/ci-badge">API documentation</a>
+        for more information and examples.
+    </p>
+
+    <h4 id="ceip">Customer Experience &amp; Improvement Program</h4>
+    <p>
+        Inedo has partnered with Gibraltar Software in order to integrate Loupe with our products as part of our customer
+        success initiative. This program is known as the <i>Customer Experience Improvement Program (CEIP)</i>,
+        and this opt-in program offers several benefits to both Inedo and our customers.
+    </p>
+    <p>
+        This feature is disabled by default in all existing and new installations. Visit the
+        <a target="_blank" href="/support/documentation/various/ceip/overview">documentation</a>
+        to learn how to opt-in, and more about what kind of data is collected and how Inedo uses it.
+    </p>
+
+
+    <h3 id="sdk">Legacy BuildMaster SDK</h3>
+    <p>
+        There is 1 possible breaking change between v6.0 and v6.1 of the BuildMaster SDK: <code>Execution<u>s</u>FailedEvent</code>
+        was renamed to <code>ExecutionFailedEvent</code>. In the unlikely event that this event code was consumed by an extension, it must
+        be updated to drop the "<code>s</code>", and reference the newly added <code>ExecutionId</code> event detail.
+    </p>
+    <div class="attention analogy">
+        <p>
+            Note: the Inedo SDK (available since v6.0) is not affected, and extensions built against it do not require updates.
+            However, the Inedo.SDK v1.1 version is <a target="_blank" href="https://www.nuget.org/packages/Inedo.SDK/">available from NuGet</a> going forward.
+        </p>
+    </div>
+
+    <h3>Database Changes</h3>
+    <p>
+        Since v6.0, there are minor database schema changes, and therefore if a rollback to pre-6.1 were required, the SQL database must be
+        <a href="/support/documentation/buildmaster/installation/backing-up#database-backup">restored from a backup</a>.
+    </p>
+
+</body>
+</html>

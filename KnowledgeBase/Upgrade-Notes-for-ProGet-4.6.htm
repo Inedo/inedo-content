@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta name="id" content="1138" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="proget, upgrade-notes" />
+  <title>Upgrade Notes for ProGet 4.6</title>
+  <style type="text/css">
+      .major { color: #c0504d; }
+  </style>
+</head>
+<body>
+    <p class="announcement">
+        <b>Upgrading from a version older than 4.x?</b> It is strongly recommended that you first review <a href="/support/kb/1153/upgrading-from-proget-v2-and-v3">Upgrading from ProGet v2 and v3 </a>before proceeding.
+    </p>
+  <p><a href="/proget/4.6">ProGet 4.6</a> is minor release with the following changes:</p>
+  <ul>
+    <li>Package Vulnerability Tracking (<span class="major">new feature</span>)</li>
+    <li>Amazon and Azure Package Stores are now Extensions (<a href="https://github.com/Inedo" target="_blank">source code</a>)</li>
+    <li>Miscellaneous Bug Fixes (<a href="/proget/versions">release notes</a>)</li>
+    <li>New SDK</li>
+  </ul>
+
+  <h2>Upgrade Impact</h2>
+  <p>
+    Most changes are additive but notable changes are:
+    <ul>
+      <li>"Vulnerabilities" heading added to top-level navigation</li>
+      <li><code>Vulnerabilties_Assess</code> permission added and applied to built-in Administer task</li>
+      <li><strong>Installer:</strong> The ProGet installer now installs two separate services; one is the traditional 
+      ProGet service (<code>INEDOPROGETSVC</code>), and the new one (<code>INEDOPROGETWEBSVC</code>) will host the Integrated Web Server if enabled and IIS is not used </li>
+      <li><strong>Installer:</strong> The ProGet installer automatically installs the <code>Amazon</code>, <code>Azure</code>, and <code>VorSecurity</code> extensions.
+      Visit the Extensions page within ProGet or the <a href="/den">Inedo Den</a> to download other extensions.</li>
+    </ul>
+  </p>
+
+  <h2>Upgrade Process</h2>
+  <p>
+    ProGet may be upgraded by simply running the latest installer.
+  </p>
+
+  <h2>Rollback</h2>
+  <p>
+    See <a href="/support/documentation/proget/administration/backing-up">restoring your ProGet instance</a> for how to rollback.
+  </p>
+
+</body>
+</html>

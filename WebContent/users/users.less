@@ -1,0 +1,158 @@
+﻿@import "..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+
+
+
+
+.user-accordian {
+    width: 498px;
+    margin: 0 auto;
+    padding: 1px;
+    display: inline-block;
+    float: left;
+}
+
+.user-category {
+    width: 500px;
+    height: 100%;
+
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    label {
+        position: relative;
+        z-index: 20;
+        display: block;
+        cursor: pointer;
+        background: @inedo-black;
+        border: solid 1px @inedo-white;
+
+        h2 {
+            padding: 10px;
+            margin: 0;
+            text-align: center;
+            color: @inedo-white;
+        }
+    }
+
+    label:hover {
+        background: lighten(@inedo-black, 20%);
+    }
+
+    article {
+        margin-top: -1px;
+        overflow: hidden;
+        height: 0px;
+        position: relative;
+        z-index: 10;
+        transition: height 0.3s ease-in-out;
+        text-align:center;
+
+       
+    }
+
+
+    input:checked ~ article {
+        transition: height 0.5s ease-in-out;
+       
+    }
+
+    input:checked ~ article#business_resources {
+        height: 700px;
+    }
+
+    input:checked ~ article#digital_media {
+        height: 252px;
+    }
+
+    input:checked ~ article#education_research {
+        height: 772px;
+    }
+
+    input:checked ~ article#engineering {
+        height: 724px;
+    }
+
+    input:checked ~ article#finance {
+        height: 724px;
+    }
+
+    input:checked ~ article#food {
+        height: 390px;
+    }
+
+    input:checked ~ article#gaming {
+        height: 690px;
+    }
+
+    input:checked ~ article#governmental {
+        height: 690px;
+    }
+
+    input:checked ~ article#healthcare {
+        height: 917px;
+    }
+
+    input:checked ~ article#insurance {
+        height: 492px;
+    }
+
+    input:checked ~ article#lodging {
+        height: 305px;
+    }
+
+    input:checked ~ article#manufacturing {
+        height: 1022px;
+    }
+
+    input:checked ~ article#marketing {
+        height: 624px;
+    }
+
+    input:checked ~ article#security {
+        height: 246px;
+    }
+     input:checked ~ article#software {
+        height: 904px;
+    }
+
+    input:checked ~ article#tech {
+        height: 2002px;
+    }
+}
+
+#banner {
+    //border-bottom: 2px solid @inedo-black;
+    margin-bottom: 25px;
+    .feat-users {
+        padding-top: 30px;
+        
+        .user {
+            float: left;
+            padding-right: 20px;
+            margin-bottom: 20px;
+            img {
+                width: 228px;
+                border: 1px solid @inedo-blue;
+                &:hover {
+                    box-shadow: 1px 1px 6px #444444;
+            }
+            }
+
+        }
+    }
+}
+
+.bottom-content {
+    display: inline-block;
+}
+
+#footer {
+    display: inline-block;
+    margin-top: 25px;
+}

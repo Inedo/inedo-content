@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta name="keywords" content="nuget,proget" />
+    <meta name="publish-date" content="08/18/2016 1:00 PM" />
+    <meta name="author" content="Devin Sweeney" />
+    <title>Multi-site Feed Replication in action </title>
+    <meta name="no-image" content="/blog/_resources/blog-banner.png" />
+</head>
+<body>
+    <h1>
+        Multi-Site Feed Replication in Action
+    </h1>
+    <p> 
+    Software Package Managers (NuGet, Maven, Bower, npm, etc.) are an established concept, and many enterprises use Universal Package Managers like <a href="/proget">ProGet</a> to manage and coordinate how these packages are used in the software development process.
+     Many enterprises are global organizations that have separate functioning business units that require common packages; this is where <a href="/support/documentation/proget/storage/feed-replication"> multi-site feed replication</a> comes in. 
+    </p>
+    <h2> What exactly is Replication? </h2>
+    <p> 
+    Simply put, replication is the mirroring of the same content in two otherwise mutually exclusive instances of ProGet.  
+    Many organizations need replication for things like ensuring that employees are working from the same version and ensuring that build artifacts are accessible by the necessary developer &ndash; regardless of location. 
+    </p>
+    <h2>
+        The Problem Space
+        </h2>
+            <p> 
+            Enterprises that span globally distributed locations and teams &ndash; and have multi-site data centers &ndash; often require common assets in software development. 
+            Consider the situation where New York City is the headquarters, but Singapore, Cleveland, Los Angeles, Berlin, London, Seattle, and Tokyo all do some software development. 
+            How will teams in each location know what version of a package to use? How will they access internally distributed packages? 
+            This is where multi-site feed replication can help. It provides the consistency and high performance standards our ProGet Enterprise users need in order to be successful. 
+            </p>
+            <h2> Fulfilling the Need  </h2>
+            <p> 
+            By replicating feeds across all offices, enterprises are able to ensure that best practices are established, personnel are using the correct package version, and that all packages used in software development fulfill license requirements.  
+            Take for example one of our users who is a global online auction retailer and has acquired multiple companies that specialize in the same industry at different regional locations (e.g. Berlin and Tokyo). 
+            </p>
+    <div><img class="screenshot" alt="feed-replication" src="/resources/documentation/proget/administration/complex-feed-rep.png" /></div>
+            <p>
+             Because of regional standards, regulations, norms, and localization of individual components (website, mobile apps, etc.)  each separate development team is needed. 
+            However, teams need to share and contribute packages between the different development locations. Packages such as Front-End components, login components such as user name and password fields, and other common nonfunctional components like logo files, are commonly shared and need to be accessible by other development teams.
+             For regulatory and compliance reasons, each region maintains their individual site or app, and can still maintain their own individual, nonshared feeds. Feed replication allows them to share certain packages and contribute to development across all localities. 
+                </p>
+    <h2>
+        Replication in Action
+    </h2>
+            
+             <p> For example, Berlin already has a way of implementing a feature that meets specific standards. Once the entire organization implemented feed replication, 
+            Berlin was able to share the necessary packages to all of the other development units; and when Singapore wanted to implement a similar feature, they were able to do so with ease. Fulfilling a common goal, with similar requirements without having to reinvent the wheel.
+             </p>
+
+            <h2> High Availability </h2>
+             
+            <p> 
+                    
+            Whether more stability is desired or needed, ProGet’s <a href="/support/documentation/proget/core-concepts/high-availability"> high availability</a> architecture comes not only with multi-site replication,
+            but ensures constant access to all the vital components in your development process. 
+            Even during heavy load times, ProGet maintains functionality and preserves productivity, keeping enterprise level performance standards high. 
+            Through its multi-node structure, ProGet provides a reliable, stable network with automatic failover and no single point of failure. 
+            In other words, you’ll never have to worry about what will happen when npm, NuGet, etc. experience outages. You’ll be fine, regardless of your location. Just another reason why our users choose ProGet Enterprise. 
+             </p>
+
+            <p>
+                Interested in adding ProGet to your DevOps toolchain? <a href="/proget/download">Download</a> our free trial and begin your evaluation today.
+            </p>
+
+</body>
+</html>

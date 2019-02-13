@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>The Inedo Den</title>
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+    <link rel="stylesheet" type="text/css" href="/den/all-items.css" />
+
+
+    <script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0053/9152.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+
+</head>
+<body>
+    <div id="banner" class="content-container">
+        <div class="content">
+            <div class="banner-sec">
+                <img src="/den/banner-logo-den-w.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container" id="den-mini-nav">
+        <div class="content">
+            <ul>
+                <li><a href="/den/submit">Submit Community Item</a></li>
+                <li><a href="/support/questions">Q&amp;A Forum</a></li>
+                <li><a href="https://github.com/Inedo">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-container" id="search-area">
+        <div class="content">
+            <h2>Browse our list of Extensions and Add-ons</h2>
+            <form action="/search" method="get">
+                <input name="q" type="text" placeholder="Search for Extensions and Items" />
+            </form>
+        </div>
+    </div>
+
+
+    <div id="den-filter-bar" class="content-container">
+        <div class="content">
+            <div class="tags">
+                <h4>Supported By</h4>
+                <ul>
+                    <li><a href="#supported-by=inedo">Inedo</a></li>
+                    <li><a href="#supported-by=community">Community</a></li>
+                </ul>
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#product=proget">ProGet</a></li>
+                    <li><a href="#product=buildmaster">BuildMaster</a></li>
+                    <li><a href="#product=otter">Otter</a></li>
+                </ul>
+                <h4>Function</h4>
+                <ul>
+                    <li><a href="#tags=issue-tracking">Issue Tracking</a></li>
+                    <li><a href="#tags=cloud-integration">Cloud Integration</a></li>
+                    <li><a href="#tags=package-store">Package Store</a></li>
+                    <li><a href="#tags=security">Security</a></li>
+                    <li><a href="#tags=ci">Continuous Integration</a></li>
+                    <li><a href="#tags=databases">Databases</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="/den/den-filter-bar.js" async="" defer=""></script>
+
+    <div class="content-container" id="items">
+        <div class="content">
+            <div class="row">
+                <inedo:all-extensions>
+                <div class="extension-box" data-product="${ProductNameLower}" data-tags="${Tags}" data-supported-by="${SupportedBy}" data-type="extension">
+                    <a href="/den/${ProductNameLower}/${PackageNameLower}">
+                        <div class="identity-logo-container">
+                            <img src="/den/bm-logo-24.png" class="${BuildMaster}" />
+                            <img src="/den/pg-logo-24.png" class="${ProGet}" />
+                            <img src="/den/ot-logo-24.png" class="${Otter}" />
+                        </div>
+                        <img src="${LogoUrl}" />
+                        <div class="extension-info">
+                            <p class="title">${PackageName}</p>
+                            <p class="description">
+                                ${Description}
+                            </p>
+                        </div>
+                        <div class="supported-by">
+                            <img class="${SupportedBy}" src="/den/${SupportedBy}-supported.png" />
+                        </div>
+                    </a>
+                </div>
+                </inedo:all-extensions>
+
+                <inedo:all-communityitems>
+                <div class="extension-box" data-product="${ProductNameLower}" data-tags="${Tags}" data-supported-by="community" data-type="${TypeLower}">
+                    <a href="/den/${ProductNameLower}/${PackageNameLower}">
+                        <div class="identity-logo-container">
+                            <img src="/den/bm-logo-24.png" class="${BuildMaster}" />
+                            <img src="/den/pg-logo-24.png" class="${ProGet}" />
+                            <img src="/den/ot-logo-24.png" class="${Otter}" />
+                        </div>
+                        <img src="${LogoUrl}" />
+                        <div class="extension-info">
+                            <p class="title">${PackageName}</p>
+                            <p class="description">
+                                ${Description}
+                            </p>
+                        </div>
+                        <div class="supported-by">
+                            <img class="community" src="/den/community-supported.png" />
+                        </div>
+                    </a>
+                </div>
+                </inedo:all-communityitems>
+            </div>
+        </div>
+    </div>
+
+    <div id="submit" class="content-container" style="clear:both">
+        <div class="content">
+            
+            <h3>Can't find what you're looking for?</h3>
+ 
+            <div class="button-set ">
+                <div class="button">
+                    <a href="/den/submit">Submit your own Den Item</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="id" content="1109" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="otter,puppet" />
+    <title>A Comparison: Puppet vs Otter</title>
+  </head>
+  <body>
+      <style>
+          .otter-info { background-color: #f0f0f6; border-color: #9163AA; }
+      </style>
+      <p>
+        <a href="http://puppet.com/">Puppet</a> and <a href="/otter">Otter</a> are both infrastructure automation products, and if you only read the marketing bullets, they'd probably sound identical. 
+        But they're quite different products, and this article compares and contrasts the products and the philosophies behind them.
+      </p>
+      <p>
+          Moreover, there's nothing wrong with having and using both - in fact, many organizations have Puppet, Chef, <em>and</em> Otter, because they all serve different needs for different groups.
+      </p>
+
+      <p>
+        While we are not Puppet experts, we've done a ton of research on Puppet when building Otter and, more recently, for this article. Please <a href="/contact">let us know</a> if something is inaccurate.
+      </p>
+      <p>
+          Already familiar with Puppet? The <a href="#terminology">terminology comparison</a> may help you get a quicker understanding of Otter.
+      </p>
+
+      <h2>Emerging vs Established</h2>
+
+      <p>Otter launched in 2016, whereas <a href="https://puppetlabs.com/blog/happy-10th-birthday-puppet-labs">Puppet celebrated their 10-year anniversary</a> in 2015. Puppet is <em>the</em> established tool in the space, but so are the long-term challenges in its use. From "<a href="http://ryandlane.com/blog/2014/08/04/moving-away-from-puppet-saltstack-or-ansible/">Moving Away from Puppet</a>":</p>
+
+      <blockquote><em>"[The Puppet code base] was large, unwieldy and complex, especially for our core application. Our DevOps team was getting accustomed to the Puppet infrastructure; however, Lyft is strongly rooted in the concept of &lsquo;If you build it you run it'. The DevOps team felt that the Puppet infrastructure was too difficult to pick up quickly and would be impossible to introduce to our developers as the tool they'd use to manage their own services."</em></blockquote>
+
+      <p>Although Puppet has evolved quite a bit over the past decade, its roots in Linux Configuration Management are well established, and can be awkward to transplant in today's modern, heterogeneous environments.</p>
+
+      <p class="info otter-info">Otter was not only built <em>specifically</em> for today's infrastructure challenges, but we learned the challenges of implementing Puppet.</p>
+
+      <h3>Puppet as Linux Configuration Management</h3>
+
+      <p>Long before "DevOps" and "Infrastructure as Code" were even coined, CFEngine was <em>the</em> established Linux CM. A decade later, Puppet emerged with a <a href="http://www.oreillynet.com/sysadmin/blog/2007/02/sysadmin_models_1.html">new approach</a>:</p>
+
+      <blockquote><em>one of the big differences: cfengine focuses mostly on managing textfiles, while Puppet manages semantically more powerful constructs like users, services, and packages. Thus, Puppet has higher-level models than cfengine, and if you accept my premise that model power derives from how high-level it is, that generally makes Puppet a more powerful tool than cfengine</em></blockquote>
+
+      <p>Clearly, the market agreed, and Puppet not only dominated Linux Configuration Management, but helped herald the concepts of DevOps and Infrastructure as Code.</p>
+
+      <h3 id="windows">The Windows Challenge</h3>
+
+      <p>Although Puppet and the community have built a lot of Windows modules, the tool was never designed with Windows configuration management in mind, and Windows support often feels second-class.</p>
+
+      <p>Windows and Linux are very different; not just technologically, but philosophically. Although Windows has been lately offering administrators better command-line, scripting, and detachable components, they will always be two very different operating systems.</p>
+
+      <p class="info otter-info">Otter was built with from the start with first-class Windows support (including <a href="/support/documentation/otter/modeling-infrastructure/powershell">tight integration with PowerShell</a>), and 
+      was built using Windows-friendly technologies (.NET), and doesn't need to go through layers of Ruby for core functionality. </p>
+
+      <h3 id="orchestration">The Orchestration Challenge</h3>
+
+      <p>Puppet's <a href="#abstracted-configuration">abstract configuration model</a> is it's major strength, but is also a major weakness. Orchestration &ndash; that is, getting specific servers to do specific things in a specific order, like deploying large, multi-tier applications &ndash; is extremely challenging and awkward with Puppet.</p>
+
+      <p>While Puppet's <a href="https://puppetlabs.com/puppet/puppet-apps/application-orchestration">Application Orchestration feature</a> attempts to make this easier, it's still an afterthought that utilizes the same, fundamental configuration modeling approach.</p>
+
+      <p class="info otter-info">
+          Otter was designed with built-in <a href="/support/documentation/otter/core-concepts/jobs#orchestration">orchestration jobs</a>, not just for Linux and Windows, but cloud and virtualization provisioning as well.
+          <br /><br />
+          In addition, Inedo is a Enterprise DevOps company, and our <a href="/products">entire product suite</a> and enabling tools uses the same, powerful execution engine, code base, and extensions providing a comprehensive DevOps solution. 
+
+      </p>
+
+      <h2 class="abstracted-configuration">Abstracted Configuration: <br /> Real World vs Ideal World</h2>
+
+      <p>Puppet models and abstracts configuration using <em>manifests of resources</em>. Essentially, you declaratively say "this type of server should have these resources (i.e. components installed and configured)," and Puppet will just make it happen.</p>
+
+      <p>Behind the scenes, a server with a Puppet agent installed routinely queries the Puppet master server, which uses the "facts" (current configuration) of the server to build a directed graph of resources and determine a run order. The agent then executes the necessary commands to ensure the desired state.</p>
+
+      <p>In an ideal world, the implementation details shouldn't matter, but as a decade worth of users can attest, this implementation has its challenges.</p>
+
+      <ul>
+          <li>the apparent random application of resources (i.e. not running things in the top-down order in your manifest file) is unintuitive and confusing to anyone with experience in conventional programming or scripting languages</li>
+          <li>servers are responsible for configuring themselves, which makes multi-server orchestration basically impossible</li>
+          <li>a simple task, like "just run this script" doesn't fit into the resource model and is awkward</li>
+      </ul>
+
+      <p class="info otter-info">Otter does not model configuration, but has idempotent operations that give you the <em>option</em> to model configuration. Essentially, this means your plans will /look/ like declarative configuration when need them to be, but can be procedural when they have to be.</p>
+
+      <p>Consider this simple IIS configuration (from <a href="https://forge.puppetlabs.com/puppet/iis">Puppet's IIS module</a>), and the corresponding plan:</p>
+
+      <inedo:tab-block>
+          <tab name="PuppetScript"><pre>class mywebsite {
+    iis::manage_app_pool {'my_application_pool':
+      enable_32_bit           => true,
+      managed_runtime_version => 'v4.0',
+    }
+    iis::manage_site {'www.mysite.com':
+      site_path     => 'C:\inetpub\wwwroot\mysite',
+      port          => '80',
+      ip_address    => '*',
+      host_header   => 'www.mysite.com',
+      app_pool      => 'my_application_pool'
+    }
+}</pre></tab>
+          <tab name="OtterScript"><pre># mywebsite
+{
+    Ensure-AppPool my_application_pool
+    (
+        Runtime: v4.0,
+        Enable32BitAppOnWin64: True
+    );
+    Ensure-Site www.mysite.com
+    (
+        AppPool: my_application_pool,
+        Path: C:\inetpub\wwwroot\mysite,
+        Binding: *:80:www.mysite.com
+    );
+}</pre></tab>
+      </inedo:tab-block>
+      <p>So far, both are quite clear and the difference is entirely semantics. But let's add a real-world requirement: before making any IIS changes, run a script that will detach the server from the load balancer, and then run reattach it once the site has been tested.</p>
+
+      <p>
+          This simple requirement is entirely incompatible with an abstract model of configuration, and thus is quite complex and awkward to implement in Puppet, requiring the proper 
+        <a href="https://docs.puppetlabs.com/puppet/latest/reference/lang_relationships.html#syntax-relationship-metaparameters">relationship metaparameters</a> for those commands.
+      </p>
+
+      <p class="info otter-info">With Otter, just add the "detach" operation at the beginning of the block and the "attach" operation at the end. By default, the block will run only if any of the "ensure" operations indicate configuration drift.</p>
+
+      <h2>Change Management and Compliance</h2>
+
+      <p>DevOps isn't <em>only</em> about faster cycles, it's about <em>responsible</em> cycles, which sometimes means process.</p>
+
+      <p>The idea of automatically remediating configuration drift is generally expected in a Linux Configuration Management tool, but can be a terrifying idea to governance and compliance personnel in enterprise organizations.  Over the years, Puppet has struggled to balance these two mindsets.</p>
+
+      <p>Puppet used to offer a dedicated "compliance tool", but has since replaced it with the <a href="https://docs.puppetlabs.com/pe/latest/compliance_alt.html">Compliance Alternate Workflow</a>. It's a bit awkward to use:</p>
+
+      <ul>
+          <li>Instead of running Puppet agent in its default mode, run it in "no op" mode, which causes Puppet to detect changes and simulate changes, without automatically enforcing the desired state</li>
+          <li>In the console, look for "pending" events and node status. "Pending" is how the console represents detected differences and simulated changes.</li>
+          <li>Run the agent in the default mode when you are ready to approve the changes</li>
+      </ul>
+
+      <p class="info otter-info">Compliance is built in to Otter. Servers can be configured to automatically remediate drift or simply report on it and give you the option to schedule a job to automatically remediate the drift. These are all first class concepts, as opposed to afterthoughts.</p>
+
+      <h2>Puppet's DSL vs Otter Plans</h2>
+
+      <p>Puppet is often criticized for having its own, domain specific language (DSL) for configuration management. <a href="https://puppetlabs.com/blog/why-puppet-has-its-own-configuration-language">According to</a> PuppetLabs CEO Luke Kaines:</p>
+
+      <blockquote><em>Most people love the language and find it the simplest way of expressing their configurations, but some are frustrated by how simple it is and wish they had a full Turing-complete language like Ruby for specification</em></blockquote>
+
+      <p>PuppetScript is tightly coupled to its <a href="#abstracted-configuration">abstract configuration model</a>, and although <a href="https://docs.puppetlabs.com/guides/language_history.html">it has evolved</a> over the years, procedural constructs like loops, conditionals, and error handling are awkward when compared with normal, procedural code.  This is, understandably, where most of the frustration comes in.</p>
+
+      <h3>Yet Another Language to Learn</h3>
+
+      <p>Some critics have claimed that a DSL is "yet another language" to learn, thereby increasing the learning curve and organizational adoption. Otter's visual plan editor essentially flattens the learning curve; not just the Otter's DSL, but of the individual operations and their arguments.</p>
+
+      <p><img src="/otter/otter-text.gif" alt="Otter In Action" /></p>
+
+      <p>And because you can switch between visual- and text-modes, learning OtterScript and Otter is a easy.</p>
+
+      <h3>PuppetScript vs OtterScript</h3>
+
+      <p>Puppet was built for configuration management, and PuppetScript is a declarative language that <em>describes</em> configuration.</p>
+
+      <p class="info otter-info">Otter, on the other hand, was built for infrastructure configuration <em>and</em> orchestration, and OtterScript is a procedural language that <em>describes</em> a declarative configuration plan or procedural orchestration plan.</p>
+
+      <p>Because of these fundamental differences, comparing the languages feature-for-feature is not all that helpful, although it is worth noting that OtterScript is much simpler than PuppetScript.</p>
+
+      <p>For example, unlike Puppet's <a href="https://docs.puppetlabs.com/puppet/4.3/reference/lang_expressions.html">Expressions</a>, OtterScript 
+      <a href="/support/documentation/otter/reference/otter-script/strings-and-literals">literal expressions</a>
+      do not support arithmetic expressions, or anything other than 
+      <a href="/support/documentation/otter/reference/otter-script/strings-and-literals#literal-evaluation">variable expansion</a>.  
+      While it may seem limiting, OtterScript instead relies on 
+      <a href="/support/documentation/otter/execution-engine/runtime-variables#variable-functions">variable functions</a>
+       and <a href="/support/documentation/otter/modeling-infrastructure/powershell">tight scripting integration</a>
+      to accomplish effectively the same thing, using the method and language of your choice.</p>
+
+      <tab-block>
+          <tab name="PuppetScript"><pre>$value = (48 + 1) /2 * 7
+debug("The answer is ${value}") 
+</pre></tab>
+          <tab name="OtterScript"><pre>set $value = $PSEval((48 + 1) /2 * 7);
+Log-Debug The answer is $value;</pre></tab>
+      </tab-block>
+      
+
+      <p>In the example above, PSEval is using PowerShell to evaluate the expression. If the relatively minor performance overhead of using the PowerShell runtime were to ever be a concern, then writing a $EvalMath variable function to parse and evaluate the expression would be quite easy.</p>
+
+      <h2 id="terminology">Puppet Terminology vs Otter Terminology</h2>
+
+      <p>If you're already familiar with Puppet, this will compare and contrast the terms used.</p>
+
+      <table>
+          <thead>
+              <tr>
+                  <th>Puppet</th>
+                  <th>Otter</th>
+                  <th>Notes</th>
+              </tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                  <td>Agent</td>
+                  <td><a href="/support/documentation/otter/administration/agents">Agent</a></td>
+                  <td>Same, except Otter agents are used only for Windows servers</td>
+              </tr>
+              <tr>
+                  <td>Catalog</td>
+                  <td>-</td>
+                  <td>Otter doesn't have a term for this, but this is accomplished as part of a routine configuration execution</td>
+              </tr>
+              <tr>
+                  <td>Facts</td>
+                  <td><a href="/support/documentation/otter/core-concepts/servers#configuration">Configuration</a></td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Manifest</td>
+                  <td><a href="/support/documentation/otter/core-concepts/plans#configuration">Configuration&nbsp;Plan</a></td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Module</td>
+                  <td><a href="/support/documentation/otter/global-components/rafts">Raft</a>&nbsp;or&nbsp;<a href="/support/documentation/otter/administration/extensions">Extension</a></td>
+                  <td>
+                      Highly reusable components are generally created as extensions, whereas bundled configuration
+                      is created as a raft
+                  </td>
+              </tr>
+              <tr>
+                  <td>Node</td>
+                  <td><a href="/support/documentation/otter/core-concepts/servers">Server</a></td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Puppet&nbsp;master</td>
+                  <td><a href="/support/documentation/otter/administration/architecture">Otter&nbsp;server</a></td>
+                  <td>See <a href="/support/documentation/otter/administration/architecture">Architecture &amp; Components</a></td>
+              </tr>
+              <tr>
+                  <td>Resource</td>
+                  <td><a href="/support/documentation/otter/execution-engine/overview#operations">Operation</a>&nbsp;or&nbsp;<a href="/support/documentation/otter/core-concepts/assets">Asset</a></td>
+                  <td></td>
+              </tr>
+          </tbody>
+      </table>
+
+      
+
+
+  </body>
+</html>

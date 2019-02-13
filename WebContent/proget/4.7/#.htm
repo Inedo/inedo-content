@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ProGet 4.7 Overview</title>
+    <meta name="include-client-resources" content="fancybox131" />
+    <meta name="SideBarName" content="pg-roadmap" />
+
+    <style type="text/css">
+        .content-container .inner-container img.small-image {
+            max-width: 300px;
+        }
+
+        .release-feature ul {
+            list-style-image: none;
+            display: inline-block;
+            margin: 20px 100px 0px 0px;
+        }
+
+            .release-feature ul li {
+                list-style-image: none;
+                list-style-type: circle;
+                margin-left: 20px;
+            }
+    </style>
+</head>
+<body>
+    <h1 class="big"><img src="/proget/proget-logo.png" alt="ProGet" /> 4.7 has been released!</h1>
+    <p class="info">
+        <b>Note:</b> This is not the latest version of ProGet.
+    </p>
+    <div class="release-feature">
+        <p>
+            ProGet is a Universal Package Manager that lets you host and manage not only your in-house packages, but also an ever growing list of 
+            external repositories including PowerShell, Bower, RubyGems, NuGet, Docker, and many more!
+            It was designed from the ground-up to be fast and easy to use, for both personal, and enterprise use.
+        </p>
+        <p>
+            Upgrading? Make sure to check out the <a href="/support/kb/1147">Upgrade Notes for ProGet 4.7</a>
+        </p>
+    </div>
+
+    <div class="release-feature">
+        <h3>Introducing License Filtering</h3>
+        <p>
+            ProGet Enterprise, Basic, and Load-Balanced now support License Filtering. License filtering is important for compliance, 
+            and allows organizations to block the download of unacceptable licenses. Thus protecting personnel from 
+            developing with unapproved licenses, and violating copy rights, rights of use, or conditions. 
+        </p>
+        <p>
+            License filtering is also especially useful for organizations whose separately functioning business units both use 
+            the same instance of ProGet, with separate feeds, but one has more stringent licensing guidelines.
+        </p>
+        <img src="/proget/4.7/proget-license-filtering.png" />
+      <p>
+          License Filtering works by comparing a table of known licenses, against the license field of a package's metadata, and if a 
+          user has permission, they can choose to either allow or block the download. 
+      </p>
+        <p>
+            For an in-depth explanation, check out the <a href="/support/documentation/proget/administration/license-filters">License Filtering</a> documentation.
+        </p>
+    </div>
+    <div class="release-feature">
+    <h3>
+             Introducing support for Visual Studio Extensions
+         </h3>
+    <p>
+       After many requests, we've added support for Visual Studio Extensions (.vsix). ProGet now acts as a private repository for storing all your extensions. To learn more, visit our documentation <a href="/support/documentation/proget/feed-types/vsix">here.</a>
+    </p>
+  
+    </div>
+    <div class="release-feature">
+        <h3>Get started today!</h3>
+        <p>
+            As always, if you have a feature you'd like us to add, don't hesitate to contact us using our <a href="/support/qa-home">support channel</a>.
+        </p>
+        
+        <p>
+            <a class="button" href="/proget/versions">Download ProGet 4.7</a>
+        </p>
+    </div>
+</body>
+</html>

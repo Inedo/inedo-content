@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1128" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="buildmaster,upgrade-notes" />
+    <title>Legacy Configuration and Release Variables</title>
+    <style type="text/css">
+        .major {
+            color: #c0504d;
+        }
+    </style>
+</head>
+<body>
+    <p>In <a href="/buildmaster/5.3">BuildMaster 5.3</a>, we introduced two new features that expanded-on and replaced existing features:</p>
+    <ul>
+        <li>
+            <b>Release Templates</b>
+            – a template for an entire release definition (including variables, among other things), these replace “template variables”, which instead applied to every new release, package, or deployment created within an application
+        </li>
+        <li>
+            <b>Configuration Variables</b>
+            – effectively a redux of the existing feature, but allowing for multiple scopes as well as list and dictionary variables
+        </li>
+    </ul>
+    
+    <p>
+        Because variables are a key component of many deployment plans, we decided to minimize the risk of change by implementing the new release templates and configuration variables in a "side-by-side" manner.
+    </p>
+    <p class="info">
+        All Configuration Variables you set-up prior to 5.3 will work the same, but will be called Legacy Configuration and Legacy Release Variables in the web application.
+    </p>
+    <p>
+        You can migrate the legacy configuration variables using a tool in the administration section, and we may introduce a tool to create release templates from legacy release variables in a future version.
+    </p>
+    <h3>
+        Evaluation and Precedence
+    </h3>
+    <p>
+        The scoping rules for both legacy and non-legacy variables are the same (although, non-legacy variables may be multi-scoped), but a non-legacy variable will always override a legacy variable.
+    </p>
+    <p>
+        For example, if you have a both a system- and application-level legacy variable named <code>AppPath</code>, then the application-level legacy variable value will take precedence. However, if you add a non-legacy system variable 
+        named <code>AppPath</code>, then that will always take precedence over the application-level legacy variable.
+    </p>
+    <h3>Migrating away from Legacy Variables</h3>
+    <p>Legacy variables will be supported indefinitely, so there's no rush to convert everything. However, having two sets of variables to maintain in your BuildMaster instance will be confusing, especially to new users who won't read this article. 
+    Moreover, most upcoming features (such as the ability to export a system configuration as code), will not take into consideration legacy variables.</p>
+
+    <p>The legacy configuration migration tool has two options (Copy Legacy Variables and Delete Legacy Variables), as well as a simulation mode.</p>
+    <p>Unless you have a tremendous number of complex variables set-up, you should be fine running a migration with both the Copy and Delete options. This will ensure a clean migration, and all of the variables deleted (as well as values) will be logged.</p>
+
+</body>
+</html>

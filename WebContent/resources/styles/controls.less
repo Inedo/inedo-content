@@ -1,0 +1,319 @@
+@import "library";
+
+.slim-form-field {
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+    .SmallHelpIcon {
+        width: 16px;
+        height: 16px;
+        background: url('icons/help.svg');
+        background-size: contain;
+        cursor: pointer;
+        display: inline-block;
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 1.0;
+        }
+    }
+
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -0.25em;
+        /* Adjusts for spacing */
+    }
+
+    & > div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .label {
+        font-weight: bold;
+        min-width: 150px; // this is also controlled in inedojq_formfield
+        white-space: nowrap;
+        text-wrap: none;
+        margin-right: 10px;
+    }
+
+    .content {
+        width: 400px; // this is also controlled in inedojq_formfield
+        
+        >div {
+            margin: 5px 0;
+            &.note {
+                margin: 0;
+                font-size: 12px;
+            }
+        }
+        .smaller {
+            font-size: 12px;
+        }
+
+        input[type=text], input[type=password], select, textarea, .select2-container, .password-textbox-container {
+            width: 100%;
+        }
+
+        .password-textbox-container {
+            input[type=text], input[type=password] {
+                width: auto;
+            }
+        }
+
+        .date-time-picker { 
+            
+            .hasDatepicker { width: 30%; }
+            .ui-timepicker-input { width: 30%; }
+        }
+    }
+}
+
+.info-box {
+    box-sizing: border-box;
+    background-size: 24px 24px;
+    background-position: 10px 10px;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 5px 10px 50px;
+    margin: @default-margin 0;
+    background-repeat: no-repeat;
+    min-height: 25px;
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    a:hover {
+        color: white;
+    }
+
+    p {
+        margin-top: 0;
+    }
+
+    &.error {
+        background-color: @light-red;
+        background-image: url('icons2/white-exclamation.svg');
+
+        .action-button-container a.button {
+            color: @light-red;
+        }
+    }
+
+    &.warning {
+        background-color: @light-orange;
+        background-image: url('icons2/white-alert.svg');
+
+        .action-button-container a.button {
+            color: @light-orange;
+        }
+    }
+
+    &.info {
+        background-color: @light-blue;
+        background-image: url('icons2/white-info.svg');
+
+        .action-button-container a.button {
+            color: @light-blue;
+        }
+    }
+
+    &.success {
+        background-color: @light-green;
+        background-image: url('icons2/white-check.svg');
+
+        .action-button-container a.button {
+            color: @light-green;
+        }
+    }
+
+    &.none {
+        background-color: @grey;
+
+        .action-button-container a.button {
+            color: @grey;
+        }
+    }
+
+    .action-button-container {
+        float: right;
+        font-size: @default-font-size * 0.9;
+
+        a.button {
+            margin: 0 0 0 5px;
+            padding: 5px 10px;
+        }
+    }
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.info-block {
+    padding: 2px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 22px;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    background-position: 6px center;
+    border-radius: 3px;
+    font-size: 13px;
+
+    &.error {
+        background-image: url('/resources/InedoLibWeb/styles/icons2/red-exclamation.svg');
+        color: @light-red;
+    }
+
+    &.warning {
+        background-image: url('/resources/InedoLibWeb/styles/icons2/orange-alert.svg');
+        color: @light-orange;
+    }
+
+    &.drifted {
+        background-image: url('/resources/InedoLibWeb/styles/icons2/orange-drift.svg');
+        color: @light-orange;
+    }
+
+    &.info {
+        background-image: url('/resources/InedoLibWeb/styles/icons2/blue-info.svg');
+        color: @light-blue;
+    }
+
+    &.success {
+        background-image: url('/resources/InedoLibWeb/styles/icons2/green-check.svg');
+        color: @light-green;
+    }
+
+    &.pending {
+        background-image: url('/resources/InedoLibWeb/styles/icons2/blue-inprocess.svg');
+        color: @light-blue;
+    }
+
+    &.unknown {
+        background-image: url('/resources/InedoLibWeb/styles/icons2/gray-question-mark.svg');
+        background-size: 15px 15px;
+    }
+
+    &.executing {
+        background: inherit;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            margin-left: -28px;
+            margin-right: 4px;
+            width: 12px;
+            height: 12px;
+            background-image: url('/resources/InedoLibWeb/styles/icons2/blue-inprocess.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            animation: spinner 4s linear 0s infinite;
+        }
+    }
+
+    &.solid {
+        color: white;
+
+        &.error {
+            background-color: @light-red;
+            background-image: url('/resources/InedoLibWeb/styles/icons2/white-exclamation.svg');
+        }
+
+        &.warning {
+            background-color: @light-orange;
+            background-image: url('/resources/InedoLibWeb/styles/icons2/white-alert.svg');
+        }
+
+        &.drifted {
+            background-color: @light-orange;
+            background-image: url('/resources/InedoLibWeb/styles/icons2/white-drift.svg');
+        }
+
+        &.info {
+            background-color: @light-blue;
+            background-image: url('/resources/InedoLibWeb/styles/icons2/white-info.svg');
+        }
+
+        &.success {
+            background-color: @light-green;
+            background-image: url('/resources/InedoLibWeb/styles/icons2/white-check.svg');
+        }
+
+        &.pending {
+            background-color: @light-blue;
+            background-image: url('/resources/InedoLibWeb/styles/icons2/white-inprocess.svg');
+        }
+
+        &.unknown {
+            background-color: @grey;
+            background-image: url('/resources/InedoLibWeb/styles/icons2/white-question-mark.svg');
+        }
+
+        &.none {
+            background-color: @grey;
+        }
+
+        &.executing {
+            background: inherit;
+
+            &:before {
+                content: '';
+                display: inline-block;
+                margin-left: -28px;
+                margin-right: 4px;
+                width: 12px;
+                height: 12px;
+                background-image: url('/resources/InedoLibWeb/styles/icons2/white-inprocess.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                animation: spinner 4s linear 0s infinite;
+            }
+        }
+    }
+}
+
+.styled-table {
+    width: 100%;
+    border: 1px solid @off-white;
+    margin: @default-margin 0;
+
+    th, td {
+        padding: .5em;
+        font-family: @default-font-family;
+        line-height: 125%;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    td {
+        color: @black;
+    }
+
+    th {
+        color: @white;
+        background-color: @dark-grey;
+    }
+
+    tr:nth-child(even) {
+        background: @off-white;
+    }
+    tr:nth-child(odd) {
+        background: @near-white;
+    }
+}

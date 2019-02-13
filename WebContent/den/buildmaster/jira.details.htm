@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JIRA</title>
+</head>
+<body>
+    <h2>Operations</h2>
+   
+   <p>
+        Linking BuildMaster and Atlassian's JIRA provides Built-in operations that may be called in your deployment plan - creating visibility of issues associated with the release, and the ability to halt a deployment when issues are open. 
+    </p>
+
+   
+    <p>
+        Specific Issue Tracking operations added include:
+     </p>   
+    <ul>
+        <li>
+            <b>Create JIRA Issue</b> - Creates an issue in JIRA 
+        </li>
+        <li>
+           <b>Transition JIRA Issue</b> - Transitions issues in JIRA from one status to another
+        </li>
+        <li>
+            <b> Generate Release Notes</b> - Generates an HTML file containing the BuildMaster release notes and/or issues from JIRA
+        </li>
+     
+        <li>
+            Halt promotions when JIRA issue of a specific status exists for the specified release
+        </li>
+     
+    </ul>
+
+    <h2>Using JIRA with BuildMaster </h2>
+       <p>
+        Issue tracking is a cornerstone of the application release process and facilitates communication of specific features and issues. Integrating issue tracking, an already established process, into your DevOps toolchain is a key step deploying faster  while maintaining compliance and traceability.</p> <p>The steps below will outline a real-word example of how to utilize BuildMaster's JIRA extension. 
+    </p>
+   
+
+    <p><h3 id="step-one">Step 1: Install and Configure Extensions</h3></p>
+        <p>
+            First you'll need to install the JIRA Extension (version 5.6 or higher).
+    </p>
+    <p>
+            <i>Administration</i> &gt; <i>BuildMaster Extensions</i> &gt; <i>JIRA</i>
+    </p>
+    <p>
+        Then create a <a href="/support/documentation/buildmaster/global-components/resource-credentials">Resource Credential</a> to link BuildMaster to JIRA.
+    </p>
+    <p>
+        <i>Administration</i> &gt; <i>Resource Credentials </i> &gt; <i>Create Credential</i> &gt; <i>JIRA</i>
+    </p>
+          
+        <img class="screenshot" src="\resources\tutorials\jira\resource-credential.png" />
+    <p>
+        Next, navigate to an application to associate it with a JIRA project click on <i>issues</i> &gt; <i>Configure External Source</i> &gt; <i>JIRA Issue Source</i> and fill in the appropriate fields. 
+    </p>
+
+    <img class="screenshot" src="\resources\tutorials\jira\configure-external.png" />
+    <p>
+       We're using the <a href="/support/documentation/buildmaster/execution-engine/runtime-variables">Variable</a> <i>$ReleaseNumber</i> so that we can tie issues in JIRA to a release in BuildMaster without having to specify a single release. 
+    </p>
+    <p>
+        Issues in BuildMaster should always be associated with a release. JIRA however has no concept of a release, so the JIRA issue source uses the <i>Project</i> and <i>Fix for</i> version fields in JIRA to determine which issues to pull for a particular release, you can instead use JQL if there’s a more complicated association (multiple projects, different fields, etc).
+    </p>
+    <p>
+        When defining an issue source, you can use configuration variables and functions such as <i>$ReleaseNumber</i>. When run, these will be replaced with the appropriate value; for example if you have “ABlast” as the Project name and “v$ReleaseNumber” as the Fix for Version, and you’re viewing release 2.0 in BuildMaster, then the issue source will pull all issues the ABlast JIRA project that have "v2.0" as their Fix for Version.
+    </p>
+    <p class="info">
+        After manually configuring an issue source, any time you visit that application's overview page in BuildMaster, it will automatically refresh issues from that issue tracker. You can also manually refresh by going to <i>Issues</i> &gt; <i>Configure External Source</i> &gt; <i>Manually refresh</i>. Manually refershing will also provide additional information like Execution Details including execution logs. 
+    </p>
+    <p>
+        After configuring JIRA as the issue source, the overview page of your application’s release will display all issues in JIRA assigned to that release, regardless of JIRA status.    </p>
+    
+    <img class="screenshot" src="\resources\tutorials\jira\jira-issues.png" />
+
+    <p>
+        You can also view all issues from the issues tab, regardless of release.
+    </p>
+
+    <img class="screenshot" src="\resources\tutorials\jira\all-issues.png" />
+
+
+    <p><h3 id="step-two">Step 2: Using BuildMaster and JIRA together</h3></p>
+        <p>
+            Configuring an issue source in BuildMaster provides more functionality than increase visibility for the development teams. Additional useful capabilities are added once an issue source is configured.
+        </p>
+    <h4>Creating a Gate</h4>
+        <p>
+            First, we can put an <em>Issues Resolved</em> gate at the production (or staging) stage of your BuildMaster pipeline. This gate restricts a release package from moving forward unless every issue that is assigned to that release has a specific status (Done or Closed). 
+            This serves as a final check point, ensuring that every issue associated with this release has the appropriate status. In many cases ensure that a feature or bug is Done.
+        </p>
+    
+    <img class="screenshot" src="\resources\tutorials\jira\gate-1.png" />
+    <img class="screenshot" src="\resources\tutorials\jira\gate-2.png" />
+
+    <p>
+        This can be done at any stage of a pipeline for any status that would be appropriate. This works as a check, but doesn’t make using an issue tracker any easier. We can also automate the stages that an issue travels through in BuildMaster.
+    </p>
+    <h4>Automating a JIRA Workflow</h4>
+    <p>
+        We know that workflows in JIRA can be as simple as: create, test, close, but with JIRAs customization they can also be incredibly complex. The more complex they get the more burdensome the manual process of moving an issue through your workflow can be. But BuildMaster can help automate this manual process with a built in Operation.
+    </p>
+    <img class="screenshot" src="\resources\tutorials\jira\jira-workflow.png" />
+    <p>
+        The transition Issue operation allows you to set an issue’s status as part of a deployment plan.
+    </p>
+    <p>
+        For example if you have the above workflow in JIRA that goes Open > Checked In > Ready for Test > Approved > Closed, you can add the Transition Issue Operation to a BuildMaster deployment plan. You can use this plan to promote a package to a testing stage, and have this operation change the status from <em>Checked In</em> to <em>Ready for Test</em> automatically when the package is moved to that stage.
+    </p>
+   <h4>
+        Visual
+    </h4>
+        <tab name="Visual Editor"><img class="screenshot" src="\resources\tutorials\jira\transition-issue.png" /></tab>
+         <h4>
+           Text Editor (OtterScript)
+       </h4>
+        <tab name="Text Editor (OtterScript)"><img class="screenshot" src="\resources\tutorials\jira\transition-issue-text.png" /></tab>
+       
+    
+    
+
+    <p>
+        This allows the testing team to either then accept the change or revert it back to <i>Open</i> for more work. This same process can be used to move all Approved issues to Closed as part of the deployment to the final stage if desired.
+    </p>
+
+    <h4>Creating a New Issue</h4>
+    <p>
+        BuildMaster also allows you to create a JIRA issue from within BuildMaster.
+    </p>
+    <p>
+        You can do this directly from within a deployment plan using the Create JIRA issue operation.
+    </p>
+    <h4>
+        Visual
+    </h4>
+       <img class="screenshot" src="\resources\tutorials\jira\create-issue.png" />
+       <h4>
+           Text Editor (OtterScript)
+       </h4>
+        <img class="screenshot" src="\resources\tutorials\jira\create-issue-text.png" />
+
+   
+    <p>
+        As seen from within JIRA, The issue has been created. 
+    </p>
+   
+    
+    <img class="screenshot" src="\resources\tutorials\jira\jira-issue.png" />
+
+    <p>
+        While monolithic deployment solutions are fast becoming a thing of the past, it doesn’t mean that the tools used to deploy a modern application in a DevOps environment should be isolated either. Integrations that make sense, increase visibility, and help automate manual tasks to create a stronger DevOps toolchain that allows organizations to expand and utilize established processes. 
+    </p>
+
+</body>
+</html>

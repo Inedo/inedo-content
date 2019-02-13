@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1145" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="proget,postgresql,linux" />
+    <title>Accessing a PostgreSQL Database in a Docker Container</title>
+    <style type="text/css">
+        .console {
+            background-color: #202020;
+            color: #EEE;
+            font-family: andale mono, lucida console, monospace;  
+            padding: 15px;
+            font-size: 14px;
+            border: solid 3px #aaa;
+            box-shadow: 2px 2px 3px #666;
+            line-height: 1.5em;
+            margin: 10px 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <p>
+        If you used the <a href="/support/kb/1100/getting-started-with-proget-for-linux">official installation instructions for ProGet on Linux</a>, and for one reason or another, you need to access the ProGet database directly, you can use these commands:
+    </p>
+
+    <h2 id="backup-and-restore">Backup and Restore</h2>
+
+    <p>
+        Backing up a PostgreSQL database uses the <b>pg_dump</b> command, and restoring it uses the <b>psql</b> command. The commands below will work as-is, but if you want to know what each piece does, continue reading.
+    </p>
+
+    <p class="console">
+        # Back up database
+        <br />
+        docker exec -u postgres proget-postgres pg_dump -Cc | xz &gt; proget-backup-$(date -u +%Y-%m-%d).sql.xz
+        <br />
+        <br />
+        # Restore database from backup
+        <br />
+        xz -dc proget-backup-<span class="current-iso-date">YYYY-MM-DD</span>.sql.xz | docker exec -i -u postgres proget-postgres psql --set ON_ERROR_STOP=on --single-transaction
+    </p>
+
+    <table>
+        <tr>
+            <td>docker exec</td>
+            <td>This runs a command inside a Docker container.</td>
+        </tr>
+        <tr>
+            <td>-u postgres</td>
+            <td>We want to run the command as the postgres user because the docker exec command defaults to using the root user and the root user does not have access to the database.</td>
+        </tr>
+        <tr>
+            <td>proget-postgres</td>
+            <td>This is the name of the Docker container running PostgreSQL. If you created the container with a different name, substitute it here.</td>
+        </tr>
+        <tr>
+            <td>pg_dump</td>
+            <td>pg_dump is the PostgreSQL database backup utility. It converts a database to an SQL script. It can also convert to some other formats, but we aren't going to use those right now.</td>
+        </tr>
+        <tr>
+            <td>-Cc</td>
+            <td>
+                Equivalent to --create --clean.
+                <br />
+                --create tells pg_dump to include tables, views, and functions in the backup, not just the data contained in the tables.
+                <br />
+                --clean tells pg_dump to start the SQL script by dropping the data that is currently in the database. This makes it easier to restore in one step.
+            </td>
+        </tr>
+        <tr>
+            <td>| xz</td>
+            <td>We run the SQL script through a compression program (in this case, xz) to reduce the amount of storage space taken by the backup and to reduce the time it takes to transfer the backup over the network. This is optional, and other commands can be used in place of xz, such as gzip and bzip2. To get even better compression, the -9 and/or -e options can be specified. -9 makes xz use much more memory, and -e makes xz use much more CPU power. However, the default compression level should be good enough in nearly every case.</td>
+        </tr>
+        <tr>
+            <td>&gt; proget-backup-$(date -u +%Y-%m-%d).sql.xz</td>
+            <td>The compressed SQL script is currently being written on the standard output, so we redirect it to a file with a name like proget-backup-<span class="current-iso-date">YYYY-MM-DD</span>.sql.xz. This will be placed in the current directory when you run the command.</td>
+        </tr>
+        <tr>
+            <td>xz -dc proget-backup-<span class="current-iso-date">YYYY-MM-DD</span>.sql.xz |</td>
+            <td>
+                Because we compressed the SQL script in the previous command, we need to decompress it before we can restore the backup. -dc is equivalent to --decompress --stdout.
+                <br />
+                --decompress tells xz that we want to decompress the file, not compress it again.
+                <br />
+                --stdout tells xz that it should write the contents of the file to the standard output and not delete the .xz file. Without this, xz will write the output to a file named proget-backup-<span class="current-iso-date">YYYY-MM-DD</span>.sql and delete the compressed version.
+                <br />
+                gzip and bzip2 both use the same meaning for -dc as xz.
+            </td>
+        </tr>
+        <tr>
+            <td>-i</td>
+            <td>This tells Docker to keep the standard input open so the SQL script can be sent to psql.</td>
+        </tr>
+        <tr>
+            <td>psql</td>
+            <td>This is the PostgreSQL interactive SQL command line. In this case, we're using it to run the SQL script containing the database backup.</td>
+        </tr>
+        <tr>
+            <td>--set ON_ERROR_STOP=on</td>
+            <td>Tells psql to stop executing the restore if an error occurs.</td>
+        </tr>
+        <tr>
+            <td>--single-transaction</td>
+            <td>Tells psql to run the entire restore in one transaction so that any problem that causes it to stop doesn't leave the database in an inconsistent state.</td>
+        </tr>
+    </table>
+
+    <script>
+        [].forEach.call(document.querySelectorAll(".current-iso-date"), function(el) {
+            el.textContent = new Date().toISOString().split("T")[0];
+        });
+    </script>
+
+    <h2 id="interactive">Running SQL Interactively</h2>
+
+    <p>
+        To start an interactive SQL session, run this command:
+    </p>
+
+    <p class="console">
+        docker exec -tiu postgres proget-postgres psql
+    </p>
+
+    <p>
+        To end the session, press Ctrl+D or type \q (backslash Q) and press enter.
+    </p>
+
+    <p>
+        Here are some examples of useful SQL queries:
+    </p>
+
+    <p class="console">
+        -- Show proxy-related configuration settings
+        <br />
+        select * from "Configuration_GetConfiguration"() where "Key_Name" like 'Proxy.%';
+        <br />
+        -- Switch to the built-in user directory
+        <br />
+        select "Configuration_SetValue"('Web.UserDirectoryId', '1');
+        <br />
+        -- Retrieve the last 25 messages in the error log
+        <br />
+        select "LogMessage_Id", "Logged_Date", "Message_Text" from "LogMessages_GetMessages"(25);
+        <br />
+        -- Get details (for example, a stack trace) for log message 3
+        <br />
+        \a
+        <br />
+        select convert_from("Details_Bytes", 'utf-8') from "LogMessages_GetMessage"(3);
+        <br />
+        \a
+    </p>
+
+</body>
+</html>

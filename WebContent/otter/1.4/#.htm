@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Otter 1.4 Overview</title>
+    <meta name="include-client-resources" content="fancybox131" />
+    <meta name="SideBarName" content="otter-roadmap" />
+    <style type="text/css">
+         .release-feature .screenshot {
+            float:none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1><img src="/resources/images/logos/otter-logo.png" alt="Otter" /> 1.4 is released!</h1>
+    <p class="info">
+        <b>Note:</b> This is not the latest version of Otter.
+    </p>
+        
+      
+    <div class="release-feature">
+       
+        <p>
+            Otter maintains your servers' configuration using an <em>Infrastructure as Code</em> approach.
+        </p>
+        <p>
+            If you're upgrading, make sure to check out <a href="/support/kb/1132">Upgrade Notes for Otter 1.4</a>.
+        </p>
+    </div>
+
+    <div class="release-feature">
+        <h3>Agentless Servers for Windows</h3>        
+        <p>
+            Although the <em>Inedo Agent</em> is highly-optimized, lightweight, and <a href="/support/documentation/otter/installation/agent-installation-guide">quite easy to install</a>, sometimes an
+            agentless approach is preferred. This is where <em>Agentless Windows Servers</em> come in.
+        </p>
+        <p>
+            Just enable PowerShell Remoting (see <a href="https://technet.microsoft.com/en-us/library/hh849694.aspx" target="_blank">Enable-PSRemoting</a>), and
+            Otter will now be able to communicate with Windows servers that don't have the Inedo Agent installed!
+        </p>
+        <p>
+            See <a href="/support/documentation/otter/administration/agents">Managing Agents and Servers</a> for more information.  
+        </p>
+    </div>
+
+    <div class="release-feature">
+        <h3>Variables Enhancement</h3>
+        <p>
+            <a href="/support/documentation/otter/global-components/configuration-variables">Configuration Variables</a> got some exiting improvements in this release:
+        </p>
+        <ul class="normal">
+            <li><b>Sensitive Configuration Variables</b> - casually obscure viewing of sensitive variables, for things that don't quite need the security of a resource credential</li>
+            <li><b>Variable Editing</b> - improved configuration variable editor to allow for map types</li>
+            <li><b>Variables as JSON</b> - switch back-and-forth between text- and visual mode when editing variables</li>
+        </ul>
+    </div>
+    <div class="release-feature">
+        <h3>Execution Engine / OtterScript Enhancements</h3>
+        <p>
+            We added a couple interesting features to the Execution Engine: global variables (for sharing across asynchronously executing blocks) and locking (to ensure critical sections run exclusively, and not in parallel).
+            Tutorials are coming soon, but in the mean time, check out the <a href="/support/documentation/otter/reference/otter-script/formal-grammar">formal grammar</a> and  <a href="/support/documentation/otter/reference/otter-script/formal-specification">formal specification</a>
+            for how they work.
+
+        </p>
+        
+    </div>
+    <div class="release-feature">
+        <h3>New API Endpoints</h3>
+        <p>
+            To help you automate and configure Otter, we added two new API endpoints you can use to programmatically query or configure Otter instances.
+        </p>
+        <ul class="normal">
+            <li><a href="/support/documentation/otter/reference/api/configuration-management">Config Management API</a> - query, check, and remediate configuration drift with a simplified API endpoint</li>
+            <li><a href="/support/documentation/otter/reference/api/variables">Variables Management API</a> - update configuration variables with a simplified API endpoint</li>
+        </ul>
+    </div>
+    <div class="release-feature">
+        <h3>Get started!</h3>
+        <p>
+            You can <a href="/otter/download">download</a> Otter and take your own test drive, and see for yourself just how easy visualizing your infrastructure can be.
+            If you have a feature you'd like to add, don't hesitate to contact us via the <a href="/support/questions">support Q&amp;A</a> forum.
+        </p>
+        <p>
+            <a class="button" href="/otter/download" data-properties="Icon:BSN.Arrow_fat_down;Color:Blue">Download Otter</a>
+        </p>
+    </div>
+  
+</body>
+
+</html>

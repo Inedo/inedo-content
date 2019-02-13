@@ -1,0 +1,254 @@
+﻿@import "../../../resources/styles/library";
+@max-content-width: 1000px;
+@inedo-grey: #E9EADA;
+@inedo-lightgrey: #f6f6f6;
+@inedo-darkgrey: #444;
+@inedo-white: #fff;
+@inedo-red: #990033;
+@inedo-blue: #002B54;
+@inedo-lightblue: #10466E;
+@inedo-brightblue: #0071bc;
+@inedo-yellow: #CC9B32;
+@inedo-lightred: #B04950;
+@inedo-brightred: #ce202e;
+@inedo-darkred: #890c21;
+@proget-blue: #3FA9F5;
+@buildmaster-orange: #F15A24;
+@otter-purple: #9163AA;
+@inedo-light-purple: #a789bf;
+@inedo-teal: #6dc497;
+
+
+
+
+h1, h2 {
+    font-family: Playfair;
+    font-weight: 700;
+    color: @inedo-brightred;
+}
+
+.button-container {
+    margin: 0 auto;
+    text-align: center;
+    margin: 50px auto 0 auto;
+
+    .button {
+        margin: 0 auto;
+        border: none;
+        color: white;
+        padding: 5px 25px;
+
+
+        &.blue {
+            background: @inedo-brightblue;
+        }
+    }
+}
+
+
+
+.shadowed {
+    -webkit-box-shadow: -5px 5px 4px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: -5px 5px 4px 0px rgba(0,0,0,0.3);
+    box-shadow: -5px 5px 4px 0px rgba(0,0,0,0.3);
+}
+
+.fancyBoxPopUp {
+    cursor: pointer;
+}
+
+
+.content-container#landing-banner {
+    background: url(/support/whitepapers/ci-cd-infrastructure-config-mgmt/background.png) no-repeat;
+    background-position: center;
+    position: relative;
+    height: 430px;
+    min-width: 800px;
+    margin-bottom: 70px;
+
+    .content {
+        position: relative;
+
+        h1, h2 {
+            text-align: center;
+            color: @inedo-white;
+        }
+
+        h1 {
+            margin: 48px 0 68px 0;
+            font-size: 42px;
+        }
+
+        h2 {
+            margin: 30px 0;
+            font-size: 150%;
+        }
+
+        .my-slider {
+            background: @inedo-white;
+            height: 400px;
+        }
+
+        .product-shot {
+            margin-top: 10px;
+            height: auto;
+            width: 550px;
+            position: relative;
+
+            ul {
+
+                li {
+                    list-style-type: none;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        #sign-up {
+            float: right;
+            z-index: 3;
+            height: 370px;
+            width: 350px;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: @inedo-light-purple;
+
+            h2 {
+                color: @inedo-white;
+                text-align: center;
+                font-size: 200%;
+                margin: 10px 0;
+            }
+
+            label {
+                color: @inedo-white;
+                font-size: 95%;
+                margin: 0;
+            }
+
+            form {
+                width: 304px;
+                display: block;
+            }
+
+            fieldset {
+                margin: 0;
+            }
+
+            input {
+                box-sizing: content-box;
+                width: 100%;
+                margin: 5px 0 15px;
+                padding: 5px 12px;
+                color: @inedo-darkgrey;
+                background-color: @inedo-lightgrey;
+                border: none;
+            }
+
+            input.submit-button {
+                background-color: @otter-purple;
+                color: @inedo-white;
+
+                &:hover {
+                    background-color: #953c7a;
+                }
+            }
+        }
+    }
+}
+
+
+.content-container#feature-benefit-intro {
+    margin: 200px 0 40px 0;
+    //text-align: center;
+
+    .content {
+        width: 880px;
+
+        p {
+            color: @inedo-darkblue;
+            margin: 15px 0;
+            font-size: 21px;
+            line-height: 34px;
+            font-weight: 500;
+        }
+    }
+}
+
+.content-container.feature-benefit {
+    padding: 50px 0;
+
+    .content {
+        display: table;
+
+        .screenshot-container {
+            display: table-cell;
+            width: 335px;
+            vertical-align: middle;
+
+            img.screenshot {
+                width: 100%;
+                border: 1px solid @inedo-black;
+            }
+        }
+
+        .feature-benefit-copy {
+            display: table-cell;
+            vertical-align: middle;
+            width: 615px;
+            padding-left: 55px;
+
+            h2 {
+                margin-top: 0;
+
+                img.feature-icon {
+                    top: 4px;
+                    margin-right: 15px;
+                    position: relative;
+                }
+            }
+        }
+    }
+
+    &.purple {
+        .content {
+            h2 {
+                color: @otter-purple;
+            }
+        }
+    }
+    &.teal {
+        .content {
+            h2 {
+                color: @proget-blue;
+            }
+        }
+    }
+}
+
+#footer {
+    margin-top: 50px;
+
+    h1, h2 {
+        font-family: 'Open Sans';
+        font-weight: 300;
+    }
+}
+
+.ahvalidator.error input[type=text], .ahvalidator.error select {
+    background-color: #fcc !important;
+}
+
+.ahvalidator.error .message {
+    display: none !important;
+}
+//fonts only used on landing pages, if used elsewhere, transfer to non-cannonical styling
+@font-face {
+    font-family: 'Playfair';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Playfair Display Bold'), url(/../feature-landing/fonts/PlayfairDisplay-Bold.otf) format('otf');
+}

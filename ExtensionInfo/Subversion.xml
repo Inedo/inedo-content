@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extensionAdditionalInfo>
+  <info><![CDATA[
+    <p>
+	  The Subversion extension provides integration with Subversion
+	  source control repositories.
+	</p>
+	<h3>Subversion Prerequisites</h3>
+	<p>
+	  On Windows systems, the Subversion extension will use the SharpSvn
+	  client for communicating with repositories, so no additional software
+	  is required. On Linux, the svn command-line client is required. Note that
+	  the command-line client may also be used on Windows if configured in
+	  the Subversion Provider.
+	</p>
+	<h3>Source Control Actions</h3>
+	<p>
+	  The <b>Get Latest</b> action is fully supported by the Subversion provider.
+	  However, since Subversion does not have a concept of labels, the <b>Get Labeled</b>
+	  and <b>Apply Label</b> actions are <i>not</i> supported.
+	</p>
+	<h4>Tagging in Subversion</h4>
+	<p>
+	  The <b>Tag</b> action can be used to tag source code in a repository
+	  by copying it to another path. 
+	</p>
+	<img src="/resources/images/extensions/subversion-branch.png" alt="Branch Action" title="Branch Action" />
+	<p>
+	  Select the path to tag in the <i>Source Path</i> field, the tag path in the
+	  <i>Target Path</i> field (using the BuildMaster %RELNO% and %BLDNO% variables),
+	  and optionally a comment describing the action.
+	</p>
+  ]]></info>
+</extensionAdditionalInfo>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Submitted | Inedo.com</title>
+   <meta name="SideBarName" content="company" />
+    <style>
+        .contact-form input[type=text], .contact-form select {
+            width: 595px;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form input[type=button] {
+            width: 100%;
+            background-color: #3FA9F5;
+            color: white;
+            padding: 14px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+        }
+
+            .contact-form input[type=button]:hover {
+                background-color: #1e89d5;
+            }
+
+        .contact-form {
+            background-color: #e4e4e4;
+            padding: 10px 20px;
+            margin-bottom: 40px;
+        }
+
+
+        .ahvalidator.error input[type=text],
+        .ahvalidator.error select {
+            background-color: #fcc;
+        }
+
+        .ahvalidator.error .message {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+      
+   
+    <h1>Thanks for getting in touch!</h1>
+    <h4 style="margin-bottom: 30px;">
+        We'll reply by email as soon as possible.<br/><br/>
+        In the meantime, check out our latest <a href="/blog">blog posts</a>, or have a peek at our most recent <a href="/webinars/past">webinars</a>.
+    </h4>
+      <hr/>
+    <h4 style="margin-bottom: 20px;">
+        To stay updated with everything here at Inedo, subscribe to our newsletter below, and follow us on <a href="https://twitter.com/Inedo">Twitter</a>!
+    </h4>
+
+    <div class="contact-form">
+        <contact-form method="post" action="/contact-form">
+            <fieldset>
+                <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
+                <input type="hidden" name="RedirectUrl" value="/subscription-thank-you" />
+                <input type="hidden" name="Subject" value="/contact thank-you subscription box" />
+                <input type="hidden" name="CcFromAddress" value="false" />
+                <input type="hidden" name="Priority" value="High" />
+
+                <label>Your Name*</label>
+                <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                <label>Email Address*</label>
+                <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                <label>Phone Number</label>
+                <div><input name="Phone Number" type="text" /></div>
+
+                <input type="button" value="Subscribe" onclick="AhValidation.Submit(this);" />
+            </fieldset>
+        </contact-form>
+    </div>
+
+    <h4>Address</h4>
+    <p>Inedo <br /> 56 Front Street <br />Upper<br />Berea, Ohio 44017 <br /> United States</p>
+    <h4>Phone</h4>
+    <p>+1 (440) 243-6737</p>
+
+</body>
+</html>
+
+

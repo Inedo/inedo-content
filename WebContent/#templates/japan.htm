@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>$[Title]</title>
+    <link rel="icon" type="image/x-icon" href="/Resources/Images/Icons/favicon.ico" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/jp/styles/styles-main.css" />
+    $[HeadContent]
+    <script type="text/javascript">
+        $(function () {
+            $('.main-content .sidebar ul.navigation a').each(function (idx, el) {
+                var href = $(el).attr('href') || '';
+                if (href.toLowerCase() == location.pathname.toLowerCase())
+                    $(el).addClass('current');
+            })
+        });
+    </script>
+
+</head>
+<body>
+    
+    <div id="header">
+        <!--<div class="secondary-nav-container">
+            <div class="secondary-nav-content">
+                <div class="search-my-inedo">
+                    <ul class="horizontal-list">
+                        
+                        <li class="myinedolink">
+                            <a href="/den">Den</a>
+                        </li>
+                        <li class="myinedolink">
+                            <a href="https://my.inedo.com">MyInedo</a>
+                        </li>
+                        <li class="myinedolink">
+                            $[CurrentUserProfile]
+                        </li>
+                        <li>
+                            <form action="/search" method="get">
+                                <input name="q" type="text" placeholder="Search website..." />
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>-->
+        <div class="content-container" id="nav-container">
+            <div class="content">
+                <a href="/jp/#">
+                    <img id="logo" src="/homepage/inedo-logo.png" />
+                </a>
+                <ul id="nav">
+                    <li>
+                        <a href="/jp/products">Products</a>
+                    </li>
+                    <li>
+                        <a href="/jp/training">Training</a>
+                    </li>
+                    <li>
+                        <a href="/jp/professional-services">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="/jp/support">Resources</a>
+                    </li>
+                    <li>
+                        <a href="/jp/company">About Inedo</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    $[MainContent]
+
+    <div id="jpfooter" class="content-container">
+        <div class="content">
+            <div class="footer-box">
+                <div class="list-box">
+                    <ul>
+                        <li><a href="/jp/products"><h2>Products</h2></a></li>
+                        <li><a href="/jp/proget">ProGet</a></li>
+                        <li><a href="/jp/buildmaster">BuildMaster</a></li>
+                        <li><a href="/jp/otter">Otter</a></li>
+                    </ul>
+                   
+                    
+                </div>
+                <div class="list-box">
+                    <ul>
+                        <li><a href="/jp/products"><h2>Free Products</h2></a></li>
+                        <li><a href="/jp/upack">UPack</a></li>
+                        <li><a href="/jp/romp">Romp</a></li>
+                    </ul>
+                   
+                </div>
+                <div class="list-box">
+                    <ul>
+                        <li><a href="/jp/support"><h2>Support</h2></a></li>
+                        <li><a href="/jp/training">Training</a></li>
+                        <li><a href="/jp/professional-services">Services</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="list-box">
+                    <ul>
+                        <li><a href="/jp/company"><h2>Company</h2></a></li>
+                        <li><a href="/jp/company">About Inedo</a></li>
+                    </ul>
+                </div>
+                <div class="list-box contact-info">
+                    <ul class="footer-info">
+                        <li><a href="/jp/#"><img src="/homepage/inedo-logo-white.png" /></a></li>
+                        <li class="bumped"><strong>Inedo Japan</strong></li>
+                        <li class="bumped">合同会社イネド・ジャパン</li>
+                        <li class="bumped">〒170-0013</li>
+                        <li class="bumped">東京都豊島区東池袋5-7-3　2F　3</li>
+                        <li class="bumped"><br /></li>
+                        <li class="bumped"><a href="/jp/contact"><strong>Contact Us</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;お問合せはこちら</a></li>
+                        <li class="bumped">03-6161-2121</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    $[WebAnalytics]
+</body>
+</html>

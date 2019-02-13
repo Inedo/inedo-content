@@ -1,0 +1,391 @@
+﻿@import "..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+.content-container {
+position: relative;
+    .content {
+                .button-set {
+            a.button {
+                padding: 14px 40px;
+                border: none;
+                background-color: dodgerblue;
+                color: @inedo-white;
+                font-size: 14px;
+            }
+            a:hover {
+                box-shadow: 1px 1px 4px #444444;
+                text-decoration:none;
+            }
+        }
+    }
+}
+#header{
+    position:relative;
+    z-index:6;
+}
+
+.menu-anchor {
+	visibility: hidden;
+	position: absolute;
+	top: -50px;
+}
+
+.content-container#sticky-nav-content-container{
+    position:fixed;
+    top:0;
+    z-index:1;
+    background:@inedo-white;
+	border-bottom: 1px solid @inedo-black;
+      #sticky-nav {
+        background-color: @inedo-white;
+        padding: 5px 0;
+        height: 30px;
+        display: table;
+        width: 100%;
+
+        ul {
+            .mixin-horizontal-list;
+            margin: 8px 0;
+            padding: 0;
+            text-align: center;
+            min-width: 1000px;
+
+            li {
+                a {
+                    font-size: 13px;
+                    font-weight: bold;
+                    color: @inedo-darkgrey;
+                    padding-bottom: 0px;
+                    margin: 0px 30px;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+}
+.content-container#banner
+{
+    font-weight: 300;
+    margin:0; padding: 0;
+    min-height: 250px;
+    position:relative;
+    z-index:5;
+    background: url(/support/support-banner.jpg) no-repeat #011b2d;
+    background-position: center;
+
+
+
+    .content {
+        text-align: center;
+        h1 {
+            font-size: 90px;
+            font-weight: bold;
+            margin:0; 
+            padding-top: 45px;
+            color: @inedo-darkgrey;
+            width: @max-content-width;
+        }
+    }
+}
+
+.content-container#intro{
+    padding-top: 0;
+    background-color: @inedo-grey;
+
+    #static-nav {
+        background-color: @inedo-white;
+        padding: 5px 0;
+        height: 30px;
+        display: table;
+        width: 100%;
+
+        ul {
+            .mixin-horizontal-list;
+            margin: 8px 0;
+            padding: 0;
+            text-align: center;
+            min-width: 1000px;
+
+            li {
+                a {
+                    font-size: 13px;
+                    font-weight: bold;
+                    color: @inedo-darkgrey;
+                    padding-bottom: 0px;
+                    margin: 0px 30px;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .content {
+        text-align:center;
+        padding: 20px 0 40px 0;
+        p {
+            font-size: 21px;
+            font-weight: bolder;
+        }
+
+    h2 {
+        font-size: 36px;
+        font-weight: bolder;
+        color: @inedo-darkgrey;
+    }
+    }
+}
+
+.content-container#initiative {
+    .content {
+        p {
+            font-size: 19px;
+        }
+
+    h2 {
+        font-size: 36px;
+        font-weight: bolder;
+        color: @inedo-darkgrey;
+    }
+        text-align: center;
+            .design-tenets {
+        background-color: @inedo-white;
+        margin: 20px 0;
+        .product-shots {
+                width: 28%;
+                display: inline-block;
+                padding: 20px;
+                .img-container {
+                    text-align: center;
+                    padding-bottom: 5px;
+                }
+            }
+    }
+                    .button-set {
+            a.button {
+                margin: 20px 0 40px 0;
+            }
+        }
+    }
+}
+
+.content-container#stats {
+    background-color: @inedo-white;
+    .content {
+        text-align: center;
+        .statistics {
+        margin: 10px 0;
+        .numbers {
+                width: 28%;
+                display: inline-block;
+                padding: 20px;
+                h2 {
+                    font-weight: 900;
+                    font-size: 86px;
+                    margin-top: 10px;
+                }
+                p {
+                    font-size: 28px;
+                    margin-top: 0;
+                }
+            }
+    }
+    }
+}
+
+.content-container#current-direction {
+    .content {
+        p {
+            font-size: 19px;
+        }
+
+    h2 {
+        font-size: 36px;
+        font-weight: bolder;
+        color: @inedo-darkgrey;
+    }
+    h3 {
+        font-size: 24px;
+        font-weight: bolder;
+        margin-top: 15px;
+        color: dodgerblue;
+    }
+        text-align: center;
+        .button-set {
+            a.button {
+                margin: 30px 0;
+            }
+        }
+
+    }
+}
+
+.content-container#next-gen {
+    .content {
+        p {
+            font-size: 19px;
+        }
+
+    h2 {
+        font-size: 36px;
+        font-weight: bolder;
+        color: @inedo-darkgrey;
+    }
+        text-align: center;
+            .generation {
+        background-color: @inedo-white;
+        margin: 20px 0;
+        .cards {
+                width: 20%;
+                display: inline-block;
+                padding: 20px;
+                p {
+                    font-size: 14px;
+                }
+                .img-container {
+                    text-align: center;
+                    padding-bottom: 5px;
+                }
+            }
+    }
+                               .button-set {
+            a.button {
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+
+.content-container#around-globe {
+        background-color: @inedo-white;
+    .content {
+        p {
+            font-size: 19px;
+        }
+
+    h2 {
+        font-size: 36px;
+        font-weight: bolder;
+        color: @inedo-darkgrey;
+    }
+        text-align: center;
+        .locations {
+        margin: 20px 0;
+        .cities {
+                width: 28%;
+                display: inline-block;
+                padding: 20px;
+                h3 {
+                    font-size: 28px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    margin-top: 15px;
+                }
+                .img-container {
+                    text-align: center;
+                    padding-bottom: 5px;
+                }
+                a {
+                    text-decoration: none;
+                }
+            }
+    }
+    }
+}
+
+.content-container#planned-features {
+    background-color: @inedo-grey;
+    .content {
+        p {
+            font-size: 19px;
+        }
+
+    h2 {
+        font-size: 36px;
+        font-weight: bolder;
+        color: @inedo-darkgrey;
+    }
+    .button-set {
+        margin-bottom: 50px;
+    }
+        text-align: center;
+        .future-features {
+        margin: 20px 0;
+        .feature {
+                width: 28%;
+                display: inline-block;
+                padding: 20px;
+                h5 {
+                    font-size: 18px;
+                    font-weight: bolder;
+                    margin-top: 15px;
+                    color: @inedo-darkgrey;
+                }
+                p {
+                    font-size: 14px;
+                    margin-top: 8px;
+                }
+                .img-container {
+                    text-align: center;
+                    padding-bottom: 5px;
+                    img {
+                        max-height: 100px;
+                    }
+                }
+            }
+    }
+
+    }
+}
+
+.content-container#team {
+    .content {
+        p {
+            font-size: 19px;
+        }
+
+    h2 {
+        font-size: 36px;
+        font-weight: bolder;
+        color: @inedo-darkgrey;
+    }
+        text-align: center;
+            .team-members {
+        background-color: @inedo-white;
+        margin: 20px 0;
+        .human {
+                width: 20%;
+                display: inline-block;
+                padding: 20px;
+                h5{
+                    font-size: 17px;
+                    font-weight: bolder;
+                    color: dodgerblue;
+                }
+                p {
+                    font-size: 14px;
+                    margin: 6px 0;
+                }
+                .img-container {
+                    text-align: center;
+                    padding-bottom: 5px;
+                    img {
+                        max-width: 200px;
+                    }
+                }
+            }
+    }
+    }
+}
+

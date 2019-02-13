@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="keywords" content="UPE, packages, universal packages, proget, hedgehog" />
+    <meta name="publish-date" content="07/18/2018 1:00 PM" />
+    <meta name="author" content="Olivia Glenn" />
+    <title>Easily Create and Publish Universal Packages with Inedo's Universal Package Explorer</title>
+    
+</head>
+<body>
+  <h1>Easily Create and Publish Universal Packages with Inedo's Universal Package Explorer</h1>
+    <p>
+        The Universal Package Explorer is a Windows desktop application that makes it easy to create, view, and publish Universal Packages. You can load a .upack file from disk, or directly from a ProGet Universal Feed. 
+    </p>
+    <iframe width="690" height="388" src="https://www.youtube.com/embed/fe25YLZbCaA" frameborder="0" allowfullscreen="true"></iframe>
+   
+    <p>
+        If you want to go through the full step-by-step tutorial, and create and publish a universal package yourself, you can find that <a href="/support/documentation/upack/tools-and-libraries/upe#creating-publishing">here</a>.
+    </p>
+    <p>
+        Now that you're familiar with the <a href="/support/documentation/upack/tools-and-libraries/upe">Universal Package Explorer</a>, and if you feel comfortable with the concept of <a href="/support/documentation/proget/core-concepts/packages">Packages</a>, and the <a href="/support/documentation/upack/universal-packages/package-format">Universal Package Format</a>, you should be ready to jump in and <a href="/upack/download">get started</a>! If you're not sure, or you want a quick refresher on these, read on:
+    </p>
+    <h2>What are Packages?</h2>
+    <p>
+    <a href="/support/documentation/proget/core-concepts/packages">Packages</a> are a simple concept that pretty much everyone can understand.
+    </p>
+    <p>
+    Conceptually speaking, a package is like a uniform-sized shipping box with uniform, machine- and human-readable labels describing the package. Inside the box are the things you want to deliver, and the box may even include assembly, installation, delivery or other instructions on what to do with the contents.
+    </p>
+    <p>
+    Technically speaking, a package file is just a zip file containing the actual content you want to distribute, as well as a manifest file that describes the package itself. A lot of times, the package files have a special file extension (like <code>.nuget</code> for NuGet packages), but you can open them with any old zip file reader.
+    </p>
+    <h4>Third-party Packages vs Universal Packages</h4>
+    <p>
+        Third-party package formats were each designed with a very specific use case in mind and, as such, are more complex. The best practice to follow is if there is a third-party package format designed for your specific use case, consider using it instead of universal packages. 
+    </p>
+    <h2>Why Universal Packages?</h2>
+    <p>
+    Often, you'll find that <a href="/support/documentation/proget/feeds/nuget">third-party packages</a> are actually <i>too</i> specific for your use case. For example, if you want to package a plug-in for your own application, or you want to package a web application or service, none of the third-party formats would be appropriate.
+    </p>
+    <p>
+    This is where the Universal Package format comes in: it provides the best combination of simplicity, utility, and extensibility. It is designed for both general-purpose use, and as a platform for creating a new proprietary package format.
+    </p>
+    <h2>The Universal Package Explorer</h2>
+    <p>
+    Creating a Universal Package is easy, especially with the <a href="/support/documentation/upack/tools-and-libraries/upe">Universal Package Explorer</a>!
+    </p>
+    <p>
+        <img src="/blog/_images/create-package.gif" />
+    </p>
+    <p>
+    You can also easily see all the contents within a package, as well as look at the metadata and edit it using the graphical user interface. What's nice about the Universal Package Explorer is that you can easily add files, view them, and then publish your packages to a feed. This makes it a lot simpler than working with zip files directly, or command-line tools.
+    </p>
+    <p>
+        But if using the GUI isn't your jam, you can also always use <a href="/support/documentation/upack/tools-and-libraries/upack-cli">upack.exe</a> on the command-line, <a href="/support/documentation/upack/tools-and-libraries/upacklib-net">UPackLib.NET</a> to programmatically interact with and deploy packages, the <a href="/den/proget/jenkinsplugin">ProGet Jenkins Plugin</a>, or the <a href="/support/documentation/upack/tools-and-libraries/push-to-proget">Push to ProGet Visual Studio Extension</a>.
+    </p>
+    <h2>Why Package in the first place?</h2>
+    <p>
+        The greatest advantage to packaging your own applications and components is so that they can serve as a common language for describing how your software is bundled into smaller services, and then delivered across your organization.
+    </p>
+    <p class="info">
+        <strong>Note:</strong> When you start using packages for your own applications and components, it's important to move to a package-oriented mindset. This is where the concept of <a href="/webinars/past/hedgehog-accelerate">package-oriented development</a> comes in.
+    </p>
+    
+    <h2>Packages and The Inedo Suite</h2>
+    <p>
+        All of our <a href="/products">tools</a> work well together, and with others. Plus, the free versions are basically unlimited, so you can use them right away!
+    </p>
+    <h4>Here's a brief rundown of how our tools interact with packages:</h4>
+    <p><a href="/proget">ProGet</a> - helps you package applications and components so you can ensure your software is built only once, and then deployed consistently across environments; centralize your organization's software applications and components to provide uniform access to developers and servers, no matter where they are in your network</p>
+    <p><a href="/hedgehog">Hedgehog</a> - deploys your packages to the server and cloud; you can deploy simple universal packages or advanced Romp-based packages that bundle infrastructure configuration and deployment code</p>
+    <p><a href="/otter">Otter</a> - provision servers and manage their configuration by ensuring that certain packages (Universal, PowerShell, Chocolatey) are installed; also see what packages have been installed on different servers, by any tool</p>
+    <p><a href="/buildmaster">BuildMaster</a> - create all kinds of packages (development, machine, or universal), test them through various environments, and release them internally (on your live ProGet feed) or on a public gallery or customer location</p>
+    <hr/>
+    <p>Now that you're officially all caught up, follow the simple <a href="/support/documentation/upack/tools-and-libraries/upe#creating-publishing">step-by-step tutorial</a> to start easily creating Universal Packages with the UPE, and then publishing them to a ProGet Universal Feed.</p>
+    <p>Good Luck!</p>
+    <p>
+        P.S. If you ever need help, the <a href="/support/questions">Q&amp;A Forum</a> is an excellent place to start.
+    </p>
+</body>
+</html>

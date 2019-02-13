@@ -1,0 +1,1173 @@
+@import "library";
+
+@content-min-width: 400px;
+@content-max-width: 800px;
+@tile-width: 250px;
+
+@release-black: #343333;
+@release-orange: #fdb813;
+@release-grey: #6d6e70;
+
+@core-accent: #343333;
+@agility-accent: #3b97d3;
+@antipatterns-accent: #b72c41;
+@automation-accent: #a87b4f;
+@database-accent: #ef4035;
+@delivery-accent: #babdc0;
+@deployments-accent: #159299;
+@devops-accent: #3088c6;
+@efficiency-accent: #f3a022;
+@libraries-accent: #24ad5f;
+@logging-accent: #f4d14b;
+@modeling-accent: #8cc63e;
+@operations-accent: #6e58a5;
+@opensource-accent: #5362d3;
+@support-accent: #ef4036;
+@visibility-accent: #59c7dd;
+@migrations-accent: #e90c8a;
+
+.compact-mobile(@rules) {
+    @media only screen and (max-width: 600px) {
+        @rules
+        ();
+    }
+
+    @media only screen and (max-device-width : 600px) {
+        @rules
+        ();
+    }
+}
+
+.not-compact-mobile(@rules) {
+    @media only screen and (min-width: 601px) {
+        @rules
+        ();
+    }
+}
+
+
+
+body {
+    background: #ccc;
+    min-width: @content-min-width;
+    width: 100%;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    color: @release-black;
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: underline;
+    color: #000066;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 25px;
+    color: #343333;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 20px;
+    color: #343333;
+}
+
+.button {
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: @release-orange;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+:-ms-input-placeholder {
+    color: #ccc;
+}
+
+
+fieldset {
+    margin: 0;
+    padding: 0 20px;
+    border: none;
+
+    label {
+        font-size: 0.8rem;
+    }
+
+    input[type=text], textarea {
+        font-size: 0.9rem;
+    }
+
+    input[type=submit] {
+        .button();
+        cursor: pointer;
+        display: block;
+        margin-top: 6px;
+        border: none;
+        font-size: 0.9rem;
+        font-weight: normal;
+        width: 100px;
+    }
+}
+
+.navigation-container {
+    background-color: @release-black;
+    position: relative;
+    z-index: 2;
+    font-size: 24px;
+    line-height: 36px;
+    text-transform: uppercase;
+
+    ul {
+        .mixin-clearlist();
+        max-width: @content-max-width;
+        margin: 0 auto;
+        text-align: center;
+
+        li {
+            padding: 10px 20px;
+            display: inline-block;
+
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+
+        img {
+            vertical-align: text-bottom;
+        }
+    }
+
+    &.fixed {
+        border-top: 3px solid @release-orange;
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        font-size: 18px;
+
+        ul {
+            text-align: right;
+
+            li {
+                padding: 0 10px;
+                height: 36px;
+                line-height: 36px;
+                vertical-align: middle;
+
+                a {
+                    text-decoration: none;
+                }
+
+                &:first-child {
+                    float: left;
+                }
+            }
+        }
+    }
+
+    &.primary {
+        font-size: 30px;
+
+        ul li:first-child {
+            display: none;
+        }
+    }
+
+    .compact-mobile {
+        ul li:first-child {
+            width: 20px;
+            overflow: hidden;
+        }
+    }
+}
+
+
+.content-section {
+    max-width: @content-max-width;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+    padding: 10px 10px 85px 10px;
+    border-top: 20px solid @release-grey;
+
+    h1 {
+        padding: 10px 25px;
+        text-transform: uppercase;
+    }
+
+    p {
+        margin: 0 25px 25px 25px;
+    }
+
+    ul {
+        margin: 0 25px 25px 50px;
+
+        li {
+            margin-bottom: 25px;
+        }
+    }
+
+    .side-bar {
+        float: right;
+        margin: 15px 0 0 25px;
+
+        &.left {
+            float: left;
+            margin: 15px 25px 0 0;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+
+        .compact-mobile( {
+            float: none;
+            margin: 15px auto;
+
+            &.left {
+                float: none;
+                margin: 15px auto;
+            }
+        }
+
+        );
+    }
+
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 75px;
+        background: @release-orange url(images/scattered_cards.jpg) center center no-repeat fixed;
+    }
+
+    &.no-divider {
+        padding-bottom: 10px;
+    }
+
+    &.no-divider:after {
+        display: none;
+    }
+}
+
+#header {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    background-color: @release-black;
+
+    .top-container {
+        background: url(home-background.jpg) fixed center top;
+        min-height: 350px;
+
+        .contents {
+            max-width: 650px;
+            padding-top: 20px;
+            margin: 0 auto;
+
+            p {
+                .compact-mobile( {
+                    text-align: center;
+                    padding: 2% 1%;
+                    font-size: 15px;
+                    color: #fff;
+                    font-weight: bold;
+                    background-color: @release-grey;
+                    min-height: 30px;
+                    margin-top: 20px;
+                }
+
+                );
+
+                .not-compact-mobile( {
+                    font-style: italic;
+                    font-size: 30px;
+                    padding-top: 75px;
+                    min-width: 400px;
+                    color: @release-orange;
+                    font-family: Georgia, Times, "Times New Roman", serif;
+                }
+
+                );
+            }
+
+            .logo-container {
+                float: left;
+                width: 250px;
+                margin: 0 35px 10px 0;
+                height: 300px;
+
+                img.logo {
+                    width: 250px;
+                    height: 250px;
+                }
+
+                h1 {
+                    font-size: 50px;
+                    font-weight: 700;
+                    text-align: center;
+                }
+
+                .compact-mobile( {
+                    float: none;
+                    margin: 0 auto;
+                }
+
+                );
+            }
+        }
+    }
+}
+
+#about-inedo {
+    position: relative;
+    z-index: 2;
+    background-color: @release-orange;
+
+    .contents {
+        min-height: 75px;
+        max-width: @content-max-width;
+        padding: 5px 0;
+        margin: 0 auto;
+
+        p {
+            padding: 10px 0;
+            font-size: 16px;
+            //font-weight: bold;
+            min-width: 100px;
+            color: #fff;
+        }
+
+        a {
+            color: inherit;
+        }
+    }
+
+    img.logo {
+        display: block;
+        float: left;
+        margin: 5px 25px 10px 0;
+
+        .compact-mobile( {
+            float: none;
+            margin: 0 auto;
+        }
+
+        );
+    }
+}
+
+#header-secondary {
+    border-bottom: 20px solid @release-orange;
+    position: relative;
+    z-index: 2;
+
+    .container {
+        background: url(repo-background.jpg) no-repeat fixed @release-grey;
+        background-position: top;
+        min-height: 200px;
+
+        .contents {
+            max-width: 650px;
+            margin: 0 auto;
+            padding-top: 40px;
+
+            h1 {
+                background-color: @release-black;
+                font-size: 50px;
+                font-weight: 700;
+                border-top-left-radius: 40px;
+                border-bottom-right-radius: 40px;
+                text-align: center;
+                color: white;
+                line-height: 85%;
+                padding: 15px;
+            }
+
+            p {
+                font-family: Georgia, Times, "Times New Roman", serif;
+                font-size: 30px;
+                font-style: italic;
+                min-width: 400px;
+                text-align: center;
+                padding-top: 10px;
+
+                .compact-mobile( {
+                    text-align: center;
+                    padding: 5px 0;
+                    font-size: 20px;
+                }
+
+                );
+            }
+        }
+    }
+}
+
+
+
+#about-release {
+    border-top: none;
+
+    .side-bar {
+        .compact-mobile( {
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        );
+
+        .not-compact-mobile( {
+            overflow: hidden;
+            padding-bottom: 50px;
+
+            img {
+                display: block;
+            }
+        }
+
+        );
+    }
+}
+
+#purchase-release {
+    border-color: #349fe3;
+}
+
+#print-and-play {
+    border-color: #7dc94f;
+}
+
+#about-repository {
+    border-color: #ff5419;
+}
+
+#footer {
+    background-color: #6d6e70;
+    min-height: 35px;
+    line-height: 25px;
+    color: white;
+    text-align: center;
+
+    a {
+        color: inherit;
+    }
+
+    font-size: 14px;
+}
+
+.repository-content-section {
+    .content-section();
+    border-top-width: 40px;
+
+    &:after {
+        height: 35px;
+    }
+
+    .not-compact-mobile( {
+        p {
+            padding-right: 230px;
+        }
+    }
+
+    );
+
+    .side-bar {
+        margin: 0 20px;
+
+        .not-compact-mobile( {
+            width: 220px;
+            position: absolute;
+            top: 0px;
+            right: 0;
+        }
+
+        );
+
+        .button {
+            display: block;
+        }
+
+        .sponsor-info {
+            margin-top: 20px;
+
+            &:before {
+                content: 'Sponsored By:';
+                display: block;
+                margin: 0 -20px 10px 0;
+                padding: 5px;
+                color: #fff;
+            }
+
+            img {
+                display: block;
+            }
+
+            p {
+                font-size: 0.85rem;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        .play-info {
+            margin-top: 20px;
+            min-height: 80px;
+            border-top-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            padding: 10px 15px;
+            color: white;
+            margin: 20px 20px;
+            background-color: @release-orange;
+            font-size: 0.8rem;
+
+            .name {
+                display: block;
+                font-weight: bold;
+            }
+
+            .desc {
+                display: block;
+            }
+
+            ul {
+                .mixin-clearlist();
+
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    .mixin-section(@color) {
+        border-color: @color;
+
+        .button {
+            background-color: @color;
+        }
+
+        .play-info {
+            background-color: @color;
+        }
+
+        .sponsor-info {
+            &:before {
+                background-color: @color;
+            }
+        }
+    }
+
+    #agility& {
+        .mixin-section(@agility-accent);
+    }
+
+    #anti-patterns& {
+        .mixin-section(@antipatterns-accent);
+    }
+
+    #automations& {
+        .mixin-section(@automation-accent);
+    }
+
+    #database& {
+        .mixin-section(@database-accent);
+    }
+
+    #delivery& {
+        .mixin-section(@delivery-accent);
+    }
+
+    #deployments& {
+        .mixin-section(@deployments-accent);
+    }
+
+    #devops& {
+        .mixin-section(@devops-accent);
+    }
+
+    #efficiency& {
+        .mixin-section(@efficiency-accent);
+    }
+
+    #libraries& {
+        .mixin-section(@libraries-accent);
+    }
+
+    #logging& {
+        .mixin-section(@logging-accent);
+    }
+
+    #modeling& {
+        .mixin-section(@modeling-accent);
+    }
+
+    #operations& {
+        .mixin-section(@operations-accent);
+    }
+
+    #open-source& {
+        .mixin-section(@opensource-accent);
+    }
+
+    #support& {
+        .mixin-section(@support-accent);
+    }
+
+    #visibility& {
+        .mixin-section(@visibility-accent);
+    }
+
+    #migrations& {
+        .mixin-section(@migrations-accent);
+    }
+}
+
+
+
+#repository-home {
+    border-top: none;
+
+    .side-bar {
+        text-align: center;
+        width: 385px;
+
+        ul {
+            list-style: none;
+            margin: 0;
+
+            li {
+                display: inline-block;
+                font-size: 20px;
+                font-weight: bold;
+                width: 180px;
+                margin: 0 10px 10px 0;
+                border-top-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+                text-transform: uppercase;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                &:nth-child(even) {
+                    margin-right: 0;
+                }
+
+                &.core {
+                    background-color: @core-accent;
+                }
+
+                &.agility {
+                    background-color: @agility-accent;
+                }
+
+                &.antipatterns {
+                    background-color: @antipatterns-accent;
+                }
+
+                &.automation {
+                    background-color: @automation-accent;
+                }
+
+                &.database {
+                    background-color: @database-accent;
+                }
+
+                &.delivery {
+                    background-color: @delivery-accent;
+                }
+
+                &.deployments {
+                    background-color: @deployments-accent;
+                }
+
+                &.devops {
+                    background-color: @devops-accent;
+                }
+
+                &.efficiency {
+                    background-color: @efficiency-accent;
+                }
+
+                &.libraries {
+                    background-color: @libraries-accent;
+                }
+
+                &.logging {
+                    background-color: @logging-accent;
+                }
+
+                &.modeling {
+                    background-color: @modeling-accent;
+                }
+
+                &.operations {
+                    background-color: @operations-accent;
+                }
+
+                &.opensource {
+                    background-color: @opensource-accent;
+                }
+
+                &.support {
+                    background-color: @support-accent;
+                }
+
+                &.visibility {
+                    background-color: @visibility-accent;
+                }
+
+                &.migrations {
+                    background-color: @migrations-accent;
+                }
+            }
+        }
+    }
+}
+
+#about-tutorial {
+    border-top: none;
+    padding: 10px 10px 20px 10px;
+    background-image: none;
+
+    .side-bar {
+        .compact-mobile( {
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        );
+
+        .not-compact-mobile( {
+            overflow: hidden;
+            padding-bottom: 50px;
+
+            img {
+                display: block;
+            }
+        }
+
+        );
+    }
+}
+
+#buy-release {
+    border-top: none;
+
+    .button {
+        padding: 10px;
+    }
+
+    .side-bar {
+        @media (max-width: 650px) {
+            display: none;
+        }
+
+        @media (min-width: 651px) {
+            padding-bottom: 50px;
+
+            img {
+                display: block;
+            }
+        }
+    }
+
+    #buy-basic-edition {
+        border-top: none;
+    }
+
+
+
+    .order-buttons {
+        text-align: center;
+        clear: both;
+    }
+}
+
+.order-form {
+    ul {
+        list-style-type: none;
+        text-align: center;
+    }
+
+    .button {
+        margin: 10px auto;
+        width: 100px;
+    }
+
+    label {
+        display: inline-block;
+        width: 200px;
+        text-align: right;
+        margin-right: 10px;
+    }
+
+    & > div {
+        padding: 5px;
+    }
+
+    & > div:nth-child(2n) {
+        background-color: #f6f6f6;
+    }
+
+    input, select {
+        min-height: 35px;
+        width: 60%;
+        padding: 2px 10px;
+
+        &.smaller {
+            width: 100px;
+        }
+    }
+
+    #domestic-international-split {
+
+        .order-buttons {
+            text-align: center;
+        }
+    }
+
+    .shipping-info {
+        padding: 15px;
+        text-align: center;
+        font-style: italic;
+    }
+
+    table {
+        margin: 20px;
+        border: 1px dashed #aaa;
+        border-collapse: collapse;
+        width: 80%;
+
+        tr:nth-child(2n) {
+            background-color: #f2f2f2;
+        }
+
+        td:first-child {
+            width: 25%;
+            font-weight: bold;
+
+            &:after {
+                content: ':';
+            }
+
+            text-align: right;
+        }
+
+        tr, td {
+            background-color: inherit;
+        }
+
+        td {
+            padding: 5px 10px;
+        }
+    }
+}
+
+.content-section#big-box {
+    img {
+        float: right;
+        height: 300px;
+        padding-right: 50px;
+        height: 100%;
+    }
+
+    fieldset {
+        background: @release-grey;
+        border-bottom-right-radius: 15px;
+        border-top-left-radius: 15px;
+        padding: 15px;
+        color: white;
+        margin-bottom: 65px;
+
+        input, textarea {
+            width: 100%;
+            color: @release-grey;
+            border-bottom-right-radius: 10px;
+            border-top-left-radius: 10px;
+            border: none;
+            padding: 2.5px;
+        }
+
+        textarea {
+            height: 250px;
+        }
+
+        input[type="submit"] {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            width: 15%;
+            color: white;
+            height: 50px;
+        }
+    }
+}
+
+#header-vendor {
+    border-bottom: 20px solid @deployments-accent;
+
+    .container {
+        background: url(repo-background.jpg) no-repeat fixed @deployments-accent;
+        background-position: top;
+        min-height: 200px;
+        padding-top: 40px;
+
+        .contents {
+            max-width: 650px;
+            margin: 0 auto;
+
+            h1 {
+                background-color: @deployments-accent;
+                font-size: 50px;
+                font-weight: 700;
+                border-top-left-radius: 40px;
+                border-bottom-right-radius: 40px;
+                text-align: center;
+                color: white;
+                line-height: 85%;
+                padding: 15px;
+            }
+
+            p {
+                font-family: Georgia, Times, "Times New Roman", serif;
+                font-size: 30px;
+                font-style: italic;
+                min-width: 400px;
+                text-align: center;
+                padding-top: 10px;
+            }
+        }
+    }
+}
+
+.vendor-content-section {
+    .content-section();
+    border-top: none;
+    padding: 10px 10px 20px 10px;
+    background-image: none;
+
+
+    @media (min-width: 651px) {
+        p {
+            padding-right: 230px;
+        }
+    }
+
+    .vendor-box {
+        width: 220px;
+        padding-top: 10px;
+    }
+
+    .side-bar {
+        margin: 0 20px;
+
+        @media (min-width: 651px) {
+            width: 220px;
+            position: absolute;
+            top: 0px;
+            right: 0;
+        }
+
+        .button {
+            display: block;
+        }
+
+        .sponsor-info {
+            margin-top: 20px;
+
+            &:before {
+                content: 'Sponsored By:';
+                display: block;
+                margin: 0 -20px 10px 0;
+                padding: 5px;
+                color: #fff;
+            }
+
+            img {
+                display: block;
+            }
+
+            p {
+                font-size: 0.85rem;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        .play-info {
+            margin-top: 20px;
+            min-height: 80px;
+            border-top-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            padding: 10px 15px;
+            color: white;
+            margin: 20px 20px;
+            background-color: @release-orange;
+            font-size: 0.8rem;
+
+            .name {
+                display: block;
+                font-weight: bold;
+            }
+
+            .desc {
+                display: block;
+            }
+
+            ul {
+                .mixin-clearlist();
+
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    .mixin-section(@color) {
+        .button {
+            background-color: @color;
+        }
+
+        .play-info {
+            background-color: @color;
+        }
+
+        .sponsor-info {
+            &:before {
+                background-color: @color;
+            }
+        }
+    }
+
+    #agility& {
+        .mixin-section(@agility-accent);
+    }
+
+    #anti-patterns& {
+        .mixin-section(@antipatterns-accent);
+    }
+
+    #automations& {
+        .mixin-section(@automation-accent);
+    }
+
+    #database& {
+        .mixin-section(@database-accent);
+    }
+
+    #delivery& {
+        .mixin-section(@delivery-accent);
+    }
+
+    #deployments& {
+        .mixin-section(@deployments-accent);
+    }
+
+    #devops& {
+        .mixin-section(@devops-accent);
+    }
+
+    #efficiency& {
+        .mixin-section(@efficiency-accent);
+    }
+
+    #libraries& {
+        .mixin-section(@libraries-accent);
+    }
+
+    #logging& {
+        .mixin-section(@logging-accent);
+    }
+
+    #modeling& {
+        .mixin-section(@modeling-accent);
+    }
+
+    #operations& {
+        .mixin-section(@operations-accent);
+    }
+
+    #open-source& {
+        .mixin-section(@opensource-accent);
+    }
+
+    #support& {
+        .mixin-section(@support-accent);
+    }
+
+    #visibility& {
+        .mixin-section(@visibility-accent);
+    }
+
+    #migrations& {
+        .mixin-section(@migrations-accent);
+    }
+}
+
+select {
+    option[disabled] {
+        color: #ccc;
+        font-style: italic;
+    }
+}
+
+#release2-notifier {
+    background-color: rgba(253, 184, 0, 0.8);
+
+    a {
+        color: white;
+      
+    }
+
+    padding: 10px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    position: fixed;
+    right: 0;
+    bottom: 10%;
+    animation: slideIn 2s ease-in-out;
+    z-index:5;
+   
+}
+
+@keyframes slideIn {
+    0% {
+        right: -200px;
+    }
+}
+
+@-webkit-keyframes slideIn {
+    0% {
+        right: -200px;
+    }
+}

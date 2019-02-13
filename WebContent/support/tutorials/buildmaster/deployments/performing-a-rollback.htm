@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Performing a Deployment Rollback with BuildMaster</title>
+    <meta name="keywords" content="buildmaster, deployments, rollbacks, experienced-user  " />
+    <meta name="subheading" content="Deployment" />
+      <meta name="product-name" content="BuildMaster" />
+  </head>
+  <body>
+    <!--<p>
+        Microsoft Outlook has a seemingly nifty feature called Recall Message that seemingly
+        allows one to "unsend" a mistaken message. Unfortunately, due to the nature of email
+        (and the space-time continuum), it doesn't really work that well... and the flood
+        of "Jo Ann wants to Recall Message: Q3 Sales Data" emails makes everyone want to
+        read it that much more. Attempting to rollback changes to an application works about
+        as well and predictably.</p>
+    <p>
+        Consider what would happen if you deployed changes that dropped a column in the
+        database. While you could certainly copy old files back, there's no way to resurrect
+        the lost column and its data. You could restore the database, but then you'd lose
+        any intermittently entered data.
+    </p>
+    <p>
+        Of course, that's just the tip of the iceberg: there's configuration changes, third-party
+        libraries, and all sorts of other not-so-straightforward changes that might have
+        occurred. Reliably rolling back  everything to a perfect previous state is
+        nearly impossible. Writing a script to intelligently automate a rollback is even
+        more difficult.</p>-->
+      
+          <p>
+            We don't have a special "rollback plan" that's used only in emergencies. Since such a plan would only get tested in rare cases (i.e. when something went wrong), chances are it will be out of date and likely make things even worse.
+        </p>
+        <p>
+            But what we can do is perform a <strong>"Re-Deploy",</strong> which can effectively be used to rollback changes. Assuming you have your deployment plan configured correctly. Let's consider the state of a given application.
+        </p>
+          <hr />
+      
+     
+         <p>
+        You'll note below that Release 1.0.3 (Build 1) was deployed to Production.
+    </p>
+   <p>
+         <img class="screenshot" src="/resources/tutorials/roll-back/latest-deployment.png" />
+   </p>
+      <h2 id="step-one">Step 1: Navigate to Promotion Details</h2>
+    <p>
+        To go back to Release 1.0.2, navigate to the promotion details of the production-promoted build for that release.</p>
+   <p>
+      <img class="screenshot" src="/resources/tutorials/roll-back/previous-version.png" />
+   </p>
+      <h2 id=" step-two">Step 2: Re-Deploy to Production</h2>
+    <p>
+        You'll notice there's a big button called "Re-Deploy to Production". Clicking on that will run the production deployment plan using 1.0.2 Build 3's context.
+    </p>
+   
+      <h2 id=" step-three">Step 3: Deploy the Artifact</h2>
+    <p>
+        You'll have the option to deploy the artifact immediately, which is common for most rollbacks as they are generally considered emergencies, or at a specific time in the future.
+    </p>
+    
+      <img class="screenshot" src="/resources/tutorials/roll-back/deploy-now.png" />
+      <p>
+        The actions in a <a href="/support/documentation/buildmaster/core-concepts/deployment-plans">deployment plan</a> are designed to look at the <em>execution context</em> to determine what to do. In this case the plan will deploy the artifact associated with Release 1.0.2 Build 3. This will ensure that whatever files were deployed with Release 1.0.2 Build 3 will <i><b>always</b></i> be deployed with Release 1.0.2 Build 3.</p>
+    <p>
+        Once the Release 1.0.2 Build 3 has been re-deployed, that information is reflected in BuildMaster.</p>
+     <p>
+        <img class="screenshot" src="/resources/tutorials/roll-back/rolled-back.png" />
+     </p>
+    <p>
+        And like that, your changes are rolled back. Of course, this isn't a time machine
+        and nothing (not even a time machine) can reliably and perfectly rollback all changes
+        while keeping existing data. 
+        </p>
+        <p><strong>
+    So, be careful using re-executions / rollbacks.
+</strong>
+    </p>
+      <div id="related-content" class="content">
+          <hr />
+          <div class="button-set">
+              <a href="/buildmaster/download" class="button">Download BuildMaster</a>
+              <a href="/products" class="button">Other Inedo products</a>
+
+          </div>
+      </div>
+
+  </body>
+</html>

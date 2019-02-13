@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Executing a Command Line Utility During Deployment in BuildMaster</title>
+   <meta name="keywords" content="buildmaster, command-line, experienced-user" />
+   <meta name="subheading" content="Deployment" />
+    <meta name="product-name" content="BuildMaster" />
+</head>
+<body>
+    <div class="intro">
+        <p>
+            When developing software, it is common to incorporate external command-line
+            tools as a part of the build and deployment process. BuildMaster facilitates this need and allows for automatic execution of a command line utility on a remote build server.
+        </p>
+        <hr />
+    </div>
+   
+   <p>
+      With BuildMaster you can perform the minification process during an automated build. Using an <i>Execute Process</i>
+      operation as part of a deployment plan, we can take advantage of the <a href="http://aspnet.codeplex.com/releases/view/34488">Microsoft Ajax Minifier tool</a>
+      and minify JavaScript.
+   </p>
+    <h2 id="step-one">Step 1: Prepare the Remote Server</h2>
+   <p>
+      Have the ajaxmin executable and a website with the script to
+      be minified already on the remote server (usually previous operations in your BuildMaster
+      deployment plan would have put them there):
+   </p>
+      <img class="screenshot" src="/resources/tutorials/command-line/command-line-1.png" alt="PowerShell" />
+
+    <h2 id="step-two">Step 2: Add the Execute Process Operation to the Deployment Plan</h2>
+    <p>
+        First, create a <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/general-blocks">General block</a> so that server context can be set (server context can also be set in the pipeline). In this case the server is VM-BMCP-1A.
+    </p> 
+    <p>
+        Next add the <a href="/support/documentation/buildmaster/reference/operations/general/execute-process"><i>Execute Process</i></a> operation adding the file name, arguments, and directory.
+    </p>
+  
+      <img class="screenshot" src="/resources/tutorials/command-line/plan.png" alt="Command Line Action" />
+  
+    <h2 id="step-three">Step 3: Save to the Deployment Plan</h2>
+   <p>
+      Once saved , every time the build is executed, the example.js file will be minified into example.min.js.
+   </p>
+   <p>
+      Note that in this example, two separate file names are used simply to compare the results, but you may wish
+      to use the same file name for the output file so that you do not have to modify
+      any script tags in your web site. Here is a comparison of the files:
+   </p>
+      <img class="screenshot" src="/resources/tutorials/command-line/command-line-4.png" alt="Diffs" />
+
+   <p>
+      It's worth mentioning that BuildMaster will log all stdout and stderr messages
+      (and if configured, fail the build if stderr is written to).
+   </p>
+   <p>
+      Using the <i>Execute Process</i> operation, it is trivial to automate a variety of
+       deployment tasks. Some other common examples include:
+   </p>
+   <ul>
+      <li>A Code Signing tool that digitally signs your executables before they are published</li>
+      <li>A utility that builds an installer</li>
+      <li>Any source control system, unit testing framework, or build tool that we do not
+         already <a href="/den">integrate with</a> directly</li>
+      <li>Any custom tool used by your organization</li>
+   </ul>
+
+    <div id="related-content" class="content">
+        <hr />
+        <div class="button-set">
+            <a href="/buildmaster/download" class="button">Download BuildMaster</a>
+            <a href="/products" class="button">Other Inedo products</a>
+
+        </div>
+    </div>
+</body>
+</html>

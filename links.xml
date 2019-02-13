@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<links>
+  <link url="buildmaster-sdk-example" target="~/support/tutorials/writing-a-unit-testing-action-using-the-buildmaster-sdk" />
+  <link url="integrated-support" target="~/bm/live-chat" />
+<!--  <link url="integrated-videos" target="~/resources/scripts/bm/videos.js" /> -->
+  <link url="more-downloads" target="~/downloads" />
+  <link url="videos/configuration-files" target="~/videos/configuration-files" />
+  <link url="videos/database" target="~/videos/database-change-scripts" />
+  <link url="videos/getting-started" target="~/videos/getting-started-guide" />
+  <link url="videos/introduction" target="~/videos/introduction" />
+  <link url="web-documentation" target="~/support/documentation" />
+  <link url="plus-feature-overview" target="~/buildmaster/plus/feature-overview" />
+</links>

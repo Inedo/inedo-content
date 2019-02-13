@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CI/CD for Infrastructure &amp; Configuration Management</title>
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+    <script src="/feature-landing/scripts/fancybox-2.1.5/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <link href="/feature-landing/scripts/fancybox-2.1.5/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/support/whitepapers/ci-cd-infrastructure-config-mgmt/styling.css" />
+
+
+    <script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0053/9152.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+
+</head>
+<body>
+
+    <div class="content-container" id="landing-banner">
+        <div class="content">
+            <h1>CI/CD for Infrastructure &amp; Configuration Management with Otter + BuildMaster</h1>
+            <div id="sign-up" class="shadowed">
+                <h2>Download the Guide</h2>
+                <contact-form method="post" action="/contact-form">
+                    <fieldset>
+                        <input type="hidden" name="MailChimpInterest" value="Whitepapers|CI/CD Infrastructure Config Mgmt" />
+                        <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
+                        <input type="hidden" name="RedirectUrl" value="/support/whitepapers/ci-cd-infrastructure-config-mgmt/thanks" />
+                        <input type="hidden" name="Subject" value="CI/CD for Infrastructure and Configuration Management PDF" />
+                        <input type="hidden" name="CcFromAddress" value="false" />
+                        <input type="hidden" name="Priority" value="High" />
+                        <label>name*</label>
+                        <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
+                        <label>email*</label>
+                        <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
+                        <label>phone</label>
+                        <div><input name="PhoneNumber" type="tel" data-ahvalidator='{ "Required":false }' /></div>
+
+
+                        <input class="submit-button pdf-download " type="button" value="Download" onclick="AhValidation.Submit(this);" />
+                    </fieldset>
+                </contact-form>
+            </div>
+            <div class="product-shot">
+                <img src="/support/whitepapers/ci-cd-infrastructure-config-mgmt/whitepaper.png" />
+                    
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container" id="feature-benefit-intro">
+        <div class="content intro">
+            <p>
+              Organizations of all sizes use CI/CD to get business ideas to the market faster than the competitors by delivering higher-quality software releases sooner. But what works great for application changes doesn’t work as well for infrastructure changes, and operations teams will often struggle to keep pace while maintaining compliance.
+            </p>
+            <p>This guide will explore how to overcome these challenges and show you how to deliver infrastructure changes using CI/CD pipelines.</p>
+           
+        </div>
+    </div>
+    <hr/>
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/support/whitepapers/ci-cd-infrastructure-config-mgmt/before-large.png">
+                    <img class="screenshot" src="/support/whitepapers/ci-cd-infrastructure-config-mgmt/before-small.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+
+                <h2>Before Infrastructure CI/CD Pipelines</h2>
+                <p>
+                    Application changes are tested in pre-production environments, and these changes need to be applied to all servers across all environments that the application uses.
+                    </p><p>
+    This starts by specifying configuration changes to apply to the first pre-production environment. The changes are applied and tested in the first environment, then specified changes are applied to the next environment, based on which configuration performed. The process continues all the way through to production.
+</p><p>
+                This process is similar to the software delivery process without CI/CD and yields the same problems: <strong>low quality configuration in production, slow delivery of changes, and costly implementation</strong>.
+</p>
+               
+            </div>
+
+        </div>
+    </div>
+    <div class="content-container feature-benefit purple">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/support/whitepapers/ci-cd-infrastructure-config-mgmt/after-large.png">
+                    <img class="screenshot" src="/support/whitepapers/ci-cd-infrastructure-config-mgmt/after-small.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+
+                <h2>After Infrastructure CI/CD Pipelines</h2>
+                <p>
+                    You can leverage deployment pipelines to deliver configuration changes. This will introduce the same benefits that development teams have experienced when applying CI/CD to applications.
+                    </p>
+                <p>
+                    The resulting pipeline may look similar to a CI/CD pipeline for applications, but the means of getting there requires an advanced CI/CD platform like BuildMaster, and an advanced configuration management tool like Otter. Fortunately, this is a relatively easy process to setup and start using. <a href="#landing-banner">Read the guide</a> to learn how!
+                    </p>
+                <p>
+                    <strong>Also note, you can do everything in this guide with BuildMaster Free and Otter Free editions</strong>.
+                </p>
+            </div>
+
+        </div>
+    </div>
+  
+
+    <script type="text/javascript">
+        $(function () {
+            $('.fancyboxPopup').fancybox();
+
+            $('.fancybox.ytvideo').click(function () {
+                $.fancybox(this.href, { type: 'iframe' });
+                return false;
+            });
+
+            //$('table:not(#FeatureMatrix,#editionTable)').find('tr:even td').addClass('alt');
+        });
+    </script>
+</body>
+</html>

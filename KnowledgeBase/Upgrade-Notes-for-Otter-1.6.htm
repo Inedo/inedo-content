@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1142" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="otter, upgrade-notes" />
+    <title>Upgrade Notes for Otter 1.6</title>
+    <style type="text/css">
+        .major {
+            color: #c0504d;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="/otter/1.4">Otter 1.6</a> is minor release with the following changes:</p>
+    <ul>
+        <li>Server Packages (New Feature)</li>
+        <li>Role Dependencies (New Feature)</li>
+        <li>New SDK</li>
+        <li>New API Endpoints</li>
+    </ul>
+
+    <h2>Upgrade Impact</h2>
+    <p>
+        Because most of the changes are additive, the upgrade risks are <b>minimal</b>. 
+    </p>
+
+    <h3>Risk Mitigation</h3>
+    <p>Because configuration plan logic has been updated, there is a potential for unintentional changes/bugs to be introduced. To mitigate these risks: </p>
+    <ul>
+        <li>There are minor database schema changes, so make sure to <a href="/support/documentation/otter/administration/backing-up">back up your Otter instance</a> in order to do a rollback.</li>
+        <li>Make sure that the installation's \Extensions directory is backed up prior to upgrade</li>
+        <li>Test configuration and orchestration plans in earlier environments prior to working against production servers</li>
+    </ul>
+
+    <h2>Upgrade Process</h2>
+    <p>
+        Otter may be upgraded by simply running the latest installer. The agents do not need to be updated.
+    </p>
+
+
+    <h2>Rollback</h2>
+    <p>
+        Because there are database changes, a rollback will require uninstalling Otter, and then <a href="/support/documentation/otter/administration/backing-up">restoring your Otter instance</a>.
+    </p>
+</body>
+</html>

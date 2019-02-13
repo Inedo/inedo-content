@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>YouTrack Extension</title>
+</head>
+<body>
+    <h2 id="operations">Operations</h2>
+   
+  <p>
+        Specific Issue Tracking operation added include:
+    </p>
+    <ul>
+        <li>
+            <b>Create YouTrack Issue</b> - Creates an issue in YouTrack
+        </li>
+        <li>
+            <b>Change YouTrack Issue State</b> - Transitions issues in YouTrack from one status to another
+        </li>
+        <li>
+            <b>Find YouTrack Issues</b> - Queries TouTrack Issue IDs
+        </li>
+  <li>
+            <b>Add Comment to YouTrack Issue</b> - Adds a Comment to a YouTrack Issue from BuildMaster
+        </li>
+        <li>
+          <b>  Halt promotions</b> - Will Halt a promotion when YouTrack issue of a specific status exists for the specified release
+        </li>
+    </ul>
+
+    
+    <h2>Using YouTrack with BuildMaster </h2>
+       <p>
+        Issue tracking is a cornerstone of the application release process and facilitates communication of specific features and issues. Integrating issue tracking, an already established process, into your DevOps toolchain is a key step deploying faster  while maintaining compliance and traceability.</p> <p>The steps below will outline a real-word example of how to utilize BuildMaster's YouTrack extension. 
+    </p>
+    <p>
+        First you'll need to install the YouTrack Extension (version 5.6 or higher).
+    </p>
+    <p>
+        <i>Administration</i> &gt; <i>BuildMaster Extensions</i> &gt; <i>YouTrack</i>
+    </p>
+    <p>
+        Then create a <a href="/support/documentation/buildmaster/global-components/resource-credentials">Resource Credential</a> to link BuildMaster to YouTrack.
+    </p>
+    <p>
+        <i>Administration</i> &gt; <i>Resource Credentials </i> &gt; <i>Create Credential</i> &gt; <i>YouTrack</i>
+    </p>
+    <img class="screenshot" src="/resources/tutorials/youtrack/resource-credential.png" />
+    <p>
+        Although the resource credential will work with a user name and password, it is recommended to create a <a href="https://www.jetbrains.com/help/youtrack/incloud/2017.1/Manage-Permanent-Token.html">permanent token</a>.
+    </p>
+    <img class="screenshot" src="/resources/tutorials/youtrack/permanent-token.png" />
+    <p>
+        Next, navigate to an application to associate it with a YouTrack project: click on <i>Issues</i> &gt; <i>Configure External Source</i> &gt; <i>YouTrack Issue Source</i> and fill in the appropriate fields.
+    </p>
+    <img class="screenshot" src="/resources/tutorials/youtrack/configure-external.png" />
+    <p>
+       We're using the <a href="/support/documentation/buildmaster/execution-engine/runtime-variables">Variable</a> <i>$ReleaseNumber</i> so that we can tie issues in YouTrack to a release in BuildMaster without having to specify a single release. 
+    </p>
+    <p>
+        Issues in BuildMaster should always be associated with a release. YouTrack however has no concept of a release, so the YouTrack issue source uses the <i>Project</i> and <i>Fix version</i> version fields in YouTrack to determine which issues to pull for a particular release. If your filter needs to be more complicated (multiple projects, different fields, etc) you can use a search query from the YouTrack dashboard.
+    </p>
+    <p>
+        When defining an issue source, you can use configuration variables and functions such as <i>$ReleaseNumber</i>. When run, these will be replaced with the appropriate value; for example if you have “ABlast” as the Project name and “v$ReleaseNumber” as the Fix for Version, and you’re viewing release 2.0 in BuildMaster, then the issue source will pull all issues the ABlast YouTrack project that have "v2.0" as their Fix for Version.
+    </p>
+    <p class="info">
+        After manually configuring an issue source, any time you visit that application's overview page in BuildMaster, it will automatically refresh issues from that issue tracker. You can also manually refresh by going to <i>Issues</i> &gt; <i>Configure External Source</i> &gt; <i>Manually refresh</i>. Manually refreshing will also provide additional information like Execution Details including execution logs. 
+    </p>
+    <p>
+        After configuring YouTrack as the issue source, the overview page of your application’s release will display all issues in YouTrack assigned to that release, regardless of YouTrack status.
+    </p>
+    <img class="screenshot" src="/resources/tutorials/jira/jira-issues.png" />
+    <p>
+        You can also view all issues from the issues tab, regardless of release.
+    </p>
+    <img class="screenshot" src="/resources/tutorials/jira/all-issues.png" />
+    <h3 id="step-two">Step 2: Using BuildMaster and YouTrack together</h3>
+    <p>
+        Configuring an issue source in BuildMaster provides more functionality than increase visibility for the development teams. Additional useful capabilities are added once an issue source is configured.
+    </p>
+    <h4>Creating a Gate</h4>
+    <p>
+        First, we can put an <em>Issues Resolved</em> gate at the production (or staging) stage of your BuildMaster pipeline. This gate restricts a release package from moving forward unless every issue that is assigned to that release has a specific status (Done or Closed).
+        This serves as a final check point, ensuring that every issue associated with this release has the appropriate status. In many cases ensure that a feature or bug is Done.
+    </p>
+    <img class="screenshot" src="/resources/tutorials/jira/gate-1.png" />
+    <img class="screenshot" src="/resources/tutorials/jira/gate-2.png" />
+    <p>
+        This can be done at any stage of a pipeline for any status that would be appropriate. This works as a check, but doesn’t make using an issue tracker any easier. We can also automate the stages that an issue travels through in BuildMaster.
+    </p>
+    <h4>Creating a New Issue</h4>
+    <p>
+        BuildMaster also allows you to create a YouTrack issue from within BuildMaster.
+    </p>
+    <p>
+        You can do this directly from within a deployment plan using the Create YouTrack issue operation.
+    </p>
+   
+        <h4>Visual editor</h4> <img class="screenshot" src="/resources/tutorials/youtrack/create-issue.png" />
+        <h4>Text Editor  (OtterScript)</h4> <img class="screenshot" src="/resources/tutorials/youtrack/create-issue-text.png" />
+    
+    <img class="screenshot" src="/resources/tutorials/youtrack/youtrack-issue.png" />
+    <p>
+          While monolithic deployment solutions are fast becoming a thing of the past, it doesn’t mean that the tools used to deploy a modern application in a DevOps environment should be isolated either. Integrations that make sense, increase visibility, and help automate manual tasks to create a stronger DevOps toolchain that allows organizations to expand and utilize established processes.
+    </p>
+    
+
+</body>
+</html>

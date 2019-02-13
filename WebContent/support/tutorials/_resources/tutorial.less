@@ -1,0 +1,151 @@
+@import "..\..\..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-lightgrey: #ddd;
+@inedo-white: #fff;
+@inedo-lightblue: #10466E;
+
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+.tutorial-wrap {
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .intro {
+        margin-bottom: 50px;
+        padding-top: 10px;
+        font-size: 125%;
+        font-weight: bolder;
+    }
+
+    h2 {
+        font-weight: bolder;
+    }
+
+
+
+    .screenshot {
+        border: 2px solid @inedo-lightgrey;
+    }
+    .tutorial-code {
+    border-radius: 5px;
+    background-color: @inedo-black;
+    color: @inedo-white;
+    padding: 30px 10px 20px 10px;
+    }
+    .console {
+        border: 1px solid @inedo-darkgrey;
+        padding: 20px 30px;
+        border-radius: 5px;
+    }
+}
+
+#tutorial-banner {
+    margin: 0;
+    padding: 0;
+    background-position: center top;
+    height: 150px;
+    background-repeat: no-repeat;
+
+    &.Unspecified {
+        background-color: hotpink;
+    }
+
+    &.BuildMaster {
+        background-image: url(/support/tutorials/_resources/bm-banner.png);
+        background-color: @buildmaster-orange;
+    }
+
+    &.Hedgehog {
+        background-image: url(/support/tutorials/_resources/hh-banner.png);
+        background-color: #45b886;
+    }
+
+    &.ProGet {
+        background-image: url(/support/tutorials/_resources/pg-banner.png);
+        background-color: @proget-blue;
+    }
+
+    &.Otter {
+        background-image: url(/support/tutorials/_resources/o-banner.png);
+        background-color: @otter-purple
+    }
+
+    &.Romp {
+        background-image: url(/support/tutorials/_resources/romp-banner.png);
+        background-color: #CB1462;
+    }
+}
+
+
+
+
+.content-container#mini-tutorial-nav {
+    background-color: @inedo-black;
+    margin-bottom: 15px;
+
+    .content {
+        ul {
+            .mixin-clearlist;
+            .mixin-horizontal-list;
+
+            li {
+                a {
+                    color: @inedo-white;
+                    text-decoration: none;
+                    font-weight: bolder;
+                }
+
+                a:hover {
+                    color: #47be30;
+                }
+
+                border-right: 1px solid @inedo-white;
+                text-align: center;
+                font-size: 125%;
+                width: 194px;
+                height: 30px;
+                padding: 0;
+
+                &:first-child {
+                    border-left: 1px solid @inedo-white;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.content#related-content {
+    padding: 20px 0;
+    margin: 10px 0;
+
+    .button-set {
+        padding-top: 20px;
+    }
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 15px;
+    left: 77%;
+    background-color: @inedo-darkgrey;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+

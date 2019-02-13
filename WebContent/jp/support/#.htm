@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Resource Center &amp; Support</title>
+    <meta name="MasterPageFile" content="japan.htm" />
+    <link rel="stylesheet" type="text/css" href="/support/support.css" />
+
+    <script type="text/javascript">
+        setTimeout(function () {
+            var a = document.createElement("script");
+            var b = document.getElementsByTagName("script")[0];
+            a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0053/9152.js?" + Math.floor(new Date().getTime() / 3600000);
+            a.async = true; a.type = "text/javascript"; b.parentNode.insertBefore(a, b)
+        }, 1);
+    </script>
+
+</head>
+<body>
+    <div id="banner" class="content-container">
+        <div class="content">
+            <img src="/support/support-logo.png" alt="Support" />
+            
+            <div class="circle-button">
+                <a class="download" href="/jp/contact">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="resources" class="content-container">
+        <div class="content">
+            <h1>Support</h1>
+            <div class="resource-cards">
+                
+                <a href="/support/submit-ticket" target="_blank" class="cards support">
+                    <h4><img src="/resources/images/icons/support/ticket.svg" />Submit a Support Ticket</h4>
+                    <p>
+                        有料ユーザーの方へのInedoエンジニアへのダイレクト・アクセス
+                    </p>
+
+                </a>
+                <a href="/support/questions/new" target="_blank" class="cards support">
+                    <h4><img src="/resources/images/icons/support/question.svg" />Submit a Question</h4>
+                    <p>
+                        Inedoユーザーの方々で質問や回答をおこなえる公開フォーラム
+                    </p>
+
+                </a>
+                </div>
+            <div style="clear: both;"></div>
+            <!--<h1>Learn</h1>-->
+                <div class="resource-cards">
+
+                    <a href="/support/documentation" target="_blank" class="cards">
+                        <h4><img src="/resources/images/icons/support/docs.svg" />Documentation</h4>
+                    </a>
+                    <a href="/case-studies" target="_blank" class="cards">
+                        <h4><img src="/resources/images/icons/support/cs.svg" />Case Studies</h4>
+                    </a>
+                    <a href="/jp/contact" target="_blank" class="cards">
+                        <h4><img src="/resources/images/icons/support/profiles.svg" />Contact Us</h4>
+                    </a>
+                    </div>
+
+            <div style="clear: both;"></div>
+
+            <!--<h1>Inedo Community</h1>
+            <div class="resource-cards">
+
+                <a href="/blog/announcing-user-profiles" class="cards">
+                    <h4><img src="/resources/images/icons/support/up.png" />User Profiles</h4>
+                </a>
+                <a href="/support/questions" class="cards">
+                    <h4><img src="/resources/images/icons/support/qa.png" />Browse all Q&amp;A</h4>
+                </a>
+                <a href="/den" class="cards">
+                    <h4><img src="/resources/images/icons/support/source.png" />The Inedo Den</h4>
+                </a>
+            </div>
+
+            <div style="clear: both;"></div>
+
+            <h1>Additional Resources</h1>
+            <div class="resource-cards">
+                <a href="/support/kb" class="cards add">
+                    <h4><img src="/resources/images/icons/support/kb.png" />Knowledge Base Articles</h4>
+                </a>
+
+                <a href="/jp/proget/case-studies/abanca" class="cards add">
+                    <h4><img src="/resources/images/icons/support/cs.png" />Case Studies</h4>
+                </a>
+            </div>-->
+        </div>
+    </div>
+
+    <div id="newsletter" class="content-container" style="clear: both;">
+        <div class="content">
+            <h2>Inedo Newsletter</h2>
+            <contact-form method="post" action="/contact-form">
+                <fieldset>
+                    <input type="hidden" name="ToAddress" value="ssato@inedo.com" />
+                    <input type="hidden" name="RedirectUrl" value="/jp/thank-you" />
+                    <input type="hidden" name="Subject" value="Resource Center &amp; Support Japan Subscription Box" />
+                    <input type="hidden" name="CcFromAddress" value="false" />
+                    <input type="hidden" name="Priority" value="High" />
+
+                    <label>名前</label>
+                    <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                    <label>Eメールアドレス</label>
+                    <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                    <input type="button" value="送信" onclick="AhValidation.Submit(this);" />
+                </fieldset>
+            </contact-form>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

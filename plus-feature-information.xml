@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+This contents of this file is sent for /bm/plus-feature-information.
+
+It used to be generated with bunch of various rubbishes, but that's all been uninclused, and the iconUrl attrib was renamed/replaced
+
+This url is probably only used in BuildMaster 3.5 to 4.1
+
+-->
+<features>
+  <feature name="Active Directory / LDAP Integration" code="ldap" perpetualPrice="149.00" annualPrice="39.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/active-directory-ldap-integration.png" url="/buildmaster/upgrades/active-directory-ldap-integration">
+    <shortDescription>Enable integrated authentication and Active Directory user/groups via LDAP.</shortDescription>
+    <description>&lt;p&gt;Access to BuildMaster's web-based interface requires an account with the appropriate privileges. While it's pretty easy to define these user accounts and groups, it is &lt;em&gt;yet another&lt;/em&gt; user list to maintain, and &lt;em&gt;yet another&lt;/em&gt; name/password to remember.&lt;/p&gt;&lt;p&gt;With this Active Directory / LDAP Integration upgrade, you can use the users, credentials, groups already in your Active Directory (or other LDAP-based directory) to control who has access to BuildMaster, thus simplifying administration and usability for your end-users.&lt;/p&gt;</description>
+  </feature>
+  <feature name="Additional Server" code="srv" perpetualPrice="149.00" annualPrice="39.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/additional-server.png" url="/buildmaster/upgrades/additional-server">
+    <shortDescription>Add 1 additional server.</shortDescription>
+    <description>
+      &lt;p&gt;As the number of applications in your organization's portfolio increases over time, so can the number of
+      servers that those applications rely on for deployment. BuildMaster gives you the ability to connect with and/or deploy to 5 servers at no extra cost. This upgrade increases the server count by 1.&lt;/p&gt;&lt;p&gt; If you require more than 1 additional server, we also offer an
+      &lt;a href="http://inedo.com/buildmaster/upgrades/unlimited-servers"&gt;unlimited server package&lt;/a&gt;.&lt;/p&gt;
+    </description>
+  </feature>
+  <feature name="Additional User" code="fu" perpetualPrice="249.00" annualPrice="69.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/additional-user.png" url="/buildmaster/upgrades/additional-user">
+    <shortDescription>Add 1 additional named user.</shortDescription>
+    <description>
+      &lt;p&gt;
+      BuildMaster is at its best when everyone on the team can use it, and we believe there is no reason why
+      an organization should be penalized for growing too quickly with expensive, complicated licensing.
+      &lt;/p&gt;&lt;p&gt;
+      You can purchase this upgrade to add a single licensed user to BuildMaster Express as they are needed.
+      &lt;/p&gt;
+    </description>
+  </feature>
+  <feature name="Automated Promotion Requirements" code="pr" perpetualPrice="149.00" annualPrice="39.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/automated-promotion-requirements.png" url="/buildmaster/upgrades/automated-promotion-requirements">
+    <shortDescription>Enables automated verification of builds prior to promotion.</shortDescription>
+    <description>
+      &lt;p&gt;Before going to production, applications need to be promoted through a sequence of environments such integration, testing, and stating. These are called Promotion Workflows, and BuildMaster allows you to define numerous approvals and requirements at each of these checkpoints.&lt;/p&gt;&lt;p&gt;This upgrade allows you to define &lt;em&gt;automated&lt;/em&gt; promotion requirements that BuildMaster can validate/verify prior to promotion. If the automated promotion requirements you define are not met, then the build may not be promoted (it of course may be &lt;em&gt;forced&lt;/em&gt; if you have proper privileges). The automated promotion requirements include:
+      &lt;/p&gt;&lt;ul&gt;&lt;li&gt;File Exists in Artifact - Verifies that a file exists in an Artifact before a promotion to the environment. &lt;/li&gt;&lt;li&gt;Change Controls Performed - Verifies that change controls have been performed in this environment before a promotion to that environment. &lt;/li&gt;&lt;li&gt;Run Change Scripts - Verifies that database change scripts have been run before a promotion. &lt;/li&gt;&lt;li&gt;Command Line - Executes a program via command-line on the BuildMaster server. &lt;/li&gt;&lt;li&gt;Issue Tracker Status - Verifies that issues are in a certain status before a promotion to the environment. &lt;/li&gt;&lt;li&gt;Day/Time-based - Ensures that a promotion will occur on a specific day and time. &lt;/li&gt;&lt;li&gt;Unit Tests Passed - Verifies that unit tests have passed in the last execution. &lt;/li&gt;&lt;li&gt;Variable Value Set - Requires that a specified variable is set to a specified value for the promotion to occur. &lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Because automated promotion requirements are extensible, you can develop your own using the &lt;a href="/buildmaster/sdk"&gt;BuildMaster SDK&lt;/a&gt;.&lt;/p&gt;
+    </description>
+  </feature>
+  <feature name="Change Controls" code="cc" perpetualPrice="499.00" annualPrice="129.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/change-controls.png" url="/buildmaster/upgrades/change-controls">
+    <shortDescription>Allows the documentation, tracking, and control of non-automated changes to applications.</shortDescription>
+    <description>&lt;p&gt;For many organizations, it's not feasible (or even possible) to automate all aspects of the deployment process. While the &lt;a href="http://inedo.com/support/tutorials/assigning-and-performing-a-manual-action-with-buildmaster"&gt;Manual Action&lt;/a&gt; is designed to accommodate &lt;em&gt;routine&lt;/em&gt; steps your deployments, many "manual" changes are not routine. For example, you may make a change to your application's logging such that a user needs to be granted write-access to a certain directory. You use BuildMaster Change Controls to document this change, ensure that at happens at each environment, and track who made the change.&lt;/p&gt;&lt;p&gt;This upgrade includes:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ability to create and assign Change Controls&lt;/li&gt;&lt;li&gt;Promotion requirement to ensure Change Controls are performed prior to promotion&lt;/li&gt;&lt;li&gt;Action to halt a deployment/execution until the appropriate Change Controls are performed&lt;/li&gt;&lt;li&gt;History of who performed Change Controls in each environment&lt;/li&gt;&lt;/ul&gt;</description>
+  </feature>
+  <feature name="Configuration File Templates" code="cft" perpetualPrice="99.00" annualPrice="29.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/configuration-file-templates.png" url="/buildmaster/upgrades/configuration-file-templates">
+    <shortDescription>Enables configuration file templates within applications.</shortDescription>
+    <description>
+      &lt;p&gt;
+      Configuration files are a common component in software development and deployment. These files,
+      unlike code files, are meant to contain different values across the environment spectrum that contains
+      the deployed software. While the files themselves are different per environment, they likely all contain the same
+      skeleton with only slight modifications, e.g. changing a database connection string or debug settings.
+      &lt;/p&gt;&lt;p&gt;
+      Because these files are mostly the same, they can usually be templated out. While BuildMaster allows you
+      to create full instances of configuration files from the start, this upgrade allows your organization to
+      create configuration file templates which will ease their development and deployment.
+      &lt;/p&gt;
+    </description>
+  </feature>
+  <feature name="Database Change Script Deployer" code="csd" perpetualPrice="99.00" annualPrice="29.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/database-change-script-deployer.png" url="/buildmaster/upgrades/database-change-script-deployer">
+    <shortDescription>Adds redistributable change script deployment tool.</shortDescription>
+    <description>
+      &lt;p&gt;
+      BuildMaster's change scripts module lets you easily manage
+      database schema changes against any database instance which
+      BuildMaster is aware of. This means that BuildMaster will
+      not only help keep you keep your schema consistent, but
+      will make it easy for you to arbitrarily refresh the
+      schema for any database instance.
+      &lt;/p&gt;&lt;p&gt;
+      Sometimes, however, it would be nice to enable this
+      "arbitrary refresh" on databases not associated with your
+      BuildMaster instance - for example, when updating/deploying
+      a database schema as part of an installer.
+      &lt;/p&gt;&lt;p&gt;
+      With this upgrade, BuildMaster can generate a self-contained
+      executable file that can be run from the command-line to
+      update the database schema of any database instance.
+      &lt;/p&gt;
+    </description>
+  </feature>
+  <feature name="Deployable Dependencies" code="depd" perpetualPrice="149.00" annualPrice="39.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/deployable-dependencies.png" url="/buildmaster/upgrades/deployable-dependencies">
+    <shortDescription>Enables deployable dependency management.</shortDescription>
+    <description>
+      &lt;p&gt;To better model large and complex applications, BuildMaster has a concept called "depoyables" that allow you to divide an application into its individually deployable components. Check out &lt;a href="http://inedo.com/support/kb/1032/the-difference-between-deployables-and-applications"&gt;KB#1032 (The Difference Between Deployables and Applications)&lt;/a&gt; for a more in-depth explanation.&lt;/p&gt;&lt;p&gt;
+      For very complex applications, it's not uncommon to have a situation where one deployable
+      depends on another. For example, consider an application that consists of a
+      website and a Windows service - both may share and depend on a &lt;strong&gt;Core&lt;/strong&gt;
+      deployable containing common business logic, while perhaps &lt;strong&gt;Core&lt;/strong&gt;
+      depends on even more components.
+      &lt;/p&gt;&lt;p&gt;
+      BuildMaster's deployable dependency system can alleviate this problem and help
+      you untangle the mess. With this upgrade, you can help ensure that everything
+      gets deployed that's needed - whether it's obvious or not.
+      &lt;/p&gt;
+    </description>
+  </feature>
+  <feature name="Group-based Approvals" code="ga" perpetualPrice="249.00" annualPrice="69.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/group-based-approvals.png" url="/buildmaster/upgrades/group-based-approvals">
+    <shortDescription>Allows one or more member of a group to approve builds prior to promotion.</shortDescription>
+    <description>&lt;p&gt;Before going to production, applications need to be promoted through a sequence of environments such integration, testing, and stating. These are called Promotion Workflows, and BuildMaster allows you to define numerous approvals and requirements at each of these checkpoints.&lt;/p&gt;&lt;p&gt;This upgrade allows you to tie approvals to a group name instead of having to use a specific username. In addition, you can require that more than one member of a group must approve the build prior to promotion. Example approvals could include:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Acceptance Testing Complete (2 members of &lt;em&gt;Testers&lt;/em&gt;)&lt;/li&gt;&lt;li&gt;Beta Environment Not in Use (1 member of &lt;em&gt;Sales&lt;/em&gt;)&lt;/li&gt;&lt;li&gt;Suitable for Testing (1 member of &lt;em&gt;Developers&lt;/em&gt;)&lt;/li&gt;&lt;/ul&gt;</description>
+  </feature>
+  <feature name="Multiple Active Builds" code="mab" perpetualPrice="149.00" annualPrice="39.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/multiple-active-builds.png" url="/buildmaster/upgrades/multiple-active-builds">
+    <shortDescription>Enables multiple active builds within applications.</shortDescription>
+    <description>
+      &lt;p&gt;
+      Traditionally, builds are promoted through their respective workflows such that they supercede the previous
+      build in an environment. However, there are some specific cases where allowing 2 or more builds to co-inhabit the same environment
+      is advantageous.
+      &lt;/p&gt;&lt;p&gt;
+      Some times when you may want to consider multiple active builds include:
+      &lt;/p&gt;&lt;ul&gt;&lt;li&gt;when building to an environment creates a new virtual machine instance &lt;/li&gt;&lt;li&gt;when an environment doesn't actually represent a state of the software testing lifecycle, such as a "ready for approval" environment&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;
+      BuildMaster includes the ability to create builds which supercede existing ones in the target environment,
+      and this upgrade will allow multiple builds to exist in the same environment.
+      &lt;/p&gt;
+    </description>
+  </feature>
+  <feature name="Multiple Promotion Workflows" code="wf" perpetualPrice="249.00" annualPrice="69.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/multiple-promotion-workflows.png" url="/buildmaster/upgrades/multiple-promotion-workflows">
+    <shortDescription>Enables multiple promotion workflows within applications.</shortDescription>
+    <description>&lt;p&gt;Before going to production, applications need to be promoted through a sequence of environments such integration, testing, and stating. These are called Promotion Workflows, and BuildMaster allows you to define numerous approvals and requirements at each of these checkpoints.&lt;/p&gt;&lt;p&gt;This upgrade allows you to define &lt;em&gt;multiple&lt;/em&gt; workflows per application, so that your applications' releases can take different paths to production. Examples of these alternate workflows may include:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;branched development &lt;/li&gt;&lt;li&gt;emergency fixes &lt;/li&gt;&lt;li&gt;different approval rules&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;There are no limits to the number of workflows allowed per application once this upgrade is added to BuildMaster.&lt;/p&gt;</description>
+  </feature>
+  <feature name="Scoped Privileges" code="sp" perpetualPrice="249.00" annualPrice="69.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/application-environment-scoped-privileges.png" url="/buildmaster/upgrades/application-environment-scoped-privileges">
+    <shortDescription>Enables application, application group, and environment-specific privileges.</shortDescription>
+    <description>&lt;p&gt;To control the type of access different users have, BuildMaster uses a fairly standard principal-role-task security model. You can associate principals (users or groups) with one or more roles (built-in or custom) to create a simple or finely-grained set of access controls.&lt;/p&gt;&lt;p&gt;This upgrade allows for further granularity in access control by allowing privileges to be "scoped" at the application, application group, and/or environment level. This allows for a much more detailed controls, such as:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;AMCOR Developers may only create builds of AMCOR applications and promote those builds to test&lt;/li&gt;&lt;li&gt;AMCOR QA Members may only promote AMCOR builds from test to staging&lt;/li&gt;&lt;li&gt;Any developer may promote "dev-only" applications all the way through staging&lt;/li&gt;&lt;li&gt;Only Network Engineers may view production configuration files&lt;/li&gt;&lt;/ul&gt;</description>
+  </feature>
+  <feature name="Server Groups" code="sg" perpetualPrice="799.00" annualPrice="199.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/server-groups.png" url="/buildmaster/upgrades/server-groups">
+    <shortDescription>Enables server groups.</shortDescription>
+    <description>
+      &lt;p&gt;
+      Deploying to a single server certainly simplifies the deployment process. When software becomes more
+      wide-spread and traffic increases, applications will face scalability issues that affect hardware, software,
+      and the deployment process.
+      &lt;/p&gt;&lt;p&gt;
+      To help ease some of the pain in the deployment process, BuildMaster offers the ability to enable
+      server groups which will greatly simplify the deployment plan creation and maintenance process. Deploying to a group of
+      5 servers is as easy as adding those 5 servers to a server group, and specifying the server group in the
+      deployment plan instead of an individual server.
+      &lt;/p&gt;
+    </description>
+  </feature>
+  <feature name="Unlimited Applications" code="apps" perpetualPrice="249.00" annualPrice="69.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/unlimited-applications.png" url="/buildmaster/upgrades/unlimited-applications">
+    <shortDescription>Removes the 10 application limit.</shortDescription>
+    <description>
+      BuildMaster supports up to 10 &lt;a href="/support/documentation/buildmaster/applications"&gt;applications&lt;/a&gt;. Applications represent a totality of technology, code, platforms, etc. that comprise and deliver the business functionality for a particular task. Whether that task is implemented with a single HTML file or and entire suite of webservices that make up a product, if you anticipate that you will reach the 10 application limit within BuildMaster, this upgrade will ensure that no matter how many applications are developed by your organization, there will always be room for them in BuildMaster.
+    </description>
+  </feature>
+  <feature name="Unlimited Automatic Builds" code="bs" perpetualPrice="149.00" annualPrice="39.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/unlimited-automatic-builds.png" url="/buildmaster/upgrades/unlimited-automatic-builds">
+    <shortDescription>Removes the 1 automatic build per application restriction.</shortDescription>
+    <description>
+      &lt;p&gt;
+      Integrating a developer's code changes into the software's source control management system
+      should occur frequently enough such that there is very little time between a commit and a build.
+      This practice helps to identify errors in a build and allows them to be quickly corrected.
+      &lt;/p&gt;&lt;p&gt;
+      While BuildMaster provides this ability out of the box, sometimes it is necessary to create more
+      than a simple check-in then build. With unlimited automatic builds, you can:
+      &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Fine-grained time-based builds&lt;/li&gt;&lt;li&gt;Building against a different workflow at a certain time&lt;/li&gt;&lt;li&gt;Build from a branched release on check-in to a different source path&lt;/li&gt;&lt;/ul&gt;
+    </description>
+  </feature>
+  <feature name="Unlimited Configuration Files" code="cf" perpetualPrice="99.00" annualPrice="29.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/unlimited-configuration-files.png" url="/buildmaster/upgrades/unlimited-configuration-files">
+    <shortDescription>Removes the 1 configuration file per deployable limit.</shortDescription>
+    <description>&lt;p&gt;Configuration files are an important, but often overlooked, element of a web deployment. Traditionally, configuration files are either treated as source code and manually edited for different environments, or they are separately managed by a network administrator. With BuildMaster, configuration files become another part of a predictable, audited, and secure deployment.&lt;/p&gt;&lt;p&gt;BuildMaster supports a single configuration file per deployable, but this upgrade allows for any number of configuration files.&lt;/p&gt;</description>
+  </feature>
+  <feature name="Unlimited Database Connections" code="db" perpetualPrice="99.00" annualPrice="29.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/unlimited-database-connections.png" url="/buildmaster/upgrades/unlimited-database-connections">
+    <shortDescription>Removes the single datbase set per application limit.</shortDescription>
+    <description>&lt;p&gt;Databases serve as a critical architectural component and can change just as often as the source code. BuildMaster supports these database changes through &lt;em&gt;database connections&lt;/em&gt; and &lt;em&gt;database change scripts&lt;/em&gt;, and the deployment actions such as &lt;em&gt;Execute Change Script&lt;/em&gt;, &lt;em&gt;Execute Statement&lt;/em&gt;, &lt;em&gt;Back-up Database&lt;/em&gt;, and so on. These features allow you to manage and track your database changes just as rigorously as you would with source control.&lt;/p&gt;&lt;p&gt;BuildMaster includes support for one database per environment in each application. This way, you can use BuildMaster to deploy your application's database to Dev, Test, and Prod. Some applications, however, may utilize more than one database. For example:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;multiple database platforms&lt;/strong&gt; - if your application supports both SQL Server and MySQL&lt;/li&gt;&lt;li&gt;&lt;strong&gt;legacy and current database&lt;/strong&gt; - a technique to segregate old and new portions of the application&lt;/li&gt;&lt;li&gt;&lt;strong&gt;shared databases&lt;/strong&gt; - a common database between multiple applications&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This upgrade removes the one database limitation and allows you define as many connections as you need.&lt;/p&gt;</description>
+  </feature>
+  <feature name="Unlimited Deployables" code="dep" perpetualPrice="149.00" annualPrice="39.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/unlimited-deployables.png" url="/buildmaster/upgrades/unlimited-deployables">
+    <shortDescription>Removes the 3-deployable per application limit.</shortDescription>
+    <description>&lt;p&gt;To better model large and complex applications, BuildMaster has a concept called "depoyables" that allow you to divide an application into its individually deployable components. Check out &lt;a href="http://inedo.com/support/kb/1032/the-difference-between-deployables-and-applications"&gt;KB#1032 (The Difference Between Deployables and Applications)&lt;/a&gt; for a more in-depth explanation.&lt;/p&gt;&lt;p&gt;BuildMaster supports up to three deployables per application, which covers a whole lot of scenarios:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Basic Website - a single deployable named "Web"&lt;/li&gt;&lt;li&gt;Web Application - a "Web" deployable and a "Database" deployable&lt;/li&gt;&lt;li&gt;Desktop Application - a "Services" deployable, a "App" deployable, and a "Database" deployable&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;More complicated applications, however, may require more deployables. This upgrade removes the limitation and allows an unlimited number of deployables in your application.&lt;/p&gt;</description>
+  </feature>
+  <feature name="Unlimited Environments" code="env" perpetualPrice="149.00" annualPrice="39.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/unlimited-environments.png" url="/buildmaster/upgrades/unlimited-environments">
+    <shortDescription>Removes the environment count restriction.</shortDescription>
+    <description>
+      &lt;p&gt;
+      Testing your software is key aspect of quality software. While some applications require no testing beyond
+      "it works on my machine", other applications require several forms of testing by transitioning software through
+      multiple teams and environments. To define precisely what is meant by the term environment, please see the &lt;a href="http://inedo.com/support/documentation/buildmaster/environments"&gt;environments&lt;/a&gt; section of the documentation.
+      &lt;/p&gt;&lt;p&gt;
+      BuildMaster includes 3 environments your organization may utilize to represent the different stages
+      of your workflows. Upgrading to unlimited environments allows your organization to specify deployment
+      plans for every environment your workflow may encounter.
+      &lt;/p&gt;
+    </description>
+  </feature>
+  <feature name="Unlimited Imported Deployables" code="depi" perpetualPrice="149.00" annualPrice="39.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/unlimited-imported-deployables.png" url="/buildmaster/upgrades/unlimited-imported-deployables">
+    <shortDescription>Removes the 1 imported deployable limit.</shortDescription>
+    <description>
+      &lt;p&gt;To better model large and complex applications, BuildMaster has a concept called "depoyables" that allow you to divide an application into its individually deployable components. Check out &lt;a href="http://inedo.com/support/kb/1032/the-difference-between-deployables-and-applications"&gt;KB#1032 (The Difference Between Deployables and Applications)&lt;/a&gt; for a more in-depth explanation.&lt;/p&gt;&lt;p&gt;
+      In addition to normal deployables, BuildMaster allows you to use a deployable from one appliction in another. For example, an SDK application may rely on
+      build output of another application. In this case, it can &lt;em&gt;import&lt;/em&gt; that deployable so it can be used in an SDK deployment plan.
+      &lt;/p&gt;&lt;p&gt;
+      BuildMaster supports one imported deployable. If you have more than one inter-application dependency, however, you will need more.
+      This upgrade removes the limitation and allows an unlimited number of imported deployables.
+      &lt;/p&gt;
+    </description>
+  </feature>
+  <feature name="Unlimited Issue Trackers" code="itp" perpetualPrice="149.00" annualPrice="39.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/unlimited-issue-trackers.png" url="/buildmaster/upgrades/unlimited-issue-trackers">
+    <shortDescription>Removes the 1 issue tracker restriction.</shortDescription>
+    <description>
+      &lt;p&gt;
+      In an ideal world, an organization will use only one issue tracker for all of its applications.
+      Of course, in the real world, this is rarely the case with very large teams that develop a large
+      number of projects over time. Legacy projects may one one issue tracking system, while newer projects
+      are gradually transitioned to new systems.
+      &lt;/p&gt;&lt;p&gt;
+      BuildMaster allows the ability to connect with 1 issue tracking system by default.
+      If your application base or number of disparate issue trackers requires
+      more connections, then this upgrade will allow an unlimited number of connections to all the issue tracking
+      systems that BuildMaster integrates with.
+      &lt;/p&gt;
+    </description>
+  </feature>
+  <feature name="Unlimited Servers" code="srvu" perpetualPrice="899.00" annualPrice="229.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/unlimited-servers.png" url="/buildmaster/upgrades/unlimited-servers">
+    <shortDescription>Removes the server count restriction.</shortDescription>
+    <description>
+      &lt;p&gt;In a world of virtualization and cloud-based deployments, a fixed number of servers may not be enough to get the maximum benefit out of BuildMaster. BuildMaster gives you the ability to connect with and/or deploy to 5 servers at no extra cost. This upgrade removes that restriction and allows your organization to create as many agent connections as necessary.&lt;/p&gt;&lt;p&gt; If you only need a single additional server, we also offer an
+      &lt;a href="http://inedo.com/buildmaster/upgrades/additional-server"&gt;additional server&lt;/a&gt; at a lesser cost.&lt;/p&gt;
+    </description>
+  </feature>
+  <feature name="Unlimited Source Control Providers" code="scmp" perpetualPrice="149.00" annualPrice="39.00" iconUrl="/resources/images/icons/BuildMaster.png" oldIconUrl="/resources/images/upgrades/unlimited-source-control-providers.png" url="/buildmaster/upgrades/unlimited-source-control-providers">
+    <shortDescription>Removes the 2 source control provider restriction.</shortDescription>
+    <description>
+      &lt;p&gt;
+      As a software portfolio grows, so does the number of tools in the toolset used to build the software.
+      This can also happen when multiple teams are assigned to build different applications. Either way, one
+      of the core tools in the lifecycle of quality softare is a source control management system.
+      &lt;/p&gt;&lt;p&gt;
+      BuildMaster allows the ability to connect with up to 2 source control providers/systems by default.
+      As an example, if one of your applications requires &lt;a href="http://inedo.com/buildmaster/extensions/perforce"&gt;Perforce&lt;/a&gt; and another requires &lt;a href="http://inedo.com/buildmaster/extensions/subversion"&gt;Subversion&lt;/a&gt;, BuildMaster
+      has you covered.  If your application base or number of disparate source control management tools requires
+      more connections, then this upgrade will allow an unlimited number of connections to all the source control
+      systems that BuildMaster integrates with.
+      &lt;/p&gt;
+    </description>
+  </feature>
+</features>

@@ -1,0 +1,383 @@
+.documentation-content .tool-nav {
+  background-color: #282b3a;
+  z-index: 2;
+  position: relative;
+  border-top: 2px solid #48729d;
+  padding: 4px 0;
+}
+.documentation-content .tool-nav ul {
+  padding: 0;
+  text-align: center;
+}
+.documentation-content .tool-nav ul li {
+  text-align: center;
+  margin: 6px 0 8px 0;
+}
+.documentation-content .tool-nav ul li a {
+  color: #e9eada;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 26px;
+}
+.documentation-content .tool-nav ul li a img {
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+.documentation-content .tool-nav ul li a:hover {
+  color: #48729d;
+}
+.content-container#navigation {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: 10px solid #48729d;
+}
+.content-container#navigation.bm {
+  border-top: 10px solid #f15a24;
+}
+.content-container#navigation.pg {
+  border-top: 10px solid #3fa9f5;
+}
+.content-container#navigation.ot {
+  border-top: 10px solid #9163aa;
+}
+.content-container#navigation.hh {
+  border-top: 10px solid #45B886;
+}
+.content-container#navigation.ro {
+  border-top: 10px solid #CB1462;
+}
+.content-container#navigation.up {
+  border-top: 10px solid #8689a1;
+}
+.content-container#objective-box {
+  background-color: #282b3a;
+  padding-bottom: 40px;
+}
+.content-container#objective-box .content h1 {
+  color: #ffffff;
+  font-size: 300%;
+  font-weight: 500;
+  text-align: center;
+}
+.content-container#doc-cards {
+  margin-bottom: 40px;
+}
+.content-container#doc-cards .button-set {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+.content-container#doc-cards .button-set a.doc-button {
+  background-color: none;
+  padding: 8px 16px;
+  color: #282b3a;
+  border: 3px solid #282b3a;
+  border-radius: 100px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.content-container#doc-cards .button-set a.doc-button:hover {
+  background-color: #282b3a;
+  color: #ffffff;
+}
+.content-container#doc-cards a.cool-card {
+  text-decoration: none;
+  width: 292px;
+  float: left;
+  height: 470px;
+  margin: 60px 20px 0 20px;
+  text-align: center;
+  background-color: #282b3a;
+}
+.content-container#doc-cards a.cool-card p {
+  font-size: 14px;
+  line-height: 22px;
+  margin: 20px;
+  color: #ffffff;
+  text-align: left;
+}
+.content-container#doc-cards a.cool-card h4 {
+  font-size: 16px;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  margin: 20px 25px;
+  padding-bottom: 8px;
+}
+.content-container#doc-cards a.cool-card img {
+  margin: 1px 0;
+  background-color: #ffffff;
+}
+.content-container#doc-cards a.cool-card:hover {
+  box-shadow: 1px 1px 6px #444444;
+}
+.content-container#main-doc .content {
+  margin-bottom: 50px;
+}
+.content-container#main-doc .content .content-container#inedo-logos .button-set {
+  margin-bottom: 20px;
+}
+.content-container#main-doc .content .content-container#inedo-logos .button-set a.doc-button {
+  background-color: none;
+  padding: 8px 16px;
+  color: #282b3a;
+  border: 3px solid #282b3a;
+  border-radius: 100px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.content-container#main-doc .content .content-container#inedo-logos .button-set a.doc-button:hover {
+  background-color: #282b3a;
+  color: #ffffff;
+}
+.content-container#main-doc .content .content-container#inedo-logos .logo {
+  float: left;
+  width: 200px;
+  height: 235px;
+  margin: 50px 25px 70px 25px;
+  text-align: center;
+}
+.content-container#main-doc .content .content-container#inedo-logos .logo a {
+  text-decoration: underline;
+}
+.content-container#main-doc .content .content-container#inedo-logos .logo a:hover {
+  color: #9163aa;
+}
+.content-container#main-doc .content .content-container#inedo-logos .logo p {
+  font-size: 110%;
+  text-align: center;
+  font-weight: bolder;
+  padding-top: 5px;
+}
+.content-container#main-doc .content .content-container#inedo-logos .logo.hh {
+  width: 170px;
+  margin: 50px 15px 70px 15px;
+}
+.content-container#main-doc .content .content-container#inedo-logos .logo.pg {
+  width: 170px;
+  margin: 50px 80px;
+}
+.content-container#main-doc .content .content-container#inedo-logos .logo.pg img {
+  height: 150px;
+  width: 150px;
+}
+.content-container#main-doc .content .content-container#inedo-logos .logo.pg a:hover {
+  color: #3fa9f5;
+}
+.content-container#main-doc .all {
+  padding: 0 20px 20px 20px;
+  float: left;
+  width: 425px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  background-color: #282b3a;
+}
+.content-container#main-doc .all h2 {
+  text-align: center;
+  padding-bottom: 25px;
+  color: #ffffff;
+}
+.content-container#main-doc .all > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ffffff;
+  padding: 30px 0;
+}
+.content-container#main-doc .all > ul > li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.content-container#main-doc .all > ul ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.content-container#main-doc .all > ul ul > li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.content-container#main-doc .all > ul li {
+  padding-bottom: 10px;
+  text-decoration: none;
+}
+.content-container#main-doc .all > ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  padding-left: 50px;
+}
+.content-container#main-doc .all > ul li a:hover {
+  text-decoration: underline;
+}
+.content-container#main-doc .all > ul li li {
+  padding-left: 30px;
+  padding-bottom: 5px;
+}
+.content-container#main-doc .all > ul li li a {
+  text-decoration: none;
+}
+.content-container#main-doc .all > ul li li li {
+  padding-left: 30px;
+}
+.content-container#main-doc .all > ul li li li a {
+  text-decoration: none;
+}
+.content-container#main-doc .all > ul li li li li {
+  padding-left: 30px;
+}
+.content-container#main-doc .all > ul li li li li a {
+  text-decoration: none;
+}
+.content-container#main-doc .all > ul li li li li li {
+  padding-left: 30px;
+}
+.content-container#main-doc .all > ul li li li li li a {
+  text-decoration: none;
+}
+.content-container#main-doc .all > ul li li li li li li {
+  padding-left: 0;
+}
+.content-container#main-doc .all > ul li li li li li li a {
+  text-decoration: none;
+}
+.content-container#main-doc .table-contents {
+  padding: 0 0px 0px 20px;
+  float: left;
+  width: 350px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+.content-container#main-doc .table-contents > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.content-container#main-doc .table-contents > ul > li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.content-container#main-doc .table-contents > ul ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.content-container#main-doc .table-contents > ul ul > li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.content-container#main-doc .table-contents > ul li {
+  padding-bottom: 40px;
+  text-decoration: none;
+}
+.content-container#main-doc .table-contents > ul li a {
+  text-decoration: none;
+  padding-left: 16px;
+}
+.content-container#main-doc .table-contents > ul li a.heading {
+  color: #e9eada;
+  background-color: #282b3a;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 16px 10px 16px;
+}
+.content-container#main-doc .table-contents > ul li a.heading:hover {
+  text-decoration: none;
+}
+.content-container#main-doc .table-contents > ul li li {
+  padding-bottom: 5px;
+}
+.content-container#main-doc .table-contents > ul li li:first-child {
+  padding-top: 24px;
+}
+.content-container#main-doc .table-contents > ul li li a {
+  text-decoration: none;
+}
+.content-container#main-doc .table-contents > ul li li a.heading {
+  color: #282b3a;
+  background: none;
+  text-transform: none;
+  font-weight: normal;
+}
+.content-container#main-doc .table-contents > ul li li a.heading:hover {
+  text-decoration: underline;
+}
+.content-container#main-doc .table-contents > ul li li li {
+  padding-left: 30px;
+}
+.content-container#main-doc .table-contents > ul li li li:first-child {
+  padding-top: 8px;
+}
+.content-container#main-doc .table-contents > ul li li li a {
+  text-decoration: none;
+}
+.content-container#main-doc .table-contents > ul li li li li {
+  padding-left: 30px;
+}
+.content-container#main-doc .table-contents > ul li li li li a {
+  text-decoration: none;
+}
+.content-container#main-doc .table-contents > ul li li li li li {
+  padding-left: 30px;
+}
+.content-container#main-doc .table-contents > ul li li li li li a {
+  text-decoration: none;
+}
+.content-container#main-doc .table-contents > ul li li li li li li {
+  padding-left: 0;
+}
+.content-container#main-doc .table-contents > ul li li li li li li a {
+  text-decoration: none;
+}
+.content-container#main-doc .more {
+  background-color: #282b3a;
+  padding: 0 20px 20px 20px;
+  float: right;
+  width: 440px;
+  margin-top: 30px;
+}
+.content-container#main-doc .more h2 {
+  text-align: center;
+  padding-bottom: 25px;
+  color: #ffffff;
+}
+.content-container#main-doc .more ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.content-container#main-doc .more ul > li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.content-container#main-doc .more ul li {
+  text-align: center;
+  padding: 20px 0;
+  border: 1px solid #ffffff;
+  border-bottom: none;
+}
+.content-container#main-doc .more ul li:last-child {
+  border-bottom: 1px solid #ffffff;
+}
+.content-container#main-doc .more ul li a {
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  padding: 20px 90px;
+}
+.content-container#main-doc .more ul li a:hover {
+  text-decoration: underline;
+}
+.content-container#main-doc .more ul li:hover {
+  background-color: #48729d;
+}
+

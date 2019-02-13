@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Deploying the Same Set of Files to Multiple Servers Using Server Roles in BuildMaster</title>
+    <meta name="keywords" content="buildmaster, deployment, experienced-user" />
+    <meta name="subheading" content="Deployment" />
+    <meta name="product-name" content="BuildMaster" />
+  </head>
+  <body>
+    <div class="intro">
+      <p>
+        BuildMaster is designed to reliably and repeatably deploy files to any number of servers.
+        The main feature used to accomplish the task of deploying the same set of files to multiple servers is "Server Roles".
+      </p>
+      <hr />
+    </div>
+    <h2 id="step-one">Step 1: Add a Server Role</h2>
+    <p>
+      Visit the <b>Administration</b> link in the top navigation menu, then select <b>Server Roles</b> under <b>Infrastructure</b>:
+    </p>
+    <img class="screenshot" src="/resources/tutorials/files-multiple-servers-roles/server-roles.png" />
+    <p>
+      From the <b>Server Roles</b> page, click the <b>Create Server Role</b> button after the list of server roles.
+      Server roles consist of a <b>Name</b> and a list of <b>Servers</b>.
+    </p>
+    <img class="screenshot" src="/resources/tutorials/files-multiple-servers-roles/create-role.png" />
+    <p>
+      Once you have created a server role, it can be used in plans and pipelines to refer to all servers in that role.
+    </p>
+    <h2 id="step-two">Step 2: Use the Server Role in a Plan</h2>
+    <p>
+      One of the ways server roles can be used in plans is a <b>Loop</b> block.
+      Loop blocks run the same section of a plan repeatedly, once for each item in a list.
+      Inside the loop block, you can use any operations and statements you would normally use in a plan.
+      For this example, we will use the <i>Ensure ProGet Package</i> operation, but any other method of deploying files would work just as well.
+    </p>
+    <p>
+      Loops normally operate sequentially, with each item in the list waiting to start until all previous items are completed.
+      However, we can use a <b>General</b> block with <b>Asynchronously execute</b> enabled to run the deployment on all the servers at the same time.
+      The loop will not wait for the asynchronous blocks to complete before going to the next server in the role,
+      so the ProGet package will be deployed to all of the servers in parallel.
+    </p>
+    <p>
+      Although a deployment will wait for any asynchronous blocks to complete before it ends,
+      a deployment can have operations that need to run after the files are in place.
+      <b>Wait for asynchronous operations to complete</b> causes the execution of the plan to pause until the asynchronous blocks finish.
+      If there are asynchronous blocks earlier in the plan that can continue running after the files are in place,
+      the plan can sometimes run faster if a <b>token</b> is used so that it only waits for the files.
+      Tokens can be given any name, as long as the asynchronous block uses the same token as the wait operation.
+    </p>
+    <inedo:tab-block>
+      <tab name="Create Loop"><img src="/resources/tutorials/files-multiple-servers-roles/create-loop.png" alt="Edit Loop Block (BuildMaster Visual Editor)" /></tab>
+      <tab name="Visual Editor (Sequential)"><img src="/resources/tutorials/files-multiple-servers-roles/plan-sequential-visual.png" alt="BuildMaster Visual Editor" /></tab>
+      <tab name="OtterScript (Sequential)"><img src="/resources/tutorials/files-multiple-servers-roles/plan-sequential-text.png" alt="OtterScript example" /></tab>
+      <tab name="Visual Editor (Parallel)"><img src="/resources/tutorials/files-multiple-servers-roles/plan-parallel-visual.png" alt="BuildMaster Visual Editor" /></tab>
+      <tab name="OtterScript (Parallel)"><img src="/resources/tutorials/files-multiple-servers-roles/plan-parallel-text.png" alt="OtterScript example" /></tab>
+    </inedo:tab-block>
+    <p>
+      Server roles provide the advantage of not needing to update every plan when a server is added to or removed from a role.
+      Adding a new web server or removing a retired database server can be done by updating the role,
+      and future deployments will automatically use the new list of servers when executing.
+    </p>
+    <div id="related-content" class="content">
+      <hr />
+      <div class="button-set">
+        <a href="/buildmaster/download" class="button">Download BuildMaster</a>
+        <a href="/products" class="button">Other Inedo products</a>
+      </div>
+    </div>
+
+  </body>
+</html>

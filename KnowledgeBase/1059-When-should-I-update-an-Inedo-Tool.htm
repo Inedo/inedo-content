@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html []>
+<html>
+  <head>
+    <meta name="id" content="1059" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="buildmaster, otter, proget, upgrade-notes" />
+    <title>When should I update an Inedo Tool?</title>
+  </head>
+  <body>
+    <p>
+        Updating any software to a newer version requires users to weigh the costs associated with the update process against the value and benefits of the new features 
+        or bug fixes added – and this is no different with any of our tools. As a DevOps company, we take great care to design and release our tools through a process that permits a 
+        super-agile deployment methodology. Which allows many releases to occur in a short time frame.
+    </p>
+    <p>
+        In order to help ease the update process, we adhere to a fairly rigorous release numbering scheme, where each type of release has the following special considerations.
+    </p>
+    <h2>Major Release (3.x.x to 4.0)</h2>
+    <p>A major release has the following characteristics: </p>
+    <ul>
+      <li>backwards-incompatible breaking API/SDK changes are introduced which require any custom extensions to be rebuilt  against a new SDK and all extensions to be updated</li>
+      <li>major database schema changes</li>
+      <li>possible sweeping UI changes</li>
+      <li>major functionality updates</li>
+      <li>all bug fixes up to and including the new major version</li>
+    </ul>
+    <p>
+        In most cases, you should schedule a specific time-slot away from crucial deployments in order to perform a major update. 
+        Many users even setup separate instances in order to explore functionality before rolling out the update to their production instance. 
+        If you choose to do this, you may use your existing license key for this purpose.
+    </p>
+    <p>Note that you should always <a href="/support/tag/upgrade-notes">carefully read the upgrade notes</a> if you do not do so already before performing a major update.</p>
+    <h2>Minor Release (3.5.x to 3.6.0)</h2>
+    <p>A minor release has the following characteristics:</p>
+    <ul>
+      <li>backwards-compatible API/SDK changes are introduced </li>
+      <li>database schema changes</li>
+      <li>some functionality updates, or a new module (e.g. a new variables engine)</li>
+      <li>all bug fixes up to and including the new minor version</li>
+    </ul>
+    <p>Minor releases are typically used to add a new module or overhaul an existing one (e.g. database deployment, configuration files, variables, etc.). They are also used to add new features to the SDK (e.g. extensible agents, server hosts, etc.)</p>
+    <p>Note that you should consider <a href="/support/tag/upgrade-notes">carefully reading the upgrade notes</a> if you do not do so already before performing a minor update.</p>
+    
+      <h2>Maintenance Release (3.5.7 to 3.5.8)</h2>
+    <p>A maintenance release has the following characteristics:</p>
+    <ul>
+      <li>bug fixes</li>
+      <li>no visible API/SDK changes are introduced </li>
+      <li>backwards-compatible database schema changes may be introduced</li>
+      <li>
+        new, stand-alone features that are targeted for a future version, that may be used on a preview/beta basis; for example, 
+        the <a href="/support/kb/1097/buildmaster-46-upgrade-notes">Administrative Edits in BuildMaster 4.6</a> were added over several 4.5.x versions, and the 
+        <a href="/support/kb/1104/upgrade-notes-for-proget-37">Maven Feeds from ProGet 3.7</a> were in 3.6.x versions
+      </li>
+      
+    </ul>
+    <p>
+      Maintenance releases are the lowest risk, only rarely adding new functionality and should only be updated when a specific bug fix pertains to your use. 
+      In order to validate whether these bug fixes apply to your usage scenario, make sure to view the <a href="/support/tag/upgrade-notes">upgrade notes</a> 
+      before performing an update.</p>
+  </body>
+</html>

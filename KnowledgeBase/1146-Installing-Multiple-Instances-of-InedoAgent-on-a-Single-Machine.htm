@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1146" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="agents,installation,service" />
+    <title>Installing Multiple Instances of InedoAgent on a Single Machine</title>
+    <style type="text/css">
+        .console {
+            background-color: #202020;
+            color: #EEE;
+            font-family: andale mono, lucida console, monospace;  
+            padding: 15px;
+            font-size: 14px;
+            border: solid 3px #aaa;
+            box-shadow: 2px 2px 3px #666;
+            line-height: 1.5em;
+            margin: 10px 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <p>
+        Sometimes it is helpful to have multiple instances of InedoAgent on the same machine, such as having different instances that run as different user accounts. Although the installation wizard and the manual install process do not support this, it is possible to run multiple instances of InedoAgent as long as they have separate working directories and are listening on separate ports.
+    </p>
+
+    <h2 id="configuration">Configuring a Second Agent</h2>
+
+    <p>
+        In the first agent's Program Files folder, there should be three files: agentuninstall.exe, Inedo.Agents.dll, InedoAgentService.exe, and InedoAgentService.exe.config. Create a different Program Files folder and copy these four files there.
+    </p>
+
+    <p>
+        We now need to edit the configuration file (InedoAgentService.exe.config). The default file looks like this:
+    </p>
+
+    <pre class="console">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;configuration&gt;
+  &lt;appSettings&gt;
+    &lt;add key="Otter.RootPath" value="C:\ProgramData\InedoAgent\Otter" /&gt;
+    &lt;add key="BuildMaster.RootPath" value="C:\ProgramData\InedoAgent\BuildMaster" /&gt;
+    &lt;add key="Port" value="46336" /&gt;
+    &lt;add key="ServiceName" value="INEDOAGENTSVC" /&gt;
+    &lt;add key="Encryption" value="aes" /&gt;
+    &lt;add key="EncryptionKey" value="<span class="random-aes256-key">[randomly generated encryption key]</span>" /&gt;
+  &lt;/appSettings&gt;
+  &lt;startup&gt;
+    &lt;supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /&gt;
+  &lt;/startup&gt;
+&lt;configuration&gt;</pre>
+
+    <p>
+        The important things to edit are:
+    </p>
+
+    <table>
+        <tr>
+            <th>Otter.RootPath</th>
+            <td>
+                This is the temporary directory for Otter. The user that this agent will run as must have full control over this directory. It must not be used for any other agent.
+            </td>
+        </tr>
+        <tr>
+            <th>BuildMaster.RootPath</th>
+            <td>
+                This is the temporary directory for BuildMaster. The user that this agent will run as must have full control over this directory. It must not be used for any other agent.
+            </td>
+        </tr>
+        <tr>
+            <th>Port</th>
+            <td>
+                This is a TCP port number that the agent will use to listen for connections. The port number must be unique among the services running on the machine, or whichever service tries to use it second will fail to start. It should generally be 4 or 5 digits and cannot be higher than 65535.
+            </td>
+        </tr>
+        <tr>
+            <th>ServiceName</th>
+            <td>
+                This tells the agent which service it will be running as. For the purpose of this example, we will use the name INEDOAGENTSVC_LOW, but any name will work as long as it is not already taken. This is not case sensitive.
+            </td>
+        </tr>
+        <tr>
+            <th>EncryptionKey</th>
+            <td>
+                An AES-256 key is simply 256 bits (32 bytes) of data. Having a secure key is important for the safety of the machine running the agent, so keys should not be shared between agents or be written anywhere other than InedoAgentService.exe.config and the server settings in BuildMaster or Otter. To generate a cryptographically strong AES-256 key, the below 3-line PowerShell script can be used:
+
+              
+            </td>
+        </tr>
+    </table>
+    <p class="console">
+            $bytes = [array]::CreateInstance([byte], 32)
+            <br />
+            [Security.Cryptography.RNGCryptoServiceProvider]::Create().GetBytes($bytes)
+            <br />
+            [string]::Join("", ($bytes | % {[string]::Format("{0:x2}", $_)}))
+        </p>
+
+    <script>
+        [].forEach.call(document.querySelectorAll(".random-aes256-key"), function(el) {
+            el.textContent = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx".replace(/x/g, function() {
+                return Math.random().toString(16).substr(2, 1);
+            });
+        });
+    </script>
+
+    <h2 id="create-service">Creating the Service</h2>
+
+    <p>
+        One of the ways to create a service in Windows is the SC.exe command (service control). Other methods exist, but will not be discussed here.
+    </p>
+
+    <p>
+        Open a command prompt as administrator. If it is easier to open an administrative PowerShell session, do so and then type cmd to start command prompt.
+    </p>
+
+    <p>
+        The command to create the default InedoAgent service is roughly equivalent to this:
+    </p>
+
+    <p class="console">
+        sc create INEDOAGENTSVC binPath= "\"C:\Program Files\InedoAgent\InedoAgentService.exe\" run -s" start= auto displayName= "Inedo Agent Service" obj= LocalSystem
+        <br />
+        sc failure INEDOAGENTSVC reset= 0 actions= restart/60000
+    </p>
+
+    <p>
+        This creates a service named INEDOAGENTSVC that runs the InedoAgentService.exe program with <b>run -s</b> as command line arguments. It starts automatically, runs as SYSTEM, and automatically restarts after a minute (60000 milliseconds) if it crashes.
+    </p>
+
+    <p>
+        Note that there is always a space after the equals sign when specifying a SC.exe parameter. To create a more restricted InedoAgent service that does not run as SYSTEM, a command like this can be used:
+    </p>
+
+    <p class="console">
+        sc create INEDOAGENTSVC_LOW binPath= "\"C:\Program Files\InedoAgent_Low\InedoAgentService.exe\" run -s" start= auto displayName= "Inedo Agent Service (Low Privilege)" obj= "NT Authority\Network Service"
+        <br />
+        sc failure INEDOAGENTSVC_LOW reset= 0 actions= restart/60000
+    </p>
+
+    <p>
+        It is important to note that obj (the user account that the service runs as) must have permission to log in as a service, or the service will not be able to start.
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JIT BizCards</title>
+    <link rel="stylesheet" type="text/css" href="/company/cool-stuff/cool-stuff.css" />
+    <style>
+        .contact-form input[type=text], .contact-form select {
+            width: 595px;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form input[type=button] {
+            width: 100%;
+            background-color: #3FA9F5;
+            color: white;
+            padding: 14px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+        }
+
+            .contact-form input[type=button]:hover {
+                background-color: #1e89d5;
+            }
+
+        .contact-form {
+            background-color: #e4e4e4;
+            padding: 10px 20px;
+            margin-bottom: 40px;
+        }
+
+
+        .ahvalidator.error input[type=text],
+        .ahvalidator.error select {
+            background-color: #fcc;
+        }
+
+        .ahvalidator.error .message {
+            display: none;
+        }
+
+        .content-container#banner {
+            padding: 15px 0;
+            margin: 0;
+            background-color: #a8ca35;
+            text-align: center;
+            height: 60px;
+        }
+
+            .content-container#banner .button {
+                float: left;
+                padding-top: 10px;
+            }
+    </style>
+
+</head>
+<body>
+    <div class="content">
+
+        <h1>JIT BizCards</h1>
+
+        <p>
+            You find yourself in the middle of a vendor hall, with booths as far as your eyes can see. There are tchotchkes of all shapes, colors, and sizes that are practically begging to find a home in your cubicle.
+            As you ogle all the goodies, your fellow conference-goers swarm the room and start snagging the niftiest of toys. But fear not: you've got your swag bag and are ready to collect your loot.
+        </p>
+        <p>
+            <em>Now imagine the horror</em> as you reach into your pocket for the de-facto convention currency - the business card - only to find that you are fresh out. As you fumble to find an alternative,
+            your colleagues hand out their cards and quickly clear-out the collectables. You're left with mere scraps and gather little more than a few pens and pads of paper.
+        </p>
+        <h4>Just-In-Time Business Cards</h4>
+        <p>
+            Never attend a conference without <i>Just-In-Time Business Cards</i>. The back features
+            Initech (&#224; la <i>Office Space</i>) while the front offers a convenient means of conveying
+            your vital information.
+        </p>
+        <blockquote><p><img src="/Resources/Images/Pictures/jitcards-3.png" alt="Just-In-Time Business Cards" /></p></blockquote>
+        <h4>Get Some JIT Biz Cards</h4>
+
+        <div class="contact-form">
+            <contact-form method="post" action="/contact-form">
+                <fieldset>
+                    <input type="hidden" name="ToAddress" value="rgovert@inedo.com" />
+                    <input type="hidden" name="RedirectUrl" value="/company/swag/jit-received" />
+                    <input type="hidden" name="Subject" value="JIT Business Cards Request" />
+                    <input type="hidden" name="CcFromAddress" value="false" />
+                    <input type="hidden" name="Priority" value="High" />
+
+                    <label>Your Name*</label>
+                    <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                    <label>Email Address*</label>
+                    <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                    <label>Mailing Address* (or we can't send you cards!)</label>
+                    <div><textarea name="Mailing Address" style="width: 630px;" rows="4" cols="20"></textarea></div>
+
+                    <label>Any Comments/Questions about Inedo Products or our Cool Side Projects?</label>
+                    <div><textarea name="Message" style="width: 630px;" rows="4" cols="20"></textarea></div>
+
+                    <input type="button" value="Submit" onclick="AhValidation.Submit(this);" />
+                </fieldset>
+            </contact-form>
+        </div>
+        <!--<p>
+            Sorry, the guy before you grabbed the last JIT cards. We'll certainly do this for another conference. If you really, really, really want some, then please <a href="/contact">contact us</a> and we may send you some.
+        </p>-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html []>
+<html>
+  <head>
+    <meta name="id" content="1056" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="buildmaster, jenkins" />
+    <title>A Comparison Between BuildMaster vs. Jenkins</title>
+  </head>
+  <body>
+    <p>
+      <a href="http://jenkins-ci.org/">Jenkins</a> and BuildMaster are different products, that solve different problems, and both are commonly used as part of a modern <a href="">DevOps Toolchain</a>. A side-by-side comparison would be a bit like Word and Excel:
+        both can be used to create forms that you'll print out, but if that's the only thing your business uses Microsoft Office for, you're certainly not doing it right.
+    </p>
+      <p>Already familiar with Jenkins? The <a href="#terminology">terminology comparison</a> may help you get a quicker understanding of BuildMaster.</p>
+
+      <h2>Continuous Integration <br /> &nbsp; vs Application Release Automation</h2>
+
+      <p>This can really be boiled down to: Builds vs. Releases.&nbsp;</p>
+
+      <p>Fundamentally, Builds and Releases vary in two distinct ways: Builds meet developer or development needs, and Releases fulfill the IT organization requirements, and deliver end results.
+       By separating tools into these unique, and separately functioning categories, you are able to address and solve, the individual problem or requirement associated with each.</p>
+
+      <h2>The Swiss Army Knife Approach</h2>
+
+      <p>Although CI and ARA are two distinct separate processes, to address two distinct problems, some seek a single, multi-purpose tool to do it all. 
+      Obviously, no such tool exists, but many will attempt to shoehorn Jenkins for this purpose; <a href="https://go.cloudbees.com/docs/cloudbees-documentation/cookbook/ch13.htm">according to its makers</a>, &ldquo;
+      Jenkins is the Swiss army knife in the software delivery toolchain.&rdquo;</p>
+
+      <p>Just as a Swiss army knife is no replacement for a toolbox, Jenkins is simply not suitable for implementing a modern DevOps process.</p>
+     
+       <h2>Build Jobs as the Center of DevOps?</h2>
+
+      <p>Like all Continuous Integration tools, Jenkins is focused on build automation. This is implemented through Jobs, which are designed to run a build script, and <a href="https://wiki.jenkins-ci.org/display/JENKINS/Building+a+software+project">are comprised</a> of the following:</p>
+
+      <ul>
+          <li><strong>Build Script</strong> &ndash; a user-supplied ant, maven, shell, batch, or MsBuild script</li>
+          <li><strong>[optional] SCM Information</strong> - such as CVS or Subversion where your source code resides.</li>
+          <li><strong>[optional] Trigger</strong> &ndash; to determine when the job is run</li>
+          <li><strong>[optional] Collection Steps</strong> &ndash; for archiving the artifacts and test results.</li>
+          <li><strong>[optional] Notification Steps</strong> &ndash;to notify other people/systems with the build result</li>
+      </ul>
+
+      <p>Of course, since a build script could just be an arbitrary script, a job could be used to do anything. And thus, Jenkins could be used for anything&hellip; especially as a DevOps Swiss army knife!</p>
+
+      <p>But just as an all-purpose <a href="https://en.wikipedia.org/wiki/Job_scheduler">Job Scheduler</a> would be a poor choice for build automation jobs, 
+      Jenkins is an equally-poor choice for an all-purpose job scheduler. It lacks the features all other job schedulers have because it was never designed as a job scheduler.</p>
+
+      <p>Moreover, both job schedulers and build automation tools are poor choices for application release automation, and deployment.</p>
+
+      <h2>Jenkins Pipelines != Deployment Pipelines</h2>
+
+      <p>A build/release pipeline facilitates the process of deploying both large and mission-critical changes, and unscheduled emergency deployments of an application.</p>
+
+      <p>In Jenkins, a Pipeline is a special type of Job that&rsquo;s implemented through a plugin originally called Workflows.
+      Essentially, a Pipeline job is a sequence of steps that are grouped into stages and that may run on a particular node. Like a job, a step could &ldquo;do anything&rdquo;, but it&rsquo;s designed for a single, discrete task, and generally is used to run other jobs; 
+      there are a handful of <a href="https://jenkins.io/doc/pipeline/steps/">built-in steps</a> for things such as running scripts and sending emails.</p>
+
+      <p>Jenkin&rsquo;s Pipelines are very similar to BuildMaster&rsquo;s <a href="http://inedo.com/support/kb/1118/legacy-plans-in-buildmaster-50">Legacy Deployment Plans</a>; Actions are like Steps, Action Groups are like Stages, 
+      and both Actions, and Action Groups, had a Node-like context.</p>
+
+      <p>However, neither are suitable on their own for release automation. A layer on top is needed for process orchestration, such as approval gates, manual intervention, security, and so on.</p>
+
+      <h2>Jenkins <em>with</em> BuildMaster</h2>
+
+      <p>Although Jenkins is a poor choice for release automation, it&rsquo;s definitely a proven build automation tool. 
+      This is exactly why BuildMaster has a tight integration with it; with the Jenkins extension, you can import build artifacts into BuildMaster, apply the necessary approvals, additional testing, and deploy to production.</p>
+
+      <p>Alternatively, you can use ProGet to host all your packages, binaries, and Jenkins Build Artifacts. <a href="http://inedo.com/support/tutorials/using-proget-as-your-universal-repository-with-jenkins-ci">This tutorial</a> shows the steps needed to set this up.</p>
+
+      <h2 id="terminology">Jenkins Terminology vs BuildMaster Terminology</h2>
+    <table border="1" cellspacing="0" cellpadding="2" width="700">
+      <tbody>
+        <tr>
+          <td valign="top" width="158">
+            <strong>Jenkins</strong>
+          </td>
+          <td valign="top" width="240">
+            <strong>BuildMaster</strong>
+          </td>
+          <td valign="top" width="393">
+            <strong>Additional Notes</strong>
+          </td>
+        </tr>
+      
+        <tr>
+          <td valign="top" width="158">Jobs</td>
+          <td valign="top" width="240">Applications</td>
+          <td valign="top" width="393">Jenkins jobs are typically a Maven projects or any of a variety of free-style projects (Visual Studio solutions, MSBuild scrips, make files, etc)  while BuildMaster applications
+          represent an entire standalone application.</td>
+        </tr>
+          <tr>
+              <td valign="top" width="158">Job Configuration</td>
+              <td valign="top" width="240">
+                  <a href="/support/documentation/buildmaster/deployment-plans">Deployment Plan</a>
+              </td>
+              <td valign="top" width="393"></td>
+          </tr>
+          <tr>
+              <td valign="top" width="158"><a href="https://jenkins.io/doc/pipeline/steps/">Job/Pipeline Step</a></td>
+              <td valign="top" width="240">
+                  Operation
+              </td>
+              <td valign="top" width="393"></td>
+          </tr>
+        <tr>
+          <td valign="top" width="158"><a href="https://jenkins.io/doc/pipeline/">Pipelines</a></td>
+          <td valign="top" width="240"><a href="/support/documentation/buildmaster/deployment-plans">Deployment Plan</a></td>
+          <td valign="top" width="393">A pipeline in Jenkins is a type of job configuration</td>
+        </tr>
+        <tr>
+          <td valign="top" width="158"><a href="https://jenkins.io/doc/book/architecting-for-scale/#distributed-builds-architecture">Build</a></td>
+          <td valign="top" width="240">
+            <a href="/support/documentation/buildmaster/core-concepts/release">Release Package </a>
+ </td>
+            <td valign="top" width="393"></td>
+        </tr>
+     
+        <tr>
+          <td valign="top" width="158">Job Triggers</td>
+          <td valign="top" width="240">Release Package Triggers</td>
+            <td valign="top" width="393"></td>
+        </tr>
+        
+        
+        <tr>
+          <td valign="top" width="158">Plugins</td>
+          <td valign="top" width="240">
+            <a href="/buildmaster/extensions">Extensions</a>
+          </td>
+          <td valign="top" width="393"></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

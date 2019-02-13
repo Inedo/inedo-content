@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Writing a Simple Operation Using the BuildMaster SDK</title>
+    <meta name="keywords" content="buildmaster, buildmaster-sdk, sdk, expert-user, actions" />
+    <meta name="subheading" content="BuildMaster SDK" />
+      <meta name="product-name" content="BuildMaster" />
+  </head>
+  <body>
+    <div class="intro">
+      <p>
+        You can easily add new operations to BuildMaster using any .NET language. In this tutorial,
+        we'll show you how to create a simple operation in C# using the BuildMaster SDK.
+      </p>
+      <hr />
+    </div>
+      <div style="margin-bottom: 30px; padding-left: 30px;" class="info">
+          <p>
+              This tutorial is designed for <a href="/buildmaster/5.0">BuildMaster v5</a>. Feel free to <a href="/contact">contact us</a> with any questions.
+          </p>
+      </div>
+    <p>
+      In this tutorial, we will create a simplified version of the <b>Create File</b> operation
+      that is already included in BuildMaster.
+    </p>
+
+    <h3>Creating the Project</h3>
+    <p>
+      First, create a new class library project in Visual Studio, and target .NET 4.5. Use NuGet
+      to add a reference to the <b>Inedo.BuildMaster.SDK</b> package.
+    </p>
+    <p class="info">
+      Make sure that the SDK assemblies added by the NuGet package have the <b>Copy Local</b>
+      property set to <b>False</b>. SDK assemblies should <i>not</i> be included in the extension.
+    </p>
+
+    <h3>Creating the Operation</h3>
+    <p>
+      Next, create a new public class called CreateFileOperation, and have it inherit
+      the <a href="/support/sdk-reference/BuildMaster/Inedo.BuildMaster.Extensibility.Operations/ExecuteOperation">ExecuteOperation</a> class:
+    </p>
+<pre class="tutorial-code">
+public class CreateFileOperation : ExecuteOperation
+{
+}
+</pre>
+
+    <p>
+      Since this operation is supposed to create a file, it would be nice if we could access
+      the file name and what to put in the file as inputs. To do this, we just need to add
+      a couple of properties and attributes:
+    </p>
+<pre class="tutorial-code">
+[Required]
+[ScriptAlias("Name")]
+[DisplayName("File name")]
+public string FileName { get; set; }
+
+[ScriptAlias("Text")]
+[DisplayName("Contents")]
+[Description("The contents of the file. If this value is missing or empty, a 0-byte file will be created.")]
+public string FileText { get; set; }
+</pre>
+
+    <p>
+      There's quite a lot of information packed into those two properties, so here's what
+      everything means:
+    </p>
+    <ul>
+      <li>
+        <b>[<a href="/support/sdk-reference/BuildMaster/Inedo.Documentation/RequiredAttribute">Required</a>]</b> - the user must supply a value for this property for the plan to validate
+      </li>
+      <li>
+        <b>[<a href="/support/sdk-reference/BuildMaster/Inedo.BuildMaster.Extensibility/ScriptAliasAttribute">ScriptAlias(name)</a>]</b> - this is what the name of the property will look like to OtterScript;
+        this value is required and must be unique to the type of operation
+      </li>
+      <li>
+        <b>[DisplayName(name)]</b> - this is displayed in the graphical plan editor to provide a friendlier
+        name than the script alias; this is optional
+      </li>
+      <li>
+        <b>[Description(text)]</b> - another optional attribute that provides some additional help
+        text in the graphical editor
+      </li>
+    </ul>
+
+    <p>
+      Now that we have our inputs configured, we can write the code that will actually create the file:
+    </p>
+<pre class="tutorial-code">
+public override async Task ExecuteAsync(IOperationExecutionContext context)
+{
+  	var path = context.ResolvePath(this.FileName);
+	var fileOps = context.Agent.GetService&lt;IFileOperationsExecuter&gt;();
+	this.LogDebug($"Creating {path}...");
+	await fileOps.CreateDirectoryAsync(PathEx.GetDirectoryName(path));
+	await fileOps.WriteAllTextAsync(path, this.FileText ?? "");
+	this.LogInformation(this.FileName + " file created.");
+}
+</pre>
+
+    <p>
+      Although the <a href="/support/sdk-reference/BuildMaster/Inedo.BuildMaster.Extensibility.Operations/ExecuteOperation/ExecuteAsync(IOperationExecutionContext)">ExecuteAsync</a> method isn't doing too much, we'll break everything down right here:
+    </p>
+    <ul>
+      <li>
+        <b>async</b><br />
+        The <b>async</b> keyword in the method declaration instructs
+        the compiler to allow the <b>await</b> keyword in the method body. BuildMaster
+        operations can execute asynchronously; if you don't know what this means, consider
+        reading <a href="https://msdn.microsoft.com/en-us/library/hh191443.aspx">this MSDN article</a>.
+        If you would prefer to implement <b>ExecuteAsync</b> synchronously, you can just omit
+        the <b>async</b> keyword and return the static <b>Complete</b> property when the method
+        is complete.
+      </li>
+
+      <li>
+        <b>var path = context.ResolvePath(this.FileName);</b><br />
+        This allows a relative path to be used for the <b>FileName</b> property.
+        Without it, the operation would only work correctly when a user supplies
+        an absolute path. Note that absolute paths will still work; if the
+        second argument of <b>PathEx.Combine</b> is absolute, the first argument
+        is ignored.
+      </li>
+
+      <li>
+        <b>var fileOps = context.Agent.GetService&lt;IFileOperationsExecuter&gt;();</b><br />
+        This requests a <b><a href="/support/sdk-reference/BuildMaster/Inedo.Agents/IFileOperationsExecuter">IFileOperationsExecuter</a></b> service from the
+        BuildMaster agent in the current context. This interface is an abstraction
+        that allows a common set of file system operations on either hosted
+        or SSH agents.
+      </li>
+
+      <li>
+        <b>await fileOps.CreateDirectoryAsync(PathEx.GetDirectoryName(path));</b><br />
+        This is a simple way to ensure that the directory exists where
+        we are trying to write the file.
+      </li>
+
+      <li>
+        <b>	await fileOps.WriteAllTextAsync(path, this.FileText ?? "");</b><br />
+        This actually writes the desired text to the file.
+      </li>
+    </ul>
+    <p>
+      For brevity, we've left out the logging messages; but those are pretty self-explanatory.
+      Anything logged will be associated with the current operation.
+    </p>
+
+    <p>
+      Now we just need to apply a few attributes to the operation itself to make it
+      discoverable to BuildMaster:
+    </p>
+<pre class="tutorial-code">
+[DisplayName("Create File (Example)")]
+[Description("Creates a file on a server.")]
+[ScriptAlias("Create-File-Example")]
+[ScriptNamespace("HDARS")]
+[Tag("files")]
+[DefaultProperty(nameof(FileName))]
+public class CreateFileOperation : ExecuteOperation
+{
+}
+</pre>
+
+    <p>
+      The meaning of <b>DisplayName</b>, <b>Description</b>, and <b>ScriptAlias</b>
+      is the same as for properties. As for the other attributes:
+    </p>
+    <ul>
+      <li>
+        <b><a href="/support/sdk-reference/BuildMaster/Inedo.BuildMaster.Extensibility/ScriptNamespaceAttribute">ScriptNamespace</a></b> - specifies a prefix that is used to qualify the
+        name specified in <b>ScriptAlias</b>. For convenience, this attribute
+        can also be applied to the assembly rather than on each operation individually.
+      </li>
+      <li>
+        <b><a href="/support/sdk-reference/BuildMaster/Inedo.Documentation/TagAttribute">Tag</a></b> - specifies a tag which acts as a kind of category for the operation.
+        This attribute can be applied multiple times and can help with discoverability.
+      </li>
+      <li>
+        <b>DefaultProperty</b> - specifies the name of a property on the operation
+        that receives the default argument value. When in script form, the default argument
+        is the value this is passed to the operation positionally, rather than by name.
+        A default is not necessary, but can help increase the readability of a plan
+        when it is viewed or edited as OtterScript.
+      </li>
+    </ul>
+
+    <h4>Rich Descriptions <i>(Optional)</i></h4>
+    <p>Optionally, you may also override the GetDescription method which allows the plan editor and live execution page to render decorated
+      text for the operation description. Here is an example:</p>
+<pre class="tutorial-code">
+protected override ExtendedRichDescription GetDescription(IOperationConfiguration config)
+{
+    return new ExtendedRichDescription(
+        new RichDescription(
+            "Create ",
+            new Hilite(config[nameof(this.FileName)])
+        ),
+        new RichDescription(
+            "starting with ",
+            new Hilite(config[nameof(this.FileText)])
+        )
+    );
+}
+</pre>
+    <p>Note the use of <code>config[nameof(this.FileText)]</code> instead of referencing <code>this.FileText</code> directly, this allows
+    the consumer of the method to supply dummy values when there is no contextual value.</p>
+
+    <h3>Building and Deploying the Extension</h3>
+    <p>
+      With the extension complete (and compiling), we are now reading to package it
+      as an extension and deploy it to BuildMaster. To do this, create a zip file with the
+      same name as the assembly. For example, if the assembly name is MyExample.dll,
+      call the zip file MyExample.zip.
+    </p>
+    <p>
+      Next, add the .dll file to the zip file, then rename the zip file so that its
+      extension is <b>.bmx</b>.
+    </p>
+    <p>
+      Copy the <b>.bmx</b> file into the BuildMaster extensions directory. By default,
+      this will usually be in <b>C:\BuildMaster\Extensions</b>, but you can
+      verify the exact location by going to the Admin->All Settings page in BuildMaster
+      and looking for the <b>ExtensionsPath</b> value.
+    </p>
+    <p>
+      Restart the BuildMaster services (and application pool if hosting in IIS).
+    </p>
+
+    <h3>Testing the Extension</h3>
+    <p>
+      Go to any plan editor in BuildMaster and verify that your new operation is displayed
+      along with all of the other operations. This create file operation should work
+      on any server, just like the built-in version.
+    </p>
+
+  </body>
+</html>

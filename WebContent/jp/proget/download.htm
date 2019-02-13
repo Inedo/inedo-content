@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ProGet Downloads</title>
+    <meta name="MasterPageFile" content="proget-jp.htm" />
+    <meta name="keywords" content="proget, installation" />
+    <meta name="require-ssl" content="true" />
+    <style type="text/css">
+        .all-content {
+            width: 800px;
+            margin-left: 100px;
+        }
+        .downloaf-box {
+            border: solid 1px #2e2e2e;
+            padding: 20px;
+            text-align: right;
+            margin-top: 30px;
+        }
+
+            .downloaf-box .left {
+                float: left;
+                margin-right: 20px;
+            }
+
+                .downloaf-box .left h3 {
+                    margin-top: 0;
+                    font-size: 26px;
+                }
+
+            .downloaf-box .right .button {
+                font-size: 26px;
+                padding: 12px 10px;
+                line-height: 65px;
+            }
+
+                .downloaf-box .right .button:hover {
+                    text-decoration: underline;
+                }
+
+                .started {background-color: #e9eada; padding: 20px 30px; margin-top: 30px;}
+                .started h4 {margin-top: 0; font-weight: bold;}
+                .started p {line-height: 30px; margin-bottom: 0px; font-size: 18px;}
+
+    </style>
+
+    <script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0053/9152.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+
+</head>
+<body>
+    <div class="all-content">
+        <h1>Download ProGet</h1>
+
+        <div id="start" class="started">
+            <h4>Getting Started </h4>
+            <p>
+                ProGetはサポートされている全てのバージョンのWindowsにインストールすることができます。 インストーラをクリックし、ProGetを起動して数分でインストールは完了です。 インストールの際には、インストールするエディションを選択した上で、試用版か無料版の選択、もしくはライセンスキーを入力します。詳しくは、このページの下部にある<a href="#edition">スクリーンショット</a>をご参考下さい。 または、<a href="/support/documentation/proget/installation/installation-guide" target="_blank">ProGetインストールガイド</a>で詳細をご確認下さい。
+            </p>
+        </div>
+
+        <div class="downloaf-box">
+            <div class="left">
+                <h3>Latest Version: ${ProGet.ReleaseNumber}</h3>
+                <div>File size: 7mb</div>
+            </div>
+            <div class="right">
+                <div><a class="button" href="/proget/download/sql/${ProGet.ReleaseNumber}" onclick="_gaq.push(['_trackEvent', 'proget', 'download', 'sql']);">Download ProGet Installer</a></div>
+                <div>
+                    <a href="/proget/${ProGet.ReleaseNumberMajorMinor}" target="_blank">Overview for ${ProGet.ReleaseNumberMajorMinor}</a>
+                    &nbsp; &bull; &nbsp;
+                    <a href="/proget/release-notes#v${ProGet.ReleaseNumberMajorMinor}" target="_blank">Release Notes</a>
+                </div>
+            </div>
+        </div>
+
+        <!--<p style="text-align: center;" class="info">
+            <strong><a href="/proget/5.0">ProGet 5.0</a> includes Webhooks</strong>, users will be able to connect ProGet with other services; like deployment tools, chatbots, ITSM platforms, and more. <strong>You can <a href="/proget/versions">download the beta</a> now!</strong>
+        </p>-->
+
+        <!--<p class="announcement">
+            <b>False Positive Notice</b> - after the 2016/02/15 Patch Tuesday updates, Microsoft's SmartScreen Filter is falsely identifying a <em>lot</em> of legitimate
+            software products as malware, including every single installer ever published by Inedo; please see  <a href="/support/kb/1113">KB#1113</a> for how to verify
+            that your download from Inedo is guaranteed to be safe and secure
+        </p>-->
+
+
+        <h3>Linux Installation</h3>
+        <p>
+            ProGetの最新バージョン4.4は、Linuxに正式にサポートされています。 ProGet for Linuxを使い始める方法については、<a href="/support/documentation/proget/installation/installation-guide/linux-docker" target="_blank">documentation</a>を参照してください。
+        </p>
+
+        <h3>Looking to Buy?</h3>
+        <p>
+            <a href="/jp/request-quote">リクエストフォーム</a>よりお気軽にお尋ね下さい。
+        </p>
+
+        <h3>Upgrading ProGet</h3>
+        <p>
+            旧バージョンのProGetからProGet ${ProGet.ReleaseNumber}にアップグレードすることができます。 インストーラを実行してインストールを更新してください。
+        </p>
+
+        <h3>Other Downloads</h3>
+        <p>
+            旧バージョンのProGet、またはその他のインストールパッケージをダウンロードする必要がある場合は、<a href="/proget/versions" target="_blank">全てのバージョンのページをご覧ください。</a>
+        </p>
+
+       
+        <h3 id="edition">「エディションの選択</h3>
+        <p>
+            There is one download for all editions of ProGet. On new installs, you can either select the edition or
+            enter a license key yourself.
+        </p>
+        <img src="/resources/documentation/proget-installation/progetedition.png" />
+
+        <div class="button-set">
+            <div class="button">
+                <a href="#start">Back to the download</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

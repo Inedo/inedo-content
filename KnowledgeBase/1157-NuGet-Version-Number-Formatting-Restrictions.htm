@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1157" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="proget, nuget" />
+    <title>NuGet version number formatting restrictions</title>
+</head>
+<body>
+    <h3 id="semver2">SemVer2 versions</h3>
+    <p>SemVer2, or Semantic Versioning 2.0.0 version numbers are supported only in SemVer2 (ProGet 5+) NuGet feeds.</p>
+    <p>A formal description is available in the <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning 2.0.0 specification</a>.</p>
+    <p>A SemVer2 version number is three decimal integers (digits <code>0</code>-<code>9</code>) separated by dots (<code>.</code>). Each component of the version number must not begin with a zero (<code>0</code>) unless it is exactly <code>0</code> (not <code>00</code> or <code>000</code>, etc.).</p>
+    <p>Additionally, a semantic version number may contain a pre-release indicator and build metadata.</p>
+    <p>Pre-release indicators begin with a hyphen (<code>-</code>) and consist of one or more dot-separated (<code>.</code>) parts, which must not be empty and may contain letters (<code>a</code>-<code>z</code>, <code>A</code>-<code>Z</code>), digits (<code>0</code>-<code>9</code>), and hyphens (<code>-</code>). If a component of a pre-release indicator contains only digits, it must follow the same no-leading-zeroes rule listed above.</p>
+    <p>Build metadata begins with a plus sign (<code>+</code>) and may contain any of the characters that pre-release indicators are allowed to contain. The components of a build metadata string must not be empty, but there is no restriction for leading zeroes. Build metadata is ignored when comparing version numbers, so <code>1.2.3+foo</code> and <code>1.2.3+bar</code> are considered to be the same version.</p>
+    <p>If both a pre-release indicator and build metadata are present, the pre-release indicator must come first.</p>
+
+    <h3 id="legacy">Legacy versions</h3>
+    <p>Legacy version numbers are supported in both legacy (ProGet 4) NuGet feeds and SemVer2 (ProGet 5+) NuGet feeds.</p>
+    <p>Legacy version numbers consist of one to four decimal integers (digits <code>0</code>-<code>9</code>) separated by dots (<code>.</code>).</p>
+    <p>They can also optionally have a pre-release indicator, which is a hyphen (<code>-</code>) followed by a sequence of letters (<code>a</code>-<code>z</code>, <code>A</code>-<code>Z</code>), digits (<code>0</code>-<code>9</code>), and hyphens (<code>-</code>). Pre-release indicators must be at least one character long and must start with a letter.</p>
+</body>
+</html>

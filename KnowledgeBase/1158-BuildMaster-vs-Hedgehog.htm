@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html []>
+<html>
+<head>
+    <meta name="id" content="1158" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="buildmaster, hedgehog" />
+    <link type="text/css" rel="stylesheet" href="/support/documentation/_resources/documentation2.css" />
+    <title>A Comparison: BuildMaster vs Hedgehog</title>
+</head>
+<body>
+    <p class="announcement">
+        <b>Note: Hedgehog is an experimental product, with it's official release coming in ~2020</b>
+    </p>
+    <p>
+        Both <a href="/buildmaster">BuildMaster</a> and <a href="/hedgehog">Hedgehog</a> can be used to automate the release and deployment of your applications and components, and both have lots of common features and can be used in
+        conjunction with each other.  This article will provide guidance on how to decide which tool to use.
+    </p>
+    <p class="attention technical">
+        <b>Work in progress.</b>
+        This article is a work-in-progress, but we've fielded quite a few questions asking about the difference between these two products, we wanted to publish a preliminary comparison.
+    </p>
+    <h2>Which Tool Should I Evaluate?</h2>
+    <h4>In almost all cases, BuildMaster.</h4>
+    <p>
+        While Hedgehog's software itself is production-ready, it's a v1 product meant for early adopters. Like all v1 products, Hedgehog's future is uncertain. While we designed it to eventually take BuildMaster's place, that day may never come.
+    </p>
+    <p>
+        Another possibility is that we merge Hedgehog back into BuildMaster. This would require us to add successful features to BuildMaster, and come up with a migration path. This wouldn't be too bad, particularly with <a href="/support/documentation/hedgehog/global-components/rafts">Rafts</a> and <a href="/support/documentation/buildmaster/administration/import-apps">Application Import/Export</a>.
+    </p>
+
+    <h2>Common Origin: BuildMaster 5.8</h2>
+    <p>BuildMaster and Hedgehog share a common ancestor: BuildMaster 5.8, which was the last of the v5 line.</p>
+    <p>
+        To create Hedgehog, we started by forking the BuildMaster 5.8 codebase and then removing a tremendous amount of code that was required to support
+        <a href="/support/kb/1144">BuildMaster legacy features</a>, including a legacy execution engine, legacy agent model, and all sorts of backwards-compatibility shims.
+        We also disabled or deactivated many features in BuildMaster, such as <a href="/support/documentation/buildmaster/modeling-applications/calendars">calendars</a> and <a href="/support/documentation/buildmaster/modeling-applications/issues-projects">Issues and Project Tracking</a>.
+    </p>
+    <p>After that, we were able to do some major refactoring:</p>
+    <ul>
+        <li>Tweak the model to be more flexible and focused on packages</li>
+        <li>Improve the pipeline features</li>
+        <li>Incorporate raft-based storage for content</li>
+    </ul>
+    <p>This split allowed us to build a new, innovative product with all the stability and experience of a successful, well-established product.</p>
+
+    <h2>Product Changes</h2>
+    <p>Because Hedgehog has fewer features and no legacy code to maintain, we will be able to add features and improvements to the product much more easily. Some of these features may be "reboots" of existing BuildMaster features (like release calendars), or they may be entirely new features altogether.</p>
+    <p>BuildMaster is still an actively developed product, but the legacy code limits our ability to make certain risky improvements.  In addition, we don't want to build a duplicative feature, or drastically change the behavior of an existing feature.</p>
+    <p>However, because both tools use the Inedo Execution Engine, Inedo Agents, and the Inedo SDK, they will both get the same operational improvements, as well as extensions and plug-ins developed by Inedo and the community.</p>
+    
+    <h2>Applications vs Packages</h2>
+    <p>Both tools can be used for deployment automation, but the way in which they model the problem is slightly different:</p>
+    <ul>
+        <li>BuildMaster models applications and releases, which makes it suitable for larger, monolithic applications that tend to have more complex deployment models and release processes</li>
+        <li>Hedgehog models packages, which makes it more suitable for lots of smaller, service-based applications that tend to have simpler deployments and uniform release processes</li>
+    </ul>
+    <p>For example, considering Inedo's application and component portfolio, we use the products as follows:</p>
+    <ul>
+        <li>BuildMaster is used to manage the release process and deployment of our products (ProGet, Hedgehog, Otter, and even BuildMaster itself); not only do our products have a complex workflow, but they don't lend to being deployed as small, simple packages</li>
+        <li>Hedgehog is used to manage our dozens of Inedo extensions, which are universal packages and are released on demand</li>
+    </ul>
+
+    <h2>Build or Import Artifacts vs External Packages</h2>
+    <p>BuildMaster was originally designed to retrieve your source code, tag it, compile it, and then deploy the compiled build artifacts through a series of environments.</p>
+    <p>While many of our users still prefer this simple workflow, dedicated continuous integration servers (Jenkins, TeamCity, etc) have become the most popular way to build code, and as a result, we added the ability to import artifacts directly from a CI server, and then deploy those artifacts.</p>
+    <p>Hedgehog, on the other hand, is designed to deploy packages hosted in an externally-hosted package server like ProGet. This allows a cleaner separation between build and release tools, and a uniform deployment process for many different technologies.</p>
+    <p>Of course, because both products use the same extensions via the Inedo SDK, you can perform any of these three workflows in either of the products.</p>
+    
+    <h2>Features vs Simplicity</h2>
+    <p>BuildMaster has more features to support release coordination (such as calendars, issue tracking, and deployables) as well as more deployment features (database change scripts, configuration file assets). While they can be quite useful, these features are unique in the industry, and many don't expect a tool like BuildMaster to have them.</p>
+    <p>Hedgehog lacks these features, which forces users to simplify their process instead. For example, instead of relying on a database change script management feature, you may have a DBA team manage database changes instead.</p>
+    
+    
+    
+
+    <h2 id="terminology">BuildMaster vs Hedgehog Terminology</h2>
+    <p>
+        Because of the common origin, and because they are both Inedo products, BuildMaster and Hedgehog share a lot of concepts and terminology.
+    </p>
+    <table border="1" cellspacing="0" cellpadding="2" width="700">
+        <tbody>
+            <tr>
+                <td valign="top" width="158">
+                    <strong>BuildMaster</strong>
+                </td>
+                <td valign="top" width="240">
+                    <strong>Hedgehog</strong>
+                </td>
+                <td valign="top" width="393">
+                    <strong>Additional Notes</strong>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">Application</td>
+                <td valign="top">Project</td>
+                <td valign="top"></td>
+            </tr>
+            <tr>
+                <td valign="top">Deployable</td>
+                <td valign="top">-</td>
+                <td valign="top">These are replaced with variables and, to some extent, packages </td>
+            </tr>
+            <tr>
+                <td valign="top">Application Group</td>
+                <td valign="top">-</td>
+                <td valign="top">Projects can have a parent project, which makes application groups unnecessary </td>
+            </tr>
+            <tr>
+                <td valign="top">Artifact</td>
+                <td valign="top">Attachment</td>
+                <td valign="top"></td>
+            </tr>
+            <tr>
+                <td valign="top">Release Package<br />(Build*)</td>
+                <td valign="top">Deployment Set</td>
+                <td valign="top"></td>
+            </tr>
+            <tr>
+                <td valign="top">-</td>
+                <td valign="top">Package</td>
+                <td valign="top">These could be handled, to some degree, with variables in BuildMaster</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <p>
+        * denotes v4/v3 terminology
+    </p>
+</body>
+</html>

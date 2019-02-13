@@ -1,0 +1,141 @@
+@import "..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+
+a.download {
+    background-color: none;
+    padding: 8px 16px;
+    color: @inedo-darkblue;
+    border: 3px solid @inedo-darkblue;
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: @inedo-darkblue;
+        color: @inedo-white;
+    }
+}
+
+.content-container#banner {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    min-height: 275px;
+    background: url(/resources/images/banners/service-banner.jpg) no-repeat #011b2d;
+    background-position: center;
+    z-index: 5;
+    position: relative;
+    border-bottom: 10px solid @inedo-darkblue;
+
+    .content {
+        padding: 70px 100px;
+
+
+        p {
+            color: @inedo-black;
+            font-weight: bolder;
+            font-size: 18px;
+            margin-left: 100px;
+            margin-right: 120px;
+        }
+
+        img {
+            margin-left: 20px;
+            height: 64px;
+            text-align: left;
+        }
+
+        .circle-button {
+            margin-left: 100px;
+            margin-top: 30px;
+        }
+    }
+}
+
+
+
+
+
+.content-container{
+    .content {
+        p {
+            font-size: 19px;
+            line-height: 31px;
+        }
+
+    h1 {
+        margin-top: 50px;
+        text-align: center;
+        font-weight: bolder;
+    }
+    h2 {
+        font-weight: bolder;
+        font-size: 38px;
+    }
+    h3 {
+        font-size: 28px;
+        font-weight: bolder;
+    }
+    ul.service {
+        margin-left: 30px;
+        li.serv {
+            margin: 10px 0;
+        }
+    }
+
+     }
+}
+
+
+.content-container#form {
+    .content {
+        display: inline-block;
+        background-color: #e4e4e4;
+        margin-top: 20px;
+        padding-top: 20px;
+
+        label, select {
+            margin-left: 50px;
+        }
+
+        input[type=text], select {
+            width: 856px;
+            padding: 10px;
+            margin: 8px 50px;
+            border: 1px solid #ccc;
+        }
+
+        input[type=button] {
+            width: 880px;
+            background-color: @inedo-lightgrey;
+            color: black;
+            padding: 14px 20px;
+            margin: 20px 50px 50px 50px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type=button]:hover {
+            background-color: #1e89d5;
+            color: white;
+        }
+
+        .ahvalidator.error input[type=text],
+        .ahvalidator.error select {
+            background-color: #fcc;
+        }
+
+        .ahvalidator.error .message {
+            display: none;
+        }
+    }
+}

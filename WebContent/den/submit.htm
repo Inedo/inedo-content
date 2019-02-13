@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Submit to the Den</title>
+    <meta name="SideBarName" content="general" />
+    <style>
+        .contact-form input[type=text], .contact-form select {
+            width: 595px;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form input[type=button] {
+            width: 100%;
+            background-color: #3FA9F5;
+            color: white;
+            padding: 14px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+        }
+
+            .contact-form input[type=button]:hover {
+                background-color: #1e89d5;
+            }
+
+        .contact-form {
+            background-color: #e4e4e4;
+            padding: 10px 20px;
+            margin-bottom: 40px;
+        }
+
+
+        .ahvalidator.error input[type=text],
+        .ahvalidator.error select {
+            background-color: #fcc;
+        }
+
+        .ahvalidator.error .message {
+            display: none;
+        }
+
+        .content-container#banner {
+            padding: 15px 0;
+            margin: 0;    
+            background-color: #a8ca35;
+            text-align: center;
+            height: 60px;
+        }
+            .content-container#banner .button {
+                float: left;
+            padding-top: 10px;
+            }
+    </style>
+</head>
+<body>
+    <h1>Community Submission Form</h1>
+    <div id="den-submission" class="content-container">
+        <div class="content">
+
+            <p>
+                Interested in contributing to the <b><a href="/den">Inedo Den</a>?</b>
+            </p>
+            <p>
+                First, make sure you have your <a href="/blog/announcing-user-profiles---create-yours-today">User Profile</a> set up, and you're logged in, then you can move on to the documentation below!
+            </p>
+            <p>
+                Submitting a Community Item is simple, we have documentation for each tool, <a href="/support/documentation/proget/administration/extensions">ProGet</a>, <a href="/support/documentation/hedgehog/administration/extensions">Hedgehog</a>, <a href="/support/documentation/otter/administration/extensions">Otter</a>, and <a href="/support/documentation/buildmaster/administration/extensions">BuildMaster</a>, once everything is ready, just fill out the form below.
+            </p>
+        </div>
+    </div>
+
+    <div class="contact-form">
+        <contact-form method="post" action="/contact-form" enctype="multipart/form-data">
+            <fieldset>
+                <input type="hidden" name="ToAddress" value="rgovert@inedo.com" />
+                <input type="hidden" name="RedirectUrl" value="/den/submission-received" />
+                <input type="hidden" name="Subject" value="Community Item Submission" />
+                <input type="hidden" name="CcFromAddress" value="false" />
+                <input type="hidden" name="Priority" value="High" />
+                <label>Your Name*</label>
+                <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                <label>Email Address*</label>
+                <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                <label>Community Item Name* (must be unique)</label>
+                <div><input name="CommunityItemName" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                <select name="tool-code" data-ahvalidator='{ "Required": true }'>
+                    <option value="">Tool(s) your Item is for*</option>
+                    <option value="ProGet">ProGet</option>
+                    <option value="Hedgehog">Hedgehog</option>
+                    <option value="Otter">Otter</option>
+                    <option value="Buildmaster">BuildMaster</option>
+                    <option value="Multiple">Multiple (include in Additional Comments Below)</option>
+                </select>
+
+                <select name="primary-tag" data-ahvalidator='{ "Required": true }'>
+                    <option value="">Primary Tag*</option>
+                    <option value="issue tracking">Issue tracking</option>
+                    <option value="cloud integration">Cloud Integration</option>
+                    <option value="open source">Open Source</option>
+                    <option value="package store">Package Store</option>
+                    <option value="source control">Source Control</option>
+                    <option value="net">.Net</option>
+                    <option value="security">Security</option>
+                    <option value="other">Other (include in Additional Comments Below)</option>
+                </select>
+
+                <label>GitHub URL*</label>
+                <div><input name="GitHubLink" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                <label>Short Description* (a sentence or two)</label>
+                <div><input name="ShortDescription" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                <label>Additional Comments</label>
+                <div><textarea name="AdditionalComments" style="width: 630px;" rows="8" cols="20"></textarea></div>
+
+                <select name="InedoCommunityLogo" data-ahvalidator='{ "Required": true }'>
+                    <option value="">Use our Community logo, or Choose to upload your own below*</option>
+                    <option value="use inedo community logo">Use the Inedo Community logo</option>
+                    <option value="upload own">Upload my own logo</option>
+                </select>
+
+                <label>Upload a Small Logo (190px X 125px png)</label>
+                <input type="file" name="FileField" alt="logo:" />
+
+                <label>Upload a Large Logo (290px X 190px png)</label>
+                <input type="file" name="FileField" alt="logo:" />
+
+                <label>Or, upload a vector, and we'll resize</label>
+                <input type="file" name="FileField" alt="logo:" />
+
+                <input type="button" value="Submit" onclick="AhValidation.Submit(this);" />
+            </fieldset>
+        </contact-form>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+

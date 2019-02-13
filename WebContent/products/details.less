@@ -1,0 +1,289 @@
+    @import "..\resources\styles\library";
+
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@inedo-lightblue: #10466E;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+.mixin-homecc {
+    padding: 50px 0;
+    margin: 0;
+
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        color: @inedo-black;
+        margin: 0;
+    }
+
+
+}
+
+
+.content {
+        p {
+            font-size: 19px;
+            line-height: 30px;
+        }
+}
+
+fieldset.generated {
+    margin-left: 200px;
+    div {
+        //float:left;
+    }
+    input {
+        border: 3px solid @inedo-white;
+        color: @inedo-black;
+
+
+        &[type=submit]{
+            //display:block; float: right;
+            background-color: #54a3da;
+            color: @inedo-white;
+            font-size: 18px;
+        }
+    }
+}
+
+.content-container .content .button-set {
+    padding-top: 30px;
+     .button {
+            padding: 10px 40px;
+        }
+}
+
+.content-container#banner {
+    padding: 30px 0;
+    margin: 0;
+    
+    background-color: @inedo-darkgrey;
+    text-align: center;
+
+    h1 {
+        color: @inedo-white; 
+        margin: 40px 0; 
+        font-size: 36px; 
+        font-weight: bolder;
+    }
+
+    .banner-sec {
+        background-color: @inedo-darkgrey;
+        margin-bottom: 30px;
+
+        .button-set {
+            margin-top: 20px;
+            padding-top: 10px;
+            .button {
+                background-color: #54a3da;
+                border: 3px solid @inedo-white;
+                &.bm {background-color: @buildmaster-orange;}
+                &.pg {background-color: @proget-blue;}
+                &.ot {background-color: @otter-purple;}
+                    a {
+                        text-decoration: none;
+                        color: @inedo-white;
+                        font-weight: bolder;
+                    }
+            }
+        }
+    }
+}
+
+.screenshot {
+    border: 1px solid @inedo-grey;
+    margin: 20px 0;
+}
+
+
+.content-container#windows {
+    .does {
+    margin: 50px 0;
+    .text-info {
+        display: inline-block;
+        width: 740px;
+        margin-left: 50px;
+        h4 {
+            margin-top: 0;
+            font-size: 19px;
+        }
+    }
+    .icon {
+        display: inline-block;
+        .otter-con {
+        width: 200px;
+        height: 200px;
+        }
+    }
+    
+}
+
+}
+
+.content-container#feat-info {
+     margin-top: 50px;
+   display: inline-block;
+   h3 {
+       text-align: center;
+       //font-size: 36px;
+       font-weight: 500;
+   }
+    h4 {
+        text-align: center;
+        padding: 5px 15px 20px 15px;
+        font-size: 21px;
+        line-height: 38px;
+    }
+    .button-set {
+    margin: 20px 0 60px 0;
+    
+    .button {
+        padding: 16px 0;
+        background-color: @inedo-darkgrey;
+        a {
+            color: @inedo-white;
+            text-decoration: none;
+            padding: 16px 50px;
+        }
+    }
+            .button:hover {
+            text-decoration: none;
+            background-color: @inedo-blue;
+        }
+}
+}
+
+
+    .case-study-box {
+    float: left;
+    width: 988px;
+    height: 250px;
+    margin: 20px 6px;
+    border-bottom: 1px solid @inedo-grey;
+    border-top: 1px solid @inedo-grey;
+    background-color: @inedo-lightgrey;
+    text-align: left;
+    h2 {
+        color: @inedo-darkgrey;
+        font-size: 180%;
+        padding: 0 20px 30px 350px;
+        line-height: 150%;
+    }
+    h4 {
+        position: absolute;
+        text-align: left;
+        margin: 185px 15px 15px 0;
+        z-index: 1;
+        color: @inedo-darkgrey;
+        font-size: 92%;
+        padding: 5px 40px 30px 350px;
+    }
+        .experience-level {
+            img {
+                max-height: 190px;
+                max-width: 290px;
+                position: absolute;
+                margin: 30px 0 0 30px;
+                border: 1px solid @inedo-black;
+                background-color: @inedo-white;
+                
+            }
+        }
+
+}
+.case-study-box:hover {
+    background-color: @inedo-grey;
+             }
+
+
+.content-container#newsletter {
+    .content {
+        background-color: #e4e4e4;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        h2 {
+           color: @inedo-white; 
+           text-align: center;
+           padding-top: 40px;
+           color: @inedo-darkgrey;
+        }
+        label, select {
+            margin-left: 50px;
+        }
+
+            input[type=text], select {
+                width: 856px;
+                padding: 10px;
+                margin: 8px 50px;
+                border: 1px solid #ccc;
+            }
+
+        input[type=button] {
+            width: 880px;
+            background-color:@inedo-lightgrey;
+            color: black;
+            padding: 14px 20px;
+            margin: 20px 50px 50px 50px;
+            border: none;
+            cursor: pointer;
+        }
+
+            input[type=button]:hover {
+                background-color: #1e89d5;
+                color: white;
+            }
+
+             .ahvalidator.error input[type=text],
+        .ahvalidator.error select {
+            background-color: #fcc;
+        }
+
+        .ahvalidator.error .message {
+            display: none;
+        }
+}
+}
+
+a.download {
+    background-color: none;
+    padding: 8px 16px;
+    color: @inedo-darkgrey;
+    border: 3px solid @inedo-darkgrey;
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: @inedo-darkgrey;
+        color: @inedo-white;
+    }
+}
+
+.content-container#flow {
+    margin-bottom: 50px;
+
+    .circle-button {
+        &.left {
+            float: left;
+
+            p {
+                margin-left: 4px;
+            }
+        }
+
+        &.right {
+            float: right;
+
+            p {
+                text-align: right;
+                margin-right: 4px;
+            }
+        }
+    }
+}

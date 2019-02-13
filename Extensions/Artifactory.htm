@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <title>Artifactory Extension | Support | Inedo.com</title>
+</head>
+
+<body>
+  <div>
+    <p>This extension contains actions for automating deployments to Artifactory repositories and managing artifacts on the
+    server.</p>
+
+    <h2>Using the Artifactory Extension</h2>
+
+    <p>The Artifactory extension allows you mange repositories and upload and download artifacts on Artifactory servers.</p>
+
+    <ul>
+      <li>
+        <p>Create Directory: Creates a directory in the specified repository.</p>
+
+        <h3>Action Fields</h3>
+
+        <h4>Repository</h4>
+
+        <p>The repository to create the directory in.</p>
+
+        <h4>Directory</h4>
+
+        <p>The full path of the directory(ies) to create.</p>
+      </li>
+
+      <li>
+        <p>Deploy Artifact: Deploys an artifact from the file system to the given Artifactory repository and directory and
+        optionally can set metadata properties of the item.</p>
+
+        <h3>Action Fields</h3>
+
+        <h4>Artifact</h4>
+
+        <p>The path to the artifact to be deployed.</p>
+
+        <h4>Properties</h4>
+
+        <p>Any metadata properties to be set for the item. The format is one property per line written as
+        <em>name</em>=<em>value</em>.</p>
+      </li>
+
+      <li>
+        <p>Retrieve Artifact: This action downloads the specified artifact from the given repository and directory to a file system
+        location.</p>
+
+        <h3>Action Fields</h3>
+
+        <h4>Item Name</h4>
+
+        <p>The (optional) path and name of the artifact to download.</p>
+
+        <h4>Properties</h4>
+
+        <p>The optional metadata properties that need to match in order for the artifact to be downloaded.</p>
+
+        <h4>Output File</h4>
+
+        <p>The location and filename for the downloaded artifact.</p>
+      </li>
+
+      <li>
+        <p>Set Item Properties: Sets or updates the property metadata of the specified item. The item can be a file or a directory.
+        If the item is a directory then the properties of every item in the directory will be set recursively.</p>
+
+        <h3>Action Fields</h3>
+
+        <h4>Item Name</h4>
+
+        <p>The file or directory to update.</p>
+
+        <h4>Properties</h4>
+
+        <p>Any metadata properties to be set for the item. The format is one property per line written as
+        <em>name</em>=<em>value</em>.</p>
+      </li>
+
+      <li>
+        <p>Move Item: This action moves the specified file or directory to a new repository and/or location.</p>
+
+        <h3>Action Fields</h3>
+
+        <h4>Source Name</h4>
+
+        <p>The file or directory to move.</p>
+
+        <h4>Destination Repository</h4>
+
+        <p>The repository to move the item to.</p>
+
+        <h4>Destination Name</h4>
+
+        <p>The directory and/or filename to move the item to.</p>
+
+        <h4>Suppress Cross Layout Translation</h4>
+
+        <p>Flag to set to suppress cross layout translations.</p>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

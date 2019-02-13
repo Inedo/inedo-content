@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1117" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="buildmaster, upgrade-notes" />
+    <title>Upgrade Notes for BuildMaster v5</title>
+    <style type="text/css">
+        .major {
+            color: #c0504d;
+        }
+    </style>
+</head>
+<body>
+        <p class="announcement">
+                <b>Upgrading from a v3 or v4?</b> This document is for informational purposes only, and you should upgrade directly to v6; please see <a href="/support/kb/1151/upgrading-from-buildmaster-v3-and-v4" target="_blank">Upgrading from BuildMaster v3 and v4</a> first.<br/><br/>
+            <strong>Upgrading from a 5.x?</strong> You should directly upgrade to the latest BuildMaster 5.8 prior to upgrading to v6.
+            </p>
+    <p class="info">
+        This article is a rollup of all upgrade notes from BuildMaster 5.0 through 5.8, and discusses the changes which may impact your installation, configuration, and customizations of BuildMaster. 
+    </p>
+    <p>
+        BuildMaster v5 was a transformative release intended to modernize the platform and software and introduced a lot of changes through nine different releases.
+    </p>
+    <h2>Change Summary</h2>
+    <p>
+        The following table summarizes all of the changes introduced throughout v5, and the details can be found below. In addition to these changes, two important things to note:
+    </p>
+    <ul>
+        <li><a href="#sdk-changes">Major SDK Changes will require rebuild</a></li>
+        <li><a href="#extensions-changes">All extensions will need to be reloaded</a></li>
+    </ul>
+
+    <table border="1" cellspacing="0" cellpadding="2" width="700">
+        <tbody>
+           
+            <tr>
+                <td valign="top">BuildMaster 5.0</td>
+                <td valign="top">
+                    <ul>
+                        <li><a href="#45-required">.NET 4.5 is Required</a></li>
+                        <li><a href="#user-experience">User Experience Changes</a></li>
+                        <li><a href="/support/kb/1118" target="_blank">New Execution Engine / Legacy Plans</a></li>
+                        <li><a href="#workfolows-pipelines">Workflows renamed to Pipelines</a></li>
+                        <li><a href="#depracated-features">Deprecated features removed</a></li>
+                        <li><a href="#roles-tasks-rebuilt">Roles renamed to Tasks and Rebuilt</a></li>
+                        <li><a href="#utc-deploy-artifact">UTC for Deploy Artifact Action</a></li>
+                        <li><a href="#50-extensions">All Extensions Must be Upgraded</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">BuildMaster 5.1</td>
+                <td valign="top">
+                    <ul>
+                        <li><a href="#new-agent-model">New Agent Model / Legacy BuildMaster Agents</a></li>
+                        <li><a href="#resource-credentials">New Feature: Resource Credentials</a></li>
+                        <li><a href="#ssh-based-servers">Resource Credentials for SSH-based Servers</a></li>
+                        <li><a href="#ssh-library">New SSH Library</a></li>
+                        <li><a href="#encryption-key">Encryption Key</a></li>
+                        <li><a href="#51-extensions">All Extensions Must be Upgraded</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">BuildMaster 5.2</td>
+                <td valign="top">
+                    <ul>
+                        <li><a href="#server-roles">New Feature: Server Roles (replacing Server Groups)</a></li>
+                        <li><a href="#api-keys-feature">New Feature: API Keys (replacing ApiKey)</a></li>
+                        <li><a href="#infra-config-import-export">New Feature: Infrastructure Configuration Import/Export</a></li>
+                        <li><a href="#infra-config-import-export">New Feature: Infrastructure Synchronization</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">BuildMaster 5.3</td>
+                <td valign="top">
+                    <ul>
+                        <li><a href="#release-templates">New Feature: Release Templates</a></li>
+                        <li><a href="#config-variables-legacy">New Feature: Configuration Variables / Legacy Variables</a></li>
+                        <li>
+                            <a href="#53-extensions">Core functionality moved to BuildMasterCore Extension</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">BuildMaster 5.4</td>
+                <td valign="top">
+                    <ul>
+                        <li><a href="#agentless-windows-servers">New Feature: Agentless Windows Servers</a></li>
+                        <li><a href="#legacy-storage-paths">Changes to the Internal Artifact Disk Store Structure</a></li>
+                        <li><a href="#variables-management-api">New Feature: Variables Management API</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">BuildMaster 5.5</td>
+                <td valign="top">
+                    <ul>
+                        <li><a href="#pipelines-variables-json">New Feature: Pipeline Variables</a></li>
+                        <li><a href="#pipelines-variables-json">New Feature: Variables as JSON</a></li>
+                        <li><a href="#release-management-api">New Feature: Release &amp; Package Deployment API</a></li>
+                        <li><a href="#roles-tasks-rebuilt">Built-in Task Rebuild</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">BuildMaster 5.6</td>
+                <td valign="top">
+                    <ul>
+                        <li><a href="#issue-sources">New Feature: Issue Sources</a></li>
+                        <li><a href="#source-control-op-providers">New Feature: Source Control Operation Changes</a></li>
+                        <li><a href="#calendars-windows-targets">Providers as a Legacy Feature</a></li>
+                        <li><a href="#56-extensions">GitLegacy and GitHubLegacy Extensions</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">BuildMaster 5.7</td>
+                <td valign="top">
+                    <ul>
+                        <li><a href="#calendars-windows-targets">New Feature: Calendars feature</a></li>
+                        <li><a href="#calendars-windows-targets">New Feature: Deployment windows</a></li>
+                        <li><a href="#calendars-windows-targets">New Feature: Release target dates</a></li>
+                        <li><a href="#config-file-deploy-changes">Configuration file deployment changes</a></li>
+                        <li><a href="#edition-name-changes">Edition Name Changes</a></li>
+                        <li><a href="#57-extensions">New Extension Loader</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">BuildMaster 5.8</td>
+                <td valign="top">
+                    <ul>
+                        <li><a href="#text-templating">New Feature: Text Templating</a></li>
+                        <li><a href="#updated-ldap-directory">New Feature: Updated LDAP Directory and Active Directory</a></li>
+                        <li><a href="#plan-versioning">New Feature: Plan Versioning</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 id="upgrade-process">Upgrade Process</h2>
+    <p class="announcement">
+        <b>Upgrading from a v3 or v4?</b> This document is for informational purposes only, and you should upgrade directly to v6; please see <a href="/support/kb/1151" target="_blank">Upgrading from BuildMaster v3 and v4</a> first.<br /><br />
+        <strong>Upgrading from a 5.x?</strong> You should directly upgrade to the latest BuildMaster 5.8 prior to upgrading to v6.
+    </p>
+    <p>You can upgrade from any BuildMaster 5.x version to the latest BuildMaster 5.8 simply by downloading and running the installer.</p>
+    <h4 id="risk-mitigation">Risk Mitigation</h4>
+    <p>Although the risks vary depending on which 5.x version you're upgrading from, you should take the following precautions to prevent downtime:</p>
+    <ul>
+        <li>Make sure that your BuildMaster database is backed up prior to upgrade</li>
+        <li>Make sure that your Encryption Key is backed up prior to upgrade</li>
+        <li>Make sure that the installation's \Extensions directory is backed up prior to upgrade</li>
+    </ul>
+    <h4 id="rollback">Rollback</h4>
+    <p>Because there are database changes, a rollback will require uninstalling BuildMaster, and then <a href="/support/kb/1001">restoring your BuildMaster instance</a>.</p>
+    
+    <h2 id="45-required">.NET 4.5 Required</h2>
+    <p><strong>BuildMaster 5.0</strong> introduced a requirement that .NET Framework 4.5 or later is installed on the BuildMaster server, and for all of the BuildMaster agents. This is a highly compatible, in-place update to .NET Framework 4, and is already included with Windows 8 and Windows Server 2012. For older machines, simply <a href="http://microsoft.com/en-us/download/details.aspx?id=30653" target="_blank">download .NET 4.5 from Microsoft</a> and install the update.</p>
+    <h2 id="user-experience">User Experience Changes</h2>
+    <p><strong>BuildMaster 5.0</strong> introduced a Web Interface Overhaul to Refocus on Release Automation. In addition to the color, font, and basic layout updates, the first thing you will notice is the continued shift towards <em>application release automation</em>; although we will support the "create a build and deploy it to production" workflow indefinitely, this workflow is becoming less popular as CI servers like TeamCity, Jenkins, TFS, etc. become the preferred build tool, and as universal package managers like ProGet become the preferred artifact store.</p>
+    <p>The most notable change will be in terminology; "builds" are now "release packages", "promotions" are now "deployments", and "workflows" are now "pipelines".</p>
+    <div class="attention best-practice">
+        <p>
+            In retrospect, this wasn't a good idea. As of <a href="/buildmaster/6.1" target="_blank">BuildMaster 6.1</a>, we have mostly undone this change and will be focusing on BuildMaster as a CI/CD platform with the "create a build and deploy it to production" as a primary use case. 
+        </p>
+    </div>
+    <h2 id="execution-legacy">New Execution Engine / Legacy Plans</h2>
+    <p><strong>BuildMaster 5.0</strong> added the Inedo Execution Engine (OtterScript) for deployment plans. To mitigate upgrade risk, this new execution engine is implemented side-by-side with the legacy execution engine, and. Although the new execution cannot run a legacy plan (nor can the legacy engine run a new OtterScript plan), you can convert legacy plans to OtterScript on a plan-by-plan basis, and then edit the corresponding pipeline to use the new plan.</p>
+    <p>See <a href="/support/kb/1118">KB#1118: Legacy Plans in BuildMaster 5.0</a></p>
+    <h2 id="workflows-pipelines">Workflows Renamed to Pipelines</h2>
+    <p><strong>BuildMaster 5.0</strong> renamed Workflows to Pipelines. While conceptually similar, the feature was completely reimplemented, and pipelines are quite a bit more versatile. There are a few notable changes:</p>
+    <ul>
+        <li><strong>Stages vs Environments</strong> - a workflow represented a sequence of <em>environments</em>, where as a pipeline is a sequence of <em>stages</em>; a stage can target zero or more environments</li>
+        <li><strong>Targets</strong> - in addition to an environment, a target also specifies servers; this means you don't have to explicitly name the servers you want to use in your plans</li>
+        <li><strong>Build Step Removed</strong> - there is no special build step anymore; you can just add a stage and add a build importer to that</li>
+        <li><strong>Gates</strong> - these are the same as Pre-deployment checklist</li>
+    </ul>
+    <h2 id="deprecated-features">Deprecated Features Removed</h2>
+    <p><strong>BuildMaster 5.0</strong>. The <em>Notifiers and Triggers</em> that were replaced with Event Listeners in BuildMaster 4.4 have been removed; there had been warnings about these for several versions (especially in 4.9). The <em>Global environment approvals</em> were also removed; these too were deprecated in BuildMaster 4.4.</p>
+    <h2 id="roles-tasks-rebuilt">Roles Renamed to Tasks and Rebuilt</h2>
+    <h4>BuildMaster 5.0</h4>
+    <p>As part of the UX overhaul, "Roles" have been renamed to "Tasks", and the names of the roles have been updated to sound more task-like. <a href="/support/kb/1120">KB#1120 (Permission Updates in BuildMaster 5.0)</a> provides more details on this change.</p>
+    <h4>BuildMaster 5.5</h4>
+    <p>The five built-in tasks (Administer, Coordinate Releases, Manage Application, View Application, and Deploy to Environment) have been rebuilt, which means any customizations made to those tasks will be lost. If you didn't heed the warning about modifying built-in tasks, then you may want to rename the tasks to anything else prior to upgrade. Custom tasks are not impacted.</p>
+    <p>In addition, the Environments_Manage attribute was renamed to Infrastructure_Manage, and the Environments_View attribute was removed altogether.</p>
+    <h2 id="utc-deploy-artifact">UTC for Deploy Artifact Action</h2>
+    <p><strong>BuildMaster 5.0</strong> now uses UTC times to compare artifacts on destination servers. This may cause BuildMaster to deploy the full artifact on first deployment after upgrading as timestamps are no longer matched using local time.</p>
+    <h2 id="new-agent-model">New Agent Model / Legacy BuildMaster Agents</h2>
+    <p><strong>BuildMaster 5.1</strong> added support for the <a href="/support/documentation/inedoagent/overview">Inedo Agent</a> and renamed the previous agents to the Legacy BuildMaster Agent. See <a href="/support/kb/1039">KB#1039: The Inedo Agent and Legacy BuildMaster Agents</a> for more information.</p>
+    <h2 id="resource-credentials">New Feature: Resource Credentials</h2>
+    <p><strong>BuildMaster 5.1</strong> added a new feature called resource credentials that is used for passwords and other secrets. See <a href="/support/documentation/buildmaster/global-components/resource-credentials">Resource Credential</a> documentation for more information.</p>
+    <h2 id="ssh-based-servers">Resource Credentials for SSH-based Servers</h2>
+    <p><strong>BuildMaster 5.1</strong> removed support for having SSH-based servers store the credentials and/or private key on the server itself. Instead a <a href="/support/documentation/buildmaster/global-components/resource-credentials">resource credential</a> must be created, and then associate with the server. Existing SSH-based servers will still function, but when you edit a server, you will need to associate it with a resource credential.</p>
+    <h2 id="new-ssh-library">New SSH Library</h2>
+    <p><strong>BuildMaster 5.1</strong> changed the SSH library used to communicate with Linux-based servers. This should have no functional impact, and although the new library (libssh2) is very popular and actively maintained in comparison to the old library (SSH.NET), the library change introduces some risk for deployment to Linux-based servers.</p>
+    <h2 id="encryption-key">Encryption Key</h2>
+    <p><strong>BuildMaster 5.1</strong>. To encrypt <a href="/support/documentation/buildmaster/global-components/resource-credentials">resource credentials</a>, an encryption key is used; this will be created during upgrade, and added to the web and service configuration files. This encryption key must be added to your back up plan, or you will not be able to decrypt resource credentials on a resto</p>
+    <h2 id="server-roles">New Feature: Server Roles (replacing Server Groups)</h2>
+    <p><strong>BuildMaster 5.2</strong> introduced the <a href="/support/documentation/buildmaster/infrastructure/servers#servers-vs-roles">Server Roles</a> feature as a replacement for Server Groups, and Server Groups will be hidden unless you have Legacy Plans</p>
+    <p>In Legacy Plans, the Server Groups feature enabled actions or action groups to target of multiple servers. Because Operations in OtterScript plans cannot target a server group (though, you can iterate over servers to provide exactly the same functionality), they offer no value for non-legacy users and are hidden from the UI if there are no legacy plans.</p>
+    <p>Servers may still be grouped together using Server Roles, which is a new feature in this release. Roles may be the target of a pipeline stage, and may be iterated just like server groups.</p>
+    <h2 id="api-keys-feature">New Feature: API Keys (replacing ApiKey)</h2>
+    <p><strong>BuildMaster 5.2</strong> introduced the <a href="/support/documentation/buildmaster/administration/security#api-keys">API Keys</a> feature. If you configured an ApiKey for BuildMaster in All Settings, that will be automatically converted to an API Key with Native API access.</p>
+    <h2 id="infra-config-import-export">New Features: Infrastructure Configuration Import/Export &amp; Synchronization</h2>
+    <p><strong>BuildMaster 5.2 </strong>introduced the <a href="/support/documentation/buildmaster/administration/configuration">Configuration Import/Export</a> and <a href="/support/documentation/buildmaster/administration/configuration#sync">Infrastructure Synchronization</a> features.</p>
+    <h2 id="release-templates">New Features: Release Templates</h2>
+    <p><strong>BuildMaster 5.3</strong> introduced the <a href="/support/documentation/buildmaster/core-concepts/release/templates">Release Templates</a> feature in conjunction with deprecating the existing variables that are used on releases and release packages.</p>
+    <h2 id="config-variables-legacy">New Feature: Configuration Variables / Legacy Variables</h2>
+    <p><strong>BuildMaster 5.3</strong> introduced a new variables feature called <a href="/support/documentation/buildmaster/global-components/configuration-variables">Configuration Variables</a>. All existing configuration or release template variables that you've created will now be "legacy variables" in the UI; Release Templates and Configuration Variables were implemented side-by-side to replace them.</p>
+    <p>See <a href="/support/kb/1128">KB#1128: Legacy Configuration and Release Variables</a> for more information</p>
+    <h2 id="agentless-windows-servers">New Feature: Agentless Windows Servers</h2>
+    <p><strong>BuildMaster 5.4</strong> introduced a new agentless means for communication with Windows servers via PowerShell remoting channels.</p>
+    <h2 id="legacy-storage-paths">Changes to the Internal Artifact Disk Store Structure</h2>
+    <p>
+        Although accessing artifact files directly in the artifact disk store (i.e. <code>ArtifactsBasePath</code>) is unsupported, many users wrote external
+        scripts and tools that rely on doing exactly this.
+    </p>
+    <p>
+        In previous versions of BuildMaster, artifacts were stored using the following structure:
+    </p>
+<pre>\&laquo;application-id&raquo;
+  \&laquo;release-number&raquo;
+    \&laquo;package-number&raquo;
+      \&laquo;deployable-id&raquo;
+        \&laquo;artifact-name&raquo;.zip</pre>
+    <p>
+        As of BuildMaster 5.4, newly-created artifacts will be stored in the following manner:
+    </p>
+    <pre>\A&laquo;application-id&raquo;
+  \R&laquo;release-id&raquo;
+    \B&laquo;package-id&raquo;
+      \&laquo;artifact-name&raquo;.zip</pre>
+    <p>
+        If you rely on these internal paths, you're going toh ave a problem with newly-created artifacts.
+        Obviously, you should fix the external tool to not use these... but in the mean time, there are two options you can use:
+    </p>
+    <ul>
+        <li>
+            <b>Use Legacy Storage Path</b> -
+            both the Create Artifact Operation and Create Artifact Legacy Action have a new property called <em>Use Legacy Storage Path</em> that defaults to false.
+            When set to <code>true</code>, the artifact will be stored using the earlier convention
+        </li>
+        <li>
+            <b>Create Legacy Artifact Storage Symlinks</b> -
+            if you're in a particular bind because you didn't realize that something down the pipeline relied on this (such as a production deployment), the easiest quick
+            fix may be to use the tool built-in to the service executable (bmservice.exe) that will create symbolic links for all existing "new path" artifacts at the
+            old, expected location. Just run bmservice.exe, select the option, and that should fix the immediate problem. Afterwards, change your plans to use
+            use the <em>Use Legacy Storage Path</em> property or (ideally) fix your external tool
+        </li>
+    </ul>
+    <h2 id="variables-management-api">New Feature: Variables Management API</h2>
+    <p><strong>BuildMaster 5.4</strong> added the <a href="/support/documentation/buildmaster/reference/api/variables">Variables Management API</a> which lets you update configuration variables with a simplified API endpoint.</p>
+    <h2 id="pipeline-variables-json">New Features: Pipeline Variables and Variables as JSON</h2>
+    <p><strong>BuildMaster 5.5</strong> introduced variables to pipelines and pipeline stages, as well as the ability to bulk edit configuration variables as JSON documents.</p>
+    <h2 id="release-management-api">New Feature: Release Management API</h2>
+    <p><strong>BuildMaster 5.5</strong> added the <a href="/support/documentation/buildmaster/reference/api/release-and-package">Release and Package Deployment API</a> offers a simple mechanism for creating releases, creating release packages, and deploying release packages.</p>
+    <h2 id="issue-sources">New Feature: Issue Sources</h2>
+    <p><strong>BuildMaster 5.6</strong> added the <a href="/support/documentation/buildmaster/modeling-applications/issues-projects#issues-sources">Issue Sources Feature</a> to replace the Issue Tracking Providers, which are now considered a legacy feature.</p>
+    <h2 id="source-control-op-providers">Source Control Operations &amp; Providers as a Legacy Feature</h2>
+    <p><strong>BuildMaster 5.6</strong> deprecated the "provider model" in favor of using Resource Credentials and Global Variables for configuration, as well as tool-specific Operations. So instead of "Get-Latest using SVN" it would be "SVN-Checkout". As such, both Issue Tracking Providers and Source Control Providers are considered legacy features.</p>
+    <h2 id="calendars-windows-targets">New Features: Calendars, Deployment windows, and Release target dates</h2>
+    <p><strong>Buildmaster 5.7</strong> introduced several related features: <a href="/support/documentation/buildmaster/modeling-applications/calendars">Calendars</a>, <a href="/support/documentation/buildmaster/core-concepts/pipelines/gates#deployment-windows">Deployment Windows</a>, and Release Target dates.</p>
+    <h2 id="config-file-deploy-changes">Configuration file deployment changes</h2>
+    <p><strong>BuildMaster 5.7</strong> introduced changes to configuration file deployment, with the biggest change in behavior being the removal of %-syntax variable support when deployment occurs in an OtterScript plan. The behavior was previously undefined, e.g. sometimes it performed the replacement, whereas other times it did not. See the full <a href="/support/documentation/buildmaster/modeling-applications/configuration-files">Configuration File Assets documentation</a> for more information and specification.</p>
+    <h2 id="edition-name-changes">Edition Name Changes</h2>
+    <p><strong>BuildMaster 5.7. </strong>Going forward, what was formerly named "BuildMaster Enterprise" is now "BuildMaster Standard". The only change in the software is to mention "Standard" on the license key pages in place of "Enterprise". No functionality changes as a result.</p>
+    <h2 id="text-templating">New Feature: Text Templating</h2>
+    <p><strong>BuildMaster 5.8</strong> allows you to use the Apply-Template operation to perform advanced text replacement. <a href="/support/documentation/buildmaster/reference/templating">Templating</a> is part of the SDK, so it can also be used by custom extensions.</p>
+    <p>This feature can be used in combination with <a href="/support/documentation/buildmaster/modeling-applications/configuration-files-text-templates">Configuration Variables</a> as the simplest mechanism to deploy configuration files.</p>
+    <h2 id="updated-ldap-directory">New Feature: Updated LDAP and Active Directory</h2>
+    <p><strong>BuildMaster 5.8</strong> added a new and improved <a href="/support/documentation/various/ldap/ldap-active-directory">LDAP and Active Directory integration</a>, which makes maintaining user and group permissions easier than before. Complex, multi-domain active directory structures are now easily catered to, as our new integration allows permissions to be defined in a third-party LDAP directory, or an active directory domain forest. If you choose to use an active directory domain, you can also enable Windows Integrated Authentication, removing the web-based login prompt.</p>
+    <p>The optional new "LDAP and Active Directory" user directory is served from the InedoCore extension (v5.8.0+) and bundled with the installer. Current user directory settings will not be modified and require additional configuration within BuildMaster in order to use it. Refer to the <a href="/support/documentation/buildmaster/administration/ldap">LDAP and Active Directory documentation</a> for configuration options and if necessary, troubleshooting steps.</p>
+    <h2 id="plan-versioning">New Feature: Plan Versioning</h2>
+    <p><strong>BuildMaster 5.8</strong> added <a href="/support/documentation/buildmaster/core-concepts/deployment-plans#versioning">Plan Versioning</a>, where a history of edits is maintained within BuildMaster; allowing approved team members to view the version history, or even preform a rollback to a previous version. You can also simply view the differences between two versions from the Plan Version Listing page. The differences between the two selected plans will be highlighted for quick identification of the changes that have been made.</p>
+    <h2 id="sdk-changes">SDK Changes</h2>
+    <p><strong>BuildMaster 5.0 </strong>and<strong> BuildMaster 5.1</strong> shipped with a new SDK with breaking changes. This means extensions 5.0 extensions will not work with any version except 5.0, however 5.1 will work with later versions.</p>
+    <p><strong>BuildMaster 5.2</strong> through <strong>BuildMaster 5.7</strong> shipped with a new SDK, but all additive changes.</p>
+    <p>Although the SDK is mostly the same (even from v4), the notable changes are as follows.</p>
+    <ul>
+        <li><strong>Operations</strong> are the v5-equivalent of Actions. However, you do not need to develop a Operation to use these in OtterScript plans, thanks to the special <a href="/support/kb/1118#legacy-actions">Execute-LegacyAction</a> operation.</li>
+        <li>StoredProcs to DB - the utility class that provided access to the database API is now called DB. This new class is much more performant, supports transactions, has better type saftey, and supports asynchronous queries. In nearly all cases, simply renaming StoredProcs to DB will be sufficient.</li>
+        <li><a href="/support/sdk-reference/buildmaster/5.1">5.1+</a> Agent service interfaces were moved into the <code>Inedo.Agents</code> namespace in the <code>Inedo.Agents.Client</code> assembly</li>
+        <li><a href="/support/sdk-reference/buildmaster/5.1">5.1+</a> <code>IRemoteZip</code> has been uninclused, its two methods folded into <code>IFileOperationsExecuter</code></li>
+        <li><a href="/support/sdk-reference/buildmaster/5.2">5.2+</a> The <code>VariableFunctionPropertiesAttribute</code> was obsoleted in the BuildMaster 5.2 SDK. If you have a custom variable function, and wish to compile against this SDK, use the <code>LegacyAliasAttribute</code> instead of the <code>LegacyAlias</code> property, and a <code>TagAttribute</code> instead of the <code>Category</code> property. The <code>Scope</code> property was ignored since v5.</li>
+        <li><a href="/support/sdk-reference/buildmaster/5.5.0">5.5+</a> The SDK changes are additive, to support additional dynamic list variables features. If you have a custom editor that inherits from <code>PromotionRequirementEditorBase</code>, that will no longer be displayed in the UI. It needs to be refactored to either use <code>PromotionRequirementEditor</code> or the appropriate editor attributes.</li>
+    </ul>
+    <p>See the <a href="/support/tutorials/writing-a-simple-operation-using-the-buildmaster-sdk">Writing a Simple Operation Using the BuildMaster SDK</a> tutorial and the <a href="/support/sdk-reference/buildmaster">BuildMaster SDK Reference</a> for more details.</p>
+    <h2 id="extensions-changes">Extensions Changes</h2>
+    <p>The following extensions are supported in BuildMaster v5. Extensions with an asterisk (*) have actions that have not yet been converted to operations, though they will still function fine in an OtterScript plan using the <a href="/support/kb/1118#legacy-actions">Execute-LegacyAction</a> operation.</p>
+    <div class="attention best-practice">
+        <p><strong>Supported in v5:</strong> Amazon*, Azure*, Git, GitHub, Jenkins*, Jira, Java*, Mercurial, MSTest, MySQL, NuGet, Oracle, Perforce, PostgreSQL, Sourcegear, SqlServer, Subversion, TeamCity*, TFS*, Trac, Windows, WindowsSDK, YouTrack</p>
+    </div>
+    <p>Note that the JUnit extension was merged with the Java extension.</p>
+    <h4 id="un-migrated-extens">Un-migrated Community Extensions</h4>
+    <p>Several of the extensions that were built by and for the community have not been upgraded to the new SDK, and thus will not work in v5. Although it's trivial to recompile/republish them, many of these extensions are not up to our usability/quality standards, or do not support newer versions of the tool they're integrating with. As such, we would prefer to work with a user familiar with that tool to bring it up-to-date. </p>
+    <p class="announcement">
+        <strong>Not Currently Supported in v5:</strong> AccuRev, Artifactory, Axosoft, BugTrackerNet, Bugzilla, CollabNet, CVS, DB2, FogBugz, FTP, LeanKit, MBUnit, PHPUnit, Plastic, Rake, Rational, Seapine, Skytap, VB6, WiX 
+    </p>
+
+    <p>If you are using any of these extensions, just <a href="/contact">let us know</a> and we will recompile and publish them to work for v5.</p>
+    <h4 id="50-extensions">BuildMaster 5.0: All Extensions Must be Upgraded</h4>
+    <p>Because the breaking SDK changes from v4, you will need to upgrade all of your extensions after you upgrade BuildMaster. This is quite easy from the Admin &gt; Extensions page.</p>
+    <h4 id="51-extensions">BuildMaster 5.1: All Extensions Must be Upgraded</h4>
+    <p>Because the breaking SDK changes from 5.0, you will need to upgrade all of your extensions after you upgrade BuildMaster. This is quite easy from the Admin &gt; Extensions page.</p>
+    <h4 id="53-extensions">BuildMaster 5.3: Core functionality moved to BuildMasterCore Extension</h4>
+    <p>Most of the operations and variable functions have been migrated to built-in extensions; if "nothing works" after upgrade, then most likely the extensions could not load due to permissions errors. But, once the extensions are loaded, there will be no functional difference at all.</p>
+    <h4 id="56-extensions">BuildMaster 5.6: GitLegacy and GitHubLegacy Extensions</h4>
+    <p>This largest upgrade impact will be for users with the <strong>Git</strong> and <strong>GitHub</strong> extensions. Users with these extensions <strong>must download the GitLegacy and GitHubLegacy extensions</strong> to maintain existing functionality. This may occur post-upgrade via the Extensions Overview page within BuildMaster, or visiting the Inedo Den and downloading directly at <a href="/den">http://inedo.com/den</a></p>
+    <h4 id="57-extensions">BuildMaster 5.7: New Extension Loader</h4>
+    <p>The extensions loader has changed since v5.6 for parity with Otter's romp extension loader. There should be no observable functional changes as extension load paths and temporary paths are the same.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

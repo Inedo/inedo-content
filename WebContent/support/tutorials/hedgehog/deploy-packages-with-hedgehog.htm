@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deploying Packages from ProGet to Servers using Hedgehog</title>
+    <meta name="keywords" content="hedgehog, getting-started, entry-user,proget" />
+    <meta name="subheading" content="Hedgehog" />
+    <meta name="product-name" content="Hedgehog" />
+</head>
+<body>
+    <div class="intro">
+        <p>
+            ProGet is the central hub for your organization’s packaged applications and components. When used in conjunction with Hedgehog, these application packages can be deployed to your datacenters by creating a self-service deployment platform. This tutorial explains how to deploy a basic web application packaged as a Universal Package to a Windows server. 
+        </p>
+        <hr />
+    </div>
+   <div class="attention technical">
+       <p>
+           While Hedgehog's software itself is production-ready, it's a v1 product meant for early adopters. Like all v1 products, Hedgehog's future is uncertain. While we designed it to eventually take BuildMaster's place, that day may never come.
+       </p>
+   </div>
+    <p><h3 id="prereq">Prerequisites</h3></p>
+    <p> 
+       <ul>
+           <li>
+               Download ProGet from here: <a href="https://inedo.com/proget/download ">https://inedo.com/proget/download</a>
+           </li>
+           <li>
+               Download Hedgehog from here: <a href="https://inedo.com/hedgehog/download">https://inedo.com/hedgehog/download</a>
+           </li>
+           <li>
+               Download Accounts.Web.upack from here: <a href="http://cdn.inedo.com/downloads/hedgehog/Accounts.Web.upack">http://cdn.inedo.com/downloads/hedgehog/Accounts.Web.upack</a>
+           </li>
+           <li>
+            Ensure IIS is installed on the target machine with a custom or default website set to use the "AccountsAppPool" created in this tutorial  
+           </li>
+       </ul>
+    </p>
+    <p>
+            This tutorial is also available as a video:
+        </p>
+        <iframe width="600" height="337" src="https://www.youtube.com/embed/6K06yMH8orM" frameborder="0" allowfullscreen="true"></iframe>
+     
+<h3>
+    Create a Universal Feed
+</h3>
+<p>
+    In ProGet, we will want to create a Universal Feed that will host the packages. Select "Feeds" > "Create New Feed" > enter "DeploymentPackages" as the feed name making sure to choose "Universal package format", and click "Create Feed":  
+</p>
+    <img class="screenshot" src="/resources/tutorials/hedgehog/universal-feed.png" />
+    <p>
+        Once created, we will be taken to the Manage Feed page. Select "DeploymentPackages" from the breadcrumb to view the Feed Overview page.   
+    </p>
+  <h3>
+      Upload the Accounts Website Package to ProGet
+  </h3>
+
+  <p>
+        Once the feed is created, we will click "Add Package" > "Upload Package" and upload the Accounts.Web.upack file we downloaded previously. Once we click "Upload File", we should see the package appear in the list. Take note of the "API endpoint URL" for this feed as well, it will be used by Hedgehog to connect to ProGet: 
+  </p>
+  <img class="screenshot" src="/resources/tutorials/hedgehog/upack-upload.png" />
+<p>
+        You may click on "Accounts.Web 1.5.0" to view the package details, particularly the Deployments and Files tabs. While the Deployments tab doesn’t have anything currently, it will once a deployment with Hedgehog completes.
+</p>
+<p>
+        Under the Files tab, you’ll notice the packageVariables.json file, which when we preview it, we see the contents:
+</p>
+<pre>
+        {
+            "GitCommitId": "edb81ea63cdd9c7cc7df8291258e67d0dee9c81f",
+            "DeployStepsRequired": ["FullStop","ReloadCache"],
+            "DebugBuild": "false"
+        }     
+</pre>
+<p>
+        This file contains variables that are injected into Hedgehog deployment plans, and  may be used to control how the package is deployed. While we won't use these variables in this tutorial, they will be seen in later screenshots.
+</p>
+<h3>
+    Connect Hedgehog to ProGet 
+</h3>
+<p>Now that the package is uploaded, we can open up Hedgehog. The first step is to add a Package Source so that Hedgehog can pull packages from ProGet. Under the Admin gear, click on &ldquo;Administration&rdquo; &gt; &ldquo;Components &amp; Extensibility&rdquo; &gt; &ldquo;Package Sources&rdquo; &gt; &ldquo;Create Package Source&rdquo;.</p>
+<p>From here, we&rsquo;ll enter the API endpoint URL we noted previously from ProGet, then click &ldquo;Save Package Source&rdquo;:</p>
+
+<img class="screenshot" src="/resources/tutorials/hedgehog/package-source.png" />
+<h3>Create a Project</h3>
+<p>Once the package source is added, we will create a new project in Hedgehog. Using the project dropdown, we will select &ldquo;Create project&hellip;&rdquo;</p>
+<img class="screenshot" src="/resources/tutorials/hedgehog/create-project.png" />
+<p>
+        Entering “Accounts” as the project name, and leaving the initial pipeline values as their defaults.
+</p>
+<h3>Create a Deployment Set</h3>
+<p>With the Accounts project created, we will now create a <a href="/support/documentation/hedgehog/modeling-applications/deployment-sets">Deployment Set</a> that contains the Accounts.Web version 1.5.0 package. Under the &ldquo;Packages&rdquo; project sub-navigation, Hedgehog will automatically list the packages that are stored in the DeploymentPackages feed in ProGet. We will note that Accounts.Web 1.5.0 is in the list, and select &ldquo;add to set&rdquo;, followed by &ldquo;Create Deployment Set&rdquo;, leaving the default values, then click &ldquo;Create Deployment Set&rdquo; again:</p>
+
+<img class="screenshot" src="/resources/tutorials/hedgehog/create-set.png" />
+<p>Once created, we will see the Deployment Set Overview page that details any deployments, variables, and associated packages with the deployment set:
+
+</p>
+<img class="screenshot" src="/resources/tutorials/hedgehog/deployment-set.png" />
+<h3>Modify the Deployment Plan</h3>
+<p>Once the deployment set is created, we will create a Deployment Plan that will perform the steps necessary to deploy the package. From the project sub-navigation menu, select &ldquo;Plans&rdquo; &gt; &ldquo;Deploy Accounts&rdquo; to open the Plan Editor.
+    
+</p>
+<img class="screenshot" src="/resources/tutorials/hedgehog/plan-hh.png" />
+<p>
+        Click the topmost red X to remove the example plan, then add a General Block by dragging &amp; dropping it from the statement library on the left:
+</p>
+
+<img class="screenshot" src="/resources/tutorials/hedgehog/gen-block.png" />
+
+<p>Enter &ldquo;Deploy Accounts&rdquo; as the short description and click &ldquo;Save&rdquo;, then use the &ldquo;Search Statements&rdquo; box to find the &ldquo;Ensure AppPool&rdquo; operation, and drag-and-drop it into the newly added General block. This will present many properties familiar to IIS administrators. Enter the following values into the property editor:</p>
+<p>Name: AccountsAppPool</p>
+<p>.NET CLR version: v4.0</p>
+<p>State: Stopped</p>
+
+<img class="screenshot" src="/resources/tutorials/hedgehog/ensure-app.png" />
+
+<p>Click Save. Now, we will add a &ldquo;Deploy Package&rdquo; operation that will be used to deploy the Accounts.Web package we associated earlier. Search for &ldquo;package&rdquo; in the Search Statements box, and drag-drop the operation under the &ldquo;Ensure Application Pool&rdquo; operation added previously. Enter &ldquo;Accounts&rdquo; as the package name, and &ldquo;C:\Websites\Accounts&rdquo; as the target directory:
+
+</p>
+<img class="screenshot" src="/resources/tutorials/hedgehog/deploy-package.png" />
+<p>Click Save, then add one more operation, the &ldquo;Start App Pool&rdquo; operation with &ldquo;AccountsAppPool&rdquo; as the application pool name.</p>
+
+<p>Once those 3 operations are added, the resulting plan should look like the following:</p>
+
+<img class="screenshot" src="/resources/tutorials/hedgehog/save-plan.png" />
+<p>Click &ldquo;Save Plan&rdquo;, and we are now ready to edit the auto-generated pipeline.</p>
+<h3>Modify the Pipeline</h3>
+<p>Pipelines describe the set of stages that a set of packages traverse through, along with any other process controls such as approvals, deployment windows, and more. Select &ldquo;Pipelines&rdquo; from the project sub-navigation menu, and the auto-generated &ldquo;Accounts&rdquo; pipeline should be visible:</p>
+
+<img class="screenshot" src="/resources/tutorials/hedgehog/pipeline.png" />
+
+<p>Click the Accounts pipeline, and then “edit” under Integration to edit the target:</p>
+<img class="screenshot" src="/resources/tutorials/hedgehog/edit-pipeline.png" />
+<p>
+        This will open the “Edit Pipeline Stage Target” window where we can set the server to “Specific servers…” and “localhost” as the target server:
+</p>
+<img class="screenshot" src="/resources/tutorials/hedgehog/pipeline-target.png" />
+<p>Then click Save</p>
+
+<h3>Deploy the Package</h3>
+<p>Once the pipeline is saved, we will return to the Deployment Set details page under the &ldquo;Packages&rdquo; project sub-navigation menu, and the &ldquo;Deployment Sets&rdquo; tab:</p>
+
+<img class="screenshot" src="/resources/tutorials/hedgehog/deploy-package-set.png" />
+<p>
+        From here, we will click “deploy” in the Integration box which opens the “Deploy Deployment Set” window:
+</p>
+<img class="screenshot" src="/resources/tutorials/hedgehog/click-deploy-set.png" />
+<p>One thing we notice is the &ldquo;Accounts.Web&rdquo; variables section, which contains the additional package information we noted earlier defined by the packageVariables.json file. We will leave the default values and click &ldquo;Deploy&rdquo;, which will effectively deploy the package contents to the specified directory.</p>
+<h3>Deployment Details in ProGet</h3>
+<p>If you browse back to the DeploymentPackages feed in ProGet and select the Accounts.Web 1.5.0 package, under the Deployments tab there will be some basic details about the deployment with a link back to the Deployment Set that initiated the package deployment:
+        <img class="screenshot" src="/resources/tutorials/hedgehog/pg-deployment-feed.png" />
+</p>
+<h3>Summary</h3>
+<p>With just a few simple operations in Hedgehog, we deployed a <a href="https://inedo.com/support/documentation/proget/core-concepts/packages">Universal Package</a> from a newly created ProGet feed to an example server running IIS. While this tutorial describes a basic deployment scenario meant to introduce the process of coordinating products in the Inedo Suite, future tutorials will detail more advanced scenarios such as integrating with external services like GitHub.</p>
+
+</body>
+</html>

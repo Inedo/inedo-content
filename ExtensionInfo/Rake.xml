@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extensionAdditionalInfo>
+  <info><![CDATA[
+  <p>This extension contains an action that runs the Rake build tool.</p>
+  ]]></info>
+  <actionInfo id="Inedo.BuildMasterExtensions.Rake.RakeAction" name="Execute Rake" summary="Runs the Rake executable."><![CDATA[
+  <p>Runs the Rake build tool allowing you to specify the Rake script to run, the tasks to run, and optionally provide environment variables for the build script.</p>
+  <h3>Action Fields</h3>
+  <h4>Rake Executable Path</h4>
+  <p>The path to the Rake executable.</p>
+  <h4>Rake File</h4>
+  <p>The optional Rake File to use, relative to the working directory.</p>
+  <h4>Tasks</h4>
+  <p>Enter the tasks to run, separated by spaces.</p>
+  <h4>Environment Variables</h4>
+  <p>You may optionally specify additional environment variables and values for this execution, separated by newlines. For example:<br />
+opt1=value1<br />
+opt2=value2</p>
+  ]]></actionInfo>
+</extensionAdditionalInfo>

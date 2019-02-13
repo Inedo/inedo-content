@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Labeling a Build in Source Control with BuildMaster</title>
+   <meta name="keywords" content="buildmaster, source-control, entry-users " />
+   <meta name="subheading" content="Builds and Integrations" />
+    <meta name="product-name" content="BuildMaster" />
+</head>
+<body>
+    <div class="intro">
+        <p>
+            In some source control systems (SVN, CVS, etc.), a label (also known as a "tag" in SVN) is created by creating
+            a fork (or branch) of the code. In others (TFS, Vault, Git, etc.), the operation is simply known as "label".
+        </p>
+        <hr />
+    </div>
+   
+   <p>
+
+      BuildMaster makes it easy to label code during a build execution. Any <a href="/den?source-control">source control provider</a> that is configured in BuildMaster can be selected. In this case TFS.
+    </p>
+    <img class="screenshot" src="/resources/tutorials/labels/source-control-provider.png" />
+    <p>
+       To add a label add the <a href="/support/documentation/buildmaster/reference/operations/source-control/apply-label"><i>Apply Label</i></a> operation to your deployment plan.
+   </p>
+   <p>
+      <img class="screenshot" src="/resources/tutorials/labels/apply-label2.png" />
+   </p>
+   <p class="info">
+      <b>Note</b>: For Subversion users, make sure to use the <i>Tag</i> operation instead of the <i>Apply Label</i> operation.
+   </p>
+   <p>
+      Once you have the <i>Apply Label</i> operation configured in the deployment plan, you can use the <a href="/support/documentation/buildmaster/reference/operations/source-control/get-labeled"><i>Get Labeled</i></a>
+      operation to get the same code that was just labeled:
+   </p>
+   <p>
+      <img class="screenshot" src="/resources/tutorials/labels/get-labeled2.png" />
+   </p>
+    <div id="related-content" class="content">
+        <hr />
+        <div class="button-set">
+            <a href="/buildmaster/download" class="button">Download BuildMaster</a>
+            <a href="/products" class="button">Other Inedo products</a>
+
+        </div>
+    </div>
+</body>
+</html>

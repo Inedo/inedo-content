@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1160" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="proget, upgrade-notes" />
+    <title>Upgrade Notes for ProGet 5.1</title>
+</head>
+<body>
+    <p><a href="/proget/5.1">ProGet 5.1</a> is a minor release with the following changes:</p>
+    <ul>
+		<li>Support for Docker connectors</li>
+		<li>Virtual packages</li>
+		<li>New installer</li>
+		<li>Shared configuration</li>
+    </ul>
+
+    <h2>Upgrade Impact</h2>
+	<p>
+		This is a minor release with new features and nontrivial bugfixes. Risk is minimal, but
+		there is a higher chance of regression than with a maintenance release.
+	</p>
+	<p>
+		Please see the <a href="/support/kb/1153">Upgrade from v2 and v3</a> if you are upgrading
+		from a version lower than 4.0.
+	</p>
+
+    <h3>Docker Connectors</h3>
+    <p>
+		ProGet has supported Docker feeds for some time, but one (frequently requested) gap was
+		to add connector support. Connectors to other Docker registries can now be added and managed
+		just like any other feed type.
+    </p>
+
+	<h3>Virtual Packages</h3>
+	<p>
+		The Universal Package specification has been expanded to allow for virtual packages which are
+		built on-demand from other packages.
+	</p>
+	<p>
+		Please see the <a href="/support/documentation/upack/virtual-packages/what-is">documentation</a>
+		for more information about virtual packages.
+	</p>
+
+	<h3>Inedo Hub Installer</h3>
+	<p>
+		ProGet now supports installation using the Inedo Hub installer. This installer offers a simplified
+		experience with improved logging, and can manage other Inedo products as well.
+	</p>
+	<p>
+		The <a href="/proget/versions">traditional and manual installers</a> continue to remain available as alternatives, but once
+		the Inedo Hub is used to upgrade or install a ProGet instance, the traditional installer will
+		no longer be able to upgrade it.
+	</p>
+
+	<h3>Shared Configuration</h3>
+	<p>
+		As of ProGet 5.1.3, instances managed by either installer use a single config file for a small number
+		of essential values instead of duplicated app.config and web.config appSettings sections. This new
+		config file is located in <code>%ProgramData%\Inedo\SharedConfig\ProGet.config</code>. The installers will
+		automatically migrate settings to this file on upgrade.
+	</p>
+
+    <h2>Upgrade Process</h2>
+    <p>
+		ProGet may be upgraded by running the latest installer, so make sure the database gets backed up.
+		Note that during upgrade, some schema changes will be applied.
+    </p>
+
+    <h2>Rollback</h2>
+    <p>
+        See <a href="/support/documentation/proget/administration/backing-up">restoring your ProGet instance</a> for how to rollback.
+    </p>
+</body>
+</html>

@@ -1,0 +1,1295 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<redirects>
+
+  <domain name="codeoffset.com" to="http://inedo.com/offset" />
+  <domain name="codeoffsets.com" to="http://inedo.com/offset" />
+  <domain name="www.codeoffset.com" to="http://inedo.com/offset" />
+  <domain name="www.codeoffsets.com" to="http://inedo.com/offset" />
+  <domain name="links.inedo.com" to="http://inedo.com/" />
+  <domain name="blog.inedo.com" to="http://inedo.com/blog" />
+
+  <permanent from="/activation" to="https://my.inedo.com/" />
+  <permanent from="/support/activation" to="https://my.inedo.com/" />
+  <permanent from="/products/review-board" to="/products"/>
+  <permanent from="/products/review-board/thanks" to="/products"/>
+  <permanent from="/submit-blog" to="/blog"/>
+  <permanent from="/blog-thanks" to="/blog"/>
+  <permanent from="/case-studies/submit" to="/case-studies"/>
+  <permanent from="/case-studies/submission-received" to="/case-studies"/>
+
+
+  <permanent from="/company/professional-services" to="/services" />
+  <permanent from="/company/scotch-menu" to="/company/scotch" />
+  <permanent from="/company/about-us" to="/company" />
+
+  <permanent from="/careers" to="/company/careers" />
+	<permanent from="/company/careers/025-marketing-manager" to="/company/careers" />
+	<permanent from="/company/careers/024-dot-net-developer" to="/company/careers" />
+	<permanent from="/company/careers/026-interactive-designer" to="/company/careers" />
+	<permanent from="/company/careers/056-support-analyst" to="/company/careers" />
+	<permanent from="/company/careers/061-marketing-associate" to="/company/careers" />
+	<permanent from="/company/careers/028-intern-dev" to="/company/careers" />
+	<permanent from="/company/careers/029-intern-marketing" to="/company/careers" />
+	<permanent from="/company/careers" to="/company/career-culture" />
+	<permanent from="/company/careers/solutions-consultant" to="/company/career-culture/solutions-consultant" />
+	<permanent from="/company/careers/999-you" to="/company/career-culture/you" />
+	<permanent from="/company/careers/handbook" to="/company" />
+	<permanent from="/company/careers/thanks" to="/company/career-culture/thanks" />
+	<permanent from="/company/careers/ceo" to="/company/ceo" />
+
+  <permanent from="/devops" to="/" />
+
+  <permanent from="/company/current-direction" to="/company"/>
+  <permanent from="/company/next-generation" to="/company"/>
+
+
+	<permanent from="/training/product-training" to="/training/courses" />
+	<permanent from="/training/devops-fundamentals" to="/training" />
+  <permanent from="/services" to="/training" />
+  <permanent from="/training/upm" to="/training" />
+  <permanent from="/training/ara-101" to="/training" />
+  <permanent from="/training/ara-201" to="/training" />
+  <permanent from="/training/ara-301" to="/training" />
+  <permanent from="/contact-nuget" to="/training" />
+  <permanent from="/incremental" to="/products"/>
+
+  <permanent from="/contact2" to="/contact"/>
+  <permanent from="/professional-services/contact" to="/professional-services" />
+  <permanent from="/try" to="/products" />
+  <permanent from="/pricing" to="/products" />
+
+  <permanent from="/videos" to="/" />
+  <permanent from="/videos/getting-started-guide" to="/" />
+  <permanent from="/videos/configurationfiles" to="/" />
+  <permanent from="/videos/databasechangescripts" to="/" />
+  <permanent from="/videos/databasewebinar" to="/" />
+  <permanent from="/videos/gettingstartedguide" to="/" />
+
+  <permanent from="/whitepapers" to="/" />
+  <permanent from="/whitepapers/documentation-done-right" to="/" />
+  <permanent from="/whitepapers/release-management-done-right" to="/" />
+  <permanent from="/whitepapers/source-control-done-right" to="/" />
+  <permanent from="/whitepapers/testing-done-right" to="/" />
+  <permanent from="/Resources/pdf/Inedo-Strategic-SW-Development-WP.pdf" to="/support" />
+  <permanent from="/ps" to="/products" />
+  <permanent from="/ps/ps-contact" to="/products" />
+  <permanent from="/ps/ps-contact-thanks" to="/products" />
+
+  <!--Kramerica-->
+  <permanent from="/kramerica" to="/" />
+  <permanent from="/kramerica/foundation" to="/" />
+  <permanent from="/kramerica/common-services" to="/" />
+  <permanent from="/kramerica/ecom" to="/" />
+  <permanent from="/kramerica/ecom-plugin" to="/" />
+  <permanent from="/kramerica/wms" to="/" />
+  <permanent from="/kramerica/ims" to="/" />
+  <permanent from="/kramerica/iss" to="/" />
+  <permanent from="/kramerica/corp-org" to="/" />
+  <permanent from="/kramerica/tech-overview" to="/" />
+  <permanent from="/kramerica/infrastructure" to="/" />
+  <permanent from="/kramerica/corp-org#POSGroup" to="/" />
+  <permanent from="/kramerica/corp-org#LogisticsGroup" to="/" />
+  <permanent from="/kramerica/roster" to="/" />
+
+
+  <permanent from="/offset/old" to="/offset" />
+  <permanent from="/offset/pay" to="/offset" />
+  <permanent from="/offset/thanks" to="/offset" />
+  <permanent from="/offset/submit-payment" to="/offset" />
+	
+	<!--Conferences-->
+	<permanent from="/vslive" to="/support/whitepapers/ci-cd-infrastructure-config-mgmt?utm_source=vslive" />
+
+  <!--Landing Pages-->
+	<permanent from="/buildmaster/landing/complicated-robot" to="/buildmaster" />
+
+	<!--Promos 2018 Cleanup-->
+  <permanent from="/promos/inedo-devops-toolchain-q12017" to="/products" />
+  <permanent from="/promos/inedo-devops-toolchain-q12017/submission-recieved" to="/products" />
+  <permanent from="/promos/otter-iac-devops-blocks-q12017" to="/otter" />
+  <permanent from="/promos/otter-iac-devops-blocks-q12017/submission-recieved" to="/otter" />
+  <permanent from="/promos/otter-iac-devops-horiz-q12017" to="/otter" />
+  <permanent from="/promos/otter-iac-devops-horiz-q12017/submission-recieved" to="/otter" />
+  <permanent from="/promos/otter-ps-windows-horiz-q12017" to="/otter" />
+  <permanent from="/promos/otter-ps-windows-horiz-q12017/submission-recieved" to="/otter" />
+  <permanent from="/promos/otter-ps-windows-blocks-q12017" to="/otter" />
+  <permanent from="/promos/otter-ps-windows-blocks-q12017/submission-recieved" to="/otter" />
+  <permanent from="/promos/buildmaster-ara-q12017" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-ara-q12017/submission-recieved" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-automation-q12017" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-automation-q12017/submission-recieved" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-cd-q12017" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-cd-q12017/submission-recieved" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-ci-q12017" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-ci-q12017/submission-recieved" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-devops-q12017" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-devops-q12017/submission-recieved" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-pipelines-q12017" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-pipelines-q12017/submission-recieved" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-windows-q12017" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-windows-q12017/submission-recieved" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-devops" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-landing" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-landing-b" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-landing-c" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-landing-d" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-landing-pipelines" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-tdwtf" to="/buildmaster" />
+  <permanent from="/promos/buildmaster-v5" to="/buildmaster" />
+  <permanent from="/promos/incremental-continuous-delivery" to="/products" />
+  <permanent from="/promos/incremental-devops" to="/products" />
+  <permanent from="/promos/incremental-infrastructure" to="/otter" />
+  <permanent from="/promos/otter-infrastructure" to="/otter" />
+  <permanent from="/promos/otter-v1" to="/otter" />
+  <permanent from="/promos/devops-fails" to="/products" />
+  <permanent from="/promos/devops-fails/submission-recieved" to="/products" />
+  <permanent from="/promos/why-buildmaster" to="/buildmaster" />
+
+
+	<permanent from="/buildmaster/landing/process" to="/buildmaster/landing/productivity" />
+
+
+
+  <permanent from="/proget/roadmap" to="/products/roadmap" />
+	<permanent from="/otter/roadmap" to="/products/roadmap" />
+	<permanent from="/buildmaster/roadmap" to="/products/roadmap" />
+		<permanent from="/buildmaster/5.0" to="/products/roadmap" />
+	<permanent from="/buildmaster/5.1" to="/products/roadmap" />
+	<permanent from="/buildmaster/5.2" to="/products/roadmap" />
+	<permanent from="/buildmaster/5.3" to="/products/roadmap" />
+	<permanent from="/buildmaster/5.4" to="/products/roadmap" />
+	<permanent from="/buildmaster/5.5" to="/products/roadmap" />
+	<permanent from="/buildmaster/5.6" to="/products/roadmap" />
+	<permanent from="/buildmaster/5.7" to="/products/roadmap" />
+	<permanent from="/buildmaster/5.8" to="/products/roadmap" />
+
+	<permanent from="/buildmaster/purchase" to="/buildmaster/pricing" />
+  <permanent from="/buildmaster/download/previous-versions" to="/buildmaster/download/versions" />
+  <permanent from="/buildmaster/videos" to="/buildmaster" />
+  <permanent from="/buildmaster/pricing/enterprise/detailed" to="/buildmaster/pricing/enterprise" />
+  <permanent from="/buildmaster/pricing/enterprise" to="/buildmaster/pricing" />
+  <permanent from="/buildmaster/upgrades" to="/buildmaster/pricing" />
+  <permanent from="/buildmaster/upgrades/unlimited-applications" to="/buildmaster/pricing" />
+
+  <permanent from="/buildmaster/overview" to="/buildmaster" />
+  <permanent from="/buildmaster/features/release-management" to="/buildmaster/features/deployment-pipelines" />
+  <permanent from="/buildmaster/features/platforms/aws" to="/den/buildmaster/amazon" />
+  <permanent from="/buildmaster/features/platforms/azure" to="/den/buildmaster/azure" />
+  <permanent from="/buildmaster/actions" to="/buildmaster/integrations" />
+
+  <permanent from="/case-studies/buildmaster" to="/buildmaster/case-studies" />
+  <permanent from="/case-studies/buildmaster/uch" to="/buildmaster/case-studies/uch" />
+  <permanent from="/case-studies/buildmaster/unl" to="/buildmaster/case-studies/unl" />
+  <permanent from="/case-studies/buildmaster/digital-stream" to="/buildmaster/case-studies/digital-stream" />
+  <permanent from="/case-studies/buildmaster/co-operative-web" to="/buildmaster/case-studies/co-operative-web" />
+  <permanent from="/case-studies/buildmaster/rezare" to="/buildmaster/case-studies/rezare" />
+  <permanent from="/case-studies/buildmaster/cambria" to="/buildmaster/case-studies/cambria" />
+  <permanent from="/case-studies/proget/abanca" to="/proget/case-studies/abanca" />
+  <permanent from="/buildmaster/details" to="/buildmaster"/>
+
+  <permanent from="/proget/overview" to="/proget" />
+  <permanent from="/proget/free-license" to="/proget" />
+
+  <permanent from="/proget/pricing/detailed" to="/proget/pricing" />
+  <permanent from="/proget/free-stickers" to="/abc" />
+
+  <permanent from="/proget/beta-details" to="/proget" />
+  <permanent from="/proget/details" to="/proget"/>
+
+  <permanent from="/proget/pricing/saas-request" to="/proget/pricing" />
+  <permanent from="/proget/pricing/saas-thanks" to="/proget/pricing" />
+  <permanent from="/proget/pricing/request-enterprise" to="/proget/pricing/request-quote" />
+
+  <permanent from="/upack/license-agreement" to="/upack/download" />
+
+  <permanent from="/otter/details2" to="/otter" />
+  <permanent from="/otter/details" to="/otter" />
+  <permanent from="/case-studies/otter" to="/otter/case-studies" />
+  <permanent from="/case-studies/otter/sure-id" to="/otter/case-studies/sure-id" />
+  <permanent from="/otter/pricing/compare-support" to="/otter/pricing" />
+  <permanent from="/otter/pricing/full-basic" to="/otter/pricing" />
+<permanent from="/otter/pricing/request-enterprise" to="/otter/pricing" />
+
+
+  <temporary from="/proget/high-availability" to="/proget/pricing/detailed" />
+  <temporary from="/proget/load-balancing" to="/proget/pricing/detailed" />
+
+  <permanent from="/release/print-and-play" to="//cdn.inedo.com/release/print-play.pdf" />
+
+  <permanent from="/release/activeState" to="/release/repository#deployments"/>
+  <permanent from="/release/thank-you" to="/release/buy"/>
+  <permanent from="/release/second" to="/contact"/>
+  <permanent from="/release/second/second-thanks" to="/contact"/>
+
+
+  <permanent from="/jit-bizcards" to="/company/swag/just-in-time-business-cards" />
+
+  <permanent from="/support/ticket" to="/support/submit-ticket" />
+  <permanent from="/support/enterprise-support" to="/support" />
+  <permanent from="/support/qa-home" to="/support/questions" />
+  <permanent from="/support/self-service-portal" to="/support/submit-ticket" />
+  <permanent from="/support/documentation/buildmaster/appendices/built-in-actions" to="/buildmaster/integrations" />
+  <permanent from="/support/documentation/buildmaster/appendices" to="/buildmaster/integrations" />
+
+  <permanent from="/support/faq" to="/support/questions" />
+  <permanent from="/support/test-drive" to="/support" />
+
+  <permanent from="/company/news" to="/blog" />
+  <permanent from="/company/news/proget-36-beta-now-available" to="/blog/proget-36-beta-now-available" />
+  <permanent from="/company/news/announcing-proget-20-and-proget-client-tools" to="/blog/announcing-proget-20-and-proget-client-tools" />
+  <permanent from="/company/news/new-rss-feed-format" to="/blog/new-rss-feed-format" />
+  <permanent from="/company/news/introducing-proget-20" to="/blog/introducing-proget-20" />
+
+  <permanent from="/specifics" to="/support/tutorials" />
+  <permanent from="/specifics/awarepoint" to="/support/tutorials" />
+  <permanent from="/specifics/buildmaster" to="/support/tutorials" />
+  <permanent from="/specifics/buildmaster-extensions" to="/support/tutorials" />
+  <permanent from="/specifics/buildmaster-installer" to="/support/tutorials" />
+  <permanent from="/specifics/buildmaster-overview" to="/support/tutorials" />
+  <permanent from="/specifics/buildmaster-sdk" to="/support/tutorials" />
+  <permanent from="/specifics/cardlab" to="/support/tutorials" />
+  <permanent from="/specifics/libraries" to="/support/tutorials" />
+  <permanent from="/specifics/proget" to="/support/tutorials" />
+  <permanent from="/specifics/the-daily-wtf" to="/support/tutorials" />
+  <permanent from="/specifics/kramerica" to="/kramerica" />
+  <permanent from="/specifics/kramerica/common-services" to="/kramerica" />
+  <permanent from="/specifics/kramerica/ecommerce" to="/kramerica" />
+  <permanent from="/specifics/kramerica/ecomplugins" to="/kramerica" />
+  <permanent from="/specifics/kramerica/foundation" to="/kramerica" />
+
+  <permanent from="/vip/about" to="/vip" />
+  <permanent from="/vip/roster" to="/vip" />
+
+  <permanent from="/company/media/dailywtf" to="/company/media" />
+  <permanent from="/company/media/buildmaster" to="/company/media" />
+  <permanent from="/company/media/proget" to="/company/media" />
+  <permanent from="/company/media/otter" to="/company/media" />
+  <permanent from="/products/bundle" to="/products" />
+  <permanent from="/products/bundle-request" to="/products" />
+  <permanent from="/products/bundle-thanks" to="/products" />
+  <permanent from="/otter/tech-preview" to="/otter" />
+  <permanent from="/otter/tech-preview-2" to="/otter" />
+
+  <permanent from="/company/open-initiative" to="/open" />
+  <permanent from="/company/open-initiative/feature-requests" to="/open/feature-requests" />
+  <permanent from="/company/source-code-request" to="/open/source-code-request" />
+  <permanent from="/company/request-received" to="/open/request-received" />
+
+	<permanent from="/otter/1.7" to="/otter" />
+	<permanent from="/otter/1.7/thanks" to="/otter" />
+	<permanent from="/otter/1.6" to="/otter" />
+	<permanent from="/otter/1.6/thanks" to="/otter" />
+	<permanent from="/otter/1.5" to="/otter" />
+	<permanent from="/otter/1.4" to="/otter" />
+	<permanent from="/otter/1.3" to="/otter" />
+	<permanent from="/otter/1.2" to="/otter" />
+	<permanent from="/otter/1.1" to="/otter" />
+	<permanent from="/otter/1.0" to="/otter" />
+
+
+
+	<permanent from="/proget/4.0" to="/proget" />
+	<permanent from="/proget/4.1" to="/proget" />
+	<permanent from="/proget/4.2" to="/proget" />
+	<permanent from="/proget/4.3" to="/proget" />
+	<permanent from="/proget/4.4" to="/proget" />
+	<permanent from="/proget/4.5" to="/proget" />
+	<permanent from="/proget/4.6" to="/proget" />
+	<permanent from="/proget/4.7" to="/proget" />
+	<permanent from="/proget/4.8" to="/proget" />
+	<permanent from="/proget/4.8/thanks" to="/proget" />
+
+
+
+  <!-- Uninclused Landing Pages -->
+  <permanent from="/landing/codemash" to="/products" />
+  <permanent from="/codemash2012" to="/products" />
+  <permanent from="/landing/automation" to="/buildmaster" />
+  <permanent from="/landing/nuget" to="/proget" />
+  <permanent from="/landing/codepalousa" to="/buildmaster" />
+  <permanent from="/t-shirt" to="/promos/t-shirt" />
+  <permanent from="/company/get-a-free-license" to="/buildmaster" />
+
+  <!-- Docs -->
+  <permanent from="/support/documentation/table-of-contents" to="/support/documentation" />
+  <permanent from="/support/documentation/buildmaster/toolset-integration/source-control" to="/support/documentation/buildmaster/buildmaster-administration/toolset-integration/source-control" />
+  <permanent from="/support/documentation/buildmaster/agents" to="/support/documentation/buildmaster/installation/agents" />
+  <permanent from="/support/documentation/buildmaster/concepts-defined" to="/support/documentation/buildmaster/appendices/concepts-defined" />
+  <permanent from="/support/documentation/buildmaster/concepts-defined/concepts-visualized" to="/support/documentation/buildmaster/appendices/concepts-defined" />
+  <permanent from="/support/documentation/buildmaster/concepts-defined/concepts-visualized/application-change-management" to="/support/documentation/buildmaster/appendices/concepts-defined" />
+  <permanent from="/support/documentation/buildmaster/concepts-defined/concepts-visualized/build-promotions-and-executions" to="/support/documentation/buildmaster/appendices/concepts-defined" />
+  <permanent from="/support/documentation/buildmaster/concepts-defined/concepts-visualized/release-cycle" to="/support/documentation/buildmaster/appendices/concepts-defined" />
+  <permanent from="/support/documentation/buildmaster/toolset-integration/issue-tracking" to="/support/documentation/buildmaster/buildmaster-administration/toolset-integration/issue-tracking" />
+  <permanent from="/support/documentation/buildmaster/deployment-plans/predicates" to="/support/documentation/buildmaster/deployment-automation/deployment-plans/action-groups#predicates" />
+  <permanent from="/support/documentation/buildmaster/auditing-and-compliance/notifiers" to="/support/documentation/buildmaster/auditing-and-compliance/event-listeners#triggers-notifiers" />
+  <permanent from="/support/documentation/buildmaster/auditing-and-compliance/triggers" to="/support/documentation/buildmaster/auditing-and-compliance/event-listeners#triggers-notifiers" />
+  <permanent from="/support/documentation/buildmaster/deployment-plans/actions" to="/support/documentation/buildmaster/deployment-automation/deployment-plans/actions" />
+  <permanent from="/support/documentation/buildmaster/auditing-and-compliance/promotion-requirements" to="/support/documentation/buildmaster/core-concepts/promotion-workflows/approvals" />
+  <permanent from="/support/documentation/buildmaster/buildmaster-administration/toolset-integration/issue-tracking" to="/support/documentation/buildmaster/change-mangement/issue-tracking" />
+  <permanent from="/support/documentation/proget/deploy" to="/support/documentation/proget/feeds/nuget" />
+  <permanent from="/support/documentation/otter/execution-engine/otter-script" to="/support/documentation/otter/reference/otter-script" />
+  <permanent from="/support/documentation/various/inedo-agent/architecture" to="/support/documentation/various/inedo-agent/the-agent" />
+  <permanent from="/support/documentation/various/inedo-agent/security" to="/support/documentation/various/inedo-agent/installation/security" />
+  <permanent from="/support/documentation/various/inedo-agent/network-protocol" to="/support/documentation/various/inedo-agent/server-architecture/network-protocol" />
+  <permanent from="support/documentation/various/inedo-agent/message-formats" to="/support/documentation/various/inedo-agent/server-architecture/message-formats" />
+
+<!-- Various Docs -->
+
+	<permanent from="/support/documentation/various/universal-packages/universal-feeds-package-ref" to="/support/documentation/upack/overview"/>
+	<permanent from="/support/documentation/various/universal-packages/universal-feeds-package-ref/package-format" to="/support/documentation/upack/universal-packages/package-format"/>
+	<permanent from="/support/documentation/various/universal-packages/universal-feeds-package-ref/virtual-package" to="/support/documentation/upack/virtual-packages/what-is"/>
+	<permanent from="/support/documentation/various/universal-packages/universal-feeds-package-ref/feed-api" to="/support/documentation/upack/feed-api"/>
+	<permanent from="/support/documentation/various/universal-packages/universal-package-registry" to="/support/documentation/upack/universal-package-registry/what-is"/>
+	<permanent from="/support/documentation/various/universal-packages/upack-reference" to="/support/documentation/upack/upack-cli"/>
+
+	<permanent from="/support/documentation/various/execution-engine/otterscript" to="/support/documentation/executionengine/otterscript/overview"/>
+	<permanent from="/support/documentation/various/execution-engine/otterscript/comments-and-descriptions" to="/support/documentation/executionengine/otterscript/comments-and-descriptions"/>
+	<permanent from="/support/documentation/various/execution-engine/otterscript/strings-and-literals" to="/support/documentation/executionengine/otterscript/strings-and-literals"/>
+	<permanent from="/support/documentation/various/execution-engine/otterscript/formal-specification" to="/support/documentation/executionengine/reference/formal-specification"/>
+	<permanent from="/support/documentation/various/execution-engine/otterscript/formal-specification/formal-grammar" to="/support/documentation/executionengine/reference/formal-grammar"/>
+	<permanent from="/support/documentation/various/execution-engine/operations" to="/support/documentation/executionengine/components/operations-functions"/>
+	<permanent from="/support/documentation/various/execution-engine/functions" to="/support/documentation/executionengine/components/operations-functions"/>
+	<permanent from="/support/documentation/various/execution-engine/text-templates" to="/support/documentation/executionengine/components/text-templating"/>
+	<permanent from="/support/documentation/various/execution-engine/text-templates/application-configuration-files" to="/support/documentation/executionengine/components/text-templating/application-configuration-files"/>
+	<permanent from="/support/documentation/various/execution-engine/resource-pools" to="/support/documentation/executionengine/components/resource-pools"/>
+	<permanent from="/support/documentation/various/execution-engine" to="/support/documentation/executionengine/overview"/>
+	<permanent from="/support/documentation/various/inedo-sdk/the-sdk" to="/support/documentation/inedosdk/overview"/>
+	<permanent from="/support/documentation/various/inedo-sdk/creating" to="/support/documentation/inedosdk/extending/creating"/>
+	<permanent from="/support/documentation/various/inedo-sdk/hosting" to="/support/documentation/inedosdk/hosting"/>
+	<permanent from="/support/documentation/various/inedo-sdk/versions-release-notes" to="/support/documentation/inedosdk/versions-release-notes"/>
+	<permanent from="/support/documentation/various/inedo-sdk/creating/writing" to="/support/documentation/inedosdk/extending/writing"/>
+	<permanent from="/support/documentation/various/inedo-sdk" to="/support/documentation/inedosdk/overview"/>
+	<permanent from="/support/documentation/various/inedo-agent/the-agent" to="/support/documentation/inedoagent/overview"/>
+	<permanent from="/support/documentation/various/inedo-agent/installation" to="/support/documentation/inedoagent/installation/installation-guide"/>
+	<permanent from="/support/documentation/various/inedo-agent/installation/manual" to="/support/documentation/inedoagent/installation/manual"/>
+	<permanent from="/support/documentation/various/inedo-agent/installation/security" to="/support/documentation/inedoagent/installation/security"/>
+	<permanent from="/support/documentation/various/inedo-agent/versions" to="/support/documentation/inedoagent/versions"/>
+	<permanent from="/support/documentation/various/inedo-agent/upgrading" to="/support/documentation/inedoagent/upgrading"/>
+	<permanent from="/support/documentation/various/inedo-agent/server-architecture" to="/support/documentation/inedoagent/server-architecture/server-architecture"/>
+	<permanent from="/support/documentation/various/inedo-agent/server-architecture/message-formats" to="/support/documentation/inedoagent/server-architecture/message-formats"/>
+	<permanent from="/support/documentation/various/inedo-agent/server-architecture/server-flow" to="/support/documentation/inedoagent/server-architecture/server-flow"/>
+	<permanent from="/support/documentation/various/inedo-agent/server-architecture/network-protocol" to="/support/documentation/inedoagent/server-architecture/network-protocol"/>
+	<permanent from="/support/documentation/various/inedo-agent/roadmap" to="/support/documentation/inedoagent/roadmap"/>
+
+	<!--Hedgehog Docs -->
+
+	<permanent from="/support/documentation/hedgehog/getting-started/overview" to="/support/documentation/hedgehog/overview"/>
+	<permanent from="/support/documentation/hedgehog/getting-started/packages" to="/support/documentation/hedgehog/packages/in-hedgehog"/>
+	<permanent from="/support/documentation/hedgehog/modeling-applications/deployment-sets" to="/support/documentation/hedgehog/bundling/deployment-sets"/>
+	<permanent from="/support/documentation/hedgehog/modeling-applications/deployment-sets/templates" to="/support/documentation/hedgehog/bundling/deployment-sets/templates"/>
+	<permanent from="/support/documentation/hedgehog/modeling-applications/deployment-sets/attachments" to="/support/documentation/hedgehog/bundling/deployment-sets/attachments"/>
+	<permanent from="/support/documentation/hedgehog/modeling-applications/releases" to="/support/documentation/hedgehog/bundling/releases"/>
+	<permanent from="/support/documentation/hedgehog/modeling-applications/projects" to="/support/documentation/hedgehog/bundling/projects"/>
+	<permanent from="/support/documentation/hedgehog/modeling-applications/projects/best-practices" to="/support/documentation/hedgehog/bundling/projects/best-practices"/>
+	<permanent from="/support/documentation/hedgehog/modeling-applications/projects/content-name" to="/support/documentation/hedgehog/bundling/projects/content-name"/>
+	<permanent from="/support/documentation/hedgehog/modeling-applications/deployment-plans" to="/support/documentation/hedgehog/deliver-deploy/deployment-plans"/>
+	<permanent from="/support/documentation/hedgehog/execution-engine/overview" to="0/support/documentation/hedgehog/deliver-deploy/execution-engine"/>
+	<permanent from="/support/documentation/hedgehog/execution-engine/statements-and-blocks" to="/support/documentation/executionengine/otterscript/statements-and-blocks"/>
+	<permanent from="/support/documentation/hedgehog/execution-engine/statements-and-blocks/general-blocks" to="/support/documentation/executionengine/otterscript/statements-and-blocks/general-blocks"/>
+	<permanent from="/support/documentation/hedgehog/execution-engine/statements-and-blocks/loop" to="/support/documentation/executionengine/otterscript/statements-and-blocks/loop"/>
+	<permanent from="/support/documentation/hedgehog/execution-engine/statements-and-blocks/try-catch" to="/support/documentation/executionengine/otterscript/statements-and-blocks/try-catch"/>
+	<permanent from="/support/documentation/hedgehog/execution-engine/statements-and-blocks/if-else" to="/support/documentation/executionengine/otterscript/statements-and-blocks/if-else"/>
+	<permanent from="/support/documentation/hedgehog/execution-engine/statements-and-blocks/other-statements" to="/support/documentation/executionengine/otterscript/statements-and-blocks/other-statements"/>
+	<permanent from="/support/documentation/hedgehog/execution-engine/executions" to="/support/documentation/hedgehog/global-components/executions"/>
+	<permanent from="/support/documentation/hedgehog/execution-engine/executions/dispatching-and-running" to="/support/documentation/hedgehog/global-components/executions/dispatching-and-running"/>
+	<permanent from="/support/documentation/hedgehog/execution-engine/executions/viewing" to="/support/documentation/hedgehog/global-components/executions/viewing"/>
+	<permanent from="/support/documentation/hedgehog/execution-engine/executions/types" to="/support/documentation/hedgehog/global-components/executions/types"/>
+	<permanent from="/support/documentation/hedgehog/execution-engine/runtime-variables" to="/support/documentation/executionengine/components/runtime-variables"/>
+	<permanent from="/support/documentation/hedgehog/global-components/configuration-variables" to="/support/documentation/hedgehog/deliver-deploy/configuration-variables"/>
+	<permanent from="/support/documentation/hedgehog/installation/hub" to="/support/documentation/various/hub/what-is"/>
+	<permanent from="/support/documentation/hedgehog/installation/hub/inedo-hub-cli" to="/support/documentation/various/hub/inedo-hub-cli"/>
+	<permanent from="/support/documentation/hedgehog/pipelines" to="/support/documentation/hedgehog/deliver-deploy/pipelines"/>
+	<permanent from="/support/documentation/hedgehog/pipelines/pipeline-model" to="/support/documentation/hedgehog/deliver-deploy/pipelines/pipeline-model"/>
+
+
+
+  <!-- ProGet Docs -->
+  <permanent from="/support/documentation/proget/compliance/vulnerabilities/vor" to="/support/documentation/proget/compliance/ossindex"/>
+  <permanent from="/support/documentation/proget/feeds/retention" to="/support/documentation/proget/administration/retention-policies" />
+  <permanent from="/support/documentation/proget/feeds/connectors" to="/support/documentation/proget/core-concepts/connectors>" />
+  <permanent from="/support/documentation/proget/feeds/cleanup" to="/support/documentation/proget/administration/feed-cleanup" />
+  <permanent from="/support/documentation/proget/feeds/nuget/visual-studio-extension" to="/support/tutorials/using-the-nuget-visual-studio-extension" />
+  <permanent from="/support/documentation/proget/feeds/nuget/api-keys" to="/support/kb/1112/api-keys-in-proget" />
+  <permanent from="/support/documentation/proget/feeds/bower/bower-feed-configuration" to="/support/documentation/proget" />
+  <permanent from="/support/documentation/proget/feeds/maven/maven-feed-configuration" to="/support/documentation/proget" />
+  <permanent from="/support/documentation/proget/feeds/npm/npm-feed-configuration" to="/support/documentation/proget/feeds/nuget/legacy-feeds" />
+  <permanent from="/support/documentation/proget/feeds/nuget/nuget-feed-configuration" to="/support/documentation/proget" />
+
+  <permanent from="/support/documentation/proget/feeds/nuget/legacy-feeds" to="/support/documentation/proget" />
+  <permanent from="/support/documentation/proget/feeds/nuget/feed-sync" to="/support/documentation/proget" />
+  <permanent from="/support/documentation/proget/security/users-and-groups" to="/support/documentation/proget/administration/security"/>
+  <permanent from="/support/documentation/proget/security/integrated-authentication" to="/support/documentation/proget/administration/ldap-active-directory" />
+  <permanent from="/support/documentation/proget/installation/load-balancing" to="/support/documentation/proget/installation/load-balancing-and-automatic-failover" />
+  <permanent from="/support/documentation/proget/installation/high-availability" to="/support/documentation/proget/installation/load-balancing-and-automatic-failover" />
+  <permanent from="/support/documentation/proget/reference/api-keys-nuget" to="/support/kb/1112/api-keys-in-proget" />
+  <permanent from="/support/documentation/proget/administration/feed-replication" to="/support/documentation/proget/storage/feed-replication" />
+  <permanent from="/support/documentation/proget/reference/api-methods" to="/support/documentation/proget/reference/api/native" />
+  <permanent from="/support/documentation/proget/reference/upack" to="/support/documentation/various/universal-packages/upack-reference" />
+  <permanent from="/support/documentation/proget/reference/universal-package-registry" to="/support/documentation/various/universal-packages/universal-package-registry" />
+  <permanent from="/support/documentation/proget/reference/universal-feed-api-and-package-format" to="/support/documentation/various/universal-packages/universal-feed-api" />
+  <permanent from="/support/documentation/proget/administration/ldap/advanced" to="/support/documentation/various/ldap/advanced" />
+  <permanent from="/support/documentation/proget/administration/ldap/integrated-authentication" to="/support/documentation/various/ldap/integrated-authentication" />
+  <permanent from="/support/documentation/proget/administration/ldap/troubleshooting" to="/support/documentation/various/ldap/troubleshooting" />
+  <permanent from="/support/documentation/proget/feed-types/universal" to="/support/documentation/proget/core-concepts/packages"/>
+
+
+  <permanent from="/support/documentation/proget/core-concepts/connectors" to="/support/documentation/proget/core-concepts/feeds/connectors" />
+  <permanent from="/support/documentation/proget/core-concepts/high-availability" to="/support/documentation/proget/storage/high-availability" />
+  <permanent from="/support/documentation/proget/feed-types/docker" to="/support/documentation/proget/docker/private-registries" />
+  <permanent from="/support/documentation/proget/storage/feed-replication" to="/support/documentation/proget/storage/high-availability/feed-replication" />
+
+  <permanent from="/support/documentation/proget/administration/vulnerability-source" to="/support/documentation/proget/compliance/vulnerabilities" />
+  <permanent from="/support/documentation/proget/core-concepts/compliance/vulnerability" to="/support/documentation/proget/compliance/vulnerabilities"/>
+  <permanent from="/support/documentation/proget/administration/vulnerability-source/vor-security" to="/support/documentation/proget/compliance/vulnerabilities/vor" />
+  <permanent from="/support/documentation/proget/administration/vulnerability-source/whitesource" to="/support/documentation/proget/compliance/whitesource" />
+  <permanent from="/support/documentation/proget/administration/license-filters" to="/support/documentation/proget/core-concepts/compliance/license-filters" />
+  <permanent from="/support/documentation/proget/core-concepts/compliance/license-filters" to="/support/documentation/proget/compliance/license-scanning"/>
+  <permanent from= "/proget-overview" to= "/overview"/>
+  <permanent from= "/support/documentation/proget/core-concepts/packages#package-promotion" to= "/advanced/package-promotion"/>
+  <permanent from= "/support/documentation/proget/core-concepts/packages#deployment-records" to= "/advanced/package-promotion#deployment-records"/>
+
+  <permanent from= "/support/documentation/proget/core-concepts/compliance" to= "/support/documentation/proget/compliance"/>
+  <permanent from= "/support/documentation/proget/core-concepts/compliance/vulnerability/vor-security" to= "/support/documentation/proget/compliance/vulnerabilities/vor"/>
+  <permanent from= "/support/documentation/proget/core-concepts/compliance/vulnerability/whitesource" to= "/support/documentation/proget/compliance/vulnerabilities/whitesource"/>
+
+  <permanent from= "/support/documentation/proget/core-concepts/asset-directories" to= "/support/documentation/proget/advanced/assets"/>
+  <permanent from= "/support/documentation/proget/core-concepts/containers" to= "/support/documentation/proget/docker/private-registries"/>
+
+  <permanent from= "/support/documentation/proget/storage/cloud-storage" to= "/support/documentation/proget/advanced/cloud-storage"/>
+  <permanent from= "/support/documentation/proget/storage/webhooks" to= "/support/documentation/proget/advanced/webhooks"/>
+  <permanent from= "/support/documentation/proget/storage/retention-policies" to= "/support/documentation/proget/administration/retention-rules"/>
+  <permanent from="/support/documentation/proget/administration/retention-policies" to="/support/documentation/proget/administration/rentention-rules"/>
+  <permanent from= "/support/documentation/proget/storage/high-availability" to= "/support/documentation/proget/administration/high-availability"/>
+  <permanent from= "/support/documentation/proget/storage/high-availability/feed-replication" to= "/support/documentation/proget/advanced/feed-replication"/>
+  <permanent from= "/support/documentation/proget/administration/package-statistics" to= "/support/documentation/proget/advanced/package-statistics"/>
+  <permanent from= "/support/documentation/proget/administration/feed-cleanup" to= "/support/documentation/proget/advanced/package-statistics"/>
+  <permanent from= "/support/documentation/proget/administration/backing-up" to= "/support/documentation/proget/installation/backing-up"/>
+  <permanent from= "/support/documentation/proget/administration/ldap" to= "/support/documentation/various/ldap/ldap-active-directory"/>
+  <permanent from="/support/documentation/proget/feeds/universal" to= "/support/documentation/proget/core-concepts/packages"/>
+  <permanent from= "/support/documentation/proget/feeds/universal/romp" to= "/support/documentation/proget/core-concepts/packages"/>
+
+  <permanent from= "/support/documentation/proget/reference/asset-directories-api" to=  "/support/documentation/proget/reference/api/asset-directories-api"/>
+  <permanent from="/support/documentation/proget/installation/linux-docker" to= "/support/documentation/proget/installation/installation-guide/linux-docker"/>
+  <permanent from="/support/documentation/proget/installation/silent-installation"  to="/support/documentation/proget/installation/installation-guide/silent-installation"/>
+  <permanent from="/support/documentation/proget/installation/manual" to= "/support/documentation/proget/installation/installation-guide/manual"/>
+
+  <permanent from="/support/documentation/proget/administration/security#api-keys" to="/support/documentation/proget/administration/security/api-keys"/>
+
+  <permanent from="/support/documentation/proget/feed-types/nuget" to="/support/documentation/proget/feeds/nuget"/>
+  <permanent from="/support/documentation/proget/feed-types/powershell" to="/support/documentation/proget/feeds/powershell"/>
+  <permanent from="/support/documentation/proget/feed-types/rubygem" to="/support/documentation/proget/feeds/rubygem"/>
+  <permanent from="/support/documentation/proget/feed-types/vsix" to="/support/documentation/proget/feeds/vsix"/>
+  <permanent from="/support/documentation/proget/feed-types/chocolatey" to="/support/documentation/proget/feeds/chocolatey"/>
+  <permanent from="/support/documentation/proget/feed-types/npm" to="/support/documentation/proget/feeds/npm"/>
+  <permanent from="/support/documentation/proget/feed-types/bower" to="/support/documentation/proget/feeds/bower"/>
+  <permanent from="/support/documentation/proget/feed-types/maven" to="/support/documentation/proget/feeds/maven"/>
+  <permanent from="/support/documentation/proget/feed-types/nuget/symbol-and-source-server" to="/support/documentation/proget/feeds/nuget/symbol-and-source-server"/>
+
+  <permanent from="/support/documentation/proget/reference/sdk" to="/support/documentation/proget/administration/extensions"/>
+
+
+  <!-- Otter Docs -->
+  <permanent from="/support/documentation/otter/installation" to="/support/documentation/otter"/>
+  <permanent from="/support/documentation/otter/administration" to="/support/documentation/otter"/>
+  <permanent from="/support/documentation/otter/reference" to="/support/documentation/otter"/>
+  <permanent from="/support/documentation/otter/global-components" to="/support/documentation/otter"/>
+  <permanent from="/support/documentation/otter/execution-engine" to="/support/documentation/otter"/>
+  <permanent from="/support/documentation/otter/modeling-infrastructure" to="/support/documentation/otter"/>
+  <permanent from="/support/documentation/otter/core-concepts" to="/support/documentation/otter"/>
+  <permanent from="/support/documentation/otter/reference/otter-script/comments-and-descriptions" to="/support/documentation/various/execution-engine/otterscript/comments-and-descriptions"/>
+  <permanent from="/support/documentation/otter/reference/otter-script/formal-grammar" to="/support/documentation/various/execution-engine/otterscript/formal-grammar"/>
+  <permanent from="/support/documentation/otter/reference/otter-script/formal-specification" to="/support/documentation/various/execution-engine/otterscript/formal-specification"/>
+  <permanent from="/support/documentation/otter/reference/otter-script/strings-and-literals" to="/support/documentation/various/execution-engine/otterscript/strings-and-literals"/>
+  <permanent from="/support/documentation/otter/modeling-infrastructure/server-roles/role-dependencies" to="/support/documentation/otter/modeling-infrastructure/server-roles#role-dependencies"/>
+  <permanent from="/support/documentation/otter/modeling-infrastructure/powershell/powershell-plans" to="/support/documentation/otter/modeling-infrastructure/powershell"/>
+  <permanent from="/support/documentation/otter/reference/sdk" to="/support/documentation/otter/administration/extensions"/>
+  <permanent from="/support/documentation/otter/administration/architecture" to="/support/documentation/otter/installation/architecture"/>
+  <permanent from="/support/documentation/otter/administration/backing-up" to="/support/documentation/otter/installation/backing-up"/>
+  <permanent from="/support/documentation/otter/administration/service" to="/support/documentation/otter/installation/architecture/service"/>
+  <permanent from="/support/documentation/otter/installation/windows-guide" to="/support/documentation/otter/installation/installation-guide"/>
+  <permanent from="/support/documentation/otter/installation/agent-installation-guide" to="/support/documentation/otter/installation/installation-guide/agent-installation-guide"/>
+  <permanent from="/support/documentation/otter/installation/manual" to="/support/documentation/otter/installation/installation-guide/manual"/>
+  <permanent from="/support/documentation/otter/installation/silent" to="/support/documentation/otter/installation/installation-guide/silent"/>
+  <permanent from="/support/documentation/otter/reference/romp" to="/romp"/>
+
+
+	 <!-- UPack Docs -->
+  <permanent from="/support/documentation/upack/upe" to="/support/documentation/upack/tools-and-libraries/upe"/>
+	<permanent from="/support/documentation/upack/upack-cli" to="/support/documentation/upack/tools-and-libraries/upack-cli"/>
+	<permanent from="/support/documentation/upack/upacklib-net" to="/support/documentation/upack/tools-and-libraries/upacklib-net"/>
+	<permanent from="/support/documentation/upack/feed-api" to="/support/documentation/upack/feed-api/endpoints"/>
+
+
+  <!-- Various Docs -->
+  <permanent from="/support/documentation/various/universal-packages/universal-feed-api" to="/support/documentation/various/universal-packages/universal-feeds-package-ref"/>
+
+  <!-- BuildMaster Docs -->
+
+  <permanent from="/support/documentation/buildmaster/core-concepts/pipelines/gates" to="/support/documentation/buildmaster/core-concepts/pipelines#Manual-Automatic-Approvals"/>
+  <permanent from="/support/documentation/buildmaster/core-concepts/environments" to="/support/documentation/buildmaster/infrastructure/environments"/>
+  <permanent from="/support/documentation/buildmaster/core-concepts/environments/server-roles" to="/support/documentation/buildmaster/infrastructure/server-roles"/>
+  <permanent from="/support/documentation/buildmaster/modeling-applications/issues-notes" to="/support/documentation/buildmaster/modeling-applications/issues-projects"/>
+<permanent from="/support/documentation/buildmaster/modeling-applications/manual-changes" to="/support/documentation/buildmaster/modeling-applications/manual-steps-tasks"/>
+<permanent from="/support/documentation/buildmaster/global-components/powershell-and-shell" to="/support/documentation/buildmaster/execution-engine/powershell-and-shell"/>
+<permanent from="/support/tutorials/buildmaster/sdk/listing-db-changescripts-for-a-release-with-the-native-api" to="/support/documentation/buildmaster/reference/api/native"/>
+<permanent from="/support/documentation/buildmaster/reference/sdk" to="/support/documentation/buildmaster/administration/extensions"/>
+<permanent from="/support/documentation/buildmaster/reference/sdk/writing-operation" to="/support/documentation/buildmaster/administration/extensions"/>>
+<permanent from="/support/documentation/buildmaster/reference/otter-script" to="/support/documentation/various/execution-engine/otterscript"/>
+<permanent from="/support/documentation/buildmaster/reference/templating" to="/support/documentation/buildmaster/modeling-applications/configuration-files"/>
+<permanent from="/support/documentation/buildmaster/administration/backing-up" to="/support/documentation/buildmaster/installation/backing-up"/>
+<permanent from="/support/documentation/buildmaster/administration/architecture" to="/support/documentation/buildmaster/installation/architecture"/>
+<permanent from="/support/documentation/buildmaster/administration/service" to="/support/documentation/buildmaster/installation/service"/>
+
+  <permanent from="/support/documentation/buildmaster/installation/guide" to="/support/documentation/buildmaster/installation/windows-guide" />
+  <permanent from="/support/documentation/buildmaster/core-concepts/executions" to="/support/documentation/buildmaster/core-concepts"/>
+  <permanent from="/support/documentation/buildmaster/core-concepts/applications"  to="/support/documentation/buildmaster/core-concepts"/>
+  <permanent from="/support/documentation/buildmaster/core-concepts/applications/groups" to="/support/documentation/buildmaster/core-concepts" />
+  <permanent from="/support/documentation/buildmaster/core-concepts/releases/deployables" to="/support/documentation/buildmaster"/>
+  <permanent from="/support/documentation/buildmaster/core-concepts/builds" to="/support/documentation/buildmaster/core-concepts/builds-and-ci"/>
+  <permanent from="/support/documentation/buildmaster/core-concepts/builds/automatic-recurring-builds" to="/support/documentation/buildmaster/core-concepts/builds-and-ci"/>
+  <permanent from="/support/documentation/buildmaster/core-concepts/builds/source-control-triggered-builds" to="/support/documentation/buildmaster/core-concepts/builds-and-ci"/>
+  <permanent from="/support/documentation/buildmaster/core-concepts/builds/url-triggered-builds" to="/support/documentation/buildmaster/core-concepts/builds-and-ci" />
+  <permanent from="/support/documentation/buildmaster/core-concepts/promotion-workflows" to="/support/documentation/buildmaster/core-concepts/pipelines"/>
+  <permanent from="/support/documentation/buildmaster/core-concepts/promotion-workflows/approvals" to="/support/documentation/buildmaster/core-concepts/pipelines"/>
+  <permanent from="/support/documentation/buildmaster/deployment-automation/deployment-plans" to="/support/documentation/buildmaster/core-concepts/deployment-plans"/>
+  <permanent from="/support/documentation/buildmaster/deployment-automation/deployment-plans/actions" to="/support/documentation/buildmaster/core-concepts/deployment-plans" />
+  <permanent from="/support/documentation/buildmaster/deployment-automation/deployment-plans/action-groups" to="/support/documentation/buildmaster/core-concepts/deployment-plans" />
+  <permanent from="/support/documentation/buildmaster/deployment-automation/deployment-plans/transfer-files-masking" to="/support/kb/1119/wildcard-masking-in-buildmaster-and-otter"/>
+  <permanent from="/support/documentation/buildmaster/deployment-automation/deployment-plans/variables" to="/support/documentation/buildmaster"/>
+  <permanent from="/support/documentation/buildmaster/deployment-automation/chained-builds-and-deployments" to="/support/documentation/buildmaster"/>
+  <permanent from="/support/documentation/buildmaster/deployment-automation/script-repository" to="/support/documentation/buildmaster/global-components/powershell-and-shell" />
+  <permanent from="/support/documentation/buildmaster/deployment-automation/servers" to="/support/documentation/buildmaster/administration/agents"/>
+  <permanent from="/support/documentation/buildmaster/deployment-automation/user-notifications" to="/support/documentation/buildmaster"/>
+  <permanent from="/support/documentation/buildmaster/auditing-and-compliance" to="/support/documentation/buildmaster"/>
+  <permanent from="/support/documentation/buildmaster/auditing-and-compliance/events" to="/support/documentation/buildmaster"/>
+  <permanent from="/support/documentation/buildmaster/auditing-and-compliance/event-listeners" to="/support/documentation/buildmaster/global-components/event-listeners" />
+  <permanent from="/support/documentation/buildmaster/auditing-and-compliance/security" to="/support/documentation/buildmaster" />
+  <permanent from="/support/documentation/buildmaster/auditing-and-compliance/security/ldap-configuration" to="/support/documentation/buildmaster"/>
+  <permanent from="/support/documentation/buildmaster/change-mangement" to="/support/documentation/buildmaster/modeling-applications/configuration-files"/>
+  <permanent from="/support/documentation/buildmaster/change-mangement/configuration-files" to="/support/documentation/buildmaster/modeling-applications/configuration-files"/>
+  <permanent from="/support/documentation/buildmaster/change-mangement/configuration-files/instances" to="/support/documentation/buildmaster/modeling-applications/configuration-files"/>
+  <permanent from="/support/documentation/buildmaster/change-mangement/configuration-files/templates" to="/support/documentation/buildmaster/modeling-applications/configuration-files"/>
+  <permanent from="/support/documentation/buildmaster/change-mangement/configuration-files/deployment" to="/support/documentation/buildmaster/modeling-applications/configuration-files"/>
+  <permanent from="/support/documentation/buildmaster/change-mangement/change-controls" to="/documentation/buildmaster/modeling-applications/manual-changes"/>
+  <permanent from="/support/documentation/buildmaster/change-mangement/database-change-scripts" to="/support/documentation/buildmaster/modeling-applications/database-changes"/>
+  <permanent from="/support/documentation/buildmaster/change-mangement/database-change-scripts/database-connections" to="/support/documentation/buildmaster/modeling-applications/database-changes"/>
+  <permanent from="/support/documentation/buildmaster/change-mangement/database-change-scripts/change-script-packager" to="/support/documentation/buildmaster/modeling-applications/database-changes"/>
+  <permanent from="/support/documentation/buildmaster/change-mangement/issue-tracking" to="/support/documentation/buildmaster/modeling-applications/issues-notes"/>
+  <permanent from="/support/documentation/buildmaster/change-mangement/issue-tracking/provider-configuration" to="/support/documentation/buildmaster/modeling-applications/issues-notes"/>
+  <permanent from="/support/documentation/buildmaster/buildmaster-administration" to="/support/documentation/administration"/>
+  <permanent from="/support/documentation/buildmaster/buildmaster-administration/toolset-integration" to="/support/documentation/buildmaster/administration/extensions"/>
+  <permanent from="/support/documentation/buildmaster/buildmaster-administration/toolset-integration/source-control" to="/support/documentation/buildmaster/administration/extensions"/>
+  <permanent from="/support/documentation/buildmaster/buildmaster-administration/administrative-edits" to="/support/documentation/buildmaster"/>
+  <permanent from="/support/documentation/buildmaster/buildmaster-administration/backing-up" to="/support/documentation/buildmaster/administration/backing-up"/>
+  <permanent from="/support/documentation/buildmaster/buildmaster-administration/retenion-policies" to="/support/documentation/buildmaster/administration/retenion-policies"/>
+  <permanent from="/support/documentation/buildmaster/buildmaster-administration/extensibility" to="/support/documentation/buildmaster"/>
+  <permanent from="/support/documentation/buildmaster/buildmaster-administration/extensibility/extension-configuration" to="/support/documentation/buildmaster"/>
+  <permanent from="/support/documentation/buildmaster/installation/silent-agent-installation" to="/support/documentation/buildmaster/installation/silent-installation#silent-agent-install"/>
+  <permanent from="/support/documentation/buildmaster/installation/windows-agent" to="/support/documentation/buildmaster/installation/agent-installation-guide"/>
+  <permanent from="/support/documentation/buildmaster/installation/extension-installation" to="/support/documentation/buildmaster"/>
+  <permanent from="/support/documentation/buildmasterold/installation/guide" to="/support/documentation/buildmaster/installation"/>
+  <permanent from="/support/documentation/buildmaster/reference/api-methods" to="/support/documentation/buildmaster/reference/api"/>
+  <permanent from="/support/documentation/buildmaster/reference/events-list" to="/support/documentation/buildmaster"/>
+  <permanent from="/support/documentation/buildmaster/reference/security-tasks" to="/support/documentation/buildmaster"/>
+  <permanent from="/support/documentation/buildmaster/reference/variables" to="/support/documentation/buildmaster/global-components/configuration-variables"/>
+  <permanent from="/documentation/buildmaster/change-mangement/change-controls" to="/support/documentation/buildmaster/modeling-applications/manual-changes"/>
+  <permanent from="/documentation/buildmaster/modeling-applications/manual-changes" to="/support/documentation/buildmaster/modeling-applications/manual-changes" />
+	<permanent from="/support/documentation/buildmaster/installation/windows-guide" to="/support/documentation/buildmaster/installation/installation-guide" />
+	<permanent from="/support/documentation/buildmaster/installation/agent-installation-guide" to="/support/documentation/buildmaster/installation/installation-guide/agent-installation-guide" />
+		<permanent from="/support/documentation/buildmaster/installation/manual" to="/support/documentation/buildmaster/installation/installation-guide/manual" />
+		<permanent from="/support/documentation/buildmaster/installation/silent-installation" to="/support/documentation/buildmaster/installation/installation-guide/silent-installation" />
+	<permanent from="/support/documentation/buildmaster/installation/service" to="/support/documentation/buildmaster/installation/architecture/service" />
+	<permanent from="/support/documentation/buildmaster/modeling-applications/configuration-files-text-templates" to="/support/documentation/various/execution-engine/text-templates/application-configuration-files" />
+
+  <!-- KB Articles -->
+
+	<kb id="1123" to="/support/kb/1117" />
+	<kb id="1125" to="/support/kb/1117" />
+	<kb id="1129" to="/support/kb/1117" />
+	<kb id="1133" to="/support/kb/1117" />
+	<kb id="1135" to="/support/kb/1117" />
+	<kb id="1137" to="/support/kb/1117" />
+	<kb id="1141" to="/support/kb/1117" />
+	<kb id="1149" to="/support/kb/1117" />
+	<kb id="1155" to="/hedgehog/1.0" />
+	<kb id="1057" to="/support/kb/1058" />
+  <kb id="1070" to="/support/tutorials/writing-a-simple-operation-using-the-buildmaster-sdk" />
+  <kb id="1073" to="/support/documentation/proget/core-concepts/high-availability" />
+  <kb id="1031" to="/support/tutorials/deploying-a-teamcity-build-in-buildmaster" />
+  <kb id="1033" to="/buildmaster/pricing" />
+  <kb id="1058" to="/buildmaster/pricing" />
+  <kb id="1010" to="/support/documentation/buildmaster/buildmaster-administration/extensibility/extension-configuration" />
+  <kb id="1006" to="/support/documentation/buildmaster/change-mangement/issue-tracking" />
+  <kb id="1021" to="/support/documentation/proget/feeds/nuget/visual-studio-extension" />
+  <kb id="1101" to="/support/documentation/proget/feeds/maven" />
+  <kb id="1098" to="/support/documentation/proget/feeds" />
+  <kb id="1095" to="/support/documentation/proget/feeds/bower" />
+  <kb id="1087" to="/support/documentation/proget/feeds/npm" />
+  <kb id="1048" to="/support/documentation/buildmaster/core-concepts/releases" />
+  <kb id="1049" to="/downloads/proget-client-tools" />
+  <kb id="1076" to="/support/tutorials/application-deployment-feeds-in-proget" />
+  <kb id="1050" to="/downloads/proget-client-tools" />
+  <kb id="1045" to="/support/documentation/buildmaster/overview" />
+  <kb id="1043" to="/buildmaster/sdk" />
+  <kb id="1041" to="/support/documentation/buildmaster/buildmaster-administration/retenion-policies" />
+  <kb id="1035" to="/buildmaster/extensions/FogBugz" />
+  <kb id="1028" to="/buildmaster/extensions/Git" />
+  <kb id="1027" to="/support/documentation/proget/feeds/nuget/feed-sync" />
+  <kb id="1022" to="/buildmaster/extensions/SourceGear" />
+  <kb id="1016" to="/support/documentation/buildmaster/deployment-automation/servers" />
+  <kb id="1011" to="/support/documentation/buildmaster/installation/windows-agent" />
+  <kb id="1002" to="/support/documentation/buildmaster/auditing-and-compliance/security" />
+  <kb id="1001" to="/support/documentation/buildmaster/buildmaster-administration/backing-up" />
+  <kb id="1003" to="/blog/net-assembly-versions-with-buildmaster" />
+  <kb id="1079" to="/blog/common-uses-for-variables" />
+  <kb id="1000" to="/blog/using-source-control-to-manage-stored-procedures" />
+  <kb id="1024" to="/buildmaster/extensions/mercurial" />
+  <kb id="1055" to="/buildmaster/extensions/hudson" />
+  <kb id="1054" to="/buildmaster/extensions/jenkins" />
+  <kb id="1030" to="/buildmaster/extensions/Amazon" />
+  <kb id="1029" to="/buildmaster/extensions/leankit" />
+  <kb id="1025" to="/buildmaster/extensions/Perforce" />
+  <kb id="1020" to="/support/documentation/proget/feeds/nuget" />
+  <kb id="1017" to="/support/documentation/proget/installation/installation-guide" />
+  <kb id="1012" to="/support/documentation/buildmaster/buildmaster-administration" />
+  <kb id="1004" to="/blog/how-to-create-version-numbers-that-are-actually-semantic" />
+  <kb id="1081" to="/support/kb/1151"/>
+  <kb id="1071" to="/support/kb/1151"/>
+  <kb id="1060" to="/support/kb/1151"/>
+  <kb id="1042" to="/support/kb/1151"/>
+  <kb id="1037" to="/support/kb/1151"/>
+  <kb id="1026" to="/support/kb/1151"/>
+  <kb id="1065" to="/support/kb/1151"/>
+  <kb id="1068" to="/support/kb/1151"/>
+  <kb id="1069" to="/support/kb/1151"/>
+  <kb id="1067" to="/support/kb/1151"/>
+  <kb id="1108" to="/support/kb/1151"/>
+  <kb id="1105" to="/support/kb/1151"/>
+  <kb id="1103" to="/support/kb/1151"/>
+  <kb id="1097" to="/support/kb/1151"/>
+  <kb id="1091" to="/support/kb/1151"/>
+  <kb id="1086" to="/support/kb/1151"/>
+  <kb id="1084" to="/support/kb/1151"/>
+  <kb id="1082" to="/support/kb/1151"/>
+  <kb id="1066" to="/support/kb/1151"/>
+  <kb id="1078" to="/support" />
+  <kb id="1032" to="/support" />
+  <kb id="1018" to="/support" />
+  <kb id="1038" to="/support" />
+  <kb id="1106" to="/support/kb/1153"/>
+  <kb id="1104" to="/support/kb/1153"/>
+  <kb id="1102" to="/support/kb/1153"/>
+  <kb id="1099" to="/support/kb/1153"/>
+  <kb id="1096" to="/support/kb/1153"/>
+  <kb id="1093" to="/support/kb/1153"/>
+  <kb id="1089" to="/support/kb/1153"/>
+  <kb id="1085" to="/support/kb/1153"/>
+  <kb id="1074" to="/support/kb/1153"/>
+  <kb id="1083" to="/support/kb/1153"/>
+  <kb id="1051" to="/support/kb/1153"/>
+  <kb id="1062" to="/support/kb/1153"/>
+  <kb id="1092" to="/support/kb/1153"/>
+  <kb id="1131" to="/support/documentation/proget/docker/private-registries"/>
+  <kb id="1036" to="/support/documentation/proget/feeds/nuget/symbol-and-source-server"/>
+  <kb id="1019" to="/products"/>
+  <kb id="1047" to="/support/kb/1046"/>
+  <kb id="1107" to="/support/kb/1118"/>
+  <kb id="1116" to="/support/>kb/1117"/>
+  <kb id="1094" to="/support/kb/1053"/>
+  <kb id="1034" to="/den/buildmaster/azure"/>
+  <kb id="1044" to="/support"/>
+  <kb id="1100" to="/support/documentation/proget/installation/installation-guide/linux-docker"/>
+  <kb id="1088" to="/support/documentation/proget/installation/installation-guide/silent-installation"/>
+  <kb id="1075" to="/support/kb/1151"/>
+  <kb id="1061" to="/den/buildmaster/subversion"/>
+  <kb id="1052" to="/support/documentation/buildmaster/execution-engine/overview"/>
+  <kb id="1112" to="/support/documentation/proget/feeds/nuget#nuget-api-key" />
+  <kb id="1115" to="https://github.com/Inedo/inedox-artifactory/wiki" />
+	<kb id="1143" to="/support/kb/1154" />
+	<kb id="1142" to="/support/kb/1154" />
+	<kb id="1139" to="/support/kb/1154" />
+	<kb id="1132" to="/support/kb/1154" />
+	<kb id="1127" to="/support/kb/1154" />
+	<kb id="1124" to="/support/kb/1154" />
+	<kb id="1121" to="/support/kb/1154" />
+	<kb id="1148" to="/support/kb/1111" />
+	<kb id="1147" to="/support/kb/1111" />
+	<kb id="1138" to="/support/kb/1111" />
+	<kb id="1136" to="/support/kb/1111" />
+	<kb id="1134" to="/support/kb/1111" />
+	<kb id="1130" to="/support/kb/1111" />
+	<kb id="1126" to="/support/kb/1111" />
+	<kb id="1122" to="/support/kb/1111" />
+
+
+  <!-- buildmaster documentation refractor (Jan 2013) -->
+  <permanent from="/support/documentation/buildmaster/applications" to="/support/documentation/buildmaster/core-concepts/applications" />
+  <permanent from="/support/documentation/buildmaster/builds" to="/support/documentation/buildmaster/core-concepts/builds" />
+  <permanent from="/support/documentation/buildmaster/change-controls" to="/support/documentation/buildmaster/change-mangement/change-controls" />
+  <permanent from="/support/documentation/buildmaster/configuration-files" to="/support/documentation/buildmaster/change-mangement/configuration-files" />
+  <permanent from="/support/documentation/buildmaster/database-change-scripts" to="/support/documentation/buildmaster/change-mangement/database-change-scripts" />
+  <permanent from="/support/documentation/buildmaster/deployment-plans" to="/support/documentation/buildmaster/deployment-automation/deployment-plans" />
+  <permanent from="/support/documentation/buildmaster/environments" to="/support/documentation/buildmaster/core-concepts/environments" />
+  <permanent from="/support/documentation/buildmaster/events" to="/support/documentation/buildmaster/auditing-and-compliance/events" />
+  <permanent from="/support/documentation/buildmaster/executions" to="/support/documentation/buildmaster/core-concepts/executions" />
+  <permanent from="/support/documentation/buildmaster/extensibility" to="/support/documentation/buildmaster/buildmaster-administration/extensibility" />
+  <permanent from="/support/documentation/buildmaster/notifiers" to="/support/documentation/buildmaster/auditing-and-compliance/notifiers" />
+  <permanent from="/support/documentation/buildmaster/promotion-requirements" to="/support/documentation/buildmaster/auditing-and-compliance/promotion-requirements" />
+  <permanent from="/support/documentation/buildmaster/promotion-workflows" to="/support/documentation/buildmaster/core-concepts/promotion-workflows" />
+  <permanent from="/support/documentation/buildmaster/releases" to="/support/documentation/buildmaster/core-concepts/releases" />
+  <permanent from="/support/documentation/buildmaster/security" to="/support/documentation/buildmaster/auditing-and-compliance/security" />
+  <permanent from="/support/documentation/buildmaster/toolset-integration" to="/support/documentation/buildmaster/buildmaster-administration/toolset-integration" />
+  <permanent from="/support/documentation/buildmaster/installation/requirements" to="/support/documentation/buildmaster/installation" />
+  <permanent from="/support/documentation/buildmaster/installation/agents" to="/support/documentation/buildmaster/installation" />
+  <permanent from="/support/documentation/buildmaster/installation/linux-installation" to="/support/documentation/buildmaster/installation/linux-agent" />
+  <permanent from="/support/documentation/buildmaster/installation/windows-installation" to="/support/documentation/buildmaster/installation/windows-agent" />
+  <permanent from="/support/documentation/buildmaster/installation/installing-buildmaster" to="/support/documentation/buildmaster/installation/guide" />
+  <permanent from="/support/documentation/buildmaster/buildmaster-administration/toolset-integration/databases" to="/support/documentation/buildmaster/change-mangement/database-change-scripts/database-connections" />
+  <permanent from="/support/buildmaster-api-reference" to="/support/documentation/buildmaster/reference/api-methods" />
+
+
+
+  <!-- Karl workflow emails-->
+  <permanent from="/support/buildmaster-tutorials" to="/support/tutorials?utm_source=Karl&amp;utm_medium=tutorials&amp;utm_campaign=BMDLTHX1" />
+  <permanent from="/info/documentation/buildmaster" to="/support/documentation/buildmaster?utm_source=Karl&amp;utm_medium=BMdocumentation&amp;utm_campaign=BMDLTHX2" />
+  <permanent from="/buildmaster/help/tutorial" to="/support/tutorials/buildmaster/deployments/deploying-a-simple-web-app-to-iis?utm_source=Karl&amp;utm_medium=BMTutorial&amp;utm_campaign=BMDLProof1" />
+  <permanent from="/price/licensing/buildmaster" to="/buildmaster/pricing?utm_source=Karl&amp;utm_medium=BMPricing%20&amp;utm_campaign=BMDLPrch1" />
+  <permanent from="/buildmaster/info/doc" to="/support/documentation/buildmaster?utm_source=Karl&amp;utm_medium=BMdocumentation&amp;utm_campaign=BMDLTrial2" />
+  <permanent from="/info/tutorial" to="/support/tutorials?utm_source=Karl&amp;utm_medium=Tutorials&amp;utm_campaign=BMDLTrial2" />
+  <permanent from="/doc/proget" to="/support/documentation/proget?utm_source=Karl&amp;utm_medium=PGdocumentation&amp;utm_campaign=PGDLQuestions2" />
+  <permanent from="/otter/info" to="/otter?utm_source=Karl&amp;utm_medium=Otter&amp;utm_campaign=PGDLCD1" />
+  <permanent from="/proget/info/features" to="/proget/pricing/features-by-edition?utm_source=Karl&amp;utm_medium=featurebyedition&amp;utm_campaign=PGDLProof2" />
+  <permanent from="/proget/info/edition" to="/proget/pricing?utm_source=Karl&amp;utm_medium=progetpricing&amp;utm_campaign=PGDLTrial1" />
+  <permanent from="/otter/puppet" to="/support/kb/1109/a-comparison-puppet-vs-otter?utm_source=Karl&amp;utm_medium=vsPuppet&amp;utm_campaign=OTTDLONE1"/>
+  <permanent from="/otter/chef" to="/support/kb/1110/a-comparison-chef-vs-otter?utm_source=Karl&amp;utm_medium=vsChef&amp;utm_campaign=OTTDLONE1"/>
+  <permanent from="/otter/info/tutorial" to="/otter/tutorial?utm_source=Karl&amp;utm_medium=tutorial&amp;utm_campaign=OTTDLONE1"/>
+  <permanent from="/otter/info/getting-started" to="/support/documentation/otter/getting-started?utm_source=Karl&amp;utm_medium=OtterGettingStarted&amp;utm_campaign=OTTDLONE1"/>
+  <permanent from="/otter/core-concepts/servers" to="/support/documentation/otter/core-concepts/servers?utm_source=Karl&amp;utm_medium=CoreServers&amp;utm_campaign=OTTDLONE1"/>
+  <permanent from="/otter/execution/info" to="/support/documentation/otter/execution-engine/overview?utm_source=Karl&amp;utm_medium=ExecutionEngine&amp;utm_campaign=OTTDLONE1"/>
+  <permanent from="/otter/formal/specification" to="/support/documentation/otter/reference/otter-script/formal-specification?utm_source=Karl&amp;utm_medium=Formal&amp;utm_campaign=OTTDLONE1"/>
+  <permanent from="/info/otter-support" to="/support/questions?utm_source=Karl&amp;utm_medium=QA&amp;utm_campaign=OTTDLONE1"/>
+  <permanent from="/otter/started/tutorial" to="/otter/tutorial?utm_source=Karl&amp;utm_medium=tutorial&amp;utm_campaign=OTTDLONE2"/>
+  <permanent from="/otter-info" to="/otter?utm_source=Karl&amp;utm_medium=Otter&amp;utm_campaign=OTTDLTHREE1"/>
+  <permanent from="/overview-otter" to="/otter?utm_source=Karl&amp;utm_medium=Otter&amp;utm_campaign=OTTDLTHREE2"/>
+  <permanent from="/intro/otter" to="/otter?utm_source=Karl&amp;utm_medium=Otter&amp;utm_campaign=OTTDLTHREE3"/>
+  <permanent from="/map/otter" to="/otter/roadmap?utm_source=Karl&amp;utm_medium=Roadmap&amp;utm_campaign=OTTDLTHREE3"/>
+  <permanent from="/windows-powershell" to="/ps?utm_source=Email&amp;utm_medium=PowerShell&amp;utm_campaign=psreachout" />
+  <permanent from="/proget/doc-overview" to="/support/documentation/proget/proget-overview?utm_source=Karl&amp;utm_medium=ProgetOverview&amp;utm_campaign=PGDLTrial2" />
+  <permanent from="/proget/intro-tutorial" to="/support/tutorials/getting-started-with-proget-private-npm-registries?utm_source=Karl&amp;utm_medium=Progetnpmtutorial&amp;utm_campaign=PGDLTrial2" />
+  <permanent from="/case-study/buildmaster/overview" to="/case-studies/buildmaster?utm_source=Karl&amp;utm_medium=BMDead&amp;utm_campaign=Email3" />
+  <permanent from="/extension/gallery-den" to="/den?utm_source=Karl&amp;utm_medium=BMDead&amp;utm_campaign=Email4" />
+  <permanent from="/home-info" to="/?utm_source=MikeEmail&amp;utm_campaign=CI_tool&amp;utm_medium=homepage1" />
+  <permanent from="/home-information" to="/?utm_source=MikeEmail&amp;utm_campaign=Frontdoor&amp;utm_medium=homepage" />
+  <permanent from="/tool-suite" to="/products/bundle?utm_source=MikeEmail&amp;utm_campaign=CI_tool&amp;utm_medium=bundle2" />
+  <permanent from="/homepage-inedo" to="/?utm_source=MikeEmail&amp;utm_campaign=CI_tool&amp;utm_medium=homepage3" />
+  <permanent from="/bm-case-study" to="/case-studies/buildmaster?utm_source=MikeEmail&amp;utm_campaign=CI_tool&amp;utm_medium=bmcasestudy4" />
+  <permanent from="/inedo-info" to="/?utm_source=MikeEmail&amp;utm_campaign=CI_tool&amp;utm_medium=homepage5" />
+  <permanent from="/our-products" to="/products?utm_source=MikeEmail&amp;utm_campaign=CI_tool&amp;utm_medium=products5" />
+  <permanent from="/adoption-services" to="/training?utm_source=MikeEmail&amp;utm_campaign=CI_tool&amp;utm_medium=training5" />
+  <permanent from="/info-homepage" to="/?utm_source=Mike&amp;utm_campaign=homepage&amp;utm_medium=PGFrontDoor&amp;utm_term=Email1" />
+  <permanent from="/products/inedo" to="/products?utm_source=Mike&amp;utm_campaign=products&amp;utm_medium=PGFrontDoor&amp;utm_term=Email1" />
+  <permanent from="/gartnerMQ" to="/promos/gartner?utm_source=Mike&amp;utm_campaign=gartnerMQ&amp;utm_medium=PGFrontDoor&amp;utm_term=Email1" />
+  <permanent from="/ara-buildmaster" to="/buildmaster?utm_source=Mike&amp;utm_campaign=buildmasterhome&amp;utm_medium=PGFrontDoor&amp;utm_term=Email4" />
+  <permanent from="/devops-proget" to="/proget?utm_source=Mike&amp;utm_campaign=Progethome&amp;utm_medium=PGFrontDoor&amp;utm_term=Email4" />
+  <permanent from="/devops-otter" to="/otter?utm_source=Mike&amp;utm_campaign=otterhome&amp;utm_medium=PGFrontDoor&amp;utm_term=Email4" />
+  <permanent from="/home-about" to="/?utm_source=Mike&amp;utm_campaign=homepage&amp;utm_medium=PGAltFrontDoor&amp;utm_term=Email1" />
+  <permanent from="/tools-devops" to="/products/bundle?utm_source=MikeEmail&amp;utm_campaign=Frontdoor&amp;utm_medium=Bundle" />
+  <permanent from="/solution-inedo" to="/products?utm_source=MikeEmail&amp;utm_campaign=Frontdoor&amp;utm_medium=products"/>
+  <permanent from="/home-welcome" to="/?utm_source=MikeEmail&amp;utm_campaign=ABFrontdoor&amp;utm_medium=homepage" />
+  <permanent from="/inedo-toolchain" to="/products/bundle?utm_source=MikeEmail&amp;utm_campaign=ABFrontdoor&amp;utm_medium=bundle" />
+  <permanent from="/solution-products" to="/products?utm_source=MikeEmail&amp;utm_campaign=ABFrontdoor&amp;utm_medium=products" />
+
+  <!-- General Site / .aspx Clean-up -->
+  <permanent from="/buildmaster/try/custom-demo" to="/contact" />
+  <permanent from="/company/swag/form" to="/contact" />
+  <permanent from="/support/services" to="/company/professional-services" />
+  <permanent from="/support/bm-documentation/sdk/default.htm" to="/support/sdk-reference" />
+  <permanent from="/buildmaster/communityedition" to="/buildmaster/community-edition" />
+  <permanent from="/buildmaster/benefits" to="/buildmaster" />
+  <permanent from="/buildmaster/community-edition" to="/buildmaster" />
+  <permanent from="/buildmaster/customdemo" to="/buildmaster/try/custom-demo" />
+  <permanent from="/buildmaster/custom-demo" to="/buildmaster/try/custom-demo" />
+  <permanent from="/buildmaster/enterprisepricing" to="/buildmaster/enterprise-pricing" />
+  <permanent from="/buildmaster/enterprisepricingperpetual" to="/buildmaster/enterprise-pricing-perpetual" />
+  <permanent from="/buildmaster/features/allfeatures" to="/buildmaster/features/all-features" />
+  <permanent from="/buildmaster/features/approvalsignoff" to="/buildmaster/features/approval-signoff" />
+  <permanent from="/buildmaster/features/artifactlibrary" to="/buildmaster/features/artifact-library" />
+  <permanent from="/buildmaster/features/dependencymanagement" to="/buildmaster/features/dependency-management" />
+  <permanent from="/buildmaster/features/promotionrequirements" to="/buildmaster/features/promotion-requirements" />
+  <permanent from="/buildmaster/features/releasemanagement" to="/buildmaster/features/release-management" />
+  <permanent from="/buildmaster/features/unittesting" to="/buildmaster/features/unit-testing" />
+  <permanent from="/buildmaster/features/platforms" to="/buildmaster/features/platforms/dot-net" />
+  <permanent from="/buildmaster/freetrial" to="/downloads/buildmaster" />
+  <permanent from="/buildmaster/free-trial" to="/downloads/buildmaster" />
+  <permanent from="/buildmaster/pluspricing" to="/buildmaster/plus-pricing" />
+  <permanent from="/buildmaster/enterprise-pricing" to="/buildmaster/pricing/enterprise" />
+  <permanent from="/buildmaster/enterprise-pricing-perpetual" to="/buildmaster/pricing/enterprise" />
+  <permanent from="/buildmaster/pricing/enterprise-perpetual" to="/buildmaster/pricing/enterprise" />
+  <permanent from="/buildmaster/try" to="/buildmaster/download" />
+  <permanent from="/buildmaster/try/it" to="/buildmaster/try" />
+  <permanent from="/buildmaster/try-it" to="/buildmaster/try" />
+  <permanent from="/buildmaster/try/customdemo" to="/buildmaster/try/custom-demo" />
+  <permanent from="/buildmaster/try/freetrial" to="/downloads/buildmaster" />
+  <permanent from="/buildmaster/try/free-trial" to="/downloads/buildmaster" />
+  <permanent from="/buildmaster/tutorial" to="/support/tutorials/buildmaster/getting-started-with-buildmaster" />
+  <permanent from="/otter/tutorial" to="/support/tutorials/getting-started-with-otter-and-infrastructure-as-code" />
+  <permanent from="/company/services" to="/company/professional-services" />
+  <permanent from="/buildmaster/features/platforms/java" to="/den/buildmaster/java" />
+  <permanent from="/buildmaster/features/platforms/dotnet" to="/den" />
+  <permanent from="/buildmaster/upgrades/multiple-promotion-workflows" to="/buildmaster" />
+  <permanent from="/buildmaster/upgrades/database-change-script-deployer" to="/buildmaster" />
+  <permanent from="/otter/0.5" to="/otter/roadmap" />
+  <permanent from="/about.htm" to="/company#timeline" />
+  <permanent from="/otter/operations/index" to="/support/documentation/otter/execution-engine/overview" />
+  <permanent from="/den/buildmaster/vb6" to="/den" />
+  <permanent from="/support/contact" to="/contact" />
+  <permanent from="/other" to="/" />
+  <permanent from="/buildmaster/extension-release-notes/MBUnit/3.0" to="/den/buildmaster/MBUnit" />
+  <permanent from="/otter/romp/license-agreement" to="/romp/download" />
+  <permanent from="/romp/license-agreement" to="/romp/download" />
+  <permanent from="/den/buildmaster/plasticscm" to="/den/buildmaster/plastic" />
+  <permanent from="/den/buildmaster/java+jdk" to="/den/buildmaster/java" />
+  <permanent from="/den/buildmaster/Windows+SDK" to="/den/buildmaster/windowssdk" />
+  <permanent from="/buildmaster/upgrades/active-directory-ldap-integration" to="/buildmaster" />
+  <permanent from="/buildmaster/upgrades/server-groups" to="/buildmaster" />
+  <permanent from="/buildmaster/upgrades/deployable-dependencies" to="/buildmaster" />
+  <permanent from="/buildmaster/upgrades/unlimited-source-control-providers" to="/buildmaster" />
+  <permanent from="/buildmaster/upgrades/unlimited-database-connections" to="/buildmaster" />
+  <permanent from="/buildmaster/upgrades/unlimited-configuration-files" to="/buildmaster" />
+  <permanent from="/buildmaster/upgrades/change-controls" to="/buildmaster" />
+  <permanent from="/buildmaster/features/platforms/dot-net" to="/den" />
+  <permanent from="/support/tutorials/setting-up-a-server-for-proget-deploy" to="/support/tutorials/proget" />
+  <permanent from="/proget/sdk" to="/support/documentation/proget/reference/sdk" />
+  <permanent from="/buildmaster/sdk" to="/support/documentation/buildmaster/reference/sdk" />
+  <permanent from="/proget/npm" to="/support/documentation/proget/feed-types/npm" />
+  <permanent from="/buildmaster/details2" to="/buildmaster" />
+  <permanent from="/buildmaster/pricing/compare-support" to="/buildmaster/pricing" />
+  <permanent from="/buildmaster/pricing/request-enterprise" to="/buildmaster/pricing/request-quote"/>
+  <permanent from="/buildmaster/pricing/full-basic" to="/buildmaster/pricing"/>
+	 <permanent from="/proget/pricing/features-by-edition" to="/support/documentation/proget/administration/license"/>
+	 <permanent from="/webinars/upcoming/provision-windows-servers" to="/webinars/past/provision-windows-servers"/>
+
+
+
+  <!-- Romp-->
+  <permanent from="/romp/details" to="/romp"/>
+
+  <!-- Webmasters -->
+
+  <permanent from="/blog/upgrade-notes-for-otter-16" to="/support/kb/1142" />
+  <permanent from="/support/tutorials/lunchmaster/part-1" to="/support/tutorials/buildmaster/getting-started-with-buildmaster" />
+  <permanent from="/blog/a-new-version-of-the-buildmaster-beta-extension-v45-has-been-released" to="/blog/buildmaster-45-beta-released" />
+  <permanent from="/blog/a-comparison-artifactory-vs-proget" to="https://github.com/Inedo/inedox-artifactory/wiki" />
+  <permanent from="/buildmaster/upgrades/unlimited-imported-deployables" to="/buildmaster" />
+  <permanent from="/blog/a-new-version-of-the-tfs-extension-v49-has-been-released" to="/buildmaster/4.9" />
+  <permanent from="/support/tutorials/identifying-changed-files-between-builds-or-release-in-buildmaster" to="/support/tutorials/identifying-changed-files-between-builds-or-releases-in-buildmaster" />
+  <permanent from="/blog/deploying-a-jenkins-build-with-buildmaster" to="/den/buildmaster/jenkins" />
+  <permanent from="/webinars/upcoming/windows-otter" to="/webinars/past/windows-otter" />
+  <permanent from="/buildmaster/features/configuration-file-management" to="/buildmaster" />
+  <permanent from="/blog/performing-a-deployment-rollback-with-buildmaster" to="/support/tutorials/buildmaster/deployments/performing-a-rollback" />
+  <permanent from="/buildmaster/features/continuousintegration" to="/buildmaster" />
+  <permanent from="/buildmaster/extension-release-notes/Gallio/3.0" to="/den/buildmaster/gallio" />
+  <permanent from="/buildmaster/extension-release-notes/CollabNet/3.0" to="/den/buildmaster/collabnet" />
+  <permanent from="/buildmaster/extension-release-notes/FogBugz/3.0" to="/den/buildmaster/fogbugz" />
+  <permanent from="/blog/adding-a-powershell-or-shell-script-to-the-script-repository" to="/support/documentation/buildmaster/global-components/powershell-and-shell" />
+<permanent from="/webinars/upcoming/iac-otter" to="/webinars/past/iac-otter"/>
+	<permanent from="/webinars/upcoming/chocolatey-proget" to="/webinars/past/chocolatey-proget"/>
+	<permanent from="/downloads/proget-client-tools" to="/upack"/>
+	<permanent from="/blog/writing-a-simple-action-using-the-buildmaster-sdk" to="/support/documentation/buildmaster/administration/extensions"/>
+	<permanent from="/blog/upgrade-notes-for-proget-46" to="/support/kb/1138"/>
+	<permanent from="/blog/a-new-version-of-the-sql-server-extension-v44-has-been-released" to="/den/buildmaster/sqlserver"/>
+	<permanent from="/blog/deploying-the-same-set-of-files-to-multiple-servers-using-server-groups-in-buildmaster" to="/support/tutorials/buildmaster/deployments/deploying-the-same-set-of-files-to-multiple-servers-using-server-roles-in-buildmaster"/>
+	<permanent from="/blog/importing-and-deploying-a-tfs-/-visual-studio-online-build-with-buildmaster" to="/den/buildmaster/tfs"/>
+	<permanent from="/blog/a-new-version-of-the-subversion-extension-v45-has-been-released" to="/den/buildmaster/subversion"/>
+	<permanent from="/blog/upgrade-notes-for-buildmaster-58" to="/support/kb/1149"/>
+	<permanent from="/blog/a-new-version-of-the-hudson-extension-v40-has-been-released" to="/den/buildmaster/hudson"/>
+	<permanent from="/blog/highly-experimental-and-other-feature-levels" to="/blog"/>
+		<permanent from="/blog/a-new-version-of-the-jira-extension-v31-has-been-released" to="/den/buildmaster/jira"/>
+	<permanent from="/blog/upgrade-notes-for-buildmaster-52" to="/support/kb/1125"/>
+	<permanent from="/blog/a-new-version-of-the-oracle-extension-v41-has-been-released" to="/den/buildmaster/oracle"/>
+	<permanent from="/blog/a-new-version-of-the-windows-extension-v34-has-been-released" to="/den/inedox/windows"/>
+	<permanent from="/blog/a-new-version-of-the-windows-sdk-extension-v411-has-been-released" to="/den/buildmaster/windowssdk"/>
+	<permanent from="/den/buildmaster/buildmaster+core+extensions" to="/den/inedox/inedocore"/>
+	<permanent from="/den/proget/jenkins" to="/den/proget/jenkinsplugin"/>
+	<permanent from="/downloads/buildmaster-release-notes/2.5.4" to="/buildmaster/roadmap"/>
+	<permanent from="/blog/a-new-version-of-the-mysql-extension-v31-has-been-released" to="/den/buildmaster/mysql"/>
+	<permanent from="/blog/hedgehog-10-beta-notes" to="/hedgehog/1.0"/>
+	<permanent from="/case-studies/proget" to="/proget/case-studies"/>
+	<permanent from="/blog/support-ticket-process" to="/support/kb/1159"/>
+	<permanent from="/blog/nuget-version-number-formatting-restrictions" to="/support/kb/1157"/>
+	<permanent from="/training/contact-nuget" to="/training/contact"/>
+	<permanent from="/blog/a-new-version-of-the-tfs-extension-v46-has-been-released" to="/den/inedox/tfs"/>
+	<permanent from="/blog/upgrade-notes-for-otter-15" to="/support/kb/1139"/>
+	<permanent from="/blog/a-comparison-buildmaster-vs-hedgehog" to="/support/kb/1158"/>
+	<permanent from="/blog/a-new-version-of-the-github-extension-v48-has-been-released" to="/den/inedox/github"/>
+	<permanent from="/blog/a-new-version-of-the-windows-extension-v412-has-been-released" to="/den/inedox/windows"/>
+	<permanent from="/blog/a-new-version-of-the-windows-sdk-extension-v417-has-been-released" to="/den/buildmaster/windowssdk"/>
+	<permanent from="/blog/a-new-version-of-the-teamcity-extension-v46-has-been-released" to="/den/inedox/teamcity"/>
+	<permanent from="/webinars/upcoming/hedgehog-accelerate" to="/webinars/past/hedgehog-accelerate"/>
+
+	<permanent from="/blog/upgrading-from-proget-v2-and-v3" to="/support/kb/1153/upgrading-from-proget-v2-and-v3"/>
+	<permanent from="/blog/a-new-version-of-the-axosoft-extension-v41-has-been-released" to="/den/buildmaster/axosoft"/>
+	<permanent from="/blog/a-new-version-of-the-subversion-extension-v44-has-been-released" to="/den/buildmaster/subversion"/>
+	<permanent from="/proget/beta" to="/proget"/>
+	<permanent from="/blog/disabling-webdav-in-iis" to="/support/kb/1140/disabling-webdav-in-iis"/>
+	<permanent from="/unknown-hh/download" to="/hedgehog/download"/>
+	<permanent from="/unknown-hh/1.0" to="/hedgehog/1.0"/>
+	<permanent from="/blog/a-new-version-of-the-git-extension-v47-has-been-released" to="/den/inedox/git"/>
+
+	<permanent from="/blog/a-new-version-of-the-github-extension-v49-has-been-released" to="/den/inedox/github"/>
+	<permanent from="/blog/a-new-version-of-the-mstest-extension-v43-has-been-released" to="/den/buildmaster/mstest"/>
+	<permanent from="/blog/a-new-version-of-the-git-extension-v48-has-been-released" to="/den/inedox/git"/>
+	<permanent from="/blog/executing-a-command-line-utility-during-deployment-in-buildmaster" to="/support/tutorials/buildmaster/deployments/executing-a-command-line-utility"/>
+
+
+	<permanent from="/whitepapers/Release_Management_%20Done_Right.pdf" to="/buildmaster"/>
+
+
+
+
+
+
+  <!-- Den Redirects Links are wrong in GitHub -->
+  <permanent from="/buildmaster/extensions/TeamCity" to="/den/buildmaster/teamcity" />
+  <permanent from="/buildmaster/extensions/NuGet" to="/den/buildmaster/nuget" />
+  <permanent from="/buildmaster/extensions/WindowsSdk" to="/den/buildmaster/windowssdk" />
+  <permanent from="/buildmaster/extensions/amazon" to="/den/buildmaster/amazon" />
+  <permanent from="/buildmaster/extensions/YouTrack" to="/den/buildmaster/youtrack" />
+  <permanent from="/buildmaster/extensions/TFS" to="/den/buildmaster/tfs" />
+  <permanent from="/buildmaster/extensions/azure" to="/den/buildmaster/azure" />
+  <permanent from="/buildmaster/extensions/ftp" to="/den/buildmaster/ftp" />
+  <permanent from="/buildmaster/extensions/java" to="/den/buildmaster/java" />
+  <permanent from="/buildmaster/extensions/Jenkins" to="/den/buildmaster/jenkins" />
+  <permanent from="/buildmaster/extensions/Mercurial" to="/den/buildmaster/mercurial" />
+  <permanent from="/buildmaster/extensions/MsTest" to="/den/buildmaster/mstest" />
+  <permanent from="/buildmaster/extensions/MySql" to="/den/buildmaster/mysql" />
+  <permanent from="/buildmaster/extensions/NUnit" to="/den/buildmaster/nunit" />
+  <permanent from="/buildmaster/extensions/Oracle" to="/den/buildmaster/oracle" />
+  <permanent from="/buildmaster/extensions/Perforce" to="/den/buildmaster/perforce" />
+  <permanent from="/buildmaster/extensions/PostgreSql" to="/den/buildmaster/postgresql" />
+  <permanent from="/buildmaster/extensions/SourceGear" to="/den/buildmaster/sourcegear" />
+  <permanent from="/buildmaster/extensions/SqlServer" to="/den/buildmaster/sqlserver" />
+  <permanent from="/buildmaster/extensions/subversion" to="/den/buildmaster/subversion" />
+  <permanent from="/buildmaster/extensions/Trac" to="/den/buildmaster/trac" />
+
+  <permanent from="/buildmaster/extensions/fogbugz" to="/den/buildmaster/fogbugz" />
+  <permanent from="/buildmaster/extensions/AccuRev" to="/den/buildmaster/accurev" />
+  <permanent from="/buildmaster/extensions/artifactory" to="https://github.com/Inedo/inedox-artifactory/wiki" />
+  <permanent from="/buildmaster/extensions/Axosoft" to="/den/buildmaster/axosoft" />
+  <permanent from="/buildmaster/extensions/bugtrackernet" to="/den/buildmaster/bugtrackernet" />
+  <permanent from="/buildmaster/extensions/Bugzilla" to="/den/buildmaster/bugzilla" />
+  <permanent from="/buildmaster/extensions/collabnet" to="/den/buildmaster/collabnet" />
+  <permanent from="/buildmaster/extensions/cvs" to="/den/buildmaster/cvs" />
+  <permanent from="/buildmaster/extensions/db2" to="/den/buildmaster/db2" />
+  <permanent from="/buildmaster/extensions/FxCop" to="/den/buildmaster/fxcop" />
+  <permanent from="/buildmaster/extensions/Gallio" to="/den/buildmaster/gallio" />
+  <permanent from="/buildmaster/extensions/Gemini" to="/den/buildmaster/gemini" />
+  <permanent from="/buildmaster/extensions/Hudson" to="/den/buildmaster/hudson" />
+  <permanent from="/buildmaster/extensions/MBUnit" to="/den/buildmaster/mbunit" />
+  <permanent from="/buildmaster/extensions/NAnt" to="/den/buildmaster/nant" />
+  <permanent from="/buildmaster/extensions/NCover" to="/den/buildmaster/ncover" />
+  <permanent from="/buildmaster/extensions/NSIS" to="/den/buildmaster/nsis" />
+  <permanent from="/buildmaster/extensions/ODBC" to="/den/buildmaster/odbc" />
+  <permanent from="/buildmaster/extensions/PHPUnit" to="/den/buildmaster/phpunit" />
+  <permanent from="/buildmaster/extensions/PlasticSCM" to="/den/buildmaster/plastic" />
+  <permanent from="/buildmaster/extensions/Rational" to="/den/buildmaster/rational" />
+  <permanent from="/buildmaster/extensions/Seapine" to="/den/buildmaster/seapine" />
+  <permanent from="/buildmaster/extensions/Skytap" to="/den/buildmaster/skytap" />
+  <permanent from="/buildmaster/extensions/SourceSafe" to="/den/buildmaster/sourcesafe" />
+  <permanent from="/buildmaster/extensions/SqlAnywhere" to="/den/buildmaster/sqlanywhere" />
+  <permanent from="/buildmaster/extensions/WiX" to="/den/buildmaster/wix" />
+
+  <!-- Tutorials -->
+
+	<permanent from="/support/tutorials/buildmaster/deployments/getting-started-with-proget-buildmaster-and-otter" to="/support/tutorials" />
+	<permanent from="/support/tutorials/proget/compile-and-deploy-a-custom-proget-extension" to="/support/documentation/proget/administration/extensions" />
+	<permanent from="/support/tutorials/buildmaster/sdk/get-build-statuses-by-build-number-through-the-soap-api" to="/support/tutorials/buildmaster/sdk/get-deployment-statuses-by-package-number-through-the-release-and-package-api" />
+	<permanent from="/support/tutorials/buildmaster/sdk/get-a-complete-build-log-by-build-number-through-the-json-api" to="/support/tutorials" />
+	<permanent from="/support/tutorials/buildmaster/sdk/cloning-an-application-with-the-sql-api" to="/support/tutorials" />
+	<permanent from="/support/tutorials/identifying-changed-files-between-builds-or-releases-in-buildmaster" to="/support/tutorials" />
+	<permanent from="/support/tutorials/buildmaster/getting-started-with-buildmaster" to="/support/tutorials/buildmaster/deployments/deploying-a-simple-web-app-to-iis" />
+
+  <permanent from="/support/tutorials/proget" to="/support/tutorials" />
+  <permanent from="/support/tutorials/otter" to="/support/tutorials" />
+  <permanent from="/support/tutorials/buildmaster" to="/support/tutorials" />
+  <permanent from="/support/tutorials/all" to="/support/tutorials" />
+  <permanent from="/support/tutorials/otter/writing-a-simple-operation-using-the-otter-sdk" to="/support/documentation/otter/reference/sdk" />
+  <permanent from="/support/tutorials/otter/storing-otter-plans-and-configurations-in-git" to="/support/documentation/otter/global-components/rafts/git-rafts" />
+  <permanent from="/support/tutorials/otter/adding-and-executing-powershell-scripts-in-a-plan" to="/support/documentation/otter/modeling-infrastructure/powershell/powershell-plans" />
+  <permanent from="/support/tutorials/proget/getting-started-with-private-npm-registries" to="/support/documentation/proget/feed-types/npm#getting-started" />
+  <permanent from="/support/tutorials/proget/configuring-a-vulnerability-source" to="/support/documentation/proget/administration/vulnerability-source/vor-security" />
+  <permanent from="/support/tutorials/proget/debug-into-internal-nuget-packages-with-proget" to="/support/documentation/proget/feed-types/nuget/symbol-and-source-server#debug-internal-nuget-packages" />
+  <permanent from="/support/tutorials/proget/get-the-complete-list-of-connected-feeds-using-the-proget-json-api" to="/support/documentation/proget/reference/api/json" />
+  <permanent from="/support/tutorials/proget/getting-started-with-proget-private-docker-registries" to="/support/documentation/proget/feed-types/docker#guide" />
+  <permanent from="/support/tutorials/managing-lunchmaster-with-buildmaster-part-2" to="/support/tutorials" />
+  <permanent from="/support/tutorials/extending-progets-package-store" to="/support/tutorials/extending-proget-package-store" />
+  <permanent from="/support/tutorials/extending-proget-package-store" to="/support/tutorials/extending-proget" />
+  <permanent from="/support/tutorials/writing-a-unit-testing-action-using-the-buildmaster-sdk" to="/support/tutorials/creating-an-auto-deploying-custom-extension-application" />
+  <permanent from="/support/tutorials/a-gentle-introduction-to-proget-deploy" to="/support/tutorials/getting-started-with-proget-deploy" />
+  <permanent from="/support/tutorials/scheduling-a-deployment-in-buildmaster" to="/support/documentation/buildmaster/core-concepts/builds/automatic-recurring-builds" />
+  <permanent from="/support/tutorials/restricting-users-in-buildmaster" to="/support/documentation/buildmaster/auditing-and-compliance/security" />
+  <permanent from="/support/tutorials/connecting-to-a-linux-server-in-buildmaster-using-the-ssh-agent" to="/support/documentation/buildmaster/deployment-automation/servers" />
+  <permanent from="/support/tutorials/appending-an-issue-description-or-comment-with-buildmaster" to="/buildmaster/extensions/buildmaster+core+extensions/Inedo.BuildMaster.Extensibility.Actions.IssueTracking.AppendIssueDescriptionAction" />
+  <permanent from="/support/tutorials/deploying-to-multiple-servers-in-buildmaster" to="/support/tutorials/deploying-the-same-set-of-files-to-multiple-servers-using-server-groups-in-buildmaster" />
+  <permanent from="/support/tutorials/adding-a-secondary-workflow-in-buildmaster" to="/support/documentation/buildmaster/core-concepts/promotion-workflows" />
+  <permanent from="/support/tutorials/setting-up-notification-emails-in-buildmaster" to="/support/documentation/buildmaster/auditing-and-compliance/event-listeners" />
+  <permanent from="/support/tutorials/blocking-promotions-until-all-issues-are-closed-in-buildmaster" to="/support/documentation/buildmaster/core-concepts/promotion-workflows/approvals" />
+  <permanent from="/support/tutorials/running-unit-tests-during-a-build-execution-with-buildmaster" to="/support/documentation/buildmaster/deployment-automation/deployment-plans/actions" />
+  <permanent from="/support/tutorials/adding-an-approval-in-buildmaster" to="/support/documentation/buildmaster/core-concepts/promotion-workflows/approvals" />
+  <permanent from="/support/tutorials/assigning-and-performing-a-manual-action-with-buildmaster" to="/support/documentation/buildmaster/change-mangement/change-controls" />
+  <permanent from="/support/tutorials/adding-a-remote-server-or-agent-in-buildmaster" to="/support/documentation/buildmaster/deployment-automation/servers" />
+  <permanent from="/support/tutorials/using-ftp-with-buildmaster" to="/buildmaster/extensions/ftp" />
+  <permanent from="/support/tutorials/backing-up-and-restoring-buildmaster" to="/support/documentation/buildmaster/buildmaster-administration/backing-up" />
+  <permanent from="/support/tutorials/transferring-files-in-buildmaster-using-file-masks" to="/support/documentation/buildmaster/deployment-automation/deployment-plans/transfer-files-masking" />
+  <temporary from="/support/tutorials/writing-a-custom-script" to="/support/documentation/buildmaster/deployment-automation/deployment-plans/transfer-files-masking/support/tutorials/writing-a-custom-script-for-proget-deploy" />
+  <permanent from="/support/tutorials/adding-an-issue-tracking-provider-to-buildmaster" to="/support/documentation/buildmaster/change-mangement/issue-tracking" />
+  <permanent from="/support/tutorials/getting-started-with-proget-deploy" to="/support/tutorials/application-deployment-feeds-in-proget" />
+  <permanent from="/support/tutorials/writing-a-custom-script-for-proget-deploy" to="/support/tutorials/application-deployment-feeds-in-proget" />
+  <permanent from="/support/tutorials/using-buildmaster-with-artifactory" to="https://github.com/Inedo/inedox-artifactory/wiki" />
+  <permanent from="/support/tutorials/automating-azure-cloud-services-deployments-with-buildmaster" to="/support/tutorials" />
+  <permanent from="/support/tutorials/using-buildmaster-to-deploy-azure-web-sites" to="/support/tutorials" />
+  <permanent from="/support/tutorials/writing-a-simple-action-using-the-buildmaster-sdk" to="/support/tutorials/writing-a-simple-operation-using-the-buildmaster-sdk" />
+  <permanent from="/support/tutorials/executing-powershell-scripts-during-a-buildmaster-deployment" to="/support/tutorials/adding-and-executing-powershell-scripts-in-a-buildmaster-plan" />
+  <permanent from="/support/tutorials/adding-a-powershell-or-shell-script-to-the-script-repository" to="/support/tutorials/adding-and-executing-powershell-scripts-in-a-buildmaster-plan" />
+  <permanent from="/support/tutorials/getting-a-simple-application-into-buildmaster" to="/support/tutorials/buildmaster/getting-started-with-buildmaster" />
+  <permanent from="/support/tutorials/getting-a-simple-application-into-buildmaster---part-2-configuration-files" to="/support/tutorials/buildmaster/getting-started-with-buildmaster" />
+  <permanent from="/support/tutorials/application-deployment-feeds-in-proget" to="/support/tutorials/using-proget-as-your-universal-repository-with-jenkins-ci" />
+  <permanent from="/support/tutorials/debug-into-internal-nuget-packages-with-proget" to="/support/tutorials/proget/debug-into-internal-nuget-packages-with-proget" />
+  <permanent from="/support/tutorials/extending-proget" to="/support/tutorials/proget/compile-and-deploy-a-custom-proget-extension" />
+  <permanent from="/support/tutorials/get-the-complete-list-of-connected-feeds-using-the-proget-json-api" to="/support/tutorials/proget/get-the-complete-list-of-connected-feeds-using-the-proget-json-api" />
+  <permanent from="/support/tutorials/getting-started-with-proget-private-docker-registries" to="/support/tutorials/proget/getting-started-with-proget-private-docker-registries" />
+  <permanent from="/support/tutorials/getting-started-with-proget-private-npm-registries" to="/support/tutorials/proget/getting-started-with-private-npm-registries" />
+  <permanent from="/support/tutorials/using-proget-as-your-universal-repository-with-jenkins-ci" to="/support/tutorials/proget/creating-a-universal-repository-from-jenkins-ci" />
+  <permanent from="/support/tutorials/using-the-nuget-visual-studio-extension" to="/support/tutorials/proget/using-the-nuget-visual-studio-extension" />
+  <permanent from="/support/tutorials/getting-started-with-the-deploy-wizard" to="/support/tutorials/buildmaster/getting-started-with-buildmaster" />
+  <permanent from="/support/tutorials/deploying-a-teamcity-build-in-buildmaster" to="/support/tutorials/buildmaster/teamcity/queuing-and-deploying-artifacts-from-teamcity" />
+  <permanent from="/support/tutorials/deploying-a-tfs-build-with-buildmaster" to="/support/tutorials/buildmaster/visual-studio-online/queuing-and-deploying-artifacts-from-tfs" />
+  <permanent from="/support/tutorials/getting-started-with-buildmaster-v5" to="/support/tutorials/buildmaster/getting-started-with-buildmaster" />
+  <permanent from="/support/tutorials/publishing-and-displaying-a-version-number-with-buildmaster" to="/support/tutorials/buildmaster/deployments/publishing-and-displaying-a-version-number" />
+  <permanent from="/support/tutorials/adding-and-executing-powershell-scripts-in-a-buildmaster-plan" to="/support/tutorials/buildmaster/deployments/adding-and-executing-powershell-scripts" />
+  <permanent from="/support/tutorials/creating-an-auto-deploying-custom-extension-application" to="/support/tutorials/buildmaster/sdk/creating-an-auto-deploying-custom-extension-application" />
+  <permanent from="/support/tutorials/executing-a-command-line-utility-during-deployment-in-buildmaster" to="/support/tutorials/buildmaster/deployments/executing-a-command-line-utility" />
+  <permanent from="/support/tutorials/building-and-deploying-a-net-web-application-using-buildmaster" to="/support/tutorials/buildmaster/build-automation/build-and-deploy-a-net-web-application" />
+  <permanent from="/support/tutorials/cloning-and-patching-an-inedo-extension" to="/support/tutorials/buildmaster/sdk/cloning-and-patching-an-inedo-extension" />
+  <permanent from="/support/tutorials/labeling-a-build-in-source-control-with-buildmaster" to="/support/tutorials/buildmaster/build-automation/labeling-a-build-in-source-control" />
+  <permanent from="/support/tutorials/performing-a-deployment-rollback-with-buildmaster" to="/support/tutorials/buildmaster/deployments/performing-a-rollback" />
+  <permanent from="/support/tutorials/writing-a-simple-operation-using-the-buildmaster-sdk" to="/support/tutorials/buildmaster/sdk/writing-a-simple-operation" />
+  <permanent from="/support/tutorials/writing-a-variable-function-using-the-buildmaster-sdk" to="/support/tutorials/buildmaster/sdk/writing-a-variable-function" />
+  <permanent from="/support/tutorials/getting-started-setting-up-a-unified-devops-toolchain-with-proget-buildmaster-and-otter" to="/support/tutorials/buildmaster/deployments/getting-started-with-proget-buildmaster-and-otter" />
+  <permanent from="/support/tutorials/deploying-aspnet-and-windows-service-applications-with-otter" to="/support/tutorials/otter/deploying-aspnet-and-windows-service-applications-with-otter" />
+  <permanent from="/support/tutorials/writing-a-simple-operation-using-the-otter-sdk" to="/support/tutorials/otter/writing-a-simple-operation-using-the-otter-sdk" />
+  <permanent from="/support/tutorials/deploying-the-same-set-of-files-to-multiple-servers-using-server-groups-in-buildmaster" to="/support/tutorials/buildmaster/deployments/deploying-the-same-set-of-files-to-multiple-servers-using-server-groups-in-buildmaster" />
+  <permanent from="/support/tutorials/get-a-complete-build-log-by-build-number-through-the-json-api" to="/support/tutorials/buildmaster/sdk/get-a-complete-build-log-by-build-number-through-the-json-api" />
+  <permanent from="/support/tutorials/get-build-statuses-by-build-number-through-the-soap-api" to="/support/tutorials/buildmaster/sdk/get-build-statuses-by-build-number-through-the-soap-api" />
+  <permanent from="/support/tutorials/cloning-an-application-with-the-sql-api" to="/support/tutorials/buildmaster/sdk/cloning-an-application-with-the-sql-api" />
+  <permanent from="/support/tutorials/debugging-buildmaster-extensions" to="/support/tutorials/buildmaster/sdk/debugging-buildmaster-extensions"/>
+  <permanent from="/support/tutorials/deploying-a-jenkins-build-with-buildmaster" to="/support/tutorials/buildmaster/jenkins/queuing-and-deploying-artifacts-from-jenkins" />
+  <permanent from="/support/tutorials/deploying-a-teamcity-build-with-buildmaster" to="/support/tutorials/buildmaster/teamcity/queuing-and-deploying-artifacts-from-teamcity" />
+  <permanent from="/support/tutorials/new" to="/support/tutorials" />
+  <permanent from="/support/tutorials/storing-otter-plans-and-configurations-in-git" to="/support/tutorials/otter/storing-otter-plans-and-configurations-in-git" />
+  <permanent from="/support/tutorials/getting-started-with-otter-and-infrastructure-as-code " to="/support/tutorials/otter/getting-started-with-otter-and-iac" />
+  <permanent from="/support/tutorials/getting-started-with-otter-and-infrastructure-as-code" to="/support/tutorials/otter/getting-started-with-otter-and-iac" />
+  <permanent from="/support/tutorials/deploying-a-jenkins-build-with-buildmaster-two" to="/support/tutorials/buildmaster/jenkins/queuing-and-deploying-artifacts-from-jenkins" />
+  <permanent from="/support/tutorials/deploying-a-visual-studio-online-build-with-buildmaster" to="/support/tutorials/buildmaster/visual-studio-online/queuing-and-deploying-artifacts-from-tfs" />
+  <permanent from="/support/tutorials/deploying-a-net-application-in-buildmaster" to="/support/tutorials/buildmaster/build-automation/build-and-deploy-a-net-web-application" />
+  <permanent from="/support/tutorials/adding-and-executing-powershell-scripts-in-a-plan" to="/support/tutorials/buildmaster/deployments/adding-and-executing-powershell-scripts" />
+  <permanent from="/buildmaster/extension-release-notes/NuGet/3.0" to="/den/buildmaster/NuGet" />
+  <permanent from="/support/tutorials/cross-product-tutorial" to="/support/tutorials/buildmaster/deployments/getting-started-with-proget-buildmaster-and-otter" />
+
+  <permanent from="/support/tutorials/buildmaster/deployments/deploying-the-same-set-of-files-to-multiple-servers-using-server-groups-in-buildmaster" to="/support/tutorials/buildmaster/deployments/deploying-the-same-set-of-files-to-multiple-servers-using-server-roles-in-buildmaster"/>
+  <permanent from="/support/tutorials/buildmaster/deployments/adding-and-executing-powershell-scripts" to="/support/documentation/buildmaster/execution-engine/powershell-and-shell"/>
+  <permanent from="/support/tutorials/buildmaster/sdk/creating-an-auto-deploying-custom-extension-application" to="/support/documentation/buildmaster/administration/extensions/create-custom"/>
+  <permanent from="/support/tutorials/buildmaster/sdk/cloning-and-patching-an-inedo-extension" to="/support/documentation/buildmaster/administration/extensions/cloning-patching"/>
+  <permanent from="/support/tutorials/buildmaster/sdk/debugging-buildmaster-extensions" to="/support/documentation/inedosdk/extending/creating"/>
+  <permanent from="/support/tutorials/buildmaster/sdk/writing-a-simple-operation" to="/support/documentation/buildmaster/reference/sdk/writing-operation"/>
+  <permanent from="/support/tutorials/buildmaster/sdk/writing-a-variable-function" to="/support/documentation/buildmaster/reference/sdk/writing-variable-function"/>
+
+  <permanent from="/support/tutorials/buildmaster/jenkins/queuing-and-deploying-artifacts-from-jenkins" to="/den/buildmaster/jenkins"/>
+  <permanent from="/support/tutorials/buildmaster/teamcity/queuing-and-deploying-artifacts-from-teamcity" to="/den/buildmaster/teamcity"/>
+  <permanent from="/support/tutorials/buildmaster/visual-studio-online/queuing-and-deploying-artifacts-from-tfs" to="/den/buildmaster/tfs"/>
+  <permanent from="/support/tutorials/buildmaster/deployments/using-jira-in-buildmaster" to="/den/buildmaster/jira"/>
+  <permanent from="/support/tutorials/buildmaster/deployments/using-youtrack-in-buildmaster" to="/den/buildmaster/youtrack"/>
+  <permanent from="/support/tutorials/proget/creating-a-universal-repository-from-jenkins-ci" to="/den/proget/jenkinsplugin"/>
+  <permanent from="/support/tutorials/proget/push-to-proget-from-visual-studio" to="/den/proget/visualstudio"/>
+  <permanent from="/support/tutorials/proget/using-the-nuget-visual-studio-extension" to="/support/tutorials/proget/getting-started-with-nuget-feeds-in-proget-and-visual-studio"/>
+  <permanent from="/support/tutorials/otter/getting-started-with-otter-and-iac" to="/support/tutorials/otter/provisioning-and-configuring-servers-with-otter"/>
+	<permanent from="/support/tutorials/romp/creating-publishing-iis-website" to="/support/documentation/romp/using/creating-publishing"/>
+
+
+
+
+
+  <!-- Blog -->
+  <permanent from="/blog/upgrade-notes-for-proget-41" to="/support/kb/1122/upgrade-notes-for-proget-41" />
+  <permanent from="/blog/cloning-and-patching-an-inedo-extension" to="/support/tutorials/buildmaster/sdk/cloning-and-patching-an-inedo-extension" />
+  <permanent from="/blog/get-the-complete-list-of-connected-feeds-using-the-proget-json-api" to="/support/tutorials/proget/get-the-complete-list-of-connected-feeds-using-the-proget-json-api" />
+  <permanent from="/blog/deploying-a-tfs-build-with-buildmaster" to="/support/tutorials/buildmaster/visual-studio-online/queuing-and-deploying-artifacts-from-tfs" />
+  <permanent from="/blog/deploying-a-visual-studio-online-build-with-buildmaster" to="/support/tutorials/buildmaster/visual-studio-online/queuing-and-deploying-artifacts-from-tfs" />
+  <permanent from="/blog/writing-a-simple-operation-using-the-otter-sdk" to="/support/tutorials/writing-a-simple-operation-using-the-otter-sdk" />
+  <permanent from="/support/tutorials/importing-and-deploying-a-tfs-/-visual-studio-online-build-with-buildmaster" to="/support/tutorials/buildmaster/visual-studio-online/queuing-and-deploying-artifacts-from-tfs" />
+  <permanent from="/blog/building-and-deploying-a-net-web-application-using-buildmaster" to="/support/tutorials/buildmaster/build-automation/build-and-deploy-a-net-web-application" />
+  <permanent from="/blog/storing-otter-plans-and-configurations-in-git" to="/support/tutorials/otter/storing-otter-plans-and-configurations-in-git" />
+  <permanent from="/blog/upgrade-notes-for-buildmaster-53" to="/support/kb/1129/upgrade-notes-for-buildmaster-53" />
+  <permanent from="/blog/extending-proget" to="/support/tutorials/proget/compile-and-deploy-a-custom-proget-extension" />
+  <permanent from="/blog/getting-started-with-proget-private-docker-registries" to="/support/tutorials/proget/getting-started-with-proget-private-docker-registries" />
+  <permanent from="/blog/executing-powershell-scripts-during-a-buildmaster-deployment" to="/support/tutorials/buildmaster/deployments/adding-and-executing-powershell-scripts" />
+  <permanent from="/blog/writing-a-simple-operation-using-the-buildmaster-sdk" to="/support/tutorials/buildmaster/sdk/writing-a-simple-operation" />
+  <permanent from="/blog/getting-a-simple-application-into-buildmaster" to="/support/tutorials/buildmaster/getting-started-with-buildmaster" />
+  <permanent from="/blog/getting-started-with-proget-private-npm-registries" to="/support/tutorials/proget/getting-started-with-private-npm-registries" />
+  <permanent from="/blog/cloning-an-application-with-the-sql-api" to="/support/tutorials/buildmaster/sdk/cloning-an-application-with-the-sql-api" />
+  <permanent from="/blog/labeling-a-build-in-source-control-with-buildmaster" to="/support/tutorials/buildmaster/build-automation/labeling-a-build-in-source-control" />
+  <permanent from="/blog/using-proget-as-your-universal-repository-with-jenkins-ci" to="/support/tutorials/proget/creating-a-universal-repository-from-jenkins-ci" />
+  <permanent from="/blog/upgrade-notes-for-otter-12" to="/support/kb/1124/upgrade-notes-for-otter-12" />
+  <permanent from="/blog/buildmaster-538-released" to="/blog/buildmaster-53-beta9-released" />
+  <permanent from="/blog/docker-feed-limitations" to="/support/kb/1131/docker-feed-limitations" />
+  <permanent from="/blog/get-build-statuses-by-build-number-through-the-soap-api" to="/support/tutorials/buildmaster/sdk/get-build-statuses-by-build-number-through-the-soap-api" />
+  <permanent from="/blog/getting-started-with-buildmaster-v5" to="/support/tutorials/buildmaster/getting-started-with-buildmaster" />
+  <permanent from="/blog/identifying-changed-files-between-builds-or-releases-in-buildmaster" to="/support/tutorials/identifying-changed-files-between-builds-or-releases-in-buildmaster" />
+  <permanent from="/blog/adding-and-executing-powershell-scripts-in-a-buildmaster-plan" to="/support/tutorials/buildmaster/deployments/adding-and-executing-powershell-scripts" />
+  <permanent from="/blog/publishing-and-displaying-a-version-number-with-buildmaster" to="/support/tutorials/buildmaster/deployments/publishing-and-displaying-a-version-number" />
+  <permanent from="/blog/getting-started-with-otter-and-infrastructure-as-code" to="/support/tutorials/otter/getting-started-with-otter-and-iac" />
+  <permanent from="/blog/get-a-complete-build-log-by-build-number-through-the-json-api" to="/support/tutorials/buildmaster/sdk/get-a-complete-build-log-by-build-number-through-the-json-api" />
+  <permanent from="/blog/upgrade-notes-for-otter-13" to="/support/kb/1127/upgrade-notes-for-otter-13" />
+  <permanent from="/blog/adding-and-executing-powershell-scripts-in-a-plan" to="/support/tutorials/otter/adding-and-executing-powershell-scripts-in-a-plan" />
+  <permanent from="/blog/a-new-version-of-the-dummy-extension-v26-has-been-released" to="/den" />
+  <permanent from="/blog/deploying-a-teamcity-build-with-buildmaster" to="/support/tutorials/buildmaster/teamcity/queuing-and-deploying-artifacts-from-teamcity" />
+  <permanent from="/blog/giving-nuget-server-a-new-home_blank" to="/blog/giving-nuget-server-a-new-home" />
+  <permanent from="/blog/getting-a-simple-application-into-buildmaster---part-2-configuration-files" to="/support/tutorials/buildmaster/getting-started-with-buildmaster" />
+  <permanent from="/blog/writing-a-variable-function-using-the-buildmaster-sdk" to="/support/tutorials/buildmaster/sdk/writing-a-variable-function" />
+  <permanent from="/blog/upgrade-notes-for-otter-14" to="/support/kb/1132/upgrade-notes-for-otter-14" />
+  <permanent from="/blog/debugging-buildmaster-extensions" to="/support/tutorials/buildmaster/sdk/debugging-buildmaster-extensions" />
+  <permanent from="/blog/a-new-version-of-the-windows-sdk-extension-v44-has-been-released" to="/den/buildmaster/windowssdk" />
+  <permanent from="/blog/cross-product-tutorial" to="/support/tutorials/buildmaster/deployments/getting-started-with-proget-buildmaster-and-otter" />
+  <permanent from="/blog/upgrade-notes-for-proget-42" to="/support/kb/1126/upgrade-notes-for-proget-42" />
+  <permanent from="/blog/a-new-version-of-the-perforce-extension-v35-has-been-released" to="/den/buildmaster/Perforce" />
+  <permanent from="/blog/a-new-version-of-the-nuget-extension-v26-has-been-released" to="/den/buildmaster/NuGet" />
+  <permanent from="/blog/deploying-aspnet-and-windows-service-applications-with-otter" to="/support/tutorials/otter/deploying-aspnet-and-windows-service-applications-with-otter" />
+
+  <permanent from="/news" to="/company" />
+  <permanent from="/company/scotchmenu" to="/company/scotch-menu" />
+  <permanent from="/company/swag/codemash2010thegame" to="/company/swag/codemash-2010-the-game" />
+  <permanent from="/company/swag/justintimebusinesscards" to="/company/swag/just-in-time-business-cards" />
+  <permanent from="/downloads" to="/downloads/buildmaster" />
+  <permanent from="/downloads/iconmaker" to="/downloads/icon-maker" />
+  <permanent from="/downloads/register" to="https://my.inedo.com" />
+  <permanent from="/downloads/registeroptional" to="/downloads/register-optional" />
+  <permanent from="/downloads/smartpaster" to="/downloads/smart-paster" />
+  <permanent from="/downloads/submittowtf" to="/downloads/submit-to-wtf" />
+  <permanent from="/downloads/devcurios" to="/downloads" />
+  <permanent from="/downloads/buildmaster" to="/buildmaster/download" />
+  <permanent from="/jitbizcards" to="/company/swag/just-in-time-business-cards" />
+  <permanent from="/jit-biz-cards" to="/company/swag/just-in-time-business-cards" />
+  <permanent from="/landing/buildmaster/thankyou" to="/landing/buildmaster/thank-you" />
+
+
+  <permanent from="/landing/buildmaster" to="/buildmaster" />
+  <permanent from="/allrecipes" to="/buildmaster/case-studies/allrecipes" />
+  <permanent from="/blog/release-numbering-schemes" to="/blog/how-to-create-version-numbers-that-are-actually-semantic" />
+
+  <permanent from="/license" to="/products" />
+  <permanent from="/proget/proget/features" to="/proget/pricing/features-by-edition" />
+  <permanent from="/videos/introduction" to="/products" />
+  <permanent from="/videos/database-webinar" to="/products" />
+  <permanent from="/buildmaster/video" to="/buildmaster" />
+  <permanent from="/proget/client-tools" to="/downloads/proget-client-tools" />
+  <permanent from="/downloads/register-optional" to="/products" />
+  <permanent from="/downloads/proget" to="/proget/download" />
+  <permanent from="/buildmaster/default" to="/buildmaster" />
+  <permanent from="/buildmaster/features/all-features" to="/buildmaster" />
+  <permanent from="/buildmaster/features/continuous-integration" to="/buildmaster" />
+  <permanent from="/buildmaster/features/deployment-automation" to="/buildmaster" />
+  <permanent from="/buildmaster/features/deployment-pipelines" to="/buildmaster" />
+  <permanent from="/buildmaster/features/other-features" to="/buildmaster" />
+  <permanent from="/buildmaster/features/extensibility" to="/buildmaster" />
+  <permanent from="/buildmaster/features/deployments" to="/buildmaster" />
+  <permanent from="/buildmaster/features/promotion-workflows" to="/buildmaster" />
+  <permanent from="/buildmaster/features/build-release-management" to="/buildmaster" />
+  <permanent from="/buildmaster/features/platforms/coldfusion-perl-php-python-html" to="/buildmaster" />
+  <permanent from="/buildmaster/features/dependency-management" to="/buildmaster" />
+  <permanent from="/buildmaster/features/artifact-library" to="/buildmaster" />
+  <permanent from="/buildmaster/features/default" to="/buildmaster" />
+  <permanent from="/buildmaster/features/build-management" to="/buildmaster" />
+  <permanent from="/buildmaster/features/databasemanagement" to="/buildmaster" />
+  <permanent from="/buildmaster/features/buildmanagement" to="/buildmaster" />
+  <permanent from="/buildmaster/features/configfilemanagement" to="/buildmaster" />
+  <permanent from="/buildmaster/features/unit-testing" to="/buildmaster" />
+  <permanent from="/support/documentation/proget/feeds/symbol-and-source-server" to="/support/documentation/proget/feed-types/nuget/symbol-and-source-server" />
+  <permanent from="/support/documentation/proget/proget-overview/the-nuget-ecosystem" to="/support/documentation/proget/feed-types/nuget" />
+  <permanent from="/support/documentation/proget/feeds/feed-basics" to="/support/documentation/proget/feed-types/universal" />
+  <permanent from="/support/documentation/proget/feeds/advanced-feed-settings" to="/support/documentation/proget/feed-types/universal" />
+  <permanent from="/support/documentation/proget/feeds/retention/matching-examples" to="/support/documentation/proget/feed-types/universal" />
+  <permanent from="/support/documentation/proget/feeds/connectors/connector-filters" to="/support/documentation/proget/core-concepts/connectors" />
+  <permanent from="/support/documentation/proget/connectors/connector-filters" to="/support/documentation/proget/core-concepts/connectors" />
+  <permanent from="/support/documentation/proget/connectors" to="/support/documentation/proget/core-concepts/connectors" />
+  <permanent from="/support/documentation/proget/feeds/api-keys" to="/support/documentation/proget/reference/api-keys-nuget" />
+  <permanent from="/support/documentation/proget/manual" to="/support/documentation/proget/installation/manual" />
+  <permanent from="/support/documentation/proget/feeds/multiple-feeds" to="/support/documentation/proget" />
+  <permanent from="/support/documentation/proget/feeds/connectors/indexing-connectors" to="/support/documentation/proget/core-concepts-connectors" />
+  <permanent from="/support/documentation/proget/proget-overview/the-npm-ecosystem" to="/support/documentation/proget/feed-types/npm" />
+  <permanent from="/support/documentation/proget/security" to="/support/documentation/proget/administration/security" />
+  <permanent from="/support/documentation/proget/security/ldap-integration" to="/support/documentation/proget/administration/ldap-active-directory" />
+  <permanent from="/support/documentation/proget/security/users-and-groups/built-in-directory" to="/support/documentation/proget/administration/ldap-active-directory" />
+  <permanent from="/support/documentation/proget/security/users-and-groups/domain-forest-directory" to="/support/documentation/proget/administration/ldap-active-directory" />
+  <permanent from="/support/documentation/proget/security/users-and-groups/domain-forest" to="/support/documentation/proget/administration/ldap-active-directory" />
+  <permanent from="/support/documentation/proget/security/users-and-groups/ldap-directory" to="/support/documentation/proget/administration/ldap-active-directory" />
+  <permanent from="/support/documentation/proget/scheduled-tasks" to="/support/documentation/proget/administration/feed-cleanup" />
+  <permanent from="/support/documentation/core-concepts/plans" to="/support/documentation" />
+  <permanent from="/blog/differences-between-proget-client-tools-and-nuget-tools" to="/downloads/proget-client-tools" />
+  <permanent from="/blog/integrating-buildmaster-and-perforce" to="/buildmaster/extensions/Perforce" />
+  <permanent from="/blog/support/kb/1051/upgrade-notes-for-proget-20" to="/support/kb/1051/upgrade-notes-for-proget-20" />
+  <permanent from="/kb/1046" to="/support/kb/1046/supported-sql-server-editions" />
+  <permanent from="/buildmaster/training" to="/training" />
+  <permanent from="/proget/2.1" to="/proget/roadmap" />
+  <permanent from="/proget/2.0" to="/proget/roadmap" />
+  <permanent from="/proget/1.1" to="/proget/roadmap" />
+  <permanent from="/proget/1.0" to="/proget/roadmap" />
+  <permanent from="/proget/0.1" to="/proget/roadmap" />
+  <permanent from="/buildmaster/3.7" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/3.6" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/3.5" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/3.3" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/3.2" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/3.1" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/3.0" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/2.6" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/2.5" to="/buildmaster/roadmap" />
+  <permanent from="/support/documentation/otter/reference/operations/operations/files/delete-files" to="/support/documentation/otter/reference/operations/files/delete-files" />
+  <permanent from="/landing/buildmaster/play" to="/buildmaster" />
+  <permanent from="/landing/buildmaster/download" to="/buildmaster" />
+  <permanent from="/about/scotch" to="/company/scotch" />
+  <permanent from="/about/ceo" to="/company/ceo" />
+  <permanent from="/abc/letter" to="/abc/letters" />
+  <permanent from="/case-studies/allrecipes" to="/buildmaster/case-studies/allrecipes" />
+  <permanent from="/promos/free-tdwtf-mug" to="/buildmaster" />
+  <permanent from="/promos/t-shirt" to="/buildmaster" />
+  <permanent from="/buildmaster/4.0" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/4.1" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/4.2" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/4.3" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/4.4" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/4.5" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/4.6" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/4.7" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/4.8" to="/buildmaster/roadmap" />
+  <permanent from="/buildmaster/4.9" to="/buildmaster/roadmap" />
+  <permanent from="/proget/2.2" to="/proget/roadmap" />
+  <permanent from="/proget/3.0" to="/proget/roadmap" />
+  <permanent from="/proget/3.1" to="/proget/roadmap" />
+	<permanent from="/proget/3.2" to="/proget/roadmap" />
+  <permanent from="/proget/3.3" to="/proget/roadmap" />
+  <permanent from="/proget/3.4" to="/proget/roadmap" />
+  <permanent from="/proget/3.5" to="/proget/roadmap" />
+  <permanent from="/proget/3.6" to="/proget/roadmap" />
+  <permanent from="/proget/3.7" to="/proget/roadmap" />
+  <permanent from="/proget/3.8" to="/proget/roadmap" />
+
+
+
+
+
+  <!-- Uninclused Curios -->
+  <permanent from="/Resources/Images/Curios/SubmitWTFMenu.png" to="https://user-images.githubusercontent.com/4257305/29039803-5a657d0a-7b72-11e7-832c-27d1974ead33.png" />
+  <permanent from="/downloads/icon-maker" to="https://github.com/Inedo/iconmaker" />
+  <permanent from="/downloads/submit-to-wtf" to="https://github.com/tdwtf/submittotdwtf" />
+  <permanent from="/downloads/smart-paster" to="https://marketplace.visualstudio.com/items?itemName=martinw.SmartPaster2013" />
+</redirects>

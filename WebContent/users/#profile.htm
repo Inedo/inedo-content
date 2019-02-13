@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>View Profile</title>
+    <link rel="stylesheet" type="text/css" href="/users/profile.css" />
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+
+</head>
+<body>
+    <div id="profile-header" class="content-container">
+        <div class="content">
+            <div class="header">
+                <inedo:if-can-edit><div class="edit-profile">
+                    <a href="${EditUrl}" class="button">Edit Profile</a>
+                </div></inedo:if-can-edit>
+                <div class="profile-picture">
+                    <inedo:user-picture default-src="https://inedo.com/users/default-profile-picture.png" size="200" alt="" />
+                </div>
+                <div class="information">
+                    <h1 class="username"><img src="/users/profile-icon.png" alt="" />${FullName}</h1>
+                    ${Summary}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="profile-side-bar" class="content-container">
+        <div class="content">
+            <div class="social">
+                <ul>
+                    <inedo:if-github><li><a href="${GitHubUrl}"><img src="/users/github-icon.png" />${GitHubName}</a></li></inedo:if-github>
+                    <inedo:if-linkedin><li><a href="${LinkedInUrl}"><img src="/users/linkedin-icon.png" />${LinkedInName}</a></li></inedo:if-linkedin>
+                    <inedo:if-twitter><li><a href="${TwitterUrl}"><img src="/users/twitter-icon.png" />@${TwitterName}</a></li></inedo:if-twitter>
+                    <inedo:if-wtdwtf><li><a href="${WTDWTFUrl}"><img src="/users/wtf-icon.png" />${WTDWTFName}</a></li></inedo:if-wtdwtf>
+                    <inedo:if-message><li><label for="show-contact-info"><img src="/users/message-icon.png" />Message</label><input type="checkbox" id="show-contact-info" /><label for="show-contact-info" class="contact-info-background" title="Close"></label><div class="contact-info">${ContactInfo}</div></li></inedo:if-message>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <inedo:if-no-posts>
+        <div id="qa-posts" class="content-container">
+            <div class="content">
+                <div class="posts">
+                    <h3>Q&amp;A Activity</h3>
+                    <p class="qa-info">
+                        This section will display any questions submitted or answered on the Inedo Q&amp;A Forum. If blank, ${FullName} has no activity to display yet.
+                    </p>
+                    <div class="see-more">
+                        <a href="/support/questions">Check out the Inedo Q&amp;A Forum</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </inedo:if-no-posts>
+
+    <inedo:if-have-posts><div id="qa-posts" class="content-container">
+        <div class="content">
+            <div class="posts">
+                <h3>Q&amp;A Activity</h3>
+                <inedo:for-each-post><div class="qa-box">
+                    <a href="${PostUrl}">
+                        <div class="replies">
+                            <p class="number">
+                                ${PostReplies}
+                            </p>
+                            <p>replies</p>
+                        </div>
+                        <div class="qa-title">
+                            <p>${PostTitle}</p>
+                        </div>
+                    </a>
+                </div></inedo:for-each-post>
+                <div class="see-more">
+                    <a href="${MorePostsUrl}">See More &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div></inedo:if-have-posts>
+
+    <inedo:if-no-communityitems>
+        <div id="items" class="content-container">
+            <div class="content">
+                <div class="row">
+                    <h3>Den Submissions</h3>
+                    <p class="den-copy">
+                        Submitting a Community Item is easy! We have tutorials for each tool, <a href="/support/tutorials/proget/compile-and-deploy-a-custom-proget-extension">ProGet</a>, <a href="/support/documentation/buildmaster/administration/extensions/create-custom">BuildMaster</a>, and <a href="/support/documentation/otter/reference/sdk">Otter</a>, simply follow along, then fill out the <a href="/den/submit">submission form</a> when everything's ready.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </inedo:if-no-communityitems>
+
+    <inedo:if-have-communityitems><div id="items" class="content-container">
+        <div class="content">
+            <div class="row">
+                <h3>Den Submissions</h3>
+                <p class="den-copy">
+                    Submitting a Community Item is easy! We have tutorials for each tool, <a href="/support/tutorials/proget/compile-and-deploy-a-custom-proget-extension">ProGet</a>, <a href="/support/documentation/buildmaster/administration/extensions/create-custom">BuildMaster</a>, and <a href="/support/documentation/otter/reference/sdk">Otter</a>, simply follow along, then fill out the <a href="/den/submit">submission form</a> when everything's ready.
+                </p>
+                <inedo:for-each-communityitem>
+                <div class="extension-box">
+                    <a href="${DenItemUrl}">
+                        <div class="identity-logo">
+                            <img src="/den/${ProductCodeLower}-logo-24.png" />
+                        </div>
+                        <img src="${LogoUrl}" />
+                        <div class="extension-info">
+                            <p class="title">${PackageName}</p>
+                            <p>
+                                ${Description}
+                            </p>
+                        </div>
+                        <div class="supported-by">
+                            <img class="community" src="/den/community-supported.png" />
+                        </div>
+                    </a>
+                </div>
+                </inedo:for-each-communityitem>
+            </div>
+        </div>
+    </div>
+    </inedo:if-have-communityitems>
+
+    <inedo:if-have-blogs>
+    <div id="guest-blogs" class="content-container" style="clear:both">
+        <div class="content">
+            <div class="the-articles">
+                <h3>Guest Blogs</h3>
+                <inedo:for-each-blog>
+                <div class="article-summary">
+                    <div class="floating-date">
+                        <p class="day"><inedo:blog-date format=" d" /></p>
+                        <p><inedo:blog-date format="MMM yyyy" /></p>
+                    </div>
+                    <div class="description">
+                        <a href="${BlogUrl}" class="title">${BlogTitle}</a>
+                        <p class="abstract">
+                           ${BlogSummary}
+                        </p>
+                        <p class="author">${BlogAuthor}</p>
+                    </div>
+                </div>
+                </inedo:for-each-blog>
+            </div>
+        </div>
+    </div>
+    </inedo:if-have-blogs>
+
+</body>
+</html>

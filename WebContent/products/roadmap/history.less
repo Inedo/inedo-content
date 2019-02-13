@@ -1,0 +1,152 @@
+@import "..\..\resources\styles\library";
+
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@inedo-lightblue: #10466E;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+
+.content-container#history {
+    padding-bottom: 0;
+}
+.content-container#banner {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    background: url(/products/roadmap/roadmap.png) no-repeat #011b2d;
+    background-position: bottom right;
+    position: relative;
+    height: 200px;
+
+    .content {
+        padding: 36px 100px;
+
+        h1 {
+            font-size: 250%;
+            margin: 32px 0 12px 20px;
+            font-weight: 700;
+            color: @inedo-white;
+            text-shadow: 2px 2px 2px @inedo-darkblue;
+        }
+    }
+}
+
+.content-container#navigation {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.tool-nav {
+    background-color: @inedo-darkblue;
+    position: relative;
+
+    &.bottom {
+        ul {
+            font-weight: 700;
+
+            li {
+                a {
+                    color: @inedo-darkblue;
+                }
+            }
+
+            a:hover {
+                color: @inedo-grey;
+            }
+        }
+
+        &.bm {
+            background-color: @buildmaster-orange;
+        }
+
+        &.pg {
+            background-color: @proget-blue;
+        }
+
+        &.ot {
+            background-color: @otter-purple;
+        }
+    }
+
+    ul {
+        padding: 0;
+        text-align: center;
+
+        li {
+            text-align: center;
+            margin: 6px 0 8px 0;
+
+            a {
+                color: @inedo-grey;
+                text-decoration: none;
+                font-size: 14px;
+                padding: 8px 80px;
+
+                img {
+                    height: 20px;
+                    vertical-align: middle;
+                    margin-right: 12px;
+                }
+            }
+
+            a:hover {
+                color: @proget-blue;
+            }
+        }
+    }
+}
+
+.previous-version {
+    margin-top: 30px;
+    padding-bottom: 40px;
+    min-height: 200px;
+
+    &.bm {
+        border-bottom: 3px solid @buildmaster-orange;
+    }
+
+    &.pg {
+        border-bottom: 3px solid @proget-blue;
+    }
+
+    &.ot {
+        border-bottom: 3px solid @otter-purple;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 36px;
+        font-weight: normal;
+        text-align: center;
+        color: #282b3a;
+    }
+
+    img {
+        display: inline-block;
+        margin: 0 10px 8px 0;
+        vertical-align: middle;
+        height: 32px;
+    }
+
+    .left-previous {
+        margin-top: 30px;
+        width: 420px;
+    }
+
+    .right-previous {
+        padding-top: 18px;
+        float: right;
+        width: 540px;
+
+        ul {
+            margin-top: 22px;
+
+            li {
+                padding: 6px 0;
+            }
+        }
+    }
+}

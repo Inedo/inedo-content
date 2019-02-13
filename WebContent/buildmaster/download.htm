@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BuildMaster Downloads</title>
+    <meta name="MasterPageFile" content="buildmaster.htm" />
+    <meta name="keywords" content="buildmaster, installation" />
+    <meta name="require-ssl" content="true" />
+    <style type="text/css">
+        .all-content {
+            width: 800px;
+            margin-left: 100px;
+        }
+        .downloaf-box {
+            border: solid 1px #2e2e2e;
+            padding: 20px;
+            text-align:right;
+            margin-top:30px;
+
+        }
+        .downloaf-box .left {
+            float:left;
+            margin-right: 20px;
+
+        }
+        .downloaf-box .left h3 {
+            margin-top:0;
+            font-size: 26px;
+        }
+        .downloaf-box .right .button {
+            font-size: 26px;
+            padding: 12px 10px;
+            line-height: 65px;
+        }
+        .downloaf-box .right .button:hover { text-decoration: underline;}
+
+        .started {background-color: #e9eada; padding: 20px 30px; margin-top: 30px;}
+        .started h4 {margin-top: 0; font-weight: bold;}
+        .started p {line-height: 30px; margin-bottom: 0px; font-size: 18px;}
+
+    </style>
+
+    <script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0053/9152.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+
+</head>
+<body>
+    <style>
+        .content-container#banner {
+            min-height: 150px;
+        }
+
+        #banner .circle-button {
+            display: none;
+        }
+
+    </style>
+
+    <div class="all-content download-page">
+        <h1>Download BuildMaster</h1>
+
+        <div id="start" class="started">
+            <h4>First Steps</h4>
+            <p>
+                BuildMaster will install on any supported version of Windows; simply click through the installer to get BuildMaster up and running in minutes.
+                Through the installer, you will select the edition you wish to install, a trial, the free edition, or enter a license key.
+                Refer to the <a href="#edition">screenshot</a> at the bottom of this page for clarity. Alternatively, review the
+                <a href="/support/documentation/buildmaster/installation/guide">BuildMaster Installation Guide</a> for more details.
+            </p>
+        </div>
+
+        <div class="inedo-hub-banner">
+            <div class="hub-panel left">
+                <img src="/resources/images/logos/inedo-hub.svg" />
+            </div>
+            <div class="hub-panel center">
+                BuildMaster is now installable from the Inedo Hub desktop application!
+            </div>
+            <div class="hub-panel right">
+                <a class="software-button solid blue default-hovered" href="https://s3.amazonaws.com/cdn.inedo.com/downloads/desktophub/BuildMasterInstaller.exe" onclick="gtag ('event', 'download', {
+						'event_category' : 'buildmaster', 
+						'event_label' : 'hub' });"> Download Inedo Hub</a>
+                <a class="external" href="/support/documentation/desktophub" target="_blank">Learn More...</a>
+            </div>
+            <div style="clear: both;">
+            </div>
+        </div>
+
+        <div class="downloaf-box">
+            <div class="left">
+                <h3>Latest Version: ${BuildMaster.ReleaseNumber}</h3>
+                <div>File size: 7mb</div>
+            </div>
+            <div class="right">
+                <div><a class="button" href="/files/buildmaster/sql/${BuildMaster.ReleaseNumber}.exe" onclick="gtag ('event', 'download', {
+						'event_category' : 'buildmaster', 
+						'event_label' : 'sql' });">Download BuildMaster Installer</a></div>
+                <div>
+                    <a href="/buildmaster/6.0">Overview for 6.0</a>
+                    &nbsp; &bull; &nbsp;
+                    <a href="/buildmaster/release-notes/#v${BuildMaster.ReleaseNumber}">Release Notes</a>
+                </div>
+            </div>
+        </div>
+        <h3>Getting Started</h3>
+        <p>
+            New to BuildMaster? Go through our <a href="/support/tutorials/buildmaster/deployments/deploying-a-simple-web-app-to-iis">Getting Started tutorial</a>, and you will learn how to deploy a simple ASP.NET web application along with its IIS configuration through a pipeline to create a repeatable release process.
+        </p>
+        <h3>Looking to Buy?</h3>
+        <p>
+            To order online with a credit card, go through <a href="https://my.inedo.com/">MyInedo</a>. For other methods of payment,
+            such as a check or wire transfer, use the <a href="/buildmaster/pricing/request-quote">quote request form</a>.
+        </p>
+
+        <h3>Upgrading BuildMaster</h3>
+        <p>
+            You can upgrade to BuildMaster ${BuildMaster.ReleaseNumber} from any previous version of BuildMaster. Just run the installer to update your installation;
+            the agents will automatically update when the installation is complete.
+        </p>
+
+        <h3>Other Downloads</h3>
+        <p>
+            If you need to download an older version of BuildMaster, an alternate installation package, or the BuildMaster Windows agent,
+            <a href="/buildmaster/download/versions">please visit the all versions page</a>.
+        </p>
+
+        <h3>What's Next for BuildMaster</h3>
+        <p>Check out our <a href="/products/roadmap">Product Roadmap</a> to see where it all started, and where we want to take BuildMaster in the future.</p>
+
+        <h3 id="edition">Selecting the Edition</h3>
+        <p>
+            This is step six in the BuildMaster Installer, this is where you select which edition of BuildMaster you'd like to use (Free, trial, or enter a Key).
+        </p>
+        <img style="" src="/resources/documentation/buildmaster-installation/edition.png" />
+
+        <div class="button-set">
+            <div class="button">
+                <a href="#start">Back to the download</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Building and Deploying a .NET Web Application using BuildMaster</title>
+    <meta name="keywords" content="buildmaster, msbuild, source-control, .net, entry-user" />
+      <meta name="include-client-resources" content="fancybox131" />
+    <meta name="product-name" content="BuildMaster" />
+</head>
+<body>
+        <div class="intro">
+        <p>
+            BuildMaster is an application release automation tool. In this tutorial, we will demonstrate how to create a release package from Source Control and deploy it all the way through production.
+        </p>
+       <hr />
+    </div>
+    <p>Build Artifacts can be added to a Release Package in four different ways: pulled from a package manager, imported from a CI server, created in BuildMaster, or manually uploaded.</p>
+    <p> 
+        In this tutorial, we’ll be building a Build Artifact within BuildMaster using an outside repository. In this case, we’ll be using GitHub as our repository for an application called <i>Accounts.</i> </p>
+    <p> If you&rsquo;d like to follow along step-by-step, you can fork the <a href="https://github.com/kramerica-industries/Accounts">Accounts Repository</a> into your own account. </p>
+    <img class="screenshot" src="/resources/tutorials/msbuild-final/git-hub-final.png" />
+    <p><h3 id="step-one">Step 1: Install and Configure Extensions</h3></p>
+
+        <p> Click <u>Administration</u> &gt; Click <u>BuildMaster Extensions</u> &gt; Click <u>GitHub</u> &gt; Click <u>Install This Extension</u></p>
+        <p> Click <u>Administration</u> &gt; Click <u>BuildMaster Extensions</u> &gt; Click <u>NuGet</u> &gt; Click <u>Install This Extension</u></p>
+        <p>After the extensions are installed, BuildMaster will automatically restart, and both GitHub and NuGet will now be in the Up-to-Date Extensions.</p>
+        <p>Click <u>Administration</u> &gt; Click <u>Resource Credentials</u> &gt; Click <u>Create Credential</u> &gt; Click <u>GitHub</u></p>
+        <p>We’ll create a GitHub resource credential by filling out appropriate fields like <i>User name, Repository, and Password</i> . NuGet requires no additional configuration.</p>
+
+        <img class="screenshot" src="\resources\tutorials\MsBuildupdated\resource-credential.png" />
+
+
+    <p><h3 id="step-two">Step 2: Create Application</h3></p>
+        <p>Click <u>Applications</u> &gt; Click <u>Create Application</u> &gt; Set Name to <i>Accounts</i> &gt; Click <u>Create</u></p>
+        <p>When creating the application, the <i>Integration, Testing</i>, and <i>Production</i> environments will be added by default as the initial pipeline.</p>
+    
+        <img class="screenshot" src="\resources\tutorials\MsBuildupdated\createapp.png" />
+
+
+
+
+
+    <p><h3 id="step-three">Step 3: Edit Deployment Plan</h3></p>
+        <p>Click <u>Plans</u> &gt; Click <u>Deploy Accounts</u></p>
+        <p>BuildMaster has automatically created a simple deployment plan by default. The plan doesn&#39;t do much, but we can edit it so that it will deploy the artifact that we&#39;ll import through the pipeline.</p>
+        <p>Edit the <a href="http://inedo.com/support/documentation/otter/execution-engine/statements-and-blocks/general-blocks">General Block</a>, and set a server for the plan to be run on. Note that you can also target <a href="/support/documentation/buildmaster/core-concepts/environments">environments</a> and <a href="/support/documentation/buildmaster/administration/agents">servers</a> to execute operations on from the pipeline stage, but for this tutorial, we'll just set it here.</p>
+        <p>Next, drag a <i>Deploy Artifact</i> operation into the edited <i>General Block</i>. Set the Artifact name to <i>"Websites"</i>, and the Target directory to <i>C:\Websites\$EnvironmentName\Accounts</i>. Using <i>$EnvironmentName</i> will create a new folder for each environment that the application is deployed to, and demonstrates one way to generalize a deployment plan for use in multiple environments.</p>
+    
+        <img class="screenshot" src="\resources\tutorials\MsBuildupdated\deployart.png" />
+    <p>
+        After saving the <i>Deploy Artifact</i> Operation save the plan.
+    </p>
+    <img class="screenshot" src="\resources\tutorials\MsBuildupdated\deploy-plan.png" />
+        <p>This plan will only deploy an Artifact. First we must create the  artifact (Websites) which we will do in BuildMaster. So, we need to create a new plan called <i>Build Accounts.</i></p>
+        
+     <h3 id="step-three">Step 4: Create a New Build Plan</h3>
+        <p>Crate a plan by clicking the <i>Create Plan</i> button and name the plan <i>Build Accounts</i></p>
+        <p>First, add a <i>General Block</i> with a short description, like "Build Accounts Website."</p>
+        <p>Next, we&rsquo;ll add a <i>Get Source</i> operation that will pull the latest files from a repository (in this case, GitHub) and store them in a temporary workspace called <i>$WorkingDirectory</i>. We'll use the GitHub resource credential we've already created.</p>
+        <img class="screenshot" src="\resources\tutorials\MsBuildupdated\build-1.png" />
+        <p>Now, we&rsquo;ll add a <i>Write Assembly Versions</i> operation which will increase the build number by 1 each time by default.</p>
+        <img class="screenshot" src="\resources\tutorials\MsBuildupdated\build-2.png" />
+        <p>Since this build requires NuGet packages, the next step is to drag an <i>Install NuGet Packages</i> operation with default settings.</p>
+        <img class="screenshot" src="\resources\tutorials\MsBuildupdated\build-3.png" />
+        <p>Now we are prepared to build our <i>Accounts</i> web application simply by adding a <i>Build MSBuild Project</i> operation with the appropriate solutions and configurations.</p>
+        <img class="screenshot" src="\resources\tutorials\MsBuildupdated\build-5.png" />
+        <p>To turn this build into an Artifact, add a <i>Create Artifact</i> operation. Name the artifact <i>"Websites"</i> because that is the artifact that we used in the deployment plan we first created.</p>
+    <img class="screenshot" src="/resources/tutorials/MsBuildupdated/build-6.png" />
+  <p>You can view the plan in either visual mode or text mode.</p>
+     <inedo:tab-block>
+        <tab name="Visual Mode">
+            <img class="screenshot" src="\resources\tutorials\MsBuildupdated\build-plan.png" alt="A deployment plan(Visual Mode)" />
+        </tab>
+        <tab name="Text Mode">
+            <img class="screenshot" src="\resources\tutorials\MsBuildupdated\build-plan-text.png" alt="A deployment plan (Text Mode)" />
+        </tab>
+    </inedo:tab-block>
+
+    <p><h3 id="step-five">Step 5: Edit Application Pipeline and Set Build Plan</h3></p>
+        <p>When we created the application, a simple pipeline was also created which we can now edit.</p>
+        <p>Click <u>Pipelines</u> &gt; Click <u>Accounts</u></p>
+        <p>You can see that the three stages-<i>Integration, Testing</i>, and <i>Production</i>-are all in the pipeline and all have the Deploy Account plan assigned to them already. All we need to do is create the Artifact with our build plan; we&rsquo;ll create a new <b>Stage</b> for that.</p>
+        <p>Click <u>Add Stage</u> > Set Name to <i>Build</i> > Set Pipeline position to 0 > Click <u>Save Stage</u></p>
+                <p>We&rsquo;ll add a target to the Build stage using our build plan (<i>Build Accounts</i>) and our local server.</p>
+
+        <h3 id="step-six">Step 6: Creating a Release and Deploying</h3>
+            <p>After setting the build target, we will create a <b>Release</b> that builds and deploys this artifact. The release number can be anything, but defaults to 0.0.0.</p>
+            <p>Click <u>Releases</u> &gt; Click <u>Create Release</u> &gt; Click <u>Create Package</u></p>
+            <p>BuildMaster will now run the build plan we&#39;ve set up and create the artifact.</p>
+            <img class="screenshot" src="\resources\tutorials\msbuild-final\create-artifact-final.png" />
+            <p>We can see that there has been an artifact created called "<i>Website</i>."</p>
+            <p>You can now run the artifact through the rest of the pipeline simply by clicking [Deploy] in each successive stage. Of course, you can also configure <a href="/support/documentation/buildmaster/core-concepts/pipelines">gates</a>, <a href="/support/documentation/buildmaster/global-components/event-listeners">listeners</a>, <a href="/support/documentation/buildmaster/administration/security">permissions</a> to ensure that a proper process is followed.</p>
+            <img class="screenshot" src="\resources\tutorials\msbuild-final\deploy-final.png" />
+            <p>You can further verify that the deployment was successful by checking the drive used when setting up the deployment plan. There will be three folders under <i>/Website</i> -one for <i>Integration, Testing</i>, and <i>Production</i>, all with the deployed files.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

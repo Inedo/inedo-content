@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Source Code Request</title>
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+    <link rel="stylesheet" type="text/css" href="/open/initiative.css" />
+
+    <script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0053/9152.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+
+</head>
+<body>
+    <div id="banner" class="content-container">
+        <div class="content">
+          <div class="circle-button">
+                          <a class="download" href="/company/career-culture">Back to Open Culture</a>
+                      </div>
+            <h1>
+                <strong>Inedo's Open Culture</strong>
+            </h1>
+
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="content feat-req">
+          <h2>Source Code Request</h2>
+            <p>If you'd like to access our source code to see exactly how things work, you're more than welcome to. Just fill out the form below, and we will grant you access to our private GitLab repositories.</p>
+
+            <div id="form" class="content-container">
+                <div class="content">
+                    <contact-form method="post" action="/contact-form">
+                        <fieldset>
+                            <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
+                            <input type="hidden" name="RedirectUrl" value="/open/request-recieved" />
+                            <input type="hidden" name="Subject" value="GitLab Source Code Request" />
+                            <input type="hidden" name="CcFromAddress" value="false" />
+                            <input type="hidden" name="Priority" value="High" />
+
+                            <label>Your Name*</label>
+                            <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                            <label>Email Address*</label>
+                            <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                            <label>Company*</label>
+                            <div><input name="Company" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                            <label>Comments</label>
+                            <div><textarea name="Message" style="width: 872px; margin-left: 50px; margin-top: 10px;" rows="6" cols="20"></textarea></div>
+
+                            <input type="button" value="Submit" onclick="AhValidation.Submit(this);" />
+                        </fieldset>
+                    </contact-form>
+                </div>
+            </div>
+
+
+
+
+            <h2><i>Why not GitHub?</i></h2>
+           <p>
+               Some day, we would like to fully open source our core product code. The main reasons we don't are as follows.
+           </p>
+
+            <h3>We are not prepared to accept your change requests.</h3>
+           <p>
+               Our coding guidelines aren't thoroughly documented, nor is our development and testing processes, and detailed roadmap. It would be quite discouraging to reject well-thought out merge requests for what appear to be arbitrary reasons.
+           </p>
+            <h3>We need a new licensing model. </h3>
+            <p>
+                Nearly all "open source" companies have proprietary versions of their open source software that most enterprises "must" buy in order to make the product viable for their use case. This is somewhat frustrating, not only because users can't be sure when the source code will actually be available, but also because transitioning from the free to the proprietary versions can be a bit challenging technologically.
+            </p>
+            <p>
+                Our "express" editions have a similar business model: they lack important features that most enterprises "must" have. Technologically, the enabled features are controlled by a license key, which means that switching between free and paid is a breeze: just swap the license key.
+            </p>
+            <p>
+                However, if we were to simply open source our existing software, then all you'd need to do is "comment out" the edition checks, or even easier... just edit the "IsEnterprise" property to always return "true". We could try to prevent that with a restrictive license agreement, but that might be difficult for the community.
+            </p>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

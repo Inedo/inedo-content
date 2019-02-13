@@ -1,0 +1,180 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Azure Extension | Support | Inedo.com</title>
+    </head>
+   <body>
+        <div>
+            <p><a href="http://www.windowsazure.com">Windows Azure</a> enables you to quickly build, deploy and manage applications across a global network of Microsoft-managed datacenters. You can build applications using a variery of operating systems, languages and tools.</p>
+
+<h2>Azure Integration in BuildMaster</h2>
+
+<h2>Blob Storage</h2>
+<p>With this extension, BuildMaster offers the ability to upload files to blob storage. Please refer to the <a href="/support/kb/1034/uploading-files-to-windows-azure-blob-storage-in-buildmaster">Uploading Files to Windows Azure Blob Storage</a> knowledge base article for more information.</p>
+
+<h2>Cloud Services</h2>
+<p>Cloud Services is a Platform As A Service environment that is used to run scalable applications and services. BuildMaster supports a full set of features designed to provide repeatable and responsible deployments to Cloud Services.</p>
+
+<p>Cloud Services actions include:<br/>
+<ul>
+<li><a href="#PackageApplication">Package Application</a>: Builds a Cloud Service deployable package (cspkg) from a Cloud Service projects output. This action requires the Windows Azure SDK to be installed on the build server.</li>
+<li><a href="#CreateHostedService">Create Hosted Service</a>: Creates a new Cloud Service container for deployments.</li>
+<li><a href="#DeployPackage">Deploy Package</a>: Pushes a Cloud Service deployable package (cspkg) from either a disk location or a Windows Azure Blob Storage location to a Cloud Service. Sets the configuration of the deployment to either custom data, a configuration file from disk or a configuration file managed by BuildMaster.</li>
+<li><a href="#SwapDeployment">Swap Deployment</a>: Swaps the Production and Staging environments of the specified Cloud Service.</li>
+<li><a href="#ChangeDeploymentConfiguration">Change Deployment Configuration</a>: Updates the configuration data for a Cloud Service using either custom data, a configuration file from disk or a configuration file managed by BuildMaster.</li>
+<li><a href="#DeleteDeployment">Delete Deployment</a>: Deletes a deployment from the specified Cloud Service.</li>
+<li><a href="#DeleteHostedService">Delete Hosted Service</a>: Deletes the specified Cloud Service.</li>
+</ul>
+</p>
+
+
+<a name="PackageApplication"></a><h3>Package Application</h3>
+<p>Builds a Cloud Service deployable package (cspkg) from a Cloud Service projects output. This action requires the Windows Azure SDK to be installed on the build server. The extension configuration setting for the Azure SDK path must be set.</p>
+
+<p>The Package Application action has the following options<br/>
+<ul><li><strong>Service Definition</strong>: To create the package you must specify the location (or location and file name) of the service definition file.</li>
+<li><strong>Web Role</strong>: If the service contains a Web Role specify a least the Role Name and location of the bin directory for the role. You can optionally specify the startup assembly name for the role.</li>
+<li><strong>Site</strong>: If the service contains a web site for a role you must specify the role name for the site, the virtual path and physical path for the site.</li>
+<li><strong>Worker Role</strong>: If the service contains a Worker Role you must specify the Role Name, the location of the bin directory for the role and the startup assembly name for the role.</li>
+<li><strong>Role Properties</strong>: If a role in the service requires a role properties definition file specify the role name and file.</li>
+<li><strong>Use CTP Package Format</strong>: If checked the deployment package will be built in the newer <a href="http://msdn.microsoft.com/en-us/library/windowsazure/jj151521.aspx" target="_blank">OPC format</a> rather than the original Azure package format.</li>
+<li><strong>Copy Only</strong>: If checked the deployment will not be packaged in a single cspkg file but will be copied to the output directory in a format that can be used by the Azure compute emulator for local testing.</li>
+<li><strong>Output</strong>: The path and optional filename for the packaging output to be sent to.</li>
+</ul>
+</p>
+
+<a name="CreateHostedService"></a><h3>Create Hosted Service</h3>
+<p>Creates a new Cloud Service container for deployments. This action requires your subscription id and authentication certificate name (for a certificate stored in the build servers Computer certificate store) to be set. The subscription id can be set globally in the extension configuration as well as set locally or overridden in the action settings.</p>
+<p>The Create Hosted Service action has the following options<br/>
+<ul><li><strong>Custom Authentication</strong>: If set, the subscription id and authentication certificate name will be used for this action instead of any settings in the extension configuration.</li>
+<li><strong>Service Name</strong>: The name of the Cloud Service to create. Note that this must follow the naming conventions for DNS prefixes as it will be used as one for accessing the service.</li>
+<li><strong>Extended Properties</strong>: An optional set of Name=Value entires separated by newlines that will be parsed and sent with the API call.</li>
+<li><strong>Wait For Completion</strong>: If checked then BuildMaster will wait for the creation to finish before proceeding to the next action in the deployment plan.</li>
+<li><strong>Label</strong>: The optional label that will be applied to the Cloud Service.</li>
+<li><strong>Description</strong>: The optional description associated with the Cloud Service.</li>
+<li><strong>Location</strong>: The location value that the Cloud Service will run in. Either the Location or the Affinity Group can be set but not both.</li>
+<li><strong>Affinity Group</strong>: The affinity group name that the Cloud Service will run in. Either the Location or the Affinity Group can be set but not both.</li>
+</ul>
+</p>
+
+<a name="DeployPackage"></a><h3>Deploy Package</h3>
+<p>Pushes a Cloud Service deployable package (cspkg) from either a disk location or a Windows Azure Blob Storage location to a Cloud Service. This action requires your subscription id and authentication certificate name (for a certificate stored in the build servers Computer certificate store) to be set. The subscription id can be set globally in the extension configuration as well as set locally or overridden in the action settings.</p>
+<p>The Deploy Package action has the following options<br/>
+<ul><li><strong>Custom Authentication</strong>: If set, the subscription id and authentication certificate name will be used for this action instead of any settings in the extension configuration.</li>
+<li><strong>Service Name</strong>: The name of the Cloud Service to deploy to. Note that this must follow the naming conventions for DNS prefixes as it will be used as one for accessing the service.</li>
+<li><strong>Deployment Name</strong>: The name for the deployment.</li>
+<li><strong>Deployment Slot</strong>: The Environment slot to deploy into. Must be either <em>production</em>or <em>staging</em>.</li>
+<li><strong>Extended Properties</strong>: An optional set of Name=Value entires separated by newlines that will be parsed and sent with the API call.</li>
+<li><strong>Extension Configuration</strong>: An XML fragment defining the configuration settings for any extensions to the Cloud Service.</li>
+<li><strong>Treat Warnings as Errors</strong>: Will cause the deployment to fail with an error if there are any warnings during the deployment.</li>
+<li><strong>Wait For Completion</strong>: If checked then BuildMaster will wait for the deployment to finish before proceeding to the next action in the deployment plan. Not that even when the deployment is finished the Cloud Service may not yet be fully active.</li>
+<li><strong>Configuration Text</strong>: Text entered here will be used as the cloud configuration data (cscfg) for the deployment. Only one of the three configuration values will be used in the order: 1) Configuration Text in the action, 2) Configuration File on disk and 3) Configuration managed by BuildMaster.</li> 
+<li><strong>Configuration File Location</strong>: If populated then the contents of the specified file will be used as the cloud configuration data for the deployment.</li>
+<li><strong>Configuration File</strong> &amp; <strong>Instance Name</strong>: The BuildMaster managed configuration file to be used as the cloud configuration data for the deployment.</li>
+<li><strong>Label</strong>: The optional label that will be applied to the deployment.</li>
+<li><strong>Blob Storage Account Name</strong> &amp; <strong>Blob Storage Access Key</strong>: The storage credentials to be used to upload the deployment package to a staging container for deployment.</li>
+<li><strong>Package File Disk Location</strong>: The location of the deployment package (cspkg) to be used for the deployment. This file will be uploaded to the staging container for deployment.</li>
+<li><strong>Package File Blob Location</strong>: Optional, the full URL to a Blob Storage file that will be used for the deployment. This is only needed if the automatic upload feature is not used.</li>
+<li><strong>Delete staged package from Blob Storage when complete</strong>: When checked the staged deployment package will be deleted from Blob Storage.</li>
+</ul>
+</p>
+
+<a name="SwapDeployment"></a><h3>Swap Deployment</h3>
+<p>Swaps the Production and Staging environments of the specified Cloud Service. This action requires your subscription id and authentication certificate name (for a certificate stored in the build servers Computer certificate store) to be set. The subscription id can be set globally in the extension configuration as well as set locally or overridden in the action settings.</p>
+<p>The Swap Deployment action has the following options<br/>
+<ul><li><strong>Custom Authentication</strong>: If set, the subscription id and authentication certificate name will be used for this action instead of any settings in the extension configuration.</li>
+<li><strong>Service Name</strong>: The name of the Cloud Service to update. Note that this must follow the naming conventions for DNS prefixes as it will be used as one for accessing the service.</li>
+<li><strong>Wait For Completion</strong>: If checked then BuildMaster will wait for the swap to finish before proceeding to the next action in the deployment plan.</li>
+<li><strong>Production Deployment Name</strong>: Optional, the name of the Production deployment.</li>
+<li><strong>Source Deployment Name</strong>: Optional, the name of the source deployment.</li>
+</ul>
+</p>
+
+<a name="ChangeDeploymentConfiguration"></a><h3>Change Deployment Configuration</h3>
+<p>Updates the configuration data for a Cloud Service. This action requires your subscription id and authentication certificate name (for a certificate stored in the build servers Computer certificate store) to be set. The subscription id can be set globally in the extension configuration as well as set locally or overridden in the action settings.</p>
+<p>The Change Deployment Configuration action has the following options<br/>
+<ul><li><strong>Custom Authentication</strong>: If set, the subscription id and authentication certificate name will be used for this action instead of any settings in the extension configuration.</li>
+<li><strong>Service Name</strong>: The name of the Cloud Service to update. Note that this must follow the naming conventions for DNS prefixes as it will be used as one for accessing the service.</li>
+<li><strong>Deployment Name</strong>: The name of the deployment to update.</li>
+<li><strong>Deployment Slot</strong>: The Environment slot to update.. Must be either <em>production</em>or <em>staging</em>.</li>
+<li><strong>Extended Properties</strong>: An optional set of Name=Value entires separated by newlines that will be parsed and sent with the API call.</li>
+<li><strong>Extension Configuration</strong>: An XML fragment defining the configuration settings for any extensions to the Cloud Service.</li>
+<li><strong>Treat Warnings as Errors</strong>: Will cause the deployment to fail with an error if there are any warnings during the deployment.</li>
+<li><strong>Wait For Completion</strong>: If checked then BuildMaster will wait for the deployment to finish before proceeding to the next action in the deployment plan. Not that even when the deployment is finished the Cloud Service may not yet be fully active.</li>
+<li><strong>Configuration Text</strong>: Text entered here will be used as the cloud configuration data (cscfg). Only one of the three configuration values will be used in the order: 1) Configuration Text in the action, 2) Configuration File on disk and 3) Configuration managed by BuildMaster.</li> 
+<li><strong>Configuration File Location</strong>: If populated then the contents of the specified file will be used as the cloud configuration data.</li>
+<li><strong>Configuration File</strong> &amp; <strong>Instance Name</strong>: The BuildMaster managed configuration file to be used as the cloud configuration data.</li>
+<li><strong>Mode</strong>: The mode for the configuration change, either "Auto" or "Manual".</li>
+</ul>
+</p>
+
+<a name="DeleteDeployment"></a><h3>Delete Deployment</h3>
+<p>Deletes a deployment from the specified Cloud Service. This action requires your subscription id and authentication certificate name (for a certificate stored in the build servers Computer certificate store) to be set. The subscription id can be set globally in the extension configuration as well as set locally or overridden in the action settings.</p>
+<p>The Delete Deployment action has the following options<br/>
+<ul><li><strong>Custom Authentication</strong>: If set, the subscription id and authentication certificate name will be used for this action instead of any settings in the extension configuration.</li>
+<li><strong>Service Name</strong>: The name of the Cloud Service to update. Note that this must follow the naming conventions for DNS prefixes as it will be used as one for accessing the service.</li>
+<li><strong>Deployment Name</strong>: Optional, the name of the deployment to delete.</li>
+<li><strong>Deployment Slot</strong>: Optional, the environment slot to delete, must be either <em>production</em> or <em>staging</em>.</li>
+<li><strong>Wait For Completion</strong>: If checked then BuildMaster will wait for the swap to finish before proceeding to the next action in the deployment plan.</li>
+</ul>
+</p>
+
+
+<a name="DeleteHostedService"></a><h3>Delete Hosted Service</h3>
+<p>Deletes the specified Cloud Service. This action requires your subscription id and authentication certificate name (for a certificate stored in the build servers Computer certificate store) to be set. The subscription id can be set globally in the extension configuration as well as set locally or overridden in the action settings.</p>
+<p>The Delete Hosted Service action has the following options<br/>
+<ul><li><strong>Custom Authentication</strong>: If set, the subscription id and authentication certificate name will be used for this action instead of any settings in the extension configuration.</li>
+<li><strong>Service Name</strong>: The name of the Cloud Service to delete. Note that this must follow the naming conventions for DNS prefixes as it will be used as one for accessing the service.</li>
+</ul>
+</p>
+
+<h2>Azure Feature Highlights</h2>
+
+<h3>WEB SITES</h3>
+
+<em>Build highly scalable web sites on Windows Azure</em>
+
+<p>Quickly and easily deploy sites to a highly scalable cloud environment that allows you to start small and scale as traffic grows.</p>
+
+<p>Use the languages and open source apps of your choice then deploy with FTP, Git and TFS. Easily integrate Windows Azure services like SQL Database, Caching, CDN and Storage.</p>
+
+<h3>VIRTUAL MACHINES</h3>
+
+<em>Infrastructure on your terms</em>
+
+<p>Easily deploy and run Windows Server and Linux virtual machines in minutes. Migrate workloads without having to change existing code.</p>
+
+<p>Securely connect your on-premises corporate network to virtual machines running in the public cloud.</p>
+
+<h3>MOBILE SERVICES</h3>
+
+<em>Turnkey backend solutions to power your mobile app</em>
+
+<p>Accelerate your mobile app development. Incorporate structured storage, user authentication and push notifications in minutes.</p>
+
+<p>Use a straightforward and secure backend-as-a-service to handle common tasks and free yourself to focus on the front end that your users value.</p>
+
+<h3>MEDIA</h3>
+
+<em>Ingest, Encode, Protect, Stream</em>
+
+<p>Create, manage and distribute media in the cloud. Windows Azure's Media Services PaaS offering provides everything from encoding to content protection to streaming and analytics. Reach Windows 8, Windows phone, Xbox, iOS and Android devices with HTML5, Flash and Silverlight.</p>
+
+<h3>CLOUD SERVICES</h3>
+
+<em>Build or extend your enterprise applications on Windows Azure</em>
+
+<p>Create highly-available, scalable applications and services using a rich PaaS environment. Support advanced multi-tier scenarios, automated deployments and elastic scale. Deliver great SaaS solutions to customers anywhere around the world.</p>
+
+<h3>BIG DATA</h3>
+
+<em>Unlock business value from petabyte scale data</em>
+
+<p>Preview a fully compatible, enterprise-ready Hadoop service. Query against SQL Databases, semi-structured and unstructured data sources.</p>
+
+<p>This PaaS offering provides easy management and integration with Active Directory and System Center.</p>
+        </div>
+	</body>
+</html>
+
+

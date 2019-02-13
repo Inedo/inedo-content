@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Case Study | Co-operative Web</title>
+    <meta name="MasterPageFile" content="buildmaster.htm" />
+    <meta name="keywords" content="buildmaster, IT, linux, automation" />
+    <link rel="stylesheet" type="text/css" href="/buildmaster/case-studies/buildmaster-case-studies.css" />
+</head>
+<body>
+    
+
+    <div id="top-info" class="content-container">
+        <div class="content">
+            <div style="border: 1px solid #ed1c24; border-left: 8px solid #ed1c24;" class="extension-box buildmaster">
+                <!--290X190--><img src="/buildmaster/case-studies/co-operative-web/coop-web-logo.png" />    
+                    <div class="extension-info">
+                        <h2>Co-operative Web</h2>
+                        <p>
+                            Co-operative Web was set up in 2006 with the vision of being a better company, 
+                            <br/>one that delivered great solutions while being fair to both customers and workers. 
+                        </p>
+                        <div class="extension-links">
+                            <ul>
+                                <li>Industry: &nbsp;Software, Websites, Apps, Applications</li>
+                                <li>Location: &nbsp;Longbridge, Birmingham</li>
+                                <li><br/><a href="https://web.coop/">Check them out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                
+            </div>
+           
+        </div>
+    </div>
+
+
+
+   <div id="main-info" class="content-container">
+        <div class="content">
+            <h1>The striking benefits of BuildMaster <br/>from an IT, Linux perspective. </h1>
+            <p>
+                In their own words, Co-operative Web are "geeks for hire.  We love technology and our passion is finding ways to apply technology to real 
+                world problems. It could be how to manage the data on the future stars of a football club or combining details on all incidents of injury 
+                involving water in the UK, it could be delivering mobile experiences to conference goers or booking transfers from an airport to your resort 
+                destination, it could be building the pixel perfect website from your design or supporting your internal legacy application.
+            </p>
+            <p>
+                We work with many different types of businesses, from large multi-national banks to small social enterprises, from start-up businesses to 
+                design agencies.  We work completely from scratch, amending and supporting existing solutions (even those not designed by us!) and we've also 
+                got a few products that we sell."
+            </p>
+            <p style="background-color: #ed1c24;" class="overview">
+                There is the misconception that BuildMaster is designed to only be used by developers, engineers (including release engineers), or team leads,  
+                and only intended for  "Windows shops", but BuildMaster indeed has many users on IT side of DevOps, as well as Linux users.
+                <br/><br/>
+                On the matter of IT professionals, these folks are more concerned with infrastructure and maintaining its configuration, than the new features 
+                within the code of applications themselves when they are released. It is a different, but equally valid way of looking at the challenge of needing 
+                to release higher quality software faster, and more reliably in this day in age. The debate between Windows and Linux is historic and lengthy. 
+                At Inedo we prefer offering integration points and functionality for all instead of taking sides on the matter. With all this said, the team 
+                using BuildMaster at Co-operative Web is one of our many IT-side users, and <br/>Co-Operative Web chooses to use BuildMaster for its Linux servers.
+            </p>
+            <h4>
+                The Challenge:
+            </h4>
+            <p>
+                Like many firms coming of age in today's world of technology, manual deployments were simply a reality of deploying software. If one needed to make 
+                a configuration change, one would manually ftp the files up the server, execute the Puppet scripts, etc. If something went wrong, one would have 
+                to edit the files again and copy it back up.   
+            </p>
+            <p>
+                Furthermore, most development in the organization is done in PHP via "virtual boxes" on laptops. Developers pushed their code directly to Git, 
+                and copied Git to live Linux servers, which according to our user David Eaton, this is neither convenient, nor easy. In fact, it's a pain.  
+                In his own words, "these tasks were repetitive, time consuming, and not good for morale."
+            </p>
+            <p>
+                As the business continued to evolve and grow, the search for automation became essential.  
+            </p>
+            <h4>
+                Solution:
+            </h4>
+            <p>
+                Co-operative Web team members took a look at the tools in the market to suit their needs, and with BuildMaster's Linux integration, 
+                support, and feature suite, it was the best fit. 
+            </p>
+            <p>
+                While being able to maintain their development practices, Co-operative Web uses BuildMaster in the following way to automate deployments: 
+                once developers have pushed their code into Git, and want to do a build, BuildMaster grabs the source from Git, zips and copies the files 
+                to live servers. BuildMaster then unzips the files on the Linux server, then executes a bash script file on the live server that runs a 
+                puppet script to install the files where they need to go. BuildMaster then puts the label into Git of the build and release number, and 
+                sends an email to say it's done.
+            </p>
+            <p>
+                Thus automating the deployments of PHP code to Linux servers has become a much easier, and automated process. For those hardcore 
+                coders that want to see this specifically, we've included <a href="#appendix">the script</a> below.
+            </p>
+            <h4>
+                Results:
+            </h4>
+            <p>
+                According to David, the process they've put together, "Is a simple process really, but very effective and saves loads of time."  In addition, 
+                "with BuildMaster we just know when we try something, it's going to work, so you can move right along with the tasks you need to accomplish." 
+            </p>
+            <p>
+                Finally, "Linux integration and support is critical.  We'd really be lost without it. If we didn't have BuildMaster, we'd need something else 
+                to take its place. I took a good long look at other tools and none of them were as good, so we're very fortunate."
+            </p>
+            <h4 id="appendix">
+                Appendix:
+            </h4>
+            <p>
+                Script Co-operative web uses within BuildMaster. In the words of our users David Eaton, "it's probably fairly simple from a scripting point of view, 
+                but it works for us." At Inedo we try to make sure BuildMaster is usable from a variety of positions, titles, and skill levels.
+            </p>
+            <pre>
+                ##AH:UseTextMode
+                # Deploy NATW UAT
+                for server BUILDMASTER3
+                {
+                    # get source from git
+                    Get-Latest-Source
+                    (
+                        From: gitlab _NATW_NATWwebapp.git|UAT:,
+                        ClearTarget: True,
+                        To: C:\BuildMaster\deploy\NATW\,
+                        Provider: "Git (NATW)"
+                    );
+
+                    Create-ZipFile
+                    (
+                        Name: C:\BuildMaster\deploy\zips\NATWarchive.zip,
+                        Directory: C:\BuildMaster\deploy\NATW\,
+                        Overwrite: True
+                    );
+                }
+
+                # delete files on NATW server
+                for server NATW UAT
+                {
+                    Exec
+                    (
+                    FileName: /bin/rm,
+                    Arguments: -rf /bm/upload,
+                    ErrorOutputLogLevel: Information,
+                    SuccessExitCode: ignore
+
+                    );
+                }
+
+                # uload to NATW uat server
+                for server BUILDMASTER
+                {
+                    Transfer-Files
+                    (
+                    Include: NATWarchive.zip,
+                    FromDirectory: C:\BuildMaster\deploy\zips,
+                    ToDirectory: /bm/upload,
+                    FromServer: BUILDMASTER,
+                    ToServer: NATW UAT,
+                    DeleteTarget: True
+                    );
+                }
+
+                # unzip files
+                for server NATW UAT
+                {
+                # Extract-ZipFile /bm/upload/NATWarchive.zip
+                Exec
+                    (
+                    FileName: /bin/unzip,
+                    Arguments: -q -o /bm/upload/NATWarchive.zip -d /bm/upload/
+                    );
+
+                    Delete-Files NATWarchive.zip
+                    (
+                        Directory: /bm/upload
+                    );
+                }
+
+                # delete local files
+                    for server BUILDMASTER
+                    {
+                    Delete-Files *
+                    (
+                        Directory: C:\BuildMaster\deploy\NATW\
+                    );
+
+                    Delete-Files NATWarchive.zip
+                    (
+                        Directory: C:\BuildMaster\deploy\zips\
+                    );
+                }
+
+                # Install app on NATW server
+                for server NATW UAT
+                {
+                    # set file to executable
+                    Exec
+                    (
+                        FileName: /bin/chmod,
+                        Arguments: u+x /bm/upload/server/configuration/uat-pre-setup.sh,
+                        ErrorOutputLogLevel: Information,
+                        SuccessExitCode: ignore
+                    );
+
+                    # execute puppet script
+                    Exec
+                    (
+                        FileName: /bm/upload/server/configuration/uat-pre-setup.sh,
+                        ErrorOutputLogLevel: Information,
+                        SuccessExitCode: ignore
+                    );
+
+                    # set file to executable
+                    Exec
+                    (
+                        FileName: /bin/chmod,
+                        Arguments: u+x /bm/upload/server/configuration/setup.sh,
+                        ErrorOutputLogLevel: Information,
+                        SuccessExitCode: ignore
+                    );
+
+                    # execute puppet script
+                    Exec
+                    (
+                        FileName: /bm/upload/server/configuration/setup.sh,
+                        ErrorOutputLogLevel: Information,
+                        SuccessExitCode: ignore
+                    );
+                }
+
+                for server BUILDMASTER
+                {
+                    Apply-Label
+                    (
+                        Label: Deployed_$ReleaseNumber.$BuildNumber,
+                        To: gitlab_NATW_NATWwebapp.git|UAT:,
+                        Provider: "Git (NATW)"
+                    );
+
+                    Send-Email
+                    (
+                        To: @(dev1@web.coop,NATW@web.coop),
+                        Subject: NATW UAT deployed $ReleaseNumber.$BuildNumber,
+                        Text: >>NATW UAT deployed $ReleaseNumber.$BuildNumber
+                BUILDMASTER>>
+                    );
+                }
+
+            </pre>
+            <div class="button-set">
+                <div class="button">
+                    <a href="/buildmaster">Discover how BuildMaster can help you</a>
+                </div>
+                <div class="button">
+                    <a href="/products">Take a quick look at our other DevOps Tools</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

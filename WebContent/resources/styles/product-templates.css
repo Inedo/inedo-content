@@ -1,0 +1,160 @@
+a.download {
+  background-color: none;
+  padding: 8px 16px;
+  color: #282b3a;
+  border: 3px solid #282b3a;
+  border-radius: 100px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+a.download:hover {
+  background-color: #282b3a;
+  color: #ffffff;
+}
+.content-container#banner {
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  min-height: 250px;
+  background: url(/homepage/homepage-banner-2016.jpg) no-repeat #011b2d;
+  background-position: center;
+  z-index: 5;
+  position: relative;
+}
+.content-container#banner .content {
+  padding: 50px 100px;
+}
+.content-container#banner .content p {
+  color: #353535;
+  font-weight: bolder;
+  font-size: 18px;
+  margin-left: 100px;
+  margin-right: 230px;
+}
+.content-container#banner .content img {
+  margin-left: 100px;
+  height: 64px;
+  text-align: left;
+}
+.content-container#banner .content .circle-button {
+  margin-left: 100px;
+  margin-top: 30px;
+}
+.content-container#navigation {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.tool-nav {
+  background-color: #282b3a;
+  z-index: 2;
+  position: relative;
+}
+.tool-nav ul {
+  padding: 0;
+  text-align: center;
+}
+.tool-nav ul li {
+  text-align: center;
+  margin: 6px 0 8px 0;
+}
+.tool-nav ul li a {
+  color: #e9eada;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 26px;
+}
+.tool-nav ul li a img {
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+.tool-nav ul li a:hover {
+  color: #3fa9f5;
+}
+#header {
+  position: relative;
+  z-index: 6;
+}
+.menu-anchor {
+  visibility: hidden;
+  position: absolute;
+  top: -50px;
+}
+.content-container#sticky-nav-content-container {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: #282b3a;
+}
+.content-container#sticky-nav-content-container .content {
+  width: 1000px;
+}
+.content-container#sticky-nav-content-container .content #sticky-nav {
+  background-color: #282b3a;
+}
+.content-container#sticky-nav-content-container .content #sticky-nav ul {
+  padding: 0;
+  text-align: center;
+}
+.content-container#sticky-nav-content-container .content #sticky-nav ul li {
+  text-align: center;
+  margin: 6px 0 8px 0;
+}
+.content-container#sticky-nav-content-container .content #sticky-nav ul li a {
+  color: #e9eada;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 26px;
+}
+.content-container#sticky-nav-content-container .content #sticky-nav ul li a img {
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+.content-container#sticky-nav-content-container .content #sticky-nav ul li a:hover {
+  color: #3fa9f5;
+}
+.content-container#sticky-nav-content-container .content #sticky-nav ul li a.sticky-download {
+  color: #e9eada;
+  border: 2px solid #e9eada;
+  font-size: 11px;
+  padding: 4px 8px;
+  margin-left: 26px;
+}
+.content-container#sticky-nav-content-container .content #sticky-nav ul li a.sticky-download:hover {
+  background-color: #e9eada;
+  color: #282b3a;
+}
+@font-face {
+  font-family: "yu gothic";
+  font-style: normal;
+  font-weight: 400;
+  src: local(yugothic), url(/jp/fonts/yugothic.ttf) format("truetype");
+}
+@font-face {
+  font-family: "yu gothic";
+  font-style: normal;
+  font-weight: 700;
+  src: local(yugothic bold), url(/jp/fonts/yugothib.ttf) format("truetype");
+}
+@font-face {
+  font-family: "yu gothic";
+  font-style: normal;
+  font-weight: 300;
+  src: local(yugothic light), url(/jp/fonts/yugothil.ttf) format("truetype");
+}
+@media print {
+  .tool-nav {
+    display: none !important;
+  }
+  #sticky-nav-content-container {
+    display: none !important;
+  }
+  .flow {
+    display: none !important;
+  }
+}
+

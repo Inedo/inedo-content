@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>$[Title]</title>
+    <meta name="MasterPageFile" content="main.htm" />
+    <link rel="stylesheet" type="text/css" href="/resources/styles/product-templates.css" />
+    $[HeadContent]
+
+    <script type="text/javascript">
+    $(function() {
+        // see proget template for full javascript explanation
+        var url = window.location.href;
+
+        $(".tool-nav a").each(function() {
+            if (url == (this.href)) {
+                $(this).closest("li").addClass("active");
+               $(this).closest("li").parent().parent().addClass("active");
+            }
+        });
+    });
+    </script>
+
+    <script type="text/javascript">
+         $(function () {
+             var url = window.location.href;
+
+             $(".floating-nav a").each(function () {
+                 if (url == (this.href)) {
+                     $(this).closest("li").addClass("active");
+                     $(this).closest("li").parent().parent().addClass("active");
+                 }
+             });
+         });
+    </script>
+</head>
+<body>
+    <div id="banner" class="content-container">
+        <a href="https://github.com/Inedo/Romp" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
+        <div class="content">
+            <img src="/romp/rp-logo.png" alt="Romp" />
+            <p>
+                Self-deploying Application and Infrastructure Packages
+            </p>
+
+            <div class="circle-button">
+                <a class="download" href="/romp/download">downloads</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container" id="sticky-nav-content-container">
+        <div class="content">
+            <div id="sticky-nav" class="floating-nav">
+                <ul class="horizontal-list">
+                    <li><a href="/romp">Overview</a></li>
+                    <li><a href="/romp/download">Downloads &amp; Source Code</a></li>
+                    <li><a href="/support/documentation/romp/using/creating-publishing" target="_blank">Tutorial</a></li>
+                    <li><a  class="download sticky-download" target="_blank" href="/support/documentation/romp">Documentation 	&#10132;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container" id="navigation">
+        <div class="tool-nav">
+            <div class="content">
+                <ul class="horizontal-list">
+                    <li><a href="/romp">Overview</a></li>
+                    <li><a href="/romp/download">Downloads &amp; Source Code</a></li>
+                    <li><a href="/support/documentation/romp/using/creating-publishing" target="_blank">Tutorial</a></li>
+                    <li><a target="_blank" href="/support/documentation/romp">Documentation 	&#10132;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="content">
+
+            $[MainContent]
+
+        </div>
+    </div>
+
+
+</body>
+</html>

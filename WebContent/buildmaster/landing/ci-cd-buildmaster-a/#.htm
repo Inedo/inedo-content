@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <title>BuildMaster | CI/CD</title>
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+    <link rel="stylesheet" type="text/css" href="/buildmaster/landing/ci-cd-buildmaster-a/styles.css" />
+    
+
+    <script>
+        //smooth scrolling
+            $(document).ready(function () {
+                $("a").on('click', function (event) {
+                    
+                    if (this.hash !== "") {
+                        event.preventDefault();
+                        
+                        var hash = this.hash;
+                        
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 800, function () {
+                            
+                            window.location.hash = hash;
+                        });
+                    } 
+                });
+            });
+    </script>
+
+
+    <script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0053/9152.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+
+</head>
+<body>
+
+<div class="content-container top">
+   <div class="hero-bar">
+       <img src="/resources/images/logos/inedo-gray.svg" />
+   </div>
+    <div class="far-right">
+        <div id="sign-up" class="shadowed">
+            <p>Let your competition deal with the "Continuous Headache". </p>
+            <p>
+                Download your free copy of CI/CD/CH now:
+            </p>
+            <contact-form method="post" action="/contact-form">
+                <fieldset>
+                    <input type="hidden" name="MailChimpInterest" value="Whitepapers|CI/CD BuildMaster" />
+                    <input type="hidden" name="MailChimpAutomationTitle" value="BuildMaster CI/CD Calamity" />
+                    <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
+                    <input type="hidden" name="RedirectUrl" value="/support/whitepapers/ci-cd-buildmaster/thanks" />
+                    <input type="hidden" name="Subject" value="CI/CD for BuildMaster A PDF" />
+                    <input type="hidden" name="CcFromAddress" value="false" />
+                    <input type="hidden" name="Priority" value="High" />
+                    <label>name*</label>
+                    <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
+                    <label>email*</label>
+                    <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+
+                    <input class="submit-button pdf-download " type="button" value="Download the Guide" onclick="AhValidation.Submit(this); 
+						gtag ('event', 'submission', {
+						'event_category' : 'Whitepaper', 
+						'event_label' : 'Landing-A' });" />
+					
+                </fieldset>
+				
+            </contact-form>
+        </div>
+    </div>
+    
+
+    <div class="content above-fold">
+        <div class="left">
+           <h1>You don't need CI/CD processes that look great on paper.</h1>
+            <h1><i>You need processes that actually work.</i></h1>
+            <div class="wp-info">
+                <div class="wp-image">
+                        <img src="/support/whitepapers/ci-cd-buildmaster/whitepaper-cover.png" />
+                    </div>
+                <div class="wp-list">
+                    <h2>
+                        In this white paper you will learn:
+                    </h2>
+                    <ul class="will-learn">
+                        <li>
+                            Common CI/CD-related mishaps (and how to avoid them)
+                        </li>
+                        <li>
+                            Methods for assessing and evaluating your current CI/CD processes
+                        </li>
+                        <li>
+                            Practical CI/CD implementation strategies with effective real-world benefits
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

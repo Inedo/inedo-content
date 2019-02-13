@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hedgehog Downloads</title>
+    <meta name="MasterPageFile" content="hedgehog.htm" />
+    <meta name="keywords" content="Hedgehog, installation" />
+    <meta name="require-ssl" content="true" />
+
+    <script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0053/9152.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+
+</head>
+<body>
+    <style>
+        .content-container#banner {
+            min-height: 150px;
+        }
+
+        #banner .circle-button {
+            display: none;
+        }
+    </style>
+
+    <div class="download-page">
+
+        <div class="content-container">
+            <div class="content">
+
+                <div class="panel">
+                    <div class="left">
+                        <table class="clean">
+                            <tr>
+                                <td>Latest version: <b>v${Hedgehog.ReleaseNumber}</b></td>
+                            </tr>
+                            <tr>
+                                <td>File size: &lt; 1 MB</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/hedgehog/${Hedgehog.ReleaseNumberMajorMinor}" class="external">Release overview</a> for ${Hedgehog.ReleaseNumberMajorMinor}</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/hedgehog/versions#v${Hedgehog.ReleaseNumberMajorMinor}" class="external">Release notes</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="/hedgehog/versions" class="external">Previous versions</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="left" style="width: 78%;">
+                        <h2>Windows Download</h2>
+                        <p class="padded">
+                            <img class="logo" src="/resources/images/logos/inedo-hub.svg" />
+                        </p>
+                        <p>
+                            Hedgehog on Windows is managed by the Inedo Hub
+                        </p>
+                        <p>
+                            <a class="software-button solid blue default-hovered" href="https://s3.amazonaws.com/cdn.inedo.com/downloads/desktophub/HedgehogInstaller.exe" onclick="_gaq.push(['_trackEvent', 'hedgehog', 'download', 'hub']);">Download Inedo Hub</a>
+                        </p>
+                        <p class="help-links"><a href="#getting-started-windows">Getting Started</a> &bull; <a class="external" href="/hedgehog/license-agreement">EULA</a></p>
+                    </div>
+                    <div class="clear"> </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <h3 id="getting-started-windows">First Steps on Windows</h3>
+        <p>
+            Hedgehog will install on any supported version of Windows; simply click through the Hub installer to get Hedgehog up and running in minutes.
+            During installation you will select the edition you wish to install (Enterprise or free), or enter an existing license key.
+        </p>
+        <p>
+            For more information, visit the <a href="/support/documentation/hedgehog/installation/hub">Inedo Hub Installation Guide</a>.
+        </p>
+        <h3>Getting Started</h3>
+        <p>
+            New to Hedgehog? Go through our <a href="/support/tutorials/hedgehog/deploy-packages-with-hedgehog">Getting Started tutorial</a>, and you will learn how to deploy a basic web application packaged as a Universal Package to a Windows server.
+        </p>
+        <!--<h3 id="offline">Offline &amp; Manual Installation</h3>
+        <p>
+            For environments that do not support installation via the Inedo Hub (such as offline servers), you may download the previous installer here:
+            <a href="/hedgehog/download/sql/${Hedgehog.ReleaseNumber}" onclick="_gaq.push(['_trackEvent', 'hedgehog', 'download', 'sql']);">Download Hedgehog Installer</a>
+        </p>
+        <p>
+            The installation guide for the offline installer can be found here: <a href="/support/documentation/hedgehog/installation/installation-guide">Hedgehog Installation Guide</a>
+        </p>-->
+
+        <h3>Upgrading Hedgehog</h3>
+        <p>
+            You can upgrade to Hedgehog ${Hedgehog.ReleaseNumber} from any previous version of Hedgehog.
+            Just run an existing Inedo Hub Desktop installation.
+        </p>
+
+        <h3>Looking to Buy?</h3>
+        <p>
+            To order online with a credit card, go through <a href="https://my.inedo.com/">MyInedo</a>. For other methods of payment,
+            such as a check or wire transfer, use the <a href="/hedgehog/pricing/request-quote">quote request form</a>.
+        </p>
+
+        <!--<h3>What's Next for Hedgehog</h2>
+        <p>
+            Check out our <a href="/hedgehog/roadmap">Hedgehog Roadmap</a> to see where it all started, and
+            where we want to take Hedgehog in the future.
+        </p>-->
+
+    </div>
+</body>
+</html>

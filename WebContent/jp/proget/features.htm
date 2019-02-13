@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ProGet | Package your Applications and Components</title>
+    <meta name="MasterPageFile" content="proget-jp.htm" />
+    <script src="/proget/features/scripts/fancybox-2.1.5/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <link href="/proget/features/scripts/fancybox-2.1.5/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+    <script src="/proget/features/scripts/unslider/src/js/unslider.js"></script>
+    <link rel="stylesheet" href="/proget/features/scripts/unslider/dist/css/unslider.css" />
+    <link rel="stylesheet" href="/proget/features/scripts/unslider/dist/css/unslider-dots.css" />
+    <link type="text/css" rel="stylesheet" href="/resources/styles/features-new.css" />
+    
+    <script>
+          jQuery(document).ready(function ($) {
+              $('.my-slider').unslider();
+          });
+    </script>
+
+    <script type="text/javascript">
+        setTimeout(function () {
+            var a = document.createElement("script");
+            var b = document.getElementsByTagName("script")[0];
+            a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0053/9152.js?" + Math.floor(new Date().getTime() / 3600000);
+            a.async = true; a.type = "text/javascript"; b.parentNode.insertBefore(a, b)
+        }, 1);
+    </script>
+
+</head>
+<body>
+    <div style="margin-top: 50px;" class="content-container color-box">
+        <a id="manage" class="menu-anchor"></a>
+        <div class="body-copy">
+            
+            <h1>
+                全てのパッケージを一括して管理 
+            </h1>
+        </div>
+    </div>
+
+            <div class="content-container feature-benefit">
+                <div class="content">
+                    <div class="screenshot-container">
+                        <a class="fancyboxPopup" href="/proget/features/app-components.png">
+                            <img class="screenshot nobor" src="/proget/features/app-components.png" />
+                        </a>
+                    </div>
+                    <div class="feature-benefit-copy">
+
+                        <h2><a href="/support/documentation/proget/core-concepts/packages">アプリケーションとコンポーネント </a></h2>
+                        <p>
+                            
+                            <a href="/support/documentation/proget/core-concepts/packages#universal-package" target="_blank">ユニバーサルパッケージ</a> を使用して、アプリケーションとコンポーネント、およびコンテナ化されたソフトウェアのDockerイメージを配布します。 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+           
+            <div class="feature-benefit-copy left">
+
+                <h2><a href="/support/documentation/proget/feeds/nuget">ディベロッパー ライブラリ</a></h2>
+                <p>
+                    C＃/ .NET(<a href="/support/documentation/proget/feeds/nuget" target="_blank">NuGet</a>)、JavaScript / NodeJS(<a href="/support/documentation/proget/feeds/npm" target="_blank">npm</a>)、Ruby(<a href="/support/documentation/proget/feeds/rubygem" target="_blank">Gems</a>)、Java(<a href="/support/documentation/proget/feeds/maven" target="_blank">Maven</a>)のいずれを使用していても、開発チーム間で事前にビルトされたテスト済みのコードを共有できます。 
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/dev-lib.png">
+                    <img class="screenshot" src="/proget/features/dev-lib.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/choco-linux.png">
+                    <img class="screenshot" src="/proget/features/choco-linux.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+
+                <h2><a href="/support/documentation/proget/feeds/chocolatey">システム ソフトウェアと構成 </a></h2>
+                <p>
+                    サードパーティのWindowsソフトウェア(<a href="/support/documentation/proget/feeds/chocolatey" target="_blank">Chocolatey</a>)、<a href="/support/documentation/proget/feeds/powershell" target="_blank">PowerShell</a>パッケージ、およびPowerShell DSCリソースを管理します。 
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content-container color-box">
+        <a id="organize" class="menu-anchor"></a>
+        <div class="body-copy">
+            
+            <h1>
+                外部パッケージと内部パッケージを管理し整理
+            </h1>
+        </div>
+    </div>
+
+
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            
+            <div class="feature-benefit-copy left">
+                <p>
+                    パッケージを整理して、他のグループや顧客に配布するための<a href="/support/documentation/proget/core-concepts/feeds" target="_blank">フィード</a>を作成します。 
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/feeds-ss.png">
+                    <img class="screenshot" src="/proget/features/feeds-ss.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/connectors.png">
+                    <img class="screenshot nobor" src="/proget/features/connectors.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+                <p>
+                    複数のフィード（内部と外部の両方）をコネクタと組み合わせることで、フィードの利用を一つにし、外部フィードが利用できない場合でも外部パッケージにアクセスできます。 
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="content-container color-box">
+        <a id="open-source" class="menu-anchor"></a>
+        <div class="body-copy">
+            
+            <h1>
+                オープンソースパッケージのスキャンと検証
+            </h1>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            
+            <div class="feature-benefit-copy left">
+                <p>
+                    ProGetが準拠していないパッケージをブロックするために使用する<a href="/support/documentation/proget/compliance/license-scanning">ライセンスポリシー</a>を定義することで、コストのかかるオープンソースライセンス違反を避けることができます。 
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/license-filter.png">
+                    <img class="screenshot" src="/proget/features/license-filter.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/equifax.png">
+                    <img class="screenshot nobor" src="/proget/features/equifax.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+                <p>
+                    パッケージの脆弱性をスキャンし、設定したルールに基づいて危険または安全でないと判断されたものへのアクセスを遮断します。 
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+           
+            <div class="feature-benefit-copy left">
+                <p>
+                    プロダクションなどの適切な環境で、承認され、検証されたパッケージのみが使用されるように、フィード間で<a href="/support/documentation/proget/advanced/package-promotion" target="_blank">パッケージをプロモート</a>します。
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/details-dev-process.gif">
+                    <img class="screenshot nobor" src="/proget/details-dev-process.gif" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container color-box">
+        <a id="track" class="menu-anchor"></a>
+        <div class="body-copy">
+
+            <h1>
+                パッケージの展開と使用履歴
+            </h1>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/pg-hh.png">
+                    <img class="screenshot nobor" src="/proget/features/pg-hh.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+                <p>
+                    テスト、導入、および必要に応じてロールバックを自動化する<a href="/jp/hedgehog">Hedgehog</a>の再利用可能なワークフローを統合することにより、アプリケーションおよびコンポーネントパッケージをサーバーとクラウドにデプロイします。 
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+
+            <div class="feature-benefit-copy left">
+                <p>
+                    ProGetは、BuildMaster、Otter、Octopus Deploy、独自のカスタムスクリプトなどの他のツールからも<a href="/support/documentation/proget/advanced/package-promotion#deployment-records" target="_blank">デプロイを記録</a>するので、どのパッケージがどのサーバーにデプロイされているかが一目瞭然です。 
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/deploy-rec.png">
+                    <img class="screenshot" src="/proget/features/deploy-rec.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/package-stats.png">
+                    <img class="screenshot" src="/proget/features/package-stats.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+                <p>
+                    <a href="/support/documentation/proget/advanced/package-statistics" target="_blank">パッケージの利用統計</a>を用いて、どのユーザーとサーバーがどのパッケージにアクセスしているかを確認し、開発ライブラリー、スクリプト、または他のタイプのパッケージのアップデートや停止に関する情報に基づいた決定をおこなうことが可能です。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+
+            <div class="feature-benefit-copy left">
+                <p>
+                    パッケージが追加、プロモート、デプロイ、および削除されたときに自動デプロイ、変更、アクティビティの監査を行うように<a href="/support/documentation/proget/advanced/webhooks" target="_blank">webHook</a>を設定します。 
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/webhook.png">
+                    <img class="screenshot" src="/proget/features/webhook.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container color-box">
+        <a id="servers" class="menu-anchor"></a>
+        <div class="body-copy">
+
+            <h1>
+                サーバーやクラウドに信頼できるインフラストラクチャをビルド 
+            </h1>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/load-bal.png">
+                    <img class="screenshot nobor" src="/proget/features/load-bal.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+                <p>
+                    <a href="/support/documentation/proget/administration/high-availability" target="_blank">必要な負荷の分散</a>を実施し、世界中のさまざまなチームやサーバーを構築するために必要な数のWebサーバーノードを追加します。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+
+            <div class="feature-benefit-copy left">
+                <p>
+                    <a href="/support/documentation/proget/advanced/cloud-storage" target="_blank">Amazon S3またはAzure Blobストレージ</a>を活用して、パッケージファイルストレージの安価で最適なスケーリングを実現できます。 
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/cloud-storage.png">
+                    <img class="screenshot nobor" src="/proget/features/cloud-storage.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/resources/documentation/proget/administration/basic-feed-rep.png">
+                    <img class="screenshot nobor" src="/resources/documentation/proget/administration/basic-feed-rep.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+                <p>
+                    世界中のProGetインスタンス間で<a href="/support/documentation/proget/advanced/feed-replication" target="_blank">フィードをレプリケケーション</a>することで、複雑なグローバルインフラストラクチャを構築することなく、異なるチームがフィードを共有できるようにします。 
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+
+            <div class="feature-benefit-copy left">
+                <p>
+                    ProGetの<a href="/support/documentation/proget/administration/high-availability" target="_blank">ハイ アビリティ モード</a>が障害の全くないことを確認し、ハードウェア上にエラーがある場合にもパッケージがアクセスすることを可能にします。 
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/high-image.png">
+                    <img class="screenshot nobor" src="/proget/high-image.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container color-box">
+        <a id="scale" class="menu-anchor"></a>
+        <div class="body-copy">
+
+            <h1>
+                全ての Inedo のプロダクトは、共通の信頼性の高いテクノロジーを用いて設計されています。
+            </h1>
+        </div>
+    </div>
+
+    <div class="value">
+        <a class="value-icons">
+            <h4>Inedo Execution Engine</h4>
+            <img src="/proget/features/ee-icon.png" />
+            <p>
+                Inedo Execution Engine は、インフラストラクチャの自動化とオーケストレーション専用に開発されたもので、何百ものサーバーに展開して実行することを容易にします。また、問題個所を速やかに把握するために詳細なログを、（詳細なデバッグ情報を特定のユーザーから隠しながら）提供します。 
+
+            </p>
+        </a>
+        <a href="/support/documentation/various/inedo-agent/the-agent" target="_blank" class="value-icons">
+            <h4>Inedo Agent</h4>
+            <img src="/proget/features/agent-icon.png" />
+            <p>
+                軽量で高度に最適化された、サーバーに接続可能なエージェントを、Inedo プロダクトによって安全に編成できます。 容易にデプロイとアップグレードができ、変更のリスクを最小限に抑えるために、後方互換性と前方互換性を備えています。 
+            </p>
+        </a>
+
+        <a href="/support/documentation/various/inedo-sdk/the-sdk" target="_blank" class="value-icons">
+            <h4>Inedo SDK</h4>
+            <img src="/proget/features/sdk-icon.png" />
+            <p>
+                Inedo プロダクトの機能の多くは拡張機能を通して提供され、拡張機能を作成することで、機能を追加や変更することができます。 これはシェア SDK であるため、コンポーネントを一度作成することで、全ての Inedo プロダクトに同じ機能を導入することが可能です。
+
+            </p>
+        </a>
+    </div>
+
+    <div style="clear: both;"></div>
+
+
+            <div class="flow">
+                <div class="circle-button left">
+                    <a class="download" href="/jp/proget">ProGet Overview</a>
+                    <p>&larr; go back</p>
+                </div>
+                <div class="circle-button right">
+                    <a class="download" href="/jp/proget/pricing">proget pricing</a>
+                    <p>next &rarr;</p>
+                </div>
+            </div>
+    <script type="text/javascript">
+            $(function () {
+                $('.fancyboxPopup').fancybox();
+
+                $('.fancybox.ytvideo').click(function () {
+                    $.fancybox(this.href, { type: 'iframe' });
+                    return false;
+                });
+
+                //$('table:not(#FeatureMatrix,#editionTable)').find('tr:even td').addClass('alt');
+            });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Get Deployment Statuses By Package Number Through the Release &amp; Package Deployment API</title>
+
+        <meta name="keywords" content="buildmaster,api,builds" />
+        <meta name="subheading" content="BuildMaster API" />
+        <meta name="product-name" content="BuildMaster" />
+    </head>
+    <body>
+        <div class="intro">
+            <p>
+                There are times when a third-party tool may be interested in retrieving the status of a build in BuildMaster,
+                generally to be consumed by a custom tool that you have written. Starting with <a href="/buildmaster/5.0">BuildMaster v5</a>,
+                the <a href="/support/documentation/buildmaster/reference/api/release-and-package">Release &amp; Package Deployment API</a>
+                offers a simpler mechanism for retrieving build statuses.
+            </p>
+            <hr />
+        </div>
+        <h2 id="step-one">
+            Step 1: Create an API Key
+        </h2>
+        <p>
+            To enable the API, you must create an API key within BuildMaster. Simply navigate to <i>"Administration" &gt; "API Keys &amp; Access Logs"</i> and
+            create an API key. Make sure to enable <i>"Grant access to Release &amp; Deployment API"</i> so the key you create has access to the required API endpoint.
+        </p>
+
+        <h2 id="step-two">
+            Step 2: Get the Deployment Details
+        </h2>
+        <p>
+            Once you have an API key, you can perform a <a href="/support/documentation/buildmaster/reference/api/release-and-package#get-deployments">Get Deployments</a>
+            request. There are several filters you can apply. In this example, we'll apply the Application, Release, and Package filters.
+        </p>
+        <p class="info">
+            GET
+            <span style="opacity: 0.5">
+                /api/releases/packages/deployments?applicationName=HDARS&amp;releaseNumber=1.8.3&amp;packageNumber=1&amp;key=hLJA9IFeV7MKzVfeaaSktg==
+            </span>
+        </p>
+        <p>
+            The response will look something like this. In this case, we can see that the deployment failed!
+        </p>
+        <pre class="tutorial-code">[
+    {
+        "id": 1179,
+        "plan": "Deploy HDARS",
+        <strong>"status": "failed",</strong>
+        "started": "2017-03-17T17:09:13.2170000",
+        "ended": "2017-03-17T17:09:53.3800000",
+        "createdBy": "Admin",
+        "createdOn": "2017-03-17T17:09:11.5270000",
+        "pipelineId": 8,
+        "pipelineName": "HDARS",
+        "pipelineStageName": "Testing",
+        "environmentId": 2,
+        "environmentName": "Testing",
+        "applicationId": 8,
+        "applicationName": "HDARS",
+        "releaseId": 10,
+        "releaseNumber": "1.8.3",
+        "releaseName": "1.8.3",
+        "packageId": 81,
+        "packageNumber": "1"
+    }
+]</pre>
+
+        <div id="related-content" class="content">
+            <hr />
+            <div class="button-set">
+                <a href="/buildmaster/download" class="button">Download BuildMaster</a>
+                <a href="/products" class="button">Other Inedo products</a>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BuildMaster | 6.1</title>
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+    <script src="/feature-landing/scripts/fancybox-2.1.5/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <link href="/feature-landing/scripts/fancybox-2.1.5/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+    <script src="/feature-landing/scripts/unslider/src/js/unslider.js"></script>
+    <link rel="stylesheet" href="/feature-landing/scripts/unslider/dist/css/unslider.css" />
+    <link rel="stylesheet" href="/feature-landing/scripts/unslider/dist/css/unslider-dots.css" />
+    <link rel="stylesheet" type="text/css" href="/feature-landing/feature-landing-next-gen.css" />
+
+    <script>
+        jQuery(document).ready(function ($) {
+            $('.my-slider').unslider();
+        });
+    </script>
+
+    <script type="text/javascript">
+        setTimeout(function () {
+            var a = document.createElement("script");
+            var b = document.getElementsByTagName("script")[0];
+            a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0053/9152.js?" + Math.floor(new Date().getTime() / 3600000);
+            a.async = true; a.type = "text/javascript"; b.parentNode.insertBefore(a, b)
+        }, 1);
+    </script>
+
+</head>
+<body>
+    <div class="content-container" id="small-header">
+        <div class="content">
+            <a href="/" class="logo-container shadowed">
+                <img src="../feature-landing/images/inedo-buildmaster-logo.png" />
+            </a>
+            <div class="product-version">
+                <a href="/buildmaster">
+                    <img src="../feature-landing/images/buildmaster-logo.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="content-container" id="landing-banner">
+        <div class="content">
+            <h1> BuildMaster 6.1: Integrated &amp; Delivered</h1>
+            <h2>CI/CD for your applications and infrastructure.</h2>
+
+            <div id="sign-up" class="shadowed purple">
+                <h2>Download<br />BuildMaster 6.1</h2>
+                <contact-form method="post" action="/contact-form">
+                    <fieldset>
+                        <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
+                        <input type="hidden" name="RedirectUrl" value="/buildmaster/download" />
+                        <input type="hidden" name="Subject" value="BuildMaster 6.1 Feature Landing Download" />
+                        <input type="hidden" name="CcFromAddress" value="false" />
+                        <input type="hidden" name="Priority" value="High" />
+                        <label>name*</label>
+                        <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
+                        <label>email*</label>
+                        <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
+                        <label>phone</label>
+                        <div><input title="PhoneNumber" type="tel" data-ahvalidator='{ "Required":false }' /></div>
+
+
+                        <input class="submit-button pdf-download " type="button" value="Download" onclick="AhValidation.Submit(this);" />
+                    </fieldset>
+                </contact-form>
+            </div>
+            <div class="product-shot shadowed">
+                <div class="my-slider">
+                    <ul>
+                        <li>
+                            <img src="/buildmaster/6.1/repository-monitor.png" />
+                        </li>
+                        <li>
+                            <img src="/buildmaster/6.1/variable-value-renderers.png" />
+                        </li>
+                        <li>
+                            <img src="/buildmaster/6.1/github-webhook.png" />
+                        </li>
+                        <li>
+                            <img src="/buildmaster/6.1/repository-monitor-branches.png" />
+                        </li>
+                        <li>
+                            <img src="/buildmaster/6.1/ci-badges.png" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="content">
+            <div class="button-container">
+                <a class="button blue" href="#feature-benefit-intro">
+                    Explore the new features
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container" id="feature-benefit-intro">
+        <div class="content" style="text-transform: uppercase;">
+            <p>
+                Sick and tired of shuffling through 1000 different tools just to find who deployed what where and when?
+            </p>
+            <hr />
+            <h2>BuildMaster 6.1<br/> The CI/CD Source-of-Truth</h2>
+            <hr />
+            <p>
+                Introducing powerful new CI/CD features such as repository monitors, support for GitLab &amp; GitHub hooks, CI badges, and more.
+            </p>
+
+        </div>
+    </div>
+
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a rel="ci" class="fancyboxPopup" href="6.1/repository-monitor.png">
+                    <img class="screenshot" src="6.1/repository-monitor.png" />
+                </a>
+                <a rel="ci" class="fancyboxPopup" href="6.1/github-webhook.png">
+                    <img style="display: none;" class="screenshot" src="6.1/github-webhook.png" />
+                </a>
+                <a rel="ci" class="fancyboxPopup" href="6.1/repository-monitor-branches.png">
+                    <img style="display: none;" class="screenshot" src="6.1/repository-monitor-branches.png" />
+                </a>
+            </div>
+
+            <div class="feature-benefit-copy">
+                <h2>Repository Monitors &amp; Webhooks</h2>
+                <p>
+                    Repository monitors &amp; webhooks can now be configured to kick-off your build &amp; release process.
+                    Now, commits to any branch that are pushed to GitHub or GitLab can immediately create releases and/or builds, and also perform any 
+                    other functionality available in the extremely powerful and customizable OtterScript plans.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a rel="badge" class="fancyboxPopup" href="6.1/ci-badges.png">
+                    <img class="screenshot" src="6.1/ci-badges.png" />
+                </a>
+                <a rel="badge" class="fancyboxPopup" href="6.1/variable-value-renderers.png">
+                    <img style="display: none;" class="screenshot" src="6.1/variable-value-renderers.png" />
+                </a>
+            </div>
+
+            <div class="feature-benefit-copy">
+
+                <h2>CI Badges</h2>
+                <p>
+                    BuildMaster can now generate status badges and linkable URLs to various overview pages using the new CI Badge API endpoint -- perfect
+                    for use in README files of your repositories, or to reference in a new <a href="#value-rendering">variable value renderer</a>.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a rel="var" class="fancyboxPopup" href="6.1/variable-value-renderers.png">
+                    <img class="screenshot" src="6.1/variable-value-renderers.png" />
+                </a>
+            </div>
+
+            <div class="feature-benefit-copy">
+
+                <h2 id="value-rendering">Custom Variable Rendering</h2>
+                <p>
+                    Administrators are now able to control how variable values are rendered on 
+                    overview pages, allowing several use-cases, for example: linking to another tool, customizing the output of a captured 
+                    map value, displaying status images, and much more.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a target="_blank" href="/support/documentation/various/ceip/overview"><img class="screenshot" src="6.1/loupe-logo.png" /></a>
+            </div>
+
+            <div class="feature-benefit-copy">
+
+                <h2>Customer Experience &amp; Improvement</h2>
+                <p>
+                    Inedo has partnered with Gibraltar Software in order to integrate Loupe with our products as part of our 
+                    customer success initiative. This program is known as the <i>Customer Experience Improvement Program (CEIP)</i>, 
+                    and this opt-in program offers several benefits to both Inedo and our customers.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="content-container">
+        <div class="content">
+            <div class="button-container ">
+                <a class="button blue" href="/buildmaster/download">Download BuildMaster 6.1</a>
+            </div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div style="padding-top: 40px; font-size: 12px" class="content">
+            <hr />
+            <h3 style="text-align:center;">Look in the rear-view mirror of the <a href="/products/roadmap/buildmaster">Inedo Product Roadmap</a> for past versions.</h3>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.fancyboxPopup').fancybox();
+
+            $('.fancybox.ytvideo').click(function () {
+                $.fancybox(this.href, { type: 'iframe' });
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>

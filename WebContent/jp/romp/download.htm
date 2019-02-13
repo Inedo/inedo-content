@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Romp Downloads</title>
+    <meta name="keywords" content="romp, installation" />
+    <meta name="require-ssl" content="true" />
+    <meta charset="utf-8" />
+    <meta name="MasterPageFile" content="romp-jp.htm" />
+    <style type="text/css">
+        .all-content {
+            width: 800px;
+            margin-left: 100px;
+        }
+        .downloaf-box {
+            border: solid 1px #2e2e2e;
+            padding: 20px;
+            text-align: right;
+            margin-top: 30px;
+        }
+
+            .downloaf-box .left {
+                float: left;
+                margin-right: 20px;
+            }
+
+                .downloaf-box .left h3 {
+                    margin-top: 0;
+                    font-size: 26px;
+                }
+
+            .downloaf-box .right .button {
+                font-size: 26px;
+                padding: 12px 10px;
+                line-height: 65px;
+            }
+
+                .downloaf-box .right .button:hover {
+                    text-decoration: underline;
+                }
+
+                .started {background-color: #e9eada; padding: 20px 30px; margin-top: 30px;}
+                .started h4 {margin-top: 0; font-weight: bold;}
+                .started p {line-height: 30px; margin-bottom: 0px; font-size: 18px;}
+
+        .contact-form input[type=text], select {
+            width: 300px;
+            padding: 4px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form input[type=button] {
+            background-color: #3FA9F5;
+            color: white;
+            padding: 6px 12px;
+            margin: 10px 0;
+            border: none;
+            cursor: pointer;
+        }
+
+            .contact-form input[type=button]:hover {
+                background-color: #1e89d5;
+            }
+
+        .ahvalidator.error input[type=text],
+        .ahvalidator.error select {
+            background-color: #fcc;
+        }
+
+        .ahvalidator.error .message {
+            display: none;
+        }
+
+        .case-study-box {
+            float: left;
+            width: 700px;
+            height: 160px;
+            margin: 30px 6px;
+            border: 1px solid #2e2e2e;
+            background-color: #e9eada;
+            text-align: left;
+        }
+            .case-study-box h2 {
+                color: #000000;
+                font-size: 160%;
+                padding: 0 20px 30px 220px;
+                line-height: 150%;
+            }
+
+            .case-study-box .experience-level img {
+                max-height: 98px;
+                max-width: 150px;
+                position: absolute;
+                margin: 30px 0 0 30px;
+                border: 1px solid #000000;
+                background-color: #e9eada;
+            }
+            .case-study-box:hover {
+                background-color: #808080;
+            }
+
+    </style>
+
+    <script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0053/9152.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+
+</head>
+<body>
+    <div class="all-content">
+        <h1>Download Romp</h1>
+
+        <div id="start" class="started">
+            <h4>Romp 2.0.0-m1</h4>
+            <p>
+                Romp Milestone 1はこちらから無料でzipファイルをダウンロードできます。
+
+            </p>
+            <p>
+                <a href="http://cdn.inedo.com/downloads/romp/romp-2.0.0-m1.zip">Download Romp M1 here.</a>
+            </p>
+        </div>
+
+        <h3 style="margin-top: 24px;">Limitations of Romp Milestone 1</h3>
+        <p>
+            Rompは現在プレリリース版として提供されています。開発途中の段階のため、いくつかの未完成の部分や実装されていない機能があり、いくつかの制限がかかっています。
+        </p>
+        <ul style="margin-left: 40px;">
+            <li style="margin-bottom: 20px;">インストーラーはありません -ロープをご自身で解凍して手動でパスに追加する必要があります</li>
+            <li style="margin-bottom: 20px;">管理者のみ-いずれはより低い権限でRompを実行できるようになりますが、現時点では管理者権限が必要です。</li>
+            <li style="margin-bottom: 20px;">設定不可- Rompの設定ファイルシステムは現在実装されていません。</li>
+            <li style="margin-bottom: 20px;">inspectはローカルのみ- inspectコマンドは現在、ローカルパッケージファイルでのみ有効です。</li>
+            <li style="margin-bottom: 20px;">未登録のインストール- インストールされたパッケージは、未登録のフラグに関係なく、常にパッケージレジストリに追加されます。</li>
+            <li style="margin-bottom: 20px;">認証 - パッケージインストールのリモートフィード資格は認証フラグではなく、urlで指定されています。（例：http://user:password@server）</li>
+            <li style="margin-bottom: 20px;">インストールコメントなし -パッケージインストールのコメントフラグは無視されます。</li>
+            <li style="margin-bottom: 20px;"><b>reinstallation</b> - a package will get reinstalled by default even if it is already registered. In a future version, the --force flag will be required for this behavior</li>
+            <li style="margin-bottom: 20px;">パッケージリスト－"packages list"コマンドのアウトプットは最小限にフォーマットされ、最終的にはupackツールの同等のコマンドと同じ情報が全て含まれます。</li>
+            <li style="margin-bottom: 20px;">o	rompジョブログ [id] -特定のジョブIDが指定された場合、ログは表示されません[バグ]。 ただし、"romp jobs logs"では、最新のジョブのログが引き続き表示されます</li>
+            <li style="margin-bottom: 20px;">
+                コマンドがありません - いくつかのコマンドはまだ実装されていません：
+                <ul style="margin-left: 60px;">
+                    <li style="margin-bottom: 20px; margin-top: 20px;">rompの設定...</li>
+                    <li style="margin-bottom: 20px;">romp アクセス情報のインポート/エクスポート</li>
+                    <li style="margin-bottom: 20px;">romp 公開</li>
+                    <li style="margin-bottom: 20px;">romp ソースデフォルト</li>
+                    <li style="margin-bottom: 20px;">romp ソース検索</li>
+                    <li style="margin-bottom: 20px;">romp ジョブパージ</li>
+                    <li style="margin-bottom: 20px;">romp ジョブインポート/エクスポート</li>
+                </ul>
+
+            </li>
+        </ul>
+
+        <!--<div class="downloaf-box">
+            <div class="left">
+                <h3>Latest Version: ${Romp.ReleaseNumber}</h3>
+                <div>File size: [X]mb</div>
+            </div>
+            <div class="right">
+                <div><a class="button" href="/romp/download/sql/${Romp.ReleaseNumber}" onclick="_gaq.push(['_trackEvent', 'romp', 'download', 'sql']);">Download Romp Installer</a></div>
+                <div>
+                    <a href="/romp/${Romp.ReleaseNumberMajorMinor}">Overview for ${Romp.ReleaseNumberMajorMinor}</a>
+                    &nbsp; &bull; &nbsp;
+                    <a href="/romp/release-notes">Release Notes</a>
+                </div>
+            </div>
+        </div>-->
+        <!--<p style="text-align: center;" class="info">
+            <strong>ProGet 4.8 includes <a href="/support/documentation/proget/core-concepts/asset-directories">Asset Directories</a></strong>, users will be able to utilize all the security features in ProGet for not only packages, but arbitrary file storage. <strong>You can <a href="/proget/versions">download the beta</a> now!</strong>
+        </p>-->
+        <!--<p class="announcement">
+            <b>False Positive Notice</b> - after the 2016/02/15 Patch Tuesday updates, Microsoft's SmartScreen Filter is falsely identifying a <em>lot</em> of legitimate
+            software products as malware, including every single installer ever published by Inedo; please see  <a href="/support/kb/1113">KB#1113</a> for how to verify
+            that your download from Inedo is guaranteed to be safe and secure
+        </p>-->
+
+        <h3>Romp導入方法</h3>
+        <p>
+            Rompは、アプリケーションコンポーネントをインフラストラクチャ構成とともにパッケージ化し、オペレーションがこれらのパッケージを簡単に検査してから、シンプルかつコントロールされた方法でデプロイすることを目的としています。 Rompの使い方については、Getting Started Guideを参照してください。 Rompはコマンドラインツールであり、Getting Started Guideでは主にコマンドラインを使用しています。
+        </p>
+
+        <div class="button-set">
+            <div class="button">
+                <a href="/support/documentation/romp/getting-started" target="_blank">Getting Started Guide</a>
+            </div>
+        </div>
+
+        <h3>Romp Packages</h3>
+        <p>
+            Rompパッケージは、Rompがアプリケーションやインフラストラクチャ構成を展開するために必要な全てのものを含む特別なユニバーサルパッケージです。 主要な設定スクリプトとは別に、パッケージには変数、アクセス情報、拡張機能、Otterラフトが含まれています。
+        </p>
+        <div class="button-set">
+            <div class="button">
+                <a href="/support/documentation/romp/romp-packages/layout/package-installation" target="_blank">Learn more about Romp Packages</a>
+            </div>
+        </div>
+        <p class="info">
+            注意Rompの日本語ドキュメントは現在作成中です。
+        </p>
+        <h3>ライセンス</h3>
+        <p>
+            Rompは、Rompエンドユーザーライセンス契約に従ってライセンス化されています。
+        </p>
+
+
+        <!--<h3>Linux Installation</h3>
+        <p>
+            Linux support is currently in beta. See our <a href="/support/kb/1100">KB article</a> for instructions.
+        </p>
+
+        <h3>Looking to Buy?</h3>
+        <p>
+            To order online with a credit card, go through <a href="https://my.inedo.com/">MyInedo</a>. For other methods of payment,
+            such as a check or wire transfer, use the <a href="/proget/pricing/request-quote">quote request form</a>.
+        </p>
+
+        <h3>Upgrading ProGet</h3>
+        <p>
+            You can upgrade to ProGet ${ProGet.ReleaseNumber} from any previous version of ProGet. Just run the installer to update your installation.
+        </p>
+
+        <h3>Other Downloads</h3>
+        <p>
+            If you need to download an older version of ProGet or an alternate installation package,
+            <a href="/proget/versions">please visit the all versions page</a>.
+        </p>
+
+        <h3>What's Next for ProGet</h3>
+        <p>Check out our <a href="/proget/roadmap">ProGet Roadmap</a> to see where it all started, and where we want to take ProGet in the future.</p>
+
+        <h3 id="edition">Selecting the Edition</h3>
+        <p>
+            There is one download for all editions of ProGet. On new installs, you can either select the edition or
+            enter a license key yourself.
+        </p>
+        <img src="/resources/documentation/proget-installation/progetedition.png" />
+
+        <div class="button-set">
+            <div class="button">
+                <a href="#start">Back to the download</a>
+            </div>
+        </div>-->
+        </div>
+</body>
+</html>

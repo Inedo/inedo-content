@@ -1,0 +1,297 @@
+﻿@import "../../../resources/styles/library";
+
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-dark-grey: #353535;
+@inedo-white: #fff;
+@buildmaster-orange: #f15a24;
+@buildmaster-dark-orange: #c44822;
+
+
+#header, #footer.content-container {
+    display:none;
+}
+* {
+    box-sizing: border-box;
+}
+
+
+
+.content-container {
+    .circle-button {
+        margin: 30px auto 40px auto;
+        text-align: center;
+
+        a.download {
+            background-color: none;
+            padding: 12px 20px;
+            color: @inedo-white;
+            border: 3px solid @inedo-white;
+            border-radius: 100px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 15px;
+            letter-spacing: 1px;
+
+            &:hover {
+                background-color: @inedo-white;
+                color: @inedo-paleblue;
+            }
+        }
+    }
+}
+
+
+
+.content-container.top {
+    padding-top: 0;
+    min-height: 650px;
+    position: relative;
+
+    .hero-bar {
+        height: 60px;
+        background-color: @inedo-paleblue;
+
+        img {
+            height: 30px;
+            margin: 14px 30px;
+        }
+    }
+
+    .far-right {
+        float: right;
+        margin-left: 40px;
+        margin-right: 16%;
+        margin-top: 80px;
+        #sign-up {
+            z-index: 3;
+            height: 370px;
+            width: 350px;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: @inedo-darkblue;
+            border: 1px solid @inedo-paleblue;
+            box-shadow: 2px 2px 4px @inedo-black;
+
+            img {
+                width: 80px;
+                margin: 10px 10px 0 10px;
+                float: right;
+            }
+
+            p {
+                color: @inedo-white;
+                font-size: 32px;
+                margin: 0 0 30px 10px;
+            }
+
+            label {
+                color: @inedo-white;
+                font-size: 95%;
+                margin: 0;
+            }
+
+            form {
+                width: 304px;
+                display: block;
+            }
+
+            fieldset {
+                margin: 0;
+            }
+
+            input {
+                box-sizing: content-box;
+                width: 100%;
+                margin: 5px 0 15px;
+                padding: 5px 12px;
+                color: @inedo-darkgrey;
+                background-color: @inedo-lightgrey;
+                border: none;
+            }
+
+            input.submit-button {
+                background-color: #db2916;
+                padding: 10px 12px;
+                color: @inedo-white;
+                font-size: 24px;
+                font-weight: 700;
+
+                &:hover {
+                    background-color: #b21d1d;
+                }
+            }
+        }
+    }
+
+    .content.above-fold {
+        margin-left: 16%;
+
+        .left {
+            max-width: 800px;
+            padding-top: 4px;
+            margin-top: 30px;
+
+            h1 {
+                color: @inedo-darkblue;
+                font-size: 300%;
+                font-weight: 800;
+                line-height: 62px;
+                margin-right: 20px;
+                margin-top: 28px;
+            }
+
+            h2 {
+                margin-top: 62px;
+                margin-right: 20px;
+                padding-bottom: 16px;
+                color: @inedo-darkblue;
+                font-size: 30px;
+                line-height: 42px;
+                font-weight: 500;
+            }
+
+            ul.will-learn {
+                margin-right: 20px;
+                margin-left: 20px;
+                color: @inedo-darkblue;
+                padding-bottom: 30px;
+                font-size: 18px;
+                line-height: 36px;
+
+                li {
+                    list-style: disc;
+                    font-size: 19px;
+                }
+            }
+        }
+    }
+}
+
+
+.content-container.case-study {
+    background-color: #b6c6d1;
+    padding-bottom: 60px;
+    padding-top: 70px;
+    height: 700px;
+
+    .content {
+
+        .container {
+            position: relative;
+
+            h4 {
+                font-size: 26px;
+                font-weight: bold;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 28px;
+                font-weight: 400;
+                margin-top: 12px;
+            }
+
+            .top-left {
+                position: absolute;
+                background-color: @inedo-paleblue;
+                padding: 10px 100px 10px 50px;
+                top: 4px;
+                left: 0px;
+                width: 640px;
+                color: @inedo-white;
+
+                h4 {
+                    color: @inedo-white;
+                }
+            }
+
+            .centered {
+                position: absolute;
+                background-color: @inedo-white;
+                padding: 10px 50px;
+                bottom: -550px;
+                right: 0px;
+                left: 565px;
+                color: @inedo-paleblue;
+                z-index: 1;
+
+                h4 {
+                    color: @inedo-paleblue;
+                }
+            }
+
+            .bottom-left {
+                position: absolute;
+                bottom: 60px;
+                left: 0px;
+
+                .circle-button {
+                    a.download {
+                        background-color: #db2916;
+                        color: @inedo-white;
+                        padding: 12px 70px;
+                        border: 3px solid #db2916;
+                        box-shadow: 1px 1px 4px @inedo-darkblue;
+
+                        &:hover {
+                            background-color: #b21d1d;
+                            border: 3px solid #b21d1d;
+                            color: @inedo-darkblue;
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.content-container#land {
+    background: url(/support/whitepapers/ci-cd-buildmaster/background.png) no-repeat left;
+    position: relative;
+
+    .content {
+        position: relative;
+
+        h3 {
+            text-align: center;
+            color: @inedo-white;
+            margin: 24px 0 54px 0;
+            text-shadow: 2px 2px 2px @inedo-black;
+            font-weight: 800;
+            font-size: 380%;
+        }
+
+        .circle-button {
+            a.download {
+                padding: 12px 12px;
+                width: 300px;
+                margin: 20px auto;
+                background-color: #db2916;
+                border: 3px solid #db2916;
+                color: @inedo-white;
+                box-shadow: 2px 2px 4px @inedo-black;
+
+                &:hover {
+                    background-color: #b21d1d;
+                    border: 3px solid #b21d1d;
+                    color: @inedo-white;
+                    box-shadow: 2px 2px 4px @inedo-black;
+                }
+            }
+        }
+
+        .product-shot {
+            margin: 10px auto;
+            height: auto;
+            width: 550px;
+            position: relative;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

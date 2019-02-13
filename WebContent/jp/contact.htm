@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Contact Us | Inedo.com</title>
+    <meta name="MasterPageFile" content="japan.htm" />
+    <style>
+        .space {
+            margin: 20px 150px;
+        }
+
+        .contact-form  input[type=text], select {
+            width: 595px;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+        }
+
+  .contact-form input[type=button] {
+            width: 100%;
+            background-color: #3FA9F5;
+            color: white;
+            padding: 14px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+        }
+
+             .contact-form input[type=button]:hover {
+                background-color: #1e89d5;
+            }
+
+        .contact-form {
+            background-color: #e4e4e4;
+            padding: 10px 20px;
+            margin-bottom: 40px;
+        }
+
+
+        .ahvalidator.error input[type=text],
+        .ahvalidator.error select {
+            background-color: #fcc;
+        }
+
+        .ahvalidator.error .message {
+            display: none;
+        }
+         #Mailing-Address ul{
+             margin:15px 0;
+             padding:0;
+         }
+        #Mailing-Address ul li{
+            list-style:none;
+                    }
+    </style>
+
+</head>
+<body>
+
+    <div class="content-container">
+        <div class="content">
+
+
+
+            <div class="space">
+
+                <h1>お問合せ</h1>
+
+                <p>お困りの点やお気づきの点がございましたら、お気軽にお問合せ下さい。お問合せ内容を確認後、可能な限り速やかにご返答致します。</p>
+
+                <div class="contact-form">
+                    <contact-form method="post" action="/contact-form">
+                        <fieldset>
+                            <input type="hidden" name="ToAddress" value="ssato@inedo.com" />
+                            <input type="hidden" name="RedirectUrl" value="/jp/thank-you" />
+                            <input type="hidden" name="Subject" value="Inedo Japan Contact Form" />
+                            <input type="hidden" name="CcFromAddress" value="false" />
+                            <input type="hidden" name="Priority" value="High" />
+
+                            <label>お名前</label>
+                            <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                            <label>Eメールアドレス</label>
+                            <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                            <label>電話番号</label>
+                            <div><input name="Phone Number" type="text" /></div>
+
+
+
+                            <label>メッセージ内容</label>
+                            <div><textarea name="Message" style="width: 630px;" rows="10" cols="20"></textarea></div>
+
+                            <input type="button" value="送信" onclick="AhValidation.Submit(this);" />
+                        </fieldset>
+                    </contact-form>
+                </div>
+
+
+                <div id="Mailing-Address">
+                    <h3>お問合せ先</h3>
+
+                    <ul>
+                        <li><h4><strong>合同会社イネド・ジャパン</strong></h4></li>
+                        <li>〒116-0001</li>
+                        <li>東京都 荒川区 町屋 3-2-1 B1F</li>
+                    </ul>
+                    <ul>
+                        <li>TEL: 03-6161-2121</li>
+                    </ul>
+                    <ul>
+                        <li><a href="mailto:info@inedo.com?Subject=Get%20in%20touch%20region%20japan" target="_top">info@inedo.com</a></li>
+                    </ul>
+                    <ul>
+                        <li>(Inquiry in English is also welcome)</li>
+                    </ul>
+                    <ul>
+                        <li><h4><strong>Inedo HQ</strong></h4></li>
+                        <li>56 Front Street Upper</li>
+                        <li>Berea, Ohio 44017</li>
+                        <li>United States</li>
+                    </ul>
+                    <ul>
+                        <li><strong>Phone</strong></li>
+                        <li>+1 (440) 243-6737</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

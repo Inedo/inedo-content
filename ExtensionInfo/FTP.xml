@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extensionAdditionalInfo>
+  <info><![CDATA[
+    This extension contains actions for communicating with a server
+	using FTP.
+  ]]></info>
+  <actionInfo id="Inedo.BuildMasterExtensions.FTP.DeleteAction" name="Delete Files" summary="Deletes files on an FTP server."><![CDATA[
+    <p>This action deletes files on an FTP server.</p>
+	<h3>Action Fields</h3>
+	<h4>Server Name/Address</h4>
+	<p>
+	  The name or IP address of the FTP server. If a port is not specified,
+	  the default FTP port (21) is used. For example, <i>example.com</i>
+	  or <i>192.168.1.1:2200</i>.
+	</p>
+	<h4>User Name</h4>
+	<p>
+	  The user name used to log in to the FTP server. If not specified,
+	  the action will attempt to log in anonymously.
+	</p>
+	<h4>Password</h4>
+	<p>
+	  The password for the specified user name. This field is ignored
+	  if no user name is specified.
+	</p>
+	<h4>Server Path</h4>
+	<p>
+	  The path on the FTP server to delete files from. This should be a
+	  standard FTP path. For example, <i>/files/</i>
+	</p>
+	<h4>Recursive</h4>
+	<p>
+	  When checked, the action will recursively delete subfolders contained
+	  within the specified server path. When not checked, only files in
+	  the root path will be deleted.
+	</p>
+	<h4>Log Individual Files</h4>
+	<p>
+	  When checked, BuildMaster will log the name of every deleted item
+	  in its action log. When not checked, only the number of items
+	  deleted is logged.
+	</p>
+	<h4>Remove Empty Directories</h4>
+	<p>
+	  When checked, empty directories will also be removed by this action.
+	  When unchecked, only files will be removed.
+	</p>
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.FTP.GetAction" name="Get Files" summary="Gets files from an FTP server."><![CDATA[
+    <p>
+	  This action transfers files from an FTP server to a BuildMaster server/agent.
+	</p>
+	<h3>Action Fields</h3>
+	<h4>Server Name/Address</h4>
+	<p>
+	  The name or IP address of the FTP server. If a port is not specified,
+	  the default FTP port (21) is used. For example, <i>example.com</i>
+	  or <i>192.168.1.1:2200</i>.
+	</p>
+	<h4>User Name</h4>
+	<p>
+	  The user name used to log in to the FTP server. If not specified,
+	  the action will attempt to log in anonymously.
+	</p>
+	<h4>Password</h4>
+	<p>
+	  The password for the specified user name. This field is ignored
+	  if no user name is specified.
+	</p>
+	<h4>Server Path</h4>
+	<p>
+	  The path on the FTP server to get files from. This should be a
+	  standard FTP path. For example, <i>/files/</i>
+	</p>
+	<h4>Files</h4>
+	<p>
+	  The files to get from the server, relative to the specified
+	  server path. This may include wildcard characters.
+	</p>
+	<h4>Recursive</h4>
+	<p>
+	  When checked, the action will recursively get subfolders contained
+	  within the specified server path. When not checked, only files in
+	  the root path will be transferred.
+	</p>
+	<h4>Log Individual Files</h4>
+	<p>
+	  When checked, BuildMaster will log the name of every transferred item
+	  in its action log. When not checked, only the number of items
+	  transferred is logged.
+	</p>
+	<h4>Synchronize Files</h4>
+	<p>
+	  When checked, the action will only transfer files from the FTP server
+	  if they have a new timestamp than a local copy of the file (or if
+	  the file does not exist at all locally). When not checked, everything
+	  matching the <b>Files</b> field is transferred.
+	</p>
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.FTP.PutAction" name="Send Files" summary="Sends files to an FTP server."><![CDATA[
+    <p>
+	  This action transfers files from a BuildMaster server/agent to an FTP server.
+	</p>
+	<h3>Action Fields</h3>
+	<h4>Server Name/Address</h4>
+	<p>
+	  The name or IP address of the FTP server. If a port is not specified,
+	  the default FTP port (21) is used. For example, <i>example.com</i>
+	  or <i>192.168.1.1:2200</i>.
+	</p>
+	<h4>User Name</h4>
+	<p>
+	  The user name used to log in to the FTP server. If not specified,
+	  the action will attempt to log in anonymously.
+	</p>
+	<h4>Password</h4>
+	<p>
+	  The password for the specified user name. This field is ignored
+	  if no user name is specified.
+	</p>
+	<h4>Server Path</h4>
+	<p>
+	  The path on the FTP server to send files to. This should be a
+	  standard FTP path. For example, <i>/files/</i>
+	</p>
+	<h4>Files</h4>
+	<p>
+	  The files to send to the server, relative to the specified
+	  source directory. This may include wildcard characters.
+	</p>
+	<h4>Recursive</h4>
+	<p>
+	  When checked, the action will recursively send subfolders contained
+	  within the specified source path. When not checked, only files in
+	  the root path will be transferred.
+	</p>
+	<h4>Log Individual Files</h4>
+	<p>
+	  When checked, BuildMaster will log the name of every transferred item
+	  in its action log. When not checked, only the number of items
+	  transferred is logged.
+	</p>
+	<h4>Synchronize Files</h4>
+	<p>
+	  When checked, the action will only transfer files to the FTP server
+	  if they have a new timestamp than the remote copy of the file (or if
+	  the file does not exist at all on the server). When not checked, everything
+	  matching the <b>Files</b> field is transferred.
+	</p>
+  ]]></actionInfo>
+</extensionAdditionalInfo>

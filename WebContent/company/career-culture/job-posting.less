@@ -1,0 +1,208 @@
+@import "..\..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+a.download {
+    background-color: none;
+    padding: 8px 16px;
+    color: @inedo-darkblue;
+    border: 3px solid @inedo-darkblue;
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: @inedo-darkblue;
+        color: @inedo-white;
+    }
+}
+
+.content-container#banner {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    background: url(/company/minblk.jpg) no-repeat #011b2d;
+    background-position: center left;
+    z-index: 5;
+    position: relative;
+    border-bottom: 20px solid @inedo-darkblue;
+    .content {
+        padding: 36px 100px;
+
+        h1 {
+            font-size: 250%;
+            color: @inedo-white;
+            margin: 12px 0;
+            font-weight: 700;
+            margin-left: 20px;
+            text-shadow: -3px 0 7px @inedo-darkblue;
+        }
+
+        .circle-button {
+            margin-left: 100px;
+            margin-top: 26px;
+            float: right;
+
+            a.download {
+                background-color: @inedo-white;
+                padding: 8px 16px;
+                color: @inedo-darkblue;
+                border: 3px solid @inedo-white;
+                border-radius: 100px;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-weight: 800;
+                font-size: 12px;
+                letter-spacing: 1px;
+
+                &:hover {
+                    background-color: @inedo-darkblue;
+                    color: @inedo-white;
+                    border: 3px solid @inedo-darkblue;
+                }
+            }
+        }
+    }
+}
+
+#header {
+    position: relative;
+    z-index: 6;
+}
+
+.menu-anchor {
+    visibility: hidden;
+    position: absolute;
+    top: -50px;
+}
+
+
+
+
+.posting {
+    width: 60%;
+    margin-left: 20px;
+
+    p {
+        font-size: 16px;
+    }
+
+    h4 {
+        margin-top: 15px;
+        font-weight: bolder;
+    }
+
+    h2 {
+        color: @inedo-darkblue;
+        font-weight: 700;
+        font-size: 28px;
+    }
+
+    h3 {
+        color: @inedo-darkblue;
+        font-weight: 500;
+        font-size: 21px;
+        font-style: italic;
+        margin: 10px 0 0 15px;
+    }
+
+    ul.posting-list {
+        margin-left: 30px;
+
+        li {
+            padding: 5px 0;
+            line-height: 24px;
+            list-style-type: disc;
+        }
+    }
+
+    .circle-button {
+        margin: 46px 0;
+        text-align: center;
+    }
+}
+
+.sign-up {
+    margin-top: 48px;
+    float: right;
+    z-index: 3;
+    height: 570px;
+    width: 350px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: @inedo-paleblue;
+
+    h2 {
+        color: @inedo-white;
+        text-align: center;
+        font-weight: 700;
+        font-size: 21px;
+        margin: 30px 0;
+    }
+
+    label {
+        color: @inedo-white;
+        font-size: 95%;
+        margin: 0;
+    }
+
+    form {
+        width: 304px;
+        display: block;
+    }
+
+    .ahvalidator.error input[type=text],
+    .ahvalidator.error select {
+        background-color: #fcc;
+    }
+
+    .ahvalidator.error .message {
+        display: none;
+    }
+
+    input[type=file] {
+        width: 100% - 4px;
+        margin: 14px 0 4px 0;
+        color: @inedo-white;
+    }
+
+    input[type=text] {
+        width: 100% - 4px;
+        padding: 4px 6px;
+        margin: 4px 0 14px 0;
+        border: none;
+    }
+
+    input[type=button] {
+        width: 100% - 1px;
+        background-color: #3FA9F5;
+        color: white;
+        padding: 14px 20px;
+        margin: 20px 0;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #1e89d5;
+        }
+    }
+}
+
+
+
+@media print {
+    .tool-nav {
+        display: none !important;
+    }
+
+    #sticky-nav-content-container {
+        display: none !important;
+    }
+}

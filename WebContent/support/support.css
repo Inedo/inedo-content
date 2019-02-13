@@ -1,0 +1,143 @@
+a.download {
+  background-color: none;
+  padding: 8px 16px;
+  color: #282b3a;
+  border: 3px solid #282b3a;
+  border-radius: 100px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+a.download:hover {
+  background-color: #282b3a;
+  color: #ffffff;
+}
+.content-container#banner {
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  min-height: 275px;
+  background: url(/resources/images/banners/beta-banner.png) no-repeat #011b2d;
+  background-position: center;
+  z-index: 5;
+  position: relative;
+  border-bottom: 10px solid #282b3a;
+}
+.content-container#banner .content {
+  padding: 70px 100px;
+}
+.content-container#banner .content p {
+  color: #353535;
+  font-weight: bolder;
+  font-size: 18px;
+  margin-left: 100px;
+  margin-right: 120px;
+}
+.content-container#banner .content img {
+  margin-left: 20px;
+  height: 64px;
+  text-align: left;
+}
+.content-container#banner .content .circle-button {
+  margin-left: 100px;
+  margin-top: 30px;
+}
+.content-container#resources {
+  margin-bottom: 50px;
+}
+.content-container#resources h1 {
+  font-size: 36px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+.content-container#resources h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 44px;
+  color: #282b3a;
+}
+.content-container#resources p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.content-container#resources .resource-cards a.cards {
+  text-decoration: none;
+  width: 325px;
+  float: left;
+  height: 75px;
+  margin: 8px 4px 0 4px;
+  text-align: left;
+  background-color: #f6f6f6;
+}
+.content-container#resources .resource-cards a.cards img {
+  vertical-align: middle;
+  margin-right: 14px;
+  height: 36px;
+}
+.content-container#resources .resource-cards a.cards h4 {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 21px;
+}
+.content-container#resources .resource-cards a.cards p {
+  font-weight: 500;
+  margin: 20px;
+  font-size: 13px;
+  text-align: left;
+}
+.content-container#resources .resource-cards a.cards.support {
+  width: 492px;
+  height: 120px;
+}
+.content-container#resources .resource-cards a.cards.add {
+  width: 492px;
+}
+.content-container#resources .resource-cards a.cards:hover {
+  box-shadow: 1px 1px 4px #282b3a;
+}
+.content-container#resources .resource-cards a.cards:hover p {
+  color: #002b54;
+}
+.content-container#newsletter .content h2 {
+  color: #ffffff;
+  text-align: center;
+  padding-top: 40px;
+  color: #282b3a;
+}
+.content-container#newsletter .content label,
+.content-container#newsletter .content select {
+  margin-left: 50px;
+}
+.content-container#newsletter .content input[type=text],
+.content-container#newsletter .content select {
+  width: 856px;
+  padding: 10px;
+  margin: 8px 50px;
+  border: 1px solid #ccc;
+}
+.content-container#newsletter .content input[type=button] {
+  width: 880px;
+  background-color: #282b3a;
+  color: #1e89d5;
+  font-weight: bold;
+  padding: 14px 20px;
+  margin: 20px 50px 50px 50px;
+  border: none;
+  cursor: pointer;
+}
+.content-container#newsletter .content input[type=button]:hover {
+  background-color: #1e89d5;
+  color: white;
+}
+.content-container#newsletter .content .ahvalidator.error input[type=text],
+.content-container#newsletter .content .ahvalidator.error select {
+  background-color: #fcc;
+}
+.content-container#newsletter .content .ahvalidator.error .message {
+  display: none;
+}
+

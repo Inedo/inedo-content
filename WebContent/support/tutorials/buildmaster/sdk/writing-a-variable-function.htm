@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Writing a Variable Function Using the BuildMaster SDK</title>
+  <meta name="keywords" content="buildmaster, sdk, variables, expert-user" />
+  <meta name="subheading" content="BuildMaster SDK" />
+  <meta name="product-name" content="BuildMaster" />
+</head>
+<body>
+  <div class="intro">
+    <p>
+      BuildMaster's variable-replacement functionality can be extended by
+      writing a custom function using any .NET language.
+    </p>
+    <hr />
+  </div>
+    <div style="margin-bottom: 30px; padding-left: 30px;" class="info">
+        <p>
+            This tutorial is designed for <a href="/buildmaster/5.0">BuildMaster v5</a>. Feel free to <a href="/contact">contact us</a> with any questions.
+        </p>
+    </div>
+  <h2>How to Write a Variable Function in C#</h2>
+  <p>
+    A <i>variable function</i> works just like a variable in BuildMaster, except
+    it may optionally take arguments, and its value cannot be set. For example,
+    one of the <a href="/support/documentation/buildmaster/deployment-automation/deployment-plans/variables">built-in</a>
+    functions is <code>MajorVersionNumber</code>; it can be invoked like <code>$MajorVersionNumber</code>
+    to return the major version component of the current release number, or it can
+    be invoked with an explicit parameter like <code>$MajorVersionNumber("5.0.2")</code>.
+    A custom function works exactly the same way, only using custom logic supplied
+    in an extension.
+  </p>
+  <p>
+    In this tutorial, we will create a new function that returns name of an
+    application's issue tracking provider. To start, create a new class named
+    <code>IssueTrackerNameVariableFunction</code> that inherits
+    <a href="/support/documentation/buildmaster/deployment-automation/deployment-plans/variables">ScalarVariableFunctionBase</a>:
+  </p>
+<pre class="tutorial-code">
+public class IssueTrackerNameVariableFunction : ScalarVariableFunctionBase
+{
+  protected override object EvaluateScalar(IGenericBuildMasterContext context)
+  {
+    // TODO: return result of function evaluation
+  }
+}
+</pre>
+  <p>
+    For scalar variables, the <a href="/support/sdk-reference/buildmaster/Inedo.BuildMaster.Extensibility.VariableFunctions/ScalarVariableFunctionBase/EvaluateScalar(IGenericBuildMasterContext)">EvaluateScalar</a>
+    method is invoked by BuildMaster at execution time. The <i>context</i>
+    parameter contains various BuildMaster-related information, such as the current application ID,
+    release number, build number, and so on. See the <a href="/support/sdk-reference/buildmaster/Inedo.BuildMaster.Extensibility/IGenericBuildMasterContext">IGenericBuildMasterContext</a>
+    interface for more information regarding its available properties.
+  </p>
+  <p>
+    Arguments supplied to the function are automatically bound to properties decorated with the <code>VariableFunctionParameterAttribute</code>
+    attribute. In this tutorial, we allow one optional argument containing an application ID. The following code
+    will look up the appropriate issue tracker name and return it:
+  </p>
+<pre class="tutorial-code">
+[DisplayName("applicationId")]
+[Description("The ID of the application whose name will be returned. If empty, the application ID "
+           + "in the current context will be used.")]
+[VariableFunctionParameter(0, Optional = true)]
+public int? ApplicationId { get; set; }
+
+protected override object EvaluateScalar(IGenericBuildMasterContext context)
+{
+    int? applicationId = this.ApplicationId ?? context.ApplicationId;
+    if (applicationId == null || applicationId &lt;= 0)
+        return "INVALID APPLICATION ID";
+
+    var application = DB.Applications_GetApplication(applicationId)
+        .Applications_Extended
+        .FirstOrDefault();
+
+    if (application == null)
+        return "INVALID APPLICATION ID";
+
+    if (application.IssueTracking_Provider_Id == null)
+        return string.Empty;
+
+    var issueTracker = DB.Providers_GetProvider(application.IssueTracking_Provider_Id);
+
+    return issueTracker.Provider_Name;
+}
+</pre>
+  <p>
+    This fairly simple code uses the application ID from the first argument, if
+    it is supplied. Otherwise, it uses the application ID in context. Then, it looks
+    up the application in BuildMaster, and finally looks up the issue tracking
+    provider as well and returns its name.
+  </p>
+  <p>
+    The function is now implemented, but we need to add an attribute to tell BuildMaster
+    how this should be invoked. We can do this by adding a
+    <a href="/support/sdk-reference/buildmaster/Inedo.BuildMaster.Extensibility.VariableFunctions/VariableFunctionPropertiesAttribute">VariableFunctionProperties</a>
+    attribute to the class:
+  </p>
+<pre class="tutorial-code">
+[ScriptAlias("IssueTrackerName")]
+[Description("Returns the name of the issue tracker associated with the application in the current scope.")]
+[VariableFunctionProperties(
+    Scope = VariableFunctionScope.Application,
+    Category = "Issue Tracking")]
+public class IssueTrackerNameVariableFunction : ScalarVariableFunctionBase
+</pre>
+
+  <p>
+    The <code>ScriptAliasAttribute</code> specifies the name of the function for use in OtterScript, and the <code>DescriptionAttribute</code>
+    documents what the function returns. The <code>Scope</code> value helps BuildMaster understand where the function is meant
+    to be used. The optional <code>Category</code> value is used for informational purposes only, particularly the grouping on
+    the Functions documentation page. Since this action has to do with issue
+    tracking, we'll just use that as the category.
+  </p>
+  <p>
+    This is enough information for BuildMaster. Once compiled as part of an extension
+    and added to the extension library, this function can now be invoked like
+    any of the built in functions.
+  </p>
+
+  <h2>A Note on Input Validation</h2>
+  <p>
+    It is up to you to determine how to perform input validation. In this tutorial,
+    we've just returned OBNOXIOUS STRING LITERALS that would usually be easy to
+    notice. You may also choose to throw an exception, which would halt whatever
+    was in progress and log an error message, or you may simply use a default
+    value instead of the bad input - use whatever works best for your use case.
+  </p>
+  <div id="related-content" class="content">
+    <hr />
+    <div class="button-set">
+      <a href="/buildmaster/download" class="button">Download BuildMaster</a>
+      <a href="/products" class="button">Other Inedo products</a>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Publishing and Displaying a Version Number with BuildMaster</title>
+   <meta name="keywords" content="buildmaster, deployments, versioning, entry-user" />
+   <meta name="subheading" content="Deployment" />
+    <meta name="product-name" content="BuildMaster" />
+   <style type="text/css">
+      .boxed { border: 1px solid #ccc; padding: 25px; }
+   </style>
+</head>
+<body>
+    <div class="intro">
+        <p>
+            It is common to show users of a web site when the site was last published, typically by incrementing a build/revision number, or displaying a "last published" date. There are a variety of ways this can be achieved: from manually updating the date on the web server to reading from external data storage such as a file or database to display the value. With BuildMaster, it can be integrated as part of the build and deploy process.
+            </p>
+        <hr />
+    </div>
+    
+   <p>
+      Let's say our website has one extremely simple page:
+   </p>
+   <p>
+      <pre class="tutorial-code">
+   &lt;!DOCTYPE html&gt;
+   &lt;html&gt;
+   &lt;head&gt;
+     &lt;title&gt;Simple Website&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+     Version: [[unpublished]]
+   &lt;/body&gt;
+   &lt;/html&gt;</pre></p>
+   <p>
+      On a local workstation, the page outputs exactly what you would expect:
+   </p>
+   <p class="console">
+      Version: [[unpublished]]
+   </p>
+    <h2 id="step-one">Step 1: Specify server context</h2>
+    <p>
+        Use a <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/general-blocks">General block</a> to set server context this allows you to specify server(s) that will be searched.
+    </p>
+    <h2 id="step-two">Step 2: Add an Action</h2>
+   <p>
+      Now assuming we have an application with a release created in BuildMaster, we just need to add an action that manipulates the file (or files if necessary) to replace any <strong>[[unpublished]]</strong> placeholders with the actual BuildMaster release &amp; build number.
+   </p>
+   <p>
+      We can do this with the <a href="/support/documentation/buildmaster/reference/operations/files/search/replace-file-contents"><i>Search/Replace File Contents</i></a> operation. When executed, this operation will replace all instances of the specified text with a designated value.
+   </p>
+    <p> In this case, use a <a href="/support/documentation/buildmaster/reference/functions">built-in BuildMaster</a> variable combination of <strong>$ReleaseNumber.$ReleasePackageNumber</strong>. When it comes time for deployment, this variable combination will be replaced with the BuildMaster release number, a literal period, then the current package number. The  <strong>**.html</strong> means that all files and subfiles that are .html will be searched.
+   </p>
+   
+      <img class="screenshot" src="/resources/tutorials/version-number/replace2.png" />
+   
+    <img class="screenshot" src="/resources/tutorials/version-number/whole-plan2.png" />
+    
+   
+   <p>
+      In my demonstration plan, I copy the files to the BuildMaster default directory, run the replacement, then copy the replaced file to an "output" directory on my machine.
+   </p>
+    <h2 id="step-three">Step 3: Execute a Build</h2>
+   <p>
+      When you execute a build, the <strong>C:\Test\html\example.html</strong> file will be copied into the default directory, the <strong>[[unpublished]] </strong> text will be replaced with the current release &amp; build numbers, and the output will be copied into <strong>C:\Test\html-replaced\example.html</strong>. Here is a simple diff between the two files that were built under release 6.3, build #3:
+   </p>
+   <p>
+      <img class="screenshot" src="/resources/tutorials/version-number/version-4.png" />
+   </p>
+    <h2><i>Option 2: Use a Date Instead</i></h2>
+   <p>
+      Use <strong>$Date("MM-dd-yyyy")</strong> (where <strong>MM-dd-yyyy</strong> is any <a href="http://msdn.microsoft.com/en-us/library/az4se3k1.aspx"> valid .NET date/time format string</a>) instead of <strong>$ReleaseNumber.$BuildNumber</strong> and create a new build:
+   </p>
+   <p>
+      <img class="screenshot" src="/resources/tutorials/version-number/version-5.png" />
+   </p>
+   <h4>
+      Text replacements aren't simply limited to simple date replacement; for other ways to perform replacements or even take advantage of Variable Functions, check out the documentation for BuildMaster's <a href="/support/documentation/buildmaster/reference/functions">built-in variables engine</a>.
+   </h4>
+    <div id="related-content" class="content">
+        <hr />
+        <div class="button-set">
+            <a href="/buildmaster/download" class="button">Download BuildMaster</a>
+            <a href="/products" class="button">Other Inedo products</a>
+
+        </div>
+    </div>
+
+</body>
+</html>

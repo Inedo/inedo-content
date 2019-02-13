@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extensionAdditionalInfo>
+  <info><![CDATA[
+  <p>This extension contains actions for working with .NET-based projects and solutions.</p>
+  ]]></info>
+  <actionInfo id="Inedo.BuildMasterExtensions.DotNet2.AddComponentLicenseAction" name="Add Component License" summary="Generates a licenses.licx file and adds it to project files."><![CDATA[
+  <p>
+  The Add Component License action is used to add or modify a <i>licenses.licx</i> file. Described
+  <a href="http://msdn.microsoft.com/en-us/library/fe8b1eh9(VS.85).aspx">here</a>, these files list
+  licenses for .NET components that you are using in a project.
+  </p>
+  <p>
+  Using this action will allow you to only include the appropriate license as part of your
+  formal build process. This way, it isn't necessary for every developer that works on the
+  project to have a licensed copy of the component.
+  </p>
+  <h3>Action Fields</h3>
+  <h4>Components</h4>
+  <p>
+  Enter the names of licensed components in this box, exactly as you would in a <i>licenses.licx</i> file.
+  </p>
+  <h4>Project File Masks</h4>
+  <p>
+  Each line in this box may contain a file name or a file mask that will specify the .NET project
+  files which need licenses.<br/>
+  For example, entering the value <i>*.csproj</i> will add the specified licenses
+  to all files in the Source Path that end with <i>.csproj</i>.
+  </p>
+  <h4>Search Directories Recursively</h4>
+  <p>
+  When checked, the action will search all subdirectories in the Source Path to find
+  matches for the maskes specified in the Project File Masks field. When unchecked,
+  only files in the root of the Source Path will be considered.
+  </p>
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.DotNet2.BuildNetAppAction" name="Build .NET Project" summary="Builds a .NET project or solution using MSBuild."><![CDATA[
+  <p>
+  The Build .NET Project action launches MSBuild to build a project (for example, a .csproj file for a C# project).
+  </p>
+  <h3>Action Fields</h3>
+  <h4>.NET Framework Version</h4>
+  <p>
+  Specifies the version of the .NET Framework which will be used to build the project. This is
+  not the version that the project is build <i>against</i>, only the version of MSBuild which
+  is invoked. Unless there is a specific reason to use an older version, it is recommended
+  that you leave this value set to <b>(auto detect)</b>, which will use the latest available version.
+  </p>
+  <h4>Project Build Configuration</h4>
+  <p>
+  The project's configuration that will be built. Typically this is either <i>Debug</i> or
+  <i>Release</i>, but you may specify any configuration defined in the MSBuild project.
+  </p>
+  <h4>Target Platform</h4>
+  <p>
+  The target platform of the project to be built. Typically this is a processor architecture
+  such as <i>x86</i> or <i>x64</i>, but you may specify any platform defined in the MSBuild project.
+  If <i>(Default)</i> is used, the default platform for the project is built.
+  </p>
+  <h4>Application Project Path</h4>
+  <p>
+  The path to the project file to build (for a C# project, this will be the .csproj file).
+  This may either an a relative path from the Source Directory, or an absolute path.
+  </p>
+  <h4>This is a Web Applicatin Project</h4>
+  <p>
+  Check this box if you are building an ASP.NET web application.
+  </p>
+  <h4>MSBuild Properties</h4>
+  <p>
+  Optionally provide any additional properties you would like to pass to MSBuild. Specify
+  one property/value pair per line. For example:<br/>
+  <blockquote>
+    <pre>
+	WarningLevel=2
+	Optimize=false
+	</pre>
+  </blockquote>
+  </p>
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.DotNet2.ClickOnceAction" name="Prepare ClickOnce Application" summary="Prepares a ClickOnce application for deployment."><![CDATA[
+  <p>
+  The Prepare ClickOnce Application action executes the
+  <a href="http://msdn.microsoft.com/en-us/library/acz3y3te(v=VS.80).aspx">Manifest Generation and Editing Tool (mage)</a>
+  to ready a .NET ClickOnce application for deployment.
+  </p>
+  <h3>Action Fields</h3>
+  <h4>Application Name</h4>
+  <p>This is the published name of the ClickOnce application.</p>
+  <h4>Version Number</h4>
+  <p>
+  This is the published release number of the application. This release number must be in
+  the form <b>0.0.0.0</b>. If your BuildMaster application is using Major-Minor-Revision
+  release numbering, you may specify <b>%RELNO%.%BLDNO%</b> to generate an appropriate
+  release number.
+  </p>
+  <h4>Provider URL</h4>
+  <p>
+  This is the URL where the ClickOnce application will be published. Note that executing this
+  action does <i>not</i> actually publish to this location, it only adds it to the ClickOnce
+  application properties.
+  </p>
+  <h4>Rename Files to .deploy</h4>
+  <p>
+  When checked, files in the deployment will have a .deploy extension. ClickOnce will strip
+  this extension off these files as soon as it downloads them from the Web server. This
+  parameter allows all the files within a ClickOnce deployment to be downloaded from a web
+  server that blocks transmission of files ending in "unsafe" extensions such as .exe. 
+  </p>
+  <h4>Certificate Path</h4>
+  <p>
+  If specified, this is the location of the X509 certificate on disk which will be used to
+  sign the ClickOnce application. If this is left blank, the Certificate Hash field must
+  be specified.
+  </p>
+  <h4>Certificate Hash</h4>
+  <p>
+  If the Certificate Path field is not specified, the Certificate Hash field may be used to
+  provide the hash of a certificate which is stored in the local certificate store. This
+  field must be blank if the Certificate Path field is specified.
+  </p>
+  <h4>Certificate Password</h4>
+  <p>
+  This is the password required to sign the ClickOnce application using the certificate.
+  </p>
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.DotNet2.ConvertProjectLibraryAction" name="Convert Library References" summary="Converts project references in .NET projects to file references."><![CDATA[
+  <p>
+  This action is used to convert project type references to file type references in a
+  .NET project file. This is useful for when a project references a shared library that
+  is built separately. Adding this action to your deployment plan will allow the project
+  to be built against a compiled assembly instead of a project file.
+  </p>
+  <h3>Action Fields</h3>
+  <h4>Library</h4>
+  <p>
+  Specifies the location of assembly files which the project file references will
+  be converted to. This may be an application-relative path or an absolute path.
+  </p>  
+  <h4>Project File Masks</h4>
+  <p>
+  List project files with optional wildcards following BuildMaster masking rules.
+  Enter one file mask per line. Project files will be search from the Source Directory.
+  </p>
+  <h4>Recursive</h4>
+  <p>
+  When checked, directories within the Source Directory will be searched instead of just
+  the Source Directory.
+  </p>
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.DotNet2.GacInstallAction" name="Install Assemblies into the GAC" summary="Installs .NET assemblies into the Global Assembly Cache."><![CDATA[
+  <p>
+  This action is used to install .NET assemblies into the Global Assembly Cache on
+  a machine.
+  </p>
+  <h3>Action Fields</h3>
+  <h4>Files</h4>
+  <p>
+  List all of the assemlies to be added to the GAC. Enter one file per line.
+  The files may either be relative to the Source Directory or absolute.
+  </p>
+  <h4>Force Refresh</h4>
+  <p>
+  When checked, the action will overwrite any previous versions already in the GAC.
+  </p>
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.DotNet2.MSBuildAppAction" name="Build .NET MSBuild Project" summary="Builds a .NET project using a .msbuild file."><![CDATA[
+  <p>
+  This action is used to execute an MSBuild script.
+  </p>
+  <h3>Action Fields</h3>
+  <h4>MSBuild File Path</h4>
+  <p>The path of the .msbuild file to execute. This is relative to the Source Directory.</p>
+  <h4>MSBuild Target</h4>
+  <p>The MSBuild Target property. For example: <i>Build</i>.</p>
+  <h4>MSBuild Properties</h4>
+  <p>
+  Optionally provide any additional properties you would like to pass to MSBuild. Specify
+  one property/value pair per line. For example:<br/>
+  <blockquote>
+    <pre>
+	WarningLevel=2
+	Optimize=false
+	</pre>
+  </blockquote>
+  </p>
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.DotNet2.NGenAction" name="NGen" summary="Installs/uninstalls native images from a .NET assembly and its dependencies."><![CDATA[
+  <p>This option execute ngen.exe to install native images of .NET assemblies on a machine.</p>
+  <h3>Action Fields</h3>
+  <h4>Action</h4>
+  <p>Specifies the NGen action to perform:</p>
+  <ul>
+    <li><b>Install</b> - Generates a native image for an assembly.</li>
+	<li><b>Uninstall</b> - Deletes a native image for an assembly.</li>
+	<li><b>Update</b> - Updates all native images installed on the machine.</li>
+  </ul>
+  <h4>Target Assembly</h4>
+  <p>
+  The absolute path of the assembly to install or uninstall. If the assembly has been
+  added to the GAC, this may also be a strong name.
+  </p>
+  <h4>Queue for Background Generation</h4>
+  <p>
+  When checked, the native image generation will be processed in the background and
+  the action will not wait for it to finish. When unchecked, the action will block
+  until the native image generation is complete.
+  </p>
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.DotNet2.PrecompileAspNet2Site" name="Precompile ASP.NET Site" summary="Precompiles an ASP.NET (2.0 or later) site."><![CDATA[
+  <p>This action is used to precompile an ASP.NET site.</p>
+  <h4>.NET Framework Version</h4>
+  <p>
+  Specifies the version of the .NET Framework which will be used to build the project. This is
+  not the version that the project is build <i>against</i>, only the version of MSBuild which
+  is invoked. Unless there is a specific reason to use an older version, it is recommended
+  that you leave this value set to <b>(auto detect)</b>, which will use the latest available version.
+  </p>
+  <h3>Action Fields</h3>
+  <h4>Application Virtual Path</h4>
+  <p>
+  The virtual path of the web application. For example: / or /mywebsite/
+  </p>
+  ]]></actionInfo>
+</extensionAdditionalInfo>

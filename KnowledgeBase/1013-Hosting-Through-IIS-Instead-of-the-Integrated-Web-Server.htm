@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1013" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="buildmaster,proget,otter,hosting,iis,integrated-web-server" />
+    <title>Hosting Through IIS Instead of the Integrated Web Server</title>
+</head>
+<body>
+    <p>When you install any of our products using the installer, you’re presented with two application hosting options: Integrated Web Server or IIS Web Application.</p>
+    <p>The question of which to choose comes down to simplicity or robustness. The Integrated Web Server is easy to install (and obviously doesn’t require IIS installed), while an IIS Web Application offers a whole lot more advanced hosting features and configurations (but of course requires IIS).</p>
+    <p>If you’ve started with the Integrated Web Server and would like to upgrade your hosting to an IIS Web Application, all it takes is a few easy steps.</p>
+
+    <h2>1. Change Configuration</h2>
+    <p>The service looks in configuration to determine whether the integrated web server should be started.</p>
+
+    <h4>BuildMaster &amp; Otter</h4>
+    <p>The integrated web server's configuration is stored in a configuration file.</p>
+    <ol type="A">
+        <li>On the server, navigate to the Service root directory <br /> (by default, C:\BuildMaster\Service or C:\Otter\Service)</li>
+        <li>Open App_appSettings.config in any text editor</li>
+        <li>Change the value of the key named <code>IntegratedWebServer.Enabled</code> to <code>False</code></li>
+        <li>Save the file</li>
+    </ol>
+
+    <h4>ProGet</h4>
+    <p>In ProGet, the integrated web server's configuration is stored in the database.</p>
+    <ol type="A">
+        <li>Sign in to ProGet with an account that has administrative privileges</li>
+        <li>Click the Admin link (top right corner of the navigation</li>
+        <li>Click on <i>All Settings</i> under the System Settings options</li>
+        <li>Change the <code>UseIntegratedWebServer</code> key to <code>False</code></li>
+    </ol>
+
+    <h2>2. Uninstall IWS Service</h2>
+    <p>
+        This step is only necessary for BuildMaster &amp; Otter, skip to step 3 for ProGet.
+    </p>
+    <ol type="A">
+        <li>Open a Command Prompt with administrative privileges</li>
+        <li>Navigate to the service directory <br />(default C:\BuildMaster\Service or C:\Otter\Service)</li>
+        <li>Stop the IWS Service by typing <code>net stop inedobmwebsrv</code> for BuildMaster &amp; <code>net stop inedootterwebsrv</code> for Otter</li>
+        <li>Uninstall the IWS Service by typing <code>bmservice UninstallWebServer</code> for BuildMaster &amp; <code>otterservice UninstallWebServer</code> for Otter</li>
+    </ol>
+
+    <h2>3. Create IIS Web Application</h2>
+    <ol type="A">
+        <li>Open the IIS Manager</li>
+        <li>
+            Create a new Application Pool named <code>BuildMasterAppPool</code>, <code>ProGetAppPool</code>, or <code>OtterAppPool</code> with the following configuration:
+            <ul>
+                <li><strong>Framework Version</strong>(IIS 7.x): v4.0 </li>
+                <li><strong>Management pipeline mode</strong> (IIS 7.x): Classic</li>
+            </ul>
+            <p>Instructions for creating pools can be found here:</p>
+            <ul>
+                <li><a href="http://technet.microsoft.com/en-us/library/cc731784(v=WS.10).aspx">Create an Application Pool in IIS 7.x</a></li>
+                <li><a href="http://technet.microsoft.com/en-us/library/cc757073(WS.10).aspx">Creating Application Pools in IIS 6.0</a></li>
+            </ul>
+        </li>
+        <li>
+            Create a new Website (virtual directories are not supported) named <code>BuildMaster</code>, <code>ProGet</code>, or <code>Otter</code>with the following configuration:
+            <ul>
+                <li><strong>Home Directory</strong>: C:\BuildMaster\WebApp (default), C:\Program Files\ProGet\WebApp (default), or C:\Program Files\Otter\WebApp (default)</li>
+                <li><strong>Framework Version</strong> (IIS 6): v4.0</li>
+            </ul>
+        </li>
+    </ol>
+    <p class="info">
+        <b>The installer relies on IIS naming conventions</b>. If you don't follow the conventions (ProductName for site, ProductNameAppPool for application pool), then the installer
+        will not be able to stop the application pool during upgrade (which will likely cause errors), nor will uninstallation remove these from IIS.
+    </p>
+    <p>Your product will now be hosted through IIS. The products aren't very particular about how they are hosted, so virtually any of the settings within the IIS Application or Application Pool can be changed to suit your needs.</p>
+</body>
+</html>

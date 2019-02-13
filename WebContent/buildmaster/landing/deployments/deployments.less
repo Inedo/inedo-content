@@ -1,0 +1,280 @@
+﻿@import "../../../resources/styles/library";
+
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-dark-grey: #353535;
+@inedo-white: #fff;
+@buildmaster-orange: #f15a24;
+@buildmaster-dark-orange: #c44822;
+
+
+#header, #footer.content-container {
+    display:none;
+}
+* {
+    box-sizing: border-box;
+}
+
+
+
+.content-container {
+    .circle-button {
+        margin: 30px auto 40px auto;
+        text-align: center;
+
+        a.download {
+            background-color: none;
+            padding: 12px 20px;
+            color: @inedo-white;
+            border: 3px solid @inedo-white;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 15px;
+            letter-spacing: 1px;
+
+            &:hover {
+                background-color: @inedo-white;
+                color: @inedo-paleblue;
+            }
+        }
+    }
+}
+
+
+
+.content-container.top {
+    background-color: #A7C5D4;
+    padding-top: 0;
+
+    table.courses {
+        border: 0;
+        margin: 0 0 0 30px;
+        width: 58%;
+        max-width: 700px;
+
+        tr {
+            text-align: center;
+
+            &.feat-course {
+                border: 0;
+                display: table-row;
+            }
+
+            td {
+                padding: 26px 1px;
+                border: 0;
+
+                img {
+                    margin-right: 15px;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: @inedo-darkblue;
+                    font-weight: 600;
+                }
+
+                a:hover {
+                    color: @inedo-paleblue;
+                }
+            }
+        }
+    }
+
+    .content.above-fold {
+        margin-left: 0;
+        float: left;
+        width: 50%;
+        min-height: 583px;
+        background-color: #A7C5D4;
+
+        .left {
+            background-color: #A7C5D4;
+            display: block;
+
+            a {
+                h1 {
+                    padding-bottom: 40px;
+                    margin: 0;
+                    font-size: 30px;
+                    font-weight: 600;
+                    text-align: center;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    color: @inedo-white;
+
+                    h1 {
+                        color: @inedo-white;
+                    }
+                }
+            }
+        }
+    }
+
+    .far-right {
+        float: left;
+        width: 50%;
+        height: auto;
+        background-color: #A7C5D4;
+        min-height: 583px;
+
+        h4 {
+            padding: 0 200px 0 73px;
+            font-weight: 600;
+            font-size: 38px;
+            color: @inedo-dark-grey;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        .circle-button {
+            margin: 20px 26px 0 26px;
+
+            a.download {
+                display: block;
+                margin: 16px 50px 24px 50px;
+                padding: 12px 12px;
+                max-width: 380px;
+
+                &.blue {
+                    margin: 6px 50px 10px 50px;
+                    background-color: @inedo-darkblue;
+                    color: @inedo-white;
+                    border: 3px solid @inedo-darkblue;
+                    box-shadow: 1px 1px 4px @inedo-darkblue;
+
+                    &:hover {
+                        background-color: @inedo-white;
+                        border: 3px solid @inedo-white;
+                        color: @inedo-darkblue;
+                        box-shadow: none;
+                    }
+                }
+
+                &:hover {
+                    color: #56AF8F;
+                }
+            }
+        }
+    }
+}
+
+
+.content-container#core {
+    margin-top: 0px;
+
+    .content {
+        text-align: center;
+
+        .color-box {
+            margin: 0px auto 60px auto;
+            background-color: #56B092;
+            padding: 8px 0;
+
+            .body-copy {
+                h2 {
+                    margin: 40px 70px;
+                    text-align: center;
+                    color: @inedo-white;
+                    font-size: 24px;
+                    line-height: 36px;
+                    font-weight: 600;
+
+                    a {
+                        color: @inedo-white;
+
+                        &:hover {
+                            color: @inedo-paleblue;
+                        }
+                    }
+                }
+            }
+        }
+
+        .plain-copy {
+            h2 {
+                margin: 20px 50px 40px 50px;
+                text-align: center;
+                font-size: 24px;
+                line-height: 36px;
+            }
+        }
+
+        .circle-button {
+            margin: 80px 0 130px 0;
+
+            a.download {
+                background-color: @inedo-darkblue;
+                color: @inedo-white;
+                padding: 12px 70px;
+                border: 3px solid @inedo-darkblue;
+                box-shadow: 1px 1px 4px @inedo-darkblue;
+                margin: auto 60px;
+
+                &:hover {
+                    background-color: #56B092;
+                    border: 3px solid #56B092;
+                    color: @inedo-white;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    .mid-banner {
+        background-color: #134659;
+        margin: 60px 0;
+
+        .content {
+            padding: 20px 0 60px 0;
+
+            h2 {
+                color: #FDCB67;
+                font-size: 36px;
+                font-weight: 400;
+                text-align: center;
+                line-height: 54px;
+            }
+
+            hr {
+                border: 2px solid #fdcb67;
+            }
+
+            h3 {
+                color: #FDCB67;
+                font-size: 24px;
+                font-weight: 700;
+                text-align: center;
+                padding-bottom: 36px;
+            }
+
+            .left {
+                margin: 40px 600px 0 0;
+                text-align: right;
+            }
+
+            .right {
+                float: right;
+                width: 570px;
+                text-align: left;
+                color: #fdcb67;
+                font-style: italic;
+
+                h4 {
+                    color: #FDCB67;
+                    margin-top: 0;
+                    font-weight: 600;
+                    font-size: 21px;
+                    margin-bottom: 6px;
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,451 @@
+@import "..\resources\styles\library";
+
+
+
+.mixin-homecc {
+    padding: 50px 0;
+    margin: 0;
+
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        color: @inedo-black;
+        margin: 0;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.body, html {
+    height: 100%;
+}
+
+.content-container .content .button-set {
+
+    .button {
+        padding: 10px 40px;
+    }
+}
+
+.circle-button {
+    margin-top: 30px;
+
+    a.circle {
+        background-color: none;
+        padding: 8px 16px;
+        color: @inedo-white;
+        border: 3px solid @inedo-white;
+        border-radius: 100px;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 12px;
+        letter-spacing: 1px;
+
+        &:hover {
+            background-color: @inedo-white;
+            color: @inedo-darkblue;
+        }
+    }
+}
+
+.content-container#banner {
+    padding-top: 30px;
+    margin: 0;
+    min-height: 400px;
+    background: url(/company/minblk.jpg) no-repeat;
+    background-position: center left;
+    text-align: center;
+
+    h1 {
+        font-size: 400%;
+        color: @inedo-white;
+        margin: 0;
+        text-shadow: -3px 0 7px @inedo-darkblue;
+    }
+
+    .banner-sec {
+        padding: 40px 50px 50px 50px;
+        margin-top: 10px;
+    }
+
+    .circle-button {
+        margin-top: 30px;
+
+        a.circle {
+            color: @inedo-darkblue;
+            background-color: @inedo-white;
+
+            &:hover {
+                background-color: @inedo-darkblue;
+                color: @inedo-white;
+                border: 3px solid @inedo-darkblue;
+            }
+        }
+    }
+
+    .top-announcements {
+        a.value-icons {
+            background-color: #5dc5c8;
+            box-shadow: -1px -1px 2px black;
+            text-decoration: none;
+            width: 325px;
+            float: left;
+            height: 226px;
+            margin: 30px 4px 50px 4px;
+            text-align: center;
+            color: @inedo-white;
+
+            h3 {
+                color: @inedo-white;
+                font-size: 21px;
+                font-weight: bolder;
+                margin-top: 20px;
+            }
+
+            p {
+                font-weight: 500;
+                margin: 20px;
+                font-size: 16px;
+            }
+
+            p.explore {
+                padding: 8px 16px;
+                color: @inedo-white;
+                border: 3px solid @inedo-white;
+                border-radius: 100px;
+                text-transform: uppercase;
+                font-weight: 800;
+                font-size: 12px;
+                letter-spacing: 1px;
+                text-align: center;
+                margin: 20px 80px;
+
+                &:hover {
+                    background-color: @inedo-white;
+                    color: @inedo-darkblue;
+                }
+            }
+        }
+    }
+}
+
+.content-container#culture {
+    margin: 36px 0;
+
+    .content {
+        h2 {
+            text-transform: uppercase;
+            font-weight: 700;
+            color: @inedo-darkgrey;
+            text-align: center;
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .circle-button {
+            display: block;
+            text-align: center;
+            margin: 40px 0;
+
+            a.circle {
+                color: @inedo-darkblue;
+                border: 3px solid @inedo-darkblue;
+
+                &:hover {
+                    background-color: @inedo-darkblue;
+                    color: @inedo-white;
+                }
+            }
+        }
+
+        a {
+            img {
+                width: 121px;
+            }
+        }
+
+        a.benefits:hover {
+            img {
+                content: url(/company/benefits-hov.png);
+            }
+        }
+
+        a.travel:hover {
+            img {
+                content: url(/company/travel-hov.png);
+            }
+        }
+
+        a.commute:hover {
+            img {
+                content: url(/company/commute-hov.png);
+            }
+        }
+
+        a.coffee:hover {
+            img {
+                content: url(/company/coffee-hov.png);
+            }
+        }
+
+        a.rec:hover {
+            img {
+                content: url(/company/rec-hov.png);
+            }
+        }
+
+        a.berea:hover {
+            img {
+                content: url(/company/berea-hov.png);
+            }
+        }
+
+        a.learn:hover {
+            img {
+                content: url(/company/learn-hov.png);
+            }
+        }
+
+        a.flex:hover {
+            img {
+                content: url(/company/flex-hov.png);
+            }
+        }
+    }
+}
+
+.content-container#team {
+    .content {
+        p {
+            font-size: 19px;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            font-weight: 700;
+            color: @inedo-darkgrey;
+            text-align: center;
+            margin: 0;
+            font-size: 32px;
+        }
+
+        text-align: center;
+
+        .team-members {
+            background-color: @inedo-white;
+            margin: 20px 0;
+
+            .human {
+                width: 20%;
+                display: inline-block;
+                padding: 20px;
+
+                h5 {
+                    font-size: 17px;
+                    font-weight: bolder;
+                    color: dodgerblue;
+                }
+
+                p {
+                    font-size: 14px;
+                    margin: 6px 0;
+                }
+
+                .img-container {
+                    text-align: center;
+                    padding-bottom: 5px;
+
+                    img {
+                        max-width: 200px;
+                    }
+                }
+            }
+        }
+
+        .circle-button {
+            display: block;
+            text-align: center;
+            margin: 40px 0 100px 0;
+
+            a.circle {
+                color: @inedo-darkblue;
+                border: 3px solid @inedo-darkblue;
+
+                &:hover {
+                    background-color: @inedo-darkblue;
+                    color: @inedo-white;
+                }
+            }
+        }
+    }
+}
+
+.content-container#services {
+    .content {
+        #open {
+            table.positions {
+                width: 100%;
+                border: 0;
+                margin: 0 0 36px 0;
+                background-color: @inedo-grey;
+                tr {
+                    text-align: left;
+
+                    &.feat-position {
+                        border: 0;
+                        border: 2px solid @inedo-darkblue;
+                        display: table-row;
+                    }
+
+                    td {
+                        padding: 26px 15px;
+                        border: 0;
+
+
+                        &.position {
+                            text-align: left;
+                            font-weight: bolder;
+                            font-size: 19px;
+                            font-weight: 300;
+
+                            a {
+                                color: @inedo-darkblue;
+                                font-weight: 600;
+
+                                &:hover {
+                                    color: @proget-blue;
+                                }
+                            }
+                        }
+
+                        &.apply {
+                            text-align: center;
+                        }
+                    }
+                }
+
+                a.download {
+                    background-color: none;
+                    padding: 8px 16px;
+                    color: @inedo-darkblue;
+                    border: 3px solid @inedo-darkblue;
+                    border-radius: 100px;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    font-weight: 800;
+                    font-size: 12px;
+                    letter-spacing: 1px;
+
+                    &:hover {
+                        background-color: @inedo-darkblue;
+                        color: @inedo-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.content-container#solutions-inedo {
+    margin: 36px 0;
+
+    .content {
+        .does {
+            .text-info {
+                //height: 250px;
+                display: inline-block;
+                width: 650px;
+                padding-top: 8px;
+                padding-left: 15px;
+
+                h4 {
+                    margin-top: 0;
+                    padding-bottom: 20px;
+                    font-size: 20px;
+                    line-height: 32px;
+                }
+            }
+
+            .logo {
+                display: inline-block;
+                vertical-align: baseline;
+                margin-top: 0;
+            }
+
+            &.right {
+                .text-info {
+                    //padding-right: 35px;
+                    margin-left: 0;
+                    padding-left: 0px;
+                    border-left: none;
+                }
+
+                .logo {
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+.content-container#recog {
+    .content {
+        p {
+            font-size: 19px;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            font-weight: 700;
+            color: @inedo-darkgrey;
+            text-align: center;
+            margin: 0;
+            font-size: 32px;
+        }
+
+        text-align: center;
+
+        .award {
+            background-color: @inedo-white;
+            margin: 20px 0;
+
+            .gartner {
+                width: 18%;
+                display: inline-block;
+                padding: 10px 8px;
+
+                h5 {
+                    font-size: 17px;
+                    font-weight: bolder;
+                    color: dodgerblue;
+                }
+
+                p {
+                    font-size: 14px;
+                    margin: 6px 0;
+                }
+            }
+        }
+
+        .circle-button {
+            display: block;
+            text-align: center;
+            margin: 40px 0 100px 0;
+
+            a.circle {
+                color: @inedo-darkblue;
+                border: 3px solid @inedo-darkblue;
+
+                &:hover {
+                    background-color: @inedo-darkblue;
+                    color: @inedo-white;
+                }
+            }
+        }
+    }
+}

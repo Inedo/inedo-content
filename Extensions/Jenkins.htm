@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Jenkins Extension | Support | Inedo.com</title>
+    </head>
+   <body>
+        <div>
+            <p>
+                The Jenkins Extension allows you trigger builds on Jenkins servers from within BuildMaster, and get/extract build artifacts from the Jenkins server.
+                For this extension to work correctly, the BuildMaster server must be able to access the Jenkins server.
+            </p>
+
+            <h2>Extension Configuration</h2>
+            <p>
+                Before using the Jenkins actions, the extension must be configured. Once installed from the extension gallery, select "Admin", and
+                "Add/Configure BuildMaster Extensions" under Extensibility from the administration page. At the bottom of the page is a button to
+                "Configure or Delete Extensions". Look for the Jenkins extension and click on the Edit icon.
+            </p>
+            <p>
+                Choose "Set/override the default values" and fill in the appropriate server URL and credentials (if desired).
+                Leaving the username/password blank will use anonymous authentication. For Jenkins version 1.426 and higher you can use the
+                <a href="https://wiki.jenkins-ci.org/display/JENKINS/Authenticating+scripted+clients" target="_blank">API token</a> in the
+                password field to use that for API authentication.
+            </p>
+            <p>
+                Also, when configuring the extension set a correct value for the Build Delay setting. This setting controls the amount of time BuildMaster will
+                wait after triggering a build so as to allow the Jenkins quiet period to elapse before BuildMaster checks the build status.
+            </p>
+
+            <h2>Creating a Build in Jenkins from BuildMaster</h2>
+            <p>
+                To create a build in Jenkins, add the "Trigger Jenkins Build" action to any deployment plan. For BuildMaster to be able to run a build,
+                it needs to know the build's job name :
+            </p>
+            <p>
+                <img src="/resources/knowledgebase/Jenkins-Job.png" />
+            </p>
+            <p>
+                The additional parameters field are supplied in the same manner as if you were accessing the Jenkins API via HTTP.
+                You can view details on specifying additional build parameters <a href="https://wiki.jenkins-ci.org/display/JENKINS/Remote+access+API"
+                                                                                  target="_blank">on the Jenkins wiki page</a>.
+            </p>
+            <p>
+                If the "Wait for build to complete" option is checked, then BuildMaster will continually ping the Jenkins server and the action will wait
+                until the jobs building status is no longer "true".
+            </p>
+
+            <h2>Getting an Artifact From Jenkins</h2>
+            <p>
+                BuildMaster allows you to get artifacts from a Jenkins server and either download it to an output directory, or extract its contents to an
+                output directory. Simply add the "Get Jenkins Artifact" to your deployment plan.
+            </p>
+            <p>
+                To configure this action, you must specify either an artifact name or "*" to indicate all artifacts in the build. You must also specify the
+                job name (from above) and the build number. The build number can be an actual specific build number or one of the predefined constants from
+                the list below. The final option is whether or not to extract the artifact into the output directory (if the artifact is a zip file) or to
+                just copy the artifact.
+            </p>
+            <p>
+                The predefined constants for the job builds are:
+                <ul>
+                    <li>"lastBuild"</li>
+                    <li>"lastCompletedBuild"</li>
+                    <li>"lastFailedBuild"</li>
+                    <li>"lastStableBuild"</li>
+                    <li>"lastSuccessfulBuild"</li>
+                    <li>"lastUnsuccessfulBuild"</li>
+                </ul>
+            </p>
+
+        </div>
+	</body>
+</html>
+
+

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extensionAdditionalInfo>
+  <info><![CDATA[
+    <p>
+	  This extension contains actions for executing various tools in the Java JDK.
+	</p>
+  ]]></info>
+  <actionInfo id="Inedo.BuildMasterExtensions.Java.CreateJar" name="Create JAR" summary="Packages an application into a JAR file."><![CDATA[
+    <p>
+	  This action creates a JAR file.
+	</p>
+	<h3>Action Fields</h3>
+	<h4>Log Verbose Output</h4>
+	<p>
+	  When checked, verbose output of the jar tool is saved in BuildMaster's
+	  action log.
+	</p>
+	<h4>File Name</h4>
+	<p>
+	  The name of the jar file to create, relative to the target directory.
+	</p>
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.Java.SignJar" name="Sign JAR" summary="Signs a JAR file with a certificate."><![CDATA[
+    <p>
+	  This action signs a JAR file with a certificate.
+	</p>
+	<h3>Action Fields</h3>
+	<h4>Keystore</h4>
+	<p>
+	  The name of the keystore which contains the certificate.
+	</p>
+	<h4>Keystore Password</h4>
+	<p>
+	  The password which is required to access the specified keystore.
+	</p>
+	<h4>Alias Password</h4>
+	<p>
+	  The password for the key alias.
+	</p>
+	<h4>JAR File</h4>
+	<p>
+	  The JAR file to sign, relative to the source directory.
+	</p>
+	<h4>Alias</h4>
+	<p>
+	  The alias of the private key which is used to sign the JAR.
+	</p>
+  ]]></actionInfo>
+</extensionAdditionalInfo>

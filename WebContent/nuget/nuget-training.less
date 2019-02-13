@@ -1,0 +1,352 @@
+@import "..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+a.download {
+    background-color: none;
+    padding: 8px 16px;
+    color: @inedo-darkblue;
+    border: 3px solid @inedo-darkblue;
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: @inedo-darkblue;
+        color: @inedo-white;
+    }
+}
+
+.content-container#banner {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    min-height: 275px;
+    background: url(/resources/images/banners/nuget-banner.png) no-repeat #011b2d;
+    background-position: center left;
+    z-index: 5;
+    position: relative;
+    border-bottom: 20px solid @inedo-darkblue;
+
+    .content {
+        padding: 70px 100px;
+
+
+        p {
+            color: @inedo-black;
+            font-weight: bolder;
+            font-size: 18px;
+            margin-left: 100px;
+            margin-right: 120px;
+        }
+
+        h1 {
+            font-size: 310%;
+            color: @inedo-white;
+            margin: 0;
+            text-shadow: -3px 0 7px @inedo-darkblue;
+        }
+
+        .c-buttons {
+            .circle-button {
+                margin-left: 20px;
+                margin-top: 30px;
+                display: inline-block;
+
+                a.download {
+                    color: @inedo-darkblue;
+                    background-color: @inedo-white;
+                    border: 3px solid @inedo-white;
+
+                    &:hover {
+                        background-color: @inedo-darkblue;
+                        color: @inedo-white;
+                        border: 3px solid @inedo-darkblue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.content-container {
+    .content.training {
+        h1 {
+            font-size: 40px;
+            margin: 10px 0 50px 0;
+            color: @inedo-black;
+            font-weight: 800;
+            display: inline-block;
+        }
+
+        h3 {
+            font-weight: 800;
+            font-size: 28px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            padding-bottom: 4px;
+            border-bottom: 4px solid @inedo-darkgrey;
+        }
+
+        ul {
+            margin-left: 60px;
+
+            li {
+                margin-top: 8px;
+            }
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 31px;
+            margin-left: 40px;
+        }
+
+        h4 {
+            margin: 12px 0 0 40px;
+            font-size: 24px;
+        }
+        .c-buttons {
+            .circle-button {
+                margin: 40px auto 50px 40px;
+            }
+        }
+
+        .session-1 {
+            width: 500px;
+            float: left;
+        }
+
+        .session-2 {
+            float: left;
+            margin-left: 30px;
+        }
+
+
+        .tab-content {
+            width: 680px;
+            margin-left: 25px;
+
+            > ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 4px 0;
+            }
+
+            > ul > li {
+                display: inline;
+                margin: 0 0 0 10px;
+                padding: 4px 16px;
+                margin-bottom: -1px;
+                color: #8da0b1;
+                border: 1px solid #8da0b1;
+
+                &.firstchild {
+                    margin: 0 0 0 0;
+                }
+            }
+
+            > ul > li.current-tab {
+                color: #a8ca35;
+                border-bottom: 1px solid #fff;
+            }
+
+            > .tabs {
+                margin-bottom: 40px;
+                border-top: 1px solid #8da0b1;
+                padding: 5px 3px 5px 10px;
+
+                h3 {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}
+
+.content-container#solutions-inedo {
+    .content {
+        .does {
+            margin: 36px 0;
+
+            .text-info {
+                display: inline-block;
+                width: 650px;
+                margin-left: 10px;
+                padding-top: 38px;
+                padding-left: 35px;
+
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 10px;
+                    font-weight: 700;
+                    color: @inedo-darkgrey;
+                    font-size: 32px;
+                }
+
+                h4 {
+                    margin-top: 0;
+                    padding-bottom: 20px;
+                    font-size: 20px;
+                    line-height: 32px;
+                }
+            }
+
+            .logo {
+                img {
+                    width: 225px;
+                    height: 225px;
+                }
+
+                display: inline-block;
+                vertical-align: top;
+                margin-top: 20px;
+            }
+
+            &.right {
+                .text-info {
+                    margin-right: 10px;
+                    padding-right: 35px;
+                    margin-left: 0;
+                    padding-left: 0px;
+                }
+            }
+        }
+    }
+}
+
+
+.content-container#culture {
+    margin: 36px 0;
+
+    .content {
+        h2 {
+            text-transform: uppercase;
+            font-weight: 700;
+            color: @inedo-darkgrey;
+            text-align: center;
+            margin: 0 0 30px 0;
+            font-size: 32px;
+        }
+
+        a {
+            img {
+                width: 330px;
+            }
+        }
+
+        a.rachel:hover {
+            img {
+                content: url(/company/sr.jpg);
+            }
+        }
+
+        a.scott:hover {
+            img {
+                content: url(/company/rg.jpg);
+            }
+        }
+    }
+}
+
+.content-container#services {
+    .content {
+        p {
+            font-size: 19px;
+        }
+
+        h3 {
+            font-size: 20px;
+            line-height: 32px;
+            font-weight: bolder;
+        }
+
+        #open {
+            h2 {
+                text-transform: uppercase;
+                font-weight: 700;
+                color: @inedo-darkgrey;
+                text-align: center;
+                margin: 0;
+                font-size: 32px;
+            }
+
+            table.positions {
+                width: 100%;
+                border: 0;
+                margin: 50px 0;
+
+                tr {
+                    text-align: left;
+
+                    &.feat-position {
+                        border: 0;
+                        border-bottom: 2px solid @inedo-darkblue;
+                        border-top: 2px solid @inedo-darkblue;
+                        display: table-row;
+                    }
+
+                    td {
+                        padding: 26px 15px;
+                        border: 0;
+
+
+                        &.position {
+                            text-align: left;
+                            font-weight: bolder;
+                            font-size: 19px;
+                            color: #b6b2b2;
+                            font-weight: 300;
+
+                            a {
+                                color: @inedo-darkblue;
+                                font-weight: 600;
+
+                                &:hover {
+                                    color: @proget-blue;
+                                }
+                            }
+                        }
+
+                        &.apply {
+                            text-align: center;
+                        }
+
+                        &.heading {
+                            padding: 10px 15px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .inedo-courses {
+            margin-top: 10px;
+            margin-bottom: 30px;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media print {
+    .tool-nav {
+        display: none !important;
+    }
+
+    #sticky-nav-content-container {
+        display: none !important;
+    }
+
+}

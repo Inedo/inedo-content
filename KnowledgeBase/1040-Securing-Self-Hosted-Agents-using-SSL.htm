@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html []>
+<html>
+  <head>
+    <meta name="id" content="1040" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="agents, servers, buildmaster, security, hosting" />
+    <title>Securing Self-Hosted Agents using SSL</title>
+  </head>
+  <body>
+    <p>
+		BuildMaster Agents exposed to the Internet should include additional security compared to agents running on a secure local network.
+		The self-hosted agents in BuildMaster support the use of SSL encryption just like agents hosted using IIS.
+	</p>
+
+    <h2>Installing the Certificate</h2>
+    <p>
+        To use SSL, you must have an appropriate certificate installed to the machine store on the BuildMaster Agent. You can view/add
+	    certificates using the <a href="http://technet.microsoft.com/en-us/library/dd632619.aspx">Certificates MMC Snap-In</a>. Take note of
+	    the <strong>Friendly Name</strong> field for the certificate; you will need this to configure the Agent.
+	</p>
+    <img title="MMC" style="display: inline" alt="MMC" src="/resources/knowledgebase/f6ca91aa3763_8EB0_image_5.png" width="417" height="418" />
+
+    <h2>Configuring the Agent</h2>
+    <p>
+		With the certificate installed, you are now ready to edit the Agent's configuration file to enable SSL.
+		Open the <strong>app_appSettings.config</strong> file in a text editor. This file is located in the installation
+		folder of the Agent – by default, this is C:\BuildMaster\TcpAgent. Add the following key to this config file:
+	</p>
+
+    <blockquote style="font-family: Consolas, 'Courier New';">
+		&lt;add key="Agent.CertificateName" value="Friendly Name"/&gt;
+	</blockquote>
+
+    <p>
+		Of course, you should replace Friendly Name with the friendly name of your certificate. Once you’ve saved the config file, restart the Agent.
+	</p>
+    
+  </body>
+</html>

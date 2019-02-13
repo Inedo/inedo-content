@@ -1,0 +1,198 @@
+@import "..\..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+a.download {
+    background-color: none;
+    padding: 8px 16px;
+    color: @inedo-darkblue;
+    border: 3px solid @inedo-darkblue;
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: @inedo-darkblue;
+        color: @inedo-white;
+    }
+}
+
+
+#header {
+    position: relative;
+    z-index: 6;
+}
+
+.menu-anchor {
+    visibility: hidden;
+    position: absolute;
+    top: -50px;
+}
+
+
+
+.content-container#services {
+    .content {
+        p {
+            font-size: 20px;
+        }
+
+        h2 {
+            margin-top: 24px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .button-set {
+            margin: 36px 0;
+            text-align: left;
+        }
+
+        .training-courses {
+            width: 436px;
+            float: left;
+
+            &.courses {
+                margin-right: 100px;
+            }
+        }
+    }
+
+    table.courses {
+        width: 100%;
+        border: 0;
+        margin: 50px 0;
+
+        tr {
+            text-align: center;
+
+            &.feat-course {
+                border: 0;
+                border-bottom: 2px solid @inedo-darkblue;
+                display: table-row;
+            }
+
+            td {
+                padding: 26px 15px;
+                border: 0;
+
+                img {
+                    vertical-align: middle;
+                }
+
+                &.course {
+                    text-align: left;
+                    font-weight: bolder;
+                    font-size: 19px;
+
+                    img {
+                        margin-right: 15px;
+                    }
+                }
+
+                &.heading {
+                    padding: 10px 15px;
+                }
+            }
+        }
+
+        &.tri-table {
+            margin-top: 0px;
+            margin-bottom: 30px;
+
+            tr {
+                &.feat-course {
+                    border-bottom: 0;
+                }
+
+                td {
+                    padding: 20px 36px;
+                    border: 0;
+
+                    &.course {
+                        text-align: left;
+                        font-weight: bolder;
+                        font-size: 19px;
+
+                        img {
+                            height: 30px;
+                        }
+                    }
+
+                    &.heading {
+                        padding: 4px 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .upcoming-events {
+        margin: 16px 0 0 0;
+        display: inline-block;
+
+        a.cards {
+            text-decoration: none;
+            width: 492px;
+            height: 264px;
+            float: left;
+            margin: 8px 4px 0 4px;
+            text-align: left;
+            background-color: @inedo-grey;
+
+            img {
+                vertical-align: middle;
+                margin-left: 8px;
+                margin-top: 6px;
+                padding-bottom: 4px;
+                height: 128px;
+            }
+
+            p {
+                font-weight: 500;
+                margin: 8px 20px 20px 20px;
+                font-size: 14px;
+                text-align: left
+            }
+
+            .title {
+                float: right;
+                margin-right: 18px;
+
+                h4 {
+                    margin-top: 42px;
+                    font-size: 21px;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        a.cards:hover {
+            box-shadow: 1px 1px 4px @inedo-darkblue;
+
+            p {
+                color: @inedo-blue;
+            }
+        }
+    }
+
+}
+
+
+@media print {
+    .tool-nav {
+        display: none !important;
+    }
+
+    #sticky-nav-content-container {
+        display: none !important;
+    }
+
+}

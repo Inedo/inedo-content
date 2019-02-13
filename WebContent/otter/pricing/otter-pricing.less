@@ -1,0 +1,147 @@
+/// <reference path="../../resources/styles/library.less" />
+@import "../../resources/styles/library";
+
+#pricing-box-container {
+    text-align: center;
+
+    .pricing-box {
+        background: #e4e4e4;
+        padding: 20px;
+        margin: 45px 0 10px 0;
+        text-align: center;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        box-sizing: border-box;
+
+        hr {
+            border: 1px solid @inedo-white;
+        }
+
+        h2, p {
+            color: @inedo-darkblue;
+        }
+
+        h2 {
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        a {
+            font-weight: bold;
+            color: #701981;
+            background: @inedo-white;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            width: 90%;
+            margin: 10px auto;
+        }
+
+        a:hover {
+            box-shadow: rgba(0,0,0,0.4) 0px 5px 1px;
+            background: @inedo-darkblue;
+            color: @inedo-white;
+        }
+
+
+
+        &.free {
+            width: 200px;
+            height: 413px;
+
+            h2 {
+                margin-top: 6px;
+                margin-bottom: 22px;
+            }
+
+            .copy {
+                min-height: 230px;
+            }
+        }
+
+        &.enterprise {
+            padding: 20px 10px;
+            width: 795px;
+
+            h2 {
+                margin-bottom: 26px;
+                margin-top: 6px;
+                font-size: 38px;
+            }
+
+            .pricing-block {
+                margin: 20px 0;
+                display: inline-block;
+                width: 118px;
+
+                h2 {
+                    margin: 0;
+                    font-size: 18px;
+                }
+
+                &.custom {
+                    width: 500px;
+                    margin: 20px 0 40px 0;
+                }
+            }
+
+            a {
+                display: inline-block;
+                width: 35%;
+                margin: 10px 40px;
+            }
+        }
+    }
+}
+
+
+.content-container#extended-pricing-copy {
+    h3 {
+        font-size: 150%;
+        text-transform: uppercase;
+    }
+
+    h3, h4 {
+        font-weight: 700;
+    }
+
+    a {
+        color: @proget-blue;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.flow {
+    margin-bottom: 50px;
+
+    .circle-button {
+        &.left {
+            float: left;
+
+            p {
+                margin-left: 4px;
+            }
+        }
+
+        &.right {
+            float: right;
+
+            p {
+                text-align: right;
+                margin-right: 4px;
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>$[Title]</title>
+    <meta name="MasterPageFile" content="main.htm" />
+    <link rel="stylesheet" type="text/css" href="/resources/styles/training-template.css" />
+    $[HeadContent]
+    <script type="text/javascript">
+         $(function () {
+             // see proget template for full javascript explanation
+             var url = window.location.href;
+
+             $(".tool-nav a").each(function () {
+                 if (url == (this.href)) {
+                     $(this).closest("li").addClass("active");
+                     $(this).closest("li").parent().parent().addClass("active");
+                 }
+             });
+         });
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            var url = window.location.href;
+
+            $(".floating-nav a").each(function () {
+                if (url == (this.href)) {
+                    $(this).closest("li").addClass("active");
+                    $(this).closest("li").parent().parent().addClass("active");
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div id="banner" class="content-container">
+        <div class="content">
+            <img src="/training/training-title.png" alt="Training" />
+           <p class="tagline">
+               Expert-developed and customizable to help organizations of all sizes master our tools
+           </p>
+            <div class="circle-button">
+                <a class="download" href="/training/contact">Request Training Quote</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container" id="sticky-nav-content-container">
+        <div class="content">
+            <div id="sticky-nav" class="floating-nav">
+                <ul class="horizontal-list">
+                    <li><a href="/training">Training Overview</a></li>
+                    <li><a href="/training/courses">Available Courses</a></li>
+                    <li><a href="/training/events">Free Training Events</a></li>
+                    <li><a href="/training/contact">Request Customized Training</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container" id="navigation">
+        <div class="tool-nav">
+            <div class="content">
+                <ul class="horizontal-list">
+                    <li><a href="/training">Training Overview</a></li>
+                    <li><a href="/training/courses">Available Courses</a></li>
+                    <li><a href="/training/events">Free Training Events</a></li>
+                    <li><a href="/training/contact">Request Customized Training</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="content">
+
+            $[MainContent]
+
+        </div>
+    </div>
+
+
+</body>
+</html>

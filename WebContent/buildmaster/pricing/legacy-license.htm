@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BuildMaster Legacy License</title>
+    <style>
+        .contact-form {
+            margin-top: 30px;
+        }
+        .contact-form input[type=text], .contact-form select {
+            width: 595px;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form input[type=button] {
+            width: 100%;
+            background-color: #3FA9F5;
+            color: white;
+            padding: 14px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+        }
+
+            .contact-form input[type=button]:hover {
+                background-color: #1e89d5;
+            }
+
+        .contact-form {
+            background-color: #e4e4e4;
+            padding: 10px 20px;
+            margin-bottom: 40px;
+        }
+
+       
+        .ahvalidator.error input[type=text],
+        .ahvalidator.error select {
+            background-color: #fcc;
+        }
+
+        .ahvalidator.error .message {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Legacy License</h1>
+    <p>
+        Before v6.0, BuildMaster Free included 5 users, 10 applications, and 5 servers. Beginning with v6.0, BuildMaster Free is now unlimited users, applications, and servers, but all users act as full administrators (i.e. all users have every permission granted to them and restrictions are ignored).
+    </p>
+    <p class="info">
+        <strong>Important:</strong> any Free Edition users that expose their instance to the internet and assign privileges to Anonymous users should be aware those users would become full administrators after upgrading to v6.0
+    </p>
+
+    <p>
+        If you are an <strong>existing free user</strong> who is negatively affected by this change, fill out the contact form below and we can send you a new key that will effectively be a 5 user key with no server or application restrictions.
+    </p>
+    <p class="info">
+        <strong>Note:</strong> you must use the email associated with your account. If you're not sure of the correct email, include your current license key in the "<i>additional comments</i>" section.
+    </p>
+    
+    <div class="contact-form">
+        
+        <contact-form method="post" action="/contact-form">
+            <fieldset>
+                <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
+                <input type="hidden" name="RedirectUrl" value="/buildmaster/pricing/request-received" />
+                <input type="hidden" name="Subject" value="BuildMaster Legacy License Request" />
+                <input type="hidden" name="CcFromAddress" value="false" />
+                <input type="hidden" name="Priority" value="High" />
+
+                <label>Your Name*</label>
+                <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                <label>Email Address*</label>
+                <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                <label>Company*</label>
+                <div><input name="Company" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                <label>Additional Comments</label>
+                <div><textarea name="Message" style="width: 630px;" rows="4" cols="20"></textarea></div>
+
+                <input type="button" value="Request Legacy License" onclick="AhValidation.Submit(this);" />
+            </fieldset>
+        </contact-form>
+    </div>
+
+
+</body>
+</html>

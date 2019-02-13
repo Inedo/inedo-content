@@ -1,0 +1,136 @@
+/// <reference path="../../resources/styles/library.less" />
+@import "../../resources/styles/library";
+
+
+.pricing-box-container {
+    margin-top: 30px;
+    text-align: center;
+
+    .pricing-box {
+        background: @inedo-paleblue;
+        padding: 20px 20px 10px 20px;
+        margin: 45px auto 10px 10px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: top;
+        width: 300px;
+        position: relative;
+        box-sizing: border-box;
+
+        hr {
+            background-color: @inedo-darkblue;
+            color: @inedo-darkblue;
+            height: 1px;
+            border: 0;
+        }
+
+        &.pg {
+            background: @proget-blue;
+        }
+
+        &.hh {
+            background: #45B886;
+        }
+
+        h2, p {
+            color: @inedo-darkblue;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        a.download {
+            display: block;
+            margin: 10px auto;
+        }
+
+        .copy {
+            min-height: 100px;
+            box-sizing: border-box;
+
+            h2 {
+                margin-top: 16px;
+            }
+        }
+
+        &.thin {
+            width: 250px;
+        }
+    }
+
+    .pricing-box:after {
+        position: absolute;
+        top: -35px;
+        @half-logo: 35px;
+        left: calc(~'50% - @{half-logo}');
+    }
+
+    .pricing-box.pg:after {
+        content: url('/proget/pricing/pg-logo.png');
+    }
+
+    .pricing-box.hh:after {
+        content: url('/hedgehog/pricing/hh-logo.png');
+    }
+}
+
+.extended-pricing-copy {
+    margin-bottom: 70px;
+    margin-top: 50px;
+
+    h3 {
+        font-size: 150%;
+        text-transform: uppercase;
+    }
+
+    h3, h4 {
+        font-weight: 700;
+    }
+
+    a {
+        color: @proget-blue;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a.download {
+        color: @inedo-darkblue;
+        width: 250px;
+        text-align: center;
+        display: block;
+        margin: 20px auto;
+    }
+
+    a.download:hover {
+        text-decoration: none;
+        color: @inedo-white;
+    }
+}
+
+.flow {
+    margin-bottom: 50px;
+
+    .circle-button {
+        &.left {
+            float: left;
+
+            p {
+                margin-left: 4px;
+            }
+        }
+
+        &.right {
+            float: right;
+
+            p {
+                text-align: right;
+                margin-right: 4px;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extensionAdditionalInfo>
+  <info><![CDATA[
+  <p>This extension contains an action for generating a code coverage report using NCover and associating it with the current build.</p>
+  ]]></info>
+  <actionInfo id="Inedo.BuildMasterExtensions.NCover.CodeCoverageReportAction" name="Generate Code Coverage Report" summary="Executes NCover to generate a code coverage report for an application."><![CDATA[
+  <h3>Action Fields</h3>
+  
+  <h4>Application to Profile</h4>
+  <p>Provide the executable to profile with NCover and any command line arguments to pass to it. The executable path may either be absolute or relative to the source directory.</p>
+  <h4>Report Type</h4>
+  <p>Specify the type of report to generate. Consult NCover documentation for information about the types of reports. In BuildMaster, you can generate one of the following report types:</p>
+  <ul>
+    <li>Full Coverage Report</li>
+    <li>Summary</li>
+    <li>Uncovered Code Sections</li>
+    <li>Classes By Cyclomatic Complexity</li>
+  </ul>
+  <h4>Data File</h4>
+  <p>Specify the profiler data file to generate, relative to the target path. If a report file is not specified, a temporary file is used.</p>
+  <h4>Report Name</h4>
+  <p>Provide the name of the report as it will appear in BuildMaster. This is optional.</p>
+  <h4>Includes and Excludes</h4>
+  <p>Specify the rules to apply for including or excluding code from analysis. Rules are semicolon-separated Perl-compatible regular expressions.</p>
+  ]]></actionInfo>
+</extensionAdditionalInfo>

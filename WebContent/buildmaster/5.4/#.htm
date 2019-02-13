@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BuildMaster 5.4 Overview</title>
+    <meta name="include-client-resources" content="fancybox131" />
+    <meta name="keywords" content="buildmaster,upgrade-notes" />
+    <meta name="SideBarName" content="bm-roadmap" />
+    <style type="text/css">
+        .content-container .inner-container img.small-image {
+            max-width: 300px;
+        }
+
+        .release-feature ul {
+            list-style-image: none;
+        }
+
+            .release-feature ul li {
+                list-style-image: none;
+                list-style-type: circle;
+                margin-left: 25px;
+            }
+
+        .release-feature.unstyled-ul div.screenshot {
+            margin-right: 45px;
+            margin-top: 35px;
+        }
+
+        .release-feature.unstyled-ul ul li {
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>
+        <img src="/resources/images/layout/buildmaster-logo.png" alt="BuildMaster" width="300" /> 5.4 is Released! 
+    </h1>
+    <p class="info">
+        <b>Note:</b> this is not the latest version of BuildMaster
+    </p>
+
+
+    <div class="release-feature">
+
+        <p>
+            BuildMaster is an Application Release Automation tool built for DevOps. 
+            You can create complex release pipelines all managed from one central dashboard. 
+
+        </p>
+        <p>
+            If you're upgrading, make sure to check out <a href="/support/kb/1133">Upgrade Notes for BuildMaster 5.4</a>.
+        </p>
+    </div>
+    <div class="release-feature">
+        <h3>Agentless Servers for Windows</h3>
+        <p>
+            Although the <em>Inedo Agent</em> is highly-optimized, lightweight, and <a href="/support/documentation/buildmaster/installation/agent-installation-guide">quite easy to install</a>, sometimes an
+            agentless approach is preferred. This is where <em>Agentless Windows Servers</em> come in.
+        </p>
+        <p>
+            Just enable PowerShell Remoting (see <a href="https://technet.microsoft.com/en-us/library/hh849694.aspx" target="_blank">Enable-PSRemoting</a>), and
+            Buildmaster will now be able to communicate with Windows servers that don't have the Inedo Agent installed!
+        </p>
+        <p>
+            See <a href="/support/documentation/buildmaster/administration/agents">Managing Agents and Servers</a> for more information.
+        </p>
+    </div>
+
+    <div class="release-feature">
+        <h3>Execution Engine / OtterScript Enhancements</h3>
+        <p>
+            We added a couple interesting features to the Execution Engine: global variables (for sharing across asynchronously executing blocks) and locking (to ensure critical sections run exclusively, and not in parallel).
+            Tutorials are coming soon, but in the mean time, check out the <a href="/support/documentation/otter/reference/otter-script/formal-grammar">formal grammar</a> and  <a href="/support/documentation/otter/reference/otter-script/formal-specification">formal specification</a>
+            for how they work.
+
+        </p>
+
+    </div>
+    <div class="release-feature">
+        <h3>New API Endpoints</h3>
+        <p>
+            To help you automate and configure BuildMaster, we added a new API endpoints you can use to programmatically query or configure BuildMaster instances.
+        </p>
+        <ul class="normal">
+            <li><a href="/support/documentation/buildmaster/reference/api/variables">Variables Management API</a> - update configuration variables with a simplified API endpoint</li>
+        </ul>
+    </div>
+
+    <div class="release-feature">
+        <h3>Get started!</h3>
+        <p>
+            You can <a href="/buildmaster/download">download</a> BuildMaster and take your own test drive, and see for yourself just how easy expanding your DevOps toolchain can be.
+            If you have a feature you'd like to add, don't hesitate to contact us via the <a href="/support/questions">support Q&amp;A</a> forum.
+        </p>
+        <p>
+            <a class="button" href="/buildmaster/download">Download BuildMaster 5.4</a>
+        </p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+#header,
+#footer.content-container {
+  display: none;
+}
+* {
+  box-sizing: border-box;
+}
+.content-container .circle-button {
+  margin: 30px auto 40px auto;
+  text-align: center;
+}
+.content-container .circle-button a.download {
+  background-color: none;
+  padding: 12px 20px;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  border-radius: 100px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.content-container .circle-button a.download:hover {
+  background-color: #ffffff;
+  color: #48729d;
+}
+.content-container.top {
+  padding-top: 0;
+  min-height: 700px;
+  position: relative;
+}
+.content-container.top .hero-bar {
+  height: 60px;
+  background-color: #48729d;
+}
+.content-container.top .hero-bar img {
+  height: 30px;
+  margin: 14px 30px;
+}
+.content-container.top .far-right {
+  float: right;
+  margin-left: 40px;
+  margin-right: 16%;
+  margin-top: 80px;
+}
+.content-container.top .far-right #sign-up {
+  z-index: 3;
+  height: 505px;
+  width: 350px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #282b3a;
+  border: 1px solid #48729d;
+  box-shadow: 2px 2px 4px #353535;
+}
+.content-container.top .far-right #sign-up p {
+  color: #ffffff;
+  font-size: 27px;
+  font-weight: 500;
+  margin: 0 10px 30px 10px;
+}
+.content-container.top .far-right #sign-up label {
+  color: #ffffff;
+  font-size: 95%;
+  margin: 0;
+}
+.content-container.top .far-right #sign-up form {
+  width: 304px;
+  display: block;
+}
+.content-container.top .far-right #sign-up fieldset {
+  margin: 0;
+}
+.content-container.top .far-right #sign-up input {
+  box-sizing: content-box;
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 5px 12px;
+  color: #444444;
+  background-color: #f6f6f6;
+  border: none;
+}
+.content-container.top .far-right #sign-up input.submit-button {
+  background-color: #db2916;
+  padding: 10px 12px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+}
+.content-container.top .far-right #sign-up input.submit-button:hover {
+  background-color: #b21d1d;
+}
+.content-container.top .content.above-fold {
+  margin-left: 16%;
+}
+.content-container.top .content.above-fold .left {
+  max-width: 800px;
+  padding-top: 4px;
+  margin-top: 30px;
+}
+.content-container.top .content.above-fold .left h1 {
+  color: #282b3a;
+  font-size: 300%;
+  font-weight: 800;
+  line-height: 62px;
+  margin-right: 20px;
+  margin-top: 28px;
+}
+.content-container.top .content.above-fold .left h2 {
+  margin-top: 0px;
+  padding-bottom: 16px;
+  color: #282b3a;
+  font-size: 19px;
+  font-weight: 500;
+}
+.content-container.top .content.above-fold .left ul.will-learn {
+  margin-left: 20px;
+  color: #282b3a;
+  padding-bottom: 30px;
+  line-height: 26px;
+}
+.content-container.top .content.above-fold .left ul.will-learn li {
+  list-style: disc;
+  font-size: 16px;
+  padding-bottom: 8px;
+}
+.content-container.top .content.above-fold .left .wp-info {
+  margin-top: 50px;
+}
+.content-container.top .content.above-fold .left .wp-info .wp-image {
+  float: left;
+}
+.content-container.top .content.above-fold .left .wp-info .wp-image img {
+  box-shadow: 1px 2px 4px #353535;
+  margin-right: 28px;
+  margin-bottom: 80px;
+}
+.content-container.top .content.above-fold .left .wp-info .wp-list {
+  margin-left: 340px;
+}

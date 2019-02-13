@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="keywords" content="sql, stored-procedures, batch" />
+    <meta name="publish-date" content="03/05/2015 2:00 PM" />
+    <meta name="author" content="Olivia Glenn" />
+    
+    <title>Using Source Control to Manage Stored Procedures</title>
+    
+</head>
+<body>
+    <h1>Using Source Control to Manage Stored Procedures</h1>
+    <p>
+        It goes without saying that source code files belong in source control. 
+        Using your production environment as the repository is not only difficult 
+        (for compiled applications, at least), but perhaps one of the worst possible practices. 
+        Code has to start in source control and move its way up to production.
+    </p>
+
+    <p>
+        Of course, the opposite is true for data: it has to live in production. And that means changes to your data structures are tricky, 
+        as you can't just compile a new database and push it to production. But remember: not everything in a database is data. 
+        In fact, just about every object in the database <i>except</i> tables don't actually store data
+    </p>
+    
+    <p>
+        Unlike tables, you can DROP and CREATE stored procedures, triggers, views, and functions a hundred times over without impacting data. 
+        These objects are indeed code, and they just happen to exist inside of a database instead of a file system. And you know where code belongs.
+    </p>
+
+    <p>
+        The rules of database objects in source control are simple: one file per object (named after the object) that will DROP and then CREATE the object. 
+        You can use a tool like Scriptio to extract existing objects into files. Throw in a little file organization, and you're ready for check-in:
+    </p>
+
+        <pre>
+            1.FUNCTIONS\
+               1.FormatOrderNumber.sql
+            2.VIEWS\
+               1.OrdersWithTotals.sql
+               1.SalesReport.sql
+               2.OrdersPastDue.sql
+            3.PROCS\
+               1.AddItemToOrder.sql
+               1.ValidateOrder.sql
+               2.ProcessOrder.sql
+        </pre>
+
+                <p>
+                    Note that the numeric prefixes ensure proper execution order. Procedures can use Views, which in turn can use functions... 
+                    but usually not the other way around. And since a handful database objects depend on other objects, 
+                    those can prefixed with “2.” instead of “1.”.
+                </p>
+                <p>
+                    Execution of these scripts is just as easy, and can be accomplished with a simple batch file:
+                </p>
+
+        <pre>
+              FOR /R %%f IN (*.sql) DO (
+              ECHO Running %%f
+              OSQL -E -i "%%f" -n -b -d myDatabase -S myServer
+            )
+        </pre>
+    
+    <p>
+        With scripts and a batch script set-up in source control, 
+        building your database code is as easy as grabbing from source control and clicking “execute scripts”.
+    </p>
+
+ 
+</body>
+</html>

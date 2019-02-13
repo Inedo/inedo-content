@@ -1,0 +1,66 @@
+<!DOCTYPE HTM>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BuildMaster Case Study for Awarepoint | Inedo</title>
+    <meta name="MasterPageFile" content="buildmaster.htm" />
+    <link rel="stylesheet" type="text/css" href="/resources/styles/individual-case-studies.css" />
+</head>
+<body>
+    <h2 style="text-align:center;"><i>BuildMaster Case Study</i><br/><strong>Awarepoint</strong></h2>
+    <hr/>
+    <img class="flavor-image right" src="/buildmaster/case-studies/awarepoint/shots.jpg" alt="" />
+    <p class="summary">Awarepoint is one our most interesting clients.  As you'll see, they are doing some very innovative things with BuildMaster and Amazon on the cloud.  We were lucky enough to spend some time talking with them about their work establishing and maintaining Real Time Location Systems for hospitals. Our clients use BuildMaster for a wide variety of projects, so we were pretty excited to get some the behind the scenes details about the ways they found to leverage our software. Be on the lookout for their customizations to be publicly available soon.</p>
+    <p class="question">Tell us about <a href="http://www.awarepoint.com//" target="blank">Awarepoint.</a>:</p>
+    <p class="answer">Awarepoint delivers the healthcare industry's only cloud-based, Real-time Location System (RTLS) on a single platform of integrated software, technology, and managed services. Dedicated exclusively to healthcare, Awarepoint's experience and reliable, proven solutions power the largest healthcare RTLS deployments in the world. </p>
+    <p class="quote right">"We started rolling out deployment automation solutions within the first month and haven't looked back since"</p>
+    <p class="answer">Awarepoint offers enterprise-wide and department-specific software applications that leverage tag location and movement to track, report on, and proactively improve asset, staff, and patient workflows. Awarepoint clients consistently realize significant improvements in operational, clinical and financial outcomes, for example, growing patient volume and throughput without increasing lead times, staffing levels or capital expenditures. Even more significantly, Awarepoint's proactive, results-driven solution enables hospitals to bolster staff and patient satisfaction, while enhancing safety and quality of care.</p>
+    <p class="question">Can you give me an overview of how you developed software before <a href="/buildmaster/overview" target="blank">BuildMaster</a>?</p>
+    <img class="flavor-image left" src="/buildmaster/case-studies/awarepoint/bed.jpg" width="150" alt="" />
+    <p class="answer">Sure! Prior to BuildMaster, our process was essentially a manual one. Servers were deployed onsite and our support team would manually copy the master files from particular versions, servers and databases -- those tested by QA and then checked into a separate instance of TFS -- and then manually touch every configuration. The process to get an environment deployed and running would take 6-8 hours and it was very error prone, often resulting in multiple attempts to configure everything correctly. </p>
+    <p class="question">What lead to you considering BuildMaster?</p>
+    <p class="answer">Very early on in the development of our solution, we adopted the concepts of build automation and continuous integration using tools like MSBuild and Final Builder. We knew that automated builds yielded high returns in productivity, and it inspired us to automate wherever possible. We have been following the evolving trends in the DevOps space for a while and felt it was time to take our internal development processes to the next level, going beyond build automation and moving into continuous deployment and delivery. We knew that we wanted to find a strong toolset to build our processes around, so we initiated a vendor search to evaluate the leading <a href="/devops" target="blank">DevOps</a> tools on the market. Naturally, BuildMaster made our short list based on features, price and positive reviews from the community. After a detailed analysis of competing solutions we selected BuildMaster as our vendor of choice, jumped right into an implementation phase and started rolling deployment automation solutions within the first month, and we haven't looked back since. </p>
+    <p class="question">Were there any specific <a href="/buildmaster/features/">features</a> about BuildMaster that lead to your adopting it?</p>
+    <p class="answer">BuildMaster truly met all of the  criteria that we defined in our selection process. We especially valued the amount of flexibility BuildMaster offers in the setup and configuration of complex deployment workflows. There is a lot of great and easy-to-use functionality out of the box, but anywhere there were gaps we could plug-in our own custom scripts and jobs. The fact that it's web-based and ties into active directory was also a plus. The price was great too. </p>
+    <p class="question">It sounds like this process was pretty open and close. A lot of potential clients struggle to get everyone on board or to be able to use new tools that put them on the cutting edge. What would you say helped not only get this pushed through, but smoothly? </p>
+    <p class="answer">Once we began an initial Proof of Concept and were able to show the time saving factor alone, support for DevOps was garnered pretty quickly. As a small company that is growing aggressively, we always have to be mindful of allocating resources and time to initiatives that don't yield high returns in productivity and quality. There were some initial concerns about the level of effort that would be required to boot-strap a DevOps initiative and whether or not we could "do it right" with the resources that we could commit to initial deployment, but that is where BuildMaster really made the biggest impact. Using the robust toolset we were able to have working automation and demonstrate results in less time and with less effort than we would have ever anticipated.</p>
+    <p class="question">I think a lot of those currently evaluating this tool would be interested in knowing with whom you worked to get this going for you guys. Who led the charge?</p>
+    <p class="answer">In terms of titles it was the VP of Software Engineering, a Senior Software Architect, and myself, Principle Software Engineer. </p>
+    <p class="question">What benefits did adopting BuildMaster ensure for end-users?</p>
+    <p class="answer">Initially, BuildMaster significantly improved our internal deployment processes by increasing the level of standardization and consistency, reducing risk and errors from manual intervention, and of course, it saved a tremendous amount of time. While most of these benefits were internal, our clients certainly experienced an overall improvement in our software
+    <p class="quote left">"We were able to have working automation and demonstrate results in less time and with less effort than we would have ever anticipated."</p>
+    delivery process as a result. We are now starting to roll out our next generation version of the platform, which is moving from an onsite deployment model to a cloud-based SaaS model. The BuildMaster product is playing a crucial role in fully automating the delivery of our software to the cloud. Using BuildMaster, along with an infrastructure-as-code model, we can hydrate our entire stack (infrastructure: servers, load balancers, firewalls, etc. and software: web services, UI, databases, etc.) with the single click of a button. As the result, our end-users will receive updates faster, more frequently and with near zero downtime upgrades, which represents a tremendous value to our client base.
+    </p>
+    <p class="question">How has your team used BuildMaster? </p>
+    <p class="answer">Initially our use was pretty basic and limited to pushing out each of the packages to a particular server; these were primarily in-house applications. We would then deploy the web services, use the "deploy all configuration files", start up the web sites, etc. As I said, pretty vanilla to start with. We still have that process in place for some of our legacy applications. </p>
+    <p class="answers">However, as we've moved into the cloud, we've really changed that model quite a bit. In the last six months we've written several <a href="/buildmaster/extensions">extensions</a> to BuildMaster to support our new model, which involves dynamically spinning up a new environment from scratch on Amazon each time we do a deployment. We actually spin up a server per service, load everything, set up the load balancers, etc., which created some challenges and led to us extending the product.</p>
+    <p class="question">Can you tell us a little bit about those extensions?</p>
+    <p class="answer">We use a combination of extensions. One example involves registering a new server that doesn't currently exist. In order to build up deployments plans, we decided to use server groups. In another example, we use an extension to swap a new server into a server group dynamically, and then back out of it when we're finished using it.</p>
+    <p class="answer">As a starting principle we wanted to avoid manual process if possible. In another example, we wanted to be able to spin a new instance in Amazon without first identifying a name. We're able to create an AMI with the BuildMaster agent, and then use extensions that allowed BuildMaster to recognize the agent and dynamically register these new servers, while also pushing software to them.</p>
+    <p class="question">That sounds like pretty cutting edge stuff.</p>
+    <p class="answer">We like to think so! The process has been working quite well for us but there's been a bit of experimentation along the way as well. I have had extremely good luck with your support team in providing me with code samples and helping me debug things. There have been a number of other similar experiences and I use Live Help pretty extensively - and they have been extremely helpful.</p>
+    <p class="question">It would seem that a lot of other companies would eventually have similar needs. </p>
+    <p class="answer">Absolutely, if a company is going to be managing cloud environments, and many will as technology heads in that direction, it's almost essential. I think the ability to dynamically allocate and discover servers will be a very important part of working on the cloud. </p>
+    <p class="question">Are your people using it in ways you hadn't expected?</p>
+    <p class="quote right">"BuildMaster is playing a crucial role in fully automating the delivery of our software to the cloud."</p>
+
+    <p class="answer">We're trying to push boundaries of the software, but in a sense we knew we were going to try to do that from the beginning. We knew that the idea of DevOps was a new concept and is currently being performed in many different ways, and that it was going to be a lot of trial and error.</p>
+    <p class="question">Have you noticed changes in culture since deploying BuildMaster?</p>
+    <p class="answer">
+        Yes, previously we were very dependent on the development environment. If somebody needed a glimpse of the latest and greatest code from the development team, moving the content to the QA and demo environment was a relatively slow process and we had a number of in-house environments in addition to those onsite. BuildMaster has really allowed us to
+        streamline this process, to a point where people now expect that within 30-60 minutes we can spin up a particular environment and be able to run a demo or a test on it. In that sense it's changed the culture in terms of expectations.
+    </p>
+    <p class="question">Do you have advice for others considering BuildMaster?</p>
+    <p class="answer">
+        I've had great luck with Inedo's support team - Karl, Steve and several others. Everyone is very knowledgeable and very willing to help. Like most software engineers, I really want to be able to solve a challenge 100% by
+        <img class="flavor-image right" src="/buildmaster/case-studies/awarepoint/laptop.jpg" alt="" />
+        myself so in the beginning I'd struggle with something for days before being willing to ask anyone for help. I finally learned that when I'd ask support, I'd get an immediate answer, and now if I stumble over something, I just pull up live help. I would highly recommend that process.
+    </p>
+    <p class="question">Thank you very much. Would you recommend BuildMaster to others?</p>
+    <p class="answer">Yes, I definitely would. As I mentioned, it has been a huge success on several levels - from functionality, to cost, to the powerful nature of product. </p>
+
+
+</body>
+
+</html>
+
+

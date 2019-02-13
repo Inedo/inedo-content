@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+    <link rel="stylesheet" type="text/css" href="/support/tutorials/_resources/tutorial.css" />
+    
+    <!--    Available Macros on this template:
+
+            ${Tutorial.ProductName}
+            ${Tutorial.ProductName}
+            ${Tutorial.Title}
+            ${Tutorial.SubHeading}
+            ${Tutorial.PublishDate}
+            ${Tutorial.BodyXHtml}
+    -->
+</head>
+<body>
+    <div class="tutorial-wrap">
+        <div id="tutorial-banner" class="${Tutorial.ProductName}"></div>
+        <div id="mini-tutorial-nav" class="content-container">
+            <div class="content">
+                <ul>
+                    <li><a href="/support/documentation">documentation</a></li>
+                    <li><a href="/support/tutorials">tutorials</a></li>
+                    <li><a href="/support/kb">knowledge base</a></li>
+                    <li><a href="/support/questions">q&amp;a</a></li>
+                    <li><a href="#related-content">related content</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-container">
+        <a href="#tutorial-banner" id="back-to-top">Back to Top</a>
+
+            <div class="content">
+                <h1>${Tutorial.Title}</h1>           
+
+                <div>
+                    <inedo:tutorial-body></inedo:tutorial-body>
+                </div>
+                
+                <inedo:related-content />
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

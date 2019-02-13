@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1126" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="proget, upgrade-notes" />
+    <title>Upgrade Notes for ProGet 4.2</title>
+    <style type="text/css">
+        .major {
+            color: #c0504d;
+        }
+    </style>
+</head>
+<body>
+        <p class="announcement">
+                <b>Upgrading from a version older than 4.x?</b> It is strongly recommended that you first review <a href="/support/kb/1153/upgrading-from-proget-v2-and-v3">Upgrading from ProGet v2 and v3 </a>before proceeding.
+            </p>
+    <p><a href="/proget/4.1">ProGet 4.2</a> is minor release with the following changes:</p>
+    <ul>
+        <li>Amazon S3 and Azure Blog Package Stores</li>
+        <li>New Package Store Editor UI</li>
+    </ul>
+
+    <h2>Upgrade Impact</h2>
+    <p>
+        This was originally planned as a maintenance release, but we felt the addition of new package stores warranted a minor release.
+        Because the changes are entirely additive and very minor, the upgrade risks are negligible; there were no database schema changes.
+    </p>
+    <!--
+    <h3>Risk Mitigation</h3>
+    <p>Because pipelines are newly generated from existing workflows, there is some risk with broken approvals and event listeners. Custom extensions may also behave differently due to several SDK Changes. To mitigate these risks: </p>
+    <ul>
+        <li>Make sure that your BuildMaster database is backed up prior to upgrade</li>
+        <li>Make sure that the installation's \Extensions directory is backed up prior to upgrade</li>
+        <li>Test deployment plans in earlier environments prior to deploying to production</li>
+    </ul>
+        -->
+
+    <h2>Upgrade Process</h2>
+    <p>
+        ProGet may be upgraded by simply running the latest installer.
+    </p>
+
+
+    <h2>Rollback</h2>
+    <p>
+        See <a href="/support/documentation/proget/administration/backing-up">restoring your ProGet instance</a> for how to rollback.
+    </p>
+</body>
+</html>

@@ -1,0 +1,89 @@
+@import "..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+
+
+.content-container {
+    .content.training {
+                h1 {
+            font-size: 40px;
+            margin: 10px 0 50px 0; 
+            color: @inedo-black;
+            font-weight: 800;
+            display:inline-block;
+        }
+        h3 {
+            font-weight: 800;
+            font-size: 28px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            padding-bottom: 4px;
+            border-bottom: 4px solid @inedo-darkgrey;
+        }
+                ul {
+            margin-left: 60px;
+            li {
+                margin-top: 8px;
+            }
+        }
+        p {
+        font-size: 19px;
+        line-height: 31px;
+        margin-left: 40px;
+
+    }
+        h4 {
+            margin: 12px 0 0 40px;
+            font-size: 24px;
+        }
+
+        .session-1 {
+            width: 500px;
+            float: left;
+        }
+        .session-2 {
+            float: left;
+            margin-left: 30px;
+        }
+
+
+        .tab-content {
+           width: 680px;
+           margin-left: 25px;
+            > ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 4px 0;
+                
+            }
+            > ul > li {
+                display: inline;
+                margin: 0 0 0 10px;
+                padding: 4px 16px;
+                margin-bottom: -1px;
+                color: #8da0b1;
+                border: 1px solid #8da0b1;
+                &.firstchild {margin: 0 0 0 0;}
+            }
+            > ul > li.current-tab {
+                    color: #a8ca35;
+                    border-bottom: 1px solid #fff;
+            }
+            > .tabs {
+               margin-bottom: 40px;
+                border-top: 1px solid #8da0b1;
+                padding: 5px 3px 5px 10px;
+                h3 {
+                    margin-top: 15px;
+                }
+            }
+        }
+
+    }
+}
+

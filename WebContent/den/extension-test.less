@@ -1,0 +1,233 @@
+@import "..\resources\styles\library";
+
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@inedo-lightblue: #10466E;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+.mixin-homecc {
+    padding: 50px 0;
+    margin: 0;
+
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        color: @inedo-black;
+        margin: 0;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+
+.content-container#banner {
+    padding: 15px 0;
+    margin: 0;    
+    background-color: #a8ca35;
+    text-align: center;
+    height: 60px;
+   
+        .button-set {
+            float: right;
+            padding-top: 10px;
+            &.left {float: left;}
+            .button {
+                background-color: #a8ca35;
+                border: 2px solid @inedo-white;
+                padding: 2px 15px 5px 15px;
+                    a {
+                        text-decoration: none;
+                        color: @inedo-white;
+                        font-weight: bolder;
+                        font-size: 70%;
+                    }
+            }
+        }
+}
+
+
+.content-container#top-info {
+    margin-top: 30px;
+    .extension-box {
+        border: 0px solid @inedo-darkgrey;
+        margin: 25px;
+        border-left: 8px solid @inedo-darkgrey;
+        position: relative;
+        &.OT {
+            border-left: 8px solid @otter-purple;
+        }
+        &.BM {
+            border-left: 8px solid @buildmaster-orange;
+        }
+        &.PG {
+            border-left: 8px solid @proget-blue;
+        }
+        &.extension {
+            border-left: 8px solid @inedo-yellow;
+        }
+        &.raft {
+            border-left: 8px solid @inedo-lightblue;
+        }
+        &.tool {
+            border-left: 8px solid @inedo-grey;
+        }
+        & > img {
+            border: 1px solid @inedo-darkgrey;
+            width: 290px + 2 * 1px;
+            position: absolute;
+            border: 1px solid #444444;
+            object-fit: contain;
+            height: 100%;
+            top: 0;
+            right: 0;
+            box-sizing: border-box;
+        }
+        .extension-info {
+            background-color: @inedo-darkgrey;
+            color: @inedo-white;
+            width: 650px;
+            min-height: 190px;
+            h2 {
+                padding-top: 15px;
+                font-weight: bold;
+                padding-left: 30px;
+                margin: 0;
+                color: @inedo-white;
+            }
+            p {
+                padding: 15px 30px;
+                margin: 0;
+                font-size: 20px;
+                min-height: 54px;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0 20px;
+                padding: 10px;
+                border-top: 1px solid @inedo-lightgrey;
+            }
+            li {
+                display: inline;
+                font-size: 14px;
+                padding-left: 35px;
+                &:first-of-type {
+                    padding-left: 0;
+                }
+                &.lastchild {
+                    padding-left: 0;
+                    float: right;
+                }
+                a {
+                    color: #a8ca35;
+                }
+                a:hover {color: @inedo-white;}
+            }
+        }
+    }
+}
+
+.content-container#extension-sidebar {
+    .content {
+        .sidebar{    
+            margin: 0;
+            width: 235px;
+            float: right;
+            padding-right: 25px;
+            ul.tags {
+                list-style-type: none;
+                margin: 0;
+                padding: 4px 0;
+                font-size: 90%;
+            }
+             li.tags {
+                display: inline-block;
+                margin: 10px 10px 10px 0;
+                padding: 0 5px;
+                margin-bottom: -1px;
+                color: #10466e;
+                border: 1px solid #10466e;
+                background-color: #f6f6f6;
+                text-decoration: none;
+                border-radius: 3px;
+            }
+             ul.related-content {
+                list-style-type: none;
+                margin: 0;
+                font-weight: 400;
+                margin-top: 5px;
+                padding: 0;
+
+            }
+             li.related-content {
+                display: inline-block;
+                margin: 8px 10px 10px 0;
+                padding: 0 5px 0 0;
+                margin-bottom: -1px;
+                color: #10466e;
+                border-radius: 3px;
+                font-size: 95%;
+                line-height: 135%;
+    
+    
+            }
+        }
+    }
+}
+
+.content-container#main-info {
+    .content {
+        .tab-content {
+            width: 660px;
+            margin-left: 25px;
+            > ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 4px 0;
+                
+            }
+            > ul > li {
+                display: inline;
+                margin: 0 0 0 10px;
+                padding: 4px 16px;
+                margin-bottom: -1px;
+                color: #8da0b1;
+                border: 1px solid #8da0b1;
+                &.firstchild {margin: 0 0 0 0;}
+            }
+            > ul > li.current-tab {
+                    color: #a8ca35;
+                    border-bottom: 1px solid #fff;
+            }
+            > .tabs {
+               margin-bottom: 40px;
+                border-top: 1px solid #8da0b1;
+                padding: 5px 3px 5px 10px;
+                h3 {
+                    margin-top: 15px;
+                }
+            }
+            .bodies > div > *:first-child {
+                margin-top: 0;
+            }
+        }
+
+        .release-notes-container {
+            .version {
+                &:first-of-type h3 {
+                    margin-top: 0;
+                }
+                .date {
+                    border-bottom: 1px solid #8da0b1;
+                    text-align: right;
+                    margin-top: -1.5em;
+                }
+            }
+        }
+    }
+}

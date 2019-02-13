@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ProGet | 5.0</title>
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+    <link rel="stylesheet" type="text/css" href="/products/products.css" />
+
+
+    <script type="text/javascript">
+        var handle = 0;
+        function Download() {
+
+            window.open("ProGet-v5-preview.pdf");
+            console.log("check");
+            clearInterval(handle);
+        }
+        $(document).ready(function () {
+            setTimeout(Download, 5000);
+        });
+    </script>
+
+</head>
+<body>
+    <div class="content-container">
+        <div class="content">
+            <h1>
+                Thanks!
+            </h1>
+            <p>
+                If your download doesn't start automatically in a few seconds check your pop-up blocker or <a href="ProGet-v5-preview.pdf" download="ProGet-v5-preview.pdf">manually start the download here</a>.
+            </p>
+
+            <div class="value">
+                <a href="/training" class="value-icons">
+                    <h4>Training &amp; Certification</h4>
+                    <p>
+                        Our training and certification program provides the resources and opportunity to help you and your team get up to speed with our DevOps tools.
+                    </p>
+                    <p class="explore">Explore</p>
+                </a>
+                <a href="/professional-services" class="value-icons">
+                    <h4>Professional Services</h4>
+                    <p>
+                        By utilizing our expert service team, you stay focused on your actual objectives, while we help strategically implement DevOps best practices, and facilitate process change.
+                    </p>
+                    <p class="explore">Explore</p>
+                </a>
+                <a href="/professional-services#options" class="value-icons">
+                    <h4>Incidents</h4>
+                    <p>
+                        A 1-2 hour call with an Inedo engineer. Calls are generally for tailored advice related to DevOps best practices, Inedo product usage, or broad use case advice.
+                    </p>
+                    <p class="explore">Explore</p>
+                </a>
+            </div>
+
+            <div class="value">
+                <a href="/proget" class="value-icons">
+                    <img src="/resources/images/logos/pg-logo.png" />
+                    <p>
+                        Consistency for your package management.
+                        Host your NuGet, npm, Bower, Maven, Docker, RubyGem, and PowerShell packages
+                        in one place.
+                    </p>
+                    <p class="explore">Explore</p>
+                </a>
+                <a href="/buildmaster" class="value-icons">
+                    <img src="/resources/images/logos/buildmaster-logo.png" />
+                    <p>
+                        Automate deployments, coordinate releases, and standardize processes across your
+                        entire application suite with integrations for all of your existing tools.
+                    </p>
+                    <p class="explore">Explore</p>
+                </a>
+                <a href="/otter" class="value-icons">
+                    <img style="height: 25px;" src="/resources/images/logos/otter-logo.png" />
+                    <p>
+                        Define server configuration using built-in or PowerShell DSC resources,
+                        visualize and remediate drift, and orchestrate complex jobs, all while ensuring compliance.
+                    </p>
+                    <p class="explore">Explore</p>
+                </a>
+
+                <a href="/hedgehog" class="value-icons">
+                    <img src="/resources/images/logos/hedgehog-logo.png" />
+                    <p>
+                        Use a centralized, web-based dashboard to deploy release packages and Romp packages. Combine the usability and simplicity of Romp, with added release management features.
+                    </p>
+                    <p class="explore">Explore</p>
+                </a>
+                <a href="/romp" class="value-icons">
+                    <img src="/resources/images/logos/romp-logo.png" />
+                    <p>
+                        Romp's CLI embeds Inedo's advanced execution engine, and interacts with universal feeds to package application components together with infrastructure configuration.
+
+                    </p>
+                    <p class="explore">Explore</p>
+                </a>
+                <a href="/support/documentation/various/universal-packages/upack-reference" class="value-icons">
+                    <img src="/resources/images/logos/upack-logo.png" />
+                    <p>
+                        upack.exe is a standalone command-line tool to aide in the creation of universal packages, and is typically used on build servers or in other automation scenarios.
+                    </p>
+                    <p class="explore">Explore</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

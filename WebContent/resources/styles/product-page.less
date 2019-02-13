@@ -1,0 +1,227 @@
+﻿@import "library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+
+.content-container {
+    .content { 
+        h1, h2, h3, h4, h5 {
+            margin: 0;
+        }
+        h4 {
+            margin: 20px 0 0 0;
+        }
+    }
+}
+
+
+.product-nav-container {
+    width: @max-content-width;
+    background-color: @inedo-white;
+    height: 75px;
+    //border-bottom: solid 1px @inedo-black;
+    padding-top: 20px;
+    position: relative;
+
+    .logo-container {
+        width: 250px;
+        
+        float: left;
+    }
+
+    ul {
+        position: absolute;
+        right: 0;
+        border-bottom: solid 1px #E9EADA;
+        font-weight: 300;
+
+        li {
+            font-size: 20px;
+            text-align: left;
+            padding: 15px;
+            
+            a {
+                .mixin-a-clean;
+            }
+        }
+    }
+}
+
+.button-container {
+    margin: 25px 0;
+}
+
+#pricing-section {
+
+    height: 415px;
+
+    ul li { 
+        list-style-type: none; 
+        list-style-image: none;
+    }
+
+    .logo-bar {
+        padding: 0;
+        background-color: @inedo-black;
+        margin: 10px 0;
+
+        h1 {
+            color: @inedo-white;
+            font-size: 35px;
+            padding: 5px 0;
+        }
+
+        img {
+            padding-left: 10px;
+        }
+    }
+
+    .button-set {
+        padding: 10px;
+        margin: 15px 0;
+
+        .button {
+            font-size: 25px;
+            text-align: center;
+            background: @inedo-black;
+            color: @inedo-white;
+        }
+    }
+
+    #pricing-table {
+        font-size: 18px;
+        float: right;
+        padding-left: 10px;
+
+        th {
+            font-weight: bold;
+            background-color: inherit;
+            text-transform: uppercase;
+            background-color: @inedo-grey;
+        }
+
+        tr:nth-child(odd) td {
+            background-color: @inedo-grey;
+        }
+
+        tr:nth-child(even) td {
+            background-color: @inedo-white;
+        }
+
+        td,
+        th {
+            width: 100px;
+            padding: 4px 0;
+            text-align: center;
+        }
+
+        tr:last-child td {
+            font-size: 18px;
+            font-weight: normal;
+
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+#buildmaster-enterprise {
+    display: inline-block;
+    width: 620px;
+    border-bottom: solid 2px @inedo-black;
+
+    p {
+        margin: 12.5px 0;
+    }
+}
+
+#buildmaster-express {
+    display: inline-block;
+    width: 350px;
+    float: right;
+    border-bottom: solid 2px @inedo-black;
+
+    ul {
+        font-size: 18px;
+        padding: 16px 0;
+        width: 150px;
+        text-align: center;
+        margin: 0 auto;
+
+        li {
+            padding: 4px 0;
+            text-align: center;
+            background-color: @inedo-grey;
+            margin: 1px;
+        }
+
+            li:nth-child(even) {
+                background-color: @inedo-white;
+            }
+    }
+
+    .price {
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+#proget-enterprise {
+    display: inline-block;
+    width: 620px;
+    border-bottom: solid 2px @inedo-black;
+
+    p {
+        margin: 7.5px 0 12.5px 0;
+    }
+
+    #pricing-table {
+        width: 300px;
+        text-align: left;
+
+        p {
+            font-size: 12px;
+            margin: 3px 0;
+        }
+    }
+}
+
+#proget-free {
+    display: inline-block;
+    width: 350px;
+    float: right;
+    border-bottom: solid 2px @inedo-black;
+
+    ul {
+        font-size: 18px;
+        padding: 20px 0;
+        width: 250px;
+        text-align: center;
+        margin: 0 auto;
+
+        li {
+            padding: 4px 0;
+            text-align: center;
+            background-color: @inedo-grey;
+            margin: 1px;
+
+            a {
+                text-decoration: underline;
+            }
+        }
+
+            li:nth-child(even) {
+                background-color: @inedo-white;
+            }
+    }
+
+    .price {
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+}

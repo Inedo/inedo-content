@@ -1,0 +1,87 @@
+.search-docs {
+  margin-bottom: 32px;
+  text-align: center;
+}
+.search-docs h3 {
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+.search-docs .large-search input {
+  vertical-align: middle;
+}
+.content-container#objective-box {
+  background-color: #282b3a;
+  border-top: 10px solid #48729d;
+  padding-bottom: 30px;
+}
+.content-container#objective-box .content h1 {
+  color: #ffffff;
+  font-size: 300%;
+  font-weight: 500;
+  text-align: center;
+  border-bottom: 2px solid #ffffff;
+}
+.value {
+  margin-left: 36px;
+}
+.value a.value-icons {
+  text-decoration: none;
+  width: 300px;
+  float: left;
+  height: 75px;
+  margin: 0 4px 20px 4px;
+  text-align: center;
+  box-shadow: 1px 1px 4px #48729d;
+}
+.value a.value-icons h2 {
+  margin-top: 22px;
+  font-size: 21px;
+  font-weight: 700;
+  color: #282b3a;
+}
+.value a.value-icons img {
+  margin-top: 20px;
+  height: 36px;
+}
+.value a.value-icons:hover {
+  box-shadow: 1px 1px 5px #282b3a;
+}
+.value a.value-icons:hover p {
+  color: #002b54;
+}
+.content-container.announcements {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.content-container.announcements .content {
+  padding: 30px 40px;
+  background-color: #e7e7e7;
+}
+.content-container.announcements .content h2 {
+  margin-top: 0;
+  font-size: 24px;
+  width: 750px;
+}
+.content-container.announcements .content h3 {
+  margin-top: 0;
+  font-size: 24px;
+  text-align: center;
+}
+.content-container.announcements .content a {
+  float: right;
+  padding: 8px 16px;
+  margin: 14px 0;
+  color: #282b3a;
+  border: 3px solid #282b3a;
+  border-radius: 100px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.content-container.announcements .content a:hover {
+  background-color: #282b3a;
+  color: #ffffff;
+}
+

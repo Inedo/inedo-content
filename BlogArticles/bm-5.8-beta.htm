@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="keywords" content="buildmaster, devops, ldap, active directory, plan versioning, text templating" />
+    <meta name="publish-date" content="09/15/2017 11:30 AM" />
+    <meta name="author" content="Chadd Melvin" />
+    <title>3 New BuildMaster Features now in Beta</title>
+    <meta name="no-image" content="/blog/_resources/blog-banner.png" />
+</head>
+<body>
+    
+    <img style="margin-top: 30px; width: 700px;" class="screenshot" src="/blog/_images/bm-58.png" />
+    <p>
+        Introducing Plan Versioning, Text Templating, and an updated LDAP and active directory integration, in beta now!
+    </p>
+    <p>
+        <a href="/support/documentation/buildmaster/core-concepts/deployment-plans">Deployment plans</a> are at the heart of BuildMaster's automation, and allow users to direct and structure their releases either visually, from a drag-and-drop editor, or from a text-based editor. Though this makes creating deployment plans easier, it can be challenging for larger development teams to know when a plans' configuration has been changed.  
+    </p>
+    <p>
+        With <i>Plan Versioning</i>, a history of edits is maintained within BuildMaster; allowing approved team members to view the version history, or even preform a rollback to a previous version. You can also simply view the differences between two versions from the <i>Plan Version Listing</i> page. The differences between the two selected plans will be highlighted for quick identification of the changes that have been made. Using plan versioning will bring your team confidence when making changes, and allow for clarity throughout your deployment process. 
+    </p>
+    <p>
+        Our new and improved <i>LDAP and Active Directory</i> integration, makes maintaining user and group permissions easier than before. Complex, multi-domain active directory structures are now easily catered to, as our new integration allows permissions to be defined in a third-party LDAP directory, or an active directory domain forest. If you choose to use an active directory domain, you can also enable Windows Integrated Authentication, removing the web-based login prompt. 
+    </p>
+
+    <img style="width: 700px;" class="screenshot" src="/buildmaster/5.8/ldap.png" />
+    <p>
+       Also coming in BuildMaster 5.8, we've simplified the deployment of configuration files. Traditional configuration file assets did not allow conditionals or loops, but since text templates are transformed using a simplified OtterScript syntax, they allow the use of if/else conditionals, loops blocks, and access to all variable functions. Simply use <i>Text Templating</i> combined with <a href="/support/documentation/buildmaster/modeling-applications/configuration-files-text-templates">Configuratation Variables</a> as a deployment mechanism. Though there is still a time and place for <a href="/support/documentation/buildmaster/modeling-applications/configuration-files">configuration file assets</a>, text templating provides a second option for a powerful yet simple replacement.
+    </p>
+    <p>
+        We've already received a ton of great feedback on these features, which will be live shortly, but if you have any suggestions or thoughts, please <a href="/contact">let us know</a>! We'd love to hear from you.
+    </p>
+    <h4 style="margin-bottom: 40px;">
+        Want to learn more? You can <a href="/buildmaster/5.8">checkout the full preview</a>, complete with screenshots, and links to the beta documentation, or if you're ready to dive right in, you can <a href="/buildmaster/versions">download the 5.8 beta</a>.
+    </h4>
+        
+    
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BuildMaster Request a Demo</title>
+    <meta name="MasterPageFile" content="main.htm" />
+    <style>
+        .top-hero {
+            width: 100%;
+            margin: 0 0 40px 0;
+        }
+        .top-hero img {
+            width: 220px;
+        }
+        .contact-form input[type=text], .contact-form select {
+            width: 305px;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form input[type=button] {
+            width: 100%;
+            background-color: #3FA9F5;
+            color: white;
+            padding: 14px 20px;
+            margin: 20px 0 12px 0;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+            .contact-form input[type=button]:hover {
+                background-color: #1e89d5;
+            }
+
+            .demo {
+                padding-top: 42px;
+            }
+
+        .contact-form {
+            float: right;
+            width: 350px;
+            background-color: #e4e4e4;
+            padding: 10px 20px;
+            margin-bottom: 40px;
+            margin-left: 50px;
+        }
+        .benefits {
+            margin-bottom: 80px;
+        }
+        .benefits p {
+            padding-bottom: 20px;
+            font-size: 20px;
+            line-height: 32px;
+        }
+
+        .benefits ul li {
+            padding-bottom: 12px;
+        }
+            .benefits h1 {
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-size: 36px;
+                font-weight: 600;
+                color: #002b54;
+            }
+       
+        .ahvalidator.error input[type=text],
+        .ahvalidator.error select {
+            background-color: #fcc;
+        }
+
+        .ahvalidator.error .message {
+            display: none;
+        }
+        #header {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        
+        <div class="content demo">
+           
+            <div class="contact-form">
+                <h4 style="border-bottom: 1px solid #cccccc; padding-bottom: 20px; margin: 10px 16px 0 10px;">Schedule a Personal Demo</h4>
+                <contact-form method="post" action="/contact-form">
+                    <fieldset>
+                        <input type="hidden" name="ToAddress" value="athiel@inedo.com" />
+                        <input type="hidden" name="RedirectUrl" value="/buildmaster/request-received" />
+                        <input type="hidden" name="Subject" value="BuildMaster Demo Request" />
+                        <input type="hidden" name="CcFromAddress" value="false" />
+                        <input type="hidden" name="Priority" value="High" />
+
+                        <label>Your Name*</label>
+                        <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                        <label>Email Address*</label>
+                        <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                        <label>Phone Number*</label>
+                        <div><input name="Phone Number" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                        <label>Company*</label>
+                        <div><input name="Company" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                        <input type="button" data-ahvalidator='{ "Required": true }' value="Schedule a Demo" onclick="AhValidation.Submit(this);" />
+                    </fieldset>
+                </contact-form>
+            </div>
+            <div class="benefits">
+                <div class="top-hero">
+                    <a href="/buildmaster"><img src="/resources/images/logos/buildmaster.svg" /></a>
+                </div>
+                <h1>We'll show you how we make CI/CD better</h1>
+                <p>
+                    Every company is different. We'd like to learn more about your current CI/CD process and show you how BuildMaster can help make it better. Give us an hour of your time so our executive team can understand what keeps you up at night.
+
+                </p>
+                <ul>
+                    <li>
+                        There's no need to choose between new and legacy systems
+                    </li>
+                    <li>
+                        Synchronize your release delivery schedules
+                    </li>
+                    <li>
+                        Decentralized CI/CD processes let individual teams do what works best for them
+                    </li>
+                    <li>
+                        Scale in the cloud with all languages and technologies
+                    </li>
+                    <li>
+                        Utilize a single dashboard to view the status of every process in the production 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

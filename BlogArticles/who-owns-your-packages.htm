@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="keywords" content="proget,feeds,connectors" />
+    <meta name="publish-date" content="09/8/2015 11:00 AM" />
+    <meta name="author" content="Scott Reece" />
+    <title>Who Owns Your Packages? Important Licensing Considerations in Enterprise Package Management</title>
+</head>
+<body>
+    <h1>Who Owns Your Packages?</h1>
+    <p class="info">
+      <strong>NOTE: This is an outdated article.</strong> As of ProGet 4.7, the <a href="/support/documentation/proget/compliance/license-scanning">License Scanning and Blocking</a> feature is available in paid and trial ProGet editions.
+    </p>
+    <p>
+        Software Package Managers (NuGet, Maven, Bower, npm, etc) are a pretty established concept, and there are a lot of reasons why organizations would want a private repository.
+        SimpleTalk's <a href="https://www.simple-talk.com/dotnet/.net-framework/taking-nuget-to-the-enterprise/">Taking NuGet to the Enterprise</a> identifies a lot of
+        these reasons in detail, but licensing is often the most overlooked, and one of the biggest gotchas.
+    </p>
+
+    <p>
+        First, the obvious: software is copyrighted material. When authors create software, they own its copyright (unless they put it in the <a href="https://en.wikipedia.org/wiki/Public_domain_software">Public Domain</a>,
+        which is rare), and that means they decide how others can use it through <em>licensing</em>. This is where License Agreements comes in: they spell out <em>restrictions</em> for using software.
+    </p>
+
+    <p>
+        <b>License Agreements are legally-binding contracts</b>, and when you use or otherwise incorporate a freely-available package into your applications, you are <i>agreeing to a contract</i> with the
+        author of that package. But it's not necessarily you <em>personally</em>; if you're building this software for someone else (such as your employer), you are <i>agreeing to a contract on their behalf</i>.
+    </p>
+
+    <p>
+        Since anyone who owns a copyright can decide how they want others to use their property, there are a tremendous number of different license agreements out there.
+        Including our own <a href="http://inedo.com/buildmaster/license-agreement">BuildMaster Licensing Agreement</a>, which, by the way, we keep under 300 words and in plain English.
+    </p>
+    <p>
+        To keep things simpler, most free and open source packages are licensed using one, of hundreds, of pre-written, templated agreements.
+        Some of these templates are well-documented by the <a href="http://opensource.org/licenses/alphabetical">Open Source Initiative</a>, some are
+        <em>based</em> on one of these well-documented licenses, like the BSD, and others are just... different. Like the <a href="https://en.wikipedia.org/wiki/WTFPL">WTFPL</a>
+        or the <a href="https://en.wikipedia.org/wiki/Beerware">beerware</a> agreement. A quick look at <a href="http://nuget.org/">Nuget.org</a>, <a href="https://www.npmjs.com/">npmjs.com</a>, etc., and you'll find all types.
+    </p>
+
+    <h2>Copyleft Licensing</h2>
+	<p>
+	    Although all licenses put <em>some</em> restrictions on how you can use a package, some licenses are considered <a href="https://en.wikipedia.org/wiki/Copyleft">Copyleft</a>. The most famous
+        of these is the <a href="https://en.wikipedia.org/wiki/GNU_General_Public_License">GNU General Public License (or GPL)</a>, which requires that any software that using a GPL package must also be licensed as GPL,
+        and make its source code freely available.
+	</p>
+
+	<p><strong>By using a freely available package, you are <i>legally binding</i> your company to its specific licensing agreement.</strong></p>
+
+	<p>
+	    No one is exempt from inadvertently binding themselves to an agreement. Right now there is a continuing lawsuit against <a href="https://sfconservancy.org/news/2015/mar/05/vmware-lawsuit/">VMWare</a>, and in the past even 	<a href="http://www.fsf.org/news/2008-12-cisco-suit">Cisco</a> had run-ins with GPL violations. Sony even went so far as to <a href="http://www.itworld.com/article/2732025/open-source-tools/gpl-enforcement-sparks-community-flames.html">recreate software functionality</a> to avoid the GPL license.
+	</p>
+
+
+    <h2>Avoiding License Headaches</h2>
+
+	<p>
+	    One of the key features of a private repository like <a href="http://inedo.com/proget">ProGet</a> (or <a href="http://www.sonatype.org/nexus/">Nexus</a>, <a href="http://www.jfrog.com/artifactory/">Artifactory</a>, etc)
+        is to be able to filter or approve freely-available packages. It's through this feature that you can avoid being stung by license agreements in packages.</p>
+
+    <p>There are three approaches you can use to accomplish this.</p>
+
+    <h4>Manually approve each package</h4>
+	<p>
+	    This is pretty straight forward, someone qualified (i.e. legal or governance) reads each and every package agreement before developers may use it, and then approve that package for use.
+        The obvious downside of this is that it will take a massive amount of time, and thus will effectively encourage developers not to use packages.
+	</p>
+
+	<h4>Automatically scan each package's license agreement</h4>
+
+	<p>
+        Most packages have a license agreement URL that points to the license you're agreeing to.
+        <a href="https://books.sonatype.com/nexus-book/reference/component-info.html">Sona Nexus</a> can actually download the license agremeent and heuristicly scan it to see if its terms and conditions meet pre-determined requirements.
+	</p>
+	<p>
+    	This sounds promising: by bringing in automation, it doesn't matter how many different license types you subscribe to because they've been vetted to meet your requirements. Of course,
+        relying on a machine to read, and then automatically bind your company to an agremeent is problematic.
+    </p>
+
+	<p>
+	    A great example of this is the RubbishSoft License agreement (or the <a href="http://rubbishsoft.com/license/rsgpl-1.0.txt">RSGPL</a>). It's a fun document, and I wish I could tell you to read it but if you did you would be in violation of
+        the RSGLP! The license is clearly (comically so) <strong>NOT</strong> a GPL license. However, if you check Nuget.org for the package
+        <a href="https://www.nuget.org/packages/Rubbishsoft.LongGuid/">LongGuid</a> you'll find that Sonatype has classified it as a GPL license.
+	</p>
+
+	<p><img src="/blog/_images/Feeds-Guid.png" alt="Mislabelled License type" /></p>
+	<p>
+	    This license, in fact, is nearly the complete opposite of GPL, yet is worded similarly enough that the heuristic algorithm thinks it's actually GPL! Turns out, a simple "not" in a sentence completely changes its meaning.
+	</p>
+
+	<h4>Restrict Packages by License URL</h4>
+	<p>
+	    This is the best of both worlds. Many of the most common license agreements (<a href="http://opensource.org/licenses/MIT">MIT</a>, <a href="http://www.gnu.org/licenses/gpl-3.0.txt">GPL</a>, etc) use the same license URL,
+        because if you're using a pre-written license it makes sense to use their license page. So a range of specific agreements can be approved, and URLs logged as safe to use.
+	</p>
+    <p>
+        This approach is used by both <a href="http://inedo.com/support/documentation/proget/feeds/connectors/connector-filters">ProGet</a> and <a href="http://www.jfrog.com/confluence/display/RTF/License+Control">Artifactory</a>.
+    </p>
+    <h2>In Conclusion</h2>
+    <p>
+        Regardless of the approach you take to filtering licenses, it's still important to carefully read and know the exact provisions of different
+        license types. This will keep you and your development organization safe from inadvertantly accepting the
+        <a href="http://rubbishsoft.com/license/rsgpl-1.0.txt">RSGPL</a>.
+        </p>
+</body>
+</html>

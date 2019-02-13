@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Deploying ASP.NET and Windows Service Applications with Otter</title>
+    <meta name="keywords" content="otter,proget,.net,entry-user,deployment" />
+    <meta name="subheading" content="Otter" />
+    <meta name="product-name" content="Otter" />
+  </head>
+  <body>
+      <div>
+          <p class="intro">
+			This tutorial will walk through the process of deploying a Windows Service application package from a <a href="/support/documentation/proget/feed-types/universal">ProGet Universal Feed</a>
+            to a server that will be set up and provisioned within Otter. A simple application setup like this is often the first step towards 
+            <a href="/otter#inc">incremental adoption</a> of a robust, Infrastructure as Code practice.
+          </p>
+      </div>
+     
+    
+    <h2>Packaging up an Application</h2>
+    <p>
+		Before deploying an application using Otter, you need to bundle all of the executables, DLL's, configuration files, installation scripts, etc. Anything the application needs will be put into a package.
+	</p>
+	<ul>
+        <li>This is most easily done by <a href="/support/tutorials/using-proget-as-your-universal-repository-with-jenkins-ci">directly packaging your executables</a> as part of a build process in a build tool like Jenkins</li>
+        <li>
+            You can also use <code>proget.exe</code>, or your own script to create a <a href="/support/documentation/proget/reference/universal-feed-api-and-package-format">Universal Package (.upack)</a> file.
+        </li>
+		<li>
+			You can also use <a href="http://docs.octopusdeploy.com/display/OD/Using+OctoPack">OctoPack</a>, installed on a project-by-project basis from within Visual Studio.
+		</li>
+        <li>You can also get your package in ProGet manually by uploading the file from the ProGet web UI, or by simply placing it in the drop folder for ProGet to pick up.</li>
+	</ul>
+	
+	<p>
+		Once a package is created, simply push it to the <i>Feed Endpoint URL</i> in ProGet using NuGet.exe, proget.exe,
+		or a <a href="/support/documentation/proget/reference/universal-feed-api-and-package-format">simple HTTP POST</a>. 
+	</p>
+      <p class="info">
+          Note: if you publish an OctoPacked NuGet package, it will be automatically converted by the ProGet server to a
+		  <a href="/support/documentation/proget/reference/universal-feed-api-and-package-format">Universal Package</a>.
+      </p>
+	
+	
+	<p>
+		However the package gets there, the end result will look something like this:
+	</p>
+	<p>
+		<img src="\resources\tutorials\otter-and-octo\proget.png" width="900" alt="ProGet User Interface" />
+	</p>
+	
+	<h3>Using Otter to Deploy the Service</h3>
+	<p>
+		After Otter has been <a href="/otter/download">downloaded and installed</a>, start by adding <a href="/support/documentation/otter/global-components/resource-credentials">resource credentials</a>. 
+	</p>
+	<p>
+		The first is the ProGet endpoint (in case you set it up as an authenticated feed), and the second is the Windows or Active Directory account that the service will 
+		un under (alternatively, you can just configure the service to use Network Service instead).
+	</p>
+	<ol>
+		<li>Admin &gt; Resources Credentials</li>
+		<li>Create Credential &gt; ProGet &gt; Save Credential</li>
+		<li>(Optional) Create Credential &gt; Windows &gt; Save Credential</li>
+	</ol>
+	<p>
+		After creating the resource credentials, simply add the local <a href="/support/documentation/otter/core-concepts/servers">server</a>
+		(or configure an <a href="/support/documentation/otter/installation/agent-installation-guide">agent</a> on a remote server)
+		and then create a <a href="/support/documentation/otter/core-concepts/plans">configuration plan</a> for that server.
+	</p>
+	<ol>
+		<li>Servers &gt; Create Server</li>
+		<li>Name it <code>localhost</code> and select "Local" for the "Agent type:" &gt; Save Server</li>
+        <li>Click on newly created server</li>
+		<li>Under Configuration Plan, click "create" link</li>
+	</ol>
+	<p>
+		Otter makes it easy to create configuration plans using its visual editor, allowing you to drag-and-drop elements to create a plan and only edit the parts you need. 
+        Otter's <a href="/support/documentation/otter/reference/operations/services/ensure-service">Ensure Windows Service</a>, 
+        <a href="/support/documentation/otter/reference/operations/iis/ensure-app-pool">Ensure IIS App Pool</a>, and 
+        <a href="/support/documentation/otter/reference/operations">other operations</a> offer all of the configuration options available, 
+        allowing for total control when needed.
+	</p>
+	<p>
+		<img src="\resources\tutorials\otter-and-octo\config-options.png" alt="Otter Configuration Interface" class="screenshot" />
+	</p>
+	<p>
+		A sample plan is shown below using four elements contained in a <a href="/support/documentation/otter/execution-engine/statements-and-blocks/general-blocks">General Block</a> 
+        that will deploy this service. Notice that there is parity between the Visual Editor version and the OtterScript version.
+	</p>
+	<inedo:tab-block>
+        <tab name="Visual Mode"><img src="\resources\tutorials\otter-and-octo\visual-editor.png" alt="Otter Visual Editor" /></tab>
+        <tab name="Text Mode (OtterScript)"><img src="\resources\tutorials\otter-and-octo\otter-script.png" alt="OtterScript example" /></tab>
+        <tab name="Text Mode (for copy/pasting)"><textarea style="width:650px;height:250px;font-family:Consolas,'Courier New',monospace">
+# HDarsService
+# Plan to deploy HDarsService application
+{
+    Stop-Service HDarsService;
+
+    Ensure-Package
+    (
+        Name: HDarsService,
+        Version: latest,
+        Directory: C:\Services\HDSvc,
+        FeedUrl: http://progetint/proget-feeds/HDarsService,
+        UserName: Admin,
+        Password: Admin,
+        Credentials: HDarsService
+    );
+
+    Ensure-AppSetting
+    (
+        File: C:\Services\HDSvc\packages.config,
+        Key: ConnectionString,
+        Value: "database=hdarsdb;server=intsqldb"
+    );
+
+    Ensure-Service
+    (
+        Name: HDSvc,
+        DisplayName: HDarsService,
+        Status: Running,
+        Path: C:\Services\HDSvc
+    );
+}
+            </textarea></tab>
+    </inedo:tab-block>	
+		
+
+	<p>
+	    As soon as you save this plan, Otter's <a href="/support/documentation/otter/execution-engine/overview">execution engine</a> will first perform a "collection run."
+	</p>
+	<p>
+	    In this run, the ensure operations will only gather configuration from a server, and then store that configuration and report if it is
+		different from the desired configuration. Since this is the first time the configuration is run, this will put server in drift status. 
+	</p>
+
+      <p><img class="screenshot" alt="Servers in Drift" src="/resources/documentation/otter/servers-drift.png" /></p>
+	<p>
+		From there, you can schedule a job to remediate the drift. When a remediation job is run, the "blocks" where configuration drift was detected will run. 
+        So in this case, the first step will be to stop the service so that the changed files can be copied as needed. Since the last operation is Ensure-Service,
+        and we want to ensure the Status is Running, the service will be restarted as its final step.
+	</p>
+	<p>
+		A server can also be set to auto-remediate, so that any time configuration is drifted, Otter will automatically run the entire plan again to bring the drifted 
+        servers back into the expected status.
+	</p>
+	<p>
+		Since this deployment is happening in an Infrastructure as Code methodology, and using <a href="/support/documentation/otter/execution-engine/overview">ensure statements</a>, it is continuously 
+        monitored. In short, an ensure statement:
+	</p>
+	<ol>
+		<li>defines a desired state of configuration</li>
+		<li>gathers configuration information from a server
+			<ol>
+				<li><em>If</em> the actual and desired configuration differ</li>
+				<li><em>Then</em> configures or otherwise changes something on a server</li>
+			</ol></li>
+	</ol>
+	<p>
+		This means if a new version of the application is pushed to ProGet, because the Ensure-Package statement was used with the qualifier <code>latest</code>, Otter will see that the 
+        configuration on the server is <em>not</em> as defined, and the server will be considered in <a href="/support/documentation/otter/core-concepts/servers#drift">drift status</a>.
+		At this point, redeploying just takes a remediation job, or can be set to auto-remediate.
+	</p>
+	<p>
+		On the same note, if you change a setting in the application's .config file (note: this could also be defined as an
+        environment, role, or server <a href="/support/documentation/otter/execution-engine/runtime-variables">variable</a>), it 
+        will also cause a drift status.
+	</p>
+
+	<h2>Next Infrastructure as Code steps with Otter</h2>
+	<p>
+		This tutorial is just a quick preview of what an Infrastructure as Code methodology can offer; from here, there's a lot more to explore!
+	</p>
+	<h3>Server Roles</h3>
+	<p>
+		In the example above, a single server was directly configured; however, it would have been just as easy to create the plan as a 
+        <a href="/support/documentation/otter/modeling-infrastructure/server-roles">server role plan</a> to allow for provisioning multiple servers at
+		the same time with the same plan, and increased flexibility. 
+	</p>
+	<h3>Using Assets &amp; Templates</h3>
+	<p>		
+		Templates are plans stored as <a href="/support/documentation/otter/core-concepts/assets">assets</a> that can be executed by 
+		other plans similar to calling a function in traditional code. Combined with the power of 
+		<a href="/support/documentation/otter/execution-engine/runtime-variables">variables</a> and 
+		<a href="/support/documentation/otter/global-components/resource-credentials">resource credentials</a>, 
+		templates can be used to ensure various configurations with minimal duplication across server or server role configuration plans.
+	</p>
+	<h3>Drift Status Notice</h3>
+	<p>	
+		As noted, Otter continuously monitors your servers for configuration drift and can either:
+	</p>
+	<ul>
+		<li>only report drift, noting specifically which items differ from the desired state</li>
+		<li>automatically remediate drift, and bring the server to the desired configuration state</li>
+	</ul>
+	<p>
+		This option is configurable per server, and monitoring can be set at specific intervals, determined by your infrastructure priority.
+	</p>
+	<p>
+		When <i>report only</i> is configured, you can schedule a configuration job to run immediately or at some time in the future.
+	</p>
+	<p>
+		You can even run a configuration job as a simulation, so that no changes are made to the drifted server, but a log is created with changes that would have been made. 
+        This is often a must-have for complex, or multi-role configurations to assist in testing, but might not be needed for simple applications.
+	</p>
+	<h2>Not just for Windows Services and ASP.NET Applications</h2>
+	<p>
+		Of course, a plan like this isn't limited to .NET and Windows; it would be the same for any application package in any language. 
+	</p>
+	<p>
+		Jenkins, TeamCity, and other CI tools can bundle files into formats that can easily be <a href="/support/documentation/proget/reference/universal-feed-api-and-package-format">.upack formatted</a> 
+        and then stored in ProGet, allowing for easy expansion no matter what build platform is being used.
+	</p>
+  </body>
+</html>

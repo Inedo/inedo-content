@@ -1,0 +1,104 @@
+﻿@import "library";
+@buildmaster-orange: #f15a24;
+@buildmaster-dark-orange: #c44822;
+
+#header, #footer {
+    display: none;
+}
+
+body {
+    background-color: @inedo-black;
+}
+
+.content-container#landing-background {
+    position:relative;
+    min-width: 1200px;
+    padding: 120px 0 30px;
+    background-image: url(/promos/buildmaster-tdwtf/tex_background.png);
+    border-top:50px solid @inedo-black;
+    border-bottom:50px solid @inedo-black;
+
+    p {
+        width: 475px;
+        font-size: 125%;
+        margin: 40px 0 0;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 225%;
+        color: black;
+    }
+
+    .button-set {
+        position: relative;
+        
+    }
+
+    a.button {
+        margin: 15px 75px;
+        width: 400px;
+        position: relative;
+        z-index: 3;
+
+        &.close {
+            margin: 35px 25px 0 25px;
+        }
+    }
+
+
+    img#central-image {
+        position: absolute;
+        top: -120px;
+        left: 50%;
+    }
+
+    .content#abstract {
+        position: relative;
+        top: -15px;
+    }
+
+    .content-container#stripe {
+        background-color: @buildmaster-orange;
+        border-top: 7px solid @buildmaster-dark-orange;
+        border-bottom: 7px solid @buildmaster-dark-orange;
+        height: 200px;
+
+        h1 {
+            margin: 0 0 0 75px;
+            color: @inedo-white;
+            font-size: 350%;
+        }
+
+        .content {
+            max-width: 1200px;
+            position: relative;
+
+            img {
+                margin: 25px 0 10px 0;
+            }
+        }
+
+        &.dark-stripe {
+            background-color: @inedo-darkgrey;
+            border-top: 7px solid @inedo-black;
+            border-bottom: 7px solid @inedo-black;
+        }
+    }
+
+    &.blank-background {
+        background-image: none;
+        background-color: @inedo-lightgrey;
+    }
+
+    &.bw-background {
+        background-image: url(/promos/buildmaster-landing/tex_bw_background.png);
+    }
+}
+
+#video {
+    position: absolute;
+    left: 627px;
+    top: -70px;
+    z-index: 2;
+}

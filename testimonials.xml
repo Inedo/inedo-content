@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<testimonials>
+	<for what="testimonials">
+		<testimonial from="Joel Byler, Wayne Dalton">BuildMaster is a great tool for automating the build process, but stands head and shoulders above other tools with features like promotion approvals, database change automation, and dependency management with NuGet.  These guys are brilliant!</testimonial>
+		<testimonial from="Brandon Johnson, Recover Care">It's absolutely swell.</testimonial>
+		<testimonial from="Austin Montoya">BuildMaster made us re-think our notions of what proper deployment is, and in turn our releases are MUCH easier to manage, increasing our cycle greatly.</testimonial>
+		<testimonial from="Eric Wise, Hartville Group">BuildMaster helped us streamline and automate the tricky and sometimes error prone manual work required for pushing builds through to deployment while meeting the demands of the business group.</testimonial>
+		<testimonial from="Michael Kalman, CIO">BuildMaster restored our confidence in the reliability and repeatability of the deployment process and virtually eliminated the risk in application change.</testimonial>
+		<testimonial from="Flippie Scholtz">We use BuildMaster to make sense of incremental builds and their very liquid feature sets. The fact that it spits out our config files and SQL scripts for deployment gives us that much less to worry about come deployment day!</testimonial>
+		<testimonial from="Michael Kalman, CIO">With BuildMaster, we can now react at the speed of business without the worry that the mechanics of the release process will get in the way or, worse, damage the business. </testimonial>
+		<testimonial from="Frank D.">Wow, I didn't expect any support on the free version! Also... your mail the timestamp says it's 2:45 AM your time?! Do you guys never sleep?</testimonial>
+		<testimonial from="Stephen J">Feature request... allow me to go back in time and install BuildMaster last year. My life would have been so much easier.</testimonial>
+		<testimonial from="Rich Darvins">Wait, that's it!? It took less time to set up my deployment plan then to actually deploy!</testimonial>
+		<testimonial from="Rick Dailey ">First of all I want to say as one software developer to another – this is a very solid piece of software.  It has a good feature set and lots of support for our mixed platforms, which is important. </testimonial>
+		<testimonial from="Mike, Aeon Logistics">BuildMaster makes manual and all too often error prone deployments a thing of the past.  The ability to leverage tools like PowerShell against the API or even in custom deployment tasks gives you an incredible amount of flexibility. Guaranteed to make your admins smile.</testimonial>
+		<testimonial from="cdeszaq @ Stack Overflow">I've found BuildMaster to be the best thing since sliced bread when it comes to managing projects and their environments.</testimonial>
+		<testimonial from="Henry">BuildMaster is extremely capable software, especially in an enterprise environment.</testimonial>
+		<testimonial from="Michael F. Starke, University Hospitals">BuildMaster let us define and implement a *real* deployment process and in doing so, saved us all a lot of time and headaches.</testimonial>
+		<testimonial from="Sean Harrington, Canyon Networks, Inc.">Things have gone great with BuildMaster! All of my projects are building wonderfully and are fully integrated into deployments. I’ve been sure to show BuildMaster to every developer I interact with :-)</testimonial>
+		<testimonial from="Gary Heslop, Leaping Gorilla">Leaping Gorilla have transitioned successfully from Cruise Control to BuildMaster for all of our development projects. We find your commitment to quality and excellent support fit well with our own ethos and will continue suggesting to our clients that BuildMaster is the true way forward when it comes to release management.</testimonial>
+	</for>
+	<for what="titlebar">
+		<testimonial>BuildMaster is a great tool for automating the build process, but stands head and shoulders above other tools...</testimonial>
+		<testimonial>BuildMaster is absolutely swell!</testimonial>
+		<testimonial>BuildMaster made us re-think what proper deployment is...</testimonial>
+		<testimonial>...our confidence in the reliability and repeatability of the deployment process has been restored...</testimonial>
+		<testimonial>...BuildMaster makes sense of incremental builds and their very liquid feature sets...</testimonial>
+		<testimonial>...we can now react at the speed of business...</testimonial>
+		<testimonial>...manual, error-prone deployments are a thing of the past...</testimonial>
+		<testimonial>...it's 2:45 AM your time?! Do you guys never sleep?</testimonial>
+		<testimonial>...this is a very solid piece of software!</testimonial>
+		<testimonial>...the best thing since sliced bread when it comes to managing projects and their environments...</testimonial>
+		<testimonial>...extremely capable software, especially in an enterprise environment...</testimonial>
+		<testimonial>...we implemented a *real* deployment process...</testimonial>
+		<testimonial>...all of my projects are building wonderfully and are fully integrated into deployment...</testimonial>
+	</for>
+</testimonials>

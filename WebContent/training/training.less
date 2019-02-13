@@ -1,0 +1,100 @@
+@import "..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+a.download {
+    background-color: none;
+    padding: 8px 16px;
+    color: @inedo-darkblue;
+    border: 3px solid @inedo-darkblue;
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: @inedo-darkblue;
+        color: @inedo-white;
+    }
+}
+
+.content-container#services {
+    .content {
+        p {
+            font-size: 19px;
+        }
+
+        ul.levels {
+            border: 1px solid @inedo-darkblue;
+            padding: 20px 0;
+
+            li {
+                font-size: 19px;
+                padding: 16px 12px;
+                margin-left: 100px;
+            }
+        }
+
+        table.courses {
+            width: 100%;
+            border: 0;
+            margin: 50px 0;
+            tr {
+                text-align: center;
+
+                &.feat-course {
+                    border: 0;
+                    border-bottom: 2px solid @inedo-darkblue;
+                    display: table-row;
+                }
+
+                td {
+                    padding: 26px 15px;
+                    border: 0;
+
+                    img {
+                        vertical-align: middle;
+                    }
+
+                    &.course {
+                        text-align: left;
+                        font-weight: bolder;
+                        font-size: 19px;
+
+                        img {
+                            margin-right: 15px;
+                        }
+                    }
+
+                    &.heading {
+                        padding: 10px 15px;
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+        .inedo-courses {
+            margin-top: 10px;
+            margin-bottom: 30px;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+

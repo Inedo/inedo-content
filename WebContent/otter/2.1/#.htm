@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Otter | 2.1</title>
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+    <script src="/feature-landing/scripts/fancybox-2.1.5/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <link href="/feature-landing/scripts/fancybox-2.1.5/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+    <script src="/feature-landing/scripts/unslider/src/js/unslider.js"></script>
+    <link rel="stylesheet" href="/feature-landing/scripts/unslider/dist/css/unslider.css" />
+    <link rel="stylesheet" href="/feature-landing/scripts/unslider/dist/css/unslider-dots.css" />
+    <link rel="stylesheet" type="text/css" href="/feature-landing/feature-landing-next-gen.css" />
+
+    <script>
+        jQuery(document).ready(function ($) {
+            $('.my-slider').unslider();
+        });
+    </script>
+
+    <script type="text/javascript">
+        setTimeout(function () {
+            var a = document.createElement("script");
+            var b = document.getElementsByTagName("script")[0];
+            a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0053/9152.js?" + Math.floor(new Date().getTime() / 3600000);
+            a.async = true; a.type = "text/javascript"; b.parentNode.insertBefore(a, b)
+        }, 1);
+    </script>
+
+</head>
+<body>
+    <div class="content-container" id="small-header">
+        <div class="content">
+            <a href="/" class="logo-container shadowed">
+                <img src="../feature-landing/images/inedo-otter-logo.png" />
+            </a>
+            <div class="product-version">
+                <a href="/otter">
+                    <img src="../feature-landing/images/otter-logo.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="content-container" id="landing-banner">
+        <div class="content">
+            <h1> Otter 2.1 - has been <a href="/otter/download">released</a>!</h1>
+            <h2>Provision your servers and manage configuration.</h2>
+
+            <div id="sign-up" class="shadowed purple">
+                <h2>Download Otter 2.1</h2>
+                <contact-form method="post" action="/contact-form">
+                    <fieldset>
+                        <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
+                        <input type="hidden" name="RedirectUrl" value="/otter/download" />
+                        <input type="hidden" name="Subject" value="Otter 2.0 Feature Landing Download" />
+                        <input type="hidden" name="CcFromAddress" value="false" />
+                        <input type="hidden" name="Priority" value="High" />
+                        <label>name*</label>
+                        <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
+                        <label>email*</label>
+                        <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
+                        <label>phone</label>
+                        <div><input title="PhoneNumber" type="tel" data-ahvalidator='{ "Required":false }' /></div>
+
+
+                        <input class="submit-button pdf-download " type="button" value="Download" onclick="AhValidation.Submit(this);" />
+                    </fieldset>
+                </contact-form>
+            </div>
+            <div class="product-shot shadowed">
+                <div class="my-slider">
+                    <ul>
+                        <li><img src="2.1/pipeline-rafts.png" /></li>
+                        <li><img src="2.1/environment-plans.png" /></li>
+                        <li><img src="2.1/git-diff.png" /></li>
+                        <li><img src="2.1/git-changes.png" /></li>
+                        <li><img src="2.1/deploy-1.png" /></li>
+                        <li><img src="2.1/deploy-2.png" /></li>
+                        <li><img src="2.1/deploy-3.png" /></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="content">
+            <div class="button-container">
+                <a class="button blue" href="#feature-benefit-intro">
+                    Explore the features in Otter 2.1
+
+                </a>
+            </div>
+            <div class="attention analogy" style="margin-top: 50px;">
+                <p>
+                    <strong>Featured Guide: CI/CD for Infrastructure &amp; Configuration Management with Otter + BuildMaster</strong><br/><br/>
+                    Organizations of all sizes use CI/CD to get business ideas to the market faster than the competitors by delivering higher-quality software releases sooner. But what works great for application changes doesn't work as well for infrastructure changes, and operations teams will often struggle to keep pace while maintaining compliance.
+                    <br/><br/>
+                    <strong><a href="/support/whitepapers/ci-cd-infrastructure-config-mgmt?utm_source=otter-2-1" target="_blank">This guide</a></strong> will explore how to overcome these challenges and show you how to deliver infrastructure changes using CI/CD pipelines.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container" id="feature-benefit-intro">
+        <div class="content">
+
+            <h2>Otter 2.1</h2>
+            <p>
+                There's minimal risk in upgrading. Check out the Otter 2.1 <a href="/support/kb/1162/upgrade-notes-for-otter-21">upgrade notes</a> for more details.
+            </p>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a rel="pipeline-rafts" class="fancyboxPopup" href="2.1/pipeline-rafts.png">
+                    <img class="screenshot" src="2.1/pipeline-rafts.png" />
+                </a>
+                <a rel="pipeline-rafts" class="fancyboxPopup" href="2.1/environment-plans.png">
+                    <img style="display: none;" class="screenshot" src="2.1/environment-plans.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+
+                <h2 style="font-size: 26px;"><img class="feature-icon" src="../feature-landing/images/ot-icon.png" />Pipelines: now for infrastructure configuration</h2>
+                <p>
+                    Pipeline rafts facilitate a promotion-based approach to infrastructure automation by associating
+                    specific configurations per environment, in addition to the traditional 1-1 relationship
+                    with a server or role, allowing configuration plans to be fully tested before running them
+                    against production servers.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="2.1/git-diff.png">
+                    <img class="screenshot" src="2.1/git-diff.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+
+                <h2 style="font-size: 26px;"><img class="feature-icon" src="../feature-landing/images/ot-icon.png" />Organize environment configuration by branch</h2>
+                <p>
+                    Each pipeline raft environment can point to a different Git branch, allowing support for merges
+                    across environment-specific branches. Now, your infrastructure configuration across environments
+                    can be compared in exactly the same manner as code in two Git branches.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a rel="deploy" class="fancyboxPopup" href="2.1/git-changes.png">
+                    <img class="screenshot" src="2.1/git-changes.png" />
+                </a>
+                <a rel="deploy" class="fancyboxPopup" href="2.1/deploy-1.png">
+                    <img style="display: none;" class="screenshot" src="2.1/deploy-1.png" />
+                </a>
+                <a rel="deploy" class="fancyboxPopup" href="2.1/deploy-2.png">
+                    <img style="display: none;" class="screenshot" src="2.1/deploy-2.png" />
+                </a>
+                <a rel="deploy" class="fancyboxPopup" href="2.1/deploy-3.png">
+                    <img style="display: none;" class="screenshot" src="2.1/deploy-3.png" />
+                </a>
+            </div>
+
+            <div class="feature-benefit-copy">
+
+                <h2 style="position: relative; font-size: 26px;">
+                    <img class="feature-icon" src="../feature-landing/images/ot-icon.png" />Develop with Git
+                    &nbsp;
+                    &nbsp;
+                    <img class="feature-icon" src="../feature-landing/images/bm-icon.png" />Deploy with confidence
+                </h2>
+                <p>
+                    Because pipeline rafts support various formats beyond Git, you can develop infrastructure plans with Git,
+                    capture the configuration into an artifact, then deploy them alongside your applications using any
+                    CI/CD pipeline tool such as <a href="/buildmaster" target="_blank">BuildMaster</a>.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div style="padding-top: 40px;" class="content">
+            <h3 style="text-align:center;">Check out the <a href="/otter/roadmap">Otter Roadmap</a> for past versions of Otter.</h3>
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.fancyboxPopup').fancybox();
+
+            $('.fancybox.ytvideo').click(function () {
+                $.fancybox(this.href, { type: 'iframe' });
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>

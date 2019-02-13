@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extensionAdditionalInfo>
+  <info><![CDATA[
+  <p>This extension contains actions that specifically apply to the Windows operating system.</p>
+  ]]></info>
+  <actionInfo id="Inedo.BuildMasterExtensions.Windows.Shell.ExecuteCScriptAction" name="Execute CScript" summary="Runs a script using cscript.exe on the target server."><![CDATA[
+  <p>This action will run Microsoft's command-based script host (cscript.exe) to run scripts written in VBScript, JScript, or any other script type that the engine supports.</p>
+  <h3>Action Fields</h3>
+  <h4>Script Path</h4>
+  <p>The path to a script that cscript.exe should run.</p>
+  <h4>CScript.exe Arguments</h4>
+  <p>Optionally enter any arguments to pass to cscript.exe.</p>
+  
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.Windows.Services.StartServiceAction" name="Start Service" summary="Starts a Windows Service."><![CDATA[
+  <p>This action is used to start an existing Windows service on a remote server.</p>
+  <h3>Action Fields</h3>
+  <h4>Service Options</h4>
+  <p>Select the service to start. The service must already be installed on the selected server in order for it to appear in the list. Startup Arguments are option, and should be entered one per line.</p>
+  <h4>Wait for Start</h4>
+  <p>Check the box if you'd like this action to verify the service has started before continuing on the deployment plan.</p>
+  <h4>Ignore Error If Already Running</h4>
+  <p>Uncheck the box if you wish to generate an error if the service is running when this action is executed.</p>
+  <h4>Unable to Start Service</h4>
+  <p>By default, attempting to start a disabled service or a service that has dependencies that won't start, will fail. Check the box if you want to log a warning instead of an error when a service fails to start.</p>
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.Windows.Iis.ShutdownIisAppAction" name="Stop IIS App Pool" summary="Stops an application pool in IIS."><![CDATA[
+  <p>This action is used to stop an IIS application pool on a remote server.<p>
+  <h3>Action Fields</h3>
+  <h4>Application Pool</h4>
+  <p>Select the name of the application pool to stop.</p>
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.Windows.Services.StopServiceAction" name="Stop Service" summary="Stops a Windows Service."><![CDATA[
+  <p>This action is used to stop an existing Windows service on a remote server.</p>
+  <h3>Action Fields</h3>
+  <h4>Service Options</h4>
+  <p>Select the service to stop. The service must already be installed on the selected server in order for it to appear in the list.</p>
+  <h4>Wait for Stop</h4>
+  <p>Check the box if you'd like this action to verify the service has stopped before continuing on the deployment plan.</p>
+  <h4>Ignore Error If Already Stopped</h4>
+  <p>Uncheck the box if you wish to generate an error if the service was stopped prior to executing this action.</p>
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.Windows.Iis.StartupIisAppAction" name="Start IIS App Pool" summary="Starts an application pool in IIS."><![CDATA[
+  <p>This action is used to start an IIS application pool on a remote server.<p>
+  <h3>Action Fields</h3>
+  <h4>Application Pool</h4>
+  <p>Select the name of the application pool to start.</p>
+  ]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.Windows.Shell.ExecutePowerShellScriptAction" name="Execute PowerShell Script" summary="Runs a PowerShell script on the target server."><![CDATA[
+  <p>This action executes a Windows PowerShell script or script file on disk on the selected remote server.</p>
+  <h3>Action Fields</h3>
+  <h4>Script</h4>
+  <p>Provide a script to execute either as a file on the remote server or entered directly into the action editor.</p>
+  <h4>Variables</h4>
+  <p>Optionally provide variables to pass to the script in the form VariableName=VariableValue (one per line).</p>
+  <h4>Options</h4>
+  <p>Determines whether to log the output from the script into the BuildMaster action log.</p>
+  ]]></actionInfo>
+</extensionAdditionalInfo>

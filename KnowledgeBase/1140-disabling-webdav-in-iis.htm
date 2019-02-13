@@ -1,0 +1,51 @@
+﻿<html>
+<head>
+    <meta name="id" content="1140" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="proget, iis" />
+    <title>Disabling WebDAV in IIS</title>
+</head>
+<body>
+    <p>
+        Some ProGet feed endpoints use PUT or DELETE requests.
+        If the WebDAV module is enabled in IIS, these requests can result in a 405 Method Not Allowed error.
+        This article details several methods of disabling the WebDAV module.
+    </p>
+    <h2>1. Disable the WebDAV Publishing feature in Windows</h2>
+    <p>
+        This is the easiest solution if WebDAV is not desired for any website running on IIS on the server.
+    </p>
+    <p>
+        Open a Windows Explorer window and navigate to <code>Control Panel\All Control Panel Items\Programs and Features</code>.
+        Select the <em>Turn Windows features on or off</em> option in the menu on the left.
+        Uncheck the following option: <em>Internet Information Services &rarr; World Wide Web Services &rarr; Common HTTP Features &rarr; WebDAV Publishing</em>.
+        Click OK. You may need to restart the server for the change to take effect.
+    </p>
+    <h2>2. Disable WebDAVModule in the Internet Information Services Manager</h2>
+    <p>
+        This solution requires the IIS Manager program to be installed. It does not affect other applications running on IIS.
+    </p>
+    <p>
+        Open the IIS Manager and navigate to the ProGet site.
+        Double-click the <em>Handler Mappings</em> item.
+        Right click <code>WebDAV</code> and select <em>Remove</em>.
+        Navigate back to the ProGet site.
+        Double-click the <em>Modules</em> item.
+        Right click <code>WebDAVModule</code> and select <em>Remove</em>.
+    </p>
+    <h2>3. Manually edit Web.config to disable WebDAV</h2>
+    <p>
+        This solution requires editing an XML configuration file directly, but does not require any extra software.
+    </p>
+    <p>
+        Edit <em>Web.config</em>. By default, it is located in <code>C:\Program Files\ProGet\WebApp</code>.
+        Find the <code>&lt;modules&gt;</code> section in the <code>&lt;system.webServer&gt;</code> section.
+        Add <code>&lt;remove name="WebDAVModule" /&gt;</code> before <code>&lt;/modules&gt;</code>.
+        Find the <code>&lt;handlers&gt;</code> section in the <code>&lt;system.webServer&gt;</code> section.
+        Add <code>&lt;remove name="WebDAV" /&gt;</code> before <code>&lt;/handlers&gt;</code>.
+    </p>
+    <p>
+        You may need to recycle the app pool or restart IIS for this change to take effect.
+    </p>
+</body>
+</html>

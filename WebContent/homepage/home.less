@@ -1,0 +1,313 @@
+@import "..\resources\styles\library";
+
+
+
+.mixin-homecc {
+    padding: 50px 0;
+    margin: 0;
+
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        color: @inedo-black;
+        margin: 0;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.body, html {
+    height: 100%;
+}
+
+.content-container .content .button-set {
+
+    .button {
+        padding: 10px 40px;
+    }
+}
+
+
+
+.content-container#banner {
+    padding-top: 30px;
+    margin: 0;
+    min-height: 400px;
+    background: url(/homepage/homepage-banner-2016.jpg) no-repeat;
+    background-position: center;
+    text-align: center;
+
+    h1 {
+        font-size: 400%;
+        color: @inedo-darkblue;
+        margin: 0;
+    }
+
+    h4 {
+        font-size: 130%;
+    }
+
+    .banner-sec {
+        padding: 40px 50px 50px 50px;
+        margin-top: 10px;
+    }
+
+    .circle-button {
+        margin-top: 30px;
+
+        a.circle {
+            color: @inedo-darkblue;
+            border: 3px solid @inedo-darkblue;
+
+            &:hover {
+                background-color: @inedo-darkblue;
+                color: @inedo-white;
+            }
+        }
+    }
+
+    .top-announcements {
+        a.value-icons {
+            background-color: @inedo-darkblue;
+            box-shadow: -1px -1px 3px @inedo-darkgrey;
+            text-decoration: none;
+            width: 325px;
+            float: left;
+            height: 190px;
+            margin: 30px 4px;
+            text-align: left;
+            color: @inedo-white;
+
+            h3 {
+                color: @inedo-white;
+                font-size: 21px;
+                font-weight: bolder;
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+
+            p {
+                font-weight: 500;
+                margin: 12px 20px 28px 20px;
+                font-size: 13px;
+            }
+
+            p.explore {
+                padding: 8px 16px;
+                color: @inedo-white;
+                border: 3px solid @inedo-white;
+                border-radius: 100px;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 12px;
+                letter-spacing: 1px;
+                text-align: center;
+                margin: 20px 80px;
+
+                &:hover {
+                    background-color: @inedo-white;
+                    color: @inedo-darkblue;
+                }
+            }
+        }
+    }
+}
+
+.content-container#featured {
+    padding: 20px 0;
+    background-color: #5fabb6;
+    min-height: 80px;
+    text-align: right;
+    border-bottom: 1px solid @inedo-darkgrey;
+    border-top: 1px solid @inedo-darkgrey;
+
+    h2 {
+        color: @inedo-white;
+        font-size: 34px;
+        width: 630px;
+        margin: 0;
+        padding-top: 14px;
+    }
+
+    a.featured {
+        padding: 16px 36px 10px 36px;
+        border: 1px solid @inedo-darkgrey;
+        float: right;
+        background-color: @inedo-white;
+    }
+
+    a.featured:hover {
+        background-color: #20680b;
+    }
+}
+
+.content-container#tools {
+    .value {
+        .value-icons {
+            text-decoration: none;
+            width: 249px;
+            float: left;
+            margin: 30px 0px 90px 0px;
+            text-align: left;
+            img {
+                margin-top: 25px;
+                height: 38px;
+            }
+
+            p {
+                font-weight: 400;
+                color: @inedo-darkblue;
+                margin: 20px 20px 40px 0px;
+                font-size: 16px;
+            }
+
+            a.explore {
+                padding: 8px 16px;
+                color: @inedo-darkblue;
+                border: 3px solid @inedo-darkblue;
+                border-radius: 100px;
+                text-transform: uppercase;
+                font-weight: 800;
+                font-size: 12px;
+                letter-spacing: 1px;
+                width: 62px;
+                text-decoration: none;
+                &:hover {
+                    background-color: @inedo-darkblue;
+                    color: @inedo-white;
+                }
+            }
+        }
+
+        a.value-icons:hover {
+            box-shadow: 1px 1px 4px @inedo-darkblue;
+
+            p {
+                color: @inedo-blue;
+            }
+        }
+    }
+}
+
+.content-container#toolchain {
+    margin-top: 30px;
+    display: inline-block;
+
+    h2 {
+        margin-top: 50px;
+        font-size: 24px;
+    }
+
+    .button-set {
+        margin: 20px 0 60px 0;
+
+        .button {
+            padding: 16px 0;
+            background-color: #808080;
+            border: none;
+
+            a {
+                color: @inedo-white;
+                text-decoration: none;
+                padding: 16px 50px;
+            }
+        }
+    }
+}
+
+.content-container#case-studies {
+    display: inline-block;
+
+    a.cs-card {
+        text-decoration: none;
+        width: 292px;
+        float: left;
+        height: 335px;
+        margin: 50px 20px 80px 20px;
+        text-align: center;
+
+        h4 {
+            font-size: 14px;
+            line-height: 22px;
+            margin: 20px;
+            color: @inedo-white;
+        }
+
+        img {
+            margin: 1px 0;
+            background-color: @inedo-white;
+        }
+    }
+
+    a.cs-card:hover {
+        box-shadow: 1px 1px 6px @inedo-darkgrey;
+    }
+}
+
+.content-container#client-logos {
+    .mixin-homecc;
+    background-color: @inedo-darkblue;
+    display: inline-block;
+    text-align: center;
+    padding: 40px 0;
+
+    img {
+        width: @max-content-width;
+    }
+
+    .button-set {
+        margin-top: 1px;
+    }
+}
+
+.content-container#cool-stuff {
+    h2 {
+        text-align: center;
+        padding-bottom: 30px;
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: @inedo-blue;
+        }
+    }
+
+    a.cool-card {
+        text-decoration: none;
+        width: 292px;
+        float: left;
+        height: 470px;
+        margin: 60px 20px 70px 20px;
+        text-align: center;
+        background-color: @inedo-darkgrey;
+
+        p {
+            font-size: 14px;
+            line-height: 22px;
+            margin: 20px;
+            color: @inedo-white;
+            text-align: left;
+        }
+
+        h4 {
+            font-size: 16px;
+            color: @inedo-white;
+            border-bottom: 1px solid @inedo-white;
+            margin: 20px 25px;
+            padding-bottom: 8px;
+        }
+
+        img {
+            margin: 1px 0;
+            background-color: @inedo-white;
+        }
+    }
+
+    a.cool-card:hover {
+        box-shadow: 1px 1px 6px @inedo-darkgrey;
+    }
+}

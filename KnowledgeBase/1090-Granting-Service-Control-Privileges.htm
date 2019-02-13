@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="id" content="1090" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="buildmaster,service" />
+    <title>Granting Service Control Privileges for Inedo Product's Web Applications</title>
+  </head>
+  <body>
+
+      <style type="text/css">
+          .spaced-li li { margin-top: 20px; }
+          .powershell pre {background-color: #012456; color: rgb(238, 237, 240); padding: 20px;}
+      </style>
+
+      <div class="attention technical">
+          <p>
+              <strong>IMPORTANT: </strong> using the built-in service command <i>(i.e. <code>ProGet.Service.exe AllowServiceControl</code>)</i> to allow service control has been deprecated because 
+              it does not work reliably on all versions of Windows, and may cause undesired affects (see <a href="#troubleshooting">troubleshooting</a>).
+          </p>
+      </div>
+
+      <h2 id="subinacl">Granting Service Control via <code>subinacl.exe</code></h2>
+
+      <ol class="spaced-li">
+          <li>Download and install <code>subinacl.msi</code> from: <a target="_blank" href="https://www.microsoft.com/en-us/download/details.aspx?id=23510">https://www.microsoft.com/en-us/download/details.aspx?id=23510</a></li>
+          <li>Once installed, invoke the tool specifying the <code>{service-name}</code> and <code>{user-account}</code> as follows in an <b>elevated</b> command prompt or PowerShell window:
+              <p>
+                  <div class="powershell"><pre>&amp;"C:\Program Files (x86)\Windows Resource Kits\Tools\subinacl.exe" /service {service-name} /grant="{user-account}"=F</pre></div>
+              </p>
+            <p class="attention best-practice">
+                <b>Note:</b> Common <code>{user-account}</code> values include: <code>NT AUTHORITY\Network Service</code>, <code>domain\userName</code>, and <code>IIS APPPOOL\ProGet</code>
+            </p>
+          </li>
+          <li>
+              You should see output similar to the following:
+              <div>
+                  <div class="powershell"><pre>INEDOPROGETSVC : new ace for iis apppool\proget
+INEDOPROGETSVC : 1 change(s)
+
+
+Elapsed Time: 00 00:00:00
+Done:        1, Modified        1, Failed        0, Syntax errors        0
+Last Done  : INEDOPROGETSVC</pre></div>
+              </div>
+          </li>
+      </ol>
+
+      <p>
+          If the message does not indicate failure, the web application should now be able to control and transfer messages to and from the server.
+      </p>
+
+      <h3 id="troubleshooting">Troubleshooting</h3>
+      <h4 id="reinstall"></h4>
+      <p>
+          If there are still problems with the service, it can be uninstalled and re-installed by running the service executable itself, for example:
+      </p>
+      <div class="powershell"><pre>&amp;"C:\Program Files\ProGet\Service\ProGet.Service.exe" uninstall
+&amp;"C:\Program Files\ProGet\Service\ProGet.Service.exe" install</pre></div>
+      <h4 id="access-denied">"Error granting service control privileges: Access is Denied" message:</h4>
+      <p>
+          Ensure the command prompt or PowerShell console is running as Administrator when attempting to re-install. 
+      </p>
+      <p>
+          If that still doesn't resolve the issue, see the guidance below to reset the ACL.
+      </p>
+      <div class="attention technical">
+          <p><strong>ADVANCED:  Resetting the Service's ACL</strong></p>
+          <p>
+              If that still doesn't resolve the issue, the ACL
+              may be malformed. The symptom of this is that the service doesn't appear installed via a PowerShell <code>Get-Service</code> command,
+              and it is not visible in the Service Control Manager.
+          </p>
+          <p>
+              The ACL can be reset with the following administrator PowerShell command that removes all ACEs from the service:
+          </p>
+          <div class="powershell">
+              <pre>PS&gt; Remove-Item -Path "HKLM:\SYSTEM\CurrentControlSet\Services\{service-name}\Security"</pre>
+          </div>
+          <p>
+              Once that registry key is deleted, this operation will require a reboot of the server that the product is installed on. After a reboot,
+              the service should be able to be <a href="#reinstall">uninstalled and re-installed</a> using the initial troubleshooting commands above, followed by 
+              <a href="#subinacl">running <code>subinacl.exe</code></a> as originally instructed.
+          </p>
+      </div>
+      
+
+      <div style="opacity: 0.5">
+          <h3>Deprecated Method</h3>
+          <p>
+              Refer to this table - depending on which product you are using, enter the coinciding name, or abbreviation, into each
+              space that has a red <span style="color: red">[product's name]</span> or <span style="color: red">[service]</span>.
+          </p>
+          <table style="width: 610px; margin: 30px 0px;">
+              <tr>
+                  <td align="center">The Inedo Product You're Using</td>
+                  <td align="center"><span style="color: red">[product's name]</span></td>
+                  <td align="center"><span style="color: red">[service]</span></td>
+              </tr>
+              <tr>
+                  <td align="center"><img src="/resources/knowledgebase/buildmaster-1077.png" /></td>
+                  <td align="center">BuildMaster</td>
+                  <td align="center">bmservice</td>
+              </tr>
+              <tr>
+                  <td align="center"><img src="/resources/knowledgebase/proget-1077.png" /></td>
+                  <td align="center">ProGet</td>
+                  <td align="center">ProGet.Service</td>
+              </tr>
+              <tr>
+                  <td align="center"><img src="/resources/knowledgebase/otter-1077.png" /></td>
+                  <td align="center">Otter</td>
+                  <td align="center">Otter.Service</td>
+              </tr>
+              <tr>
+                  <td align="center"><img src="/resources/knowledgebase/hedgehog-1077.png" /></td>
+                  <td align="center">Hedgehog</td>
+                  <td align="center">Hedgehog.Service</td>
+              </tr>
+          </table>
+
+          <p>
+              In order to be able to restart a Windows service, you normally need to be running
+              as a machine administrator. However, it may not be desirable or even
+              permitted to run the <span style="color: red">[product's name]</span> web application as an administrator account
+              in your environment. This means that you will not be able to control
+              the service using the web interface.
+          </p>
+          <p>
+              If you see a message similar to:
+          </p>
+          <blockquote>
+              The <span style="color: red">[product's name]</span> web application does not have sufficient privileges to restart the
+              <span style="color: red">[product's name]</span> service.
+          </blockquote>
+          <p>
+              ...then you will need to grant the user account which is running the web application
+              permission to start and stop the service. The easiest way to do this is to navigate the command prompt to the
+              service install directory (default: C:\<span style="color: red">[product's name]</span>\Service) and run the following command:
+          </p>
+          <pre class="console"><span style="color: red">[service]</span>.exe AllowServiceControl /User=[WebAppUserName]</pre>
+          <p>
+              Where <b>[WebAppUserName]</b> is the user account which the <span style="color: red">[product's name]</span> web
+              application is running under (the AppPool user for IIS).
+          </p>
+          <p>
+              <strong>Note that you must run this command as an administrator.</strong>
+          </p>
+      
+      </div>
+  </body>
+</html>

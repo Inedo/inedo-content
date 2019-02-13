@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extensionAdditionalInfo>
+  <info><![CDATA[]]></info>
+  <actionInfo id="Inedo.BuildMasterExtensions.WiX.GenerateComponents.GenerateComponentsAction" name="Generate Components" summary="Generates a WiX fragment based on the files in a directory."><![CDATA[]]></actionInfo>
+  <actionInfo id="Inedo.BuildMasterExtensions.WiX.UpdateProduct.UpdateProductAction" name="Update Product" summary="Updates attributes on a WiX Product element."><![CDATA[]]></actionInfo>
+</extensionAdditionalInfo>

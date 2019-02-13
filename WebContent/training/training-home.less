@@ -1,0 +1,235 @@
+@import "..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+a.download {
+    background-color: none;
+    padding: 8px 16px;
+    color: @inedo-darkblue;
+    border: 3px solid @inedo-darkblue;
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: @inedo-darkblue;
+        color: @inedo-white;
+    }
+}
+
+.content-container#banner {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    min-height: 275px;
+    background: url(/homepage/homepage-banner-2016.jpg) no-repeat #011b2d;
+    background-position: center;
+    z-index: 5;
+    position: relative;
+
+    .content {
+        padding: 70px 100px;
+
+
+        p {
+            color: @inedo-black;
+            font-weight: bolder;
+            font-size: 18px;
+            margin-left: 100px;
+            margin-right: 120px;
+        }
+
+        img {
+            margin-left: 20px;
+            height: 64px;
+            text-align: left;
+        }
+
+        .circle-button {
+            margin-left: 100px;
+            margin-top: 30px;
+        }
+    }
+}
+
+.content-container#navigation {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.tool-nav {
+    background-color: @inedo-darkblue;
+    z-index: 2;
+    position: relative;
+
+    ul {
+        padding: 0;
+        text-align: center;
+
+        li {
+            text-align: center;
+            margin: 6px 0 8px 0;
+
+            a {
+                color: @inedo-grey;
+                text-decoration: none;
+                font-size: 14px;
+                padding: 8px 26px;
+
+                img {
+                    height: 20px;
+                    vertical-align: middle;
+                    margin-right: 12px;
+                }
+            }
+
+            a:hover {
+                color: @proget-blue;
+            }
+        }
+    }
+}
+
+#header {
+    position: relative;
+    z-index: 6;
+}
+
+.menu-anchor {
+    visibility: hidden;
+    position: absolute;
+    top: -50px;
+}
+
+.content-container#sticky-nav-content-container {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: @inedo-darkblue;
+
+    .content {
+        width: 1000px;
+
+        #sticky-nav {
+            background-color: @inedo-darkblue;
+
+            ul {
+                padding: 0;
+                text-align: center;
+
+                li {
+                    text-align: center;
+                    margin: 6px 0 8px 0;
+
+                    a {
+                        color: @inedo-grey;
+                        text-decoration: none;
+                        font-size: 14px;
+                        padding: 8px 26px;
+
+                        img {
+                            height: 20px;
+                            vertical-align: middle;
+                            margin-right: 12px;
+                        }
+                    }
+
+                    a:hover {
+                        color: @proget-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.content-container#services {
+    .content {
+        p {
+            font-size: 19px;
+        }
+
+        h2 {
+            margin-top: 5px;
+            font-size: 40px;
+            font-weight: bolder;
+        }
+
+        .button-set {
+            margin: 20px 0 50px 0;
+        }
+
+        .training-courses {
+            width: 320px;
+            float: left;
+            margin-right: 12px;
+            margin-bottom: 40px;
+
+            &.principles {
+            }
+
+            &.products {
+            }
+        }
+
+
+        .inedo-courses {
+            margin-top: 10px;
+            margin-bottom: 30px;
+
+            a {
+                text-decoration: none;
+            }
+
+            .courses {
+                width: 325px;
+                float: left;
+                height: 75px;
+                margin: 8px 8px 0 0;
+                text-align: left;
+                background-color: @inedo-lightgrey;
+
+                h3 {
+                    color: @inedo-darkgrey;
+                    font-size: 21px;
+                    padding: 0 8px 30px 124px;
+                    line-height: 150%;
+                }
+
+                h4 {
+                    margin-top: 20px;
+                    margin-left: 20px;
+                    font-size: 18px;
+                }
+
+                img {
+                    vertical-align: middle;
+                    margin-right: 14px;
+                }
+            }
+
+            .courses:hover {
+                box-shadow: 1px 1px 4px @inedo-darkblue;
+            }
+        }
+    }
+}
+
+@media print {
+    .tool-nav {
+        display: none !important;
+    }
+
+    #sticky-nav-content-container {
+        display: none !important;
+    }
+
+}

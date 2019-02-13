@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Visual Studio Team Services Extension</title>
+</head>
+<body>
+    <h2 id="operations">Operations</h2>
+   
+    <p>
+        Once the VSTS extension (Visual Studio Online and TFS) is installed on BuildMaster, additional Built-in operations can be called in a deployment plan, such as:
+    </p>
+    <ul>
+        <li>
+            <b>Import Artifact from TFS2015 or VSO</b> - Downloads an artifact from the specified TFS Server or VSO and save it to the artifact library
+        </li>
+        <li>
+            <b>Queue TFS 2015/VSO Build</b> - Queue a build in TFS or VSO optionally waiting for its completion
+        </li>
+        <li>
+            <a href="/support/documentation/buildmaster/reference/operations/source-control/get-latest"><b>Get Latest</b></a> - Get latest version of code from TFS Server
+        </li>
+
+    </ul>
+    <p>
+        Specific Issue Tracking operations added include:
+    </p>
+    <ul>
+        <li>
+            <b>Create TFS Work Item</b> -Creates a work item in TFS
+        </li>
+        <li>
+            <b>Transition TFS Work Item</b> - Transitions work items in TFS from one status to another
+        </li>
+        <li>
+            <b> Generate Release Notes</b> - Generates an HTML file containing the BuildMaster release notes and/or issues from TFS
+        </li>
+
+        <li>
+            <b>Halt promotions</b> - Halts a promotions of a release when a TFS work item of a specific status exists
+        </li>
+    </ul>
+
+    <h2 id="import-tutorial">Importing and Deploying Builds</h2>
+    <p>
+        The below tutorial will demonstrate how to utilize this extension by creating a build in VSO, creating a Release Package from that build, and deploying it all the way through production. 
+    </p>
+    <p>
+             We'll be using the build-related features of Visual Studio Online to work with a simple project called <i>Accounts</i>. This tutorial applies to TFS/VSTS as well, though the screenshots may be vary.
+      </p>
+	  <h3>Visual Studio Online Setup</h3>
+	 	  
+	  <img class="screenshot" src="\resources\tutorials\vso\vso-3.png" />
+	  
+	  <p>
+		In <i>Accounts</i>, we've configured a build definition (<i>Standard</i>) that creates an artifact (<i>Websites</i>). 
+	  </p>
+	  
+	  <img class="screenshot" src="\resources\tutorials\vso\vso-2.png" />
+	  
+	  <p>
+		From here, we will configure BuildMaster to import this artifact from the last successful build. 
+		</p>
+	  <h3 id="step-one">Step 1: Install and Configure the TFS Extension</h3>
+		<p>
+            Click <u>Administration</u> > Click <u>BuildMaster Extensions</u> > Click <u>TFS</u> > Click <u>Install this Extension</u>
+		</p>
+		<p>
+			After the extension is installed, BuildMaster will automatically restart, and TFS will now be in the Up-to-Date Extensions.
+		</p>
+		<p>
+            Click <u>Resource Credentials</u> > Click <u>Team Foundation Server</u>
+		</p>
+		<p>
+			In BuildMaster, Resource Credentials allow you to connect to different VSO accounts and TFS instances. We’ll configure a profile with VSO credentials.
+		</p>
+		<div style="margin-bottom: 30px; padding-left: 30px;" class="info">
+           <p>
+               For Visual Studio Online, you will need to create a <a target="_blank" href="https://www.visualstudio.com/en-us/get-started/setup/use-personal-access-tokens-to-authenticate">Personal Access Token</a>; your regular password will not work.
+           </p>
+       </div>
+	  
+		 <img class="screenshot" src="\resources\tutorials\vso\credential.png" />
+		
+		<p><h3 id="step-two">Step 2: Create an Application in BuildMaster</h3></p>
+		
+		<p>
+            Click <u>Applications</u> > Click <u>Create Application</u> > Set Name to <i>Accounts</i> > Click <u>Create</u>
+		</p>
+       
+       <p>When creating the application, the <i>Integration</i>, <i>Testing</i>, and <i>Production</i> environments will be added by default as the initial pipeline.</p>	
+		
+       <img class="screenshot" src="\resources\tutorials\msbuild-final\createapplicationfinal2.png" />
+
+       <p><h3 id="step-three">Step 3: Create an Import Plan</h3></p>
+       <p>
+           We first need to import an artifact from VSO. For that we'll create a Plan that will queue a build in VSO from BuildMaster and import the artifact from the queued build.
+       </p>
+       <p>
+           Create a new plan and call it <i>Import Build</i>.
+       </p>
+       <p>
+           Start with a General Block to describe what will be happening in this plan
+        </p>
+       <img class="screenshot" src="\resources\tutorials\jenkins\new-general-block.png" />
+       <p>
+           Add <i>Queue TFS 2015 / VSO Build</i> to the plan and set the Credential we just created. After a valid credential is set BuildMaster will create drop-down choices for the Team project name and Build definition. 
+       </p>
+       <img class="screenshot" src="\resources\tutorials\vso\queue.png" />
+       <p>
+           Add <i>Import TFS 2015 / VSO Artifact</i> next. We'll again set the resource credential as well as the Artifact name, the Team project, and the Build definition. We'll use <i>latest</i> to import a the build we just queued.
+       </p>
+       <img class="screenshot" src="\resources\tutorials\vso\export.png" />
+<h4>
+    Visual Mode
+</h4>
+      
+           
+               <img class="screenshot" src="\resources\tutorials\vso\plan2.png" />
+          
+           <h4>Text Mode (OtterScript)</h4>>
+               <img class="screenshot" src="\resources\tutorials\vso\vso-text-2.png" />
+          
+     
+
+       <p><h3 id="step-four">Step 4: Edit Application Pipeline and Set Import Plan</h3></p>
+       <p>
+           When we created the application, a simple pipeline was also created which we can now edit.
+       </p>
+       <p>
+           Click <u>Pipelines</u> > Click <u>Accounts</u>
+       </p>
+       <p>
+           You'll see that our three stages are already in place, and they already have <i>Deploy Accounts</i> plan assigned to them. First, we need to import the VSO artifact. We'll create a new <b>Stage</b> for that.
+       </p>
+       <p>
+           Click <u>Add Stage</u> > Set Name to <i>Import</i> > Set Pipeline position to <i>0</i> > Click <u>Save Stage</u>
+       </p>
+       <img class="screenshot" src="\resources\tutorials\jenkins\add-import.png" />
+       <p>
+           By setting the Pipeline position to <i>0</i>, the stage is created as the first stage in the pipeline, since we need to import a build <em>before</em> we can move it through our pipeline.
+       </p>
+       <p>
+           Next we need to set the import stage with our import plan. Click <i>add target</i> on the import stage and set the plan to <i>Import Build</i>.
+       </p>
+       <p><h3 id="step-five">Step 5: Edit the Deployment Plan</h3></p>
+       <p>
+           As noted above, we already have a plan assigned to our pipeline stages called Deploy Accounts; we'll now edit that plan.
+       </p>
+       <p>
+           Click <u>Plans</u> > Click <u>Deploy Accounts</u>
+       </p>
+
+       <p>
+           BuildMaster has automatically created a simple deployment plan by default. The plan doesn't do much, but we can edit it so that it will deploy the artifact that we'll import through the pipeline.
+       </p>
+       <p>
+           Edit the <a href="http://inedo.com/support/documentation/otter/execution-engine/statements-and-blocks/general-blocks">General Block</a> at the top with a short description of what the plan will do, and set a server for the plan to be run on. Note that you can also target <a href="/support/documentation/buildmaster/core-concepts/environments">environments</a> and <a href="/support/documentation/buildmaster/administration/agents">servers</a> to execute operations on from the pipeline stage, but for this tutorial, we'll just set it here.
+       </p>
+
+       <img class="screenshot" src="\resources\tutorials\jenkins\new-deploy-general.png" />
+
+       <p>
+           The other two actions in the plan can be deleted.
+       </p>
+       <p>
+           Next, drag a <i>Deploy Artifact</i> operation into the edited <i>General Block</i>. Set the Artifact name to <i>Websites</i>, and the Target directory to <i>C:\Websites\$EnvironmentName\Accounts</i>. Using <i>$EnvironmentName</i> will create a new folder for each environment that the application is deployed to, and demonstrates one way to generalize a deployment plan for use in multiple environments.
+       </p>
+
+       <img class="screenshot" src="\resources\tutorials\jenkins\deploy-artifact2.png" />
+
+
+
+		<p><h3 id="step-six">Step 6: Creating a Release and Deploying</h3></p>
+		<p>
+			We can now create a <b>Release</b> that deploys the build artifact we created with a release package. The release number can be anything, but defaults to 0.0.0. 
+		</p>
+		<p>
+            Click <u>Releases</u> > Click <u>Create Release</u>
+		</p>
+       <p>
+           Once the release is created, you can now create a package, which will use the import plan we defined.
+       </p>
+
+       <p>
+           Click <u>Create Package</u> > Click <u>Create Package</u>
+       </p>
+       <p>
+           BuildMaster will now run the Import Plan we created to queue a VSO Build and then Import the artifact to BuildMaster.
+       </p>
+
+       <img class="screenshot" src="\resources\tutorials\vso\success.png" />
+
+       <p>
+           We can see that there has been an artifact created called <i>Websites</i>, and the Variable $TFSBuildNumber has incremented by 1 from the first screenshot.
+       </p>
+       <p>
+           You can now run the artifact through the rest of the pipeline simply by clicking [Deploy] in each successive stage. Of course, you can also configure <a href="/support/documentation/buildmaster/core-concepts/pipelines">gates</a>, <a href="/support/documentation/buildmaster/global-components/event-listeners">listeners</a>, <a href="/support/documentation/buildmaster/administration/security">permissions</a> to ensure that a proper process is followed.
+       </p>
+
+       <img class="screenshot" src="\resources\tutorials\vso\deployed-2.png" />
+
+       <p>
+           You can further verify that the deployment was successful by checking the drive used when setting up the deployment plan. There will be three folders under <i>/Websites</i> -one for <i>Integration, Testing</i>, and <i>Production</i>- all with the deployed files.
+       </p>
+
+</body>
+</html>

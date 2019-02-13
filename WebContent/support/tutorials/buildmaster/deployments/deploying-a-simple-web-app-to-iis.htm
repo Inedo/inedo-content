@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Getting Started with BuildMaster: Deploying a Simple Web Application to IIS</title>
+    <meta name="keywords" content="buildmaster, iis, deploy " />
+    <meta name="subheading" content="Deployment" />
+    <meta name="product-name" content="BuildMaster" />
+
+</head>
+
+
+<body>
+    <div class="intro">
+        <p>
+            BuildMaster helps release reliably, and in this tutorial you will learn how to deploy a simple ASP.NET web application along with its IIS configuration through a pipeline to create a repeatable release process.
+        </p>
+        <hr />
+    </div>
+    <p class="info">
+        <strong>Note:</strong> In this tutorial, we will be manually uploading an artifact for <i>demonstration purposes</i>. The typical workflow is to import build artifacts directly from Jenkins, TeamCity, TFS, Visual Studio, or a drop path. Or if you're not already automating your builds, then you could use BuildMaster to retrieve code from source control, build it, and run unit tests.
+    </p>
+    <h4 id="prereq">Prerequisites</h4>
+    <p>
+        <ul style="margin-left: 30px; margin-bottom: 40px;">
+            <li style="margin: 20px 0;">
+                Download BuildMaster from here: <a href="/buildmaster/download" target="_blank">https://inedo.com/buildmaster/download</a>
+            </li>
+            <li style="margin: 20px 0;">
+                Download Accounts.zip from here: <a href="http://cdn.inedo.com/downloads/otter/Accounts.zip" download="http://cdn.inedo.com/downloads/otter/Accounts.zip">Accounts.zip</a>
+            </li>
+            <li style="margin: 20px 0;">
+                Ensure IIS is installed on the target machine with a custom or default website set to use the "AccountsAppPool" created in this tutorial
+            </li>
+        </ul>
+    </p>
+    <p>
+        This tutorial is also available as a video:
+    </p>
+    <iframe width="600" height="337" src="https://www.youtube.com/embed/iwvlgZmp5Ug" frameborder="0" allowfullscreen="true"></iframe>
+    
+    <h2 style="margin-top: 30px;" id="create-application">Create an Application in BuildMaster</h2>    
+    <p>
+        Applications in BuildMaster are used to organize and better visualize your <a href="/support/documentation/buildmaster/core-concepts/pipelines">pipelines</a>, <a href="/support/documentation/buildmaster/core-concepts/release">releases</a>, and <a href="/support/documentation/buildmaster/core-concepts/deployment-plans">plans</a>. To create a new application in BuildMaster, select: <i>Applications</i> then <i>Create Application</i>, and enter <i>Accounts</i> as the name, then click <i>Create</i>.
+        </p>
+    <p>
+        <strong>Applications > Create Application</strong>
+    </p>
+       <h2 id="create-deployment-plan">Create a Deployment Plan</h2>
+    <p>
+        On the accounts overview page, we can select <i>Plans</i> from the application navigation menu:
+    </p>
+        <p>
+            <img class="screenshot" alt="Application Navigation Menu" src="/resources/tutorials/bm-deploy-web-app-v6/create-deploy-plan.png" />
+        </p>
+        <p>
+            On the plans page, select the <i>Deploy Accounts</i> plan that was auto-generated when the application was created, this will pop open the Plan Editor:
+        </p>
+    <p>
+        <img class="screenshot" alt="Plan Editor" src="/resources/tutorials/bm-deploy-web-app-v6/plan-editor.png" />
+    </p>
+    <p>
+        Click the topmost red X to remove the example plan, then we will add a <i>General Block</i> by dragging &amp; dropping it from the statement library on the left:
+    </p>
+    <p>
+        <img class="screenshot" alt="General Block" src="/resources/tutorials/bm-deploy-web-app-v6/general-block.png" />
+    </p>
+    <p>
+        Enter <i>Deploy Accounts</i> as the short description and click <i>Save</i>, then use the <i>Search Statements</i> box to find the <i>Ensure AppPool</i> operation, and drag-and-drop it into the newly added <i>General Block</i>. This will present many properties familiar to IIS administrators. Enter the following values into the property editor:
+    </p>
+    <div style="margin: 30px 0 45px 45px;">
+        <p>
+            <strong>Name:</strong> AccountsAppPool
+        </p>
+        <p>
+            <strong>.NET CLR version:</strong> v4.0
+        </p>
+        <p>
+            <strong>State:</strong> Stopped
+        </p>
+    </div>
+    <p>
+        <img class="screenshot" alt="Property Editor" src="/resources/tutorials/bm-deploy-web-app-v6/property-editor.png" />
+    </p>
+    <p>
+        Click <i>Save</i>, and now, we will add a <i>Deploy Artifact</i> operation that will be used to deploy the Accounts.zip file we downloaded earlier. Search for <i>Artifact</i> in the Search Statements box, and drag-and-drop the operation under the <i>Ensure Application Pool</i> operation added previously. Enter <i>Accounts</i> as the artifact name, and <i>C:\Websites\Accounts</i> as the target directory:
+    </p>
+    <p>
+        <img class="screenshot" alt="Deploy Artifact" src="/resources/tutorials/bm-deploy-web-app-v6/deploy-artifact.png" />
+    </p>
+    <p>
+        Click <i>Save</i>, then add one more operation, the <i>Start App Pool</i> operation with <i>AccountsAppPool</i> as the application pool name.
+    </p>
+    <p>
+        Once those 3 operations are added, the resulting plan should look like the following:
+    </p>
+    <p>
+        <img class="screenshot" alt="Resulting Plan" src="/resources/tutorials/bm-deploy-web-app-v6/resulting-plan.png" />
+    </p>
+    <p>
+        Click <i>Save Plan</i>, and we are now ready to edit the auto-generated pipeline. 
+    </p>
+    <h2 id="modify-pipeline">Modify the Pipeline</h2>
+    <p>
+        <a href="/support/documentation/buildmaster/core-concepts/pipelines">Pipelines</a> describe the set of stages that a package will traverse though, along with any other process controls such as <a href="/support/documentation/buildmaster/core-concepts/pipelines#Manual-Automatic-Approvals">approvals</a>, <a href="/support/documentation/buildmaster/core-concepts/pipelines#deployment-windows">deployment windows</a>, and more. Select <i>Pipelines</i> from the application navigation menu, and the auto-generated Accounts pipeline should be visible:
+    </p>
+    <p>
+        <img class="screenshot" alt="Accounts Pipeline" src="/resources/tutorials/bm-deploy-web-app-v6/accounts-pipeline.png" />
+    </p>
+    <p>
+        Click the <i>Accounts</i> pipeline, and then <i>edit</i> under Integration to edit the target:
+    </p>
+    <p><strong>Accounts > Edit</strong></p>
+    <p>
+        <img class="screenshot" alt="Edit Pipeline" src="/resources/tutorials/bm-deploy-web-app-v6/edit-pipeline.png" />
+    </p>
+    <p>
+        This will open the <i>Edit Pipeline Stage Target</i> window where we can set the server to <i>Specific servers</i>... and <i>localhost</i> as the target server:
+    </p>
+    <p>
+        <img class="screenshot" alt="Pipeline Target" src="/resources/tutorials/bm-deploy-web-app-v6/pipeline-target.png" />
+    </p>
+    <p>
+        Click <i>Save</i>, then select the <i>Releases</i> option in the application navigation menu, followed by <i>Create Release</i>:
+    </p>
+    <p>
+        <strong>Save > Releases > Create Release</strong>
+    </p>
+    <p>
+        <img class="screenshot" alt="Create Release" src="/resources/tutorials/bm-deploy-web-app-v6/create-release.png" />
+    </p>
+    <p>
+        In the create release pop-up, we will leave the defaults, and click <i>Create Release</i>, taking us to the overview page for the 0.0.0 release. From here, we can click the <i>Create Package</i> button, making sure to <strong>uncheck</strong> <i>Automatically deploy to Integration stage</i>:
+    </p>
+    <p>
+        <img class="screenshot" alt="Create Package" src="/resources/tutorials/bm-deploy-web-app-v6/create-package.png" />
+    </p>
+    <p>
+        Click <i>Create Package</i> when that field is unchecked.
+    </p>
+    <h2 id="upload-artifact">Upload Artifact</h2>
+    <p>
+        With our release package created, we can associate the artifact with it. Select <i>manual upload</i> from the Artifacts section, name it <i>Accounts</i>, and browse to the Accounts.zip file we download as a prerequisite.
+    </p>
+    <p>
+        <img class="screenshot" alt="Manual Upload" src="/resources/tutorials/bm-deploy-web-app-v6/manual-upload.png" />
+    </p>
+    <p>
+        Once uploaded, we can click <i>deploy</i> on the Integration stage, followed by the <i>Deploy Package</i> button:
+    </p>
+    <p>
+        <strong>deploy > Deploy Package</strong>
+    </p>
+    <p>
+        <img class="screenshot" alt="Deploy Package" src="/resources/tutorials/bm-deploy-web-app-v6/deploy-package.png" />
+    </p>
+
+    <p>
+        Once <i>Deploy Package</i> is clicked, the live execution page shows the execution of the steps that were added to the deployment plan:
+    </p>
+    <p>
+        <img class="screenshot" alt="Live Execution" src="/resources/tutorials/bm-deploy-web-app-v6/live-execution.png" />
+    </p>
+    <p>
+        We will see that the deployment has completed and progressed to the first stage in the pipeline:
+    </p>
+    <p>
+        <img class="screenshot" alt="Stage One" src="/resources/tutorials/bm-deploy-web-app-v6/stage-one.png" />
+    </p>
+    <h2 id="summary">Summary</h2>
+    <p>
+        In summary, with just a few simple operations in BuildMaster, we have laid the groundwork for a repeatable release process.
+    </p>
+
+
+
+</body>
+</html>

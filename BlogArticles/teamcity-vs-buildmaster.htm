@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="keywords" content="team-city, builds, continuous-integration, DevOps" />
+    <meta name="publish-date" content="02/2/2017 10:30 AM" />
+    <meta name="author" content="Devin Sweeney" />
+    <title>TeamCity vs. BuildMaster: Move beyond Basic Builds and Continuous Integration</title>
+    <meta name="full-image" content="/blog/_images/ara-ci/teamcity-bm.png" />
+</head>
+<body>
+    <h1>TeamCity vs. BuildMaster: Move Beyond Basic Builds and Continuous Integration</h1>
+    <p>In my <a href="/blog/jenkins-vs-buildmaster-why-its-a-faulty-comparison">previous post</a>, I discussed the difference between Jenkins and BuildMaster. As many folks found this interesting and informative, 
+    I've decided to do the same of TeamCity. </p>
+    
+    <p> As I&rsquo;m sure you can guess, comparing TeamCity to BuildMaster is also a faulty comparison, more along the line of comparing apples to oranges. 
+    While together they make a great fruit salad, or in our case; part of a DevOps toolchain, their individual functionality is quite different.</p>
+    <img src="/blog/_images/ara-ci/apple-orange.png" />
+    <h1>Continuous Integration vs Application Release Automation</h1>
+
+    <p>This can really be boiled down to: <em>Builds</em> vs. <em>Releases</em>.</p>
+
+    <p>Fundamentally, Builds and <a href="/support/documentation/buildmaster/core-concepts/release">Releases</a> vary in two distinct ways: Builds meet developer or development needs, and Releases fulfill the IT organization requirements, and deliver end results. 
+    By separating tools into these unique, and separately functioning categories, you are able to address and solve the individual problem or requirement associated with each.</p>
+
+    <p>Although CI and ARA are two distinct separate processes, that address two distinct problems, some seek a single, multi-purpose tool to do it all. Obviously, no such tool exists. 
+    Just as a bike is no replacement for a car, TeamCity is simply not suitable for implementing a modern DevOps process.</p>
+    <img style="margin-bottom: 30px;" src="/blog/_images/ara-ci/bike-car.png" />
+    <h1>Build Jobs as the Center of DevOps?</h1>
+
+    <p>Like all Continuous Integration tools, TeamCity is focused on build automation. 
+    This is implemented primarily through Projects and Build Configurations, which define Build Steps: the source control, build, and other third-party tools used to checkout, compile, and test source code.</p>
+
+    <p>Of course, since a build step could just be an arbitrary script, a job could be used to do anything. And thus, TeamCity could be used for anything.</p>
+
+    <p>But just as an all-purpose Job Scheduler would be a poor choice for build automation jobs, TeamCity is an equally-poor choice for an all-purpose job scheduler. 
+    It lacks the features all other job schedulers have because it was never designed as a job scheduler.</p>
+
+    <p>Moreover, both job schedulers and build automation tools are poor choices for application release automation, and deployment.</p>
+
+    <h1>Deployers are not for Deployment</h1>
+
+    <p>One category of the built-in Build Steps in TeamCity is Deployers. 
+    Although the name implies that they might be used for application deployment, the intended usecase is much more limited: 
+    &ldquo;Deployer build runners enable TeamCity to upload artifacts to external locations in a number of ways.&rdquo;</p>
+
+    <p>There&rsquo;s a lot more involved with deploying applications than uploading artifacts; not just additional automation tasks such as service stops/starts, but process orchestration, 
+    such as approval gates, manual intervention, security, and so on.</p>
+
+    <h1>TeamCity with BuildMaster</h1>
+
+    <p>Although TeamCity isn&rsquo;t suitable for release coordination or enterprise deployment automation, it&rsquo;s an established, 
+    and powerful build automation tool. This is exactly why BuildMaster has a tight integration with it; with the <a href="/den/buildmaster/teamcity"> TeamCity extension</a>, 
+    you can import build artifacts directly from TeamCity into BuildMaster, apply the necessary approvals, additional testing, and deploy to production. 
+    Together, and with other tools, BuildMaster and TeamCity help define and establish best practices for DevOps implementation.</p>
+    <a href="/den/buildmaster/teamcity"><img src="/den/teamcity-den.png" /></a>
+    <p>Check out our tutorial on how to <a href="/support/tutorials/buildmaster/teamcity/queuing-and-deploying-artifacts-from-teamcity"> deploy a TeamCity Build with BuildMaster</a> to learn how seamlessly the tools work together.</p>
+
+
+</body>
+</html>

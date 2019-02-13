@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BuildMaster | CI/CD</title>
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+    <script src="/feature-landing/scripts/fancybox-2.1.5/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <link href="/feature-landing/scripts/fancybox-2.1.5/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/support/whitepapers/ci-cd-buildmaster/styles.css" />
+
+
+    <script type="text/javascript">
+        var handle = 0;
+        function Download() {
+
+            window.open("ci-cd-buildmaster-web.pdf");
+            console.log("check");
+            clearInterval(handle);
+        }
+        $(document).ready(function () {
+            setTimeout(Download, 5000);
+        });
+    </script>
+
+</head>
+<body>
+
+    <div class="content-container top">
+        <div class="hero-bar">
+            <a href="/"><img src="/resources/images/logos/inedo-gray.svg" /></a>
+        </div>
+        <div class="far-right">
+            <div class="product-shot">
+                <img class="screenshot" src="/support/whitepapers/ci-cd-buildmaster/whitepaper-cover.png" />
+            </div>
+            <div class="circle-button">
+                <a class="download orange" href="/buildmaster?utm_source=ci-cd-whitepaper-thanks" target="_blank">Explore BuildMaster</a>
+            </div>
+
+        </div>
+
+
+        <div class="content above-fold">
+            <div class="left">
+                <h1>Thanks for your interest in our white paper!</h1>
+                <h2>
+                    If your download didn't start automatically, in a few seconds check your pop-up blocker or <a href="ci-cd-buildmaster-web.pdf" download="ci-cd-buildmaster-web.pdf">manually start the download here</a>.
+                </h2>
+               
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content-container case-study">
+        <div class="content">
+            <div class="container">
+
+                <div class="top-left">
+                    <h4>We Need to Talk</h4>
+                    <p>There's an epidemic of outdated, ineffective CI/CD systems managing the flow of information and ideas, and often companies don't even realize the extent of the problem.</p>
+                    <p>We don't know what happens when a tree falls in the woods with nobody around to hear it, but we do know that, just because a department manager doesn't understand that there is a better way out there, that doesn't mean the better way doesn't exist.</p>
+                    <p>Sub-optimal CI/CD processes could be costing you time and money.</p>
+                </div>
+                <div class="centered">
+                    <h4>Real World Impact</h4>
+                    <p>If your current CI/CD process isn't improving the efficiency, effectiveness or economic performance of your organization, then what's the point?</p>
+                    <p>Automation <em>can actually</em> cause more problems than it solves. Avoid the "CI/CD Calamity" and make sure your systems have real-world value.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

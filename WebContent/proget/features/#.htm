@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ProGet | Package your Applications and Components</title>
+    <meta name="MasterPageFile" content="proget.htm" />
+    <script src="/proget/features/scripts/fancybox-2.1.5/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <link href="/proget/features/scripts/fancybox-2.1.5/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+    <script src="/proget/features/scripts/unslider/src/js/unslider.js"></script>
+    <link rel="stylesheet" href="/proget/features/scripts/unslider/dist/css/unslider.css" />
+    <link rel="stylesheet" href="/proget/features/scripts/unslider/dist/css/unslider-dots.css" />
+    <link type="text/css" rel="stylesheet" href="/resources/styles/features-new.css" />
+    
+    <script>
+          jQuery(document).ready(function ($) {
+              $('.my-slider').unslider();
+          });
+    </script>
+
+    <script type="text/javascript">
+        setTimeout(function () {
+            var a = document.createElement("script");
+            var b = document.getElementsByTagName("script")[0];
+            a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0053/9152.js?" + Math.floor(new Date().getTime() / 3600000);
+            a.async = true; a.type = "text/javascript"; b.parentNode.insertBefore(a, b)
+        }, 1);
+    </script>
+
+</head>
+<body>
+    <div style="margin-top: 50px;" class="content-container color-box">
+        <a id="manage" class="menu-anchor"></a>
+        <div class="body-copy">
+            
+            <h1>
+                Manage All of Your Packages in One Place
+            </h1>
+        </div>
+    </div>
+
+            <div class="content-container feature-benefit">
+                <div class="content">
+                    <div class="screenshot-container">
+                        <a class="fancyboxPopup" href="/proget/features/app-components.png">
+                            <img class="screenshot nobor" src="/proget/features/app-components.png" />
+                        </a>
+                    </div>
+                    <div class="feature-benefit-copy">
+
+                        <h2><a href="/support/documentation/proget/core-concepts/packages">Applications &amp; Components</a></h2>
+                        <p>
+                            Use <a href="/support/documentation/proget/core-concepts/packages#universal-package">Universal Packages</a> to uniformly distribute your applications and components, and <a href="/support/documentation/proget/docker/private-registries">Docker</a> images for your containerized software.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+           
+            <div class="feature-benefit-copy left">
+
+                <h2><a href="/support/documentation/proget/feeds/nuget">Developer Libraries</a></h2>
+                <p>
+                    Share pre-built and pre-tested code between development teams, whether you're using C#/.NET (<a href="/support/documentation/proget/feeds/nuget">NuGet</a>), JavaScript/NodeJS (<a href="/support/documentation/proget/feeds/npm">npm</a>), Ruby (<a href="/support/documentation/proget/feeds/rubygem">Gems</a>), or Java (<a href="/support/documentation/proget/feeds/maven">Maven</a>).
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/dev-lib.png">
+                    <img class="screenshot" src="/proget/features/dev-lib.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/choco-linux.png">
+                    <img class="screenshot" src="/proget/features/choco-linux.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+
+                <h2><a href="/support/documentation/proget/feeds/chocolatey">System Software &amp; Configuration</a></h2>
+                <p>
+                    Manage third-party Windows software (<a href="/support/documentation/proget/feeds/chocolatey">Chocolatey</a>), <a href="/support/documentation/proget/feeds/powershell">PowerShell</a> packages, and PowerShell DSC resources.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content-container color-box">
+        <a id="organize" class="menu-anchor"></a>
+        <div class="body-copy">
+            
+            <h1>
+                Organize and Curate Internal &amp; External Packages
+            </h1>
+        </div>
+    </div>
+
+
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            
+            <div class="feature-benefit-copy left">
+                <p>
+                    Create any number of <a href="/support/documentation/proget/core-concepts/feeds">feeds</a> to organize and distribute your packages to different groups or even to external customers.
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/feeds-ss.png">
+                    <img class="screenshot" src="/proget/features/feeds-ss.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/connectors.png">
+                    <img class="screenshot nobor" src="/proget/features/connectors.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+                <p>
+                    Combine multiple feeds - both internal and external - with <a href="/support/documentation/proget/core-concepts/feeds/connectors">connectors</a> so that consumers need only one feed and can access external packages even when the external feed is unavailable.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="content-container color-box">
+        <a id="open-source" class="menu-anchor"></a>
+        <div class="body-copy">
+            
+            <h1>
+                Scan and Validate Open-source Packages
+            </h1>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            
+            <div class="feature-benefit-copy left">
+                <p>
+                    Avoid costly open-source license violations by defining <a href="/support/documentation/proget/compliance/license-scanning">licensing policies</a> that ProGet will use to block non-compliant packages.
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/license-filter.png">
+                    <img class="screenshot" src="/proget/features/license-filter.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/equifax.png">
+                    <img class="screenshot nobor" src="/proget/features/equifax.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+                <p>
+                    Scan packages for <a href="/support/documentation/proget/compliance/vulnerabilities">vulnerabilities</a> and block access to those deemed too risky or unsafe based on rules you configure.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+           
+            <div class="feature-benefit-copy left">
+                <p>
+                    <a href="/support/documentation/proget/advanced/package-promotion">Promote packages</a> between feeds to ensure that only approved and verified packages are used in the right environments, such as production.
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/details-dev-process.gif">
+                    <img class="screenshot nobor" src="/proget/details-dev-process.gif" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container color-box">
+        <a id="track" class="menu-anchor"></a>
+        <div class="body-copy">
+
+            <h1>
+                Deploy Your Packages &amp; Track Their Use
+            </h1>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/pg-hh.png">
+                    <img class="screenshot nobor" src="/proget/features/pg-hh.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+                <p>
+                    Deploy your application and component packages to servers and the cloud by integrating <a href="/buildmaster">BuildMaster's</a> reusable workflows that automate testing, deployments, and if necessary, rollback.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+
+            <div class="feature-benefit-copy left">
+                <p>
+                    ProGet <a href="/support/documentation/proget/advanced/package-promotion#deployment-records">records deployments</a> from other tools as well, including Otter, Octopus Deploy, or even your own custom scripts, so you can see which packages were deployed to which servers.
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/deploy-rec.png">
+                    <img class="screenshot" src="/proget/features/deploy-rec.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/package-stats.png">
+                    <img class="screenshot" src="/proget/features/package-stats.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+                <p>
+                    Use <a href="/support/documentation/proget/advanced/package-statistics">package statistics</a> to see which users and servers are accessing which packages so you can make informed decisions on updating or retiring development libraries, scripts, or other types of packages.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+
+            <div class="feature-benefit-copy left">
+                <p>
+                    Configure <a href="/support/documentation/proget/advanced/webhooks">webhooks</a> to trigger automatic deployments, alters, or even audit activity when packages are added, promoted, deployed, and deleted.
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/webhook.png">
+                    <img class="screenshot" src="/proget/features/webhook.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container color-box">
+        <a id="servers" class="menu-anchor"></a>
+        <div class="body-copy">
+
+            <h1>
+                Build a Dependable Infrastructure on Your Servers or the Cloud
+            </h1>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/load-bal.png">
+                    <img class="screenshot nobor" src="/proget/features/load-bal.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+                <p>
+                    Add as many web server nodes as you need to <a href="/support/documentation/proget/administration/high-availability">load balance traffic</a> from various teams and build servers around the world.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+
+            <div class="feature-benefit-copy left">
+                <p>
+                    Leverage <a href="/support/documentation/proget/advanced/cloud-storage">Amazon S3 or Azure Blob storage</a> for inexpensive, pay-as-you-go scaling of your package file storage.
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/features/cloud-storage.png">
+                    <img class="screenshot nobor" src="/proget/features/cloud-storage.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/resources/documentation/proget/administration/basic-feed-rep.png">
+                    <img class="screenshot nobor" src="/resources/documentation/proget/administration/basic-feed-rep.png" />
+                </a>
+            </div>
+            <div class="feature-benefit-copy">
+                <p>
+                    <a href="/support/documentation/proget/advanced/feed-replication">Replicate feeds</a> among different ProGet instances across the globe to allow different teams to share feeds without setting up complicated, global infrastructure.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container feature-benefit">
+        <div class="content">
+
+            <div class="feature-benefit-copy left">
+                <p>
+                    Use ProGet's <a href="/support/documentation/proget/administration/high-availability">high availability</a> mode to ensure there is no single point of failure, and that your packages can be accessed even if there's a hardware failure.
+                </p>
+            </div>
+            <div class="screenshot-container">
+                <a class="fancyboxPopup" href="/proget/high-image.png">
+                    <img class="screenshot nobor" src="/proget/high-image.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container color-box">
+        <a id="scale" class="menu-anchor"></a>
+        <div class="body-copy">
+
+            <h1>
+                All of our products are built using the same, reliable technology components.
+            </h1>
+        </div>
+    </div>
+
+    <div class="value">
+        <a href="/support/documentation/executionengine" target="_blank" class="value-icons">
+            <h4>Inedo Execution Engine</h4>
+            <img src="/proget/features/ee-icon.png" />
+            <p>
+                Created exclusively for infrastructure automation and orchestration, the Inedo Execution Engine makes it easy to deploy and execute across hundreds of servers, and provides detailed logging (with sensitive debugging details hidden from certain users) to let you quickly identify what went wrong
+
+            </p>
+        </a>
+        <a href="/support/documentation/inedoagent" target="_blank" class="value-icons">
+            <h4>Inedo Agent</h4>
+            <img src="/proget/features/agent-icon.png" />
+            <p>
+                A lightweight, highly-optimized agent that allows a server to be securely orchestrated by a connected Inedo product. It's simple to deploy and upgrade, but is also backwards- and forwards-compatible to minimize change risks.
+            </p>
+        </a>
+
+        <a href="/support/documentation/inedosdk" target="_blank" class="value-icons">
+            <h4>Inedo SDK</h4>
+            <img src="/proget/features/sdk-icon.png" />
+            <p>
+                A lot of Inedo's product functionality is delivered through extensions, and you can add or modify functionality and capabilities to our product by creating an extension. Because this is a shared SDK, you can write a component once and introduce the same functionality across all of our products
+            </p>
+        </a>
+    </div>
+
+    <div style="clear: both;"></div>
+
+
+            <div class="flow">
+                <div class="circle-button left">
+                    <a class="download" href="/proget">ProGet Overview</a>
+                    <p>&larr; go back</p>
+                </div>
+                <div class="circle-button right">
+                    <a class="download" href="/proget/pricing">proget pricing</a>
+                    <p>next &rarr;</p>
+                </div>
+            </div>
+    <script type="text/javascript">
+            $(function () {
+                $('.fancyboxPopup').fancybox();
+
+                $('.fancybox.ytvideo').click(function () {
+                    $.fancybox(this.href, { type: 'iframe' });
+                    return false;
+                });
+
+                //$('table:not(#FeatureMatrix,#editionTable)').find('tr:even td').addClass('alt');
+            });
+    </script>
+</body>
+</html>
+

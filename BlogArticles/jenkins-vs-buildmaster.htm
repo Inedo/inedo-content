@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="keywords" content="jenkins, builds, continuous-integration, DevOps" />
+    <meta name="publish-date" content="01/19/2017 10:30 AM" />
+    <meta name="author" content="Devin Sweeney" />
+    <title>Jenkins vs. BuildMaster: Why It's a Faulty Comparison</title>
+    <meta name="full-image" content="/blog/_images/ara-ci/jenkins-bm.png" />
+</head>
+
+<body>
+    <h1>Jenkins vs. BuildMaster: Why It's a Faulty Comparison</h1>
+    <p>As a vendor of an Application Release Automation solution, we get asked this question all the time: &ldquo;Well, can&rsquo;t I just use *insert CI tool* for my deployments?&rdquo; Take for instance Jenkins,  we often have evaluators compare Jenkins to <a href="/buildmaster">BuildMaster</a>, which is more like comparing apples to oranges.</p>
+    
+    <p>Jenkins and BuildMaster are different products, that solve different problems, and both are commonly used together as part of a modern DevOps Toolchain. A side-by-side comparison would be a bit like comparing Word and Excel: both can be used to create forms that you&#39;ll print out, but if that&#39;s the only thing your business uses Microsoft Office for, you&#39;re certainly not doing it right.</p>
+
+    <p>Moreover, it&rsquo;s important to understand that using the right tool for the job can lead to an efficient, cost-effective, DevOps solution.</p>
+
+    <h2>The Swiss Army Knife Approach</h2>
+
+    <p>Although CI and ARA are two distinct separate processes, that address two distinct problems, some seek a single, multi-purpose tool to do it all. Obviously, no such tool exists, but many will attempt to shoehorn Jenkins for this purpose; according to its makers, &ldquo;Jenkins is the Swiss army knife in the software delivery toolchain.&rdquo;</p>
+
+    <p>Just as a Swiss army knife is no replacement for a toolbox, Jenkins alone is simply not suitable for implementing a modern DevOps process.</p>
+    <img src="/blog/_images/ara-ci/swiss.png" />
+    <h2>Jenkins Pipelines = Legacy Deployment Pipelines</h2>
+
+    <p>A build/release pipeline facilitates the process of deploying both large and mission-critical changes, and unscheduled emergency deployments of an application.</p>
+
+    <p>In Jenkins, a Pipeline is a special type of Job that&rsquo;s implemented through a plugin originally called Workflows. Essentially, a Pipeline job is a sequence of steps grouped into stages, and may run on a particular node. Like a job, a step could &ldquo;do anything&rdquo;, but it&rsquo;s designed for a single, discrete task, and is generally used to run other jobs; there are a handful of built-in steps for things such as running scripts and sending emails.</p>
+
+    <p>Jenkin&rsquo;s Pipelines are very similar to BuildMaster&rsquo;s Legacy Deployment Plans; Actions are like Steps, Action Groups are like Stages, and both Actions, and Action Groups, had a Node-like context.</p>
+
+    <p>However, neither are suitable on their own for release automation. A layer on top is needed for process orchestration, such as approval gates, manual intervention, security, and so on.</p>
+
+    <h2>Jenkins with BuildMaster</h2>
+
+    <p>Although Jenkins is a poor choice for release automation, it&rsquo;s definitely a proven Continuous Integration tool. This is exactly why BuildMaster has a tight integration with it; with the Jenkins extension, you can import build artifacts into BuildMaster, apply the necessary approvals, additional testing, and deploy to production.</p>
+    <a href="/den/buildmaster/jenkins"><img src="/den/jenkins-den.png" /></a>
+    <p>Alternatively, you can use ProGet to host all your packages, binaries, and Jenkins Build Artifacts. <a href="/support/tutorials/buildmaster/deployments/getting-started-with-proget-buildmaster-and-otter">This tutorial</a> shows the steps needed to set this up.</p>
+    <a href="/support/tutorials/buildmaster/deployments/getting-started-with-proget-buildmaster-and-otter"><img src="/blog/_images/ara-ci/jen-pg-bm.png" /></a>
+
+
+    <h2>DevOps Toolchain</h2>
+
+    <p>CI and ARA tools are just two of the many tools that are often implemented as part of a DevOps toolchain. Check out the <a href="https://en.wikipedia.org/wiki/DevOps_toolchain">DevOps Toolchain Wikipedia page</a> to learn more about the seven important aspects of a highly evolved toolchain. You can also visit our <a href="/products">products page</a> to learn more about how we can help you create a robust solution.</p>
+    <a href="/products"><img style="margin: 10px 0 50px 60px;" src="/products/toolchain-diagram2.png" /></a>
+</body>
+</html>

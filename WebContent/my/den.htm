@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>My Den Items</title>
+    <link rel="stylesheet" type="text/css" href="/my/den.css" />
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+</head>
+<body>
+    <div id="banner" class="content-container">
+        <div class="content">
+            <div class="button-set left">
+                <div class="button">
+                    <a href="${ProfileUrl}">&#xab; Back to Profile</a>
+                </div>
+            </div>
+            <div class="button-set right">
+                <div class="button">
+                    <a href="${CreateUrl}">Create your own &#xbb;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="community" class="content-container">
+        <div class="content">
+            <h3>My Items</h3>
+            <inedo:all-communityitems>
+                <div class="extension-box ${TypeLower}">
+                    <a href="/den/community/${TypeLower}/${PackageNameLower}">
+                        <div class="extension-info">
+                            <p class="title">${PackageName}</p>
+                            <p>${Type} <inedo:if-not-published>(Draft)</inedo:if-not-published></p>
+                        </div>
+                    </a>
+                </div>
+            </inedo:all-communityitems>
+        </div>
+    </div>
+</body>
+</html>

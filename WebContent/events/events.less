@@ -1,0 +1,180 @@
+@import "..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+
+
+.content-container#banner {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    min-height: 275px;
+    background: url(/events/images/event-banner.png) no-repeat #011b2d;
+    background-position: center right;
+    z-index: 5;
+    position: relative;
+
+    .content {
+        padding: 70px 100px;
+
+        h1 {
+            font-size: 310%;
+            color: @inedo-white;
+            margin: 0;
+            text-shadow: -3px 0 7px @inedo-darkblue;
+        }
+
+        .blurb {
+            p {
+                color: @inedo-white;
+                font-weight: bolder;
+                font-size: 18px;
+                text-shadow: -3px 0 7px @inedo-darkblue;
+            }
+        }
+    }
+}
+
+
+
+.menu-anchor {
+    visibility: hidden;
+    position: absolute;
+    top: -50px;
+}
+
+.content-container#solutions-inedo {
+    .content {
+        h2 {
+            margin-bottom: 10px;
+            font-size: 36px;
+            font-weight: 600;
+            color: @inedo-darkblue;
+            border-bottom: 6px solid @inedo-darkblue;
+        }
+
+        .events {
+            margin: 56px 0;
+
+            .text-info {
+                display: inline-block;
+                width: 650px;
+                margin-left: 10px;
+                padding-top: 20px;
+                padding-left: 35px;
+
+
+                .heading-area {
+                    margin-bottom: 20px;
+
+                    h3 {
+                        margin-top: 0;
+                        font-weight: 700;
+                        color: @inedo-darkgrey;
+                        font-size: 23px;
+                        line-height: 20px;
+                        margin-bottom: 6px;
+
+                        .location {
+                            font-weight: 400;
+                            color: #bec0c3;
+                        }
+                    }
+
+                    p.dates {
+                        font-size: 13px;
+                        font-weight: 500;
+                        margin: 0;
+                        line-height: 22px;
+                        color: @inedo-paleblue;
+
+                        &.booth {
+                            //color: @inedo-jp-red;
+                            font-size: 16px;
+                            margin-top: 10px;
+                            font-weight: 700;
+                        }
+                    }
+                }
+
+
+
+
+
+                p.information {
+                    margin-top: 0;
+                    padding-bottom: 10px;
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+                }
+
+                .register {
+                    display: inline-block;
+                    text-transform: uppercase;
+
+                    a.click {
+                        color: @inedo-darkblue;
+                        background-color: @inedo-white;
+                        border: 3px solid @inedo-white;
+                        text-decoration: none;
+                        font-weight: 800;
+                        font-size: 12px;
+                        letter-spacing: 1px;
+                    }
+
+                    a.click:hover {
+                        color: @inedo-paleblue;
+                    }
+                }
+            }
+
+            .logo {
+                img {
+                    width: 225px;
+                    height: 225px;
+                }
+
+                display: inline-block;
+                vertical-align: top;
+                margin-top: 20px;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            left: 88%;
+
+            a {
+                background-color: #bec0c3;
+                padding: 6px 10px;
+                color: white;
+                font-size: 12px;
+                text-decoration: none;
+            }
+
+            a:hover {
+                background-color: @inedo-paleblue;
+            }
+        }
+    }
+}
+
+
+
+@media print {
+    .tool-nav {
+        display: none !important;
+    }
+
+    #sticky-nav-content-container {
+        display: none !important;
+    }
+
+}

@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1118" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="buildmaster,deployment-plans" />
+    <title>Legacy Plans in BuildMaster 5.0</title>
+</head>
+<body>
+    	<p class="info">
+                The below applies to BuildMaster users upgrading to v5
+            </p>
+    <p>
+        One of the major features of <a href="/buildmaster/5.0">BuildMaster 5.0</a> is a brand new <a href="/support/documentation/buildmaster/execution-engine/overview">execution engine</a>.
+        It&#39;s a complete rewrite and takes into account years of experience supporting complex, multi-server orchestrations with easy-to-use deployment plans, and incorporates a tremendous amount of technological advancements.
+    </p>
+
+    <p>
+        To mitigate upgrade risk, the new execution engine is implemented side-by-side with the legacy execution engine. Although the new execution cannot run a legacy plan (nor can the legacy engine run a new OtterScript plan), 
+        you can convert legacy plans to OtterScript on a plan-by-plan basis, and then edit the corresponding pipeline to use the new plan.
+    </p>
+
+    <p class="info">If you&rsquo;d like to learn how the engines differ, see <a href="#legacy-vs-OtterScript">Legacy Plans vs OtterScript Plans</a></p>
+
+    <h2>Transitioning to the New Executing Engine</h2>
+
+    <p>
+        Because the new execution engine represents such a big paradigm shift, think of "converting to OtterScript" as more of a "machine translation from one language to another."
+        It works fine for simple legacy plans; for complex legacy plans, the OtterScript will be more like a starting point, and an opportunity to refactor and utilize the all the
+        new features and constructs.
+    </p>
+
+    <p>The legacy execution engine will be supported indefinitely, so there&rsquo;s no rush to convert everything.</p>
+
+    <p>
+        However, it is <em>legacy</em>, and it&rsquo;s important to take the time to read and understand the differences between the new and legacy execution engines, 
+        how conversion works, and how to mitigate risks.
+    </p>
+
+
+    <p class="info">
+        <b>Recommendation</b>: convert your frequently-used plans (especially in lower, non-production environments) to a v5 plan to ensure that they are functional; this will not only offer some immediate performance 
+        improvements, but it will ensure that your plans can be more easily maintained and shared in the future.
+    </p>
+
+    <p>The conversion is not permanent; you can always use the legacy plan if there are any errors in the OtterScript-based plan.</p>
+
+
+    <h3>HOWTO: Converting Legacy Plans</h3>
+
+    <p>Because the conversion process is a one-way process, and the existing legacy plan will be preserved, there is no risk in trying to convert your plans. Navigate to the [Plans] tab under the main or application navigation, then click the [convert] button next to the Legacy Plan.</p>
+
+    <p>After clicking [Convert to OtterScript], a new plan will be created that you can view and edit. To use this plan in a deployment, edit the appropriate target in a pipeline. You can always switch it back.</p>
+
+    <h3>Testing Converted Plans</h3>
+
+    <p>The first stage of testing a converted plan should be a visual inspection of the imported OtterScript; if everything looks correct, try executing the plan like normal.</p>
+
+    <p>If the execution completes successfully, verify that all of the execution results (such as build artifacts, deployed files, etc.) are correct.</p>
+
+    <h3>Troubleshooting</h3>
+
+    <p>The first step in troubleshooting an issue with a converted plan is isolating where the problem is. Find the action where an error occurred or incorrect output was generated and examine the execution logs. You can always <a href="http://inedo.com/support/ticket">contact us</a>, and we will make sure to investigate the issue. If an OtterScript plan does not execute for you correctly, just use the legacy plan in the meantime.</p>
+
+    <p>&nbsp;</p>
+
+    <h2 id="legacy-vs-OtterScript">Legacy Plans vs OtterScript Plans</h2>
+
+    <p>The OtterScript-plans represent a paradigm shift in the way deployment plans are modeled.</p>
+
+    <p><strong>Legacy plans</strong> model a deployment plan as a series of Action Groups, each of which may be linked to another plan, skipped using predicates, run in parallel, used to target a server, etc. These Action Groups are comprised of Actions (such as deploy artifact, stop service, etc.) that  can each be configured with a different failure behavior, retry count, timeout, etc.</p>
+
+    <p><strong>OtterScript plans</strong> model a deployment plan using a series of statements and blocks that are interpreted in a top-down manner; they are just as intuitive and simple to visualize and use, but they will seem second-nature to those familiar with scripting and programming concepts.</p>
+
+    <h3>Actions Groups vs Blocks</h3>
+
+    <p>These are somewhat similar, except there are several types of blocks available, and blocks can be nested. When using the OtterScript plan converter, Action Groups within a legacy plan will be translated into one or more blocks depending on which features it is configured with, using the following OtterScript constructs.</p>
+
+    <table>
+        <tbody>
+            <tr>
+                <td><b>Action&nbsp;Group</b></td>
+                <td><b>In OtterScript</b></td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Server Selection</p>
+                </td>
+                <td>
+                    <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/general-blocks">General Block</a>
+                     with a Server (<a href="/support/documentation/otter/reference/otter-script/formal-specification#set-context-statement">Set Context Statement</a> in OtterScript).
+
+                    <pre>for server INTAPPSV1
+{ 
+  «operation1»
+  «operation2»
+  «operationN»
+}</pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Enabled</p>
+                </td>
+                <td>
+                    <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/if-else">If/Else Block</a>
+                     (if false)
+                    <pre>if false
+{ 
+  «operation1»
+  «operation2»
+  «operationN»
+}</pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Deployable</p>
+                </td>
+                <td>
+                    <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/general-blocks">General Block</a>
+                     with a Deployable (<a href="/support/documentation/otter/reference/otter-script/formal-specification#set-context-statement">Set Context Statement</a>).
+                    <pre>for deployable WebComponents 
+{ 
+  «operation1»
+  «operation2»
+  «operationN»
+}</pre>
+
+                    If <em>execute once for each deployable</em> was specified, a <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/loop">Loop Block</a>
+                    with a Deployable (or <a href="/support/documentation/otter/reference/otter-script/formal-specification#Context-Iteration-Statement">Context Iteration Statement</a>)
+                    will be created
+                    <pre>foreach deployable in @DeployablesInRelease
+{ 
+  «operation1»
+  «operation2»
+  «operationN»
+}</pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Predicates</p>
+                </td>
+                <td>
+                    <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/if-else">If/Else Block</a>
+                 and convert the Predicates to a <a href="/support/documentation/otter/reference/otter-script/formal-specification#Predicate Statement">Predicate Expression</a>
+                    <pre>if $ExecutionStatus=failed
+{ 
+  «operation1»
+  «operation2»
+  «operationN»
+}</pre></td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Server Group Iteration</p>
+                </td>
+                <td>
+                    <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/loop">Loop Block</a>
+                     with a Server (or <a href="/support/documentation/otter/reference/otter-script/formal-specification#Context-Iteration-Statement">Context Iteration Statement</a>)
+                    <pre>foreach server in @ServersInGroup(APPSVGROUP)
+{ 
+  «operation1»
+  «operation2»
+  «operationN»
+}</pre>
+                    If <em>Iterate at action level</em> was specified, each converted operation will be wrapped in its own loop block:
+                    <pre>{
+  foreach server in @ServersInGroup(APPSVGROUP){ «operation1» }
+  foreach server in @ServersInGroup(APPSVGROUP){ «operation2» }
+  foreach server in @ServersInGroup(APPSVGROUP){ «operationN» }
+}
+</pre>
+                    Because Server Groups are now considered a legacy feature (replaced with Server Roles), you should migrate towards those as well.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Execute in Parallel</p>
+                </td>
+                <td>
+                    Each adjacent set of parallel action groups become a 
+                    <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/general-blocks">General Block</a>
+                     with Asynchronous (<a href="#Execution-Directive-Statement">Execution Directive Statement</a>), and end with an Await statement:
+                    <pre>{ 
+  with async { «converted-action-group1» }
+  with async { «converted-action-group2» }
+  with async { «converted-action-groupN» }
+  await;
+}</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>Failure Behavior</h4>
+
+    <p>To assist with error handling in legacy plans, a Failure Behavior feature was added to action groups. This effectively acted as a GOTO statement, and jumped to a previous or subsequent action group. Because OtterScript does not have a GOTO statement, this feature is ignored during conversion.</p>
+
+    <p>GOTO statements are a fairly primitive way to handle errors, which is why OtterScript features a Try/Catch. After converting the plan, you should wrap the failure-prone blocks in a Try block and put the Error-handling statements in the Catch block.</p>
+
+    <h4>Linked Action Groups</h4>
+
+    <p>To facilitate the sharing of common deployment plan logic, legacy plans offer the ability to link action groups across plans; this works with a sort of &ldquo;inheritance&rdquo; model, in that an instance of a linked group may override some properties (like name, description, server targeting, etc).</p>
+
+    <p>The closest OtterScript concept is a template. These are generally quite a bit better, because they can take in any number of parameters, and often accomplish what most users attempted with linked action groups. However, because these are quite different concepts, it wasn&rsquo;t very feasible or sensible to try translating in the OtterScript converter.</p>
+
+    <p>When you convert a legacy plan to OtterScript, any linked action groups will simply be brought over as if it were a regular action group.</p>
+
+    <p>For reusability, consider creating a template based off of the original shared group (and parameterizing the pieces that you wish to be &ldquo;inherited&rdquo; like the original), or consider generalizing your entire deployment plan so that it can be used for different pipeline stages.</p>
+
+    <h3>Actions vs Operations</h3>
+
+    <p>These are conceptually the same thing: they perform a task on a remote server. While Operations are technologically superior, Actions have several &ldquo;features&rdquo; that were incorporated into OtterScript at a higher level using other statements and blocks. This allows for more intuitive and less awkward multi-action behavior.</p>
+
+    <p>Most Actions will be translated directly into the corresponding Operation; however, if the Action utilized any of the following common &ldquo;features&rdquo;, they will be translated using the following OtterScript constructs.</p>
+
+    <table>
+        <tbody>
+            <tr>
+                <td><b>Actions</b></td>
+                <td><b>In OtterScript</b></td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Server Selection</p>
+                </td>
+                <td>
+                    <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/general-blocks">General Block</a>
+                    with a Server (<a href="/support/documentation/otter/reference/otter-script/formal-specification#set-context-statement">Set Context Statement</a> in OtterScript).
+                    <pre>for server INTAPPSV1
+{ 
+  «operation»
+}</pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Enabled</p>
+                </td>
+                <td>
+                    <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/if-else">If/Else Block</a>
+                    (if false)
+                    <pre>if false
+{ 
+  «operation»
+}</pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Resume Next</p>
+                </td>
+                <td>
+                    <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/try-catch">Try/Catch</a>
+                     with Set Status (Error) in the Catch
+                    <pre>try
+{ 
+  «operation»
+}
+catch
+{
+  error;
+}</pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Timeout</p>
+                </td>
+                <td>
+                    <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/general-blocks">General Block</a>
+                    with a Timeout (<a href="/support/documentation/otter/reference/otter-script/formal-specification#Execution-Directive-Statement">Execution Directive Statement</a>)
+                    <pre>with timeout=600{
+   «operation»
+}</pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Retry Count</p>
+                </td>
+                <td>
+                    <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/general-blocks">General Block</a>
+                     with a Retry (<a href="/support/documentation/otter/reference/otter-script/formal-specification#Execution-Directive-Statement">Execution Directive Statement</a>)
+                    <pre>with retry=3{
+   «operation»
+}</pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Log Errors as Warnings</p>
+                </td>
+                <td>
+                    <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/try-catch">Try/Catch</a>
+                     with Set Status (Warn) in the Catch
+                    <pre>try
+{ 
+  «operation»
+}
+catch
+{
+  warn;
+}</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="legacy-actions">Executing Legacy Action in OtterScript</h3>
+    <p>
+        The special <code>Execute-LegacyAction</code> operation can be used to execute actions in an OtterScript plan. It has two properties:
+    </p>
+    <ul>
+        <li>
+            <code>Config</code> - the XML-based configuration of the action; this can be discovered by exporting a legacy plan as XML
+        </li>
+        <li>
+            <code>Profile</code> - the extension configuration profile to use
+        </li>
+    </ul>
+    <p>
+        When converting a legacy plan to OtterScript, any actions that is not decorated with a <code>ConvertibleToOperationAttribute</code> will be wrapped
+        with this operation.
+    </p>
+
+    <h3>Unsupported Actions and Special Conversion</h3>
+
+    <p>Some of the actions simply could not be translated into operations, or were handled differently.</p>
+
+    <h4>Set Variable Action</h4>
+
+    <p>This action actually did one of two different things: it either updated the value of an external (release, build, etc.) variable, or set the value of new runtime variable. Unfortunately, it&rsquo;s impossible to know which it would do until runtime, so all Set Variable actions are replaced with a Set Variable statement.</p>
+
+    <p>To update an external configuration variable, you will need to use the Set-Configuration-Variable operation.</p>
+
+    <p>In addition, variables in a legacy plan were always globally-scoped, whereas OtterScript has block-level scoping. To reproduce this behavior, a set $variable=&lt;unitialized&gt;; statement is added to the top of the OtterScript plan after conversion.</p>
+
+    <h4>Execute Global Deployment Plan</h4>
+
+    <p>Because the new execution engine cannot run legacy plans, it&rsquo;s not possible to convert this action to an operation. Instead, the global plan should be converted to a template plan, and then called from the new plan. This will also give the benefit of parameters.</p>
+
+    <h4>Create Build and Release</h4>
+
+    <p>Because the corresponding operations are simpler, and only create a single release or build (release package) in a single application, a translated version of this action may be wrapped in several loop and async blocks. Functionally, it will be the same and will have the benefit of being visualized and logged better.</p>
+
+    <h4>Source and Target Directories</h4>
+
+    <p>Many Actions utilize the concept of a &quot;default directory&quot; (also represented as $CurrentDirectory), which was thought of as the working directory for both input ($SourceDirectory) and output ($TargetDirectory) files. When an action utilizes both an input and output of files (compiling, for example) and &quot;default&quot; is used for both of those actions, the input set of files is replaced by the output set of files once the action is no longer executing.</p>
+
+    <p>Unfortunately, this behavior is unintuitive, and has been a major source of confusion and frustration. As such, operations simply have a &ldquo;working directory&rdquo;, and may specify different directories for output.</p>
+
+    <h3>Predicates</h3>
+
+    <p>Legacy plans feature an extensible component called Predicates that are used to determine whether or not an action group will execute. In OtterScript plans, Variable Functions are used within an If/Else block instead and are much more naturally integrated.</p>
+
+
+</body>
+</html>

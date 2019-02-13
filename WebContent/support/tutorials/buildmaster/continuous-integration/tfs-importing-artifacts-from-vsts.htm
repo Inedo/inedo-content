@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TFS – Importing Artifacts from VSTS</title>
+    <meta name="keywords" content="buildmaster, tfs, vsts, continuous integration, entry-user" />
+      <meta name="include-client-resources" content="fancybox131" />
+    <meta name="product-name" content="BuildMaster" />
+</head>
+<body>
+        <div class="intro">
+        <p>
+            BuildMaster is an application release automation tool. In this tutorial, we will demonstrate how to utilize the TFS extension by creating a build in VSTS, creating a Release Package from that build, and deploying it all the way through production.
+        </p>
+       <hr />
+    </div>
+    <h2 id="operations">Operations</h2>
+    <p>
+        Once the VSTS extension (Visual Studio Team Services and TFS) is installed on BuildMaster, additional built-in operations can be called in a deployment plan, such as:
+    </p>
+    <p>
+        <ul style="margin-left: 44px;">
+            <li style="padding-bottom: 16px;">
+                <strong>Import Artifact from TFS or VSTS</strong> - Downloads an artifact from the specified TFS Server or VSTS and save it to the artifact library
+            </li>
+            <li style="padding-bottom: 16px;">
+                <strong>Queue VSTS Build</strong> - Queue a build in TFS or VSTS optionally waiting for its completion
+            </li>
+            <li>
+                <strong><a href="/support/documentation/buildmaster/reference/operations/source-control/get-latest" target="_blank">Get Latest</a></strong> - Get latest version of code from TFS Server
+            </li>
+        </ul>
+    </p>
+    <p>
+        Specific Issue Tracking operations added include:
+    </p>
+    <p>
+        <ul style="margin-left: 44px;">
+            <li style="padding-bottom: 16px;">
+                <strong>Create TFS Work Item</strong> - Creates a work item in TFS
+            </li>
+            <li style="padding-bottom: 16px;">
+                <strong>Transition TFS Work Item</strong> - Transitions work items in TFS from one status to another
+            </li>
+            <li style="padding-bottom: 16px;">
+                <strong>Generate Release Notes</strong> - Generates an HTML file containing the BuildMaster release notes and/or issues from TFS
+            </li>
+            <li style="padding-bottom: 16px;">
+                <strong>Halt promotions</strong> - Halts a promotion of a release when a TFS work item of a specific status exists
+            </li>
+        </ul>
+    </p>
+ 
+    
+    <h2 id="vsts-setup">VSTS Setup</h2>
+    <p class="info"><i>NOTE: As of September 2018, VSTS is now called "Azure DevOps"</i></p>
+    
+    <p>This tutorial will work for projects on TFS (tested with TFS 2015 through TFS 2018) as well, but the screenshots will be focused on completing the task through VSTS.</p>
+    <p>We'll be using the build-related features of VSTS to work with a simple project called <strong>Accounts</strong>. In the Accounts project, we must configure a build definition (named <strong>Basic</strong>) that creates an artifact (named <strong>Websites</strong>). First, we will create a simple project in VSTS called <strong>Accounts</strong>. After creating the project, create a new build within the project. You can do this by clicking on the <strong>Build and Release</strong> tab and then clicking <strong>Builds</strong>, to bring up the builds page. The next step is to click the <strong>+New</strong> button in order to create a new build.</p>
+    
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/vsts-accounts-build.png" />
+   
+    <p>Next, we will make sure <strong>VSTS Git</strong> is selected and click <strong>Continue</strong>. On the next page we will select our template, for this tutorial we will go with the <strong>.NET Desktop</strong> template and hit <strong>Apply</strong>.</p>
+    
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/net-desktop-template.png" />
+
+    <p>The next page will be auto filled with information, but let's change the build name to <strong>Basic</strong> and leave the rest of the information as the default input.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/build-basic.png" />
+
+    <p>After this, select the Publish Artifact: Drop feature. Make sure to change the Display Name to <strong>Publish Artifacts: Websites</strong>, as well as the Artifact Name to <strong>Websites</strong>. When finished, click the Save &amp; Queue drop down menu, but just select <strong>Save</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/publish-artifacts-websites.png" />
+
+    <p>At this point we are finished with the VSTS setup and ready to move on to the BuildMaster procedure.</p>
+    <p>&nbsp;</p>
+    
+    <h2 id="buildmaster-steps">BuildMaster Steps</h2>
+    <p>&nbsp;</p>
+    <h3 id="step-1">Step 1: Install and configure the TFS Extension</h3>
+
+    <p>
+        Go to the Admin page by clicking the gear symbol in the upper left-hand corner and then click the on <strong>Extensions</strong>.
+    </p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/bm-extensions.png" />
+
+    <p>
+        On this page, scroll down and look for the TFS extension install. Click this and BuildMaster will automatically restart and you should see TFS under the list of installed extensions.
+    </p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/tfs-install.png" />
+
+    <p>Back on the Admin page, click <strong>Resource Credentials</strong>, and then click the <strong>Create Credential</strong> button. A window will pop up, asking you to select a credential type, select <strong>Team Foundation Server</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/credentials.png" />
+
+    <p>
+        In BuildMaster, Resource Credentials allow you to connect to different VSTS accounts and TFS instances. We’ll configure a profile with VSTS credentials. 
+    </p>
+
+    <p class="info">
+        <strong>Note:</strong> For both TFS and VSTS, you will need to create a <a href="https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts" target="_blank"><strong>Personal Access Token</strong></a>; your regular password will not work.
+    </p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/save-credential.png" />
+    <p>&nbsp;</p>
+    <h3 id="step-2">Step 2: Create an Application in BuildMaster</h3>
+
+    <p>Click on <strong>Applications</strong>, then click the <strong>Create Application</strong> button. This will bring up a window, where you will set the name to <strong>Accounts</strong>. When creating the application, the <em>Integration</em>, <em>Testing</em>, and <em>Production</em> environments will be added by default as the initial pipeline. When finished, click <strong>Create</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/create-app.png" />
+    <p>&nbsp;</p>
+    <h3 id="step-3">Step 3: Create an Import Plan</h3>
+
+    <p>We first need to import an artifact from VSTS. For that we'll create a Plan that will queue a build in VSTS from BuildMaster and import the artifact from the queued build.</p>
+    <p>Create a new plan and call it <strong>Import Build</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/create-plan.png" />
+
+    <p>Start with a <strong>General Block</strong> to describe what will be happening in this plan. In the short description add <strong>Queue and Import Build</strong> as shown below, then save.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/general-block.png" />
+
+    <p>Inside the General Block we just created, add a <strong>Set Release Variable</strong> operation, where you can add a build variable name and value. For this project we will just be setting the value to 0 in order to initialize the variable. The subsequent operations in this plan will replace this value.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/set-release-variable.png" />
+
+    <p>Alternatively, if your repository has a release or package that you would like to use, these can also be specified in this operation:</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/new-build-operation.png" />
+
+    <p>Next, we will add a <strong>Queue VSTS Build</strong> to the General Block. After a valid credential is set, BuildMaster will create drop-down choices for the Team project name and Build definition. We will also add the build number variable at the bottom.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/queue-vsts-build.png" />
+
+    <p>Next, we will add an <strong>Import Artifact from VSTS </strong>to the General Block. We'll again set the resource credential as well as the Artifact name, the Team project, the Build definition and the build number variable. We'll use latest to import the build we just queued.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/import-artifact.png" />
+
+    <p>This is what the plan should look like in Visual Mode if done correctly:</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/visual-mode.png" />
+
+    <p>And here is the view in Text Mode (Otter Script):</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/text-mode.png" />
+    <p>&nbsp;</p>
+    <h3 id="step-4">Step 4: Edit Application Pipeline and Set Import Plan</h3>
+
+    <p>When we created the application, a simple pipeline was also created which we can now edit.</p>
+    <p>Go to <strong>Accounts</strong> and click the <strong>Pipelines</strong> tab, then click <strong>Accounts</strong>.</p>
+    <p>Next, we need to import the VSTS artifact. We'll create a new Stage for that, so click the <strong>Add Stage</strong> button.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/add-stage.png" />
+
+    <p>Set Name to <strong>Import</strong>, set Pipeline position to <strong>0 - Integration</strong>, then click <strong>Save Stage</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/save-stage.png" />
+
+    <p>By setting the Pipeline position to 0, the stage is created as the first stage in the pipeline, since we need to import a build before we can move it through our pipeline.</p>
+    <p>Next, we need to set the import stage with our import plan. Click <strong>add target</strong> on the import stage and set the plan to <strong>Global::Import Build</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/global-import-build.png" />
+    <p>&nbsp;</p>
+    <h3 id="step-5">Step 5: Edit the Deployment Plan</h3>
+    <p>As noted above, we already have a plan assigned to our pipeline stages called <strong>Deploy Accounts</strong>; we'll now edit that plan.</p>
+    <p>Go to the <strong>Plans</strong> tab, then click on <strong>Deploy Accounts</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/edit-deploy-accounts.png" />
+
+    <p>BuildMaster has automatically created a simple deployment plan by default. The plan doesn't do much, but we can edit it so that it will deploy the artifact that we'll import through the pipeline.</p>
+    <p>Edit the General Block at the top with a short description of what the plan will do and set a server for the plan to be run on. Note that you can also target environments and servers to execute operations on from the pipeline stage, but for this tutorial, we'll just set it here.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/edit-general-block.png" />
+
+    <p>The two default actions in the plan can be deleted and we will replace them by dragging a <strong>Deploy Artifact</strong> operation into the edited General Block. Set the Artifact name to <strong>Websites</strong>, and the Target directory to <strong>C:\Websites\$EnvironmentName\Accounts</strong>. Using $EnvironmentName will create a new folder for each environment that the application is deployed to and demonstrates one way to generalize a deployment plan for use in multiple environments.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/deploy-artifact.png" />
+    <p>&nbsp;</p>
+    <h3 id="step-6">Step 6: Creating a Release and Deploying</h3>
+    <p>We can now create a <strong>Release</strong> that deploys the build artifact we created with a release package. The release number can be anything, but defaults to 0.0.0.</p>
+    <p>Click on the <strong>Releases</strong> tab, then click <strong>Create Release</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/create-release.png" />
+
+    <p>Once the release is created, you can now create a package, which will use the import plan we defined.</p>
+    <p>Click the <strong>Create Package</strong> button, then click <strong>Create Package</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/create-package.png" />
+
+    <p>BuildMaster will now run the Import Plan we created to queue a VSTS Build and then Import the artifact to BuildMaster. We can see that there has been an artifact created called <strong>Websites</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/artifact-websites.png" />
+
+    <p>You can now run the artifact through the rest of the pipeline simply by clicking <strong>Deploy</strong> in each successive stage. Of course, you can also configure gates, listeners, and permissions to ensure that a proper process is followed.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-tfs-importing-artifacts-from-vsts/deploy.png" />
+
+    <p>You can further verify that the deployment was successful by checking the drive used when setting up the deployment plan. There will be three folders under /Websites, one for Integration, Testing, and Production, each containing the deployed files.</p>
+
+
+
+
+</body>
+</html>

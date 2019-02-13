@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>BuildMaster Case Study for Allrecipes | Inedo</title>
+        <meta name="MasterPageFile" content="buildmaster.htm" />
+        <link rel="stylesheet" type="text/css" href="/resources/styles/individual-case-studies.css" />
+     
+    </head>
+    <body>
+      
+        
+            <img style="margin-top: 30px;" src="/buildmaster/case-studies/allrecipes/header.jpg" width="680" alt="BuildMaster Case Study for Allrecipes"/>
+            <p class="summary">Every ISV loves it when they learn that a company it's already familiar with is using their software.  We were incredibly flattered to  find that <a href="http://allrecipes.com">Allrecipes</a>, a website that's been around forever,  not only was interested in using BuildMaster, but has made it an integral part of their deploy process.  We recently were able to catch up with <a href="http://www.linkedin.com/pub/merritt-bettineski/2/370/23">Merritt Bettineski</a>, deployment manager at Allrecipes to find out more.</p>  
+            
+            <p class="question">Tell us a little bit about Allrecipes.</p> 
+            <p class="answer">In 1997, <a href="http://allrecipes.com/">Allrecipes</a> was kicked into gear by a passionate group of web developers and University of Washington anthropology grad students. More than a million recipes later, Allrecipes is the world's number one digital food brand with 18 websites, 9 mobile apps and 14 eBooks serving cooks in 23 countries and 12 languages. Home cooks trust that with Allrecipes they can discover and pass on their favorite food experiences, just like the site's founders envisioned. Community members share recipes, photos, reviews, blogs and even recipe boxes.</p>
+
+            <p class="question">Can you give us an overview of how you deployed software before BuildMaster? </p>
+            <img class="flavor-image left" src="/buildmaster/case-studies/allrecipes/pie.jpg" alt="" />
+            <p class="answer">When I joined Allrecipes about 6 years ago we had a set of home grown tools. The primary tool was called Site Publisher and was a tool for fancy Robocopy scripts.  It also did some basic post management. We were starting to outgrow it so we started looking at developing our own replacement. </p>
+            <p class="answer">For instance, as we started to use cloud servers like Amazon Cloud Services, for both production and test environments, we were running into inflexibility issues and it would have taken a lot of developer hours away from our core products to make the proper adaptations.  Of course, this is not how we wanted to dedicate important resources so a couple of our developers started working together with me to create a set of requirements. </p>
+            <p class="answer">One of our developers came across BuildMaster and we really liked that there was a software product that had already been built and met almost all of our requirements.  We <a href="/buildmaster/download">downloaded a trial</a>, loved it, and decided shortly thereafter to purchase 12 enterprise licenses and equip our team.  </p>
+
+            <p class="question">How challenging were deployments before you starting using BuildMaster? </p> 
+            <p class="quote right"> "I wouldn't call our deployments a snap, but BuildMaster sure makes them a lot more manageable."</p>
+            <p class="answer">Deployments are challenging and they're an ever-changing puzzle.  This is especially true having a large-scale enterprise website. Shrink wrap software companies and smaller websites have the advantage of producing the same product with every release and can have largely static build scripts.</p>
+            <p class="answer">However, with a website like ours, in any given release we may be working with 1 website or even 4-5, plus web services.  Every time we do a deployment we've got to look at the cocktail that's going into it, make adjustments, and get it ready ahead of time.  </p>
+            <p class="answer">Our deployments are big and hairy.  I wouldn't necessarily have called them a mess, but our homegrown system wasn't able to keep up with our needs.  I wouldn't call our deployments a snap now either, but BuildMaster sure makes them a lot more manageable.</p>
+
+            <p class="question">How many applications and named users are on BuildMaster?</p>
+            <p class="answer">We don't necessarily fit neatly into BuildMaster's definition of applications as we're solely a website and not an internal intranet or "shrink-wrapped" product.  </p>
+            <p class="answer">For instance, we have our main site, the US site and then the Canadian site, a Mobile site and an E-commerce site.  From there, there are a whole host of web services.   You could call that 1 application or up to 16 depending on one's definition. </p>
+
+            <p class="question">Has the fact that, in your words, you don't fit exactly into BuildMaster's definition of applications has that made for a stumbling block with using BuildMaster or make working with it pain-staking? </p>
+            <p class="answer">No, I think you guys have done a good job of being agnostic regarding workflows and letting people build their own. We had a fairly mature deployment process before, even though some of the tools were old or primitive.  We shoe-horned BuildMaster into working for us in ways you guys probably never expected anyone to use your software and we've adjusted our process to fit BuildMaster in other ways. </p>
+
+            <p class="question">Has that been difficult?</p>
+            <p class="answer">Well it was a pretty big under-taking: We had a very large deployment infrastructure to replace. In addition, we needed to maintain our release schedule / roadmap, while simultaneously building out our BuildMaster workflows and supporting our homegrown tools until such time as we were certain that BuildMaster could match our existing deployments 1:1.  In doing deployments, you're working with your server farms and your production code base so you can't always do a 1:1 mirror of what you ultimately want to accomplish in the testing environment. </p>
+            <p class="quote left">"Large scale deployment can be a beast, that's why we've named BuildMaster; BeastMaster."</p>
+            <p class="answer">That process was iterative, with deployments occurring every 2 weeks.  So it took some time to get everything built out to the point where we could abandon our homegrown tools. </p>
+            <p class="answer">We determined BuildMaster was the tool for us and purchased licenses in February (2012). Between February and May we did a couple dry-run tests as well as deployments in which both BuildMaster and our old software both played a role, our old software handling parts wherein BuildMaster had not yet been integrated.  By the beginning of summer we had a 1:1 parity with our old deployment system and could, for the most part, abandon it and just use BuildMaster exclusively.  We did our first full-scale, BuildMaster release in May.</p>
+            <p class="answer">Since then it's been kind of fun to see what else I can do with BuildMaster because it's such a flexible tool: every single deployment I basically look at what didn't go smoothly or what could have been automated and then go back into BuildMaster and figure out ways to make the whole process better, such as  integrating it with other tools we use for our deployments.  </p>
+
+            <p class="question">Anyone considering BuildMaster is on the precipice of change in how they developer software within their organization- has the change been worth it for AllRecipes? </p>
+            <p class="answer">Totally.  I really really enjoy working with BuildMaster. The challenges we've had are the nature of the beast. Large scale deployment can be a beast.  That's why we've nicknamed BuildMaster "Beastmaster".</p>
+
+            <p class="question">That's great! I was actually about to ask about integrating with other tools. We pride ourselves on integrating with best of breed software tools and allowing our potential users to continue working with existing toolsets.  How does your team use BuildMaster and what integrations have you made?</p>
+            <img class="flavor-image right" src="/buildmaster/case-studies/allrecipes/chocolates.jpg" alt="" />
+            <p class="answer">Our builds are fairly complicated- if I were to tell you everything we do with BuildMaster, this report would be pages and pages! What I can tell you is that our BuildMaster installation is controlling 77 web and service hosts, with 15 deployables, 5 major workflows, 8 possible deployment plans across those workflows, and I don't know how many individual task... and we're adding and refining all the time.</p>
+            
+            <p class="answer">In terms of integrations, we have BuildMaster integrated with our source control, TFS, IIS, MS Build, Click-once, AWS, and N-Unit for running automated tests.  In addition, we have Windows batch scripts that integrate other tools such as Beyond Compare and a link-checker for automated links such that BuildMaster now controls them.</p>
+            <p class="answer">I've also written some Linux Bash scripts to control our network monitoring event handlers and used the JSON/HTTP task-type in BuildMaster to integrate with a chat program called Hip Chat that we use during deployments. We just recently switched to an agile and scrum methodology so we're going to be rolling out Jira as a work-flow management tool so naturally we'll be integrating with Jira as well.</p>  
+
+            <p class="question">Were there any specific features about BuildMaster that lead to your adopting it?</p>
+            <p class="answer">The <a href="/buildmaster/integration">integrations options</a> were very big for us, but basically being able to get bits from one place to another without disrupting our site traffic was the ultimate lure. </p>
+
+            <p class="question">Are people using it ways you hadn't expected?</p>
+            <p class="answer">The thing that's gotten people the most excited has probably been setting up Hip Chat, the group IM I previously mentioned we use during deployments, such that BuildMaster injects messages/alerts that let people know when various important parts of the deploy process have begun or finished directly into a chat window, instead of via email alert as done previously.  We usually have at least 12 on deck for any given deployment so there's a lot of chatter and having those messages injected directly into the chat window is much better than e-mail.  People absolutely love that we were able to do that with BuildMaster.</p>
+
+            <p class="question">I know you've used our support a bit, any comments on the quality and or timeliness of it?</p>
+            <p class="quote left">"I've made both bug reports and feature requests and Inedo has accommodated both quickly"</p>             
+            <p class="answer">I love the live chat. It's incredibly useful and I use it a few times a week. I have a bad habit of refusing to ask for any help on anything I can't figure out until I've been stumped for hours.  Needless to say, I seem to only contact support until it's already pretty late in the day.  Whoever gets my call probably has to dread hearing from me but you guys are very responsive. If you don't have a response the same day, you always do the next day.  I've also made both bug reports and feature requests and Inedo has accommodated both quickly, which I really appreciate.</p>  
+            
+            <img class="flavor-image right" src="/buildmaster/case-studies/allrecipes/vegetables.jpg"  alt="" />
+            <p  class="">Do you have advice for others considering BuildMaster?</p>
+            <p class="answer">It's an extremely powerful and flexible tool and it is what you make of it.  It definitely requires you customize it to your deployment topology but once you do, the sky's the limit in terms of what you can do with it.</p> 
+            
+            <p class="question">Thank you very much. Would you recommend BuildMaster to others?</p>
+            <p class="answer">Yes, absolutely!</p>
+       
+    </body>
+</html>

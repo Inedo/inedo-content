@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1162" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="otter, upgrade-notes" />
+    <title>Upgrade Notes for Otter 2.1</title>
+    <style type="text/css">
+        .green {
+            color: mediumseagreen;
+        }
+        .red {
+            color: #c0504d;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="/otter/2.1">Otter 2.1</a> is minor release with the following changes:</p>
+    <ul>
+        <li>Pipeline Raft Support</li>
+    </ul>
+
+    <h2>Breaking Changes</h2>
+    <p>
+        There are no breaking changes in this release. 
+    </p>
+    <p>
+        While there are no expected breaking changes, the context behavior of Orchestration Jobs has been specified
+        as of v2.1 where previously it was undefined, and it is possible that executing plans with via orchestration job could 
+        result in unexpected behavior.
+    </p>
+    <p>
+        See the <a href="/support/documentation/otter/core-concepts/jobs#orchestration-job-context">Orchestration Job Context documentation</a>
+        for the behavior specification.
+    </p>
+
+    <h2>New Features &amp; Non-Functional Changes</h2>
+    <h3>Pipeline and Pipeline-Only Rafts</h3>
+    <p>
+        A new type of virtualized raft is now available to facilitate a promotion-based approach to infrastructure automation -
+        A configuration plan and all of its resources can be kept in Git or the Otter database for a Dev/Testing environment, then
+        promoted to higher environments (such as Production) using read-only zip file rafts.
+    </p>
+
+    <h2>Risk Mitigation</h2>
+    <p>The only significant changes are additive. If you do not use the new pipeline rafts, then risk is minimal.</p>
+
+    <h2>Upgrade Process</h2>
+    <p>
+        Otter may be upgraded by simply running the latest installer. The agents do not need to be updated.
+    </p>
+
+    <h2>Rollback</h2>
+    <p>
+        There are no database schema changes, so a rollback will only require uninstalling Otter, and then reinstalling the old version.
+    </p>
+</body>
+</html>

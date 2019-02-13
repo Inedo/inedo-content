@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BuildMaster GitHub Operations Tutorial</title>
+    <meta name="keywords" content="buildmaster, github, continuous integration, entry-user" />
+      <meta name="include-client-resources" content="fancybox131" />
+    <meta name="product-name" content="BuildMaster" />
+</head>
+<body>
+        <div class="intro">
+        <p>
+            BuildMaster is an application release automation tool. In this tutorial, we'll be putting together a setup that shows how to use various GitHub operations within BuildMaster. 
+            </p>
+            <p>
+            If you'd like to follow along step-by-step, you can use a personal project repository. For this tutorial, we will be using a repository called <strong>Accounts</strong> that was created just for testing purposes.
+        </p>
+       <hr />
+    </div>
+    
+    
+    <h2 id="github-setup">GitHub Installation and Setup</h2>
+    <p>&nbsp;</p>
+    <h3 class="step-1">Step 1: Install and Configure Extensions</h3>
+    
+    <p>Go to the Administration page by clicking the gear symbol in the upper left-hand corner and then click the on <strong>Extensions</strong>.</p>
+    
+    
+    
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/extensions.png" />
+
+    <p>
+        For this tutorial we will be installing the <strong>GitHub</strong> extension. Scroll down the extensions page and install the extension.
+    </p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/den-github.png" />
+
+    <p>After the extensions are installed, BuildMaster will automatically restart, and the GitHub plugin will now be in the Up-to-Date Extensions.</p>
+
+    <p>Back on the Admin page, click <strong>Resource Credentials</strong>, and then click the <strong>Create Credential</strong> button. A window will pop up, asking you to select a credential type, select <strong>GitHub</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/github-credential.png" />
+
+    <p>We'll create a GitHub resource credential by filling out appropriate fields like<i> Name, Repository URL, User name and Password</i>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/create-credential.png" />
+    <p>&nbsp;</p>
+    <h3 id="step-2">Step 2: Create an Application</h3>
+    
+    <p>Click on <strong>Applications</strong>, then click the <strong>Create Application</strong> button. This will bring up a window, where you will set the name to <strong>Accounts</strong>. When creating the application, the <i>Integration</i>, <i>Testing</i>, and <i>Production</i> environments will be added by default as the initial pipeline. When finished, click <strong>Create</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/create-application.png" />
+
+    <p>&nbsp;</p>
+    <h3 id="step-3">Step 3: Setting up GitHub as an Issue Source</h3>
+   
+    <p>Now that the Accounts application has been created, we can set GitHub as an issue source for BuildMaster by going to the <strong>Administration </strong>page. Click on <strong>Issue Sources</strong> from this page.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/components-extensibility.png" />
+
+    <p>Next, click on <strong>GitHub Issue Source</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/github-issue-source.png" />
+
+    <p>From here we are able to enter a Source name, set to run for the <strong>Accounts </strong>application and also set the Credentials to the <strong>GitHub </strong>resource credentials that we set up earlier. When finished, click Save Issue Source.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/create-issue-source.png" />
+    <p>&nbsp;</p>
+    <h3 id="step-4">Step 4: Create a New Build Plan</h3>
+    
+    <p>Create a plan by clicking the <strong>Create Plan</strong> button and name the plan <strong>GitHub Account</strong>.</p>
+    <p>First, add a <strong>General Block</strong> and keep the default settings. Feel free to add a short description, like "GitHub Operations".</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/general-block.png" />
+
+    <p>Next, we'll add a <strong>Get Source from GitHub Repository</strong> operation that will pull the latest files from a GitHub repository and store them in a temporary workspace called <em>$WorkingDirectory</em>. We'll use the GitHub resource credential we've already created.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/get-source.png" />
+
+    <p>Before saving this operation, let's specify the repository name. This can be done by selecting the directory through a drop-down menu of choices within the <strong>GitHub tab</strong>.</p>
+   
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/commit-id.png" />
+
+    <p>Let's also store the commit ID into a variable. This can be done in the <strong>Advanced </strong>tab of this operation. For this project, we will just name this variable as <strong>$commitID</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/commit-id-variable.png" />
+
+    <p>Now, we'll add a <strong>Set Release Variable</strong> operation, where you can add a build variable name and value. For this project we will just be setting the value to commitID (where the commit hash was previously stored) in order to store the commit ID within this release variable.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/set-release-variable.png" />
+
+    <p>Next, we will use the <strong>Upload GitHub Release Assets</strong> operation. Specify the Credentials field with the <strong>GitHub </strong>credentials we created previously. A Tag name for the release must also be specified, so we will just use <strong>newRelease </strong>as the tag name. The Includes field allows you to specify which assets you would like to upload and the Excludes field allows you to exclude any files to upload from the working directory. Here we will just include all files in the working directory by adding an asterisk (*) to the<strong> Includes </strong>field.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/release-assets.png" />
+
+    <p>Again, before saving this operation, let's also specify the repository. This can be done by selecting the directory through a drop-down menu of choices within the <strong>GitHub tab</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/specify-repo.png" />
+
+    <p>The last operation we will add to the plan will be the <strong>Set GitHub Build Status</strong> operation. We will fill in the same GitHub credentials for the credentials field, set the Git commit hash to <strong>$commitID</strong> and set the status to <strong>success</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/set-build-status.png" />
+    <p>Don't forget to also specify the repository name in the <strong>GitHub </strong>tab as we did with previous operations.</p>
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/edit-build-status.png" />
+
+    <p>If done correctly the plan will look like the image below:</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/visual-view.png" />
+
+    <p>And in text mode:</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/text-view.png" />
+    <p>&nbsp;</p>
+    <h3 id="step-5">Step 5: Edit Application Pipeline and Set Build Plan</h3>
+    
+    <p>When we created the application, a simple pipeline was also created which we can now edit. Click on <strong>Accounts </strong>and then click on the <strong>Pipelines </strong>tab. Finally click on the <strong>Add Stage</strong> button.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/add-stage.png" />
+
+    <p>Set Name to <strong>Build</strong>, then set <strong>Pipeline position to 0</strong> and Click <strong>Save Stage</strong>.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/save-stage.png" />
+
+    <p>We'll add a target to the Build stage using our build plan (GitHub Account) and our local server.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/add-target.png" />
+    <p>&nbsp;</p>
+    <h3 id="step-6">Step 6: Creating a Release and Deploying</h3>
+    
+    <p>After setting the build target, we will create a <strong>Release</strong> that builds and deploys this plan. The release number can be anything, but defaults to 0.0.0.</p>
+    <p>Click on <strong>Releases </strong>then click <strong>Create Release</strong>. After this you can click the <strong>Create Package </strong>button.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/create-package.png" />
+
+    <p>BuildMaster will now run the build plan we've set up and allow you to view any details of the process.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/run-build-plan.png" />
+
+    <p>From here we can run the rest of the pipeline simply by clicking <strong>Deploy</strong> in each successive stage.</p>
+
+    <img class="screenshot" src="/resources/tutorials/bm-github-operations/deploy.png" />
+
+    <p>You can further verify that the deployment was successful by checking the drive used when setting up the deployment plan.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+@import "..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-lightgrey: #ddd;
+@inedo-white: #fff;
+@inedo-lightblue: #10466E;
+
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+@otter-purple: #9163AA;
+
+
+
+.mixin-homecc {
+    padding: 50px 0;
+    margin: 0;
+
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        color: @inedo-black;
+        margin: 0;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+
+.content-container#tutorial-banner {
+    margin: 0;
+    padding: 0;
+    background-position: center top;
+    height: 150px;
+    background-repeat: no-repeat;
+}
+
+.content-container#doc-nav {
+    background-color: #353535;
+    margin-bottom: 20px;
+    .content {
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            list-style-type: none;
+            margin: 0;
+        }
+
+        li {
+            display: inline-block;
+            border-right: 1px solid #ffffff;
+            text-align: center;
+            font-size: 125%;
+            width: 245px;
+            height: 30px;
+            padding: 0;
+
+            &:first-child {
+                border-left: 1px solid #ffffff;
+            }
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+
+        a:hover {
+            color: #47be30;
+        }
+    }
+}
+
+.tagline {
+    h3 {
+        margin: 40px 6px 0 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #d0cfcf;
+        border-bottom: 3px solid #d0cfcf;
+    }
+}
+
+.tutorial-box {
+    a {
+        text-decoration: none;
+    }
+}
+
+.tut-box {
+    width: 994px;
+    margin: 0;
+    text-align: left;
+
+    h2 {
+        color: @inedo-darkgrey;
+        font-size: 24px;
+        padding: 20px 20px 0 28px;
+        line-height: 150%;
+        font-weight: 600;
+        margin-top: 0;
+    }
+
+    h4 {
+        margin: 0 15px 0 0;
+        color: @inedo-darkgrey;
+        font-size: 92%;
+        padding: 5px 20px 25px 28px;
+    }
+}
+
+.tut-box:hover {
+    background-color: @inedo-lightgrey;
+}
+
+
+.bottom-info {
+    display: inline-block;
+    margin-top: 50px;
+    border-top: 3px solid @inedo-darkgrey;
+    text-align: center;
+
+    h2 {
+        font-weight: 500;
+        color: @inedo-darkgrey;
+        padding: 0 30px 0 30px;
+    }
+
+    h4 {
+        color: @inedo-darkgrey;
+        padding: 0 30px 0 30px;
+    }
+}
+
+.bottom-buttons {
+    .button-set {
+        margin: 60px 0 0 0;
+
+        .button {
+            padding: 10px 0;
+            margin: 0 40px 60px 40px;
+            background-color: @inedo-grey;
+            border: none;
+
+            a {
+                color: @inedo-darkgrey;
+                text-decoration: none;
+                padding: 10px 50px;
+            }
+
+            a:hover {
+                text-decoration: none;
+                background-color: @inedo-darkgrey;
+                color: @inedo-white;
+            }
+        }
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    left: 64%;
+
+    a {
+        padding: 6px 4px 8px 4px;
+        color: white;
+        font-size: 12px;
+        text-decoration: none;
+
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            height: 25px;
+        }
+
+        &.back {
+            background-color: @inedo-darkblue;
+            padding: 6px 10px;
+        }
+    }
+
+    a:hover {
+        background-color: @inedo-paleblue;
+        border-radius: 100px;
+
+        &.back:hover {
+            border-radius: initial;
+        }
+    }
+}

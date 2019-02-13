@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1110" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="otter,chef" />
+    <title>A Comparison: Chef vs Otter</title>
+</head>
+<body>
+    <style>
+        .otter-info {
+            background-color: #f0f0f6;
+            border-color: #9163AA;
+        }
+    </style>
+    <p>
+        <a href="http://chef.io/">Chef</a> and <a href="/otter">Otter</a> are both infrastructure automation products, and if you only read the marketing bullets, they'd probably sound identical.
+        But they're quite different products, and this article compares and contrasts the products and the philosophies behind them.
+    </p>
+    <p>
+        Moreover, there's nothing wrong with having and using both - in fact, many organizations have Puppet, Chef, <em>and</em> Otter, because they all serve different needs for different groups.
+    </p>
+    <p>
+        While we are not Chef experts, we've done a ton of research on Chef when building Otter and, more recently, for this article.
+        Please <a href="/contact">let us know</a> if something is inaccurate.
+    </p>
+    <p>
+        Already familiar with Chef? The <a href="#terminology">terminology comparison</a> may help you get a quicker understanding of Otter.
+    </p>
+
+    <h2>Quick Aside: Chef vs Puppet</h2>
+
+    <p>
+        Unlike <a href="/support/kb/1109">Puppet</a>, which was built as a Linux Configuration Manager, Chef <a href="https://www.chef.io/blog/2009/01/15/announcing-chef/">was built</a>
+        as a "systems integration framework" to assist infrastructure automation specialists  (originally, the consultants who built Chef itself) configure Linux-based servers and components.
+    </p>
+
+    <p>
+        If that sounds like <em>six of one, half a dozen of the other</em>, that's because ultimately, Puppet and Chef are different approaches to the same, Linux configuration problem,
+        and ultimately achieve the same results:
+    </p>
+
+    <ul>
+        <li>In Puppet, you write a manifest file using PuppetScript that declares a desired state of configuration.</li>
+        <li>In Chef, you write a recipe using Ruby that describes the steps required to configure a server.</li>
+    </ul>
+
+    <p>We mention all this because the reasons that people choose Puppet over Chef, or choose Chef over Puppet have been documented for years, and these were key considerations when we designed Otter.</p>
+
+    <p>The ones that Otter directly addresses are as follows:</p>
+
+    <ul>
+        <li>Puppet's "model" approach is too limiting compared to Chef's "code" approach</li>
+        <li>Puppet's apparent random application of resources is unintuitive</li>
+        <li>Chef requires a proficiency in Ruby to do anything but trivial configuration tasks</li>
+        <li>Chef's architecture and components are much more complex to understand and manage</li>
+        <li>Chef's complexity can lead to large code bases and complicated environments</li>
+        <li>Chef has a very steep learning curve and requires training</li>
+    </ul>
+
+    <p>In addition, Otter addresses challenges that both Puppet and Chef share, including <a href="#windows">Windows</a> and <a href="#orchestration">Orchestration</a>.</p>
+
+    <h2>Linux Configuration Management for Ruby Developers</h2>
+
+    <p>Chef was built by experts, for experts; as such, <em>ease of use</em> was never a design consideration.</p>
+
+    <p>Requiring expertise is not a problem when your organization is fortunate enough to hire only experts, like many of the early and outspoken Chef adopters. However, most organizations simply can't dedicate the resources to build and maintain the required, in-house expertise.</p>
+
+    <p>The "maintenance" is key --- even if the initial "DevOps" team is successful in rolling out a complex system, the learning curve of that system will <em>even more</em> complex than a greenfield installation of Chef.</p>
+
+    <p class="info otter-info">Otter was built with <em>ease of use</em> in mind, and actively encourages its users to build simple plans that others can maintain.</p>
+
+    <h2 id="windows">The Windows Challenge</h2>
+
+    <p>Although Chef and the community have built a lot of Windows modules, the tool was never designed with Windows configuration management in mind, and Windows support often feels second-class.</p>
+
+    <p>Windows and Linux are very different; not just technologically, but philosophically. Although Windows has been lately offering administrators better command-line, scripting, and detachable components, they will always be two very different operating systems.</p>
+
+    <p class="info otter-info">
+        Otter was built with from the start with first-class Windows support (including <a href="/support/documentation/otter/modeling-infrastructure/powershell">tight integration with PowerShell</a>), and
+        was built using Windows-friendly technologies (.NET), and doesn't need to go through layers of Ruby for core functionality.
+    </p>
+
+    <h2 id="orchestration">The Orchestration Challenge</h2>
+
+    <p>Although you can create recipes using Ruby, doing orchestration 
+        &ndash; that is, getting specific servers to do specific things in a specific order, like deploying large, multi-tier applications &ndash; is extremely challenging and awkward with Chef.</p>
+    <p>
+        This is because servers managed by Chef are responsible for configuring themselves; essentially, they routinely ask the central Chef repository for the latest Ruby scripts, and then run them
+        as needed. This model means that the central server cannot tell which servers should do things in which order.
+    </p>
+    
+    <p>While Chef's new <a href="https://chef.io/delivery">Delivery Product</a> attempts to make this easier, it's still an afterthought that utilizes the same, self-configuration model.</p>
+
+    <p class="info otter-info">
+        Otter's <a href="/support/documentation/otter/execution-engine/overview">execution engine</a> approach does not have this challenge by its very nature: the central Otter server runs commands
+        remotely on each remote server, and can explicitly control the order in which things happen on servers.
+    </p>
+
+    <h2 id="visibility">Lack of Visibility</h2>
+
+    <p>Chef's learning curve is a barrier to implementing the <em>collaboration</em> aspects of DevOps; with knowledge concentrated to just a few, expert engineers, those specialists become a bottleneck in getting information on how infrastructure is modeled, and how servers are configured.</p>
+
+    <p class="info otter-info">Otter was built to visualize complex configurations and let anyone dig into the details, while at the same time giving administrators the flexibility to restrict sensitive configuration.</p>
+
+    <h2>Change Management and Compliance</h2>
+
+    <p>DevOps isn't <em>only</em> about faster cycles, it's about <em>responsible</em> cycles, which sometimes means process.</p>
+
+    <p>Chef's developer-heavy design means that change management is handled in developer-friendly way (i.e. through a Git repository), and compliance isn't even an afterthought --- it's a separate product.</p>
+
+    <p>For some developer-heavy organizations, the idea of automatically applying configuration changes to dozens of production servers by syncing a Git repository is a dream. For governance and compliance personnel in enterprise organizations, that's a nightmare.</p>
+
+    <p class="info otter-info">Compliance is built in to Otter. Servers can be configured to automatically remediate drift or simply report on it and give you the option to schedule a job to automatically remediate the drift. These are all first class concepts, as opposed to afterthoughts.</p>
+
+    <h2>Chef's Ruby Libraries vs Otter Plans</h2>
+
+    <p>Ruby is a general-purpose programming language, which makes it difficult to compare and contrast to OtterScript, which is a language designed specifically for the purpose of configuration management and infrastructure automation.</p>
+
+    <p>
+        There's no question that a general-purpose programming language offers near-infinite flexibility, and that's precisely why Otter has such
+        <a href="/support/documentation/otter/modeling-infrastructure/powershell">tight PowerShell/scripting integration</a>: when the high-level execution engine isn't the right tool for the job, just <a href="/support/documentation/otter/reference/operations/powershell/psexec">PSExec</a> what you need.
+    </p>
+
+    <p>Simplicity aside, OtterScript does have distinct advantages over Ruby, and most other general-purpose programming languages. Of course, with the visual code editor, you won't have to spend any time learning a specific syntax.</p>
+
+    <h3>Implicit, Quote, and Swim Strings</h3>
+
+    <p>
+        Data is a first-class concept in Otter, and to help contain values without worrying about escaping, OtterScript offers
+        <a href="/support/documentation/otter/reference/otter-script/strings-and-literals#string-syntax">several syntaxes</a>
+        for string literals:
+    </p>
+
+    <ul>
+        <li>Implicit &ndash; no quotes at all</li>
+        <li>Quoted &ndash; single- or double-quoted</li>
+        <li>Swim &ndash; multi-line strings while choosing your own delimiter</li>
+    </ul>
+
+    <p>And OtterScript uses the grave apostrophe (`) as the escape character instead of a backslash, which avoids so many headaches when trying to represent file paths.</p>
+
+    <h3>Seamless Remote Execution &amp; The Context Stack</h3>
+
+    <p>OtterScript does not need to run on remote servers in order to orchestrate them. The execution engine already has the concept of remote execution built-in, which means running a PowerShell script on all configured servers is as simple as this:</p>
+
+    <pre>foreach server in @AllServers
+{
+  PSExec &gt;&gt; Literal Powershell goes here &gt;&gt;;
+}
+      </pre>
+
+    <p>The above statement used a context-setting statement above; although this isn't something you'd do in a configuration plan, in an orchestration plan, the notion of the context stack makes writing complex orchestration plans simple.</p>
+
+    <div>
+        <pre># Register all of our servers
+foreach server in @AllServers
+{
+   if $ServerName() != KEYREGSV1
+   {
+       set $ServerToRegister = $ServerName();
+       set $ServerKey = $FileContents(C:\hdars\key.fil);
+       set $RegKey = "";
+     
+       # Register on Key Server
+       # Change the context to the Key Server, get the registration key, 
+       # and save it to the key
+       for server KEYREGSV1
+       {
+          for directory c:\keyutils\v18\bin\working
+          {
+             Create-File tmpkey.fil (
+                Contents: $ServerKey, 
+                Overwrite: true);
+             PSExec &gt;&gt; 
+                $RegKey = Register-External-Cert |
+                  --server $ServerToRegister |
+                  --filename tmpkey.fil &gt;&gt;;
+          }
+       }
+       if $RegKey == ""
+       {
+          Log-Warning Unable to get key for $ServerToRegister;
+       }
+       else
+       {
+          PSExec &gt;&gt; Set-Registration-Key |
+             --source KEYREGSV1.hdars.local |
+             --key $RegKey &gt;&gt;;
+       }
+   }
+}</pre>
+    </div>
+
+
+    <h3>Built-in Execution Status</h3>
+
+    <p>Executions (i.e. plan/OtterScript runs) can end with one of <em>three</em> statuses: normal, warning, or error.</p>
+
+    <p>By default, the execution status works exactly like you'd expect &ndash; an uncaught error will terminate with an error status, and operations that log warnings will yield a warn status. But you can also <em>explicitly</em> set the execution status at any point during a plan execution with a simple statement (warn, force warn, or error). </p>
+    <p>
+        Unlike a "throw" statement, this does not impact control flow (unless you explicitly test for it in an If/Else block), only reporting.
+    </p>
+
+    <h3>Logging as a first-class concept</h3>
+
+    <p>Logging is such a first-class concept in Otter that it's not only an in-built statement, but the blocks you create actually directly translate to a collapsible logging scope.</p>
+
+    <p><img class="screenshot" src="/resources/documentation/otter/log-scoping-log.png" alt="IIS block log" /></p>
+
+    <p>Just add a comment at the top of a block, and that will become the collapsible scope.</p>
+
+    <h3>Asynchronous Execution (Parallelism)</h3>
+
+    <p>Multi-threading and parallelism is never easy in any language, but we took inspiration from one of the simplest and most powerful patterns: async/await.</p>
+
+    <div>
+        <pre># Execute Database Nodes
+foreach server in @ServersInRole(database-nodes)
+{
+  # these will take an eternity to run, so run in background
+  with async
+  {
+    PSExec &gt;&gt; some really long-running script &gt;&gt;;
+  }
+}
+# Execute Web Nodes
+foreach server in @ServersInRole(web-nodes)
+{
+  PSExec &gt;&gt; some reasonably short script &gt;&gt;;
+}
+# Hopefully database servers are caught up by now...
+# but wait just in case
+await;
+</pre>
+    </div>
+
+    <p>You can even set and await on a specific async token, as to allow for multiple groups. And best of all, error handling "just works" with this pattern &ndash; just put a try/catch around the await.</p>
+
+    <h3>Retry and Timeout as a first-class concept</h3>
+
+    <p>In most general-purpose programming languages, a retry requires nesting a loop, a try/catch, and a couple if/else statements. With otter, it's a single statement:</p>
+
+    <div>
+        <pre>with retry=3 {
+  PSExec &gt;&gt; Some interfrastic script that fails sometimes &gt;&gt;;
+}</pre>
+    </div>
+
+    <p>You can also <em>safely</em> timeout operations in Otter using the same type of statement:</p>
+
+    <div>
+        <pre>with timeout=100 {
+  PSExec &gt;&gt; Some bad script that could take a lifetime &gt;&gt;;
+}</pre>
+    </div>
+    <p>
+        Unlike Ruby's Terminate blocks (aka <a href="http://www.mikeperham.com/2015/05/08/timeout-rubys-most-dangerous-api/">Ruby's Most Dangerous API</a>),
+        Otter operations rely on cancellation tokens to gracefully terminate without putting the entire runtime in an unknown state.
+    </p>
+
+    <h2 id="terminology">Chef Terminology vs Otter Terminology</h2>
+
+    <p>If you're already familiar with Chef, this may help explain similar concepts.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Chef</th>
+                <th>Otter</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Attributes</td>
+                <td><a href="/support/documentation/otter/core-concepts/servers#configuration">Configuration</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Chef Client</td>
+                <td><a href="/support/documentation/otter/administration/agents">Agent</a></td>
+                <td>Same, except Otter agents are used only for Windows servers</td>
+            </tr>
+            <tr>
+                <td>Chef&nbsp;Console</td>
+                <td><a href="/support/documentation/otter/administration/architecture">Web&nbsp;Application</a></td>
+                <td>See <a href="/support/documentation/otter/administration/architecture">Architecture &amp; Components</a></td>
+            </tr>
+            <tr>
+                <td>Chef&nbsp;Repository</td>
+                <td><a href="/support/documentation/otter/administration/architecture">Otter&nbsp;database</a></td>
+                <td>See <a href="/support/documentation/otter/administration/architecture">Architecture &amp; Components</a></td>
+            </tr>
+            <tr>
+                <td>Chef&nbsp;Server</td>
+                <td><a href="/support/documentation/otter/administration/architecture">Otter&nbsp;server</a></td>
+                <td>See <a href="/support/documentation/otter/administration/architecture">Architecture &amp; Components</a></td>
+            </tr>
+            <tr>
+                <td>Chef Solo</td>
+                <td>Romp</td>
+                <td>This is essentially a stand-alone version of the execution engine that runs plans on disk</td>
+            </tr>
+            <tr>
+                <td>Cookbooks</td>
+                <td><a href="/support/documentation/otter/global-components/rafts">Raft</a>&nbsp;or&nbsp;<a href="/support/documentation/otter/administration/extensions">Extension</a></td>
+                <td>
+                    Highly reusable components are generally created as extensions, whereas bundled configuration
+                    is created as a raft
+                </td>
+            </tr>
+            <tr>
+                <td>Data bags</td>
+                <td><a href="/support/documentation/otter/global-components/configuration-variables">Configuration&nbsp;Variables</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Knife</td>
+                <td>-</td>
+                <td>Otter does not currently have a stand-alone CLI, as everything is done from the web app, but with demand we can add one</td>
+            </tr>
+            <tr>
+                <td>Node</td>
+                <td><a href="/support/documentation/otter/core-concepts/servers">Server</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Ohai</td>
+                <td>-</td>
+                <td>this is effectively a collection run of a <a href="/support/documentation/otter/core-concepts/plans#configuration">Configuration&nbsp;Plan</a></td>
+            </tr>
+            <tr>
+                <td>Recipe</td>
+                <td><a href="/support/documentation/otter/core-concepts/plans#configuration">Configuration&nbsp;Plan</a></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>Resource</td>
+                <td><a href="/support/documentation/otter/execution-engine/overview#operations">Operation</a>&nbsp;or&nbsp;<a href="/support/documentation/otter/core-concepts/assets">Asset</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Role</td>
+                <td><a href="/support/documentation/otter/modeling-infrastructure/server-role">Server&nbsp;Role</a></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

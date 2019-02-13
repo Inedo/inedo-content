@@ -1,0 +1,234 @@
+@import "..\..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+a.download {
+    background-color: none;
+    padding: 8px 16px;
+    color: @inedo-darkblue;
+    border: 3px solid @inedo-darkblue;
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: @inedo-darkblue;
+        color: @inedo-white;
+    }
+}
+
+
+#header, #footer.content-container, #sticky-nav-content-container.content-container, p.tagline {
+    display: none;
+}
+
+.menu-anchor {
+    visibility: hidden;
+    position: absolute;
+    top: -50px;
+}
+
+
+
+.content-container.training-event {
+    .content {
+        p {
+            font-size: 20px;
+        }
+
+        h2 {
+            margin-top: 24px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .above-the-fold {
+            .left {
+                width: 580px;
+
+                ul.session {
+                    font-size: 19px;
+                    margin-left: 30px;
+
+                    li {
+                        padding-bottom: 8px;
+                        font-weight: 400;
+                        list-style-type: disc;
+                    }
+                }
+            }
+
+            .right {
+                float: right;
+                width: 38%;
+                margin: 30px auto 16px 44px;
+
+                p.caption {
+                    font-size: 14px;
+                    margin: 3px auto;
+                    font-style: italic;
+                }
+
+                .cta {
+                    margin-top: 72px;
+
+                    a.button {
+                        background-color: #45cb30;
+                        padding: 10px 16px;
+                        text-decoration: none;
+                        border: none;
+                        font-weight: 500;
+                        color: @inedo-white;
+
+                        &:hover {
+                            text-decoration: none;
+                            background-color: #32a020;
+                        }
+                    }
+                }
+
+                .laptop-shot {
+                    img {
+                        width: 370px;
+                    }
+                }
+
+                .assets {
+                    margin-top: 50px;
+
+                    a.button {
+                        background-color: @inedo-paleblue;
+                        padding: 10px 16px;
+                        text-decoration: none;
+                        border: none;
+                        font-weight: 500;
+                        font-size: 19px;
+                        color: @inedo-white;
+                        margin: 0 3px;
+                        &:hover {
+                            text-decoration: none;
+                            background-color: #80a1bc;
+                        }
+                    }
+                }
+            }
+            .seminar-watch {
+                margin: 64px 0;
+                
+            }
+        }
+
+        .training-box {
+            background-color: @inedo-paleblue;
+            text-align: center;
+            color: @inedo-white;
+            margin: 64px 0;
+            padding: 24px 136px 48px 136px;
+
+            h2 {
+                color: @inedo-white;
+            }
+
+            .button-set {
+                margin-top: 42px;
+
+                a.button {
+                    background-color: #80a1bc;
+                    padding: 10px 16px;
+                    text-decoration: none;
+                    border: none;
+                    font-weight: 500;
+                    color: @inedo-white;
+
+                    &:hover {
+                        text-decoration: none;
+                        background-color: @inedo-darkblue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.content-container#land {
+    .content {
+        margin: 40px 0 80px 0;
+        .product-shot {
+            
+            height: auto;
+            float: right;
+        }
+
+        #sign-up {
+            z-index: 3;
+            height: 330px;
+            width: 350px;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: @inedo-darkblue;
+            box-shadow: 2px 2px 4px @inedo-black;
+
+            p {
+                color: @inedo-white;
+                font-size: 21px;
+                margin: 10px 0 16px 10px;
+            }
+
+            label {
+                color: @inedo-white;
+                font-size: 95%;
+                margin: 0;
+            }
+
+            form {
+                width: 304px;
+                display: block;
+            }
+
+            fieldset {
+                margin: 0;
+            }
+
+            input {
+                box-sizing: content-box;
+                width: 100%;
+                margin: 5px 0 15px;
+                padding: 5px 12px;
+                color: @inedo-darkgrey;
+                background-color: @inedo-lightgrey;
+                border: none;
+            }
+
+            input.submit-button {
+                background-color: #45cb30;
+                padding: 10px 12px;
+                text-decoration: none;
+                border: none;
+                font-weight: 500;
+                color: @inedo-white;
+                font-size: 24px;
+
+                &:hover {
+                    text-decoration: none;
+                    background-color: #32a020;
+                }
+            }
+        }
+    }
+}
+
+@media print {
+
+
+    #sticky-nav-content-container, #banner, .tool-nav {
+        display: none !important;
+    }
+
+}

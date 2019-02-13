@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Jenkins</title>
+</head>
+<body>
+    <h2 id="operations">Operations</h2>
+     <p>
+        By installing the Jenkins extension, you are given additional Built-in Jenkins operations. These Built-in operations include:
+    </p>
+    <ul>
+
+         <li>
+            <b> Download Jenkins Artifact</b> -  Downloads an artifact from a Jenkins server
+        </li>
+        <li>
+            <b> Importing an artifact from Jenkins</b> -  Downloads an artifact from the specified Jenkins server and saves it to the artifact library
+        </li>
+        <li>
+            <b>Queue a Jenkins Build</b> - Queues a build in Jenkins, optionally waiting for its completion
+        </li>
+        
+    </ul>
+    <h2>Using the extension</h2>
+     <p>
+        The below steps will outline a basic scenario of creating a new Jenkins build from within BuildMaster, then pulling the build artifact created from Jenkins into BuildMaster, and  promoting it through a simple pipeline.
+    </p>
+    <p>
+        The Jenkins instance we're using has been configured to create builds of a simple web application called <i>Accounts</i>; the source code is from a GitHub repository.  We've set the Project name to <i>AccountsWeb</i> since it's a web app.
+    </p>
+
+    <img class="screenshot" src="\resources\tutorials\jenkins\new-jenkins-dashboard.png" />
+
+    <p><h3 id="step-one">Step 1: Install the BuildMaster Jenkins Extension, and Create a Credential</h3></p>
+    <p>
+        Click <u>Administration</u> > Click <u>BuildMaster Extensions</u> > Click <u>Jenkins</u> > Click <u>Install this Extension</u>
+    </p>
+    <p>
+        After the extension is installed, BuildMaster will automatically restart and Jenkins will now be under Up-to-Date Extensions.
+    </p>
+    <p>
+        Click <u>Administration</u> > <u>Resource Credentials</u> > <u>Create Credential</u> > <u>Jenkins</u>
+    </p>
+    <p>
+        Enter the Jenkins Project, the server URL, and a credential and save.
+
+    </p>
+    <img class="screenshot" src="\resources\tutorials\jenkins\credential.png" />
+
+
+    <p><h3 id="step-two">Step 2: Create an Application in BuildMaster</h3></p>
+    <p>
+        Click <u>Applications</u> > Click <u>Create Application</u> > Set Name to <i>AccountsWeb</i> > Click <u>Create</u>
+    </p>
+    <p>
+        When creating the application, the <i>Integration, Testing</i>, and <i>Production</i> environments will be added by default as the initial pipeline.
+    </p>
+
+    <img class="screenshot" src="\resources\tutorials\jenkins\accountsweb.png" />
+
+    <p><h3 id="step-three">Step 3: Create an Import Plan</h3></p>
+    <p>
+        We first need to import an artifact from Jenkins. For that we'll create a Plan that will queue a build in Jenkins from BuildMaster and import the artifact from the queued build.
+    </p>
+    <p>
+        Create a new plan and call it <i>Import Build</i>.
+    </p>
+    <p>
+        Start with a General Block to describe what will be happening in this plan
+    </p>
+    <img class="screenshot" src="\resources\tutorials\jenkins\new-general-block.png" />
+    <p>
+        Add <i>Queue Jenkins Build</i> to the plan and set the Job name. Also, under the <b>Connection/Identity</b> section add the credential we created earlier.
+    </p>
+    <img class="screenshot" src="\resources\tutorials\jenkins\queue-jenkins.png" />
+    <p>
+        Add <i>Import Jenkins Artifact</i> next. Add the resource credential as well as the Job name, a name for the artifact that will be imported, and what build you want imported. We'll use <i>lastSuccessfulBuild</i> to ensure we don't import a broken build.
+    </p>
+    <img class="screenshot" src="\resources\tutorials\jenkins\import-jenkins.png" />
+
+ 
+        <h4>Visual Mode</h4>
+            <img class="screenshot" src="\resources\tutorials\jenkins\new-queue-and-import.png" />
+       
+ <h4>Text Mode (OtterScript) </h4>
+            <img class="screenshot" src="\resources\tutorials\jenkins\queue-import-text.png" />
+     
+ 
+
+
+
+    <p><h3 id="step-four">Step 4: Edit Application Pipeline and Set Import Plan</h3></p>
+    <p>
+        When we created the application, a simple pipeline was also created which we can now edit.
+    </p>
+    <p>
+        Click <u>Pipelines</u> > Click <u>AccountsWeb</u>
+    </p>
+    <p>
+        You'll see that our three stages are already in place, and they already have <i>Deploy WebAccounts</i> plan assigned to them. First, we need to import the Jenkins artifact. We'll create a new <b>Stage</b> for that.
+    </p>
+    <p>
+        Click <u>Add Stage</u> > Set Name to <i>Import</i> > Set Pipeline position to 0 > Click <u>Save Stage</u>
+    </p>
+    <img class="screenshot" src="\resources\tutorials\jenkins\add-import.png" />
+    <p>
+        By setting the Pipeline position to <i>0</i>, the stage is created as the first stage in the pipeline, since we need to import a build <em>before</em> we can move it through our pipeline.
+    </p>
+    <p>
+        Next we need to set the import stage with our import plan. Click <i>add target</i> on the import stage and set the plan to <i>Import Build</i>.
+    </p>
+
+    <p><h3 id="step-five">Step 5: Edit the Deployment Plan</h3></p>
+    <p>
+        As noted above, we already have a plan assigned to our pipeline stages called Deploy AccountsWeb; we'll now edit that plan.
+    </p>
+    <p>
+        Click <u>Plans</u> > Click <u>Deploy AccountsWeb</u>
+    </p>
+
+    <p>
+        BuildMaster has automatically created a simple deployment plan by default. The plan doesn't do much, but we can edit it so that it will deploy the artifact that we'll import through the pipeline.
+    </p>
+    <p>
+        Edit the <a href="http://inedo.com/support/documentation/otter/execution-engine/statements-and-blocks/general-blocks">General Block</a> at the top with a short description of what the plan will do, and set a server for the plan to be run on. Note that you can also target <a href="/support/documentation/buildmaster/core-concepts/environments">environments</a> and <a href="/support/documentation/buildmaster/administration/agents">servers</a> to execute operations on from the pipeline stage, but for this tutorial, we'll just set it here.
+    </p>
+
+    <img class="screenshot" src="\resources\tutorials\jenkins\new-deploy-general.png" />
+
+    <p>
+        The other two actions in the plan can be deleted.
+    </p>
+    <p>
+        Next, drag a <i>Deploy Artifact</i> operation into the edited <i>General Block</i>. Set the Artifact name to <i>Websites</i>, and the Target directory to <i>C:\Websites\$EnvironmentName\Accounts</i>. Using <i>$EnvironmentName</i> will create a new folder for each environment that the application is deployed to, and demonstrates one way to generalize a deployment plan for use in multiple environments.
+    </p>
+
+    <img class="screenshot" src="\resources\tutorials\jenkins\deploy-artifact2.png" />
+
+
+
+
+
+    <h3 id="step-six">Step 6: Creating a Release and Deploying</h3>
+    <p>
+        After setting the build importer, we will create a <b>Release</b> that deploys this artifact with an imported release package. The release number can be anything, but defaults to 0.0.0.
+    </p>
+    <p>
+        Click <u>Releases</u> > Click <u>Create Release</u>
+    </p>
+    <p>
+        Once the release is created, you can now create a package, which will use the import plan we defined.
+    </p>
+
+    <p>
+        Click <u>Create Package</u> > Click <u>Create Package</u>
+    </p>
+    <p>
+        BuildMaster will now run the Import Plan we created to queue a Jenkins Build and then Import the artifact to BuildMaster.
+    </p>
+
+    <img class="screenshot" src="\resources\tutorials\jenkins\new-success-1.png" />
+
+    <p>
+        We can see that there has been an artifact created called <i>Websites</i>, and the Variable $JenkinsBuildNumber has incremented by 1 from the first screen-shot.
+    </p>
+    <p>
+        You can now run the artifact through the rest of the pipeline simply by clicking [Deploy] in each successive stage. Of course, you can also configure <a href="/support/documentation/buildmaster/core-concepts/pipelines">gates</a>, <a href="/support/documentation/buildmaster/global-components/event-listeners">listeners</a>, <a href="/support/documentation/buildmaster/administration/security">permissions</a> to ensure that a proper process is followed.
+    </p>
+
+    <img class="screenshot" src="\resources\tutorials\jenkins\pipeline-success.png" />
+
+    <p>
+        You can further verify that the deployment was successful by checking the drive used when setting up the deployment plan. There will be three folders under <i>/Websites</i> -one for <i>Integration, Testing</i>, and <i>Production</i>, all with the deployed files.
+    </p>
+   
+</body>
+</html>

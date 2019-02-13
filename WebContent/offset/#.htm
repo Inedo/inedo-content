@@ -1,0 +1,567 @@
+﻿    <!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="MasterPageFile" content="~/MasterPages/BlankNoForm.Master" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Code Offsets</title>
+    <link rel="stylesheet" type="text/css" href="offset/styles/main.css" />
+    <meta name="include-client-resources" content="knockoutjs" />
+
+
+
+
+    <script type="text/javascript">
+
+        //<![CDATA[
+
+
+        $(document).ready(function () {
+
+            $(".expanding").on("click", function () {
+                $(".selected").removeClass("selected");
+                $(this).removeClass("expanding");
+                $(this).addClass("selected");
+            });
+
+            $(".close-button").on("click", function (event) {
+                event.stopPropagation();
+                $(".selected").addClass("expanding");
+                $(".selected").removeClass("selected");
+             
+            });
+        });
+
+
+
+        // ]]>
+    </script>
+
+
+
+
+</head>
+<body>
+
+
+    <div id="menu-container" class="content-container nav">
+
+        <div id="menu">
+            <ul>
+                <li><a href="#the-offsets">The Bills</a></li>
+                <li><a href="/offset/buy " data-bind="click: getOffsetClick">Buy Offsets</a></li>
+                <li><a href="#who">Partner Org</a></li>
+                <li><a href="/company" target="blank">About Us</a></li>
+              
+            </ul>
+            <div class="circle small grey">
+                <img src="offset/images/menu-icon.svg" />
+                <div class="semi-circle">
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="mobile-navigation">
+            <input id="1" name="accordian" type="checkbox" />
+            <label for="1">
+                <img src="offset/images/menu-icon.svg" />
+            </label>
+            <article>
+                <ul>
+                    <li><a href="#the-offsets">The Bills</a></li>
+                    <li><a href="/offset/buy " data-bind="click: getOffsetClick">Buy Offsets</a></li>
+                    <li><a href="#who">Partner Org</a></li>
+                    <li><a href="/company" target="blank">About Us</a></li>
+
+                </ul>
+            </article>
+        </div>
+    </div>
+
+
+    <div class="content-container" id="top-banner">
+        <div id="heading">
+            <a href="/offset">
+                <img class="logo" src="offset/images/white-logo.svg" />
+            </a>
+            <h1>code offsets</h1>
+
+
+            <div id="inedo">
+                <a href="http://inedo.com"><img class="inedo-logo" src="offset/images/inedo-black-logo.png" /></a>
+                <h3>brought to you by</h3>
+            </div>
+        </div>
+
+        <div class="content">
+            <div id="nav-backing">
+                <ul>
+                    <li><a href="#the-offsets">The Bills</a></li>
+                    <li><a href="/offset/buy ">Buy Code Offsets</a></li>
+                    <li><a href="#who">Partner Organization</a></li>
+                    <li><a href="/company" target="blank">About Us</a></li>
+                
+                </ul>
+            </div>
+            <div id="intro">
+
+                <div id="topazoid">
+                </div>
+                <p>Code Offsets are a novel way to offset crap code.</p>
+                <p>It works like carbon offseting. You know you're going to write a few rough lines, so pay it forward to make less bad code overall.</p>
+               
+
+            </div>
+        </div>
+
+    </div>
+
+
+  
+
+
+
+
+    <div id="what" class="content-container">
+        <div class="content red upshifted">
+            <div class="banner">
+
+                <div class="upper-banner">
+
+                    <h2>What are Code Offsets?</h2>
+
+                </div>
+                <div class="under-banner">
+                    <div class="banner-fold"></div>
+                </div>
+            </div>
+            <div class="collumned-section">
+                <div class="illustration-container">
+
+                    <img class="illustration" src="offset/images/spread.jpg" alt="" />
+
+                </div>
+                <div class="article">
+
+                    <p>Have you ever written a line of bad code... or twenty? Relax, it happens to the best of us. What's important is what you do next.</p>
+                    <p>When you purchase a pack of Code Offsets, the proceeds go to our <a href="#who">partner organization</a> TECH CORPS, a nonprofit group that helps promote good code through education. </p>
+
+                   
+                    <div class="button-container get-offset">
+                        <a href="/offset/buy" data-bind="click: getOffsetClick" class="button">
+                            <div class="circle medium">
+                                <img src="offset/images/white-logo.svg" />
+                                <div class="semi-circle"></div>
+                            </div>
+                            <h4>buy an offset</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+    <div id="the-offsets" class="content-container">
+        <div class="content grey upshifted">
+            <div class="banner">
+
+                <div class="upper-banner">
+
+                    <h2>The Bills</h2>
+
+                </div>
+                <div class="under-banner">
+                    <div class="banner-fold"></div>
+                </div>
+            </div>
+            <div class="collumned-section">
+                <div class="article">
+                    <p>Featuring some of the most notable characters from computing's history, we've designed nine different bills, each offsetting a select amount of bad code.</p>
+                </div>
+                <div class="gallery-container">
+                    <div id="circle-gallery">
+
+                        <div class="image-container  expanding left-1">
+
+                            <img src="offset/images/1-full.jpg" />
+                            <p class="close-button">&#10006;</p>
+                            <p class="caption">John von Neumann</p>
+                        </div>
+                        <div class="image-container  expanding left-2 ">
+
+                            <img src="offset/images/2-full.jpg" />
+                            <p class="close-button">&#10006;</p>
+                            <p class="caption">Charles Babbage</p>
+                        </div>
+                        <div class="image-container  expanding">
+
+                            <img src="offset/images/5-full.jpg" />
+                            <p class="close-button">&#10006;</p>
+                            <p class="caption">Herman Hollerith</p>
+                        </div>
+                        <div class="image-container  expanding right-2">
+
+                            <img src="offset/images/10-full.jpg" />
+                            <p class="close-button">&#10006;</p>
+                            <p class="caption">Alan Turing</p>
+                        </div>
+                        <div class="image-container  expanding right-1">
+
+                            <img src="offset/images/20-full.jpg" />
+                            <p class="close-button">&#10006;</p>
+                            <p class="caption">Grace Hopper</p>
+
+                        </div>
+                        <div class="image-container  expanding left-2">
+
+                            <img src="offset/images/50-full.jpg" />
+                            <p class="close-button">&#10006;</p>
+
+                            <p class="caption">Seymour Cray</p>
+
+                        </div>
+                        <div class="image-container  expanding">
+
+                            <img src="offset/images/100-full.jpg" />
+                            <p class="close-button">&#10006;</p>
+                            <p class="caption">Konrad Zuse</p>
+
+                        </div>
+                        <div class="image-container  expanding">
+
+                            <img src="offset/images/500-full.jpg" />
+                            <p class="close-button">&#10006;</p>
+                            <p class="caption">Edgar Codd</p>
+
+                        </div>
+                        <div class="image-container  expanding right-2">
+
+                            <img src="offset/images/1000-full.jpg" />
+                            <p class="close-button">&#10006;</p>
+                            <p class="caption">Ada Lovelace</p>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+    </div>
+   
+    <div id="who" class="content-container">
+        <div class="content red">
+            <div class="banner">
+
+                <div class="upper-banner">
+
+                    <h2>Partner Organization</h2>
+
+                </div>
+                <div class="under-banner">
+                    <div class="banner-fold"></div>
+                </div>
+            </div>
+            <div class="collumned-section">
+                <div class="gallery-container">
+                    <div id="circle-gallery">
+
+                        <div class="image-container  expanding">
+                            <p class="close-button">&#10006;</p>
+                            <img src="offset/images/thanks-banner.jpg" />
+                            <p class="caption">TECH CORP recruits and supports volunteers from the community to advise and assist schools.</p>
+                        </div>
+
+                        <div class="image-container  expanding">
+                            <p class="close-button">&#10006;</p>
+                            <img src="offset/images/two-tc-girls.jpg" />
+                            <p class="caption">Having fun, programming robots! </p>
+                        </div>
+                        <div class="image-container  expanding">
+                            <p class="close-button">&#10006;</p>
+                            <img src="offset/images/badges.jpg" />
+                            <p class="caption"> TECH CORP brings additional technology resources to K-12 students and teachers.</p>
+                        </div>
+
+                        <div class="image-container  expanding">
+                            <p class="close-button">&#10006;</p>
+                            <img src="offset/images/classroom-tc.jpg" />
+                            <p class="caption">TECH CORP works both in schools, and at camps! </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="article">
+                    <p>Proceeds from Code Offsets currently benefit <a target="blank" href="http://twenty.techcorps.org/">TECH CORPS</a>. </p>
+                    <p>TECH CORPS is a nonprofit organization dedicated to ensuring K-12 students have equal access to technology programs, skills, and resources that enhance early learning and prepare them for college and career.</p>
+                    <p>TECH CORPS develops technology programs and deploys tech-savvy talent to assist K-12 schools and youth-serving organizations across the country.</p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="help" class="content-container">
+        <div class="content grey">
+            <div class="banner">
+                <div class="upper-banner">
+                    <h2>Bad Code can be Stopped</h2>
+                </div>
+                <div class="under-banner">
+                    <div class="banner-fold"></div>
+                </div>
+
+
+            </div>
+            <div class="collumned-section">
+                <div class="article">
+                    <p>It disrupts our jobs, hides in our homes, and stows away in our cars. It’s probably even in your pocket more often than not.</p>
+                    <p>Bad code is a problem that affects everyone, and with Code Offsets you can finally do something about it.</p>
+                    <p>Now that you've read our alarmist and overblown examples, you can be part of the solution and offset bad code today!</p>
+
+
+                </div>
+                <div class="button-container get-offset">
+                    <a href="/offset/buy " data-bind="click: getOffsetClick" class="button">
+                        <div class="circle large">
+                            <img src="offset/images/white-logo.svg" />
+                            <div class="semi-circle"></div>
+                        </div>
+                        <h2>Buy Code Offsets</h2>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="disruptive" class="content-container">
+        <div class="content blue">
+            <div class="banner">
+                <div class="upper-banner">
+                    <h2>Bad Code is Disruptive</h2>
+                </div>
+                <div class="under-banner">
+                    <div class="banner-fold"></div>
+                </div>
+
+
+            </div>
+            <div class="collumned-section">
+                <div class="illustration-container">
+                    <img class="illustration" src="offset/images/connection.svg" alt="" />
+                </div>
+                <div class="article">
+                    <p>In 1990, a single line of code led to a mechanical failure in one of AT&amp;T's key switching centers.</p>
+                    <p>The center shut down unexpectedly, and when it came back online it sent a message to other switching centers causing them to reset.</p>
+                    <p>The result? Over <i><strong>70 million</strong></i> calls went unanswered! Don’t let bad code drop your call!</p>
+                </div>
+
+            </div>
+
+            <div class="extra-facts">
+                <div class="button-container">
+
+                    <div class="circle left large blue expanding">
+                        <p class="close-button">&#10006;</p>
+                        <h4>Boom!</h4>
+                        <div class="semi-circle">
+                            <p class="abstract">Crash on  Mars!</p>
+                            <p class="story">
+                                The Mars Climate Orbiter arrived at Mars just fine, but crashed
+                                into the red planet since its
+                                software didn't make
+                                key measurements
+                                in metric as NASA
+                                specified.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="circle center large grey expanding">
+                        <p class="close-button">&#10006;</p>
+                        <h4>Lost</h4>
+                        <div class="semi-circle">
+                            <p class="abstract"> X isn't on <br /> the spot</p>
+                            <p class="story">
+                                Apple released its own mapping software for iOS 6. It worked, but barely. Clouds obscured satellite images, places were misplaced, and entire towns were missing.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="circle right large yellow expanding">
+                        <p class="close-button">&#10006;</p>
+                        <h4>Busted</h4>
+                        <div class="semi-circle">
+                            <p class="abstract"> Jigsaw plane</p>
+                            <p class="story">
+                                In 2006, Airbus used separate
+                                software when designing two halves
+                                of their Airbus A380.
+                                When they attempted to assemble the parts,
+                                they literally didn't fit!
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div id="expensive" class="content-container">
+        <div class="content green">
+            <div class="banner">
+                <div class="upper-banner">
+                    <h2>Bad Code is Expensive</h2>
+                </div>
+                <div class="under-banner">
+                    <div class="banner-fold"></div>
+                </div>
+
+
+            </div>
+            <div class="collumned-section">
+                <div class="article">
+
+                    <p>
+                        Knight Capital Group was a well-respected market-making company, at least until 2012.  On the morning of August 1st, for only half an hour, their trading software malfunctioned.
+                        It bought high, and sold low on hundreds of different stocks.
+                    </p>
+                    <p>In just that short window, the company lost <i><strong>$440M</strong></i>, decimating their reputation and stock price.</p>
+                    <p>Don’t let bad code cost you (or anyone else) so dearly.</p>
+
+
+                </div>
+                <div class="illustration-container">
+                    <img class="illustration" src="offset/images/money.svg" alt="" />
+
+
+                </div>
+            </div>
+            <div class="extra-facts">
+                <div class="button-container">
+
+                    <div class="circle left large blue expanding">
+                        <p class="close-button">&#10006;</p>
+                        <h4>Taxing</h4>
+                        <div class="semi-circle">
+                            <p class="abstract">Death and Glitches</p>
+                            <p class="story">
+                                In 2006 the I.R.S. lost hundreds of millions to fraudulent tax refunds. The culprit? A non-functioning program meant to detect potential fraudulent claims.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="circle center large grey expanding">
+                        <p class="close-button">&#10006;</p>
+                        <h4>Us Too</h4>
+                        <div class="semi-circle">
+                            <p class="abstract"> Hunt the<br />bugs </p>
+                            <p class="story">
+                                We aren't immune to bad code! In fact we have hidden several bits on this page. Find one, and report it to us, we will send you some free code offsets, and pay for them ourselves!
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="circle right large yellow expanding">
+                        <p class="close-button">&#10006;</p>
+                        <h4>Oops</h4>
+                        <div class="semi-circle">
+                            <p class="abstract"> Wrong division!</p>
+                            <p class="story">
+                                In 1993, Pentium sold a chip that made errors in certain
+                                division  problems. This frustrated
+                                users, and compromised
+                                the credibility of the
+                                entire company.
+                            </p>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="deadly" class="content-container">
+        <div class="content yellow">
+            <div class="banner">
+                <div class="upper-banner">
+                    <h2>Bad Code is Deadly</h2>
+                </div>
+                <div class="under-banner">
+                    <div class="banner-fold"></div>
+                </div>
+
+
+            </div>
+            <div class="illustration-container">
+                <img class="illustration" src="offset/images/wargames.svg" alt="" />
+
+            </div>
+            <div class="article">
+                <p>The year 2003, the place; a hospital in Grand Rapids, Michigan. In the blink of an eye, 8,500 lives were snuffed out by bad code.  Kinda. </p>
+                <p>Due to a mapping error, every patient who had a procedure at the hospital was reported dead to the Social Security office, their insurance, and ultimately, themselves. 
+                Of course, none of them were actually dead, which makes the whole thing a bit awkward. </p>
+                <p>Don’t stand for digital murder, eliminate bad code.</p>
+
+
+            </div>
+          
+            <div class="extra-facts">
+                <div class="button-container">
+
+                    <div class="circle left large blue expanding">
+                        <p class="close-button">&#10006;</p>
+                        <h4>WWIII</h4>
+                        <div class="semi-circle">
+                            <p class="abstract">Almost<br />was!</p>
+                            <p class="story">
+                                In 1983 the Soviet nuclear early warning system reports an attack from the US. Thankfully, Air Defense Officer, Stanislav Petrov, double checks and discovers it was just a glitch.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="circle center large grey expanding">
+                        <p class="close-button">&#10006;</p>
+                        <h4>Hakkar</h4>
+                        <div class="semi-circle">
+                            <p class="abstract"> The Blood God! </p>
+                            <p class="story">
+                                In World of Warcraft, Hakkar was an enemy that infected heroes with a virus. An error caused it jump to others, and rack up a huge death toll of annoyed players.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="circle right large yellow expanding">
+                        <p class="close-button">&#10006;</p>
+                        <h4>A Break</h4>
+                        <div class="semi-circle">
+                            <p class="abstract">From <br /> jail</p>
+                            <p class="story">
+                                California reduced prison population in 2011 by paroling non-violent offenders. But a mistake in programming led to unsupervised parole of about 450 violent felons.
+                            </p>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+    <div id="footer" class="content-container">
+       
+            <div class="content">
+                © <a href="/">Inedo, LLC</a> |
+                Website Content <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+                | <a href="/contact">Contact Us</a>
+            </div>
+       
+    </div>
+
+
+</body>
+</html>

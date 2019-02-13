@@ -1,0 +1,166 @@
+@import "..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-lightgrey: #ddd;
+@inedo-white: #fff;
+@inedo-lightblue: #10466E;
+
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+@otter-purple: #9163AA;
+
+
+
+.content-container#tutorial-banner {
+    margin: 0; 
+    padding: 0; 
+    background-position: center top; 
+    height: 150px; 
+    background-repeat: no-repeat;
+}
+
+.content-container#doc-nav {
+    background-color: #353535;
+    .content {
+        ul {
+            list-style: none; 
+            padding: 0; 
+            list-style-type: none; 
+            margin: 0;
+        }
+        li {
+            display: inline-block;
+            border-right: 1px solid #ffffff; 
+            text-align: center; 
+            font-size: 125%; 
+            width: 245px; 
+            height: 30px; 
+            padding: 0;
+            &:first-child {border-left: 1px solid #ffffff;}
+        }
+        a {
+            color: #ffffff; 
+            text-decoration: none; 
+            font-weight: bolder;
+        }
+        a:hover {color: #47be30;}
+    }
+}
+
+.content-container#tools {
+    display: inline-block;
+     h2 {
+            font-weight: 300;
+            font-size: 225%;
+            text-align: center;
+            line-height: 175%;
+            padding: 30px 125px;
+            color: @inedo-white;
+            background-color: #47be30;
+            margin-top: 0px;
+        }
+    a.tools-icons {
+        text-decoration: none;
+        width: 300px;
+        float: left;
+        height: 280px;
+        margin: 20px 16px 0 16px;
+        text-align: center;
+        h4 {
+            margin-top: 10px;
+        }
+        img {
+           margin-top: 25px;
+           width: 175px;
+           height: 175px;
+        }
+        
+    }
+    a.tools-icons:hover {
+        box-shadow: 1px 1px 4px @inedo-darkgrey;
+
+    }
+}
+
+.content-container#toolchain{
+    display: inline-block;
+    .content {
+        a {
+        text-decoration: none;
+        //width: 300px;
+        float: left;
+        height: 210px;
+        margin-top: 20px;
+        text-align: center;
+        h4 {
+            margin-top: 25px;
+        }
+        img {
+           margin-top: 25px;
+           //width: 175px;
+           //height: 175px;
+        }
+        
+    }
+        a:hover {
+        box-shadow: 1px 1px 4px @inedo-darkgrey;
+
+    }
+    }
+}
+
+.content-container#tuts {
+    .content {
+        h3 { 
+            margin-top: 10px; 
+            margin-bottom: 30px;
+            text-align: center;  
+            padding: 20px 0;
+        }
+         h2 {
+            font-weight: 300;
+            font-size: 225%;
+            text-align: center;
+            line-height: 175%;
+            padding: 30px 50px;
+            color: @inedo-white;
+            background-color: #47be30;
+            margin-top: 0px;
+        }
+                .browse-by-tool {
+                    .card {
+                        width: 200px;
+                        background-color: @inedo-darkgrey;
+                        float: left;
+                        height: 250px;
+                        margin: 25px 25px 50px 25px;
+                        text-align: center;
+                        box-shadow: 1px 1px 4px @inedo-darkgrey;
+                        img {
+           
+                        }
+                        p {
+                            font-size: 130%;
+                            font-weight: bolder;
+                            margin-top: 0;
+                            a {
+                                padding: 180px 50px 40px 50px;
+                                text-decoration: none;
+                                color: @inedo-white;
+                            }
+                            a:hover {
+                                color: #47be30;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                } 
+        .large-search{
+            margin: 50px 225px 30px 275px;
+            input {vertical-align: middle;}
+        }
+    }
+}
+
+

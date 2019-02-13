@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Integrating TFS and BuildMaster | Extensions | Inedo.com</title>
+		<meta name="extensions-details-layout" content="advanced" />
+		<meta name="include-client-resources" content="fancybox131" />
+		<style type="text/css">
+        .content-container .inner-container img.small-image {
+            max-width: 300px;
+        }
+
+       
+
+        .release-feature ul {
+            list-style-image: none;
+
+        }
+
+        
+
+            .release-feature ul li {
+                list-style-image: none;
+                list-style-type: circle;
+                margin-left: 25px;
+            }
+
+        .release-feature.unstyled-ul div.screenshot {
+            margin-right: 45px;
+            margin-top: 35px;
+        }
+
+        .release-feature.unstyled-ul ul li {
+            font-weight: normal;
+        }
+    </style>
+    </head>
+   <body>
+        <div>
+			<h1>Integrating TFS and BuildMaster</h1>
+            <p>
+                <a href="http://msdn.microsoft.com/en-us/vstudio/ff637362.aspx">Microsoft's Team Foundation Server</a> has become the de-facto platform for source control, work item tracking, and
+                continuous integration build automation for Microsoft developers using Visual Studio -- and that's exactly why BuildMaster has a powerful and easy integration with TFS.
+            </p>
+            <p>
+                TFS is great on the development side, but to move into integration, testing, and production environments, it lacks power, flexibility, and easy-of-use of BuildMaster.
+            </p>
+            
+            <p>
+                By integrating TFS and BuildMaster, you easily archive the ability to create advanced and (if needed) complex release pipelines. Starting with a build in TFS you can add 
+                in multiple testing environments, user approvals, scheduled promotions, user notifications, and much more from the intuitive BuildMaster interface.
+            </p>
+            
+            <p>
+                <img src="/resources/images/extensions/tfs.png" />
+            </p>
+
+            <hr />
+            <h4>Create Builds in TFS</h4>
+
+            <p>
+                The TFS integration allows you to create a TFS Project build from within BuildMaster by simply using your TFS URLs and credentials. BuildMaster will then queue a
+                new build for the project and save that build as a BuildMaster build artifact.
+            </p>
+            <p>
+                This easily lets you control the entire deploy and release lifecycle all from the same BuildMaster dashboard with visible logs, custom deployment scripts, automatic
+                notifications, and even user approval.
+            </p><hr/>
+            <h4>Import Builds from TFS</h4>
+            <p>
+                BuildMaster can also Import a TFS build from a drop location, and then use it as a Build Artifact for the rest of the deployment process. This can be useful if an
+                <em>exact</em> build from TFS needs to be used (for auditing, roll-backs, or compliance reasons)
+            </p>
+            <hr />
+            <h4>Issue Tracking / Work Items</h4>
+            <p>
+                BuildMaster supports many different <a href="/buildmaster/integration#issue-tracking">issue tracking tools</a>, and when integrated with TFS you can also access
+                TFS&rsquo; work items from within BuildMaster. BuildMaster will import TFS work items as BuildMaster issues, and allow you to do things like set releases to be dependent
+                upon specific work items being completed. BuildMaster will also link directly to the work items in TFS for easy access, for updating, adding notes, viewing history, etc.
+            </p>
+<hr/>
+            <h4>Source Control</h4>
+            <p>
+                This extension includes a source control provider to perform source-control related actions against your Team Project. You can get the latest code, apply labels, and get code by labels.
+            </p>
+<hr/>
+
+        </div>
+	</body>
+</html>
+
+

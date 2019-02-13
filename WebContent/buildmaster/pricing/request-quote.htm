@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BuildMaster Quote Request</title>
+    <style>
+        .contact-form input[type=text], .contact-form select {
+            width: 595px;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form input[type=button] {
+            width: 100%;
+            background-color: #3FA9F5;
+            color: white;
+            padding: 14px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+        }
+
+            .contact-form input[type=button]:hover {
+                background-color: #1e89d5;
+            }
+
+        .contact-form {
+            background-color: #e4e4e4;
+            padding: 10px 20px;
+            margin-bottom: 40px;
+        }
+
+       
+        .ahvalidator.error input[type=text],
+        .ahvalidator.error select {
+            background-color: #fcc;
+        }
+
+        .ahvalidator.error .message {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-form">
+        <h3 style="text-align: center; border-bottom: 1px solid #808080; padding-bottom: 38px; margin: 30px 16px 0 10px;">BuildMaster Quote Request</h3>
+        <contact-form method="post" action="/contact-form">
+            <fieldset>
+                <input type="hidden" name="ToAddress" value="athiel@inedo.com" />
+                <input type="hidden" name="RedirectUrl" value="/buildmaster/pricing/request-received" />
+                <input type="hidden" name="Subject" value="BuildMaster Quote Request" />
+                <input type="hidden" name="CcFromAddress" value="false" />
+                <input type="hidden" name="Priority" value="High" />
+
+                <label>Your Name*</label>
+                <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                <label>Email Address*</label>
+                <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                <label>Phone Number</label>
+                <div><input name="Phone Number" type="text" /></div>
+
+                <label>Company* (resellers: please note end user)</label>
+                <div><input name="Company" type="text" data-ahvalidator='{ "Required": true }' /></div>
+
+                <select name="users" data-ahvalidator='{ "Required": true }'>
+                    <option value="">Number of Users*</option>
+                    <option value="ten">Up to 10 Users</option>
+                    <option value="twenty">Up to 20 Users</option>
+                    <option value="thirty-five">Up to 35 Users</option>
+                    <option value="fifty">Up to 50 Users</option>
+                    <option value="one-hundred">Up to 100 Users</option>
+                    <option value="two-hundred-fifty">Up to 250 Users</option>
+                    <option value="over-two-hundred-fifty">Over 250 Users</option>
+                </select>
+
+                <select name="license" data-ahvalidator='{ "Required": true }'>
+                    <option value="">Licensing Option*</option>
+                    <option value="annual">Annual</option>
+                    <option value="perpetual">Perpetual</option>
+                </select>
+
+                <select name="services" data-ahvalidator='{ "Required": true }'>
+                    <option value="">Professional Services*</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No, not at this time</option>
+                </select>
+
+                <select name="training" data-ahvalidator='{ "Required": true }'>
+                    <option value="">Training*</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No, not at this time</option>
+                </select>
+
+                <label>Special Requests (payment terms, license terms, etc.)</label>
+                <div><textarea name="Message" style="width: 630px;" rows="4" cols="20"></textarea></div>
+
+                <label>Additional Comments</label>
+                <div><textarea name="Message" style="width: 630px;" rows="4" cols="20"></textarea></div>
+
+                <input type="button" value="Request Pricing Quote" onclick="AhValidation.Submit(this);" />
+            </fieldset>
+        </contact-form>
+    </div>
+
+
+</body>
+</html>

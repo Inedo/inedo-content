@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Creating Advanced Pipelines</title>
+    <meta name="keywords" content="buildmaster, visual-studio-online, tfs, deployment" />
+    <meta name="include-client-resources" content="fancybox131" />
+    <meta name="product-name" content="BuildMaster" />
+</head>
+<body>
+
+    <div class="intro">
+        <p>
+            BuildMaster is an application release automation tool, and as such it enables complex release pipelines in a straight forward, and easy to implement way. In this tutorial we’ll go over just a few of the different pipeline features that can be used.
+        </p>
+        <hr />
+    </div>
+
+    <p>There are a host of <a href="/support/documentation/buildmaster/core-concepts/pipelines">pipeline configurations</a> and settings that can be implemented to automate a release all the way through production while enabling security and compliance requirements. While there are hundreds of different ways to set up a single release pipeline, the actions and implantations below are some of the most useful.</p>
+    <p class="info">
+        You can <a href="\support\tutorials\_examples\advanced-pipelines.zip">download</a> the JSON pipeline code as well as the production plan Otterscript used in this tutorial.
+    </p>
+
+    <p><h2>Build Importing</h2></p>
+    <p>
+        While BuildMaster has some build and CI functionality, we support a host of other build tools that specialize in that aspect of the process. So a standard first step is to import a build to BuildMaster, either from a CI tool or from <a href="/proget">ProGet</a>.
+    </p>
+    <p>
+        We have some step-by-step tutorials about how to import a build from a CI tool (like <a href="/support/tutorials/buildmaster/visual-studio-online/queuing-and-deploying-artifacts-from-tfs">TFS</a>, <a href="/support/tutorials/buildmaster/teamcity/queuing-and-deploying-artifacts-from-teamcity">TeamCity</a> and <a href="/support/tutorials/buildmaster/jenkins/queuing-and-deploying-artifacts-from-jenkins">Jenkins</a>), so for this we’ll just create the stage Import, set it to the first position and make sure it automatically deploys to the next stage of the pipeline.
+    </p>
+    
+    <img src="\resources\tutorials\pipeline\new-stage.png" />
+
+    <p><h2>Adding a Gate</h2></p>
+    <p>
+        The Development team is often in charge of smoke testing, so we can add a new stage for the team to run their tests. We’ll call it Dev, and make it the second stage in our pipeline so that the package will be deployed to this stage automatically after import. We’ll also set the pipeline to automatically deploy to the next stage.
+    </p>
+    <p>
+        However, since we want the Dev team to be able to smoke test it before it gets promoted, we’ll also add a <a href="/support/documentation/buildmaster/core-concepts/pipelines">gate</a>. Since anyone on the Dev team can do the testing we’ll add a Group approval gate to the next stage, integration.
+    </p>
+    <p>
+        A group approval means that any user (or designated number of users) assigned to a specific <a href="/support/documentation/buildmaster/administration/security">group</a> can approve the package. We’ll choose the Development role for this.
+    </p>
+    <img src="\resources\tutorials\pipeline\group-approve.png" />
+    <p>
+        When the release package encounters this gate it will prompt for approval, and prevent the package from moving forward until it is approved by someone with the correct security and privileges.
+    </p>
+    <img src="\resources\tutorials\pipeline\smoke-test-passed.png" />
+
+    <p><h2>Multi-Environment Targeting</h2></p>
+    <p>
+        It’s common to create multiple <a href="/support/documentation/buildmaster/core-concepts/environments">environments</a> to deploy to for different global location testing, or different hardware configuration testing. While BuildMaster could be set so that each environment configuration had its own stage that would create pointlessly long pipelines. It’s much easier to target multiple environments in a single stage.
+    </p>
+    <p>
+        To create a new environment simply hover over the admin gear at the top right of the screen and choose <i>Environments</i> and select <i>Create Environment</i>. There you can name an environment and select specific servers to add into it.
+    </p>
+    <p>
+        To add multiple environments to the Testing stage, we click <i>add target</i> for the testing stage, and select the first of our newly created environments. We’ll also us the option to deploy to all the servers in the target environment.
+    </p>
+    <img src="\resources\tutorials\pipeline\stage-target.png" />
+    <p>
+        Sometimes you need to target multiple environments at the same stage, for example to deploy to three different testing environments, all you need to do is click <i>add target</i> again and make your choices. You can target as many environments as needed this way.
+    </p>
+    <img src="\resources\tutorials\pipeline\multi-target.png" />
+    <p>
+        We will also set this stage to automatically deploy to the next stage, which is Q/A. However the Q/A stage is often under heavy use so it can’t be altered during most of the day because that would interrupt the testing happening at that stage. 
+    </p>
+    
+    <p><h2>Setting an automatic deployment time</h2></p>
+
+    <p>
+        Since Q/A shouldn’t be changed during the standard work day, we need to create a new gate to only let a deployment of a release package to this stage during specific times.
+    </p>
+    <p>
+        All this involves is adding an automated Date / Time gate at the Q/A stage. We want to make sure that packages are deployed to this stage at the lowest possible user load, so between 1am and 2am. Filters for Days of the week, Days of the month, and week of the month can also be used to restrict deployments further if needed.
+    </p>
+    <img src="\resources\tutorials\pipeline\time-window.png" />
+
+    <p>
+        We also add an approval gate here for a new group; Testing Users. Because a gate will only allow a package to move forward if all the requirements are met this ensures that the testing users have approved this package as ready for Q/A – otherwise every package that arrived at the testing stage would be automatically promoted to the Q/A stage during the designated time.  Once the testing users have approved the package BuildMaster will then automatically promote the package between 1 and 2 am.
+    </p>
+    <p>
+        After Q/A is our Production stage. Even though the release package has gone through a lot of testing to get this far, we still don’t want to fully deploy it without one last check.
+    </p>
+
+    <p><h2>Setting up a Rolling Deployment</h2></p>
+
+    <p>
+        This is a scenario where we’ll deploy to ½ of our production servers, and then wait while an individual or group does some final testing on those servers to make sure everything is as expected before pushing to the rest of the servers. BuildMaster's <a href="/support/documentation/buildmaster/execution-engine/overview">execution engine</a> makes this a straight forward task.
+    </p>
+    <p>
+        We’ll first create two server roles and populate them with the appropriate servers.
+    </p>
+
+    <p> Administration > Server Roles > Create Server Role</p>
+
+    <p>
+        After creating our roles (in this example <i>production-web-1</i> and <i>production-web-2</i>) we need to create a new deployment plan for deploying to production. The first key feature for this plan will be braking it out into two <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/loop">loops</a> that will deploy to each of the servers in the roles we just created.
+    </p>
+
+    <img src="\resources\tutorials\pipeline\loop.png" />
+    <p>
+        Using the <a href="/support/documentation/buildmaster/reference/functions"><i>@ServersInRole</i> function</a> BuildMaster will run the deployment plan over each of the servers in production-web-1 one at a time. We would set up the second loop in the same manner. The actual deployment steps would be contained inside the loop scope block, and would be the same for both server roles.
+    </p>
+    <p>
+        In between the loops we’ll add a <a href="/support/documentation/buildmaster/reference/operations/buildmaster/manual-operation">manual operation</a>.
+    </p>
+    <img src="\resources\tutorials\pipeline\manual-operation.png" />
+    <p>
+        This action will pause the deployment after the first loop and wait for a manual approval from an assigned user before moving to the second loop. We’ll set BuildMaster to email the user so that they know there is a manual approval waiting for them to mark as complete.
+    </p>
+    <img src="\resources\tutorials\pipeline\manaul-approval.png" />
+    <p>
+        After it’s marked complete the rest of the deployment plan can be run to update the rest of the servers.
+    </p>
+    <p>
+        Of course these are just a few of the different features available for tailoring a pipeline to your needs. There are other <a href="/support/documentation/buildmaster/core-concepts/pipelines">gates</a>, and <a href="/support/documentation/buildmaster/global-components/event-listeners">event listeners</a>, many <a href="/support/documentation/buildmaster/reference/operations">built in operations</a>, and of course <a href="/den?buildmaster">lots of extensions</a> available to deploy your application exactly how you want and need it to be deployed.
+    </p>
+
+
+
+
+
+    <div id="related-content" class="content">
+
+        <hr />
+        <div class="button-set">
+            <a href="/buildmaster/download" class="button">Download BuildMaster</a>
+            <a href="/products" class="button">Other Inedo products</a>
+
+        </div>
+    </div>
+</body>
+</html>

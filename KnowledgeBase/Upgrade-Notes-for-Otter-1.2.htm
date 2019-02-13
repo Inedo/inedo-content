@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1124" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="otter, upgrade-notes" />
+    <title>Upgrade Notes for Otter 1.2</title>
+    <style type="text/css">
+        .major {
+            color: #c0504d;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="/otter/1.2">Otter 1.2</a> is minor release with the following changes:</p>
+    <ul>
+        <li>API Keys (<span class="major">new feature</span>)</li>
+        <li>Configuration Import/Export (<span class="major">new feature</span>)</li>
+        <li>Infrastructure Synchronization (<span class="major">new feature</span>)</li>
+        <li>Minor improvements and bug fixes</li>
+    </ul>
+
+    <h2>Upgrade Impact</h2>
+    <p>
+        Because most of the changes are additive, the upgrade risks are minimal. There is a minor database schema change, and you can mitigate this risk by 
+        <a href="/support/documentation/otter/administration/backing-up">backing-up your Otter instance</a> prior to upgrade.
+    </p>
+    <h3>API Key Migration</h3>
+    <p>
+        With the addition of <a href="/support/documentation/otter/administration/security#api-keys">API Keys</a>, the existing keys and tokens were converted to use this function:
+    </p>
+    <ul>
+        <li>If you configured an <code>ApiKey</code> for Otter, that will be converted to an API Key with Native API access.</li>
+        <li>If you configured a <a href="/support/documentation/otter/core-concepts/jobs#template">job template</a> with a <em>security token</em>, that will be automatically added as an API Key with trigger job access and truncated to 50 characters</li>
+    </ul>
+    <!--
+    <h3>Risk Mitigation</h3>
+    <p>Because pipelines are newly generated from existing workflows, there is some risk with broken approvals and event listeners. Custom extensions may also behave differently due to several SDK Changes. To mitigate these risks: </p>
+    <ul>
+        <li>Make sure that your BuildMaster database is backed up prior to upgrade</li>
+        <li>Make sure that the installation's \Extensions directory is backed up prior to upgrade</li>
+        <li>Test deployment plans in earlier environments prior to deploying to production</li>
+    </ul>
+        -->
+
+    <h2>Upgrade Process</h2>
+    <p>
+        Otter may be upgraded by simply running the latest installer. The agents do not need to be updated.
+    </p>
+
+
+    <h2>Rollback</h2>
+    <p>
+        Because there are database changes, a rollback will require uninstalling Otter, and then <a href="/support/documentation/otter/administration/backing-up">restoring your Otter instance</a>.
+    </p>
+</body>
+</html>

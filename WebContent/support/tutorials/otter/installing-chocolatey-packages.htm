@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Installing Chocolatey Packages using Otter</title>
+    <meta name="keywords" content="otter, chocolaty, entry-user" />
+    <meta name="subheading" content="Otter" />
+    <meta name="product-name" content="Otter" />
+</head>
+<body>
+    <div class="intro">
+        <p>
+            Otter is an Infrastructure Automation tool that utilizes Infrastructure as Code to help teams and enterprises with server management and orchestration automation. For this tutorial, we will demonstrate how to Install Chocolatey packages
+        </p>
+        <hr />
+    </div>
+    Chocolatey hosts thousands of packages, and is a popular choice to help manage and install Windows software. In this tutorial we’ll demonstrate how to ensure the correct version of a <a href="http://chocolatey.org/">Chocolatey</a> package is installed on a remote server using <a href="/otter">Otter</a>.
+
+   
+    <p><h3 id="step-one">Step 1: Create Server</h3></p>
+    <p> 
+           Install the <a href="/otter/versions">Inedo Agent</a> and <a href="https://chocolatey.org/install">Chocolatey</a> on a server, and then enter the servers details into Otter.
+    </p>
+    <img class="screenshot" src="\resources\tutorials\chocolatey\create-server.png" />
+    
+    
+
+    <p><h3 id="step-two">Step 2: Create/Edit Plan</h3></p>
+    <p>
+        Create a <a href="/support/documentation/otter/core-concepts/plans">Plan</a>. For this tutorial we’ll create the plan at the server level, but it could be done at the <a href="/support/documentation/otter/modeling-infrastructure/server-roles">Role</a> level as well.
+    </p>
+
+    <p>
+        Installing a Chocolaty package just requires one <a href="/support/documentation/otter/reference/operations">Operation</a> <i>Ensure Chocolatey</i>. Because this is an ensure operation Otter will first check to see if the Chocolatey package is there, and is the right version, and only install the package if needed. 
+    </p>
+
+    <p>
+        For this example we’ll install version 1.0.0 of <a href="https://chocolatey.org/packages/upack">upack</a>.
+    </p>
+    <img class="screenshot" src="\resources\tutorials\chocolatey\ensure.png" />
+
+    <p>
+        After saving the operation the status of the server will become <a href="/support/documentation/otter/core-concepts/servers#drift">Drifted</a>. This is expected because the sever now has configuration different than what is specified for it, (having the upack package installed).
+    </p>
+
+    <img class="screenshot" src="\resources\tutorials\chocolatey\drifted.png" />
+
+    <p>
+        This is easily fixed by clicking <i>Remediate with Job</i> and running a configuration job, which will run the ensure operation and install the correct Chocolatey package on the server. 
+    </p>
+    <img class="screenshot" src="\resources\tutorials\chocolatey\configuration-job.png" />
+
+
+    <p><h3 id="step-three">Step 3: Ensure Latest</h3></p>
+    <p>
+        This installed version 1.0.0 of the upack package, but if you always want to have the latest version of a package available simply edit the ensure chocolatey package operation and leave the version field blank
+    </p>
+    <img class="screenshot" src="\resources\tutorials\chocolatey\ensure2.png" />
+
+    <p>
+        This will again put configuration in drift status that can be remedied in the same manner as before.
+    </p>
+
+    <p>
+        After remediation it is a simple matter to check that version 1.0.1 (the latest version of upack) is installed. By clicking the ‘View Configuration’ button for the server we’re working with.
+
+    </p>
+    <img class="screenshot" src="\resources\tutorials\chocolatey\latest.png" />
+
+</body>
+</html>

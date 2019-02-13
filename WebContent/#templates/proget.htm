@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>$[Title]</title>
+    <meta name="MasterPageFile" content="main.htm" />
+    <link rel="stylesheet" type="text/css" href="/resources/styles/product-templates.css" />
+    $[HeadContent]
+
+
+    
+
+    <script type="text/javascript">
+    $(function() {
+        // this will get the full URL at the address bar
+        var url = window.location.href;
+
+        // passes on every "a" tag
+        $(".tool-nav a").each(function() {
+            // checks if its the same on the address bar
+            if (url == (this.href)) {
+                $(this).closest("li").addClass("active");
+                //for making parent of submenu active
+               $(this).closest("li").parent().parent().addClass("active");
+            }
+        });
+    });
+    </script>
+
+    <script type="text/javascript">
+         $(function () {
+             var url = window.location.href;
+             
+             $(".floating-nav a").each(function () {
+                 if (url == (this.href)) {
+                     $(this).closest("li").addClass("active");
+                     $(this).closest("li").parent().parent().addClass("active");
+                 }
+             });
+         });
+    </script>
+
+</head>
+<body>
+    <div id="banner" class="content-container">
+        <div class="content">
+            <img class="pg" src="/proget/pg-logo.png" alt="ProGet" />
+            <p>
+                Package your Applications and Components
+            </p>
+
+            <div class="circle-button">
+                <a class="download" href="/proget/download">download</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container" id="sticky-nav-content-container">
+        <div class="content">
+            <div id="sticky-nav" class="floating-nav">
+                <ul class="horizontal-list">
+                    <li><a href="/proget">Overview</a></li>
+                    <li><a href="/proget/features">Features</a></li>
+                    <li><a href="/proget/pricing">Pricing</a></li>
+                    <li><a href="/proget/case-studies">Case Studies</a></li>
+                    <li><a href="/proget/download">Downloads</a></li>
+                    <li><a  class="download sticky-download" target="_blank" href="/support/documentation/proget">Documentation 	&#10132;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container" id="navigation">
+        <div class="tool-nav">
+            <div class="content">
+                <ul class="horizontal-list">
+                    <li><a href="/proget">Overview</a></li>
+                    <li><a href="/proget/features">Features</a></li>
+                    <li><a href="/proget/pricing">Pricing</a></li>
+                    <li><a href="/proget/case-studies">Case Studies</a></li>
+                    <li><a href="/proget/download">Downloads</a></li>
+                    <li><a target="_blank" href="/support/documentation/proget">Documentation 	&#10132;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="content">
+
+            $[MainContent]
+
+        </div>
+    </div>
+
+
+</body>
+</html>

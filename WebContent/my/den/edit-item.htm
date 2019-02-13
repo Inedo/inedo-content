@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Edit Den Item</title>
+    <link rel="stylesheet" type="text/css" href="/my/den.css" />
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+</head>
+<body>
+    <div id="banner" class="content-container">
+        <div class="content">
+            <div class="button-set left">
+                <div class="button">
+                    <a href="${DenUrl}">&#xab; Back to Den</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="content">
+            <h3>Editing <b>${Name}</b></h3>
+
+            <form action="/my/den/edit-item/post" method="post">
+                <inedo:if-error>
+                    <div class="info">
+                        <p><inedo:error-message /></p>
+                    </div>
+                </inedo:if-error>
+
+                <inedo:if-admin>
+                    <label for="emailAddress" class="field">
+                        <b>Email address:</b>
+                        <input type="email" id="emailAddress" name="emailAddress" value="${EmailAddress}" required="" maxlength="255" />
+                    </label>
+                </inedo:if-admin>
+
+                <label for="name" class="field">
+                    <b>Name:</b>
+                    <inedo:if-not-admin>
+                        <span>${Name}</span>
+                    </inedo:if-not-admin>
+                    <inedo:if-admin>
+                        <input type="text" id="name" name="name" value="${Name}" required="" maxlength="255" pattern="^[0-9A-Za-z_-]+$" />
+                    </inedo:if-admin>
+                </label>
+
+                <label for="type" class="field">
+                    <b>Type:</b>
+                    <inedo:if-not-admin>
+                        <span>${Type}</span>
+                    </inedo:if-not-admin>
+                    <inedo:if-admin>
+                        <input type="text" id="type" name="type" required="" value="${Type}" pattern="^(Extension|Raft|Tool)$" />
+                    </inedo:if-admin>
+                </label>
+
+                <label for="description" class="field">
+                    <b>Description:</b>
+                    <inedo:description-editor />
+                </label>
+
+                <label for="githubUrl" class="field">
+                    <b>GitHub URL:</b>
+                    <input type="url" id="githubUrl" name="githubUrl" value="${GitHubUrl}" required="" maxlength="255" pattern="^https://github\.com/.+" />
+                </label>
+
+                <inedo:if-admin>
+                    <label for="delete">
+                        <b>Delete item:</b>
+                        <input type="checkbox" id="delete" name="delete" />
+                    </label>
+                </inedo:if-admin>
+
+                <input type="submit" value="Edit Item" />
+
+                ${HiddenFields}
+            </form>
+        </div>
+    </div>
+</body>
+</html>

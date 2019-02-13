@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html []>
+<html>
+  <head>
+    <meta name="id" content="1039" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="buildmaster,otter,agents,servers" />
+    <title>The Inedo Agent and Legacy BuildMaster Agents</title>
+  </head>
+  <body>
+		<p class="info">
+			The below applies to BuildMaster users upgrading to v5
+		</p>
+    <p>
+		Both <a href="/buildmaster">BuildMaster</a> and <a href="/otter">Otter</a> need to be able to communicate with servers in order to configure,
+		orchestrate, or deploy applications to them.
+	</p>
+	<p>
+		For Windows servers, this is generally accomplished using a lightweight agent that's installed on the server. 
+		Alternatively, SSH/SFTP could be used for agent-less communication, as it is for Linux servers.
+	</p>
+
+    <h3>Inedo Agent (BuildMaster and Otter)</h3>
+	<p>
+		The <em>Inedo Agent</em> was designed from the ground-up to support multiple products using a secure, lightweight, highly-optimized, and resilient protocol.
+	</p>
+	<p>
+		The agent needs to only be installed once, and will be available to any compatible version of BuildMaster or Otter with the proper decryption key. 
+	</p>
+	<h4>Upgrading the Inedo Agent</h4>
+	<p>
+		Unlike the Legacy BuildMaster Agents, the Inedo Agents will not need to be upgraded on every upgrade of the product. Because they are backward- and forward-compatible, 
+		upgrading the agent will generally be optional; if and when an upgrade is available or required, the release notes and software will advise of the upgrade.
+	</p>
+	<p>
+		Because upgrading an agent is inherently risky (essentially, the agent needs to overwrite itself then restart itself), both BuildMaster and Otter will have a utility 
+		that will upgrade these agents en masse. 
+	</p>
+
+    <h3>Legacy BuildMaster Agents</h3>
+	<p>
+		In BuildMaster 5.0 and earlier, a different agent model was used. We recommend using the new (Inedo) agents for new installations/servers, 
+		and slowly transitioning your legacy agents as time permits to test deployments to those servers. We will likely remove legacy agency support in BuildMaster v6.
+	</p>
+
+	<h4>Migrating from Legacy BuildMaster Agents</h4>
+	<p>
+		As of BuildMaster 5.1, agents may be converted from a Legacy to an Inedo Agent by navigating to the server page, then edit &gt; convert. 
+		This will display the following dialog:
+	</p>
+
+	<p><img src="/resources/knowledgebase/1039-agent-upgrade.png" /></p>
+	<p>
+		This could also be scripted with the manual installer. We may add a feature or tool to migrate agents en masse; please <a href="/contact">contact us</a> if this would be
+		of interest, or for other assistance with large-scale agent migrations.
+	</p>
+
+	<h4>Legacy Agent Types</h4>
+    <h5>Self-Hosted Agent</h5>
+    <p>
+		This agent uses a lightweight binary TCP-based protocol that provides all
+		of the functionality of the SOAP-hosted agent but with much less overhead.
+		It is currently only available on Windows as an installable service.
+	</p>
+    <h5>SOAP-Hosted Agent</h5>
+    <p>
+		This agent is a simple SOAP-based web service that can be installed on
+		a Windows (or Linux using Mono) based server. It grants all of the abilities
+		of a Local Agent, is fairly easy to set-up, and can be hosted using IIS for
+		to enable a wide range of options for security/accessibility. However,
+		the SOAP protocol can add significant overhead which may be a problem
+		for very large deployments.
+	</p>
+
+  </body>
+</html>

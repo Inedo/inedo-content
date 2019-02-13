@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Provisioning &amp; Configuring Servers with Otter</title>
+    <meta name="keywords" content="otter, operations, entry-user" />
+    <meta name="subheading" content="Otter Getting Started" />
+    <meta name="product-name" content="Otter" />
+  </head>
+  <body>
+      <div class="intro">
+          <p>
+              Otter helps you provision and configure your servers automatically, without ever needing to log-in to a command prompt. 
+          </p>
+          <hr />
+      </div>
+      <p>
+          This tutorial is also available as a video:
+      </p>
+      <iframe width="600" height="337" src="https://www.youtube.com/embed/QDbXlehaP4s" frameborder="0" allowfullscreen="true"></iframe>
+    <p>
+        In this tutorial, you will learn how to define reusable sets of configuration called "roles", and assign those roles to servers to scale your infrastructure.
+    </p>
+     <p>
+         We'll start with a completely clean installation of Otter, and we'll begin by creating a role. 
+     </p>
+
+      <p>
+          <a href="/support/documentation/otter/modeling-infrastructure/server-roles">Roles</a> are reusable sets of configuration in Otter.
+      </p>
+      <p>
+          Navigate to <em>Roles</em> and select <em>Create Server Role</em>.
+      </p>
+      <p>
+          <b>Roles > Create Server Role</b>
+      </p>
+      <p>
+          We'll name the role <em>AccountsWeb</em> because this role will be assigned to any server that needs to have an IIS configuration for the Accounts application. Last, click <em>Save Server Role</em>.
+      </p>
+      <img class="screenshot" src="/resources/documentation/otter/create-role.png" alt="Environments in Otter" width="695px" />
+
+      <p>
+          Next add a <a href="/support/documentation/otter/core-concepts/plans#configuration">Configuration Plan</a> to the AccountsWeb role.
+      </p>
+
+      <p>
+          We do this by selecting the <em>Create Configuration Plan</em> option on the role overview page. This will open up <a href="/support/documentation/otter/core-concepts/plans">Otter's Visual Plan Editor</a>.
+      </p>
+      <p>
+          Configuration plans in the visual plan editor are created by using the Drag-and-Drop interface.
+      </p>
+      <p>
+          Simply select the Operation that you want to add to the plan, and drag it to the editing section.
+      </p>
+      <p>
+          A pop-up will then appear to prompt you for required information and customization options.
+      </p>
+      <p>
+          Since this is a role used for website applications, we'll start by creating an Application Pool using the <em>Ensure AppPool</em> Operation. 
+      </p>
+      <img class="screenshot" src="/resources/documentation/otter/accounts-apppool.png" alt="Environments in Otter" width="695px" />
+      <p>
+          This Operation has more than three dozen different customization options that can be configured exactly how you need.
+      </p>
+      <p>
+          For this tutorial, we'll name our AppPool <em>AccountsWebAppPool</em>, since the name of this application is Accounts.
+      </p>
+      <p>
+          We'll use the <em>.NET runtime version 4.0</em>, and select <em>Integrated Pipeline</em>. 
+      </p>
+      <p>
+          When possible, drop-downs are included for customization options. 
+      </p>
+      <img class="screenshot" src="/resources/documentation/otter/drop-downs.png" alt="Environments in Otter" width="695px" />
+      <p>
+          Next we will create the site, with the <em>EnsureSite</em> Operation.
+      </p>
+      <p>
+          And again, we'll fill in the needed information like: Site Name, the Application Pool we just created, where files are on disk, and site bindings.
+      </p>
+      <img class="screenshot" src="/resources/documentation/otter/ensure-site.png" alt="Environments in Otter" width="695px" />
+      <p>
+          We'll save our plan, and we can see on the AccountsWeb role overview page that the role now has configuration associated with it.
+      </p>
+      <img class="screenshot" src="/resources/documentation/otter/config-plan.png" alt="Environments in Otter" width="695px" />
+      <p>
+          Plans can also be viewed and edited with <a href="/support/documentation/various/execution-engine/otterscript">OtterScript</a> by clicking the <em>Switch to Text Mode</em> Button.
+      </p>
+      <img class="screenshot" src="/resources/documentation/otter/otter-script.png" alt="Environments in Otter" width="695px" />
+      <p>
+          Next, we'll create a server that we can associate with our AccountsWeb role.
+      </p>
+      <p>
+          We'll navigate to the <em>Servers</em> page and select <em>Create Server</em>.
+      </p>
+      <p>
+         <b>Servers > Create Server</b>
+      </p>
+      <p>
+          We'll name the server <em>TestWeb1</em> since it is used for testing web applications, and assign it to the <em>Testing Environment</em>. 
+      </p>
+      <p>
+          We enter in the server details, in this case an Amazon EC2 server, and save.
+      </p>
+      
+      <img class="screenshot" src="/resources/documentation/otter/edit-server.png" alt="Environments in Otter" width="695px" />
+      
+      <p>
+          From the TestWeb1 server overview page we can assign it to the AccountsWeb role, and save by clicking <em>Assign Server Role</em>.
+      </p>
+      <img class="screenshot" src="/resources/documentation/otter/assign-role.png" alt="Environments in Otter" width="695px" />
+      <p>
+          Otter will check the server's configuration and compare it to its expected configuration as defined by the AccountsWeb role.
+      </p>
+      <p>
+          As would be expected, the server isn't correctly configured and is shown in a <b>drift</b> state. We will deploy our configuration to the TestWeb1 server by clicking the <em>Remediate Drift button</em>, and <em>Create Job</em>.
+      </p>
+      <p>
+          <b>Remediate Drift &gt; Create Job</b>
+      </p>
+      <img class="screenshot" src="/resources/documentation/otter/create-job.png" alt="Environments in Otter" width="695px" />
+      <p>
+          Otter will now deploy the desired configuration to the server, which is shown in the execution logs. 
+      </p>
+      <img class="screenshot" src="/resources/documentation/otter/logs.png" alt="Environments in Otter" width="695px" />
+      <p>
+          This server is no longer drifted and in its desired configuration.
+      </p>
+      <p>
+          The AccountsWeb role that we've created can now be scaled as needed by adding any number of servers desired.
+      </p>
+      
+  </body>
+</html>

@@ -1,0 +1,125 @@
+﻿
+<html>
+<head>
+    <title>Getting Started with NuGet Feeds in ProGet and Visual Studio</title>
+    <meta name="keywords" content="proget,nuget, visual-studio-online, .net, " />
+    <meta name="subheading" content="nuget-visual-studio" />
+    <meta name="product-name" content="ProGet" />
+</head>
+<style type="text/css">
+    .button {
+        font-size: 24px;
+        text-align: center;
+        padding: 10px;
+        margin: 20px 180px;
+    }
+</style>
+
+<body>
+    <div class="intro">
+        <p>
+            In this tutorial, you will learn how to create a NuGet feed, set up a connector to NuGet.org, and then configure Visual Studio to use that feed.
+        </p>
+        <hr />
+    </div>
+    <p>
+        This tutorial is also available as a video:
+    </p>
+    <iframe width="600" height="337" src="https://www.youtube.com/embed/aSw738RI5v8" frameborder="0" allowfullscreen="true"></iframe>
+        <p>
+            To get started we have a completely new installation of ProGet. We’ll create a new NuGet feed, add a connector to NuGet.org, and use that feed as a resource in Visual Studio. 
+        </p>
+        <p>
+            Third-party packages (such as NuGet, npm, PowerShell, and Chocolatey) and Docker containers are also supported, allowing you to enforce quality standards, monitor for open-source licenses, and scan for vulnerabilities across all packages much earlier in the development cycle.
+        </p>
+       
+        <p><a href="/support/documentation/proget/core-concepts/feeds">Feeds</a> are collections of packages of the same type.</p>
+        <p>
+            Simply click on the word <em>Feeds</em> on the top navigation. Then click <em>Create New Feed</em>.
+        </p>
+
+        <p>
+            <b>Feeds</b> <b>&gt;</b> <b>Create New Feed</b>
+        </p>
+        <p>
+            This will bring up a prompt to set a feed name, and set the feed type. We’ll name the feed <em>Default-NuGet</em> and select <em>NuGet</em> as our feed type.
+        </p>
+        <p>
+            <img class="screenshot" alt="NuGet Package Sources Dialog" src="/resources/documentation/proget/create-feed.png" />
+        </p>
+        <p>
+            Next, we’ll create a <a href="/support/documentation/proget/core-concepts/feeds/connectors">Connector</a> in ProGet.
+        </p>
+        <p>
+            A connector allows a feed to access a source of packages to download and use. A connector can point to an external library, or another feed in ProGet.
+        </p>
+
+        <p>
+            Again click on <em>Feeds</em> in the top navigation and then select <em>Connectors</em>, and <em>Create Connector</em>.
+        </p>
+    <p>
+        <b>Feeds &gt; Connectors &gt; Create Connector</b>
+    </p>
+    <p>
+        This will bring up a prompt with several options. We select <em>NuGet</em> as the feed type, and the necessary NuGet.org URL will automatically be populated for us. We’ll name our connector <em>NuGet Dev</em>. The rest of the options can be left as default. 
+    </p>
+        <p>
+            <img class="screenshot" alt="Browse NuGet Packages Dialog" src="/resources/documentation/proget/new-connector.png" />
+        </p>
+    <p>
+        Last, we need to add the connector to our feed. 
+    </p>
+    <p>
+        Again, click on <em>Feeds</em>, and select our <em>Default-NuGet</em> feed. Then select <em>Manage Feed</em>, and under feed connectors click <em>Add Connector</em>.
+    </p>
+    <p>
+        <b>Feeds &gt; Default-NuGet Feed &gt; Manage Feed &gt; Add Connector</b>
+    </p>
+    <p>
+        A prompt will appear allowing us to select the connector we set. This feed will now use NuGet.org to locate and pull packages.
+    </p>
+    <p>
+        <img class="screenshot" alt="NuGet Package Sources Dialog" src="/resources/documentation/proget/add-connector.png" />
+    </p>
+    <p>
+        After navigating to the feed overview page for our new Default-NuGet feed, we can now see all of the NuGet.org packages that we can download and use from this ProGet feed.
+    </p>
+    <p>
+        <img class="screenshot" alt="Browse NuGet Packages Dialog" src="/resources/documentation/proget/package-selection.png" />
+    </p>
+    <p>
+        Most NuGet users also use Visual Studio as a development platform, and it is simple to use ProGet as a NuGet Package Manager in Visual Studio.
+    </p>
+    <p>
+        In Visual Studio from the top navigation select <em>Tools</em>,<em> NuGet Package Manager</em>, and <em>Package Manager Settings</em>.
+    </p>
+    <p>
+        In the prompt that appears select <em>Package Sources</em>.
+    </p>
+    <p>
+        <b>Visual Studio &gt; Tools &gt; NuGet Package Manager &gt; Package Manager Settings &gt; Package Sources</b>
+    </p>
+    <p>
+        Deselect NuGet.org and click on the green plus symbol to create a new package source.
+    </p>
+    <p>
+        <img class="screenshot" alt="Browse NuGet Packages Dialog" src="/resources/documentation/proget/visual-studio-create-source.png" />
+    </p>
+    <p>
+        This will automatically create a new source with information at the bottom of the prompt box. 
+    </p>
+    <p>
+        We’ll rename this source <em>ProGet Feed</em>. We’ll then change the Source URL using the API Endpoint URL that can be found on the Feed Overview page in ProGet.
+    </p>
+    <p>
+        <img class="screenshot" alt="Browse NuGet Packages Dialog" src="/resources/documentation/proget/api-endpoint.png" />
+    </p>
+    <p>
+        <img class="screenshot" alt="Browse NuGet Packages Dialog" src="/resources/documentation/proget/visual-studio-new-source.png" />
+    </p>
+    <p>
+        Select <em>Update</em> and <em>OK</em> – and Visual Studio will now use the ProGet feed we just created as the place to pull packages from.
+    </p>
+
+</body>
+</html>

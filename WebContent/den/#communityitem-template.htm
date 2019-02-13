@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Extension Test</title>
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+    <link rel="stylesheet" type="text/css" href="/den/extension-test.css" />
+</head>
+<body>
+    <div id="banner" class="content-container">
+        <div class="content">
+            <div class="button-set left">
+                <div class="button">
+                    <a href="/den/all-items">&#xab; Back to the Den</a>
+                </div>
+            </div>
+                <div class="button-set right">
+                    <div class="button">
+                        <a href="/den/submit">Submit your own &#xbb;</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+    <div id="top-info" class="content-container">
+        <div class="content">
+            <div class="extension-box ${ProductCode}">
+                <img src="${LogoUrl}" />
+                <div class="extension-info">
+                    <h2>${PackageName}</h2>
+                    <p>${ShortDescription}</p>
+                    <div class="extension-links">
+                        <ul>
+                            <li><a href="${ProjectUrl}">View on GitHub</a></li>
+                            <li class="lastchild"><img src="/den/community-supported-large.png" alt="community supported" /></li>
+                        </ul>
+                    </div>
+                </div>                
+            </div>           
+        </div>
+    </div>
+
+    <div style="clear:both"></div>
+
+    <div id="extension-sidebar" class="content-container">
+        <div class="content">
+            <div class="sidebar">
+                <inedo:related-content />
+            </div>
+        </div>
+    </div>
+
+    <div id="main-info" class="content-container">
+        <div class="content">
+            <div class="tab-content markdown">
+                ${Description}
+            </div>
+        </div>
+    </div>
+    <br style="clear: both;" />
+</body>
+</html>
