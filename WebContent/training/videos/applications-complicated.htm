@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Applications are Complicated</title>
+     <meta name="MasterPageFile" content="training.htm" />
+    <meta name="keywords" content="otter, windows, infrastructure as code " />
+     <link rel="stylesheet" type="text/css" href="/training/videos/video-single-pages.css" />
+
+     <script type="text/javascript">
+ setTimeout(function(){var a=document.createElement("script");
+ var b=document.getElementsByTagName("script")[0];
+ a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0053/9152.js?"+Math.floor(new Date().getTime()/3600000);
+ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+     </script>
+</head>
+<body>
+  <style>
+      #banner p.tagline {
+          display: none;
+      }
+  </style>
+
+<div class="content-container">
+  <div class="content">
+      <div class="section-page-title">
+          <div class="container">
+        <h1>Applications are complicated... Packages can help!</h1>
+
+      </div>
+    </div>
+
+<div class="section">
+  <div class="container-body">
+    <p>
+      <strong>Presenter: Kevin Griffin of SwiftKick Training, and an Inedo-certified Master Trainer</strong>
+    </p>
+    <p>This recording was a part of the Universal Packaging Essentials training seminar. You can access the full training seminar <a href="/training/events/upack-ess-18?utm_source=training-videos">here</a>. If you would like to request on-site or remote training for your team, for any of Inedo's products, you can check out our <a href="/training/courses?utm_source=training-videos">available courses</a>, or simply <a href="/training/contact?utm_source=training-videos">request a training quote</a>.</p>
+  </div>
+  <div class="video-container">
+      <iframe width="790" height="444" src="https://www.youtube.com/embed/rvov_uc4k3Q" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+      <div class="button-set">
+          <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request Custom Training</a>
+          <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">Available Courses</a>
+          <a class="button" href="/training/videos?utm_source=training-videos" target="_blank">Next Video</a>
+      </div>
+  </div>
+  <div class="container-body">
+
+    <p>
+    <em>Note: The following text is a transcript of the video, with minor edits for readability.</em>
+    </p>
+    <p>
+      As a software developer, and I have been one for an extremely long time, I have gone through all iterations of software development that you possibly could in this industry. It really comes down to a simple fact that applications are <em>really</em> complicated beasts.
+    </p>
+    <p>
+      Developers might make it look simple, by doing demos and just putting together bits of information, but at its core the simplest project is super complicated.
+    </p>
+    <h2>Examples</h2>
+    <p>
+       On the right we have a .net core application that is ready for deployment and it includes all of it's dependencies that it needs to run on any machine. That includes some stuff for identity, stuff for doing web sockets, and there's some database stuff in there. Just imagine how big this application could get once we started doing more than simple things.
+     </p>
+     <div class="image-set">
+        <img src="/training/videos/images/nodejs-application.png" />
+        <img src="/training/videos/images/net-core-application.png" />
+     </div>
+     <p>
+       On the left we have a node.js application, and it has it's dependencies. Node.js is famous for having this <em>well</em> of dependency data that it has to pull down for any particular project. You might think you're just using one package, but really you're using 200-300 different packages that all interdepend on each other.
+     </p>
+     <p>
+       <strong>It all goes back to saying applications are complicated... <em>extremely complicated</em>.</strong>
+    </p>
+    <h2>We're not making it easier on ourselves</h2>
+    <p>
+      We as software professionals make it more complicated. I have worked in a couple different types of shops, and we all maintained our own internal libraries. Sometimes they're really well thought out, like "here's our dependency for database manipulation, and here's our special set of tools for talking to our own internal servers or logs," and sometimes you have what I call the kitchen sink. There's no way to organize all this code, it's all just thrown into a single library, and then that library gets shared out amongst everyone else on the team, or to a variety of teams.
+    </p>
+    <p>
+       When this happens, you run into these situations, like the examples above, where if you're a new person coming into the project, your onramping process isn't a matter of hours, it's a matter of days.
+     </p>
+     <p>
+       I've literally had conversations like this with developers mentoring me coming into a company, and I've also been the mentor talking to new developers – “alright, you have to go out to this unc path, grab this file and bring it down locally, now lets go in and lets reference that..." and it's a hundred step process to getting a person to a point where they are capable of providing value to the project.
+    </p>
+    <p>
+      That's just our internal stuff, we also have external dependencies that we might need to bring into our different projects. This has become more common over the past several years with the abundance of open source libraries. So, if I wanted to do something as simple as reading and writing a .json file, it doesn't matter if I'm doing it in C# or in JavaScript, if I'm writing Python or Java, you name it, someone has probably already written the utility that can write or read json much better than I could if I was trying to write it out of the box.
+    </p>
+    <p>
+      Well, how do you go find those things? In the old days, lets say 10-15 years ago, I would have to go find the utility, I would have to download the source code or the binaries, then I would have to include them in my project and walk through their "how to wire it up" process. So, if you were trying to do this on your own, it could probably take an hour or two to get a library just to the point where you can start using it. You really don't have that time. We want to get things done as quickly as possible and we don't want to have to go searching for these packages wherever they might be.
+    </p>
+    <h2>If we go back to internal projects, how are these distributed?</h2>
+    <p>
+       Every single project I have worked on, where we didn't use some sort of package infrastructure, it was always a unc path. Someone would come and say, "here is the unc path, go grab the code from there, and pull it into your project," and that worked, well enough.
+     </p>
+     <p>
+       If you have a small team, this isn't a big deal, but once you start getting over 2, 10, a couple dozen, or maybe a couple hundred on your team, this is <strong>not</strong> efficient. Because, you're going to expect everyone to know to go "here" to go get whatever libraries or tools that you have. But what about versioning? Because these are still pieces of software, you're going to change them and they're going to grow and adapt over time.
+    </p>
+    <h2>How do we manage the versions of these different things?</h2>
+    <p>
+      Well, I've seen this all too often, someone just sends an email, "oh, I've just updated this piece of code, it's out on the shared drive, YOU need to go get it and pull it into a project, to make sure YOU have the latest version of it."
+    </p>
+    <div class="image-set solo">
+       <img src="/training/videos/images/email-version-updates.png" />
+    </div>
+      <p>
+      It puts a lot of stress and dependency on the individual team members to make sure that they're running the latest version of the code.
+    </p>
+    <p>
+      You can run into these weird issues where one person might not have seen this email, and everyone else on the team did, but the person that didn't see it is responsible for a section of the application that depends on a critical bug-fix that was in the new version. This leads to more bugs getting put into your issue tracking and everyone's talking about how to fix an issue that shouldn't necessarily be a problem if the person had all their dependencies up to date.
+    </p>
+    <p>
+      So imagine being that new developer on a project and going through the hundred step process of setting a project up so you can be productive in it, and someone's telling you to go to a unc path, "oh don't grab that version, Bob over here changed it just an hour ago, lets wait a second for him to update it."
+    </p>
+    <div class="image-set solo">
+       <img src="/training/videos/images/better-way.png" />
+    </div>
+    <p>
+      There <em>should be</em> a better way to do all this, and that's when we start talking about <strong>packages</strong>.
+    </p>
+    <p><strong><a href="">Next Video ></a></strong></p>
+  </div>
+</div>
+<div class="training-box">
+    <h2>Customized Training</h2>
+    <p>
+        Our training courses are built modularly, and we can develop a customized training roadmap for your organization, so that everyone gets the training they need, when they need it.
+    </p>
+
+    <div class="button-set">
+        <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request your Custom Training</a>
+        <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">See the Available Courses</a>
+    </div>
+</div>
+  </div>
+</div>
+
+
+
+
+
+</body>
+</html>
