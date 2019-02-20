@@ -1,0 +1,166 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>What is Inside a Package</title>
+  <meta name="MasterPageFile" content="training.htm" />
+  <link rel="stylesheet" type="text/css" href="/training/videos/video-single-pages.css" />
+
+  <script type="text/javascript">
+    setTimeout(function() {
+      var a = document.createElement("script");
+      var b = document.getElementsByTagName("script")[0];
+      a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0053/9152.js?" + Math.floor(new Date().getTime() / 3600000);
+      a.async = true;
+      a.type = "text/javascript";
+      b.parentNode.insertBefore(a, b)
+    }, 1);
+  </script>
+</head>
+
+<body>
+  <style>
+    #banner p.tagline {
+      display: none;
+    }
+  </style>
+
+  <div class="content-container">
+    <div class="content">
+      <div class="section-page-title">
+        <div class="container">
+          <h1>What is inside a package, and how to verify and avoid malicious packages</h1>
+
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container-body">
+          <p>
+            <strong>Presenter: Kevin Griffin of SwiftKick Training, and an Inedo-certified Master Trainer</strong>
+          </p>
+          <p>This recording was a part of the Universal Packaging Essentials training seminar. You can access the full training seminar <a href="/training/events/upack-ess-18?utm_source=training-videos">here</a>. If you would like to request on-site
+            or remote training for your team, for any of Inedo's products, you can check out our <a href="/training/courses?utm_source=training-videos">available courses</a>, or simply <a href="/training/contact?utm_source=training-videos">request a
+              training quote</a>.</p>
+        </div>
+        <div class="video-container">
+          <iframe width="790" height="444" src="https://www.youtube.com/embed/kHYgicz5Bec" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+          <div class="button-set">
+            <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request Custom Training</a>
+            <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">Available Courses</a>
+            <a class="button" href="/training/videos/app-design-packages" target="_blank">Next Video</a>
+          </div>
+        </div>
+        <div class="container-body">
+
+          <h3>
+            <em>Note: The following text is a transcript of the video, with minor edits for readability.</em>
+          </h3>
+
+          <p>A package is just a container that has other files inside of it.</p>
+
+            <p>The fundamental thing that a package needs, is that it has to contain everything that is required for a package. If that's an executable, a series of libraries or something else, they all need to be inside the package. Some packages might need a script to help configure them or configure the system to use them. I have installed packages that run PowerShell scripts, or might have to run a batch
+            script of some sort, and that's just to set a couple environment variables. It doesn't have to be complicated, but if stuff is inside the package, the package can run it automatically, and do the work that is necessary to use it.</p>
+
+            <p>You might have supporting content sometimes, like images and stylesheets, if you're a developer a lot of times it's just configuration files or sample configuration files.</p>
+
+          <div class="call-out">
+          <p> All of this isn't useful unless there is a manifest that tells the package installer what's in the package and what to do with it.</p>
+          </div>
+
+             <p>This will also really depend on what packaging system you're using. Nuget does it differently than NPM, NPM does it
+            different than say pip, we could spend a lot of time going down all the different rabbit holes.</p>
+            <div class="call-out">
+          <p>Actually, if you need to know more about a specific packaging system, you should really let us know because we have <a href="/training/courses?utm_source=training-videos" target="_blank">training</a> set up for all these different packaging types</p>
+        </div>
+          <p>So the manifest is important.</p>
+
+            <p>It's the thing that tells the installer, "here's what we got, here's what we need to do, please go do it."</p>
+          <h2>Examples</h2>
+          <p>Here are two examples of manifests. One is with NuGet, using what's called a NuSpec (that's just a fancy word for manifest) and then NPM uses what's called the Package.json file to define all it's metadata.</p>
+
+          <h4>Here's a simple example with NuGet or "NuSpec"</h4>
+          <p>The manifest just needs to tell the packaging system, the feed, what it needs to know about your package and it doesn't have to be complicated.</p>
+          <div class="image-set solo">
+             <img src="/training/videos/images/nuspec.png" />
+          </div>
+
+
+            <p>Here we're just telling it what's our unique identifier, Newtonsoft.Json &mdash;
+            that's what a person would type into the feed search if they were looking for this package specifically.</p>
+
+          <p>Next, what's the current version of the package, we'll talk a little more about versioning in a <a href="/training/videos/package-versioning" target="_blank">different video</a>, but if I put a version in here, in SemVer, the feed can read those. Then, it can automatically classify if this package is newer or older than another package</p>
+
+          <p>We also have titles and authors (who's the owner of the package), this is useful metadata if you're searching for a feed, and you might want to know who built the package, or who's responsible for the package development.</p>
+
+          <p>NuGet has a special condition for accepting license agreements, there's also links for licenses and projects. There's an icon url so if you want to have a special icon in the feed, you can put all that in there too.</p>
+
+          <p>We could keep going down the list, but there's a series of tags in here that help identify what makes this package Newtonsoft.json.</p>
+
+          <h4>Here's an example of the NuSpec file's dependencies</h4>
+          <p>Depending on where I'm installing a NuGet package, it might need a couple different dependencies.</p>
+          <div class="image-set solo">
+             <img src="/training/videos/images/nuspec-depend.png" />
+          </div>
+          <p>What's smart about how NuGet does this installation, is that it knows where it is installing the package, so it can look for
+            the proper set of dependencies.</p>
+
+          <h4>NPM is famous for having complicated manifests</h4>
+          <p>It's not so much that they're complicated, it's that they're word-y and you think you need one thing, but you really need three dozen things.</p>
+          <p>In this case, I've had to break up the dependency list for a
+            simple application that we run in production. The application doesn't really do too much, it's just a basic UI, but we have a plethora of dependencies that come along with this project.</p>
+          <div class="image-set solo">
+             <img src="/training/videos/images/npm-depend.png" />
+          </div>
+
+          <p>NPM breaks it up into two different types. There's dependencies and there's development dependencies (I'm not going to go down that rabbit hole), NPM says here's everything that you need to know about this project.</p>
+            <div class="image-set solo">
+               <img src="/training/videos/images/npm.png" />
+            </div>
+            <p>It has information in there for name and for version, and we can also designate scripts to say, "ok, when we're running a production build we need to run this script, if we're running a development build, then that script, if we just need to clean everything up, here's a third script to run."</p>
+
+          <p>So, the big difference between NuGet and NPM is just how they're structured, but fundamentally they're doing the exact same thing.</p>
+
+          <h2>Package Verification</h2>
+          <p>If you're installing packages, and you're installing them from what you should consider untrusted sources, even if they're the official public repositories that are available out there on the internet, you should have a grain of salt when you're installing those packages.</p>
+
+            <p>You don't necessarily know if the package you're downloading is what you think it is. There have been <em>several</em> cases over the past couple years where people have been able to push up packages that contain malformed code, or they were trying to do something malicious. The feed developers have worked continuously to try to prevent this, and verification is one of those steps.</p>
+            <div class="call-out">
+              <p>The real solution, if you're worried about this problem, is that you need to run your own internal feed management system. You need a tool like <a href="/proget">ProGet</a> that just eliminates that guess work because you're in full control
+                of what packages are available to everyone out there.</p>
+            </div>
+
+          <p>Going back to package verification, most package managers will use hashes of the file contents to determine this version vs that version. Here's an example using NPM where there's a sha1 hash of the file contents, and when
+            you install that package, you basically get a thumbprint at installation time.</p>
+            <div class="image-set solo">
+               <img src="/training/videos/images/sha1-hash.png" />
+            </div>
+            <p>You need to check your current installed version of the package, vs what the version in the feed is, vs what your manifest says you should have.</p>
+
+              <p>You know, or you can trust that, if something were to change, in any of those locations, you're running the known good version of the package. Again, this isn't a complete failsafe, but it's a next step towards making sure that your installing the packages that you think that you're installing.</p>
+
+          <p><strong><a href="/training/videos/app-design-packages">Next Video ></a></strong></p>
+        </div>
+      </div>
+      <div class="training-box">
+        <h2>Customized Training</h2>
+        <p>
+          Our training courses are built modularly, and we can develop a customized training roadmap for your organization, so that everyone gets the training they need, when they need it.
+        </p>
+
+        <div class="button-set">
+          <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request your Custom Training</a>
+          <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">See the Available Courses</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+</html>
