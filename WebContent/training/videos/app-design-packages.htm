@@ -1,83 +1,118 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Application Design with Packages</title>
-     <meta name="MasterPageFile" content="training.htm" />
-     <link rel="stylesheet" type="text/css" href="/training/videos/video-single-pages.css" />
 
-     <script type="text/javascript">
- setTimeout(function(){var a=document.createElement("script");
- var b=document.getElementsByTagName("script")[0];
- a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0053/9152.js?"+Math.floor(new Date().getTime()/3600000);
- a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-     </script>
+<head>
+  <title>Application Design with Packages</title>
+  <meta name="MasterPageFile" content="training.htm" />
+  <link rel="stylesheet" type="text/css" href="/training/videos/video-single-pages.css" />
+
+  <script type="text/javascript">
+    setTimeout(function() {
+      var a = document.createElement("script");
+      var b = document.getElementsByTagName("script")[0];
+      a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0053/9152.js?" + Math.floor(new Date().getTime() / 3600000);
+      a.async = true;
+      a.type = "text/javascript";
+      b.parentNode.insertBefore(a, b)
+    }, 1);
+  </script>
 </head>
+
 <body>
   <style>
-      #banner p.tagline {
-          display: none;
-      }
+    #banner p.tagline {
+      display: none;
+    }
   </style>
 
-<div class="content-container">
-  <div class="content">
+  <div class="content-container">
+    <div class="content">
       <div class="section-page-title">
-          <div class="container">
-        <h1>Application Design with Packages</h1>
+        <div class="container">
+          <h1>Application Design with Packages</h1>
 
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container-body">
+          <p>
+            <strong>Presenter: Kevin Griffin of SwiftKick Training, and an Inedo-certified Master Trainer</strong>
+          </p>
+          <p>This recording was a part of the Universal Packaging Essentials training seminar. You can access the full training seminar <a href="/training/events/upack-ess-18?utm_source=training-videos">here</a>. If you would like to request on-site
+            or remote training for your team, for any of Inedo's products, you can check out our <a href="/training/courses?utm_source=training-videos">available courses</a>, or simply <a href="/training/contact?utm_source=training-videos">request a
+              training quote</a>.</p>
+        </div>
+        <div class="video-container">
+          <iframe width="790" height="444" src="https://www.youtube.com/embed/vSCVkcJrlGw" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+          <div class="button-set">
+            <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request Custom Training</a>
+            <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">Available Courses</a>
+            <a class="button" href="/training/videos/package-versioning" target="_blank">Next Video</a>
+          </div>
+        </div>
+        <div class="container-body">
+
+          <h3>
+            <em>Note: The following text is a transcript of the video, with minor edits for readability.</em>
+          </h3>
+          <p>Let's talk about how applications are designed with packages in mind, vs how we used to do software development.</p>
+          <h2>How Packages can Help</h2>
+          <p>The big thing that packages help us with is not having to reinvent the wheel every single time we need a piece of functionality. I do still have this problem, it's not a thing that packages just completely eliminate, there's a human factor here as well. You have to train your team to think about the code that they're writing, or the system that they're building, and look for things that can be easily pulled out of your infrastructure and put into a package.</p>
+
+          <p>You might remember thinking to yourself, "well I've done this before, let me go to this other project, and let me copy and paste this code out and move it into this new project." As soon as you do that, you know that you need to move that out, and maybe put it into its own project and build a package around it.</p>
+
+          <h2>Example</h2>
+          <p>I'll give you a great example; I have built systems for doing logging, I have built systems for reading configuration files that were specific to our environments, I have copy and pasted code numerous times, because I know I have written that code before. But, each time I have copied and pasted that code, I should have moved it into a package. I could have just installed the package into every system that needed it, and used it that way. By copying pasting everywhere, I cannot easily fix that code if I discover a problem. If three different projects have the same code copy and pasted into them, and I discover a bug (hopefully not a critical bug) in one of those applications, I <em>could</em> fix it in app number one, but that doesn't help app number two or app number three.</p>
+
+          <div class="call-out">
+          <p>If we were running in a packaged environment, I could just fix the package, and then that automatically comes down to every system that is using that package. A bug-fix would help all the packages that use it, and it would also help with future coding solutions.</p>
+        </div>
+          <p>If we're starting a new project internally and we get to that point where we know, "oh I have written that code before," well if it's already in a package, click-click-click, type-type-type, you have the package installed,
+            and you can just start using it.</p>
+
+          <p>I like using the term plug-and-play, you just drop it in and start using the package. You don't have to worry about finding the old solution, the old project, the file that the code is in, and copying the code over. You just drop it in and start using it.</p>
+
+          <h2>Don't put that binary data into your source control!</h2>
+          <p>The other really important thing with packages is that we're not putting a lot of binary data into our source control.</p>
+
+            <p>Let's go back 15 years when we were doing dependency work the <em>hard way</em>, and we were putting all of our dependency data into
+            our source control. If it wasn't the case of someone having to go out to a UNC path to get a file, we were just starting to put all that stuff into source control. If you pull the source down, it brings down a couple hundred meg of binaries along with it.</p>
+            <div class="call-out">
+            <p>That's generally not a good idea, because source control is not designed to do differences between binary files.</p>
+          </div>
+              <p>Source control <em>is</em> really good at doing differences between text files though. In all manifests for
+            packaging systems, NPM, NuGet, and so on, they're human readable. They're either XML, JSON, or some other proprietary format, but if they're text, a source control system can tell you the difference.</p>
+
+            <p>I'll use Git as an example because I use it all the time,
+            Git is really good about looking at "version a" and "version b" of a text file and telling you what the differences between them are, and if we need to commit those differences in. That means I'm putting less data
+            up into source control and if someone were to pull down the latest source, say a new developer, they could just go in and say, "okay, install all the packages."</p>
+            <p>We do this with NuGet all the time. Grab a fresh copy of the code, hit install, and three to four minutes later, we have all the dependencies installed for our application. This would normally have required a person to go out to 10 different locations, grab the files and maybe run through a couple installers. Now, it's just all there. They didn't have to do any additional work.</p>
+
+          <p>Next, let's jump in a little bit deeper into package versioning.</p>
+
+          <p><strong><a href="/training/videos/package-versioning">Next Video ></a></strong></p>
+        </div>
+      </div>
+      <div class="training-box">
+        <h2>Customized Training</h2>
+        <p>
+          Our training courses are built modularly, and we can develop a customized training roadmap for your organization, so that everyone gets the training they need, when they need it.
+        </p>
+
+        <div class="button-set">
+          <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request your Custom Training</a>
+          <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">See the Available Courses</a>
+        </div>
       </div>
     </div>
-
-<div class="section">
-  <div class="container-body">
-    <p>
-      <strong>Presenter: Kevin Griffin of SwiftKick Training, and an Inedo-certified Master Trainer</strong>
-    </p>
-    <p>This recording was a part of the Universal Packaging Essentials training seminar. You can access the full training seminar <a href="/training/events/upack-ess-18?utm_source=training-videos">here</a>. If you would like to request on-site or remote training for your team, for any of Inedo's products, you can check out our <a href="/training/courses?utm_source=training-videos">available courses</a>, or simply <a href="/training/contact?utm_source=training-videos">request a training quote</a>.</p>
   </div>
-  <div class="video-container">
-      <iframe width="790" height="444" src="https://www.youtube.com/embed/vSCVkcJrlGw" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
-      <div class="button-set">
-          <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request Custom Training</a>
-          <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">Available Courses</a>
-          <a class="button" href="/training/videos/package-versioning" target="_blank">Next Video</a>
-      </div>
-  </div>
-  <div class="container-body">
-
-    <h3>
-    <em>Note: The following text is a transcript of the video, with minor edits for readability.</em>
-  </h3>
-
-
-
-
-
-
-
-
-
-
-    <p><strong><a href="/training/videos/package-versioning">Next Video ></a></strong></p>
-  </div>
-</div>
-<div class="training-box">
-    <h2>Customized Training</h2>
-    <p>
-        Our training courses are built modularly, and we can develop a customized training roadmap for your organization, so that everyone gets the training they need, when they need it.
-    </p>
-
-    <div class="button-set">
-        <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request your Custom Training</a>
-        <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">See the Available Courses</a>
-    </div>
-</div>
-  </div>
-</div>
 
 
 
 
 
 </body>
+
 </html>
