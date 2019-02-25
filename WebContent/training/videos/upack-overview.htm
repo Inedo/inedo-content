@@ -1,0 +1,147 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>What is UPack? Faster, Better and Free Software Delivery</title>
+  <meta name="MasterPageFile" content="training.htm" />
+  <link rel="stylesheet" type="text/css" href="/training/videos/video-single-pages.css" />
+
+  <script type="text/javascript">
+    setTimeout(function() {
+      var a = document.createElement("script");
+      var b = document.getElementsByTagName("script")[0];
+      a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0053/9152.js?" + Math.floor(new Date().getTime() / 3600000);
+      a.async = true;
+      a.type = "text/javascript";
+      b.parentNode.insertBefore(a, b)
+    }, 1);
+  </script>
+</head>
+
+<body>
+  <style>
+    #banner p.tagline {
+      display: none;
+    }
+  </style>
+
+  <div class="content-container">
+    <div class="content">
+      <div class="section-page-title">
+        <div class="container">
+          <h1>What is UPack? Faster, Better and Free Software Delivery</h1>
+
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container-body">
+          <p>
+            <strong>Presenter: Kevin Griffin of SwiftKick Training, and an Inedo-certified Master Trainer</strong>
+          </p>
+          <p>This recording was a part of the Universal Packaging Essentials training seminar. You can access the full training seminar <a href="/training/events/upack-ess-18?utm_source=training-videos">here</a>. If you would like to request on-site
+            or remote training for your team, for any of Inedo's products, you can check out our <a href="/training/courses?utm_source=training-videos">available courses</a>, or simply <a href="/training/contact?utm_source=training-videos">request a
+              training quote</a>.</p>
+        </div>
+        <div class="video-container">
+          <iframe width="790" height="444" src="https://www.youtube.com/embed/Xq12ahmisDk" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+          <div class="button-set">
+            <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request Custom Training</a>
+            <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">Available Courses</a>
+            <a class="button" href="/training/videos/upack-cli" target="_blank">Next Video</a>
+          </div>
+        </div>
+        <div class="container-body">
+
+          <h3>
+            <em>Note: The following text is a transcript of the video, with minor edits for readability.</em>
+          </h3>
+
+          <p>We are going to talk about  Universal Packages, and we'll also talk about a great tool called UPack.</p>
+
+          <p>UPack lets you build your own  Universal Packages, and we'll discuss ways of publishing them in your internal infrastructure, and then how members of your team can consume these packages.</p>
+          <h2>What is UPack?</h2>
+          <div class="image-set inline left">
+             <img src="/resources/images/logos/upack.svg" />
+          </div>
+          <p>UPack is a technology-neutral packaging platform that allows you to uniformly distribute your applications and components across environments to enable consistent deployment and testing.</p>
+          <h4>So what does that <em>actually</em> mean?</h4>
+          <p>You might be thinking, "what does that mean, Kevin? You just said a lot of words." And really, I just read the copy from all the great marketing material. So, let's just dive into it.</p>
+
+          <p>When I say Universal Packaging, I mean anything that is not really suited for another environment.</p>
+          <p>I'm not doing .NET development, so I don't want to put it up in NuGet. It's not JavaScript, so I don't want to put it in JavaScript. Maybe it's just a collection of PowerShell scripts. Well, I could technically put that up in PowerShell
+            gallery or something similar.</p>
+          <p>These are all examples of just "stuff" that we need to distribute to members of our team, but it doesn't fit into any of these other molds that might exist. We need something that's more <em>universal</em>.</p>
+          <h4>Customization</h4>
+          <p>UPack is highly extensible. Because it doesn't fit into the mold of any of these other packaging systems, you can really customize it to your heart's content.</p>
+          <p>Do you need people to know certain things about certain packages? You can just embed that metadata.</p>
+          <div class="image-set inline left">
+             <img src="/training/videos/images/upack-distribute.svg" />
+          </div>
+          <h4> Universal Package Distribution</h4>
+          <p>You can easily distribute a  Universal Package. You can put it up in a UNC-path, if that is still the way you want to do business. Or, you could use <a href="/proget?utm_source=training-videos" target="_blank">ProGet</a> and expose a
+            universal feed. You could also just have it on your local drive.</p>
+            <div class="image-set inline right">
+               <img src="/training/videos/images/upack-discoverable.svg" />
+            </div>
+          <h4> Universal Packages are easily Discoverable</h4>
+
+          <p>I could use the command-line interface to go out and find packages if I need to. Or, I could use <a href="/proget?utm_source=training-videos" target="_blank">ProGet</a> to search for all the packages I might have published up there. I
+          also have a history of what packages are installed on my system, when they were installed, and who installed them.</p>
+
+          <h2>Where to get UPack</h2>
+          <p>UPack is free, to anyone wants to use it, and you could go download it now at <a href="/upack/download?utm_source=training-videos" target="_blank">inedo.com/upack/download</a>.</p>
+          <p>There's a couple different tools there, not just the command-line interface, or UPack.exe. You could also install the  Universal Package Explorer, which I'll show you a <a href="/training/videos/upack-upe" target="_blank">demo</a> of a
+            little bit later.</p>
+          <p>There's also a visual studio extension for building and deploying UPack, and there's a UPack.net library. If you want to build your own systems that can create and publish UPack packages, there's a library for that.</p>
+          <p>There is also a Jenkins plugin, so if you are using another build system and you want to incorporate UPack as part of your process, there is a plugin for that.</p>
+          <h2>Installing UPack</h2>
+          <p>My recommended way to install UPack, is to install the UPack package via Chocolatey if you are running in PowerShell. You just type <code>choco install UPack</code>, and get the latest version.</p>
+          <p>What's great about Chocolatey, is it's kind of mixing great package managers. You have Chocolatey, which is built for managing and maintaining Windows packages, and you have UPack, which is used for creating, maintaining and publishing
+             Universal Packages. So, mixing two great technologies. If you don't have Chocolatey installed, follow <a href="/training/events/upack-ess-18?utm_source=training-videos" target="_blank">the lab</a> in the full training, there's a set of commands in there that
+            tell you how to install Chocolatey. Really simple.</p>
+
+          <h2>What is inside a UPack file?</h2>
+          <p>Like we said in a <a href="/training/videos/software-package" target="_blank">previous section</a>, a package is just a glorified zip-file, that contains other files and some metadata.</p>
+          <p>Well, UPack is no different. You have metadata, which is just JSON or upack.json, and a collection of files that need to be unpacked, whenever the package is installed.</p>
+          <h4>Metadata</h4>
+
+          <p>Because the metadata is just JSON, we can put almost anything that we want inside of it. This information is used by UPack and ProGet to know how to display the data to anyone that might go searching for it.</p>
+          <h4>Files</h4>
+          <p>Any files that are included in the UPack file are in a directory called "Package".</p>
+
+          <p>You can easily open a UPack file in a zip editor, and you can see what's inside of that file. You have to be careful, because UPack does enforce a verification and validation of the contents in the file. So, if we were to change anything inside of the file, it changes the hash for the file, and it might not be verifiable after stuff has been changed.</p>
+
+          <p>Now, if you're not going crazy, this is what a sample of a UPack.json file looks like:</p>
+          <div class="image-set solo">
+             <img src="/training/videos/images/sample-upack-json.png" />
+          </div>
+          <p>We need to know the name of the package, the version (UPack uses SemVer, three octets), and you might have a title or a human readable title and description for the utility. So, when this is up in ProGet, you can read all this like a
+            human would want to read the content.</p>
+          <p>So, let's walk through the process of building a  Universal Package...</p>
+
+          <p><strong><a href="/training/videos/upack-cli">Next Video ></a></strong></p>
+        </div>
+      </div>
+      <div class="training-box">
+        <h2>Customized Training</h2>
+        <p>
+          Our training courses are built modularly, and we can develop a customized training roadmap for your organization, so that everyone gets the training they need, when they need it.
+        </p>
+
+        <div class="button-set">
+          <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request your Custom Training</a>
+          <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">See the Available Courses</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+</html>
