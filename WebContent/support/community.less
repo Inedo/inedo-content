@@ -1,0 +1,100 @@
+@import "..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+a.download {
+    background-color: none;
+    padding: 8px 16px;
+    color: @inedo-darkblue;
+    border: 3px solid @inedo-darkblue;
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: @inedo-darkblue;
+        color: @inedo-white;
+    }
+}
+.content-container#banner {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    background: url(/support/community-banner.png) no-repeat #011b2d;
+    background-position: right;
+    position: relative;
+    height: 200px;
+
+    .content {
+        padding: 36px 100px;
+
+        h1 {
+            font-size: 250%;
+            margin: 32px 0 12px 0;
+            font-weight: 700;
+            color: @inedo-white;
+            text-shadow: 2px 2px 2px @inedo-darkblue;
+        }
+    }
+}
+.content-container {
+    .content {
+        p {
+            margin: 16px auto 24px auto;
+            font-size: 19px;
+        }
+
+        h2 {
+            font-weight: 500;
+            color: @inedo-darkblue;
+        }
+        h4.slack {
+          font-size: 21px;
+        }
+
+        ul.slist {
+          font-size: 19px;
+          margin-left: 36px;
+          li {
+            list-style: disc;
+            padding-bottom: 12px;
+          }
+
+        }
+
+        div.two-column {
+          margin-top: 46px;
+          border-top: 2px solid @grey;
+          padding-top: 6px;
+            div.column {
+                &:last-child {
+                    border-right: none;
+                }
+
+                h3 {margin: 0;}
+
+                .desc {font-size: 16px; margin: 26px auto;}
+                padding: 20px;
+                float: left;
+                width: 45%;
+                min-height: 100px;
+                text-align: center;
+                border-right: 1px solid @light-grey;
+            }
+
+
+        }
+        div.clear {
+            float: none;
+            clear: both;
+        }
+
+    }
+}
