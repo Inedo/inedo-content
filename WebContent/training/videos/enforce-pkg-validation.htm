@@ -1,0 +1,126 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Enforce Package Validation and Security by using Universal Packages</title>
+  <meta name="MasterPageFile" content="training.htm" />
+  <link rel="stylesheet" type="text/css" href="/training/videos/video-single-pages.css" />
+
+  <script type="text/javascript">
+    setTimeout(function() {
+      var a = document.createElement("script");
+      var b = document.getElementsByTagName("script")[0];
+      a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0053/9152.js?" + Math.floor(new Date().getTime() / 3600000);
+      a.async = true;
+      a.type = "text/javascript";
+      b.parentNode.insertBefore(a, b)
+    }, 1);
+  </script>
+</head>
+
+<body>
+  <style>
+    #banner p.tagline {
+      display: none;
+    }
+  </style>
+
+  <div class="content-container">
+    <div class="content">
+      <div class="section-page-title">
+        <div class="container">
+          <h1>Enforce Package Validation and Security by using Universal Packages</h1>
+
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container-body">
+          <p>
+            <strong>Presenter: Kevin Griffin of SwiftKick Training, and an Inedo-certified Master Trainer</strong>
+          </p>
+          <p>This recording was a part of the Universal Packaging Essentials training seminar. You can access the full training seminar <a href="/training/events/upack-ess-18?utm_source=training-videos">here</a>. If you would like to request on-site
+            or remote training for your team, for any of Inedo's products, you can check out our <a href="/training/courses?utm_source=training-videos">available courses</a>, or simply <a href="/training/contact?utm_source=training-videos">request a
+              training quote</a>.</p>
+        </div>
+        <div class="video-container">
+          <iframe width="790" height="444" src="https://www.youtube.com/embed/xf29CZK3O6s" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+          <div class="button-set">
+            <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request Custom Training</a>
+            <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">Available Courses</a>
+            <a class="button" href="/training/videos/repackaging" target="_blank">Next Video</a>
+          </div>
+        </div>
+        <div class="container-body">
+
+          <h3>
+            <em>Note: The following text is a transcript of the video, with minor edits for readability.</em>
+          </h3>
+          <p>Let's touch a little bit more on package validation and security. We'll also show a couple more small demos of this.</p>
+          <h2>Package Validation and Security</h2>
+          <p>Package versioning in UPack is based off Semantic Versioning or SemVer. We talked a little bit about immutable packages before, and UPacks are meant to be read-only and cryptographically verifiable. Meaning, that if I have a package up in ProGet, it has a hash assigned to it because that is the unique fingerprint for all the files inside of that package.</p>
+
+          <p>Well, if I have the same package locally, the two hashes should be exactly the same. Here on ProGet, you see the hash here at the bottom. Every package has a SHA-1 hash. Lets bring up both versions of the package, this one is 2618... this one is 8c... and technically, nothing changed in the package, except the version. I'll talk to you about <a href="/training/videos/repackaging" target="_blank">repackaging</a> more in the next section. But the file inside the package technically didn't change, except for the manifest. That was enough of a change, to generate a different hash altogether.</p>
+
+          <h2>Now why is this important?</h2>
+          <p>It's becoming an issue in the industry of open source projects in particular. Now, if you are dealing in close source, everything is internal, this is not a problem for you. Or, if you are using something like ProGet and you're maybe six or more months behind on upgrade cycles, because you don't trust anyone's software. Well, you have very good reason for not trusting because there are some bad people out there.</p>
+
+          <p>So you have a package, and a package has been deployed, and someone manages to upload and replace a package with malicious code. Because a lot of packages are not installed by humans, but by build systems and different automated processes, you might accidentally deploy malicious code along with your code.</p>
+
+          <div class="call-out">
+            <p>
+              There was a case of this in the node.js community, not that long ago. Where someone took over a project that was widely used by thousands and thousands of people, if not millions, and they added a bitcoin miner to it. They replaced the package that was up in the public feed and that package got deployed to all these different build systems and productions. So, the person who deployed the code, was making bank off all those bitcoin miners, but it was really degrading the performance of the system. The system still worked, it's not that they turned off functionality or made it work incorrectly. Everything still worked the way it was supposed to. But now, there was a malicious code running underneath the scenes.
+              </p>
+            </div>
+
+
+           <p>Well, that could also be a network interface that is reading network traffic and sending it to a third-party source. We have seen cases of that as well. Someone pushes up malicious code, that now has some sort of keylogger or network snipper built in to it. It doesn't take much to send that information out. As long as you get something in to an infrastructure, you can do almost whatever you want, if you have the right skillset. So, it's important that we know when packages change, or the package that is currently in the public feed or even our private feeds, is different than what we had originally installed. So, this is done basically by hashing.</p>
+
+          <h2>Hashing</h2>
+           <p>So, if I have a hash of what I installed and that hash goes in source control, and goes into the build system, then the build system goes and pulls the same version of the package down, but the hash is different, we know something is wrong. Because the versions are the same but the hashes are different. That's a red flag and everything should stop and we should investigate why that might be the case.</p>
+
+           <p>Now, it could be a legitimate case, you never know, but sometimes it could be malicious.</p>
+
+            <h2>UPack and Hashes</h2>
+             <p>On UPack, there is a special command that will tell us the hash of the packages that we have installed:</p>
+
+              <p><pre>upack hash &laquo;package&raquo;</pre></p>
+
+             <p>Let's go back our command line. Let's play around a bit for a second. If I have two packages open of CurrentTime, I could say <code>upack hash CurrentTime-1.0.1.upack</code>, and it's going to give me: <code>8c69d5...etc</code>. Now this hash should be exactly the same as what's up in ProGet, that's what I deployed. And it is! Can't show everything, I have ellipsis here, but it shows enough of the hash, where I can be pretty certain that it's the exact same hash.</p>
+
+             <p>We can also ask UPack directly to verify the package on our behalf. So, I can say:</p>
+
+              <p><pre>upack verify CurrentTime-1.0.1.upack &lt;insert api endpoint here> --user="demo:demodemodemo"</pre></p>
+
+              <p>Alright. Now UPack is telling me that the hashes for local and remote packages match. Good!</p>
+
+              <h2>A "Malicious" Demo</h2>
+              <p>Let's be malicious for a minute. We want to open up File Explorer. CurrentTime is a UPack. Don't forget that a UPack is just a .zip file. I can open .zip files, and let's find something in here. Oh, I know what I can delete. So, there is CurrentTime, I am going to delete the debug information for CurrentTime. Not a required file, it can be missing and it's not a big deal. Now, if we run the hash command for 1.0.1, it's not the 8c69...etc. Now it's 921...etc. So, I can ask UPack again, please verify that my CurrentTime is the same as the CurrentTime up on the ProGet server. They don't match, so I know that there's something wrong. Either with my local package or with the package that is up in ProGet.</p>
+
+              <p>Now this is important for you to note, you can verify these things.</p>
+
+          <p><strong><a href="/training/videos/repackaging">Next Video ></a></strong></p>
+        </div>
+      </div>
+      <div class="training-box">
+        <h2>Customized Training</h2>
+        <p>
+          Our training courses are built modularly, and we can develop a customized training roadmap for your organization, so that everyone gets the training they need, when they need it.
+        </p>
+
+        <div class="button-set">
+          <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request your Custom Training</a>
+          <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">See the Available Courses</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+</html>

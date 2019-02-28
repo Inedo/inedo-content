@@ -1,0 +1,123 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Repackaging a Universal Package - The RIGHT Way</title>
+  <meta name="MasterPageFile" content="training.htm" />
+  <link rel="stylesheet" type="text/css" href="/training/videos/video-single-pages.css" />
+
+  <script type="text/javascript">
+    setTimeout(function() {
+      var a = document.createElement("script");
+      var b = document.getElementsByTagName("script")[0];
+      a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0053/9152.js?" + Math.floor(new Date().getTime() / 3600000);
+      a.async = true;
+      a.type = "text/javascript";
+      b.parentNode.insertBefore(a, b)
+    }, 1);
+  </script>
+</head>
+
+<body>
+  <style>
+    #banner p.tagline {
+      display: none;
+    }
+  </style>
+
+  <div class="content-container">
+    <div class="content">
+      <div class="section-page-title">
+        <div class="container">
+          <h1>Repackaging a Universal Package - The RIGHT Way</h1>
+
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container-body">
+          <p>
+            <strong>Presenter: Kevin Griffin of SwiftKick Training, and an Inedo-certified Master Trainer</strong>
+          </p>
+          <p>This recording was a part of the Universal Packaging Essentials training seminar. You can access the full training seminar <a href="/training/events/upack-ess-18?utm_source=training-videos">here</a>. If you would like to request on-site
+            or remote training for your team, for any of Inedo's products, you can check out our <a href="/training/courses?utm_source=training-videos">available courses</a>, or simply <a href="/training/contact?utm_source=training-videos">request a
+              training quote</a>.</p>
+        </div>
+        <div class="video-container">
+          <iframe width="790" height="444" src="https://www.youtube.com/embed/BYfWcm7tppM" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+          <div class="button-set">
+            <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request Custom Training</a>
+            <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">Available Courses</a>
+            <a class="button" href="/training/videos/upack-upe" target="_blank">Next Video</a>
+          </div>
+        </div>
+        <div class="container-body">
+
+          <h3>
+            <em>Note: The following text is a transcript of the video, with minor edits for readability.</em>
+          </h3>
+          <p>Now there are cases, where you need to change a file, but you still want to maintain that hash. So usually the thing that you want to change is the version, you don't want to change the contents of the package.</p>
+
+          <h2>Repackaging in UPack</h2>
+          <p>UPack has a feature that does exactly this. It allows you to change the version of the package without altering the hash of the file. So, it's still cryptographically verifiable, it's just an actual release version. This commonly happens when you go from a pre-release to a full release. So, we had 1.0.1-beta or alfa or RC out there in the wild and it's ready to go. Now we want to make that the official 1.0.1 package, but we don't want the hashes to change.</p>
+          <div class="image-set solo">
+             <img src="/training/videos/images/repack.png" />
+          </div>
+
+           <p>And I love this illustration. You can see that we have Beta, which is X34A...etc, we need that to be the same when the package goes for release.</p>
+
+           <h2>Demo</h2>
+            <p>Let's walk through an example and see if we can do the same thing in our environment. So, I have my code, and I'm going to go into my manifest. We're going to create 1.0.2-beta and we're going to then pack it, and I'm going to publish it. Actually, I probably don't have to publish it, but we're going to publish it anyway so you can get used to the publishing workflow. So, what did I call it? Beta? 1.0.2-beta. Nope, I got the file name wrong. Oh, it's still a 1.0.2.upack, but it's beta underneath the scenes.</p>
+            <h4>What <em>not</em> to do</h4>
+            <p>Alright, so that's published, let's go back over here to ProGet and take a look at it. We'll see that is currently uploaded. So 1.0.2-beta. Now what I want to do is, there's the hash, 836...etc. Now lets go through and change that version myself, which I can technically do. Let's go into UPack and let's edit that file. UPack was modified, so let's update it in the archive. Now let's do a UPack hash command on CurrentTime-1.0.2, now it's a different hash! Which is not what we want. <strong>That's bad</strong>.</p>
+
+            <h4>Lets Make it Right</h4>
+            <p>Alright, let's recreate our package again, so I'm working with a good square. So let's say this is now 1.0.3 beta. We are going to recreate it and we're going to re-push it. Alright, so that is published, let's come over and take a look at it, 1.0.3 is installed. Alright, 4cc...etc, that's the SHA. Now, what I want to do is, I want to convert this. I'm going to do this from memory, so likely I am going to screw it up.</p>
+
+
+            <h4>Lets Repack!</h4>
+            <p>We want to repack. Alright, here's all the information about repack:</p>
+
+            <p><pre>Usage: upack repack &laquo;source&raquo; [--targetDirectory=&laquo;targetDirectory&raquo;] [--newVersion=&laquo;newVersion&raquo;] [--note=&laquo;note&raquo;] [--overwrite]
+
+Creates a new ProGet universal package by repackaging an existing package with a new version number and audit information.
+
+source - The path of the existing upack file.
+targetDirectory - Directory where the .upack file will be created. If not specified, the current working directory is used.
+newVersion - New package version to use.
+note - A description of the purpose for repackaging that will be entered as the audit note.
+overwrite - Overwrite existing package file if it already exists.  </pre></p>
+
+            <p>We want to repack CurrentTime-1.0.3 and I want to give it a new version, we are going to give it 1.0.3. I think I should do this in quotes. There we are. Then I'm going to say overwrite, just in case.</p>
+
+            <p><pre>upack repack CurrentTime-1.0.3.upack --newVersion="1.0.3" --overwrite</pre></p>
+
+            <p>Alright, so I updated. Let's do a hash of CurrentTime-1.0.3 and what should happen is, that this hash, from just updating the version, should be the same hash.</p>
+
+            <p>Moving on...</p>
+
+          <p><strong><a href="/training/videos/upack-upe">Next Video ></a></strong></p>
+        </div>
+      </div>
+      <div class="training-box">
+        <h2>Customized Training</h2>
+        <p>
+          Our training courses are built modularly, and we can develop a customized training roadmap for your organization, so that everyone gets the training they need, when they need it.
+        </p>
+
+        <div class="button-set">
+          <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request your Custom Training</a>
+          <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">See the Available Courses</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+</html>

@@ -59,22 +59,137 @@
           </h3>
           <p class="info">Because this is a demo, we would reccomend that you follow along with the video, the transcript is here just as an additional resource.</p>
           <p>Let's walk through the process of building a Universal Package. Here is my command-line, and I have a utility I've built. Remember, I am a .NET developer by trade, so I have a utility in here that I call CurrentTime.</p>
-          <h4>What does CurrentTime do?</h4>
+          <h2>What does CurrentTime do?</h2>
           <p>CurrentTime does one thing extremely well. It tells you what the current time is.</p>
-          <p>Well, this tool is <em>so great</em>, that I need to package it and I need to put it out for the rest of my team to be able to come download it and use it on their systems.</p>
-          <p>I want to take this code, I want to build it and I want to package it, using UPack.</p>
-          <p>So, I'm going to create a production version of it and if you are not a .NET person, that is okay. This is just the process of making sure that I have something that is release ready. I am going to go into Explorer and dive into it. Find this published content and look at all the stuff that comes along with this dependency. And I'll give you a little bit of background. Because I'm learning this utility it will work anywhere, we use a system called .Netcore, we create self-contained executables, which means every dependency that my application might actually need, comes along for the ride. Now, luckily, they are not very large files, but there's a lot of stuff in here and if I needed a person to try and install this on their system, there's a lot of crap in here that they would have to move over.</p>
-          <p>So, let's take my published version and I'm going to move up a couple directories and create a new folder, we'll call this 'UPack Demo', I'm going to copy all of my binaries inside of it. And I'm also going to copy the UPack .json-file. Go back up, now if I open this directory in a text editor, this is what my entire metadata looks like. Just CurrentTime, I've been[00:03:08] the version, so let's just set this on point. Oh, I would title CurrentTime CLI and description.</p>
-          <p>Next steps, I need to tell UPack to create the package for me. I have already installed the UPack command-line interface. And the current version of it, is... Awesome! [laughs] 2.2.2.2, you almost can't even plan that, that's awesome. And I installed it via Chocolatey. So, if you go install it that way, you might install it another way. So, if you installed it by hand, just make sure you have your paths set up correctly. So you can access it wherever you might be. But also, see here that whenever a UPack by itself is, there's a couple commands that I can give to UPack. And we'll talk about a couple of them. We won't talk about all of them.</p>
-          <p>The one I am particularly interested in right now, is... Because I want to create a package or a Universal Package for... So, I am going to say UPack. I want to pack the published directory and I want to set my manifest equal to UPack. Now, if you have a case, maybe you have this as part of a built system, you might not have that manifest as a separate file. And that's okay. You can designate or create the metadata through the command-line. I'll show you how here in a moment, when we are done with our walkthrough. Go and grab that manifest, it's going to read the data that I intended and it's going inside of the published directory. And that will create the package on my [00:04:48]. Alright, so I'm turning off my webcam to help with bandwidth.</p>
-          <p>Now when we look at what's in our current directory, I now have a new file: 'CurrentTime-1.0.0.upack. If we go into Explorer, we are going to see the file is here, I am going to open the file now inside of 7-zip. So there's the upack.json, this is... Let's go through an edit. You'll see, it's almost identical to what I created before. UPack created some additional metadata. So, when was it created? What version of the UPack was it created with? And who was the user at the time when it was created? So, this is my local username. But this could also be an active directory username, if you are using an ID. So there's metadata in there. And then the package is just all the raw data that was inside of my published file.</p>
-          <p>Let's take this again and now I'm going to push this up to Proget. So I have a Proget server. Let me get my Proget server. So I have a Proget server that's out there on the internet. And I have a lot of different types of feed for different types of work that I do. But I have one type of feed here, called 'Universal'. And this is specifically created to hold Universal Packages. And right now, I have nothing up there. I could go manually add the package. And that's one solution. And maybe I'll come back and I'll show you how to do that in a moment. But I'm going to copy this API endpoint. I want to go back to my command-line. Clear. And I am going to tell UPack to push this package. Remember, it's called CurrentTime-1.0.0.upack and I am going to push that up to my Proget location. This by itself will fail, because my Proget needs the credentials. I don't give my credentials away. But my credentials are Demo [laughs] Demo, demo, demo. And that username is good for the next hour. I'm going to tell UPack where to push it, who to push it as and it's going to go through, it may take a moment, but that package is currently getting uploaded to my Proget server. And success! CurrentTime-1.0.0 has been published. Awesome!</p>
-          <p>Let's go back over to Proget. I'm going to hit refresh. I'll give you a little tour here. I now have a package up in Proget, all CurrentTime CLI 1.0.0, really cool! I can come in and all my metadata that was in my UPack.json file should be here. Or at least the parts that I included. The nice part about Proget is, it gives you instructions for installation. Here is an install command, that I'm actually going to go use here in a moment. If I'm on a Linux based system, I can use cURL to download it as well. Or if you're on PowerShell, here's the very long complicated PowerShell command to do the exact same thing. Download and install the package. But we're going to use the UPack client, because that's what we are talking about, UPack. I'm just going to copy that command, go back out to our command-line. And I'm going to paste it in place. And we'll fill in the blanks here. So demo:demodemodemo. It might not require a username or password to install a package, but it depends on how you have UPack configured. I do, and we are going to set a target for, we'll just call it 'upacktools", as our location. And I don't believe that location exists. Let me just double check. It does, so let me remove it, so it doesn't seem like I'm faking any of this. Alright, so, and UPack installed CurrentTime, the version of CurrentTime that I want, the source of my Proget server and where do I want that package to be installed to? And then, who am I installing as? If I did everything correctly, I hit enter, UPack should go up to my Proget server, find my package, bring it down and install it in the correct location. Then we'll create another tab and it takes a moment. It's not a particularly big package, but it's coming from my [00:09:48] instants in Virginia all the way to beautiful Cleveland, Ohio.</p>
-          <p>And there we go, our package is installed, 217 files, no directories. Let's go look in that directory, I called it upacktools, and everything is in there. Well, it's nice to actually be able to say CurrentTime.exe and it runs by utility. So there, we have gone from the process of having some code, having a utility. We packaged it with UPack, then we pushed it up to Proget, made it available to anyone on our team that has access to our Proget server, then we took the package and we installed it. Very, very cool!</p>
-          <p>Now, let's just simulate real fast, it's not going to be an actual code change, but I'm going to update the version. So we have CurrentTime 1.0.1, everything else remains the same. What I want to do now, is I am going to push up a new version of my files. So let's walk through that process. If I go back to my original command, which was UPack publish using the manifest, UPack is in a new version, it's going to create a new instance of the package, which we can look at our file list and see how we still have the original 1.0.0 and the 1.0.1. I am going to go to push, but I have to change the UPack file. I'm going to push up a slightly newer version of this package. And again, it just takes some moments, you aren't going across the internet to push up packages, it will probably be a little bit quicker.</p>
-          <p>Alright, CurrentTime 1.0.1 has been published. Let's switch back over to Proget. Now, if I come in here and refresh, it's still going to show me 1.0.0, that is because it's the version I am currently looking at in the URL. Let me remove the version and we will see that the new version is 1.0.1. So then I can see how many versions of CurrentTime currently exist. There's the current version, 1.0.1, I can also go back to the older versions if I needed to. 1.0. So everything is here that I need. And then I could, technically, so let me remember the command. Let's come over here. I can come back and I can install the new version as well.</p>
 
-          <p>But I want to talk about the commands that are used in a little bit more depths. There is the UPack pack commands that I use that create a new package. And remember what I said before, that if you don't have a manifest or the upack.json file, you can put all that information at the command-line. All you have, if you're building out your build system, and you have the name, the version, the title, description, those are all attributes inside of your build system. But you can just type those in as command-line arguments. UPack doesn't care where the data comes from, as long as it has the data to properly do the packaging. So, a good thing to keep in mind. The UPack push, so this pushes it up to certain targets. We are using a Proget server. But I can tell it to push my package or the particular version of my package up to Proget and if my Proget server requires it, it probably should, I have to give user authentication information. I didn't talk about unpack, but I could technically unpack a package that has been packaged before. It's essentially the same as unzipping the file. So, if I have a package locally and I want to unpack it to a directory, I can use UPack unpack to do that work for me. UPack will also help me in creating metadata. So there's a metadata command, where I can have a package and update the metadata for it. And finally, should you install... I say 'finally', I don't remember if this is finally. Yep, that's finally. UPack install, if I know what package I want to install. Or if I have a particular version of a package I want to install, I can tell UPack to go install it. Now I use the version as a part of my package, but if I didn't know what the current version was off the top of my head, I could leave that particular attribute off and UPack would figure it out for me. I can tell UPack where to go look for the package. So it's either a Proget server or some other source. And then I can tell it where to install the package it to. Now I install all my UPack package to a certain directory. That might be something I already have set up as a path in my local machine. So I can use it anywhere. I can also destinate a variety of attributes, such as [00:14:49]. Do I want pre-released packages? Remember in our last section, you can set up pre-released qualifiers on any of your packages. But those won't be used by default in any package system. In UPack, it is the same way. If I had a 1.0.1 beta, or 1.0.2 beta and that was pushed up and ready to go, install would not install it, unless I told it that it was okay to use pre-release. Now I showed you one method for deploying Universal Packages. And that's the command-line tools. But it's not the only way. There's other tools in the Inedo suite for that take advantage of Universal Packages. Such as Otter and Hedgehog.</p>
+          <p>Well, this tool is <em>so great</em>, that I need to package it and put it out for the rest of my team to be able to come download and use on their systems.</p>
+
+          <p>I want to take this code, I want to build it, and I want to package it, using UPack.</p>
+
+          <p>So, I'm going to create a production version of it, and if you are not a .NET person, that is okay. This is just the process of making sure that I have something that is release ready. I'm going to go into Explorer and dive into it.</p>
+
+          <p>I have this published content, and look at all the stuff that comes along with this dependency. I'll give you a little bit of background. Because I'm creating this utility it will work anywhere, we use a system called .Netcore, we create self-contained executables, which means every dependency that my application might possibly need, comes along for the ride. Luckily, they are not very large files, but there's a lot of stuff in here and if I needed a person to try and install this on their system, there's a lot of crap in here that they would have to move over.</p>
+          <h2>The Demo</h2>
+          <p>So, let's take my published version and I'm going to move up a couple directories and create a new folder, we'll call this "UPack Demo". I'm going to copy all of my binaries inside of it, and I'm also going to copy the upack.json file. Now if I open this directory in a text editor, this is what my entire metadata looks like. Just CurrentTime, I've been mucking around with versions, so let's just set this at 1.0, I have my title, "Current Time CLI" and I've filled in the description.</p>
+
+          <p>Next steps, I need to tell UPack to create the package for me. I have already installed the UPack command-line interface, and the current version of it is 2.2.2.2 and I installed it via Chocolatey. If you install it that way, or if you install it by hand, just make sure you have your paths set up correctly. That way you can access it wherever you might be. Also, see here that whenever a UPack by itself, there's a couple commands that I can give to UPack. We'll talk about a couple of them but we won't talk about all of them.</p>
+
+          <p>The one I am particularly interested in right now, because I want to create a package or a Universal Package, is <code>pack</code>. So I am going to say UPack, I want to pack the published directory and I want to set my manifest equal to UPack:</p>
+          <p><pre>upack pack publish\ --manifest=upack.json</pre></p>
+
+          <p>Now, if you have a case, maybe you have this as part of a built system, you might not have that manifest as a separate file, and that's okay. You can designate or create the metadata through the command-line. I'll show you how here in a moment, when we are done with our walkthrough. Go and grab that manifest, it's going to read the data that I intended and it's going inside of the published directory.</p>
+
+          <p>Now when we look at what's in our current directory, I now have a new file: <code>CurrentTime-1.0.0.upack</code>. If we go into Explorer, we are going to see the file is here, I am going to open the file now inside of 7-zip. So there's the upack.json.</p>
+
+          <p>Let's go through and click "edit". You'll see, it's almost identical to what I created before. UPack just created some additional metadata:</p>
+          <ul>
+            <li>When was it created?</li>
+            <li>What version of the UPack was it created with?</li>
+            <li>Who was the user at the time when it was created?</li>
+          </ul>
+             <p>UPack used my local username, "kevin" but this could also be an active directory username if you are using an AD. So there's metadata in there, and then the "package" file is just all the raw data that was inside of my published file.</p>
+
+          <p>Now, I'm going to push this up to ProGet. So I have a ProGet server that's out there on the internet, and I have a lot of different types of feed for different types of work that I do. I have one type of feed here, called "Universal," and this is specifically created to hold Universal Packages. Right now, I have nothing up there. I could go manually add the package, and that's one solution. Maybe I'll come back and show you how to do that in a moment. Instead, I'm going to copy this API endpoint, then go back to my command-line.</p>
+
+          <p>I am going to tell UPack to push this package. Remember, it's called CurrentTime-1.0.0.upack and I am going to push that up to my ProGet location:</p>
+
+          <p><pre>upack push CurrentTime-1.0.0.upack &lt;insert api endpoint here></pre></p>
+
+          <p>This by itself will fail, because my instance of ProGet needs credentials. Now, don't give my credentials away, but my credentials are demo, demodemodemo:</p>
+
+          <p><pre>upack push CurrentTime-1.0.0.upack &lt;insert api endpoint here> --user="demo:demodemodemo"</pre></p>
+
+          <p>And that username is good for the next hour (<em>no longer valid</em>). So I told UPack where to push it, who to push it as, and it's going to go through, it may take a moment, but that package is currently getting uploaded to my ProGet server. Success! CurrentTime-1.0.0 has been published. Awesome!</p>
+
+          <p>Let's go back over to ProGet.</p>
+
+            <p>I'm going to hit refresh and I'll give you a little tour here. I now have a package up in ProGet, CurrentTime CLI 1.0.0, really cool! I can come in, and all my metadata that was in my upack.json file should be here, at least the parts that I included.</p>
+
+            <div class="call-out">
+              <p>
+                The nice part about ProGet is, it gives you instructions for installation. Here is the install command for the UPack Client, that I'm actually going to go use here in a moment. If I'm on a Linux based system, I can use curl to download it as well. Or, if you're on PowerShell, here's the very long complicated PowerShell command to do the exact same thing. <strong>Download and install the package</strong>.</p>
+              </div>
+
+            <p>But we're going to use the UPack client, because that's what we are talking about, UPack. I'm just going to copy that command, go back out to our command-line, and I'm going to paste it in place:</p>
+
+            <p>(example from demo): <pre>upack install CurrentTime-1.0.0.upack --source=&lt;insert api endpoint here> --target=&lt;directory> --user=&lt;user>:&lt;password></pre></p>
+
+            <p>And we'll fill in the blanks here. So demo:demodemodemo. It might not require a username or password to install a package, but it depends on how you have UPack configured. I do, and we are going to set a target for, we'll just call it 'upacktools", as our location.</p>
+
+            <p>(example from demo): <pre>upack install CurrentTime-1.0.0.upack --source=&lt;insert api endpoint here> --target="c:\\upacktools" --user="demo:demodemodemo"</pre></p>
+
+            <p>Alright, so, UPack install CurrentTime, the version of CurrentTime that I want, the source, so my ProGet server, and where do I want that package to be installed to? And then, who am I installing as? If I did everything correctly, I hit enter, UPack should go up to my ProGet server, find the package, bring it down and install it in the correct location. Then we'll create another tab and it takes a moment, it's not a particularly big package, but it's coming from my Azure instance in Virginia, all the way to beautiful Cleveland, Ohio.</p>
+
+          <p>There we go! Our package is installed, 217 files, no directories. Now let's go look in that directory, I called it upacktools, and everything is in there. What's nice, is I should be able to say, <code>CurrentTime.exe</code> and it runs my utility. So we have gone from the process of having some code, having a utility. We packaged it with UPack, then we pushed it up to ProGet, made it available to anyone on our team that has access to our ProGet server, then we took the package and we installed it. Very, very cool!</p>
+
+          <h2>How to Publish a new Version</h2>
+          <p>Now, let's just simulate real fast, it's not going to be an actual code change, but I'm going to update the version. So we have CurrentTime 1.0.1, everything else remains the same. What I want to do now, is I want to push up a new version of my files. So let's walk through that process. </p>
+
+          <p>If I go back to my original command, which was <code>upack pack publish</code>, and using the manifest:</p>
+
+          <p><pre>upack pack publish\ --manifest=upack.json</pre></p>
+
+          <p>UPack is in a new version, it's going to create a new instance of the package, which we can look at our file list and see how we still have the original 1.0.0 and the 1.0.1. I am going to go to my push command, but I have to change the UPack file:</p>
+
+          <p><pre>upack push CurrentTime-1.0.<span style="background-color: yellow;">1</span>.upack &lt;insert api endpoint here> --user="demo:demodemodemo"</pre></p>
+
+          <p>Now I'm pushing up a slightly newer version of this package. And again, it just takes some moments, if you aren't going across the internet to push up packages, it will probably be a little bit quicker.</p>
+
+          <p>Alright, CurrentTime 1.0.1 has been published. Let's switch back over to ProGet. Now, if I come in here and refresh, it's still going to show me 1.0.0, that is because it's the version I am currently looking at in the URL. Let me remove the version and we will see that the new version is 1.0.1. So then I can see how many versions of CurrentTime currently exist. There's the current version, 1.0.1, I can also go back to the older versions if I needed to. So everything is here that I need.</p>
+
+          <h2>UPack Commands</h2>
+          <p>I want to talk about the commands that are used in a little bit more depths. There is the UPack pack command that I use that create a new package.</p>
+
+          <p><pre>upack pack &laquo;source&raquo;
+      [--metadata=&laquo;metadata&raquo;]
+      [--targetDirectory=&laquo;targetDirectory&raquo;]
+      [--group=&laquo;group&raquo;]
+      [--name=&laquo;name&raquo;]
+      [--version=&laquo;version&raquo;]
+      [--title=&laquo;title&raquo;]
+      [--description=&laquo;description&raquo;]
+      [--icon=&laquo;icon&raquo;]</pre></p>
+
+          <p>And remember what I said before, that if you don't have a manifest or the upack.json file, you can put in all that information at the command-line. If you're building out your build system, and you have the name, the version, the title, description, those are all attributes inside of your build system and you can just type those in as command-line arguments. UPack doesn't care where the data comes from, as long as it has the data to properly do the packaging. So, a good thing to keep in mind.</p>
+
+          <p>The UPack push, so this pushes it up to certain targets.</p>
+
+          <p><pre>upack push &laquo;package&raquo; &laquo;target&raquo;
+      [--user=&laquo;authentication&raquo;]</pre></p>
+
+          <p>We are using a ProGet server, so I can tell it to push my package, or the particular version of my package, up to ProGet. And if my ProGet server requires it, it probably should, I have to give user authentication information.</p>
+
+          <p>I didn't talk about unpack, but I could technically unpack a package that has been packaged before.</p>
+
+          <p><pre>upack unpack &laquo;package&raquo; &laquo;target&raquo;
+      [--overwrite]</pre></p>
+
+          <p>It's essentially the same as unzipping the file. So, if I have a package locally and I want to unpack it to a directory, I can use <code>upack unpack</code> to do that work for me.</p>
+
+          <p>UPack will also help me in creating metadata.</p>
+
+          <p><pre>upack metadata &laquo;package&raquo; [&laquo;target&raquo;]
+        --source=&laquo;source&raquo;
+        [--user=&laquo;authentication&raquo;]
+        [--file=&laquo;file&raquo;]</pre></p>
+
+          <p>So there's a metadata command, where I can have a package and update the metadata for it.</p>
+
+            <p>If I know what package I want to install, or if I have a particular version of a package I want to install, I can tell UPack to go install it.</p>
+
+            <p><pre>upack install &laquo;package&raquo; [&laquo;version&raquo;]
+        --source=&laquo;source&raquo;
+        --target=&laquo;target&raquo;
+        [--user=&laquo;user&raquo;]
+        [--comment=&laquo;comment&raquo;]
+        [--overwrite]
+        [--prerelease]
+        [--userregistry]
+        [--cache]</pre></p>
+
+            <p>Now I use the version as a part of my package, but if I didn't know what the current version was off the top of my head, I could leave that particular attribute off and UPack would figure it out for me. I can tell UPack where to go look for the package. So it's either a ProGet server or some other source. Then I can tell it where to install the package to. I install all my UPack package to a certain directory, that might be something I already have set up as a path in my local machine so I can use it anywhere. I can also destinate a variety of attributes, such as, "Do I want pre-released packages?" Remember in our last section, you can set up pre-released qualifiers on any of your packages, but those won't be used by default in any package system. In UPack, it is the same way. If I had a 1.0.1-beta, or 1.0.2-beta and that was pushed up and ready to go, install would not install it, unless I told it that it was okay to use pre-release.</p>
+
+            <p>Now I showed you one method for deploying Universal Packages. And that's the command-line tools. But it's not the only way. There's other tools in the Inedo suite that take advantage of Universal Packages. Such as Otter and...</p>
 
           <p><strong><a href="/training/videos/enforce-pkg-validation">Next Video ></a></strong></p>
         </div>
