@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="keywords" content="DevOps, BuildMaster, compliance, automation, testing, builds" />
+    <meta name="publish-date" content="2/22/2019 2:00 PM" />
+    <meta name="author" content="Marisa Vesel" />
+    <title>How Automation Can Help You at All Five Stages of Software Testing</title>
+    <meta name="full-image" content="/blog/_images/post-conf/5-stages-testing-banner.png" />
+</head>
+
+<body>
+    <h1 style="margin-top: 20px;"><strong>How Automation Can Help You at All Five Stages of Software Testing</strong></h1>
+
+    <p>
+      While testing is a continuous process that unfolds over the course of a build, there are still “distinct” stages of testing that present different challenges, requirements, and approaches. By understanding the distinct requirements of each stage, you will be able to create a seamless and effective testing plan.
+    </p>
+    <p>
+      While there are seemingly countless types of testing, in this article, we have compiled the five main categories of testing and explain how automating with DevOps can help you accomplish each stage.
+    </p>
+
+    <h2>Integration Testing</h2>
+    <p>
+    Integration testing is the first stage of testing and is generally performed by the developer responsible for the changes. This serves as a verification that the changes are integrated into the larger application and are ready for the next stage of testing.
+    </p>
+    <img src="/blog/_images/post-conf/integration-testing.png" />
+    <p>
+      Integration makes sure that two or more components are able to work and communicate well with each other. Integration is the earliest opportunity to find bugs and issues and implement fixes. Waiting until the end could cause much larger consequences to the software and require the time and energy of developers to correct an avoidable problem.
+    </p>
+    <p>
+      There are often multiple developers working on multiple components of a project at a time. Integration testing allows you to test how components interact with each other even if not all are completed. This is particularly handy so that issues can be identified and corrected early on.
+    </p>
+    <p>
+      Automating integration testing allows for bugs and breaks to be identified and fixed continuously. Additionally, it is easy to determine who and what caused a break by referencing the user dashboard that allows releases to be centrally managed. In addition, the dashboard allows you to see targeted environments, deployment histories, notes, milestones, and more.
+    </p>
+
+    <h2>Functional Testing</h2>
+    <p>
+      Functional testing is performed in order to determine the quality of the software by verifying that all necessary features meet the formal test scripts. Before software development is started, various lists of requirements are documented in order to ensure that the software meets the needs of the user.
+    </p>
+    <img src="/blog/_images/post-conf/functional-testing.png" />
+    <p>
+      In short, functional testing tests every feature to verify the software is performing properly. For a more detailed view of this testing, check out this article from <a href="https://dzone.com/articles/why-you-need-to-care-about-automated-functional-te" target="_blank">DZone</a>. In addition to making sure the software is usable, the software is run through multiple scenarios to confirm the software is still able to function.
+    </p>
+    <p>
+      Additionally, when functional testing is completed the results from the test are compared to the expected results from the environment. If this type of testing is not performed, then glitches in functionality may not be identified until the software has been deployed. In this case, the software will have to be rewritten at the end of the process, which can be costly and time-consuming.
+    </p>
+    <p>
+      Automating this process can increase the efficiency of functional testing. In manual testing, testing several features through several scenarios may require more resources than available. Automating this process ensures that each feature is tested through the appropriate scenarios and functions appropriately before moving forward in the pipeline.
+    </p>
+
+    <h2>Acceptance Testing</h2>
+    <p>
+      Acceptance testing is a way to validate that the correct software was created to meet the end-user’s needs. While functional testing makes sure everything works correctly, acceptance testing is done to ensure that the user will be satisfied.
+    </p>
+    <img src="/blog/_images/post-conf/acceptance-testing.png" />
+    <p>
+      In acceptance testing, rather than testing the software in all possible scenarios, the software is tested in the most likely scenarios it will encounter. This is to make sure that when the end-user is using the product, that they will be able to use it without running into problems. Most importantly, this ensures that the software is able to do what it was intended to do.
+    </p>
+    <p>
+      If this testing is not completed, this can result in faulty software being sent to the end-user. While all features of the software may perform properly, if it doesn’t do what the user needs it to do, then it’s simply not the correct software.
+    </p>
+    <p>
+      In automated testing, you are able to send the software down two different paths. One path is the ideal scenario where the user completes everything correctly and the software performs appropriately. In another scenario, there is some sort of error; for example, the user forgets to fill in a necessary form. This testing sees how the software would perform under less than ideal circumstances and how they can be fixed. In addition to confirming that this meets the end-users’ needs, this will also help ensure that the user will be satisfied with how the software is running.
+    </p>
+
+    <h2>Quality Testing</h2>
+    <p>
+      Quality testing is completed in order to ensure that all non-functional requirements are met. The goal of non-functional testing is to increase reliability, usability, and maintainability of the product. Quality testing looks at the way the system operates, rather than how the software behaves overall. This article from Guru99 neatly breaks down all the parameters of quality testing.
+    </p>
+    <img src="/blog/_images/post-conf/quality-testing.png" />
+    <p>
+      Quality testing is as important as functional testing because it impacts end-users satisfaction. Quality testing should be measurable. Once quality testing is completed, installation, management, and monitoring processes should be enhanced.
+    </p>
+    <p>
+      If quality testing is not completed, then there can be major frustrations when the end-user begins using the new software product. One example of quality testing is looking at how many users can login to a portal at one time. If no quality testing is done and only two people are able to login at a time, this results in an unhappy end-user and a development team scrambling to make a fix. Quality testing ensures that all non-functional requirements are met before deployment.
+    </p>
+    <p>
+      There are many components of quality testing. Manually, this could end up being a very time-consuming and subjective process. Automating this type of testing ensures that all aspects are tested and addressed appropriately before delivering the software to an end-user.
+    </p>
+
+    <h2>Staging Testing</h2>
+    <p>
+      Staging testing is the last type of testing and should be completed after the software is considered ready for deployment. In staging testing there is verification that the software can be deployed to an environment that matches the production environment.
+    </p>
+    <img src="/blog/_images/post-conf/staging-testing.png" />
+    <p>
+      In staging testing, the software is deployed to an environment that most closely mimics the actual environment in which the software will be deployed. This means that configurations and resources must match between the staging environment and the actual production.
+    </p>
+    <p>
+      This is an important step because it acts like a dress rehearsal for the actual deployment. Staging the deployment helps developers see any errors or issues that may arise in the actual deployment and make sure these are fixed prior.
+    </p>
+    <p>
+      Without completing this type of testing, the actual deployment could be a disaster. No one wants to run around trying to quick fix errors and issues that could have been worked out by staging a deployment.
+    </p>
+    <h2>Want to Learn More About How Inedo Can Help? </h2>
+    <p>
+      Testing is an important part of any software deployment process. While this may seem like a large task to undertake, automating the process can help keep testing organized and execution seamless. In an automated environment, releases are centrally managed; allowing you to see targeted environments, deployment histories, notes, and milestones. This can help ensure that the software is ready for staging. Automating the staging environment can help make sure all necessary components of the environment are correct and this test is appropriately completed.
+    </p>
+    <p>
+      All types of testing can fit into one, or more, of the categories above. To learn more about how automation can help you with any of the five stages of testing, or all of them, contact us at: <a href="mailto:mgoulis@inedo.com?subject=Follow%20up%20to%20Five%20Stages%20of%20Software%20Testing">mgoulis@inedo.com</a>.
+    </p>
+</body>
+
+</html>
