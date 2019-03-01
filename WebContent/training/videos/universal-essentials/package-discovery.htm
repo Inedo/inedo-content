@@ -1,0 +1,107 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Package Discovery</title>
+  <meta name="MasterPageFile" content="training.htm" />
+  <link rel="stylesheet" type="text/css" href="/training/videos/video-single-pages.css" />
+
+  <script type="text/javascript">
+    setTimeout(function() {
+      var a = document.createElement("script");
+      var b = document.getElementsByTagName("script")[0];
+      a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0053/9152.js?" + Math.floor(new Date().getTime() / 3600000);
+      a.async = true;
+      a.type = "text/javascript";
+      b.parentNode.insertBefore(a, b)
+    }, 1);
+  </script>
+</head>
+
+<body>
+  <style>
+    #banner p.tagline {
+      display: none;
+    }
+  </style>
+
+  <div class="content-container">
+    <div class="content">
+      <div class="section-page-title">
+        <div class="container">
+          <h1>Package Discovery - How to Share Software Packages</h1>
+
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container-body">
+          <p>
+            <strong>Presenter: Kevin Griffin of SwiftKick Training, and an Inedo-certified Master Trainer</strong>
+          </p>
+          <p>This recording was a part of the Universal Packaging Essentials training seminar. You can access the full training seminar <a href="/training/events/upack-ess-18?utm_source=training-videos">here</a>. If you would like to request on-site
+            or remote training for your team, for any of Inedo's products, you can check out our <a href="/training/courses?utm_source=training-videos">available courses</a>, or simply <a href="/training/contact?utm_source=training-videos">request a
+              training quote</a>.</p>
+        </div>
+        <div class="video-container">
+          <iframe width="790" height="444" src="https://www.youtube.com/embed/ylb0AGnr6AA" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+          <div class="button-set">
+            <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request Custom Training</a>
+            <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">Available Courses</a>
+            <a class="button" href="/training/videos/universal-essentials/upack-overview" target="_blank">Next Video</a>
+          </div>
+        </div>
+        <div class="container-body">
+
+          <h3>
+            <em>Note: The following text is a transcript of the video, with minor edits for readability.</em>
+          </h3>
+
+          <p>There are multiple ways to share packages.</p>
+          <p>
+            This is important because if we have these packages, and we know they exist, how do we put them in a place that is discoverable for members of our team? Or for other people out there in the world, that we want to share our content with?
+          </p>
+          <p>We'll talk about two different ways.</p>
+          <h2>Direct Copy</h2>
+          <p>
+            This isn't the most efficient way to share packages, but it works and it's still good enough. It's better than manually getting all the files, wherever they might be.</p>
+            <p>I've seen this before, where we have a package that has a manifest inside of it, and all the binaries are code snippets, and we put those out on a UNC-path. I know, it's what we talked about was bad, using UNC-paths. But the packages are already in a central location, and if folks know where that central location is, we can install the packages from that central location.</p>
+            <p>It's difficult to deal with versioning with the <em>Direct Copy</em> approach because you just end up with a lot of files. You could end up with Kevin's package 1.0, Kevin's package 1.1, Kevin's package 1.2, and so on. You would then have to maintain all these different versions in just one central location.</p>
+            <p>Also, <em>Direct Copy</em> is not easily searchable.</p><p>If you don't realize Kevin's package is named the way that it is, there's no search engine that will go through that directory. It would be up to you as the consumer to look through all the content and figure out which package that you want to pull in.</p>
+          <h2>Feeds</h2>
+          <p>
+          We really recommend feeds, instead of something like direct copy.
+        </p>
+        <p>
+          With a feed, whether you are using the public repositories for any of these feed managers, or you maintain your own with something like <a href="/proget?utm_source=training-videos" target="_blank">ProGet</a>, you want a system that can track these packages.
+        </p>
+          <p>A feed will know all the metadata about the packages, the versions of the packages, and it can track the various versions of the packages. It also gives you one-click or one-command installation of the packages. </p>
+          <p>If you have a case where all your packages are internal private code that you don't want to share with the rest of the world, then you definitely need a tool like <a href="/proget?utm_source=training-videos" target="_blank">ProGet</a> because it has the tools that aren't available in any of these public repositories.</p>
+
+        <p>When we go into the section about UPack, I will show you a little bit more about ProGet.</p>
+
+          <p><strong><a href="/training/videos//universal-essentials/upack-overview">Next Video &nbsp;&nbsp;&#10132;</a></strong></p>
+        </div>
+      </div>
+      <div class="training-box">
+        <h2>Customized Training</h2>
+        <p>
+          Our training courses are built modularly, and we can develop a customized training roadmap for your organization, so that everyone gets the training they need, when they need it.
+        </p>
+
+        <div class="button-set">
+          <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request your Custom Training</a>
+          <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">See the Available Courses</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+</html>
