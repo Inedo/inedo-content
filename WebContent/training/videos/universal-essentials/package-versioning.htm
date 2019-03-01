@@ -1,0 +1,137 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Package Versioning</title>
+  <meta name="MasterPageFile" content="training.htm" />
+  <link rel="stylesheet" type="text/css" href="/training/videos/video-single-pages.css" />
+
+  <script type="text/javascript">
+    setTimeout(function() {
+      var a = document.createElement("script");
+      var b = document.getElementsByTagName("script")[0];
+      a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0053/9152.js?" + Math.floor(new Date().getTime() / 3600000);
+      a.async = true;
+      a.type = "text/javascript";
+      b.parentNode.insertBefore(a, b)
+    }, 1);
+  </script>
+</head>
+
+<body>
+  <style>
+    #banner p.tagline {
+      display: none;
+    }
+  </style>
+
+  <div class="content-container">
+    <div class="content">
+      <div class="section-page-title">
+        <div class="container">
+          <h1>Package Versioning - Best Practices with Semantic Versioning (SemVer)</h1>
+
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container-body">
+          <p>
+            <strong>Presenter: Kevin Griffin of SwiftKick Training, and an Inedo-certified Master Trainer</strong>
+          </p>
+          <p>This recording was a part of the Universal Packaging Essentials training seminar. You can access the full training seminar <a href="/training/events/upack-ess-18?utm_source=training-videos">here</a>. If you would like to request on-site
+            or remote training for your team, for any of Inedo's products, you can check out our <a href="/training/courses?utm_source=training-videos">available courses</a>, or simply <a href="/training/contact?utm_source=training-videos">request a
+              training quote</a>.</p>
+        </div>
+        <div class="video-container">
+          <iframe width="790" height="444" src="https://www.youtube.com/embed/Si3eWq1yHXs" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+          <div class="button-set">
+            <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request Custom Training</a>
+            <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">Available Courses</a>
+            <a class="button" href="/training/videos/universal-essentials/package-discovery" target="_blank">Next Video</a>
+          </div>
+        </div>
+        <div class="container-body">
+
+          <h3>
+            <em>Note: The following text is a transcript of the video, with minor edits for readability.</em>
+          </h3>
+
+          <p>Most package managers rely on what's called SemVer, or Semantic Versioning, and SemVer can have three or potentially even four numbers.</p>
+          <h2>Major. Minor. Patch.</h2>
+          <p>Most cases you're dealing with three numbers and here's an example: 3.4.2 -- we've all used this terminology, hopefully. Number three is our major version, four is our minor version and number two is our patch version.</p>
+          <div class="image-set solo">
+             <img src="/training/videos/images/universal-essentials/semver.png" />
+          </div>
+          <h4>Major</h4>
+          <p>Depending on the project, and really the team that's responsible for versioning things, the way it is supposed to work is that the major version only increments when you have significant or breaking changes to an application. Going from
+            three point something to four point something should almost be a completely radical change to the application. If all I'm doing is maybe moving a button, renaming a couple utilities on the screen, or I'm changing how some innards of my
+            code might work, that's not enough to update the major version.</p>
+          <h4>Minor</h4>
+          <p>If I'm making a couple bug fixes and they drastically improve the performance of the code that's a minor version update.</p>
+          <h4>Patches</h4>
+          <p>Patches again depend on the team. I've seen teams that will just abuse the patch version of segments. They'll update a little piece of code, increment the patch. Update something else, increment the patch. Eventually, you get so many
+            patches where it's 3.4.112&hellip; and you know that's fine, you just know it's a newer version than what you had before, but again, it really depends on the tool that you're using.</p>
+          <h2>Best Practices (In my opinion)</h2>
+          <p>Normally I tell people in software development that you only increment the major version if you're making API breaking changes. If you're changing the code significantly enough, that if I were to install that version and I would have to spend
+            time fixing my code in order to support your updates, <strong>this</strong> is when you increment a major version.</p>
+          <p>If you're only updating the minor versions there should be no expectation on me as the developer to change my code. If we're talking about machine packages or utilities, there are a similar set of constraints. It again, depends on the
+            team. Usually, major version updates are drastically changing the UI or the command line parameters for a tool, and that is when you change the major version. If I'm just fixing a couple bugs, I'm only updating minor or patch.</p>
+          <h2>The Fourth Octet</h2>
+          <p>If you see a number that has a fourth octet on it, let's say 3.4.2.1, one is usually held for the build number, this again depends on the team. Build number is used when we might be working on a certain problem, but we haven't fixed
+            that problem yet, so we're in the process of fixing it and we're just not quite there yet. That's why you don't commonly see it in a lot of these packaged systems.</p>
+          <h2>Pre-release Qualifiers</h2>
+          <p>There's also a concept of pre-release qualifiers.</p>
+          <p>If you're adventurous, you might want to install a package that's not necessarily, "ready for release." If you go into a package system, you might see something that has a "dash" with a suffix attached to it.
+            That typically means that it's been pre-released.</p>
+          <h4>Examples</h4>
+          <p>I have a couple examples here that I've seen in different environments:</p>
+          <p>1.0.0-alpha</p>
+          <p>1.0.0-beta</p>
+          <p>1.0.0-rc.1</p>
+          <p>It doesn't really matter what comes after the dash, most package management systems will say, "when you have a suffix attached to a version it's considered a pre-release." Don't forget, a pre-release is always slightly
+            newer than the version that came before it.</p>
+            <div class="image-set solo">
+               <img src="/training/videos/images/universal-essentials/semver-suffix.png" />
+            </div>
+          <p>Here's an example where I originally had a 1.0 release, but then I released a 1.1-beta. Well that's slightly newer, but it's not as new as if I had released 1.1 by itself. All packaging systems will default to not installing a
+            pre-release package unless you specifically tell it that it's okay. In NuGet development you have to say, "I want the pre-release." With several command-line package managers you have to designate, "allow a pre-release
+            version."</p>
+          <h2>Immutability</h2>
+          <p>Packages should be immutable. We should not be able to change a package after a package has been released.</p>
+          <p>The problem is that they're just zip files, you can edit a zip file any way that you want to. Some feed management systems will specifically not let you change a package after it's been published up to the feed system.</p>
+          <p>Say you have installed Kevin's package, but then Kevin loses control of the package, someone could go and update Kevin's package to have malicious code in it, like a Bitcoin miner. <em>This has actually happened in some public cases</em>. Well,
+            you as the user of Kevin's package, might unknowingly install the bad package into your system. Usually that doesn't happen as a part of your daily computer system work, what happens is this is part of a build system. Most build
+            systems, when they run a build, won't have all the dependencies because we're not putting dependencies into source control. They'll physically go out to the different feeds and they'll pull the latest version, or the version dictated in
+            the manifest of a certain package. So, if your code relies on Kevin's package, and you run a build and it goes out and gets the malicious version of Kevin's package, and brings it in, well that's now out in production. Really nothing
+            changed about the package, except the stuff that's inside of it, and you should be able to trust the packages that you're installing, immutability is key.</p>
+          <p>Some package managers don't enforce mutability, some do, and then you have some packages like Universal Packages. We can still alter these packages without necessarily changing the contents inside. The biggest change is maybe just
+            updating the version. If I have a 1.1-beta and then I want to move that to a 1.1 release, technically those are two different versions of the package, or, I need to update the original package to remove the beta key word. That's not
+            necessarily what you want to do. We will talk about a term called <a href="/training/videos/universal-essentials/repackaging">repackaging</a> in another video, where I can take a pre-release package and just change the version of it without altering any of the contents of the package itself, and it
+            should still be verifiable across the board.</p>
+
+          <p><strong><a href="/training/videos/universal-essentials/package-discovery">Next Video &nbsp;&nbsp;&#10132;</a></strong></p>
+        </div>
+      </div>
+      <div class="training-box">
+        <h2>Customized Training</h2>
+        <p>
+          Our training courses are built modularly, and we can develop a customized training roadmap for your organization, so that everyone gets the training they need, when they need it.
+        </p>
+
+        <div class="button-set">
+          <a class="button" href="/training/contact?utm_source=training-videos" target="_blank">Request your Custom Training</a>
+          <a class="button" href="/training/courses?utm_source=training-videos" target="_blank">See the Available Courses</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+</html>
