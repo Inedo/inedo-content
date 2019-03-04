@@ -1,0 +1,104 @@
+@import "..\..\resources\styles\library";
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+a.download {
+    background-color: none;
+    padding: 8px 16px;
+    color: @inedo-darkblue;
+    border: 3px solid @inedo-darkblue;
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: @inedo-darkblue;
+        color: @inedo-white;
+    }
+}
+.content-container#banner {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    background: url(/support/community-banner.png) no-repeat #011b2d;
+    background-position: right;
+    position: relative;
+    height: 200px;
+
+    .content {
+        padding: 36px 100px;
+
+        h1 {
+            font-size: 250%;
+            margin: 32px 0 12px 0;
+            font-weight: 700;
+            color: @inedo-white;
+            text-shadow: 2px 2px 2px @inedo-darkblue;
+        }
+    }
+}
+.content-container {
+    .content {
+        p {
+            margin: 16px auto 24px auto;
+            font-size: 19px;
+        }
+
+        h2 {
+            font-weight: 500;
+            color: @inedo-darkblue;
+        }
+        h3.mug {
+          font-size: 21px;
+          font-weight: 700;
+        }
+
+        ul.slist {
+          font-size: 19px;
+          margin-left: 36px;
+          margin-top: 16px;
+          li {
+            list-style: disc;
+            padding-bottom: 12px;
+          }
+
+        }
+        pre {
+          background-color: #ededed;
+          padding: 20px;
+        }
+        img.screenshot {
+          border: 1px solid #404040;
+          margin-top: 32px;
+        }
+        div.clear {
+            float: none;
+            clear: both;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            left: 88%;
+
+            a {
+                background-color: #bec0c3;
+                padding: 6px 10px;
+                color: white;
+                font-size: 12px;
+                text-decoration: none;
+            }
+
+            a:hover {
+                background-color: @inedo-paleblue;
+            }
+        }
+
+    }
+}
