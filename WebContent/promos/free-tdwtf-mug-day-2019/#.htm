@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TheDailyWTF Article Steps</title>
+    <meta name="MasterPageFile" content="main.htm" />
+    <link rel="stylesheet" type="text/css" href="/promos/free-tdwtf-mug-day-2019/mug.css" />
+    <meta name="keywords" content="buildmaster" />
+
+    <script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0053/9152.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+
+    <script>
+        //smooth scroll
+        $(document).ready(function () {
+            $("a").on('click', function (event) {
+
+                if (this.hash !== "") {
+                    event.preventDefault();
+
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+  <style>
+      #header {
+          display: block;
+      }
+      ul#nav {
+          display: none;
+      }
+      .event-announcement {
+          display: none;
+      }
+      .large-banner-announcement {
+          display: none;
+      }
+      .large-banner-click {
+          display: none;
+      }
+      .secondary-nav-container {
+          display:none;
+      }
+
+
+  </style>
+    <div id="banner" class="content-container">
+        <div class="content">
+            <h1>TheDailyWTF Article Steps</h1>
+        </div>
+    </div>
+
+
+    <div class="content-container">
+        <div class="content">
+
+            <h2 id="pre-req">Pre-requisites:</h2>
+
+            <ul class="slist">
+              <li>Windows desktop or server to run on</li>
+              <li>If Visual Studio is not installed, download "Build Tools for Visual Studio 2017" to build the application: <a href="https://visualstudio.microsoft.com/downloads" target="_blank">https://visualstudio.microsoft.com/downloads</a> - this may take up to 10 minutes</li>
+              <li>Ensure that ".NET desktop build tools" and "Web development build tools" options are chosen when installing the build tools</li>
+            </ul>
+
+            <h2 id="steps">Steps:</h2>
+
+            <h3 class="mug">1. Download and install BuildMaster from: <a href="/buildmaster/download" target="_blank">https://inedo.com/buildmaster/download</a> using the Inedo Hub installer</h3>
+            <p>
+              If you're not already aware, BuildMaster is a CI/CD tool that automates the release and deployment process from source control to production.
+            </p>
+
+            <h3 class="mug">2. In BuildMaster, visit Admin &gt; Extensions to install the following extensions:</h3>
+
+            <ul class="slist">
+              <li>WindowsSdk</li>
+              <li>Git</li>
+              <li>NuGet</li>
+            </ul>
+            <p>Extensions are "plugins" that add and/or extend functionality (including deployment operations, automated approvals, source control integration, and more) within BuildMaster, and are fully customizable. Visit the <a href="/support/documentation/inedosdk" target="_blank">Inedo SDK documentation</a> for more information.</p>
+
+            <h3 class="mug">3. Applications dropdown &gt; Create new application&hellip;</h3>
+            <p>Fields:</p>
+            <ul class="slist">
+              <li>
+                Name: Accounts
+              </li>
+              <li>
+                Initial pipeline: <em>default</em>
+              </li>
+            </ul>
+
+            <p>An application in BuildMaster is similar to a project in Jenkins/TeamCity, and it can encapsulate all the necessary plans, pipelines, builds, and releases for software that gets released. For more information, visit the <a href="/support/documentation/buildmaster/modeling-applications/applications" target="_blank">applications documentation</a>.</p>
+
+            <h3 class="mug">4. Create a Build plan; Plans &gt; Create Plan</h3>
+            <p>Fields:</p>
+            <ul class="slist">
+              <li>
+                Name: Build
+              </li>
+            </ul>
+
+            <p>A plan is a script (using the language "OtterScript") that specifies the tasks and operations that occur to ultimately build or deploy an application. It is very simple to learn, has an associated visual editor, and offers both declarative and functional-style syntax that simplifies even the most complex deployments with features such as: conditionals, loops, retries, exception handling, parallel deployments, modules, direct PowerShell or Shell script usage, and much more. Visit the <a href="/support/documentation/executionengine/overview" target="_blank">execution engine</a> documentation to learn more.</p>
+
+            <h3 class="mug">5. Edit Build plan:</h3>
+<pre>
+  ##AH:UseTextMode
+  Git::Get-Source
+  (
+      RepositoryUrl: https://github.com/kramerica-industries/Accounts.git,
+      Branch: tdwtf
+  );
+
+  NuGet::Restore-Packages();
+
+  MSBuild::Build-Project Accounts.sln
+  (
+      To: ~\Output
+  );
+
+  WindowsSdk::Execute-VSTest
+  (
+      TestContainer: ~\Output\Accounts.Tests.dll
+  );
+
+  Create-Artifact Website
+  (
+      From: ~\Output\_PublishedWebsites\Accounts.Web
+  );
+
+</pre>
+          <h3 class="mug">6.	Edit the pipeline; Pipelines &gt; Accounts &gt; JSON Editor:</h3>
+<pre>
+  {
+    "Name": "Accounts",
+    "Color": "#c1103b",
+    "Description": "Example pipeline for the TDWTF mug download",
+    "Stages": [
+      {
+        "Name": "Build",
+        "Targets": [
+          {
+            "PlanName": "Build",
+            "EnvironmentName": "Integration",
+            "ServerNames": [
+              "localhost"
+            ],
+            "DefaultServerContext": "Specific"
+          }
+        ]
+      },
+      {
+        "Name": "Testing",
+        "Targets": [
+          {
+            "PlanName": "Deploy Accounts",
+            "EnvironmentName": "Testing",
+            "ServerNames": [
+              "localhost"
+            ],
+            "DefaultServerContext": "Specific"
+          }
+        ]
+      },
+      {
+        "Name": "Production",
+        "Targets": [
+          {
+            "PlanName": "Deploy Accounts",
+            "EnvironmentName": "Production",
+            "ServerNames": [
+              "localhost"
+            ],
+            "DefaultServerContext": "Specific"
+          }
+        ],
+        "Gate": {
+          "UserApprovals": [
+            {
+              "Name": "Admin",
+              "Description": "Make sure there are no WTFs"
+            }
+          ]
+        }
+      }
+    ]
+  }
+
+</pre>
+        <p>
+          A pipeline is a concept familiar to anyone who is familiar with hosted CI solutions; a way to define a repeatable release process by defining the servers and environments that your builds will be deployed to, as well as the manual and automatic approvals required at each stage of the process. Visit the <a href="/support/documentation/buildmaster/core-concepts/pipelines" target="_blank">pipelines documentation</a> to learn more.
+        </p>
+        <h3 class="mug">7. Create a release; Releases &gt; create&hellip;</h3>
+        <p>Fields:</p>
+        <ul class="slist">
+          <li>
+            Release number: 1.2.3
+          </li>
+          <li>
+            Release name: <em>default</em>
+          </li>
+          <li>
+            Pipeline: Accounts
+          </li>
+        </ul>
+        <p>A release is an event where a planned set of changes are tested and delivered to production, or more specifically, a final pipeline stage (i.e. deployed).</p>
+
+        <h3 class="mug">8. Create a build; From release page, select "Create Build", then click "Create Build" with the default values</h3>
+        <p>A build in BuildMaster is the fundamental unit of deployment under the context of a release that advances through a sequence of pipeline stages in order to effectively deploy a release. Its components may consist of any or all of the following: artifacts, unit tests, variables, and more.</p>
+
+        <h3 class="mug">9. If the build is successful, there will be a green box for the Build stage, with a Website artifact and 3 passed unit tests:</h3>
+        <img class="screenshot" src="/promos/free-tdwtf-mug-day-2019/successful-build.png" alt="Successful Build" />
+
+        <h3 class="mug">10. Edit the “Deploy Accounts” plan; Plans > Deploy Accounts – using a path on your desktop/server:</h3>
+<pre>
+  Deploy-Artifact Website
+(
+    To: C:\tmp\buildmaster\$PipelineStageName
+);
+
+</pre>
+          <h3 class="mug">11. Deploy the build to Test; visit Builds &gt; 1.2.3 #{buildNumber} &gt; Testing</h3>
+
+          <p></p>
+          <p>While not particularly impressive, hopefully it is obvious what is happening: with a single operation, a captured build artifact is deployed to a path based on variable evaluation, and can be as general or specific as necessary to accommodate any type of deployment, including packages, containers, etc.</p>
+          <p>Examine the files on disk at C:\tmp\buildmaster\Testing</p>
+          <p>On the build overview page, you can see that the deployment to Production is orange, because the pipeline contains an approval that was not met</p>
+
+          <h3 class="mug">12. On the build overview page, under Approvals, submit a "Make sure there are no WTFs" approval for the build</h3>
+          <p>Once the approval is added, the production deployment option should turn blue</p>
+
+          <h3 class="mug">13. Deploy to Production</h3>
+          <p>The release becomes "deployed" at this point, and in order to deploy the application again, you simply need to create a new release and build/deploy the BuildMaster build through the pipeline.</p>
+          <p>Examine the files on disk at C:\tmp\buildmaster\Production (they should match the ones from Testing)</p>
+
+
+          <div class="back-to-top">
+              <a class="back" href="#header">&#11205;</a>
+          </div>
+        </div>
+	</div>
+</body>
+</html>
