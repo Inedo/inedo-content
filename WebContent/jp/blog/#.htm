@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>More Than Just Code | Inedo's Blog</title>
+    <meta name="MasterPageFile" content="japan.htm" />
+    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+
+    <link rel="stylesheet" type="text/css" href="/blog/_resources/blog.css" />
+
+</head>
+<body>
+    <div class="blog-wrap">
+
+        <div id="blog-banner" class="content-container">
+            <div class="content">
+                <h1>More Than Just Code</h1>
+            </div>
+        </div>
+
+        <div id="blog-subbanner" class="content-container">
+            <div class="content">
+                <h2>A blog from the folks at Inedo</h2>
+            </div>
+        </div>
+
+        <div class="content-container blog-content">
+            <div class="content">
+                <div class="sidebar">
+                    <div class="sidebar-social-links">
+                        <a href="/rss"><img src="/blog/_resources/rss-icon.png" /></a>
+                        <a href="https://twitter.com/Inedo"><img src="/blog/_resources/twitter-icon.png" /></a>
+                        <a href="https://www.youtube.com/channel/UCAnXtHu2y0OaHm9Zz9I3NsA"><img src="/blog/_resources/youtube-icon.png" /></a>
+                        <a href="https://www.linkedin.com/company/inedo"><img src="/blog/_resources/linkdin-icon.png" /></a>
+                        <a href="/company/scotch"><img src="/blog/_resources/scotch-icon.png" /></a>
+                    </div>
+
+                    <div id="twitter-timeline-container">
+                        <a class="twitter-timeline" href="https://twitter.com/Inedo" data-widget-id="629652049685184512">Tweets by @Inedo</a>
+                    </div>
+                    <!--<div class="sidebar-link">
+                        <a href="/products"><img src="/products/toolchain-diagram2.png" /></a>
+                    </div>
+                    <div class="sidebar-link">
+                        <a href="/otter"><img src="/blog/_resources/OT-ad.png" /></a>
+                    </div>-->
+                    <div class="sidebar-link">
+                        <a href="/company/scotch">
+                            <img src="/blog/_resources/scotch.png" />
+                            <p class="caption-overlay">Like Scotch? <br/> Check out our expansive <br />in-house menu.</p>
+                        </a>
+                    </div>
+
+                </div>
+                <inedo:japan-blog-articles>
+                    <div class="article-summary ${Blog.ImageType}">
+                        <div class="floating-date">
+                            <p class="day">${Blog.PublishDate.Day}</p>
+                            <p>${Blog.PublishDate.MonthYear}</p>
+                        </div>
+                        <img class="floating-image" src="${Blog.ImageUrl}" alt="" />
+                        <div class="description">
+                            <a href="${Blog.ArticleUrl}" class="title">${Blog.Title}</a>
+                            <p class="abstract">${Blog.Abstract}</p>
+                            <img src="${Blog.ImageUrl}" alt="" />
+                            <p class="author">${Blog.AuthorName}</p>
+                            <p class="date">${Blog.PublishDate}</p>
+                        </div>
+                    </div>
+                </inedo:japan-blog-articles>
+            </div>
+        </div>
+
+        <div class="content-container blog-content">
+            <div class="content">
+                <inedo:blog-pager />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
