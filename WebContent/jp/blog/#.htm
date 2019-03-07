@@ -4,10 +4,17 @@
 <head>
     <meta charset="utf-8" />
     <title>More Than Just Code | Inedo's Blog</title>
-    <meta name="MasterPageFile" content="japan.htm" />
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
     <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
 
     <link rel="stylesheet" type="text/css" href="/blog/_resources/blog.css" />
+
+    <script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0053/9152.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
 
 </head>
 <body>
@@ -53,7 +60,7 @@
                     </div>
 
                 </div>
-                <inedo:japan-blog-articles>
+                <inedo:blog-articles>
                     <div class="article-summary ${Blog.ImageType}">
                         <div class="floating-date">
                             <p class="day">${Blog.PublishDate.Day}</p>
@@ -68,7 +75,7 @@
                             <p class="date">${Blog.PublishDate}</p>
                         </div>
                     </div>
-                </inedo:japan-blog-articles>
+                </inedo:blog-articles>
             </div>
         </div>
 

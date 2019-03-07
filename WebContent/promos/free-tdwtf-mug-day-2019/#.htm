@@ -68,39 +68,44 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <div class="content-container">
         <div class="content">
 
+
             <h2 id="pre-req">Pre-requisites:</h2>
 
             <ul class="slist">
-              <li>Windows desktop or server to run on</li>
-              <li>If Visual Studio is not installed, download "Build Tools for Visual Studio 2017" to build the application: <a href="https://visualstudio.microsoft.com/downloads" target="_blank">https://visualstudio.microsoft.com/downloads</a> - this may take up to 10 minutes</li>
-              <li>Ensure that ".NET desktop build tools" and "Web development build tools" options are chosen when installing the build tools</li>
+                <li>You can use our public <a href="https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;search=215667868766/BuildMaster;sort=name">Amazon Machine Image (AMI)</a> and skip to <a href="#step-2-5">step 2.5</a>; or </li>
+                <li>Windows desktop or server to run on</li>
+                <li>If Visual Studio is not installed, download "Build Tools for Visual Studio 2017" to build the application: <a href="https://visualstudio.microsoft.com/downloads" target="_blank">https://visualstudio.microsoft.com/downloads</a> - this may take up to 10 minutes</li>
+                <li>Ensure that ".NET desktop build tools" and "Web development build tools" options are chosen when installing the build tools</li>
             </ul>
 
             <h2 id="steps">Steps:</h2>
 
             <h3 class="mug">1. Download and install BuildMaster from: <a href="/buildmaster/download" target="_blank">https://inedo.com/buildmaster/download</a> using the Inedo Hub installer</h3>
             <p>
-              If you're not already aware, BuildMaster is a CI/CD tool that automates the release and deployment process from source control to production.
+                If you're not already aware, BuildMaster is a CI/CD tool that automates the release and deployment process from source control to production.
             </p>
 
             <h3 class="mug">2. In BuildMaster, visit Admin &gt; Extensions to install the following extensions:</h3>
 
             <ul class="slist">
-              <li>WindowsSdk</li>
-              <li>Git</li>
-              <li>NuGet</li>
+                <li>WindowsSdk</li>
+                <li>Git</li>
+                <li>NuGet</li>
             </ul>
             <p>Extensions are "plugins" that add and/or extend functionality (including deployment operations, automated approvals, source control integration, and more) within BuildMaster, and are fully customizable. Visit the <a href="/support/documentation/inedosdk" target="_blank">Inedo SDK documentation</a> for more information.</p>
+
+            <h3 id="step-2-5" class="mug" style="font-style: italic;">2.5 Upgrade Extensions (AMI Only)</h3>
+            <p><i>If any of the extensions listed above appear out-of-date, make sure to upgrade them to their latest versions.</i></p>
 
             <h3 class="mug">3. Applications dropdown &gt; Create new application&hellip;</h3>
             <p>Fields:</p>
             <ul class="slist">
-              <li>
-                Name: Accounts
-              </li>
-              <li>
-                Initial pipeline: <em>default</em>
-              </li>
+                <li>
+                    Name: Accounts
+                </li>
+                <li>
+                    Initial pipeline: <em>default</em>
+                </li>
             </ul>
 
             <p>An application in BuildMaster is similar to a project in Jenkins/TeamCity, and it can encapsulate all the necessary plans, pipelines, builds, and releases for software that gets released. For more information, visit the <a href="/support/documentation/buildmaster/modeling-applications/applications" target="_blank">applications documentation</a>.</p>
@@ -108,9 +113,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <h3 class="mug">4. Create a Build plan; Plans &gt; Create Plan</h3>
             <p>Fields:</p>
             <ul class="slist">
-              <li>
-                Name: Build
-              </li>
+                <li>
+                    Name: Build
+                </li>
             </ul>
 
             <p>A plan is a script (using the language "OtterScript") that specifies the tasks and operations that occur to ultimately build or deploy an application. It is very simple to learn, has an associated visual editor, and offers both declarative and functional-style syntax that simplifies even the most complex deployments with features such as: conditionals, loops, retries, exception handling, parallel deployments, modules, direct PowerShell or Shell script usage, and much more. Visit the <a href="/support/documentation/executionengine/overview" target="_blank">execution engine</a> documentation to learn more.</p>
@@ -142,7 +147,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   );
 
 </pre>
-          <h3 class="mug">6.	Edit the pipeline; Pipelines &gt; Accounts &gt; JSON Editor:</h3>
+            <h3 class="mug">6.	Edit the pipeline; Pipelines &gt; Accounts &gt; JSON Editor:</h3>
 <pre>
   {
     "Name": "Accounts",
@@ -200,31 +205,31 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   }
 
 </pre>
-        <p>
-          A pipeline is a concept familiar to anyone who is familiar with hosted CI solutions; a way to define a repeatable release process by defining the servers and environments that your builds will be deployed to, as well as the manual and automatic approvals required at each stage of the process. Visit the <a href="/support/documentation/buildmaster/core-concepts/pipelines" target="_blank">pipelines documentation</a> to learn more.
-        </p>
-        <h3 class="mug">7. Create a release; Releases &gt; create&hellip;</h3>
-        <p>Fields:</p>
-        <ul class="slist">
-          <li>
-            Release number: 1.2.3
-          </li>
-          <li>
-            Release name: <em>default</em>
-          </li>
-          <li>
-            Pipeline: Accounts
-          </li>
-        </ul>
-        <p>A release is an event where a planned set of changes are tested and delivered to production, or more specifically, a final pipeline stage (i.e. deployed).</p>
+            <p>
+                A pipeline is a concept familiar to anyone who is familiar with hosted CI solutions; a way to define a repeatable release process by defining the servers and environments that your builds will be deployed to, as well as the manual and automatic approvals required at each stage of the process. Visit the <a href="/support/documentation/buildmaster/core-concepts/pipelines" target="_blank">pipelines documentation</a> to learn more.
+            </p>
+            <h3 class="mug">7. Create a release; Releases &gt; create&hellip;</h3>
+            <p>Fields:</p>
+            <ul class="slist">
+                <li>
+                    Release number: 1.2.3
+                </li>
+                <li>
+                    Release name: <em>default</em>
+                </li>
+                <li>
+                    Pipeline: Accounts
+                </li>
+            </ul>
+            <p>A release is an event where a planned set of changes are tested and delivered to production, or more specifically, a final pipeline stage (i.e. deployed).</p>
 
-        <h3 class="mug">8. Create a build; From release page, select "Create Build", then click "Create Build" with the default values</h3>
-        <p>A build in BuildMaster is the fundamental unit of deployment under the context of a release that advances through a sequence of pipeline stages in order to effectively deploy a release. Its components may consist of any or all of the following: artifacts, unit tests, variables, and more.</p>
+            <h3 class="mug">8. Create a build; From release page, select "Create Build", then click "Create Build" with the default values</h3>
+            <p>A build in BuildMaster is the fundamental unit of deployment under the context of a release that advances through a sequence of pipeline stages in order to effectively deploy a release. Its components may consist of any or all of the following: artifacts, unit tests, variables, and more.</p>
 
-        <h3 class="mug">9. If the build is successful, there will be a green box for the Build stage, with a Website artifact and 3 passed unit tests:</h3>
-        <img class="screenshot" src="/promos/free-tdwtf-mug-day-2019/successful-build.png" alt="Successful Build" />
+            <h3 class="mug">9. If the build is successful, there will be a green box for the Build stage, with a Website artifact and 3 passed unit tests:</h3>
+            <img class="screenshot" src="/promos/free-tdwtf-mug-day-2019/successful-build.png" alt="Successful Build" />
 
-        <h3 class="mug">10. Edit the “Deploy Accounts” plan; Plans > Deploy Accounts – using a path on your desktop/server:</h3>
+            <h3 class="mug">10. Edit the “Deploy Accounts” plan; Plans > Deploy Accounts – using a path on your desktop/server:</h3>
 <pre>
   Deploy-Artifact Website
 (
@@ -232,24 +237,34 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 );
 
 </pre>
-          <h3 class="mug">11. Deploy the build to Test; visit Builds &gt; 1.2.3 #{buildNumber} &gt; Testing</h3>
+            <h3 class="mug">11. Deploy the build to Test; visit Builds &gt; 1.2.3 #{buildNumber} &gt; Testing</h3>
 
-          <p></p>
-          <p>While not particularly impressive, hopefully it is obvious what is happening: with a single operation, a captured build artifact is deployed to a path based on variable evaluation, and can be as general or specific as necessary to accommodate any type of deployment, including packages, containers, etc.</p>
-          <p>Examine the files on disk at C:\tmp\buildmaster\Testing</p>
-          <p>On the build overview page, you can see that the deployment to Production is orange, because the pipeline contains an approval that was not met</p>
+            <p></p>
+            <p>While not particularly impressive, hopefully it is obvious what is happening: with a single operation, a captured build artifact is deployed to a path based on variable evaluation, and can be as general or specific as necessary to accommodate any type of deployment, including packages, containers, etc.</p>
+            <p>Examine the files on disk at C:\tmp\buildmaster\Testing</p>
+            <p>On the build overview page, you can see that the deployment to Production is orange, because the pipeline contains an approval that was not met</p>
 
-          <h3 class="mug">12. On the build overview page, under Approvals, submit a "Make sure there are no WTFs" approval for the build</h3>
-          <p>Once the approval is added, the production deployment option should turn blue</p>
+            <h3 class="mug">12. On the build overview page, under Approvals, submit a "Make sure there are no WTFs" approval for the build</h3>
+            <p>Once the approval is added, the production deployment option should turn blue</p>
 
-          <h3 class="mug">13. Deploy to Production</h3>
-          <p>The release becomes "deployed" at this point, and in order to deploy the application again, you simply need to create a new release and build/deploy the BuildMaster build through the pipeline.</p>
-          <p>Examine the files on disk at C:\tmp\buildmaster\Production (they should match the ones from Testing)</p>
+            <h3 class="mug">13. Deploy to Production</h3>
+            <p>The release becomes "deployed" at this point, and in order to deploy the application again, you simply need to create a new release and build/deploy the BuildMaster build through the pipeline.</p>
+            <p>Examine the files on disk at C:\tmp\buildmaster\Production (they should match the ones from Testing)</p>
 
+            <h3 class="mug">14. Copy Production Execution Logs</h3>
+            <p>To complete the process and receive your mug, the final step is to copy and paste the execution logs for the production deployment.</p>
+            <p>
+                To accomplish this, visit the Accounts application overview, click Builds &gt; "view deployments" for the Deployed build &gt; filter by Production &gt; click the specific date under the "Execution" heading &gt; and finally, click "View Log Text".
+            </p>
 
-          <div class="back-to-top">
-              <a class="back" href="#header">&#11205;</a>
-          </div>
+            <h3 class="mug">15. Submit Application</h3>
+            <p>
+                Once the execution logs are copied, visit the following Google form: <a href="https://goo.gl/forms/LXnEp4G9EFCRCvUz2" target="_blank">https://goo.gl/forms/LXnEp4G9EFCRCvUz2</a>
+            </p>
+
+            <div class="back-to-top">
+                <a class="back" href="#header">&#11205;</a>
+            </div>
         </div>
 	</div>
 </body>
