@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+    <link rel="stylesheet" type="text/css" href="/blog/_resources/blog.css" />
+</head>
+<body>
+    <div class="blog-wrap">
+        <div id="article-banner" class="content-container ${Blog.ImageType}" style="background-image: url(${Blog.ImageUrl});">
+            <div class="content">
+                <img src="${Blog.ImageUrl}" alt="" />
+                <div class="title">
+                    <h1>${Blog.Title}</h1>
+                    <p>${Blog.SubTitle}</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="article-subbanner" class="content-container">
+            <div class="content">
+                <a href="/blog"> &lt;&lt; More Than Just Code</a>
+                <div id="sm-links" class="sidebar-element">
+                    <a href="/rss"><img src="/blog/_resources/rss-icon.png" /></a>
+                    <a href="https://twitter.com/Inedo"><img src="/blog/_resources/twitter-icon.png" /></a>
+                    <a href="https://www.youtube.com/channel/UCAnXtHu2y0OaHm9Zz9I3NsA"><img src="/blog/_resources/youtube-icon.png" /></a>
+                    <a href="https://www.linkedin.com/company/inedo"><img src="/blog/_resources/linkdin-icon.png" /></a>
+                    <a href="/company/scotch"><img src="/blog/_resources/scotch-icon.png" /></a>
+                </div>
+            </div>
+        </div>
+        
+        <div id="article-body" class="content-container">
+
+            <div class="content">
+                <div class="date">
+                    <p class="day">${Blog.PublishDate.Day}</p>
+                    <p class="month-year">${Blog.PublishDate.MonthYear}</p>
+                </div>
+                <p class="author">by ${Blog.AuthorName}</p>
+                <div class="article-body">
+                    ${Blog.RssBody}
+                </div>
+            </div>
+        </div>
+        <div id="article-footer" class="content-container">
+            <div class="content">
+                <div class="related-articles">
+                    <h2>Related Articles</h2>
+                    ${Blog.RelatedArticles}
+                </div>
+                <div class="tag-holder">
+                    <h2>Tags</h2>
+                    ${Blog.Tags}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
