@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Inedo Documentation</title>
-    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+    <meta name="MasterPageFile" content="japan.htm" />
     <link type="text/css" rel="stylesheet" href="/support/documentation/_resources/documentation2.css" />
 </head>
 <body>
@@ -23,15 +23,15 @@
                     <div class="documentation-content">
                         <div class="breadcrumb-docs">
                             <ul class="bcd">
-                                <li><a href="/support/documentation">Docs</a></li>
-                                <li><a href="/support/documentation/${Documentation.ProductName}">${Documentation.ProductName}</a></li>
+                                <li><a href="/jp/support/documentation">Docs</a></li>
+                                <li><a href="/jp/support/documentation/${Documentation.ProductName}">${Documentation.ProductName}</a></li>
                             </ul>
                         </div>
                         <h1 class="productname-title">${Documentation.ProductName} Documentation</h1>
                         <h1 class="doc-title">${Documentation.SubTitle}</h1>
                         <div class="github-edit-section ${GitHubGeneratedClass}">
                             <ul class="github-edits">
-                                <li><a class="github" href="${GitHubUrl}"><img src="/resources/images/icons/github.svg" /></a></li>
+                                <!--<li><a class="github" href="${GitHubUrl}"><img src="/resources/images/icons/github.svg" /></a></li>-->
                                 <li><strong>Last Modified:</strong> ${LastEditDate}</li>
                             </ul>
                         </div>
@@ -43,12 +43,12 @@
 
 
 
-                <div class="documentation-content">
+                <div class="documentation-content" style="margin-bottom: 50px;">
                     <inedo:documentation-body></inedo:documentation-body>
 
                     <inedo:child-topics></inedo:child-topics>
                 </div>
-                <div class="github-content">
+                <!--<div class="github-content">
                     <p>Have a question? Try the Q&amp;A Forum</p>
                     <ul class="github-gray-box">
                         <li><a class="github" href="/support/questions/new" target="_blank">Ask a Question</a></li>
@@ -56,9 +56,9 @@
                         <li><a class="github" href="${GitHubUrl}" target="_blank">Create an Issue on GitHub</a></li>
                     </ul>
                     <p>
-                       Our documentation is now Open Source and on GitHub. We highly encourage our users to contribute and get involved! <!--Read about this update in the <a href="">Knowledge Based Article</a>-->.
+                       Our documentation is now Open Source and on GitHub. We highly encourage our users to contribute and get involved!
                     </p>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
