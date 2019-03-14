@@ -9,8 +9,11 @@
 @proget-blue: #3fa9f5;
 
 
-#header, #footer.content-container, #sticky-nav-content-container.content-container, p.tagline {
+#header, #footer.content-container, #navigation.content-container, #sticky-nav-content-container.content-container, p.tagline {
     display: none;
+}
+#banner {
+  border-bottom: 4px solid @inedo-darkblue;
 }
 
 .section-page-title {
@@ -18,6 +21,21 @@
       margin-bottom: 8px;
       padding-bottom: 20px;
   .container {
+    .breadcrumb {
+
+      a {
+        text-decoration: none;
+        margin: auto 6px;
+        font-size: 14px;
+        font-weight: 500;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:hover {
+          color: @proget-blue;
+        }
+      }
+    }
     h1 {
       font-size: 36px;
       font-weight: 600;
