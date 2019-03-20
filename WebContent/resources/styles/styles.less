@@ -389,10 +389,9 @@ hr {
    /*New (as of 7-17) drop down main menu styles - All variables are stored here for ease of access for new front end edits*/
         //adjust menu item height and width here
         //Note: width is derived from the width entered here
-        //Note: Height should be releative to font size and needs to be updated here if font size is changed to properly align font within drop downs)
+        //Note: Height should be relative to font size and needs to be updated here if font size is changed to properly align font within drop downs)
         //Note: Calc functions that reference less declarations (@example) have a different syntax, @example would be used as @{example} in order for less to compile the calc correctly
         @menu-item-width: 140px;
-        @buy-width:75px;
         @menu-item-height: 45px;
         @menu-highlight: #3dd6e5; //currently the bright blue elements
         @menu-dark: @inedo-darkblue;
@@ -418,7 +417,7 @@ hr {
             margin: 0;
             padding: 0;
             text-align: center;
-            width: @menu-item-width;
+          width: @menu-item-width;
         }
 
         ul#nav {
@@ -449,31 +448,12 @@ hr {
                     font-weight: bold;
                 }
 
-                &#buy {
-                    width: @buy-width;
-                    background-color: @menu-dark;
-
-                    a {
-                        color: @menu-light;
-                    }
-                }
             }
         }
         #nav li:hover > a {
             background-color: @menu-dark;
             color: @menu-light;
         }
-
-        #nav li#buy:hover > a {
-            background-color: #3dd6e5;
-            color: @menu-light;
-        }
-
-
-
-
-
-
 
         }
     }
