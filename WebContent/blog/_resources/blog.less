@@ -379,17 +379,12 @@
     .content {
         width: 800px;
         margin: 0 auto 10px auto;
+        padding-bottom: 36px;
         border-bottom: 10px solid @blog-blue;
 
         h1 {
             color: @inedo-black;
             margin-top: 0px;
-        }
-
-        h3 {
-            color: @blog-blue;
-            margin-top: 0px;
-            font-weight: bold;
         }
 
         .date {
@@ -417,25 +412,56 @@
 
         .author {
             text-align: center;
-            margin: 3px 0;
+            margin: 3px 0 40px 0;
         }
-    
+
         .article-body {
             width: 700px;
             margin: 0 auto;
 
             h1 {
-                font-size: 250%;
+              font-size: 36px;
+              font-weight: 600;
+              margin-top: 20px;
+              line-height: 52px;
+            }
+            h2 {
+              margin-top: 36px;
+              margin-bottom: 8px;
+              font-size: 1.8em;
+              line-height: 1.25;
+              font-weight: 500;
+            }
+
+                    h3 {
+                        color: @proget-blue;
+                        margin-top: 36px;
+                        margin-bottom: 8px;
+                        font-size: 1.8em;
+                        line-height: 1.25;
+                        font-weight: 500;
+                    }
+            h4 {
+              margin-bottom: 8px;
+              font-weight: 500;
+              font-size: 1.3em;
             }
 
             p, li {
-                font-size: 120%;
+              margin-bottom: 8px 0;
+              line-height: 1.6;
+              font-size: 1em;
+              font-weight: 400;
               }
             li{
                 margin-bottom:5px;
+                list-style: disc;
             }
             img { max-width: 100%;
-               
+
+            }
+            .button-set {
+              margin: 36px auto;
             }
             .small-figure{
                 font-size:75%;
@@ -447,9 +473,9 @@
                 .caption{
                     margin: 5px 0 0 0;
                 }
-               
+
             }
-            
+
         }
     }
 }
