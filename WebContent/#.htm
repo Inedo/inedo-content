@@ -1,12 +1,38 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>DevOps &amp; Deployment Automation Solutions</title>
-    <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
-    <meta name="google-site-verification" content="sr894YGjr0dN2RxZ-77EOZGXaBuMUhGne7T_DMHp8_A" />
-    <meta name="google-site-verification" content="sr894YGjr0dN2RxZ-77EOZGXaBuMUhGne7T_DMHp8_A" />
-    <link rel="stylesheet" type="text/css" href="/homepage/home.css" />
+  <title>DevOps &amp; Deployment Automation Solutions</title>
+  <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
+  <meta name="google-site-verification" content="sr894YGjr0dN2RxZ-77EOZGXaBuMUhGne7T_DMHp8_A" />
+  <meta name="google-site-verification" content="sr894YGjr0dN2RxZ-77EOZGXaBuMUhGne7T_DMHp8_A" />
+    <link rel="stylesheet" type="text/css" href="/resources/styles/homepage.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
 
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
     <script type="text/javascript">
         setTimeout(function () {
             var a = document.createElement("script");
@@ -19,125 +45,161 @@
 </head>
 <body>
 
+
     <div id="banner" class="content-container">
         <div class="content">
             <div class="banner-sec">
-                <h1><strong>DevOps for the Enterprise</strong></h1>
-
-                <h4>
-                    Business requirements to production faster, without sacrificing compliance.
-
-                </h4>
-            </div>
-            <div class="top-announcements">
-                <a href="/training/events/upack-ess-18?utm_source=homepage-announcements" class="value-icons">
-                    <h3>Free Universal Packages Seminar Video Training</h3>
-                    <p style="margin-bottom: 10px;">Faster, Better, and Free Software Delivery</p>
-                    <p class="explore">Watch Now!</p>
-                </a>
-                <a href="/support/whitepapers/ci-cd-buildmaster?utm_source=homepage-announcements" class="value-icons" style="background-color: #b21d1d;">
-                    <h3>Continuous Integration. Continuous Delivery. Continuous Headache?</h3>
-                    <p class="explore">CI/CD Strategies</p>
-                </a>
-                <a href="/support/whitepapers/ci-cd-infrastructure-config-mgmt?utm_source=homepage-announcements" class="value-icons" style="background-color: #663458;">
-                    <h3>CI/CD with Otter</h3>
-                    <p>
-                        This guide will show you how to deliver infrastructure changes using CI/CD pipelines.
-                    </p>
-                    <p class="explore">Read the Guide</p>
-                </a>
+              <h1>Get Back to Developing</h1>
+                <h2>Our tools maximize developer time, minimize release risk, and empower stakeholders to bring their vision to life faster. All with the people and technology you have right now.</h2>
 
             </div>
-        </div>
-    </div>
-
-
-    <div id="toolchain" class="content-container">
-        <div class="content">
-            <img src="/homepage/toolchain.png" usemap="#planetmap" />
-            <map name="planetmap">
-                <area shape="rect" coords="0,0,130,87" href="/products" alt="empty1" />
-                <area shape="rect" coords="136,0,370,87" href="/proget" alt="ProGet" />
-                <area shape="rect" coords="384,0,612,87" href="/buildmaster" alt="BuildMaster" />
-                <area shape="rect" coords="624,0,854,87" href="/otter" alt="Otter" />
-                <area shape="rect" coords="860,0,999,87" href="/products" alt="empty2" />
-            </map>
-        </div>
-    </div>
-
-    <div id="tools" class="content-container">
-        <div class="content">
-            
-            <div class="value">
-                <div href="/proget" class="value-icons">
-                    <a href="/proget"><img src="/resources/images/logos/proget.svg" /></a>
+            <div class="tool-chain">
+                <a href="#proget-tool" class="tool-icons">
+                    <img src="/resources/images/logos/proget.svg" />
                     <p>
-                        Package your applications<br/>and components.
+                        Package your applications and components.
                     </p>
-                    <a href="/proget" class="explore">Explore</a>
-                </div>
-                <div href="/buildmaster" class="value-icons">
-                    <a href="/buildmaster"><img src="/resources/images/logos/buildmaster.svg" /></a>
+                    <p class="explore">Explore</p>
+                </a>
+                <a href="#buildmaster-tool" class="tool-icons">
+                    <img src="/resources/images/logos/buildmaster.svg" />
                     <p>
                         Release and deploy your applications reliably.
                     </p>
-                    <a href="/buildmaster" class="explore">Explore</a>
-                </div>
-                <div href="/otter" class="value-icons">
-                    <a href="/otter"><img src="/resources/images/logos/otter.svg" /></a>
+                    <p class="explore">Explore</p>
+                </a>
+                <a href="#otter-tool" class="tool-icons">
+                    <img src="/resources/images/logos/otter.svg" />
                     <p>
                         Provision your servers and manage configuration.
                     </p>
-                    <a href="/otter" class="explore">Explore</a>
-                </div>
-
-                <div href="/upack" class="value-icons">
-                    <a href="/upack"><img src="/resources/images/logos/upack.svg" /></a>
-                    <p>
-                        Universal packaging platform and tools.
-                    </p>
-                    <a href="/upack" class="explore">Explore</a>
-                </div>
+                    <p class="explore">Explore</p>
+                </a>
             </div>
+
         </div>
     </div>
 
     <div style="clear: both;"></div>
 
+    <div class="content-container tool align-left" id="proget-tool">
+        <div class="content" style="margin-top: 0;">
+            <div class="left">
+                <h2>Package your Applications and Components</h2>
+                <p>
+                    Centralize and secure access to your organization's applications, components, and third-party packages and containers including NuGet, npm, PowerShell, Chocolatey, maven, Docker, and more.
+                </p>
+
+                <div class="circle-button">
+                    <a class="circle" href="/proget?utm_source=homepage&amp;utm_medium=button&amp;utm_campaign=content-container-tool">Explore ProGet</a>
+                </div>
+            </div>
+
+            <div class="right">
+                <a href="/proget?utm_source=homepage&amp;utm_medium=graphic&amp;utm_campaign=content-container-tool"><img src="/proget/product-page-graphic.png" /></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content-container tool align-right" id="buildmaster-tool">
+        <div class="content">
+
+
+            <div class="left">
+                <a href="/buildmaster?utm_source=homepage&amp;utm_medium=graphic&amp;utm_campaign=content-container-tool"><img src="/buildmaster/build-test-deploy.png" /></a>
+            </div>
+            <div class="right">
+                <h2>Release and Deploy<br/>your Applications Reliably</h2>
+                <p>
+                    Start simple, then scale to thousands of servers and the cloud. Release your software with confidence, and at the pace your business demands.
+                </p>
+                <div class="circle-button">
+                  <a class="circle" href="/buildmaster?utm_source=homepage&amp;utm_medium=button&amp;utm_campaign=content-container-tool">Explore BuildMaster</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container tool align-left" id="otter-tool">
+        <div class="content">
+            <div class="left">
+                <h2>Provision your Servers<br/>and Manage Configuration</h2>
+                <p>
+                    Define reusable server roles to provision servers, eliminate configuration drift, deploy packages, or instantly scale infrastructure from either the web-based dashboard or directly from Git.
+                </p>
+                <div class="circle-button">
+                  <a class="circle" href="/otter?utm_source=homepage&amp;utm_medium=button&amp;utm_campaign=content-container-tool">Explore Otter</a>
+                </div>
+            </div>
+
+            <div class="right">
+                <a href="/otter?utm_source=homepage&amp;utm_medium=graphic&amp;utm_campaign=content-container-tool"><img src="/otter/product-page-graphic.png" /></a>
+            </div>
+        </div>
+    </div>
+
     <div id="client-logos" class="content-container dark short">
         <div class="content">
             <div>
-                <a href="/users"><img src="/homepage/users_image.png" alt="" /></a>
+                <a href="/users?utm_source=homepage&amp;utm_medium=logo-map&amp;utm_campaign=client-logos"><img src="/homepage/users_image.png" alt="" /></a>
             </div>
-            <div class="button-set">
-                <a href="/users" class="button">
-                    See more of our Featured Users
+            <div class="circle-button">
+                <a class="circle" href="/users?utm_source=homepage&amp;utm_medium=button&amp;utm_campaign=client-logos">See more of our Featured Users</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="content-container also-available">
+        <div class="content">
+            <div class="left">
+                <h2>Free &amp; Open Source Tools:</h2>
+
+                <a href="/upack?utm_source=homepage&amp;utm_medium=card&amp;utm_campaign=also-available" class="cards">
+                    <img src="/resources/images/logos/upack.svg" />
+                    <p>
+                        Universal packaging platform and tools.
+                    </p>
+                    <p class="explore">Explore</p>
+                </a>
+                <a href="/romp?utm_source=homepage&amp;utm_medium=card&amp;utm_campaign=also-available" class="cards">
+                    <img src="/resources/images/logos/romp.svg" />
+                    <p>
+                        Self-deploying application and infrastructure packages.
+                    </p>
+                    <p class="explore">Explore</p>
+                </a>
+            </div>
+            <div class="right">
+                <h2>Training &amp; Services:</h2>
+                <a href="/training?utm_source=homepage&amp;utm_medium=card&amp;utm_campaign=also-available" class="cards">
+                    <h4>Training</h4>
+                    <p>
+                        Scale DevOps-centric processes and culture with training to increase competency and proficiency across your organization in the latest tools, technologies, and industry best practices.
+                    </p>
+
+                </a>
+                <a href="/professional-services?utm_source=homepage&amp;utm_medium=card&amp;utm_campaign=also-available" class="cards">
+                    <h4>Professional Services</h4>
+                    <p>
+                        Inedo's professional services team can help accelerate your DevOps implementation while also reducing the risk of failure.
+                    </p>
+
                 </a>
             </div>
         </div>
     </div>
 
-    <div id="case-studies" class="content-container">
+    <div class="content-container roadmap">
         <div class="content">
-            <a style="background-color: #5a85d7;" href="/proget/case-studies/abanca" class="cs-card">
-                <img src="/proget/case-studies/abanca/abanca-logo.png" />
-                <h4>
-                    Abanca automated the delivery of 35 applications and projects, through a modern "package-based" methodology.
-                </h4>
-            </a>
-            <a style="background-color: #c60c46;" href="/buildmaster/case-studies/uch" class="cs-card">
-                <img src="/buildmaster/case-studies/uch/uch-logo.png" />
-                <h4>
-                    University of Colorado Health has automated and maintained 114 applications, divided into 28 separate application groups.
-                </h4>
-            </a>
-            <a style="background-color: #1998D4;" href="/otter/case-studies/sure-id" class="cs-card">
-                <img src="/otter/case-studies/sure-id/sure-id-logo.png" />
-                <h4>
-                    SureID remediates all cases of drift across the entire organization's TeamCity build infrastructure with a single click.
-                </h4>
-            </a>
-
+            <div class="banner-sec">
+                <h2>Inedo Product Roadmap<a href="/products/roadmap?utm_source=homepage&amp;utm_medium=button&amp;utm_campaign=roadmap-banner">See the Product Roadmap</a></h2>
+                <p>
+                    In the coming months, our product releases will adhere<br/>to a common theme and rigorous schedule.
+                </p>
+            </div>
         </div>
     </div>
 </body>
