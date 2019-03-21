@@ -39,6 +39,8 @@
 
   <permanent from="/devops" to="/" />
 
+  <permanent from="/products" to="/" />
+
   <permanent from="/company/current-direction" to="/company"/>
   <permanent from="/company/next-generation" to="/company"/>
 
@@ -96,7 +98,7 @@
   <permanent from="/offset/pay" to="/offset" />
   <permanent from="/offset/thanks" to="/offset" />
   <permanent from="/offset/submit-payment" to="/offset" />
-	
+
 	<!--Conferences-->
 	<permanent from="/vslive" to="/support/whitepapers/ci-cd-infrastructure-config-mgmt?utm_source=vslive" />
 

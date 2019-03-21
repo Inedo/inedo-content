@@ -28,7 +28,7 @@
         .contact-form {
             background-color: #e4e4e4;
             padding: 10px 20px;
-            margin-bottom: 40px;
+            margin-bottom: 150px;
             width: 650px;
             margin-left: 150px;
         }
@@ -54,14 +54,14 @@
             display: none;
         }
     </style>
-    <div style="text-align: center; margin: 30px 150px">
-        <h3>Training Quote Request</h3>
-        <p>
-            Our expert-developed training courses are available in-person and remotely, from a variety of certified training partners around the world. The courses are also available for internal-use, and we can help you integrate our training into your organization's overall training program.
-        </p>
+    <div style="text-align: center; margin: 54px 150px 30px 150px">
+        <h3>Request On-site Training</h3>
+        <!--<p>
+            Our expert-developed training courses are available from a variety of certified training partners around the world. The courses are also available for internal-use, and we can help you integrate our training into your organization's overall training program.
+        </p>-->
     </div>
     <div class="contact-form">
-        
+
         <contact-form method="post" action="/contact-form">
             <fieldset>
                 <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
@@ -76,36 +76,13 @@
                 <label>Email Address*</label>
                 <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
 
-                <label>Phone Number</label>
-                <div><input name="Phone Number" type="text" /></div>
+                <label>How can we help you? (optional)</label>
+                <div><textarea name="Message" style="width: 630px;" rows="8" cols="20"></textarea></div>
 
-                <label>Company* (resellers: please note end user)</label>
-                <div><input name="company" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                <select name="inperson-remote-or-unsure" data-ahvalidator='{ "Required": true }'>
-                    <option value="">Type of Training*</option>
-                    <option value="customized training roadmap">Customized Training</option>
-                    <option value="inperson">In-person</option>
-                    <option value="remote">Remote</option>
-                    <option value="internal-use">Internal-use License</option>
-                    <option value="unsure">Unsure (please explain below)</option>
-                </select>
-
-                <label>Desired course(s) or, if applicable, write Customized*</label>
-                <div><input name="which courses" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                <label>Number of Students*</label>
-                <div><input name="number of students" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                <label>Special requests and additional comments</label>
-                <div><textarea name="Message" style="width: 630px;" rows="4" cols="20"></textarea></div>
-
-                <input type="button" value="Request Training" onclick="AhValidation.Submit(this);" />
+                <input type="button" value="Submit" onclick="AhValidation.Submit(this);" />
             </fieldset>
         </contact-form>
     </div>
 
 </body>
 </html>
-
-
