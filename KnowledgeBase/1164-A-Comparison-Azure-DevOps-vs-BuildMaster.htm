@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1164" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="buildmaster, azure, azure-devops" />
+    <title>A Comparison Between BuildMaster vs. Azure DevOps</title>
+    <link type="text/css" rel="stylesheet" href="/support/documentation/_resources/documentation2.css" />
+
+</head>
+<body>
+    <p>BuildMaster and <a href="https://azure.microsoft.com/en-us/services/devops/">Azure DevOps</a> <em>(along with on-premise TFS, and its predecessors Visual Studio Team Services, Visual Studio Online)</em> are similar products that solve similar problems, and both are commonly used as part of a modern DevOps toolchain.</p>
+    <p>Already familiar with Azure DevOps? The <a href="#terminology">terminology</a> comparison may help you get a quicker understanding of BuildMaster.</p>
+    <h2 id="build-and-release-pipelines">Build and Release Pipelines</h2>
+    <p>Both BuildMaster and Azure DevOps can model and automate end-to-end CI/CD, starting by building source code and deploying to servers, VMs, cloud services, and more. Azure DevOps' has superb support for continuous integration, especially when the eventual deployment target is Azure itself.</p>
+    <p>In Azure DevOps, deployment tasks are the smallest unit of a build/deployment, including operations such as downloading artifacts, publishing, or executing scripts. These tasks may be selected in the web UI or defined in YAML.</p>
+    <p>By comparison, BuildMaster's smallest unit of build/deployment is known as an <em>operation</em>, and they function in the same manner as Azure DevOps' tasks. Operations may be drag/dropped via the plan editor, or defined in a domain-specific language known as <a href="/support/documentation/executionengine/otterscript/overview">OtterScript</a>, a text-based representation of the <a href="/support/documentation/executionengine/overview">Inedo Execution Engine</a>. The execution engine allows common deployment operations to be declared with a simple syntax that enables powerful deployment functionality including:</p>
+    <ul>
+        <li>Error handling: <code>try</code>/<code>catch</code> known, acceptable failure conditions</li>
+        <li>Parallel deployment: <code>with async {}</code> blocks can break up parallelizable deployment tasks</li>
+        <li>Retries: <code>with rety = 5 {}</code> blocks can automatically retry operations that may rely on the status of third-parties (e.g. timestamping during code signing)</li>
+        <li>Server context: <code>for server {}</code> blocks can easily switch agent context to execute code remotely on an alternate server even when the pipeline specifies a different one (don't worry; this can be secured by environment)</li>
+    </ul>
+    <h3 id="pipeline-philosophy">Pipeline Philosophy</h3>
+    <p>The concept of a <em>pipeline</em> itself is nearly identical for both tools (as well as the technical implementation and representation), however BuildMaster's pipelines combine the build and deployment processes into a single pipeline, so deployment "packages" (whether artifacts, containers, etc.) have their full lifecycle known at their inception, but may also be changed to accomodate changes to the release process as necessary.</p>
+    <h2 id="azure-devops-with-buildmaster">Azure DevOps <em>with</em> BuildMaster</h2>
+    <p>Although Azure DevOps is a powerful option for hosted build and deployment, it is very likely that not all of your organization's projects and applications can be built, deployed, or hosted there. While there is an on-premise solution, using it negates many of the benefits traditionally associated with hosting offsite.</p>
+    <p>Because of this, BuildMaster has a tight integration with Azure DevOps. Using the <a href="https://inedo.com/den/inedox/tfs">TFS extension</a>, you can import cloud-stored build artifacts into BuildMaster, create or comment on work items, and apply the necessary automated or manual approvals, ultimately adding a layer of consistency that applies to both legacy and greenfield applications.</p>
+    <h2 id="terminology-comparison">Terminology Comparison</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Azure DevOps</th>
+                <th>BuildMaster</th>
+                <th>Additional Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Agent</td>
+                <td><a href="/support/documentation/inedoagent/overview">Inedo Agent</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Agent Pool</td>
+                <td><a href="/support/documentation/executionengine/components/resource-pools">Resource Pools</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Artifacts</td>
+                <td><a href="/support/documentation/proget/core-concepts/feeds">ProGet Feed</a></td>
+                <td>While BuildMaster can <a href="/support/documentation/buildmaster/core-concepts/builds-and-ci/artifacts">create and store artifacts itself</a>, our other product <a href="/proget">ProGet</a> is most equivalent to Azure Artifacts</td>
+            </tr>
+            <tr>
+                <td>Build Pipeline</td>
+                <td><a href="/support/documentation/buildmaster/core-concepts/deployment-plans">Plans</a> or <a href="/support/documentation/buildmaster/core-concepts/pipelines">Pipelines</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Build Retention</td>
+                <td><a href="/support/documentation/buildmaster/administration/retenion-policies">Retention Policies</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Build Triggers</td>
+                <td><a href="/support/documentation/buildmaster/core-concepts/builds-and-ci#continuous-integration">Repository Monitors &amp; Webhooks</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Deployment Group</td>
+                <td><a href="/support/documentation/buildmaster/core-concepts/pipelines#deployment-targets">Pipeline Stage Targets</a></td>
+                <td>Both systems can target servers, VMs, and other services</td>
+            </tr>
+            <tr>
+                <td>Expressions/Conditions</td>
+                <td><a href="/support/documentation/executionengine/otterscript/overview">OtterScript</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Jobs</td>
+                <td>Executions</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Key Vault</td>
+                <td><a href="/support/documentation/buildmaster/global-components/resource-credentials">Resource Credentials</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Library Variable Groups</td>
+                <td><a href="/support/documentation/buildmaster/global-components/configuration-variables">Configuration Variables</a></td>
+                <td>This also relates to variables in Release Templates</td>
+            </tr>
+            <tr>
+                <td>Marketplace</td>
+                <td><a href="/den">Inedo Den</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Pre-deployment Conditions</td>
+                <td><a href="/support/documentation/buildmaster/core-concepts/pipelines#manual-automatic-approvals">Approvals</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Release Pipeline</td>
+                <td><a href="/support/documentation/buildmaster/core-concepts/deployment-plans">Plans</a> or <a href="/support/documentation/buildmaster/core-concepts/pipelines">Pipelines</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Tasks</td>
+                <td><a href="/support/documentation/executionengine/components/operations-functions">Plan Operations</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Task Group</td>
+                <td><a href="/support/documentation/buildmaster/core-concepts/deployment-plans#deployment-modules">Module</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Templates</td>
+                <td><a href="/support/documentation/buildmaster/core-concepts/deployment-plans">Plans</a> or <a href="/support/documentation/buildmaster/core-concepts/deployment-plans#deployment-modules">Module</a></td>
+                <td>A deployment plan designed to be reusable would also function the same as an template</td>
+            </tr>
+            <tr>
+                <td>Work Items</td>
+                <td><a href="/support/documentation/buildmaster/modeling-applications/issues-projects">Issues</a></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
