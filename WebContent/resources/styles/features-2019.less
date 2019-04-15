@@ -65,13 +65,14 @@
   padding-bottom: 30px;
   padding-top: 60px;
   border-top: 3px solid @inedo-darkblue;
-  &:first-child {border-top: none; padding-top: 20px;}
+  &:first-child {border-top: none; padding-top: 0px; margin-top: 20px;}
 }
 
 .cards {
     a.box {
         text-decoration: none;
         width: 32%;
+        min-height: 316px;
         display: inline-block;
         vertical-align: top;
         box-shadow: 1px 1px 4px @inedo-darkblue;
@@ -124,6 +125,32 @@
       .element {
       width: 30%;
       margin: 20px 15px 0 15px;
+      &.bsys {
+      width: 22%
+      }
+      &.uni-repo {
+      border-left: 1px solid @inedo-darkblue;
+      padding-left: 30px;
+      width: 40%;
+      padding-bottom: 36px;
+      }
+      }
+    }
+    &.quint {
+      .element {
+      width: 30%;
+      margin: 20px 15px 0 15px;
+      img {
+          width:75px;
+          height: 75px;
+      }
+      &.middle {
+        padding-top: 150px;
+      }
+      &.double {
+        margin: 0 80px;
+        width: 33%;
+      }
       }
     }
   }
