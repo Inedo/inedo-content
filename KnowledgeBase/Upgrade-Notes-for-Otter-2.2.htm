@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1165" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="otter, upgrade-notes" />
+    <title>Upgrade Notes for Otter 2.2</title>
+    <style type="text/css">
+        .green {
+            color: mediumseagreen;
+        }
+        .red {
+            color: #c0504d;
+        }
+    </style>
+</head>
+<body>
+    <h3>Upgrade Notes</h3>
+    <p><a href="/otter/2.2">Otter 2.2</a> is minor release with the following changes:</p>
+    <ul>
+        <li>major performance improvements (<a href="#perf">details</a>)</li>
+        <li>add opt-in Loupe integration (<span class="green">new feature</span>) (<a href="#ceip">details</a>)</li>
+    </ul>
+    <p>
+        For the complete listing of issues added to this release, see the release notes on the <a href="/otter/versions">All Versions page</a>.
+    </p>
+
+    <h3>New Features</h3>
+    <h4 id="perf">Major Performance Improvements</h4>
+    <p>
+        We've removed many performance bottlenecks including SQL database access, plan editor initialization,
+        Git raft optimization, and more. Otter will perform better in general and have a better capacity to scale.
+    </p>
+
+    <h4 id="ceip">Customer Experience &amp; Improvement Program</h4>
+    <p>
+        Inedo has partnered with Gibraltar Software in order to integrate Loupe with our products as part of our customer
+        success initiative. This program is known as the <i>Customer Experience Improvement Program (CEIP)</i>,
+        and this opt-in program offers several benefits to both Inedo and our customers.
+    </p>
+    <p>
+        This feature is disabled by default in all existing and new installations. Visit the
+        <a target="_blank" href="/support/documentation/various/ceip/overview">documentation</a>
+        to learn how to opt-in, and more about what kind of data is collected and how Inedo uses it.
+    </p>
+
+    <h3>Database Changes</h3>
+    <p>
+        Since v2.1, there are minor database schema changes, and therefore if a rollback to pre-2.2 is required, the SQL database must be
+        <a href="/support/documentation/buildmaster/installation/backing-up#database-backup">restored from a backup</a>.
+    </p>
+</body>
+</html>
