@@ -1,0 +1,215 @@
+﻿@import "\library";
+
+@max-content-width: 1000px;
+@main-content-width: 700px;
+
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-lightgrey: #f6f6f6;
+@inedo-darkgrey: #444;
+@inedo-darkblue: #282b3a;
+@inedo-paleblue: #48729d;
+@inedo-white: #fff;
+@inedo-red: #990033;
+@inedo-blue: #002B54;
+@inedo-lightblue: #10466E;
+@inedo-yellow: #CC9B32;
+@inedo-lightred: #B04950;
+@proget-blue: #3FA9F5;
+@buildmaster-orange: #F15A24;
+@otter-purple: #9163AA;
+.content-container#main-overview-content {
+    padding-top: 0;
+}
+
+.content .feature {
+  h1 {
+    font-size: 50px;
+    font-weight: 600;
+    margin: 20px auto;
+    color: @inedo-darkblue;
+  }
+  h2 {
+      font-size: 36px;
+      font-weight: 600;
+      margin-top: 20px;
+      line-height: 52px;
+      color: @inedo-darkblue;
+  }
+  h3 {
+      margin-top: 36px;
+      margin-bottom: 12px;
+      font-size: 2em;
+      line-height: 1.25;
+      font-weight: 500;
+      color: @inedo-darkblue;
+  }
+  h4 {
+      font-size: 1.4em;
+      line-height: 36px;
+  }
+  p {
+    line-height: 1.6;
+    font-size: 1em;
+    font-weight: 400;
+    &.brief {
+        margin: auto 80px;
+      }
+  }
+}
+
+.section {
+  margin: 60px auto;
+  padding-bottom: 30px;
+  padding-top: 60px;
+  border-top: 3px solid @inedo-darkblue;
+  &:first-child {border-top: none; padding-top: 0px; margin-top: 20px;}
+}
+
+.cards {
+    a.box {
+        text-decoration: none;
+        width: 32%;
+        min-height: 316px;
+        display: inline-block;
+        vertical-align: top;
+        box-shadow: 1px 1px 4px @inedo-darkblue;
+        margin: 20px 5px 0 5px;
+        text-align: center;
+        color: @inedo-darkblue;
+        h2 {
+
+        }
+        img {
+            margin-top: 25px;
+            width:75px;
+            height: 75px;
+        }
+        p {
+            margin: 18px;
+        }
+        &:hover {
+          box-shadow: 1px 1px 4px @inedo-grey;
+        }
+        &.light-gray{
+            background-color: #efefef;
+        }
+    }
+}
+
+.mapped {
+  text-align: center;
+  .half-line {
+    margin: 64px auto;
+    hr {
+      width: 50%;
+    }
+  }
+  .flat-elements {
+    .element {
+      vertical-align: top;
+      display: inline-block;
+      img {
+          margin-top: 15px;
+          width:50px;
+          height: 50px;
+      }
+
+    }
+    &.quad {
+      .element {
+      width: 30%;
+      margin: 20px 75px 0 75px;
+      }
+    }
+    &.trio {
+      .element {
+      width: 30%;
+      margin: 20px 15px 0 15px;
+      &.bsys {
+      width: 22%
+      }
+      &.uni-repo {
+      border-left: 1px solid @inedo-darkblue;
+      padding-left: 30px;
+      width: 40%;
+      padding-bottom: 36px;
+      }
+      }
+    }
+    &.quint {
+      .element {
+      width: 30%;
+      margin: 20px 15px 0 15px;
+      img {
+          width:75px;
+          height: 75px;
+      }
+      &.middle {
+        padding-top: 150px;
+      }
+      &.double {
+        margin: 0 80px;
+        width: 33%;
+      }
+      }
+    }
+  }
+  .tail {
+    text-align: left;
+      margin: 36px 0;
+      .text-info {
+          display: inline-block;
+          vertical-align: top;
+          width: 74%;
+          margin-left: 56px;
+      }
+
+      .base {
+          display: inline-block;
+        vertical-align: top;
+          img {
+            width: 175px;
+          }
+      }
+  }
+}
+
+a.download {
+    background-color: none;
+    padding: 8px 16px;
+    color: @inedo-darkblue;
+    border: 3px solid @inedo-darkblue;
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: @inedo-darkblue;
+        color: @inedo-white;
+    }
+
+}
+
+.flow {
+    margin-bottom: 50px;
+    .circle-button {
+        &.left {
+            float: left;
+            p {
+                margin-left: 4px;
+            }
+        }
+        &.right {
+            float: right;
+            p {
+                text-align: right;
+                margin-right: 4px;
+            }
+        }
+    }
+}
+
