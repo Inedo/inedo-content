@@ -331,8 +331,7 @@
   <temporary from="/support/documentation/buildmaster/infrastructure/servers" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/servers" />
   <temporary from="/support/documentation/buildmaster/administration/configuration" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/sync" />
   <temporary from="/support/documentation/buildmaster/modeling-applications/applications" to="/support/documentation/buildmaster/administration/applications" />
-  <temporary from="/support/documentation/buildmaster/" to="/support/documentation/buildmaster/administration/applications/deployables" />
-  <temporary from="/support/documentation/buildmaster/" to="/support/documentation/buildmaster/administration/applications/import-export" />
+  <temporary from="/support/documentation/buildmaster/administration/import-apps" to="/support/documentation/buildmaster/administration/applications/import-export" />
   <temporary from="/support/documentation/buildmaster/administration/security" to="/support/documentation/buildmaster/administration/users-and-security" />
   <temporary from="/support/documentation/buildmaster/administration/security/ldap" to="/support/documentation/buildmaster/administration/users-and-security/ldap" />
   <temporary from="/support/documentation/buildmaster/core-concepts/builds-and-ci" to="/support/documentation/buildmaster/builds/overview" />
