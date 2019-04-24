@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1166" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="proget, upgrade-notes" />
+    <title>Upgrade Notes for ProGet 5.2</title>
+
+    <link type="text/css" rel="stylesheet" href="/support/documentation/_resources/documentation2.css" />
+
+    <style type="text/css">
+        .green {
+            color: mediumseagreen;
+        }
+
+        .red {
+            color: #c0504d;
+        }
+
+        code.type {
+            color: rgb(43, 145, 175);
+        }
+
+        code.keyword {
+            color: #0000ff;
+        }
+
+        kbd {
+            -moz-border-radius: 3px;
+            -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+            -webkit-border-radius: 3px;
+            -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+            color: #333;
+            display: inline-block;
+            font-family: Arial,Helvetica,sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            margin: 0 .1em;
+            padding: .1em .6em;
+            text-shadow: 0 1px 0 #fff;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="/proget/5.2">ProGet 5.2</a> is a minor release with the following changes:</p>
+    <ul>
+        <li>add PyPI, Debian, and Helm feed types (<span class="green">new feature</span>) (<a href="#feed-types">details</a>)</li>
+        <li>add APIs for Feed Management and Connector Health (<span class="green">new feature</span>) (<a href="#api">details</a>)</li>
+        <li>add one-way replication and replication dashboard (<span class="green">new feature</span>) (<a href="#replication">details</a>)</li>
+        <li>support for Azure SQL databases (<span class="green">new feature</span>) (<a href="#azure">details</a>)</li>
+        <li>support for SQL Server on Linux (<span class="green">new feature</span>) (<a href="#sql-server-linux">details</a>)</li>
+        <li>add opt-in Loupe integration (<span class="green">new feature</span>) (<a href="#ceip">details</a>)</li>
+        <li>license non-compliance notifications (<span class="red">UI change</span>) (<a href="#licensing">details</a>)</li>
+        <li>Bower feeds are now deprecated (<a href="#bower">details</a>)</li>
+        <li>Postgres database support is deprecated (<a href="#postgres">details</a>)</li>
+        <li>Legacy NuGet/MyGet feed sync removed (<a href="#myget-feed-sync">details</a>)</li>
+        <li>Various bug fixes and enhancements (<a href="/proget/versions#v5.2.0">release notes</a>)</li>
+    </ul>
+
+    <h3>Upgrade Impact</h3>
+    <p>
+        This is a minor release with new features and nontrivial bugfixes. Risk is minimal, but
+        there is a higher chance of regression than with a maintenance release.
+    </p>
+    <div class="attention best-practice">
+        Please see the <a href="/support/kb/1111">Upgrade Notes for v4</a> if you are upgrading
+        from a version lower than v5.0.
+    </div>
+
+    <h3>New Features</h3>
+
+    <h4 id="feed-types">New Feed Types</h4>
+    <p>
+        ProGet v5.2 introduces 3 new feed types: PyPI, Helm, and Debian. For more information about the features and limitations of each, refer to the specific feed type's documentation:
+    </p>
+    <ul class="docs">
+        <li><a href="/support/documentation/proget/feeds/pypi">PyPI</a></li>
+        <li><a href="/support/documentation/proget/feeds/helm">Helm</a></li>
+        <li><a href="/support/documentation/proget/feeds/debian">Debian</a></li>
+    </ul>
+
+    <h4 id="api">New APIs</h4>
+    <p>
+        ProGet v5.2 introduces 2 new APIs: Feed Management and Connector Health. For more information, visit the documentation for each:
+    </p>
+    <ul class="docs">
+        <li><a href="/support/documentation/proget/reference/api/feed-management">Feed Management API</a></li>
+        <li><a href="/support/documentation/proget/reference/api/connector-health">Connector Health API</a></li>
+    </ul>
+
+    <h4 id="replication">Feed Replication Enhancements</h4>
+    <p>
+        Replication now supports a one-way, or "read-only" configuration. Refer to the <a href="/support/documentation/proget/advanced/feed-replication">Feed Replication documentation</a> 
+        for more information on terminology and behavioral changes, use-cases, and configuration details. Additionally, logging has been improved (in conjunction with <a href="#ceip">CEIP</a>),
+        but also more accessible via the new Feed Replication dashboard.
+    </p>
+
+    <h4 id="azure">Azure SQL Server</h4>
+    <p>
+        As of ProGet v5.2, Azure SQL Server databases are supported for use as ProGet's database. The only caveat is that the installer will not automatically create
+        the database for you.
+    </p>
+
+    <h4 id="sql-server-linux">SQL Server for Linux</h4>
+    <p>
+        As of ProGet v5.2, SQL Server for Linux is supported, and the new recommended way to install ProGet on Linux as per the
+        <a href="/support/documentation/proget/installation/installation-guide/linux-docker">Linux Installation Guide</a>.
+    </p>
+
+
+    <h4 id="ceip">Customer Experience &amp; Improvement Program</h4>
+    <p>
+        Inedo has partnered with Gibraltar Software in order to integrate Loupe with our products as part of our customer
+        success initiative. This program is known as the <i>Customer Experience Improvement Program (CEIP)</i>,
+        and this opt-in program offers several benefits to both Inedo and our customers.
+    </p>
+    <p>
+        This feature is disabled by default in all existing and new installations. Visit the
+        <a target="_blank" href="/support/documentation/various/ceip/overview">documentation</a>
+        to learn how to opt-in, and more about what kind of data is collected and how Inedo uses it.
+    </p>
+
+    <h3>Deprecation Notices</h3>
+    <h4 id="postgres">PostgreSQL</h4>
+    <p>
+        As of ProGet v5.2, Postgres support for ProGet Docker installations is deprecated, and will no longer be supported by v6.0 (due out in 2020).
+        Before Postgres is removed, there will be a documented migration plan to SQL Server for Linux.
+    </p>
+    <h4 id="bower">Bower feeds</h4>
+    <p>
+        Additionally, Bower feeds are now deprecated in favor of npm, as Bower itself has been deprecated. Bower feed types will likely be removed in
+        the next minor version v5.3.
+    </p>
+    <h4 id="myget-feed-sync">MyGet Feed Sync</h4>
+    <p>
+        While MyGet feed sync was deprecated long ago (and removed from the UI in v5.0), it has fully been removed from v5.2. It is replaced by feed replication.
+    </p>
+
+    <h3>Upgrade Process</h3>
+    <p>
+        On Windows, ProGet may be upgraded by running the latest installer (traditional or Inedo Hub interchangibly), so make sure the database gets backed up.
+        Note that during upgrade, some schema changes will be applied.
+    </p>
+    <p>
+        Linux (i.e. Docker) installations may be upgraded by pulling the latest <code>inedo/proget</code> image and restarting the container,
+        as per the <a href="/support/documentation/proget/installation/installation-guide/linux-docker">Linux Installation Guide</a>.
+    </p>
+
+    <h3>Rollback</h3>
+    <p>
+        See <a href="/support/documentation/proget/administration/backing-up">restoring your ProGet instance</a> for how to rollback.
+    </p>
+</body>
+</html>
