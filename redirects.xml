@@ -349,9 +349,9 @@
   <temporary from="/support/documentation/buildmaster/installation/diagnostic-center" to="/support/documentation/buildmaster/installation-and-maintenance/diagnostic-center" />
   <temporary from="/support/documentation/buildmaster/administration/license" to="/support/documentation/buildmaster/installation-and-maintenance/license" />
   <temporary from="/support/documentation/buildmaster/installation/architecture" to="/support/documentation/buildmaster/installation-and-maintenance/architecture" />
-  <temporary from="/support/documentation/buildmaster/installation/architecture/service" to="/support/documentation/buildmaster/installation-and-maintenance/architecture/service" />
+  <temporary from="/support/documentation/buildmaster/installation/service" to="/support/documentation/buildmaster/installation-and-maintenance/architecture/service" />
   <temporary from="/support/documentation/buildmaster/installation/installation-guide" to="/support/documentation/buildmaster/installation-and-maintenance/installation-guide" />
-  <temporary from="/support/documentation/buildmaster/installation/agent-installation-guide" to="/support/documentation/buildmaster/installation-and-maintenance/installation-guide/agent-installation-guide" />
+  <temporary from="/support/documentation/buildmaster/installation/installation-guide/agent-installation-guide" to="/support/documentation/buildmaster/installation-and-maintenance/installation-guide/agent-installation-guide" />
   <temporary from="/support/documentation/buildmaster/installation/installation-guide/manual" to="/support/documentation/buildmaster/installation-and-maintenance/installation-guide/manual" />
   <temporary from="/support/documentation/buildmaster/installation/installation-guide/silent-installation" to="/support/documentation/buildmaster/installation-and-maintenance/installation-guide/silent-installation" />
   <temporary from="/support/documentation/buildmaster/administration/extensions" to="/support/documentation/buildmaster/reference/extensions" />
