@@ -319,6 +319,53 @@
   <permanent from="/support/documentation/various/inedo-agent/network-protocol" to="/support/documentation/various/inedo-agent/server-architecture/network-protocol" />
   <permanent from="support/documentation/various/inedo-agent/message-formats" to="/support/documentation/various/inedo-agent/server-architecture/message-formats" />
 
+  <!-- BuildMaster Docs Tree Reorganization (April 2019) -->
+  <temporary from="/support/documentation/buildmaster/core-concepts" to="/support/documentation/buildmaster/overview" />
+  <temporary from="/support/documentation/buildmaster/global-components/configuration-variables" to="/support/documentation/buildmaster/administration/configuration-variables" />
+  <temporary from="/support/documentation/buildmaster/global-components/event-listeners" to="/support/documentation/buildmaster/administration/notifications" />
+  <temporary from="/support/documentation/buildmaster/global-components/resource-credentials" to="/support/documentation/buildmaster/administration/resource-credentials" />
+  <temporary from="/support/documentation/buildmaster/administration/retenion-policies" to="/support/documentation/buildmaster/administration/retention-policies" />
+  <temporary from="/support/documentation/buildmaster/administration/agents" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/agents" />
+  <temporary from="/support/documentation/buildmaster/core-concepts/environments" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/environments" />
+  <temporary from="/support/documentation/buildmaster/infrastructure/server-roles" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/server-roles" />
+  <temporary from="/support/documentation/buildmaster/infrastructure/servers" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/servers" />
+  <temporary from="/support/documentation/buildmaster/administration/configuration" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/sync" />
+  <temporary from="/support/documentation/buildmaster/modeling-applications/applications" to="/support/documentation/buildmaster/administration/applications" />
+  <temporary from="/support/documentation/buildmaster/" to="/support/documentation/buildmaster/administration/applications/deployables" />
+  <temporary from="/support/documentation/buildmaster/" to="/support/documentation/buildmaster/administration/applications/import-export" />
+  <temporary from="/support/documentation/buildmaster/administration/security" to="/support/documentation/buildmaster/administration/users-and-security" />
+  <temporary from="/support/documentation/buildmaster/administration/security/ldap" to="/support/documentation/buildmaster/administration/users-and-security/ldap" />
+  <temporary from="/support/documentation/buildmaster/core-concepts/builds-and-ci" to="/support/documentation/buildmaster/builds/overview" />
+  <temporary from="/support/documentation/buildmaster/core-concepts/builds-and-ci/artifacts" to="/support/documentation/buildmaster/builds/packaging/artifacts" />
+  <temporary from="/support/documentation/buildmaster/core-concepts/builds-and-ci/reports" to="/support/documentation/buildmaster/builds/tests/build-reports" />
+  <temporary from="/support/documentation/buildmaster/builds-and-ci/unit-tests" to="/support/documentation/buildmaster/builds/tests/unit-tests" />
+  <temporary from="/support/documentation/buildmaster/modeling-applications/configuration-files" to="/support/documentation/buildmaster/deployments/configuration-files" />
+  <temporary from="/support/documentation/buildmaster/core-concepts/deployment-plans" to="/support/documentation/buildmaster/deployments/plans" />
+  <temporary from="/support/documentation/buildmaster/execution-engine/overview" to="/support/documentation/buildmaster/deployments/plans/execution-engine" />
+  <temporary from="/support/documentation/buildmaster/modeling-applications/manual-steps-tasks" to="/support/documentation/buildmaster/deployments/plans/manual-steps-tasks" />
+  <temporary from="/support/documentation/buildmaster/modeling-applications/database-changes" to="/support/documentation/buildmaster/deployments/targets/databases" />
+  <temporary from="/support/documentation/buildmaster/installation" to="/support/documentation/buildmaster/installation-and-maintenance" />
+  <temporary from="/support/documentation/buildmaster/installation/backing-up" to="/support/documentation/buildmaster/installation-and-maintenance/backing-up" />
+  <temporary from="/support/documentation/buildmaster/installation/config-files" to="/support/documentation/buildmaster/installation-and-maintenance/config-files" />
+  <temporary from="/support/documentation/buildmaster/installation/diagnostic-center" to="/support/documentation/buildmaster/installation-and-maintenance/diagnostic-center" />
+  <temporary from="/support/documentation/buildmaster/administration/license" to="/support/documentation/buildmaster/installation-and-maintenance/license" />
+  <temporary from="/support/documentation/buildmaster/installation/architecture" to="/support/documentation/buildmaster/installation-and-maintenance/architecture" />
+  <temporary from="/support/documentation/buildmaster/installation/architecture/service" to="/support/documentation/buildmaster/installation-and-maintenance/architecture/service" />
+  <temporary from="/support/documentation/buildmaster/installation/installation-guide" to="/support/documentation/buildmaster/installation-and-maintenance/installation-guide" />
+  <temporary from="/support/documentation/buildmaster/installation/agent-installation-guide" to="/support/documentation/buildmaster/installation-and-maintenance/installation-guide/agent-installation-guide" />
+  <temporary from="/support/documentation/buildmaster/installation/installation-guide/manual" to="/support/documentation/buildmaster/installation-and-maintenance/installation-guide/manual" />
+  <temporary from="/support/documentation/buildmaster/installation/installation-guide/silent-installation" to="/support/documentation/buildmaster/installation-and-maintenance/installation-guide/silent-installation" />
+  <temporary from="/support/documentation/buildmaster/administration/extensions" to="/support/documentation/buildmaster/reference/extensions" />
+  <temporary from="/support/documentation/buildmaster/reference/api/release-and-package" to="/support/documentation/buildmaster/reference/api/release-and-build" />
+  <temporary from="/support/documentation/buildmaster/modeling-applications/calendars" to="/support/documentation/buildmaster/releases/calendars" />
+  <temporary from="/support/documentation/buildmaster/modeling-applications/release-notes" to="/support/documentation/buildmaster/releases/notes" />
+  <temporary from="/support/documentation/buildmaster/core-concepts/release" to="/support/documentation/buildmaster/releases/overview" />
+  <temporary from="/support/documentation/buildmaster/administration/rollback" to="/support/documentation/buildmaster/releases/rollback" />
+  <temporary from="/support/documentation/buildmaster/core-concepts/release/templates" to="/support/documentation/buildmaster/releases/templates" />
+  <temporary from="/support/documentation/buildmaster/modeling-applications/issues-projects" to="/support/documentation/buildmaster/verification/issue-tracking" />
+  <temporary from="/support/documentation/buildmaster/core-concepts/pipelines" to="/support/documentation/buildmaster/verification/pipelines" />
+  <temporary from="/support/documentation/buildmaster/core-concepts/pipelines/pipeline-model" to="/support/documentation/buildmaster/verification/pipelines/json-model" />
+  
 <!-- Various Docs -->
 
 	<permanent from="/support/documentation/various/universal-packages/universal-feeds-package-ref" to="/support/documentation/upack/overview"/>
