@@ -230,8 +230,6 @@
   <permanent from="/support/enterprise-support" to="/support" />
   <permanent from="/support/qa-home" to="/support/questions" />
   <permanent from="/support/self-service-portal" to="/support/submit-ticket" />
-  <permanent from="/support/documentation/buildmaster/appendices/built-in-actions" to="/buildmaster/integrations" />
-  <permanent from="/support/documentation/buildmaster/appendices" to="/buildmaster/integrations" />
 
   <permanent from="/support/faq" to="/support/questions" />
   <permanent from="/support/test-drive" to="/support" />
@@ -314,20 +312,6 @@
 
   <!-- Docs -->
   <permanent from="/support/documentation/table-of-contents" to="/support/documentation" />
-  <permanent from="/support/documentation/buildmaster/toolset-integration/source-control" to="/support/documentation/buildmaster/buildmaster-administration/toolset-integration/source-control" />
-  <permanent from="/support/documentation/buildmaster/agents" to="/support/documentation/buildmaster/installation/agents" />
-  <permanent from="/support/documentation/buildmaster/concepts-defined" to="/support/documentation/buildmaster/appendices/concepts-defined" />
-  <permanent from="/support/documentation/buildmaster/concepts-defined/concepts-visualized" to="/support/documentation/buildmaster/appendices/concepts-defined" />
-  <permanent from="/support/documentation/buildmaster/concepts-defined/concepts-visualized/application-change-management" to="/support/documentation/buildmaster/appendices/concepts-defined" />
-  <permanent from="/support/documentation/buildmaster/concepts-defined/concepts-visualized/build-promotions-and-executions" to="/support/documentation/buildmaster/appendices/concepts-defined" />
-  <permanent from="/support/documentation/buildmaster/concepts-defined/concepts-visualized/release-cycle" to="/support/documentation/buildmaster/appendices/concepts-defined" />
-  <permanent from="/support/documentation/buildmaster/toolset-integration/issue-tracking" to="/support/documentation/buildmaster/buildmaster-administration/toolset-integration/issue-tracking" />
-  <permanent from="/support/documentation/buildmaster/deployment-plans/predicates" to="/support/documentation/buildmaster/deployment-automation/deployment-plans/action-groups#predicates" />
-  <permanent from="/support/documentation/buildmaster/auditing-and-compliance/notifiers" to="/support/documentation/buildmaster/auditing-and-compliance/event-listeners#triggers-notifiers" />
-  <permanent from="/support/documentation/buildmaster/auditing-and-compliance/triggers" to="/support/documentation/buildmaster/auditing-and-compliance/event-listeners#triggers-notifiers" />
-  <permanent from="/support/documentation/buildmaster/deployment-plans/actions" to="/support/documentation/buildmaster/deployment-automation/deployment-plans/actions" />
-  <permanent from="/support/documentation/buildmaster/auditing-and-compliance/promotion-requirements" to="/support/documentation/buildmaster/core-concepts/promotion-workflows/approvals" />
-  <permanent from="/support/documentation/buildmaster/buildmaster-administration/toolset-integration/issue-tracking" to="/support/documentation/buildmaster/change-mangement/issue-tracking" />
   <permanent from="/support/documentation/proget/deploy" to="/support/documentation/proget/feeds/nuget" />
   <permanent from="/support/documentation/otter/execution-engine/otter-script" to="/support/documentation/otter/reference/otter-script" />
   <permanent from="/support/documentation/various/inedo-agent/architecture" to="/support/documentation/various/inedo-agent/the-agent" />
@@ -525,84 +509,6 @@
   <!-- Various Docs -->
   <permanent from="/support/documentation/various/universal-packages/universal-feed-api" to="/support/documentation/various/universal-packages/universal-feeds-package-ref"/>
 
-  <!-- BuildMaster Docs -->
-
-  <permanent from="/support/documentation/buildmaster/core-concepts/pipelines/gates" to="/support/documentation/buildmaster/core-concepts/pipelines#Manual-Automatic-Approvals"/>
-  <permanent from="/support/documentation/buildmaster/core-concepts/environments" to="/support/documentation/buildmaster/infrastructure/environments"/>
-  <permanent from="/support/documentation/buildmaster/core-concepts/environments/server-roles" to="/support/documentation/buildmaster/infrastructure/server-roles"/>
-  <permanent from="/support/documentation/buildmaster/modeling-applications/issues-notes" to="/support/documentation/buildmaster/modeling-applications/issues-projects"/>
-<permanent from="/support/documentation/buildmaster/modeling-applications/manual-changes" to="/support/documentation/buildmaster/modeling-applications/manual-steps-tasks"/>
-<permanent from="/support/documentation/buildmaster/global-components/powershell-and-shell" to="/support/documentation/buildmaster/execution-engine/powershell-and-shell"/>
-<permanent from="/support/tutorials/buildmaster/sdk/listing-db-changescripts-for-a-release-with-the-native-api" to="/support/documentation/buildmaster/reference/api/native"/>
-<permanent from="/support/documentation/buildmaster/reference/sdk" to="/support/documentation/buildmaster/administration/extensions"/>
-<permanent from="/support/documentation/buildmaster/reference/sdk/writing-operation" to="/support/documentation/buildmaster/administration/extensions"/>>
-<permanent from="/support/documentation/buildmaster/reference/otter-script" to="/support/documentation/various/execution-engine/otterscript"/>
-<permanent from="/support/documentation/buildmaster/reference/templating" to="/support/documentation/buildmaster/modeling-applications/configuration-files"/>
-<permanent from="/support/documentation/buildmaster/administration/backing-up" to="/support/documentation/buildmaster/installation/backing-up"/>
-<permanent from="/support/documentation/buildmaster/administration/architecture" to="/support/documentation/buildmaster/installation/architecture"/>
-<permanent from="/support/documentation/buildmaster/administration/service" to="/support/documentation/buildmaster/installation/service"/>
-
-  <permanent from="/support/documentation/buildmaster/installation/guide" to="/support/documentation/buildmaster/installation/windows-guide" />
-  <permanent from="/support/documentation/buildmaster/core-concepts/executions" to="/support/documentation/buildmaster/core-concepts"/>
-  <permanent from="/support/documentation/buildmaster/core-concepts/applications"  to="/support/documentation/buildmaster/core-concepts"/>
-  <permanent from="/support/documentation/buildmaster/core-concepts/applications/groups" to="/support/documentation/buildmaster/core-concepts" />
-  <permanent from="/support/documentation/buildmaster/core-concepts/releases/deployables" to="/support/documentation/buildmaster"/>
-  <permanent from="/support/documentation/buildmaster/core-concepts/builds" to="/support/documentation/buildmaster/core-concepts/builds-and-ci"/>
-  <permanent from="/support/documentation/buildmaster/core-concepts/builds/automatic-recurring-builds" to="/support/documentation/buildmaster/core-concepts/builds-and-ci"/>
-  <permanent from="/support/documentation/buildmaster/core-concepts/builds/source-control-triggered-builds" to="/support/documentation/buildmaster/core-concepts/builds-and-ci"/>
-  <permanent from="/support/documentation/buildmaster/core-concepts/builds/url-triggered-builds" to="/support/documentation/buildmaster/core-concepts/builds-and-ci" />
-  <permanent from="/support/documentation/buildmaster/core-concepts/promotion-workflows" to="/support/documentation/buildmaster/core-concepts/pipelines"/>
-  <permanent from="/support/documentation/buildmaster/core-concepts/promotion-workflows/approvals" to="/support/documentation/buildmaster/core-concepts/pipelines"/>
-  <permanent from="/support/documentation/buildmaster/deployment-automation/deployment-plans" to="/support/documentation/buildmaster/core-concepts/deployment-plans"/>
-  <permanent from="/support/documentation/buildmaster/deployment-automation/deployment-plans/actions" to="/support/documentation/buildmaster/core-concepts/deployment-plans" />
-  <permanent from="/support/documentation/buildmaster/deployment-automation/deployment-plans/action-groups" to="/support/documentation/buildmaster/core-concepts/deployment-plans" />
-  <permanent from="/support/documentation/buildmaster/deployment-automation/deployment-plans/transfer-files-masking" to="/support/kb/1119/wildcard-masking-in-buildmaster-and-otter"/>
-  <permanent from="/support/documentation/buildmaster/deployment-automation/deployment-plans/variables" to="/support/documentation/buildmaster"/>
-  <permanent from="/support/documentation/buildmaster/deployment-automation/chained-builds-and-deployments" to="/support/documentation/buildmaster"/>
-  <permanent from="/support/documentation/buildmaster/deployment-automation/script-repository" to="/support/documentation/buildmaster/global-components/powershell-and-shell" />
-  <permanent from="/support/documentation/buildmaster/deployment-automation/servers" to="/support/documentation/buildmaster/administration/agents"/>
-  <permanent from="/support/documentation/buildmaster/deployment-automation/user-notifications" to="/support/documentation/buildmaster"/>
-  <permanent from="/support/documentation/buildmaster/auditing-and-compliance" to="/support/documentation/buildmaster"/>
-  <permanent from="/support/documentation/buildmaster/auditing-and-compliance/events" to="/support/documentation/buildmaster"/>
-  <permanent from="/support/documentation/buildmaster/auditing-and-compliance/event-listeners" to="/support/documentation/buildmaster/global-components/event-listeners" />
-  <permanent from="/support/documentation/buildmaster/auditing-and-compliance/security" to="/support/documentation/buildmaster" />
-  <permanent from="/support/documentation/buildmaster/auditing-and-compliance/security/ldap-configuration" to="/support/documentation/buildmaster"/>
-  <permanent from="/support/documentation/buildmaster/change-mangement" to="/support/documentation/buildmaster/modeling-applications/configuration-files"/>
-  <permanent from="/support/documentation/buildmaster/change-mangement/configuration-files" to="/support/documentation/buildmaster/modeling-applications/configuration-files"/>
-  <permanent from="/support/documentation/buildmaster/change-mangement/configuration-files/instances" to="/support/documentation/buildmaster/modeling-applications/configuration-files"/>
-  <permanent from="/support/documentation/buildmaster/change-mangement/configuration-files/templates" to="/support/documentation/buildmaster/modeling-applications/configuration-files"/>
-  <permanent from="/support/documentation/buildmaster/change-mangement/configuration-files/deployment" to="/support/documentation/buildmaster/modeling-applications/configuration-files"/>
-  <permanent from="/support/documentation/buildmaster/change-mangement/change-controls" to="/documentation/buildmaster/modeling-applications/manual-changes"/>
-  <permanent from="/support/documentation/buildmaster/change-mangement/database-change-scripts" to="/support/documentation/buildmaster/modeling-applications/database-changes"/>
-  <permanent from="/support/documentation/buildmaster/change-mangement/database-change-scripts/database-connections" to="/support/documentation/buildmaster/modeling-applications/database-changes"/>
-  <permanent from="/support/documentation/buildmaster/change-mangement/database-change-scripts/change-script-packager" to="/support/documentation/buildmaster/modeling-applications/database-changes"/>
-  <permanent from="/support/documentation/buildmaster/change-mangement/issue-tracking" to="/support/documentation/buildmaster/modeling-applications/issues-notes"/>
-  <permanent from="/support/documentation/buildmaster/change-mangement/issue-tracking/provider-configuration" to="/support/documentation/buildmaster/modeling-applications/issues-notes"/>
-  <permanent from="/support/documentation/buildmaster/buildmaster-administration" to="/support/documentation/administration"/>
-  <permanent from="/support/documentation/buildmaster/buildmaster-administration/toolset-integration" to="/support/documentation/buildmaster/administration/extensions"/>
-  <permanent from="/support/documentation/buildmaster/buildmaster-administration/toolset-integration/source-control" to="/support/documentation/buildmaster/administration/extensions"/>
-  <permanent from="/support/documentation/buildmaster/buildmaster-administration/administrative-edits" to="/support/documentation/buildmaster"/>
-  <permanent from="/support/documentation/buildmaster/buildmaster-administration/backing-up" to="/support/documentation/buildmaster/administration/backing-up"/>
-  <permanent from="/support/documentation/buildmaster/buildmaster-administration/retenion-policies" to="/support/documentation/buildmaster/administration/retenion-policies"/>
-  <permanent from="/support/documentation/buildmaster/buildmaster-administration/extensibility" to="/support/documentation/buildmaster"/>
-  <permanent from="/support/documentation/buildmaster/buildmaster-administration/extensibility/extension-configuration" to="/support/documentation/buildmaster"/>
-  <permanent from="/support/documentation/buildmaster/installation/silent-agent-installation" to="/support/documentation/buildmaster/installation/silent-installation#silent-agent-install"/>
-  <permanent from="/support/documentation/buildmaster/installation/windows-agent" to="/support/documentation/buildmaster/installation/agent-installation-guide"/>
-  <permanent from="/support/documentation/buildmaster/installation/extension-installation" to="/support/documentation/buildmaster"/>
-  <permanent from="/support/documentation/buildmasterold/installation/guide" to="/support/documentation/buildmaster/installation"/>
-  <permanent from="/support/documentation/buildmaster/reference/api-methods" to="/support/documentation/buildmaster/reference/api"/>
-  <permanent from="/support/documentation/buildmaster/reference/events-list" to="/support/documentation/buildmaster"/>
-  <permanent from="/support/documentation/buildmaster/reference/security-tasks" to="/support/documentation/buildmaster"/>
-  <permanent from="/support/documentation/buildmaster/reference/variables" to="/support/documentation/buildmaster/global-components/configuration-variables"/>
-  <permanent from="/documentation/buildmaster/change-mangement/change-controls" to="/support/documentation/buildmaster/modeling-applications/manual-changes"/>
-  <permanent from="/documentation/buildmaster/modeling-applications/manual-changes" to="/support/documentation/buildmaster/modeling-applications/manual-changes" />
-	<permanent from="/support/documentation/buildmaster/installation/windows-guide" to="/support/documentation/buildmaster/installation/installation-guide" />
-	<permanent from="/support/documentation/buildmaster/installation/agent-installation-guide" to="/support/documentation/buildmaster/installation/installation-guide/agent-installation-guide" />
-		<permanent from="/support/documentation/buildmaster/installation/manual" to="/support/documentation/buildmaster/installation/installation-guide/manual" />
-		<permanent from="/support/documentation/buildmaster/installation/silent-installation" to="/support/documentation/buildmaster/installation/installation-guide/silent-installation" />
-	<permanent from="/support/documentation/buildmaster/installation/service" to="/support/documentation/buildmaster/installation/architecture/service" />
-	<permanent from="/support/documentation/buildmaster/modeling-applications/configuration-files-text-templates" to="/support/documentation/various/execution-engine/text-templates/application-configuration-files" />
-
   <!-- KB Articles -->
 
 	<kb id="1123" to="/support/kb/1117" />
@@ -620,28 +526,19 @@
   <kb id="1031" to="/support/tutorials/deploying-a-teamcity-build-in-buildmaster" />
   <kb id="1033" to="/buildmaster/pricing" />
   <kb id="1058" to="/buildmaster/pricing" />
-  <kb id="1010" to="/support/documentation/buildmaster/buildmaster-administration/extensibility/extension-configuration" />
-  <kb id="1006" to="/support/documentation/buildmaster/change-mangement/issue-tracking" />
   <kb id="1021" to="/support/documentation/proget/feeds/nuget/visual-studio-extension" />
   <kb id="1101" to="/support/documentation/proget/feeds/maven" />
   <kb id="1098" to="/support/documentation/proget/feeds" />
   <kb id="1095" to="/support/documentation/proget/feeds/bower" />
   <kb id="1087" to="/support/documentation/proget/feeds/npm" />
-  <kb id="1048" to="/support/documentation/buildmaster/core-concepts/releases" />
   <kb id="1049" to="/downloads/proget-client-tools" />
   <kb id="1076" to="/support/tutorials/application-deployment-feeds-in-proget" />
   <kb id="1050" to="/downloads/proget-client-tools" />
-  <kb id="1045" to="/support/documentation/buildmaster/overview" />
   <kb id="1043" to="/buildmaster/sdk" />
-  <kb id="1041" to="/support/documentation/buildmaster/buildmaster-administration/retenion-policies" />
   <kb id="1035" to="/buildmaster/extensions/FogBugz" />
   <kb id="1028" to="/buildmaster/extensions/Git" />
   <kb id="1027" to="/support/documentation/proget/feeds/nuget/feed-sync" />
   <kb id="1022" to="/buildmaster/extensions/SourceGear" />
-  <kb id="1016" to="/support/documentation/buildmaster/deployment-automation/servers" />
-  <kb id="1011" to="/support/documentation/buildmaster/installation/windows-agent" />
-  <kb id="1002" to="/support/documentation/buildmaster/auditing-and-compliance/security" />
-  <kb id="1001" to="/support/documentation/buildmaster/buildmaster-administration/backing-up" />
   <kb id="1003" to="/blog/net-assembly-versions-with-buildmaster" />
   <kb id="1079" to="/blog/common-uses-for-variables" />
   <kb id="1000" to="/blog/using-source-control-to-manage-stored-procedures" />
@@ -653,7 +550,6 @@
   <kb id="1025" to="/buildmaster/extensions/Perforce" />
   <kb id="1020" to="/support/documentation/proget/feeds/nuget" />
   <kb id="1017" to="/support/documentation/proget/installation/installation-guide" />
-  <kb id="1012" to="/support/documentation/buildmaster/buildmaster-administration" />
   <kb id="1004" to="/blog/how-to-create-version-numbers-that-are-actually-semantic" />
   <kb id="1081" to="/support/kb/1151"/>
   <kb id="1071" to="/support/kb/1151"/>
@@ -704,7 +600,6 @@
   <kb id="1088" to="/support/documentation/proget/installation/installation-guide/silent-installation"/>
   <kb id="1075" to="/support/kb/1151"/>
   <kb id="1061" to="/den/buildmaster/subversion"/>
-  <kb id="1052" to="/support/documentation/buildmaster/execution-engine/overview"/>
   <kb id="1112" to="/support/documentation/proget/feeds/nuget#nuget-api-key" />
   <kb id="1115" to="https://github.com/Inedo/inedox-artifactory/wiki" />
 	<kb id="1143" to="/support/kb/1154" />
@@ -722,33 +617,6 @@
 	<kb id="1130" to="/support/kb/1111" />
 	<kb id="1126" to="/support/kb/1111" />
 	<kb id="1122" to="/support/kb/1111" />
-
-
-  <!-- buildmaster documentation refractor (Jan 2013) -->
-  <permanent from="/support/documentation/buildmaster/applications" to="/support/documentation/buildmaster/core-concepts/applications" />
-  <permanent from="/support/documentation/buildmaster/builds" to="/support/documentation/buildmaster/core-concepts/builds" />
-  <permanent from="/support/documentation/buildmaster/change-controls" to="/support/documentation/buildmaster/change-mangement/change-controls" />
-  <permanent from="/support/documentation/buildmaster/configuration-files" to="/support/documentation/buildmaster/change-mangement/configuration-files" />
-  <permanent from="/support/documentation/buildmaster/database-change-scripts" to="/support/documentation/buildmaster/change-mangement/database-change-scripts" />
-  <permanent from="/support/documentation/buildmaster/deployment-plans" to="/support/documentation/buildmaster/deployment-automation/deployment-plans" />
-  <permanent from="/support/documentation/buildmaster/environments" to="/support/documentation/buildmaster/core-concepts/environments" />
-  <permanent from="/support/documentation/buildmaster/events" to="/support/documentation/buildmaster/auditing-and-compliance/events" />
-  <permanent from="/support/documentation/buildmaster/executions" to="/support/documentation/buildmaster/core-concepts/executions" />
-  <permanent from="/support/documentation/buildmaster/extensibility" to="/support/documentation/buildmaster/buildmaster-administration/extensibility" />
-  <permanent from="/support/documentation/buildmaster/notifiers" to="/support/documentation/buildmaster/auditing-and-compliance/notifiers" />
-  <permanent from="/support/documentation/buildmaster/promotion-requirements" to="/support/documentation/buildmaster/auditing-and-compliance/promotion-requirements" />
-  <permanent from="/support/documentation/buildmaster/promotion-workflows" to="/support/documentation/buildmaster/core-concepts/promotion-workflows" />
-  <permanent from="/support/documentation/buildmaster/releases" to="/support/documentation/buildmaster/core-concepts/releases" />
-  <permanent from="/support/documentation/buildmaster/security" to="/support/documentation/buildmaster/auditing-and-compliance/security" />
-  <permanent from="/support/documentation/buildmaster/toolset-integration" to="/support/documentation/buildmaster/buildmaster-administration/toolset-integration" />
-  <permanent from="/support/documentation/buildmaster/installation/requirements" to="/support/documentation/buildmaster/installation" />
-  <permanent from="/support/documentation/buildmaster/installation/agents" to="/support/documentation/buildmaster/installation" />
-  <permanent from="/support/documentation/buildmaster/installation/linux-installation" to="/support/documentation/buildmaster/installation/linux-agent" />
-  <permanent from="/support/documentation/buildmaster/installation/windows-installation" to="/support/documentation/buildmaster/installation/windows-agent" />
-  <permanent from="/support/documentation/buildmaster/installation/installing-buildmaster" to="/support/documentation/buildmaster/installation/guide" />
-  <permanent from="/support/documentation/buildmaster/buildmaster-administration/toolset-integration/databases" to="/support/documentation/buildmaster/change-mangement/database-change-scripts/database-connections" />
-  <permanent from="/support/buildmaster-api-reference" to="/support/documentation/buildmaster/reference/api-methods" />
-
 
 
   <!-- Karl workflow emails-->
@@ -862,7 +730,6 @@
   <permanent from="/buildmaster/features/platforms/dot-net" to="/den" />
   <permanent from="/support/tutorials/setting-up-a-server-for-proget-deploy" to="/support/tutorials/proget" />
   <permanent from="/proget/sdk" to="/support/documentation/proget/reference/sdk" />
-  <permanent from="/buildmaster/sdk" to="/support/documentation/buildmaster/reference/sdk" />
   <permanent from="/proget/npm" to="/support/documentation/proget/feed-types/npm" />
   <permanent from="/buildmaster/details2" to="/buildmaster" />
   <permanent from="/buildmaster/pricing/compare-support" to="/buildmaster/pricing" />
@@ -893,11 +760,9 @@
   <permanent from="/buildmaster/extension-release-notes/Gallio/3.0" to="/den/buildmaster/gallio" />
   <permanent from="/buildmaster/extension-release-notes/CollabNet/3.0" to="/den/buildmaster/collabnet" />
   <permanent from="/buildmaster/extension-release-notes/FogBugz/3.0" to="/den/buildmaster/fogbugz" />
-  <permanent from="/blog/adding-a-powershell-or-shell-script-to-the-script-repository" to="/support/documentation/buildmaster/global-components/powershell-and-shell" />
 <permanent from="/webinars/upcoming/iac-otter" to="/webinars/past/iac-otter"/>
 	<permanent from="/webinars/upcoming/chocolatey-proget" to="/webinars/past/chocolatey-proget"/>
 	<permanent from="/downloads/proget-client-tools" to="/upack"/>
-	<permanent from="/blog/writing-a-simple-action-using-the-buildmaster-sdk" to="/support/documentation/buildmaster/administration/extensions"/>
 	<permanent from="/blog/upgrade-notes-for-proget-46" to="/support/kb/1138"/>
 	<permanent from="/blog/a-new-version-of-the-sql-server-extension-v44-has-been-released" to="/den/buildmaster/sqlserver"/>
 	<permanent from="/blog/deploying-the-same-set-of-files-to-multiple-servers-using-server-groups-in-buildmaster" to="/support/tutorials/buildmaster/deployments/deploying-the-same-set-of-files-to-multiple-servers-using-server-roles-in-buildmaster"/>
@@ -1028,23 +893,9 @@
   <permanent from="/support/tutorials/extending-proget-package-store" to="/support/tutorials/extending-proget" />
   <permanent from="/support/tutorials/writing-a-unit-testing-action-using-the-buildmaster-sdk" to="/support/tutorials/creating-an-auto-deploying-custom-extension-application" />
   <permanent from="/support/tutorials/a-gentle-introduction-to-proget-deploy" to="/support/tutorials/getting-started-with-proget-deploy" />
-  <permanent from="/support/tutorials/scheduling-a-deployment-in-buildmaster" to="/support/documentation/buildmaster/core-concepts/builds/automatic-recurring-builds" />
-  <permanent from="/support/tutorials/restricting-users-in-buildmaster" to="/support/documentation/buildmaster/auditing-and-compliance/security" />
-  <permanent from="/support/tutorials/connecting-to-a-linux-server-in-buildmaster-using-the-ssh-agent" to="/support/documentation/buildmaster/deployment-automation/servers" />
   <permanent from="/support/tutorials/appending-an-issue-description-or-comment-with-buildmaster" to="/buildmaster/extensions/buildmaster+core+extensions/Inedo.BuildMaster.Extensibility.Actions.IssueTracking.AppendIssueDescriptionAction" />
   <permanent from="/support/tutorials/deploying-to-multiple-servers-in-buildmaster" to="/support/tutorials/deploying-the-same-set-of-files-to-multiple-servers-using-server-groups-in-buildmaster" />
-  <permanent from="/support/tutorials/adding-a-secondary-workflow-in-buildmaster" to="/support/documentation/buildmaster/core-concepts/promotion-workflows" />
-  <permanent from="/support/tutorials/setting-up-notification-emails-in-buildmaster" to="/support/documentation/buildmaster/auditing-and-compliance/event-listeners" />
-  <permanent from="/support/tutorials/blocking-promotions-until-all-issues-are-closed-in-buildmaster" to="/support/documentation/buildmaster/core-concepts/promotion-workflows/approvals" />
-  <permanent from="/support/tutorials/running-unit-tests-during-a-build-execution-with-buildmaster" to="/support/documentation/buildmaster/deployment-automation/deployment-plans/actions" />
-  <permanent from="/support/tutorials/adding-an-approval-in-buildmaster" to="/support/documentation/buildmaster/core-concepts/promotion-workflows/approvals" />
-  <permanent from="/support/tutorials/assigning-and-performing-a-manual-action-with-buildmaster" to="/support/documentation/buildmaster/change-mangement/change-controls" />
-  <permanent from="/support/tutorials/adding-a-remote-server-or-agent-in-buildmaster" to="/support/documentation/buildmaster/deployment-automation/servers" />
   <permanent from="/support/tutorials/using-ftp-with-buildmaster" to="/buildmaster/extensions/ftp" />
-  <permanent from="/support/tutorials/backing-up-and-restoring-buildmaster" to="/support/documentation/buildmaster/buildmaster-administration/backing-up" />
-  <permanent from="/support/tutorials/transferring-files-in-buildmaster-using-file-masks" to="/support/documentation/buildmaster/deployment-automation/deployment-plans/transfer-files-masking" />
-  <temporary from="/support/tutorials/writing-a-custom-script" to="/support/documentation/buildmaster/deployment-automation/deployment-plans/transfer-files-masking/support/tutorials/writing-a-custom-script-for-proget-deploy" />
-  <permanent from="/support/tutorials/adding-an-issue-tracking-provider-to-buildmaster" to="/support/documentation/buildmaster/change-mangement/issue-tracking" />
   <permanent from="/support/tutorials/getting-started-with-proget-deploy" to="/support/tutorials/application-deployment-feeds-in-proget" />
   <permanent from="/support/tutorials/writing-a-custom-script-for-proget-deploy" to="/support/tutorials/application-deployment-feeds-in-proget" />
   <permanent from="/support/tutorials/using-buildmaster-with-artifactory" to="https://github.com/Inedo/inedox-artifactory/wiki" />
@@ -1099,12 +950,7 @@
   <permanent from="/support/tutorials/cross-product-tutorial" to="/support/tutorials/buildmaster/deployments/getting-started-with-proget-buildmaster-and-otter" />
 
   <permanent from="/support/tutorials/buildmaster/deployments/deploying-the-same-set-of-files-to-multiple-servers-using-server-groups-in-buildmaster" to="/support/tutorials/buildmaster/deployments/deploying-the-same-set-of-files-to-multiple-servers-using-server-roles-in-buildmaster"/>
-  <permanent from="/support/tutorials/buildmaster/deployments/adding-and-executing-powershell-scripts" to="/support/documentation/buildmaster/execution-engine/powershell-and-shell"/>
-  <permanent from="/support/tutorials/buildmaster/sdk/creating-an-auto-deploying-custom-extension-application" to="/support/documentation/buildmaster/administration/extensions/create-custom"/>
-  <permanent from="/support/tutorials/buildmaster/sdk/cloning-and-patching-an-inedo-extension" to="/support/documentation/buildmaster/administration/extensions/cloning-patching"/>
   <permanent from="/support/tutorials/buildmaster/sdk/debugging-buildmaster-extensions" to="/support/documentation/inedosdk/extending/creating"/>
-  <permanent from="/support/tutorials/buildmaster/sdk/writing-a-simple-operation" to="/support/documentation/buildmaster/reference/sdk/writing-operation"/>
-  <permanent from="/support/tutorials/buildmaster/sdk/writing-a-variable-function" to="/support/documentation/buildmaster/reference/sdk/writing-variable-function"/>
 
   <permanent from="/support/tutorials/buildmaster/jenkins/queuing-and-deploying-artifacts-from-jenkins" to="/den/buildmaster/jenkins"/>
   <permanent from="/support/tutorials/buildmaster/teamcity/queuing-and-deploying-artifacts-from-teamcity" to="/den/buildmaster/teamcity"/>
