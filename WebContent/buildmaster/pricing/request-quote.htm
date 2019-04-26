@@ -30,7 +30,7 @@
             margin-bottom: 40px;
         }
 
-       
+
         .ahvalidator.error input[type=text],
         .ahvalidator.error select {
             background-color: #fcc;
@@ -46,7 +46,9 @@
         <h3 style="text-align: center; border-bottom: 1px solid #808080; padding-bottom: 38px; margin: 30px 16px 0 10px;">BuildMaster Quote Request</h3>
         <contact-form method="post" action="/contact-form">
             <fieldset>
-                <input type="hidden" name="ToAddress" value="athiel@inedo.com" />
+                <input type="hidden" name="ToAddress" value="mgoulis@inedo.com" />
+                <input type="hidden" name="CcAddress" value="athiel@inedo.com" />
+                <input type="hidden" name="BccAddress" value="rgovert@inedo.com" />
                 <input type="hidden" name="RedirectUrl" value="/buildmaster/pricing/request-received" />
                 <input type="hidden" name="Subject" value="BuildMaster Quote Request" />
                 <input type="hidden" name="CcFromAddress" value="false" />

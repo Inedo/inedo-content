@@ -299,6 +299,46 @@
 	<permanent from="/proget/4.8" to="/proget" />
 	<permanent from="/proget/4.8/thanks" to="/proget" />
 
+  <!-- From HubSpot SEO Cleanup may need to be updated better but I know docs are being redone again and I don't want to make it worse, so I just have these all going to the relative doc homepages -->
+
+
+  <permanent from="/jp/features" to="/jp/products" />
+  <permanent from="/proget/0.9" to="/proget" />
+  <permanent from="/support/documentation/buildmaster/administration/extensions/create-custom" to="/support/documentation/buildmaster" />
+  <permanent from="/support/documentation/buildmaster/core-concepts/build" to="/support/documentation/buildmaster" />
+  <permanent from="/support/documentation/buildmaster/core-concepts/servers" to="/support/documentation/buildmaster" />
+  <permanent from="/support/documentation/buildmaster/execution-engine/statement-and-blocks/other-statements" to="/support/documentation/buildmaster" />
+  <permanent from="/support/documentation/buildmaster/installation/architecture/architecture" to="/support/documentation/buildmaster" />
+  <permanent from="/support/documentation/buildmaster/installation/configuration-options" to="/support/documentation/buildmaster" />
+  <permanent from="/support/documentation/buildmaster/installation/execution-engine" to="/support/documentation/buildmaster" />
+  <permanent from="/support/documentation/buildmaster/installation/global-components/resource-credentials" to="/support/documentation/buildmaster" />
+  <permanent from="/support/documentation/buildmaster/modeling-infrastructure/server-roles" to="/support/documentation/buildmaster" />
+  <permanent from="/support/documentation/buildmaster/reference/api/release-and-build" to="/support/documentation/buildmaster" />
+  <permanent from="/support/documentation/buildmaster/reference/global-components/configuration-variables" to="/support/documentation/buildmaster" />
+  <permanent from="/support/documentation/buildmaster/reference/operation" to="/support/documentation/buildmaster" />
+  <permanent from="/support/documentation/core-concepts/deployment-plans" to="/support/documentation/buildmaster" />
+  <permanent from="/support/documentation/executionengine/components/otterscript/statements-and-blocks/if-else" to="/support/documentation/executionengine" />
+  <permanent from="/support/documentation/executionengine/otterscript/statement-and-blocks/other-statements" to="/support/documentation/executionengine" />
+  <permanent from="/support/documentation/executionengine/reference/comments-and-descriptions" to="/support/documentation/executionengine" />
+  <permanent from="/support/documentation/executionengine/reference/strings-and-literals" to="/support/documentation/executionengine" />
+  <permanent from="/support/documentation/otter/global-components/configuration-variable" to="/support/documentation/otter" />
+  <permanent from="/support/documentation/otter/installation/configuration-options" to="/support/documentation/otter" />
+  <permanent from="/support/documentation/otter/modeling-infrastructure/server-role" to="/support/documentation/otter" />
+  <permanent from="/support/documentation/otter/reference/operations/powershell/pseval" to="/support/documentation/otter" />
+  <permanent from="/support/documentation/proget/compliance" to="/support/documentation/proget" />
+  <permanent from="/support/documentation/proget/feed-types" to="/support/documentation/proget" />
+  <permanent from="/support/documentation/proget/feeds/docker" to="/support/documentation/proget" />
+  <permanent from="/support/documentation/proget/proget-overview" to="/support/documentation/proget" />
+  <permanent from="/support/documentation/romp/getting-started" to="/support/documentation/romp" />
+  <permanent from="/support/documentation/romp/romp-packages/layout/extensions" to="/support/documentation/romp" />
+  <permanent from="/support/documentation/romp/romp-packages/layout/package-installation" to="/support/documentation/romp" />
+  <permanent from="/support/documentation/various/ldap/ldap-active-directory" to="/support/documentation/various" />
+  <permanent from="/support/documentation/various/execution-engine/otterscript/formal-grammar" to="/support/documentation/executionengine" />
+  <permanent from="/support/documentation/various/hub/inedo-hub-cli" to="/support/documentation/desktophub" />
+  <permanent from="/support/documentation/various/hub/what-is" to="/support/documentation/desktophub" />
+  <permanent from="/unknown-hh/0.1" to="/hedgehog" />
+
+
 
 
   <!-- Uninclused Landing Pages -->
@@ -364,7 +404,7 @@
   <temporary from="/support/documentation/buildmaster/modeling-applications/issues-projects" to="/support/documentation/buildmaster/verification/issue-tracking" />
   <temporary from="/support/documentation/buildmaster/core-concepts/pipelines" to="/support/documentation/buildmaster/verification/pipelines" />
   <temporary from="/support/documentation/buildmaster/core-concepts/pipelines/pipeline-model" to="/support/documentation/buildmaster/verification/pipelines/json-model" />
-  
+
 <!-- Various Docs -->
 
 	<permanent from="/support/documentation/various/universal-packages/universal-feeds-package-ref" to="/support/documentation/upack/overview"/>
