@@ -13,14 +13,14 @@
            </p>
            <hr />
        </div>
-       
+
        <p>Previously we ran through how to kick off a <a href="/support/tutorials/buildmaster/visual-studio-online/queuing-and-deploying-artifacts-from-tfs">new build in TFS / VSO and then import that build into BuildMaster</a>. This is the way most of our users integrate TFS, or any CI engine with BuildMaster, however there is another feature that some users take advantage of.</p>
 
 		<p>
             In this tutorial, we’ll set up a new <a href="/support/documentation/buildmaster/core-concepts/pipelines">pipeline</a> for the application we’re pulling from TFS so that we can pick a specific past build to import. 
       </p>
        <p class="info">
-           You can <a href="\support\tutorials\_examples\vso-2.zip">download</a> the sample Otterscript plan and JSON files used in this tutorial.
+           You can <a href="\support\tutorials\_examples\vso-2.zip" download="vso">download</a> the sample Otterscript plan and JSON files used in this tutorial.
        </p>
 
 	  <h3 id="step-one">Step 1: Create a new Pipeline</h3>
@@ -34,9 +34,9 @@
         <p>
             On that same note we’ll also use the same <a href="/support/documentation/buildmaster/core-concepts/deployment-plans">deployment plan</a> for Integration, Testing, and Production. Of course we can also add any <a href="/support/documentation/buildmaster/core-concepts/pipelines">gates</a>, and <a href="/support/documentation/buildmaster/global-components/event-listeners">event listeners</a> as needed.
 		</p>
-		
-		
-		
+
+
+
        <p><h3 id="step-two">Step 2: Create a Release Template</h3></p>
        <p>
            We’ll next set an application variable and use that variable in a <a href="http://inedo.com/support/documentation/buildmaster/core-concepts/release">Release Template</a>, which will allow us to pick a specific build definition, and build number.
@@ -45,12 +45,12 @@
            First, we'll set the application level variable. This variable will set <i>$TfsProject</i> to the specific Project in TFS we're working with. In this case, Accounts. You set application variables under the <i>settings</i> tab.
        </p>
        <img class="screenshot" src="\resources\tutorials\vso-part2\applicaion-variable.png" />
-       
+
        <p>
-           We’ll then create our release template, name it, and set it to the new pipeline. 
+           We’ll then create our release template, name it, and set it to the new pipeline.
        </p>
        <p>
-            First, we'll add a Release Variable to pick which build definition we want. We'll name it <i>TfsBuildDefinition</i>, and make sure that the value is required and limited to items in list. We'll choose Dynamic List (TFS Build Definition), and set our credential and use the application variable ($TfsProject) as its type. 
+            First, we'll add a Release Variable to pick which build definition we want. We'll name it <i>TfsBuildDefinition</i>, and make sure that the value is required and limited to items in list. We'll choose Dynamic List (TFS Build Definition), and set our credential and use the application variable ($TfsProject) as its type.
         </p>
        <img class="screenshot" src="\resources\tutorials\vso-part2\build-definition.png" />
         <p>
@@ -71,7 +71,7 @@
            Even if we’re using a previously defined deployment plan to move the application through the new pipeline, we still need to import the build, and we need a new plan for that. We’ll name the plan Import Previous Build.
        </p>
        <p>
-           This new plan will start with a General block and short description, and then add two operations, <b>Import Artifact from TFS</b>, and <b>Set Release Package Number</b>. The first operation will let us select a build to import using our variables. 
+           This new plan will start with a General block and short description, and then add two operations, <b>Import Artifact from TFS</b>, and <b>Set Release Package Number</b>. The first operation will let us select a build to import using our variables.
        </p>
        <img class="screenshot" src="\resources\tutorials\vso-part2/import-plan2.png" />
        <p>
@@ -81,7 +81,7 @@
        <p class="info">Please note that if you choose to set the package number to the same number as the build in TFS you may also need to change the <i>Package Number Scheme</i> to <i>Date-based</i> (which can be found under advanced settings) in certain situations. This allows for a package name to be reused in the same release.</p>
        <p>We will then save and assign this new plan to the Import stage of our pipeline, and select the stage to automatically promote to the next stage of the pipeline, Integration.</p>
        <img class="screenshot" src="\resources\tutorials\vso-part2\new-stage2.png" />
-      
+
 
 
        <p><h3 id="step-four">Step 4: Create a new Release</h3></p>
@@ -100,9 +100,9 @@
            Once set, BuildMaster will then import the build number specified and the release package can be moved through the rest of the pipeline.
        </p>
        <img class="screenshot" src="\resources\tutorials\vso-part2/imported.png" />
-		
+
        <div id="related-content" class="content">
-	
+
            <hr />
            <div class="button-set">
                <a href="/buildmaster/download" class="button">Download BuildMaster</a>

@@ -17,7 +17,7 @@
 
     <p>There are a host of <a href="/support/documentation/buildmaster/core-concepts/pipelines">pipeline configurations</a> and settings that can be implemented to automate a release all the way through production while enabling security and compliance requirements. While there are hundreds of different ways to set up a single release pipeline, the actions and implantations below are some of the most useful.</p>
     <p class="info">
-        You can <a href="\support\tutorials\_examples\advanced-pipelines.zip">download</a> the JSON pipeline code as well as the production plan Otterscript used in this tutorial.
+        You can <a href="\support\tutorials\_examples\advanced-pipelines.zip" download="advanced-pipelines">download</a> the JSON pipeline code as well as the production plan Otterscript used in this tutorial.
     </p>
 
     <p><h2>Build Importing</h2></p>
@@ -27,7 +27,7 @@
     <p>
         We have some step-by-step tutorials about how to import a build from a CI tool (like <a href="/support/tutorials/buildmaster/visual-studio-online/queuing-and-deploying-artifacts-from-tfs">TFS</a>, <a href="/support/tutorials/buildmaster/teamcity/queuing-and-deploying-artifacts-from-teamcity">TeamCity</a> and <a href="/support/tutorials/buildmaster/jenkins/queuing-and-deploying-artifacts-from-jenkins">Jenkins</a>), so for this we’ll just create the stage Import, set it to the first position and make sure it automatically deploys to the next stage of the pipeline.
     </p>
-    
+
     <img src="\resources\tutorials\pipeline\new-stage.png" />
 
     <p><h2>Adding a Gate</h2></p>
@@ -62,9 +62,9 @@
     </p>
     <img src="\resources\tutorials\pipeline\multi-target.png" />
     <p>
-        We will also set this stage to automatically deploy to the next stage, which is Q/A. However the Q/A stage is often under heavy use so it can’t be altered during most of the day because that would interrupt the testing happening at that stage. 
+        We will also set this stage to automatically deploy to the next stage, which is Q/A. However the Q/A stage is often under heavy use so it can’t be altered during most of the day because that would interrupt the testing happening at that stage.
     </p>
-    
+
     <p><h2>Setting an automatic deployment time</h2></p>
 
     <p>

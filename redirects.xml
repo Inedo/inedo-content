@@ -275,68 +275,57 @@
   <permanent from="/company/source-code-request" to="/open/source-code-request" />
   <permanent from="/company/request-received" to="/open/request-received" />
 
-	<permanent from="/otter/1.7" to="/otter" />
-	<permanent from="/otter/1.7/thanks" to="/otter" />
-	<permanent from="/otter/1.6" to="/otter" />
-	<permanent from="/otter/1.6/thanks" to="/otter" />
-	<permanent from="/otter/1.5" to="/otter" />
-	<permanent from="/otter/1.4" to="/otter" />
-	<permanent from="/otter/1.3" to="/otter" />
-	<permanent from="/otter/1.2" to="/otter" />
-	<permanent from="/otter/1.1" to="/otter" />
-	<permanent from="/otter/1.0" to="/otter" />
+	<temporary from="/otter/1.7" to="/otter" />
+	<temporary from="/otter/1.7/thanks" to="/otter" />
+	<temporary from="/otter/1.6" to="/otter" />
+	<temporary from="/otter/1.6/thanks" to="/otter" />
+	<temporary from="/otter/1.5" to="/otter" />
+	<temporary from="/otter/1.4" to="/otter" />
+	<temporary from="/otter/1.3" to="/otter" />
+	<temporary from="/otter/1.2" to="/otter" />
+	<temporary from="/otter/1.1" to="/otter" />
+	<temporary from="/otter/1.0" to="/otter" />
 
 
 
-	<permanent from="/proget/4.0" to="/proget" />
-	<permanent from="/proget/4.1" to="/proget" />
-	<permanent from="/proget/4.2" to="/proget" />
-	<permanent from="/proget/4.3" to="/proget" />
-	<permanent from="/proget/4.4" to="/proget" />
-	<permanent from="/proget/4.5" to="/proget" />
-	<permanent from="/proget/4.6" to="/proget" />
-	<permanent from="/proget/4.7" to="/proget" />
-	<permanent from="/proget/4.8" to="/proget" />
-	<permanent from="/proget/4.8/thanks" to="/proget" />
+	<temporary from="/proget/4.0" to="/proget" />
+	<temporary from="/proget/4.1" to="/proget" />
+	<temporary from="/proget/4.2" to="/proget" />
+	<temporary from="/proget/4.3" to="/proget" />
+	<temporary from="/proget/4.4" to="/proget" />
+	<temporary from="/proget/4.5" to="/proget" />
+	<temporary from="/proget/4.6" to="/proget" />
+	<temporary from="/proget/4.7" to="/proget" />
+	<temporary from="/proget/4.8" to="/proget" />
+	<temporary from="/proget/4.8/thanks" to="/proget" />
 
   <!-- From HubSpot SEO Cleanup may need to be updated better but I know docs are being redone again and I don't want to make it worse, so I just have these all going to the relative doc homepages -->
 
 
-  <permanent from="/jp/features" to="/jp/products" />
-  <permanent from="/proget/0.9" to="/proget" />
-  <permanent from="/support/documentation/buildmaster/administration/extensions/create-custom" to="/support/documentation/buildmaster" />
-  <permanent from="/support/documentation/buildmaster/core-concepts/build" to="/support/documentation/buildmaster" />
-  <permanent from="/support/documentation/buildmaster/core-concepts/servers" to="/support/documentation/buildmaster" />
-  <permanent from="/support/documentation/buildmaster/execution-engine/statement-and-blocks/other-statements" to="/support/documentation/buildmaster" />
-  <permanent from="/support/documentation/buildmaster/installation/architecture/architecture" to="/support/documentation/buildmaster" />
-  <permanent from="/support/documentation/buildmaster/installation/configuration-options" to="/support/documentation/buildmaster" />
-  <permanent from="/support/documentation/buildmaster/installation/execution-engine" to="/support/documentation/buildmaster" />
-  <permanent from="/support/documentation/buildmaster/installation/global-components/resource-credentials" to="/support/documentation/buildmaster" />
-  <permanent from="/support/documentation/buildmaster/modeling-infrastructure/server-roles" to="/support/documentation/buildmaster" />
-  <permanent from="/support/documentation/buildmaster/reference/api/release-and-build" to="/support/documentation/buildmaster" />
-  <permanent from="/support/documentation/buildmaster/reference/global-components/configuration-variables" to="/support/documentation/buildmaster" />
-  <permanent from="/support/documentation/buildmaster/reference/operation" to="/support/documentation/buildmaster" />
-  <permanent from="/support/documentation/core-concepts/deployment-plans" to="/support/documentation/buildmaster" />
-  <permanent from="/support/documentation/executionengine/components/otterscript/statements-and-blocks/if-else" to="/support/documentation/executionengine" />
-  <permanent from="/support/documentation/executionengine/otterscript/statement-and-blocks/other-statements" to="/support/documentation/executionengine" />
-  <permanent from="/support/documentation/executionengine/reference/comments-and-descriptions" to="/support/documentation/executionengine" />
-  <permanent from="/support/documentation/executionengine/reference/strings-and-literals" to="/support/documentation/executionengine" />
-  <permanent from="/support/documentation/otter/global-components/configuration-variable" to="/support/documentation/otter" />
-  <permanent from="/support/documentation/otter/installation/configuration-options" to="/support/documentation/otter" />
-  <permanent from="/support/documentation/otter/modeling-infrastructure/server-role" to="/support/documentation/otter" />
-  <permanent from="/support/documentation/otter/reference/operations/powershell/pseval" to="/support/documentation/otter" />
-  <permanent from="/support/documentation/proget/compliance" to="/support/documentation/proget" />
-  <permanent from="/support/documentation/proget/feed-types" to="/support/documentation/proget" />
-  <permanent from="/support/documentation/proget/feeds/docker" to="/support/documentation/proget" />
-  <permanent from="/support/documentation/proget/proget-overview" to="/support/documentation/proget" />
-  <permanent from="/support/documentation/romp/getting-started" to="/support/documentation/romp" />
-  <permanent from="/support/documentation/romp/romp-packages/layout/extensions" to="/support/documentation/romp" />
-  <permanent from="/support/documentation/romp/romp-packages/layout/package-installation" to="/support/documentation/romp" />
-  <permanent from="/support/documentation/various/ldap/ldap-active-directory" to="/support/documentation/various" />
-  <permanent from="/support/documentation/various/execution-engine/otterscript/formal-grammar" to="/support/documentation/executionengine" />
-  <permanent from="/support/documentation/various/hub/inedo-hub-cli" to="/support/documentation/desktophub" />
-  <permanent from="/support/documentation/various/hub/what-is" to="/support/documentation/desktophub" />
-  <permanent from="/unknown-hh/0.1" to="/hedgehog" />
+  <temporary from="/jp/features" to="/jp/products" />
+  <temporary from="/proget/0.9" to="/proget" />
+
+  <temporary from="/support/documentation/core-concepts/deployment-plans" to="/support/documentation/buildmaster" />
+  <temporary from="/support/documentation/executionengine/components/otterscript/statements-and-blocks/if-else" to="/support/documentation/executionengine" />
+  <temporary from="/support/documentation/executionengine/otterscript/statement-and-blocks/other-statements" to="/support/documentation/executionengine" />
+  <temporary from="/support/documentation/executionengine/reference/comments-and-descriptions" to="/support/documentation/executionengine" />
+  <temporary from="/support/documentation/executionengine/reference/strings-and-literals" to="/support/documentation/executionengine" />
+  <temporary from="/support/documentation/otter/global-components/configuration-variable" to="/support/documentation/otter" />
+  <temporary from="/support/documentation/otter/installation/configuration-options" to="/support/documentation/otter" />
+  <temporary from="/support/documentation/otter/modeling-infrastructure/server-role" to="/support/documentation/otter" />
+  <temporary from="/support/documentation/otter/reference/operations/powershell/pseval" to="/support/documentation/otter" />
+  <temporary from="/support/documentation/proget/compliance" to="/support/documentation/proget" />
+  <temporary from="/support/documentation/proget/feed-types" to="/support/documentation/proget" />
+  <temporary from="/support/documentation/proget/feeds/docker" to="/support/documentation/proget" />
+  <temporary from="/support/documentation/proget/proget-overview" to="/support/documentation/proget" />
+  <temporary from="/support/documentation/romp/getting-started" to="/support/documentation/romp" />
+  <temporary from="/support/documentation/romp/romp-packages/layout/extensions" to="/support/documentation/romp" />
+  <temporary from="/support/documentation/romp/romp-packages/layout/package-installation" to="/support/documentation/romp" />
+  <temporary from="/support/documentation/various/ldap/ldap-active-directory" to="/support/documentation/various" />
+  <temporary from="/support/documentation/various/execution-engine/otterscript/formal-grammar" to="/support/documentation/executionengine" />
+  <temporary from="/support/documentation/various/hub/inedo-hub-cli" to="/support/documentation/desktophub" />
+  <temporary from="/support/documentation/various/hub/what-is" to="/support/documentation/desktophub" />
+  <temporary from="/unknown-hh/0.1" to="/hedgehog" />
 
 
 
