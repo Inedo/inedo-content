@@ -364,6 +364,7 @@
   <temporary from="/support/documentation/buildmaster/modeling-applications/issues-projects" to="/support/documentation/buildmaster/verification/issue-tracking" />
   <temporary from="/support/documentation/buildmaster/core-concepts/pipelines" to="/support/documentation/buildmaster/verification/pipelines" />
   <temporary from="/support/documentation/buildmaster/core-concepts/pipelines/pipeline-model" to="/support/documentation/buildmaster/verification/pipelines/json-model" />
+  <temporary from="/support/documentation/buildmaster/global-components/value-renderers" to="/support/documentation/buildmaster/administration/value-renderers" />
   
 <!-- Various Docs -->
 
