@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <redirects>
 
+<!-- NOTE: use temporary not permanent -->
+
+
   <domain name="codeoffset.com" to="http://inedo.com/offset" />
   <domain name="codeoffsets.com" to="http://inedo.com/offset" />
   <domain name="www.codeoffset.com" to="http://inedo.com/offset" />
@@ -298,6 +301,7 @@
 	<temporary from="/proget/4.7" to="/proget" />
 	<temporary from="/proget/4.8" to="/proget" />
 	<temporary from="/proget/4.8/thanks" to="/proget" />
+  <temporary from="/blog/proget-as-a-service-introducing-hosted-proget" to="/proget" />
 
   <!-- From HubSpot SEO Cleanup may need to be updated better but I know docs are being redone again and I don't want to make it worse, so I just have these all going to the relative doc homepages -->
 
