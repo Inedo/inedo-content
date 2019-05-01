@@ -13,14 +13,14 @@
            </p>
            <hr />
        </div>
-       
+
        <p>Previously we ran through how to kick off a <a href="/support/tutorials/buildmaster/jenkins/queuing-and-deploying-artifacts-from-jenkins">new build in Jenkins and then import that build into BuildMaster</a>. This is the way most of our users integrate with Jenkins, or any CI engine with BuildMaster, however there is another feature that some users take advantage of.</p>
 
 		<p>
-            In this tutorial, we’ll set up a new <a href="/support/documentation/buildmaster/core-concepts/pipelines">Pipeline</a> for the application we’re pulling from Jenkins so that we can pick a specific past build to import. 
+            In this tutorial, we’ll set up a new <a href="/support/documentation/buildmaster/core-concepts/pipelines">Pipeline</a> for the application we’re pulling from Jenkins so that we can pick a specific past build to import.
       </p>
        <p class="info">
-           You can <a href="\support\tutorials\_examples\Jenkins-2.zip">download</a> the sample Otterscript plan and JSON files used in this tutorial.
+           You can <a href="\support\tutorials\_examples\Jenkins-2.zip" download="jenkins">download</a> the sample Otterscript plan and JSON files used in this tutorial.
        </p>
 
 	  <h3 id="step-one">Step 1: Create a new Pipeline</h3>
@@ -34,9 +34,9 @@
         <p>
             On that same note we’ll also use the same <a href="/support/documentation/buildmaster/core-concepts/deployment-plans">Deployment Plan</a> for Integration, Testing, and Production. Of course we can also add any <a href="/support/documentation/buildmaster/core-concepts/pipelines">Gates</a> and <a href="/support/documentation/buildmaster/global-components/event-listeners">Event Listeners</a> as needed.
 		</p>
-		
-		
-		
+
+
+
        <p><h3 id="step-two">Step 2: Create a Release Template</h3></p>
        <p>
            We’ll next set an application variable and use that variable in a <a href="http://inedo.com/support/documentation/buildmaster/core-concepts/release">Release Template</a>, which will allow us to pick a specific build definition, and build number.
@@ -45,20 +45,20 @@
            First, we'll set the application level variable. This variable will set <i>$JenkinsProject</i> to the specific Project in Jenkins we're working with. In this case, <i>AccountsWeb</i>. You set application variables under the <i>settings</i> tab.
        </p>
        <img class="screenshot" src="\resources\tutorials\jenkins-part2\set-variable.png" />
-       
+
        <p>
-           We’ll then create our release template, name it, and set it to the new pipeline. 
+           We’ll then create our release template, name it, and set it to the new pipeline.
        </p>
        <p>
-           We'll add a <a href="/support/documentation/buildmaster/execution-engine/runtime-variables">Release Variable</a> to pick which build we want. We'll name it <i>JenkinsBuildNumber</i>, and make sure that the value is required and limited to items in list. We'll choose Dynamic List (Jenkins Build Number), and set our credential and use the application variable ($JenkinsProject) for its value. 
+           We'll add a <a href="/support/documentation/buildmaster/execution-engine/runtime-variables">Release Variable</a> to pick which build we want. We'll name it <i>JenkinsBuildNumber</i>, and make sure that the value is required and limited to items in list. We'll choose Dynamic List (Jenkins Build Number), and set our credential and use the application variable ($JenkinsProject) for its value.
         </p>
        <img class="screenshot" src="\resources\tutorials\jenkins-part2\template-1.png" />
        <p>
            Also, we'll make sure that the value is required, and also limited to items in the list.
        </p>
-        
+
        <img class="screenshot" src="\resources\tutorials\jenkins-part2\template-2.png" />
-      
+
        <p>
            We now have a release template that, when used, will prompt us for a specific build number. Next, we'll use this in a new deployment plan.
        </p>
@@ -69,7 +69,7 @@
            Even if we’re using a previously defined deployment plan to move the application through the new pipeline, we still need to import the build, and we need a new plan for that. We’ll name the plan <i>Import Previous Build</i>.
        </p>
        <p>
-           This new plan will start with a General block and short description, and then add two operations, <b>Import Artifact from Jenkins</b>, and <b>Set Release Package Number</b>. The first operation will let us select a build to import using our variables. 
+           This new plan will start with a General block and short description, and then add two operations, <b>Import Artifact from Jenkins</b>, and <b>Set Release Package Number</b>. The first operation will let us select a build to import using our variables.
        </p>
        <img class="screenshot" src="\resources\tutorials\jenkins-part2\plan-1.png" />
        <p>
@@ -97,9 +97,9 @@
            Once set, BuildMaster will then import the build number specified and the release package can be moved through the rest of the pipeline.
        </p>
        <img class="screenshot" src="\resources\tutorials\jenkins-part2/package-created.png" />
-		
+
        <div id="related-content" class="content">
-	
+
            <hr />
            <div class="button-set">
                <a href="/buildmaster/download" class="button">Download BuildMaster</a>
