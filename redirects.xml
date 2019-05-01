@@ -305,31 +305,42 @@
 
   <!-- From HubSpot SEO Cleanup may need to be updated better but I know docs are being redone again and I don't want to make it worse, so I just have these all going to the relative doc homepages -->
 
+      <!-- 4xx/5xx Errors -->
 
   <temporary from="/jp/features" to="/jp/products" />
   <temporary from="/proget/0.9" to="/proget" />
 
-  <temporary from="/support/documentation/core-concepts/deployment-plans" to="/support/documentation/buildmaster" />
-  <temporary from="/support/documentation/executionengine/components/otterscript/statements-and-blocks/if-else" to="/support/documentation/executionengine" />
-  <temporary from="/support/documentation/executionengine/otterscript/statement-and-blocks/other-statements" to="/support/documentation/executionengine" />
-  <temporary from="/support/documentation/executionengine/reference/comments-and-descriptions" to="/support/documentation/executionengine" />
-  <temporary from="/support/documentation/executionengine/reference/strings-and-literals" to="/support/documentation/executionengine" />
-  <temporary from="/support/documentation/otter/global-components/configuration-variable" to="/support/documentation/otter" />
-  <temporary from="/support/documentation/otter/installation/configuration-options" to="/support/documentation/otter" />
-  <temporary from="/support/documentation/otter/modeling-infrastructure/server-role" to="/support/documentation/otter" />
-  <temporary from="/support/documentation/otter/reference/operations/powershell/pseval" to="/support/documentation/otter" />
-  <temporary from="/support/documentation/proget/compliance" to="/support/documentation/proget" />
-  <temporary from="/support/documentation/proget/feed-types" to="/support/documentation/proget" />
-  <temporary from="/support/documentation/proget/feeds/docker" to="/support/documentation/proget" />
-  <temporary from="/support/documentation/proget/proget-overview" to="/support/documentation/proget" />
-  <temporary from="/support/documentation/romp/getting-started" to="/support/documentation/romp" />
-  <temporary from="/support/documentation/romp/romp-packages/layout/extensions" to="/support/documentation/romp" />
-  <temporary from="/support/documentation/romp/romp-packages/layout/package-installation" to="/support/documentation/romp" />
-  <temporary from="/support/documentation/various/ldap/ldap-active-directory" to="/support/documentation/various" />
-  <temporary from="/support/documentation/various/execution-engine/otterscript/formal-grammar" to="/support/documentation/executionengine" />
-  <temporary from="/support/documentation/various/hub/inedo-hub-cli" to="/support/documentation/desktophub" />
-  <temporary from="/support/documentation/various/hub/what-is" to="/support/documentation/desktophub" />
-  <temporary from="/unknown-hh/0.1" to="/hedgehog" />
+<temporary from="/support/documentation/buildmaster/administration/extensions/create-custom" to="/support/documentation/buildmaster/reference/extensions" />
+  <temporary from="/support/documentation/buildmaster/core-concepts/build" to="/support/documentation/buildmaster/builds/overview" />
+  <temporary from="/support/documentation/buildmaster/core-concepts/servers" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/servers" />
+  <temporary from="/support/documentation/buildmaster/execution-engine/statement-and-blocks/other-statements" to="/support/documentation/executionengine/otterscript/statements-and-blocks/other-statements" />
+  <temporary from="/support/documentation/buildmaster/installation/architecture/architecture" to="/support/documentation/buildmaster/installation-and-maintenance/architecture" />
+    <temporary from="/support/documentation/buildmaster/installation/configuration-options" to="/support/documentation/buildmaster/installation-and-maintenance/config-files" />
+  <temporary from="/support/documentation/buildmaster/installation/execution-engine" to="/support/documentation/executionengine/overview" />
+  <temporary from="/support/documentation/buildmaster/installation/global-components/resource-credentials" to="/support/documentation/buildmaster/administration/resource-credentials" />
+  <temporary from="/support/documentation/buildmaster/modeling-infrastructure/server-roles" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/servers" />
+  <temporary from="/support/documentation/buildmaster/reference/global-components/configuration-variables" to="/support/documentation/buildmaster/administration/configuration-variables" />
+  <temporary from="/support/documentation/buildmaster/reference/operation" to="/support/documentation/buildmaster/reference/operations" />
+  <temporary from="/support/documentation/core-concepts/deployment-plans" to="/support/documentation/buildmaster/deployments/plans" />
+  <temporary from="/support/documentation/executionengine/components/otterscript/statements-and-blocks/if-else" to="/support/documentation/executionengine/otterscript/statements-and-blocks/if-else" />
+  <temporary from="/support/documentation/executionengine/otterscript/statement-and-blocks/other-statements" to="/support/documentation/executionengine/otterscript/statements-and-blocks/other-statement" />
+  <temporary from="/support/documentation/executionengine/reference/comments-and-descriptions" to="/support/documentation/executionengine/otterscript/comments-and-descriptions" />
+  <temporary from="/support/documentation/executionengine/reference/strings-and-literals" to="/support/documentation/executionengine/otterscript/strings-and-literal" />
+  <temporary from="/support/documentation/otter/global-components/configuration-variable" to="/support/documentation/otter/global-components/configuration-variables" />
+  <temporary from="/support/documentation/otter/installation/configuration-options" to="/support/documentation/otter/installation/config-files" />
+  <temporary from="/support/documentation/otter/modeling-infrastructure/server-role" to="/support/documentation/otter/modeling-infrastructure/server-roles" />
+  <temporary from="/support/documentation/otter/reference/operations/powershell/pseval" to="/support/documentation/otter/reference/operations" />
+  <temporary from="/support/documentation/proget/compliance" to="/support/documentation/proget/compliance/vulnerabilities" />
+  <temporary from="/support/documentation/proget/feed-types" to="/support/documentation/proget/core-concepts/feeds" />
+  <temporary from="/support/documentation/proget/feeds/docker" to="/support/documentation/proget/docker/private-registries" />
+  <temporary from="/support/documentation/proget/proget-overview" to="support/documentation/proget/overview" />
+  <temporary from="/support/documentation/romp/getting-started" to="/support/documentation/romp/overview" />
+  <temporary from="/support/documentation/romp/romp-packages/layout/extensions" to="/support/documentation/romp/extensibility/visual-studio" />
+  <temporary from="/support/documentation/romp/romp-packages/layout/package-installation" to="/support/documentation/romp/installation/installation-guide" />
+  <temporary from="/support/documentation/various/execution-engine/otterscript/formal-grammar" to="/support/documentation/executionengine/otterscript/overview" />
+  <temporary from="/support/documentation/various/hub/inedo-hub-cli" to="/support/documentation/desktophub/overview" />
+  <temporary from="/support/documentation/various/hub/what-is" to="/support/documentation/desktophub/overview" />
+  <temporary from="/unknown-hh/0.1" to="/hedgehog/versions" />
 
 
 
