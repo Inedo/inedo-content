@@ -510,7 +510,6 @@
   <permanent from="/support/documentation/proget/feed-types/universal" to="/support/documentation/proget/core-concepts/packages"/>
 
 
-  <permanent from="/support/documentation/proget/core-concepts/connectors" to="/support/documentation/proget/core-concepts/feeds/connectors" />
   <permanent from="/support/documentation/proget/core-concepts/high-availability" to="/support/documentation/proget/storage/high-availability" />
   <permanent from="/support/documentation/proget/feed-types/docker" to="/support/documentation/proget/docker/private-registries" />
   <permanent from="/support/documentation/proget/storage/feed-replication" to="/support/documentation/proget/storage/high-availability/feed-replication" />
@@ -564,6 +563,7 @@
 
   <permanent from="/support/documentation/proget/reference/sdk" to="/support/documentation/proget/administration/extensions"/>
 
+  <temporary from="/support/documentation/proget/core-concepts/feeds/connectors" to="/support/documentation/proget/core-concepts/connectors" />
 
   <!-- Otter Docs -->
   <permanent from="/support/documentation/otter/installation" to="/support/documentation/otter"/>
@@ -1163,7 +1163,7 @@
   <permanent from="/support/documentation/proget/feeds/api-keys" to="/support/documentation/proget/reference/api-keys-nuget" />
   <permanent from="/support/documentation/proget/manual" to="/support/documentation/proget/installation/manual" />
   <permanent from="/support/documentation/proget/feeds/multiple-feeds" to="/support/documentation/proget" />
-  <permanent from="/support/documentation/proget/feeds/connectors/indexing-connectors" to="/support/documentation/proget/core-concepts-connectors" />
+  <permanent from="/support/documentation/proget/feeds/connectors/indexing-connectors" to="/support/documentation/proget/core-concepts/connectors" />
   <permanent from="/support/documentation/proget/proget-overview/the-npm-ecosystem" to="/support/documentation/proget/feed-types/npm" />
   <permanent from="/support/documentation/proget/security" to="/support/documentation/proget/administration/security" />
   <permanent from="/support/documentation/proget/security/ldap-integration" to="/support/documentation/proget/administration/ldap-active-directory" />
