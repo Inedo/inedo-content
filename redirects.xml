@@ -303,6 +303,20 @@
 	<temporary from="/proget/4.8/thanks" to="/proget" />
   <temporary from="/blog/proget-as-a-service-introducing-hosted-proget" to="/proget" />
 
+  <!--HubSpot Form Conversion Cleanup -->
+  <temporary from="/subscription-thank-you" to="/contact-thank-you" />
+  <temporary from="/open/request-received" to="/contact-thank-you" />
+  <temporary from="/professional-services/contact-thanks" to="/contact-thank-you" />
+  <temporary from="/training/contact-thanks" to="/contact-thank-you" />
+  <temporary from="/buildmaster/pricing/request-received" to="/contact-thank-you" />
+  <temporary from="/proget/pricing/request-received" to="/contact-thank-you" />
+  <temporary from="/otter/pricing/request-received" to="/contact-thank-you" />
+  <temporary from="/hedgehog/pricing/request-received" to="/contact-thank-you" />
+  <temporary from="/den/submission-received" to="/contact-thank-you" />
+  <temporary from="/company/swag/jit-received" to="/contact-thank-you" />
+  <temporary from="/jp/thank-you" to="/jp" />
+  <temporary from="/manga/thanks" to="/jp" />
+
   <!-- From HubSpot SEO Cleanup may need to be updated better but I know docs are being redone again and I don't want to make it worse, so I just have these all going to the relative doc homepages -->
 
       <!-- 4xx/5xx Errors -->
@@ -409,7 +423,7 @@
   <temporary from="/support/documentation/buildmaster/core-concepts/pipelines" to="/support/documentation/buildmaster/verification/pipelines" />
   <temporary from="/support/documentation/buildmaster/core-concepts/pipelines/pipeline-model" to="/support/documentation/buildmaster/verification/pipelines/json-model" />
   <temporary from="/support/documentation/buildmaster/global-components/value-renderers" to="/support/documentation/buildmaster/administration/value-renderers" />
-  
+
 <!-- Various Docs -->
 
 	<permanent from="/support/documentation/various/universal-packages/universal-feeds-package-ref" to="/support/documentation/upack/overview"/>
