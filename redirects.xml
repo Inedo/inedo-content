@@ -579,6 +579,11 @@
 
   <temporary from="/support/documentation/proget/core-concepts/feeds/connectors" to="/support/documentation/proget/core-concepts/connectors" />
 
+  <temporary from="/support/documentation/proget/installation/inedo-hub-guide" to="/support/documentation/proget/installation/installation-guide" />
+  <temporary from="/support/documentation/proget/installation/hub" to="/support/documentation/desktophub/overview" />
+  <temporary from="/support/documentation/proget/installation/hub/inedo-hub-cli" to="/support/documentation/desktophub/inedo-hub-cli" />
+  <temporary from="/support/documentation/proget/administration/high-availability" to="/support/documentation/proget/installation/load-balancing-and-automatic-failover" />
+  
   <!-- Otter Docs -->
   <permanent from="/support/documentation/otter/installation" to="/support/documentation/otter"/>
   <permanent from="/support/documentation/otter/administration" to="/support/documentation/otter"/>
