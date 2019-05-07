@@ -34,7 +34,7 @@
             margin-bottom: 40px;
         }
 
-       
+
         .ahvalidator.error input[type=text],
         .ahvalidator.error select {
             background-color: #fcc;
@@ -50,33 +50,17 @@
     <div class="content-container">
         <div class="content">
             <div class="contact-form">
-                <h3 style="text-align: center; border-bottom: 1px solid #808080; padding-bottom: 38px; margin: 30px 16px 0 10px;">価格見積もり依頼</h3>
-                <contact-form method="post" action="/contact-form">
-                    <fieldset>
-                        <input type="hidden" name="ToAddress" value="ssato@inedo.com" />
-                        <input type="hidden" name="RedirectUrl" value="/jp/thank-you" />
-                        <input type="hidden" name="Subject" value="Pricing Japan Quote Request" />
-                        <input type="hidden" name="CcFromAddress" value="false" />
-                        <input type="hidden" name="Priority" value="High" />
-
-                        <label>お名前</label>
-                        <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                        <label>Eメールアドレス</label>
-                        <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                        <label>電話番号</label>
-                        <div><input name="Phone Number" type="text" /></div>
-
-                        <label>会社名</label>
-                        <div><input name="Company" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                        <label>ご興味をお持ちのプロダクト、トレーニング、サービス</label>
-                        <div><textarea name="Product/Service/Training you are interested in" style="width: 630px;" rows="4" cols="20"></textarea></div>
-
-                        <input type="button" value="送信" onclick="AhValidation.Submit(this);" />
-                    </fieldset>
-                </contact-form>
+                <h3 style="text-align: center; padding-bottom: 38px; margin: 30px 16px 0 10px;">価格見積もり依頼</h3>
+                <!--[if lte IE 8]>
+                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+                <![endif]-->
+                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+                <script>
+                  hbspt.forms.create({
+                	portalId: "5416872",
+                	formId: "536fb69e-9696-418c-8d74-c9020801e85e"
+                });
+                </script>
             </div>
         </div>
     </div>

@@ -101,23 +101,16 @@
     <div id="newsletter" class="content-container" style="clear: both;">
         <div class="content">
             <h2>Inedo Newsletter</h2>
-            <contact-form method="post" action="/contact-form">
-                <fieldset>
-                    <input type="hidden" name="ToAddress" value="ssato@inedo.com" />
-                    <input type="hidden" name="RedirectUrl" value="/jp/thank-you" />
-                    <input type="hidden" name="Subject" value="Resource Center &amp; Support Japan Subscription Box" />
-                    <input type="hidden" name="CcFromAddress" value="false" />
-                    <input type="hidden" name="Priority" value="High" />
-
-                    <label>名前</label>
-                    <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                    <label>Eメールアドレス</label>
-                    <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                    <input type="button" value="送信" onclick="AhValidation.Submit(this);" />
-                </fieldset>
-            </contact-form>
+            <!--[if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif]-->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+<script>
+  hbspt.forms.create({
+	portalId: "5416872",
+	formId: "127bba93-173e-45f0-af57-2d3b84c59cd0"
+});
+</script>
         </div>
     </div>
 

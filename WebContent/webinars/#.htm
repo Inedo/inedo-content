@@ -14,7 +14,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 </head>
 <body>
-   
+
     <div id="banner" class="content-container new">
         <div class="content">
             <h2>Inedo Webinars</h2>
@@ -27,7 +27,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <div class="tagline">
                 <h3>Upcoming Webinars</h3>
             </div>
-            
+
            <a>
                 <div style="border-top: 1px solid #dddddd;" class="webinar-box">
                     <div class="experience-level">
@@ -61,43 +61,23 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 </div>
             </a>-->
 
-           
+
 
             <div id="newsletter" class="content-container">
                 <div class="content">
                     <h2>Subscribe to be Notified about Upcoming Webinars</h2>
 
+                    <!--[if lte IE 8]>
+                    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+                    <![endif]-->
+                    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+                    <script>
+                      hbspt.forms.create({
+                    	portalId: "5416872",
+                    	formId: "cb065b78-bdb5-49d1-80e9-07911c14a013"
+                    });
+                    </script>
 
-                    <contact-form method="post" action="/contact-form">
-                        <fieldset>
-                            <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
-                            <input type="hidden" name="RedirectUrl" value="/subscription-thank-you" />
-                            <input type="hidden" name="Subject" value="Upcoming Webinars Notification Box" />
-                            <input type="hidden" name="CcFromAddress" value="false" />
-                            <input type="hidden" name="Priority" value="High" />
-
-                            <label>Your Name*</label>
-                            <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                            <label>Email Address*</label>
-                            <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                            <label>Phone Number</label>
-                            <div><input name="Phone Number" type="text" /></div>
-
-                            <label>Suggested Topics?</label>
-                            <div><input name="Topics" type="text" /></div>
-
-                            <select name="Presenter" data-ahvalidator='{ "Required": true }'>
-                                <option value="">Would you like to be a presenter in the future?*</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                                <option value="maybe">Maybe</option>
-                            </select>
-
-                            <input type="button" value="Submit" onclick="AhValidation.Submit(this);" />
-                        </fieldset>
-                    </contact-form>
                 </div>
             </div>
 
@@ -113,7 +93,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             </a>
 
             <!--<a href="#banner" id="back-to-top">Back to Top</a>-->
-   
+
         </div>
     </div>
 

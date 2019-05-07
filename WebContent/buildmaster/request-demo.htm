@@ -11,29 +11,6 @@
         .top-hero img {
             width: 220px;
         }
-        .contact-form input[type=text], .contact-form select {
-            width: 305px;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-        }
-
-        .contact-form input[type=button] {
-            width: 100%;
-            background-color: #3FA9F5;
-            color: white;
-            padding: 14px 20px;
-            margin: 20px 0 12px 0;
-            border: none;
-            cursor: pointer;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-            .contact-form input[type=button]:hover {
-                background-color: #1e89d5;
-            }
-
             .demo {
                 padding-top: 42px;
             }
@@ -65,15 +42,8 @@
                 font-weight: 600;
                 color: #002b54;
             }
-       
-        .ahvalidator.error input[type=text],
-        .ahvalidator.error select {
-            background-color: #fcc;
-        }
 
-        .ahvalidator.error .message {
-            display: none;
-        }
+
         #header {
             display: none;
         }
@@ -81,34 +51,21 @@
 </head>
 <body>
     <div class="content-container">
-        
+
         <div class="content demo">
-           
+
             <div class="contact-form">
-                <h4 style="border-bottom: 1px solid #cccccc; padding-bottom: 20px; margin: 10px 16px 0 10px;">Schedule a Personal Demo</h4>
-                <contact-form method="post" action="/contact-form">
-                    <fieldset>
-                        <input type="hidden" name="ToAddress" value="athiel@inedo.com" />
-                        <input type="hidden" name="RedirectUrl" value="/buildmaster/request-received" />
-                        <input type="hidden" name="Subject" value="BuildMaster Demo Request" />
-                        <input type="hidden" name="CcFromAddress" value="false" />
-                        <input type="hidden" name="Priority" value="High" />
-
-                        <label>Your Name*</label>
-                        <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                        <label>Email Address*</label>
-                        <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                        <label>Phone Number*</label>
-                        <div><input name="Phone Number" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                        <label>Company*</label>
-                        <div><input name="Company" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                        <input type="button" data-ahvalidator='{ "Required": true }' value="Schedule a Demo" onclick="AhValidation.Submit(this);" />
-                    </fieldset>
-                </contact-form>
+                <h4 style="border-bottom: 1px solid #cccccc; padding-bottom: 20px; margin: 10px 16px 30px 4px;">Schedule a Personal Demo</h4>
+                <!--[if lte IE 8]>
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+  <script>
+    hbspt.forms.create({
+  	portalId: "5416872",
+  	formId: "c13d1aa5-6812-4286-ba39-d4a9724936ac"
+  });
+  </script>
             </div>
             <div class="benefits">
                 <div class="top-hero">
@@ -133,7 +90,7 @@
                         Scale in the cloud with all languages and technologies
                     </li>
                     <li>
-                        Utilize a single dashboard to view the status of every process in the production 
+                        Utilize a single dashboard to view the status of every process in the production
                     </li>
                 </ul>
             </div>

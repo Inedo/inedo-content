@@ -4,44 +4,18 @@
     <title>Training &amp; Certification Inquiry | Contact</title>
     <meta name="MasterPageFile" content="training.htm" />
     <style>
-        .contact-form input[type=text], .contact-form select {
-            width: 595px;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-        }
 
-        .contact-form input[type=button] {
-            width: 100%;
-            background-color: #3FA9F5;
-            color: white;
-            padding: 14px 20px;
-            margin: 20px 0;
-            border: none;
-            cursor: pointer;
-        }
 
-            .contact-form input[type=button]:hover {
-                background-color: #1e89d5;
-            }
+
+
 
         .contact-form {
-            background-color: #e4e4e4;
             padding: 10px 20px;
             margin-bottom: 150px;
             width: 650px;
             margin-left: 150px;
         }
 
-
-        .ahvalidator.error input[type=text],
-        .ahvalidator.error select {
-            background-color: #fcc;
-        }
-
-        .ahvalidator.error .message {
-            display: none;
-        }
     </style>
 
 </head>
@@ -62,26 +36,16 @@
     </div>
     <div class="contact-form">
 
-        <contact-form method="post" action="/contact-form">
-            <fieldset>
-                <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
-                <input type="hidden" name="RedirectUrl" value="/training/contact-thanks" />
-                <input type="hidden" name="Subject" value="Training Request" />
-                <input type="hidden" name="CcFromAddress" value="false" />
-                <input type="hidden" name="Priority" value="High" />
-
-                <label>Your Name*</label>
-                <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                <label>Email Address*</label>
-                <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                <label>How can we help you? (optional)</label>
-                <div><textarea name="Message" style="width: 630px;" rows="8" cols="20"></textarea></div>
-
-                <input type="button" value="Submit" onclick="AhValidation.Submit(this);" />
-            </fieldset>
-        </contact-form>
+            <!--[if lte IE 8]>
+      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+      <![endif]-->
+      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+      <script>
+      hbspt.forms.create({
+      portalId: "5416872",
+      formId: "640cc598-36ec-49ec-95f8-e9852dc01bbd"
+      });
+      </script>
     </div>
 
 </body>

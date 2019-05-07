@@ -7,25 +7,25 @@
     <title>BuildMaster | CI/CD</title>
     <meta name="MasterPageFile" content="~/MasterPages/Main.Master" />
     <link rel="stylesheet" type="text/css" href="/buildmaster/landing/ci-cd-buildmaster-c/styles.css" />
-    
+
 
     <script>
         //smooth scrolling
             $(document).ready(function () {
                 $("a").on('click', function (event) {
-                    
+
                     if (this.hash !== "") {
                         event.preventDefault();
-                        
+
                         var hash = this.hash;
-                        
+
                         $('html, body').animate({
                             scrollTop: $(hash).offset().top
                         }, 800, function () {
-                            
+
                             window.location.hash = hash;
                         });
-                    } 
+                    }
                 });
             });
     </script>
@@ -49,44 +49,33 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <div id="sign-up" class="shadowed">
             <img src="/resources/images/logos/inedo-gray.svg" />
             <p>Download your Guide to CI/CD:</p>
-            <contact-form method="post" action="/contact-form">
-                <fieldset>
-                    <input type="hidden" name="MailChimpInterest" value="Whitepapers|CI/CD BuildMaster" />
-                    <input type="hidden" name="MailChimpAutomationTitle" value="BuildMaster CI/CD Calamity" />
-                    <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
-                    <input type="hidden" name="RedirectUrl" value="/support/whitepapers/ci-cd-buildmaster/thanks" />
-                    <input type="hidden" name="Subject" value="CI/CD for BuildMaster C PDF" />
-                    <input type="hidden" name="CcFromAddress" value="false" />
-                    <input type="hidden" name="Priority" value="High" />
-                    <label>name*</label>
-                    <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-                    <label>email*</label>
-                    <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-
-                    <input class="submit-button pdf-download " type="button" value="Download the PDF" onclick="AhValidation.Submit(this); 
-						gtag ('event', 'submission', {
-						'event_category' : 'Whitepaper', 
-						'event_label' : 'Landing-C' });" />
-                </fieldset>
-            </contact-form>
+            <!--[if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif]-->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+<script>
+  hbspt.forms.create({
+	portalId: "5416872",
+	formId: "c0ba2af2-1767-4eed-b9c9-bb73ee1fb875"
+});
+</script>
         </div>
     </div>
-    
+
 
     <div class="content above-fold">
         <div class="left">
            <h1>You don't need processes that look great on paper.</h1>
             <h1><i>You need processes that work.</i></h1>
             <h2>
-                In this white paper you will learn: 
+                In this white paper you will learn:
             </h2>
                 <ul class="will-learn">
                     <li>
                         Common CI/CD-related mishaps (and how to avoid them)
                     </li>
                     <li>
-                        Methods for assessing and evaluating your current CI/CD processes 
+                        Methods for assessing and evaluating your current CI/CD processes
                     </li>
                     <li>
                         Practical CI/CD implementation strategies with effective real-world benefits
@@ -95,7 +84,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         </div>
     </div>
 </div>
-    
+
 
     <div class="content-container case-study">
         <div class="content">

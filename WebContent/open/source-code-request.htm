@@ -31,35 +31,18 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <div class="content-container">
         <div class="content feat-req">
           <h2>Source Code Request</h2>
-            <p>If you'd like to access our source code to see exactly how things work, you're more than welcome to. Just fill out the form below, and we will grant you access to our private GitLab repositories.</p>
+            <p style="margin-bottom: 50px;">If you'd like to access our source code to see exactly how things work, you're more than welcome to. Just fill out the form below, and we will grant you access to our private GitLab repositories.</p>
 
-            <div id="form" class="content-container">
-                <div class="content">
-                    <contact-form method="post" action="/contact-form">
-                        <fieldset>
-                            <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
-                            <input type="hidden" name="RedirectUrl" value="/open/request-received" />
-                            <input type="hidden" name="Subject" value="GitLab Source Code Request" />
-                            <input type="hidden" name="CcFromAddress" value="false" />
-                            <input type="hidden" name="Priority" value="High" />
-
-                            <label>Your Name*</label>
-                            <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                            <label>Email Address*</label>
-                            <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                            <label>Company*</label>
-                            <div><input name="Company" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                            <label>Comments</label>
-                            <div><textarea name="Message" style="width: 872px; margin-left: 50px; margin-top: 10px;" rows="6" cols="20"></textarea></div>
-
-                            <input type="button" value="Submit" onclick="AhValidation.Submit(this);" />
-                        </fieldset>
-                    </contact-form>
-                </div>
-            </div>
+            <!--[if lte IE 8]>
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+            <![endif]-->
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+            <script>
+              hbspt.forms.create({
+            	portalId: "5416872",
+            	formId: "93f37227-6663-4742-8685-c3b941d373ad"
+            });
+            </script>
 
 
 

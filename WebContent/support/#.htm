@@ -109,23 +109,19 @@
     <div id="newsletter" class="content-container" style="clear: both;">
         <div class="content">
             <h2>Inedo Newsletter</h2>
-            <contact-form method="post" action="/contact-form">
-                <fieldset>
-                    <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
-                    <input type="hidden" name="RedirectUrl" value="/subscription-thank-you" />
-                    <input type="hidden" name="Subject" value="Resource Center &amp; Support Subscription Box" />
-                    <input type="hidden" name="CcFromAddress" value="false" />
-                    <input type="hidden" name="Priority" value="High" />
-
-                    <label>Your Name*</label>
-                    <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                    <label>Email Address*</label>
-                    <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                    <input type="button" value="Subscribe" onclick="AhValidation.Submit(this);" />
-                </fieldset>
-            </contact-form>
+            <h4 style="margin-bottom: 50px;">
+                To stay updated with everything here at Inedo, subscribe to our newsletter below, and follow us on <a href="https://twitter.com/Inedo">Twitter</a>!
+            </h4>
+            <!--[if lte IE 8]>
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+            <![endif]-->
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+            <script>
+              hbspt.forms.create({
+              portalId: "5416872",
+              formId: "0c21b738-240c-43a9-871d-dd6bce5fd2ff"
+            });
+            </script>
         </div>
     </div>
 
