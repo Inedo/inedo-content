@@ -4,42 +4,7 @@
     <title>Contact Us | Inedo.com</title>
     <meta name="SideBarName" content="company" />
     <style>
-        .contact-form  input[type=text], select {
-            width: 595px;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-        }
 
-  .contact-form input[type=button] {
-            width: 100%;
-            background-color: #3FA9F5;
-            color: white;
-            padding: 14px 20px;
-            margin: 20px 0;
-            border: none;
-            cursor: pointer;
-        }
-
-             .contact-form input[type=button]:hover {
-                background-color: #1e89d5;
-            }
-
-        .contact-form {
-            background-color: #e4e4e4;
-            padding: 10px 20px;
-            margin-bottom: 40px;
-        }
-
-
-        .ahvalidator.error input[type=text],
-        .ahvalidator.error select {
-            background-color: #fcc;
-        }
-
-        .ahvalidator.error .message {
-            display: none;
-        }
          #Mailing-Address ul{
              margin:15px 0;
              padding:0;
@@ -52,10 +17,6 @@
 </head>
 <body>
 
-
-
-
-
     <h1>Contact Us</h1>
 
     <p>How can we help? Here's some of our most common requests...</p>
@@ -64,40 +25,23 @@
         <li><a href="/buildmaster/pricing/request-quote">BuildMaster Quote Request</a></li>
         <li><a href="/proget/pricing/request-quote">ProGet Quote Request</a></li>
         <li><a href="/otter/pricing/request-quote">Otter Quote Request</a></li>
-       
+
         <li><a href="/training">Training and Certification</a></li>
         <li><a href="/professional-services">Professional Services</a></li>
     </ul>
 
-    <p>Alternatively, just fill out the form below and we will respond soon.</p>
+    <p style="margin-bottom:50px;">Alternatively, just fill out the form below and we will respond soon.</p>
 
-    <div class="contact-form">
-        <contact-form method="post" action="/contact-form">
-            <fieldset>
-                <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
-                <input type="hidden" name="RedirectUrl" value="/contact-thank-you" />
-                <input type="hidden" name="Subject" value="Inedo Contact Form" />
-                <input type="hidden" name="CcFromAddress" value="false" />
-                <input type="hidden" name="Priority" value="High" />
-
-                <label>Your Name*</label>
-                <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                <label>Email Address*</label>
-                <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                <label>Phone Number</label>
-                <div><input name="Phone Number" type="text" /></div>
-
-
-
-                <label>Message</label>
-                <div><textarea name="Message" style="width: 630px;" rows="10" cols="20"></textarea></div>
-
-                <input type="button" value="Submit" onclick="AhValidation.Submit(this);" />
-            </fieldset>
-        </contact-form>
-    </div>
+    <!--[if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif]-->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+<script>
+  hbspt.forms.create({
+	portalId: "5416872",
+	formId: "e63f462c-88a2-40a5-86a4-d322243763b1"
+});
+</script>
 
 
     <div id="Mailing-Address">
@@ -122,5 +66,3 @@
 
 </body>
 </html>
-
-

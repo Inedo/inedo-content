@@ -22,7 +22,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <p>
                 Inedoのプロフェッショナルサービスチームは、DevOpsの実装をスピードアップするだけではなく、様々なリスクを軽減するのにも役立ちます。 DevOpsによる変革をサポートして長年の経験を積んだInedoは、信頼できるアドバイザーと責任あるパートナーとしてお客様に最高のサービスを提供しています。 熟練されたサポートを通して、DevOpsの確実な成功を実感できます。
             </p>
-            
+
 
             <div class="circle-button">
                 <a class="download" href="#next-steps">プロフェッショナルサービスのリクエスト</a>
@@ -32,8 +32,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
     <div class="content-container">
         <div class="content">
-           
-         
+
+
             <p>
                 最新かつ最高のツールを実装することだけがDevOpsではありません。変化のための欲求が内部から発生したものでない限り、どのような外部からのサポートも組織をDevOpsに「変換」することはできません。Inedoのプロフェッショナルサービスチームは、この内部からの変化のための計画を作成し、重要なチームと人材を確保し、組織の変革の準備をする上で重要な役割を果たすことができます。
             </p>
@@ -82,38 +82,22 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 プロフェッショナルサービスチームが提供するガイダンスに興味をお持ちの場合、下記のフォームに必要事項を記入して、ご希望の内容をお知らせ下さい。
             </p>
 
-           
+
             <div id="form" class="content-container">
-                <div class="content">
-                    <contact-form method="post" action="/contact-form">
-                        <fieldset>
-                            <input type="hidden" name="ToAddress" value="ssato@inedo.com" />
-                            <input type="hidden" name="RedirectUrl" value="/jp/thank-you" />
-                            <input type="hidden" name="Subject" value="Professional Services Japan Request" />
-                            <input type="hidden" name="CcFromAddress" value="false" />
-                            <input type="hidden" name="Priority" value="High" />
+                
+                  <!--[if lte IE 8]>
+                      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+                      <![endif]-->
+                      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+                      <script>
+                      hbspt.forms.create({
+                      portalId: "5416872",
+                      formId: "e5cd8c32-6a7c-4a71-9976-33875c3f240d"
+                      });
+                      </script>
 
-                            <label>名前</label>
-                            <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                            <label>Eメールアドレス</label>
-                            <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                            <label>電話番号</label>
-                            <div><input name="Phone Number" type="text" /></div>
-
-                            <label>会社名</label>
-                            <div><input name="Phone Number" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                            <label>ご希望の内容</label>
-                            <div><textarea name="Message" style="width: 872px; margin-left: 50px; margin-top: 10px;" rows="6" cols="20"></textarea></div>
-
-                            <input type="button" value="送信" onclick="AhValidation.Submit(this);" />
-                        </fieldset>
-                    </contact-form>
-                </div>
             </div>
-         
+
         </div>
     </div>
 

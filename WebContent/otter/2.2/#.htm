@@ -34,7 +34,7 @@
             </a>
             <div class="product-version">
                 <a href="/otter">
-                    <img src="../feature-landing/images/otter-logo.png" />
+                    <img src="/resources/images/logos/otter.svg" />
                 </a>
             </div>
         </div>
@@ -46,22 +46,16 @@
 
             <div id="sign-up" class="shadowed purple">
                 <h2>Download Otter 2.2</h2>
-                <contact-form method="post" action="/contact-form">
-                    <fieldset>
-                        <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
-                        <input type="hidden" name="RedirectUrl" value="/otter/download" />
-                        <input type="hidden" name="Subject" value="Otter 2.2 Feature Landing Download" />
-                        <input type="hidden" name="CcFromAddress" value="false" />
-                        <input type="hidden" name="Priority" value="High" />
-                        <label>name*</label>
-                        <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-                        <label>email*</label>
-                        <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-                        <label>phone</label>
-                        <div><input title="PhoneNumber" type="tel" data-ahvalidator='{ "Required":false }' /></div>
-                        <input class="submit-button pdf-download " type="button" value="Download" onclick="AhValidation.Submit(this);" />
-                    </fieldset>
-                </contact-form>
+                <!--[if lte IE 8]>
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+  <script>
+    hbspt.forms.create({
+  	portalId: "5416872",
+  	formId: "f3696200-c9bf-4f76-ba6d-127bfdc3e903"
+  });
+  </script>
             </div>
             <div class="product-shot shadowed">
                 <div class="my-slider">

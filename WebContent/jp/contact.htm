@@ -31,8 +31,9 @@
 
         .contact-form {
             background-color: #e4e4e4;
-            padding: 10px 20px;
+            padding: 30px 20px 10px 20px;
             margin-bottom: 40px;
+            border-radius: 4px;
         }
 
 
@@ -68,31 +69,16 @@
                 <p>お困りの点やお気づきの点がございましたら、お気軽にお問合せ下さい。お問合せ内容を確認後、可能な限り速やかにご返答致します。</p>
 
                 <div class="contact-form">
-                    <contact-form method="post" action="/contact-form">
-                        <fieldset>
-                            <input type="hidden" name="ToAddress" value="ssato@inedo.com" />
-                            <input type="hidden" name="RedirectUrl" value="/jp/thank-you" />
-                            <input type="hidden" name="Subject" value="Inedo Japan Contact Form" />
-                            <input type="hidden" name="CcFromAddress" value="false" />
-                            <input type="hidden" name="Priority" value="High" />
-
-                            <label>お名前</label>
-                            <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                            <label>Eメールアドレス</label>
-                            <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                            <label>電話番号</label>
-                            <div><input name="Phone Number" type="text" /></div>
-
-
-
-                            <label>メッセージ内容</label>
-                            <div><textarea name="Message" style="width: 630px;" rows="10" cols="20"></textarea></div>
-
-                            <input type="button" value="送信" onclick="AhValidation.Submit(this);" />
-                        </fieldset>
-                    </contact-form>
+                  <!--[if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif]-->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+<script>
+hbspt.forms.create({
+portalId: "5416872",
+formId: "084dfeba-740f-4356-8fb7-8156f4001930"
+});
+</script>
                 </div>
 
 
@@ -129,5 +115,3 @@
     </div>
 </body>
 </html>
-
-

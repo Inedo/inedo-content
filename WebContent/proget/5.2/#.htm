@@ -54,7 +54,7 @@
             </a>
             <div class="product-version">
                 <a href="/proget/versions">
-                    <img src="../feature-landing/images/proget-logo.png" />
+                    <img src="/resources/images/logos/proget.svg" />
                 </a>
             </div>
         </div>
@@ -64,23 +64,17 @@
             <h1>ProGet 5.2 - is in Beta!</h1>
             <h2>Package your Applications and Components</h2>
             <div id="sign-up" class="shadowed purple">
-                <h2>Sign up for our Newsletter</h2>
-                <contact-form method="post" action="/contact-form">
-                    <fieldset>
-                        <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
-                        <input type="hidden" name="RedirectUrl" value="/subscription-thank-you" />
-                        <input type="hidden" name="Subject" value="ProGet 5.2 Feature Review" />
-                        <input type="hidden" name="CcFromAddress" value="false" />
-                        <input type="hidden" name="Priority" value="High" />
-                        <label>name*</label>
-                        <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-                        <label>email*</label>
-                        <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-                        <label>phone</label>
-                        <div><input title="PhoneNumber" type="tel" data-ahvalidator='{ "Required":false }' /></div>
-                        <input class="submit-button pdf-download " type="button" value="Submit" onclick="AhValidation.Submit(this);" />
-                    </fieldset>
-                </contact-form>
+                <h2>Download ProGet 5.2</h2>
+                <!--[if lte IE 8]>
+                    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+                    <![endif]-->
+                    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+                    <script>
+                      hbspt.forms.create({
+                    	portalId: "5416872",
+                    	formId: "dedbfcf2-940b-4b8c-93ab-00b23567e499"
+                    });
+                    </script>
             </div>
             <div class="product-shot shadowed">
                 <div class="my-slider">

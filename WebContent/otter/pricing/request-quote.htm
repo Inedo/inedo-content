@@ -3,106 +3,31 @@
 <head>
     <title>Otter Quote Request</title>
     <style>
-        .contact-form input[type=text], .contact-form select {
-            width: 595px;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-        }
+    .contact-form {
+        margin-bottom: 40px;
 
-        .contact-form input[type=button] {
-            width: 100%;
-            background-color: #3FA9F5;
-            color: white;
-            padding: 14px 20px;
-            margin: 20px 0;
-            border: none;
-            cursor: pointer;
-        }
-
-            .contact-form input[type=button]:hover {
-                background-color: #1e89d5;
-            }
-
-        .contact-form {
-            background-color: #e4e4e4;
-            padding: 10px 20px;
-            margin-bottom: 40px;
-        }
-
-
-        .ahvalidator.error input[type=text],
-        .ahvalidator.error select {
-            background-color: #fcc;
-        }
-
-        .ahvalidator.error .message {
-            display: none;
-        }
+    }
+.contact-form h3 {
+font-size: 36px;
+font-weight: 600;
+color: #282b3a;
+margin: 30px 16px 38px 0;
+}
     </style>
 </head>
 <body>
     <div class="contact-form">
-        <h3 style="text-align: center; border-bottom: 1px solid #808080; padding-bottom: 38px; margin: 30px 16px 0 10px;">Otter Quote Request</h3>
-        <contact-form method="post" action="/contact-form">
-            <fieldset>
-              <input type="hidden" name="ToAddress" value="mgoulis@inedo.com" />
-              <input type="hidden" name="CcAddress" value="athiel@inedo.com" />
-                <input type="hidden" name="RedirectUrl" value="/otter/pricing/request-received" />
-                <input type="hidden" name="Subject" value="Otter Quote Request" />
-                <input type="hidden" name="CcFromAddress" value="false" />
-                <input type="hidden" name="Priority" value="High" />
-
-                <label>Your Name*</label>
-                <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                <label>Email Address*</label>
-                <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                <label>Phone Number</label>
-                <div><input name="Phone Number" type="text" /></div>
-
-                <label>Company* (resellers: please note end user)</label>
-                <div><input name="Company" type="text" data-ahvalidator='{ "Required": true }' /></div>
-
-                <select name="servers" data-ahvalidator='{ "Required": true }'>
-                    <option value="">Number of Servers(Nodes)*</option>
-                    <option value="Up to 10">Up to 10 Servers(Nodes)</option>
-                    <option value="Up to 20">Up to 20 Servers(Nodes)</option>
-                    <option value="Up to 35">Up to 35 Servers(Nodes)</option>
-                    <option value="Up to 50">Up to 50 Servers(Nodes)</option>
-                    <option value="Up to 100">Up to 100 Servers(Nodes)</option>
-                    <option value="Up to 250">Up to 250 Servers(Nodes)</option>
-                    <option value="over 250">Over 250 Servers(Nodes)</option>
-                </select>
-
-                <select name="license" data-ahvalidator='{ "Required": true }'>
-                    <option value="">Licensing Option*</option>
-                    <option value="annual">Annual</option>
-                    <option value="perpetual">Perpetual</option>
-                </select>
-
-                <select name="professional-services" data-ahvalidator='{ "Required": true }'>
-                    <option value="">Professional Services*</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No, not at this time</option>
-                </select>
-
-                <select name="training" data-ahvalidator='{ "Required": true }'>
-                    <option value="">Training*</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No, not at this time</option>
-                </select>
-
-                <label>Special Requests (payment terms, license terms, etc.)</label>
-                <div><textarea name="Message" style="width: 630px;" rows="4" cols="20"></textarea></div>
-
-                <label>Additional Comments</label>
-                <div><textarea name="Message" style="width: 630px;" rows="4" cols="20"></textarea></div>
-
-                <input type="button" value="Request Pricing Quote" onclick="AhValidation.Submit(this);" />
-            </fieldset>
-        </contact-form>
+        <h3>Otter Quote Request</h3>
+        <!--[if lte IE 8]>
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+  <script>
+    hbspt.forms.create({
+  	portalId: "5416872",
+  	formId: "7da0802e-dad5-4f68-a75c-941e0aad32ff"
+  });
+  </script>
     </div>
 
 

@@ -35,7 +35,7 @@
             </a>
             <div class="product-version">
                 <a href="/otter">
-                    <img src="../feature-landing/images/otter-logo.png" />
+                    <img src="/resources/images/logos/otter.svg" />
                 </a>
             </div>
         </div>
@@ -44,27 +44,19 @@
         <div class="content">
             <h1> Otter 2.0 - has been <a href="/otter/download">released</a>!</h1>
             <h2>Provision your servers and manage configuration.</h2>
-           
+
             <div id="sign-up" class="shadowed purple">
                 <h2>Download Otter 2.0</h2>
-                <contact-form method="post" action="/contact-form">
-                    <fieldset>
-                        <input type="hidden" name="ToAddress" value="kharnagy@inedo.com" />
-                        <input type="hidden" name="RedirectUrl" value="/otter/download" />
-                        <input type="hidden" name="Subject" value="Otter 2.0 Feature Landing Download" />
-                        <input type="hidden" name="CcFromAddress" value="false" />
-                        <input type="hidden" name="Priority" value="High" />
-                        <label>name*</label>
-                        <div><input name="FromName" type="text" data-ahvalidator='{ "Required": true }' /></div>
-                        <label>email*</label>
-                        <div><input name="FromEmail" type="text" data-ahvalidator='{ "Required": true }' /></div>
-                        <label>phone</label>
-                        <div><input title="PhoneNumber" type="tel" data-ahvalidator='{ "Required":false }' /></div>
-
-
-                        <input class="submit-button pdf-download " type="button" value="Download" onclick="AhValidation.Submit(this);" />
-                    </fieldset>
-                </contact-form>
+                <!--[if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif]-->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+<script>
+  hbspt.forms.create({
+	portalId: "5416872",
+	formId: "f3696200-c9bf-4f76-ba6d-127bfdc3e903"
+});
+</script>
             </div>
             <div class="product-shot shadowed">
                 <div class="my-slider">
@@ -72,7 +64,7 @@
                         <li>
                             <img src="2.0/servers.png" />
                         </li>
-                    
+
                         <li>
                             <img src="2.0/environments.png" />
                         </li>
@@ -95,7 +87,7 @@
         <div class="content">
             <div class="button-container">
                 <a class="button blue" href="#feature-benefit-intro">Explore the features in Otter 2.0
-                
+
                 </a>
             </div>
         </div>
@@ -113,11 +105,11 @@
             <h2>Otter 2.0 - The Next Generation</h2>
             <!--<p>
                 The biggest upgrades in this version of Otter include a modernized design, <a style="text-decoration: underline; color: #282b3a;" href="/support/documentation/proget/core-concepts/containers">Containers</a> and <a style="text-decoration: underline; color: #282b3a;" href="/support/documentation/proget/core-concepts/compliance">Compliance</a> as high level concepts, and the introduction of our newest feature, Webhooks.</p>-->
-           
+
             <p>
                     Upgrading? Despite the major version increase, there's minimal risk in upgrading. Check out the Otter 2.0 <a href="/support/kb/1154/upgrade-notes-for-otter-20">upgrade notes</a> for more details.
             </p>
-                
+
                 <!--<p> You can <a style="text-decoration: underline; color: #282b3a;" href="/Otter/versions">download</a> the 2.0 Beta today.</p>-->
 
         </div>
@@ -133,17 +125,17 @@
 
                 <h2><img class="feature-icon" src="../feature-landing/images/ot-icon.png" />A Modern Design for Otter</h2>
                 <p>
-                    Along with the slightly more clean and modern UI in ProGet, we'll be introducing our new logo, and updating the top navigation. 
+                    Along with the slightly more clean and modern UI in ProGet, we'll be introducing our new logo, and updating the top navigation.
                     </p>
                 <p>
-                    We feel this navigation will create a more intuitive user experience,  more accurately reflecting the evolving direction of ProGet and Universal Package Managers, as well as their place in an Enterprise-level DevOps toolchain. 
-                </p>  
-                  
+                    We feel this navigation will create a more intuitive user experience,  more accurately reflecting the evolving direction of ProGet and Universal Package Managers, as well as their place in an Enterprise-level DevOps toolchain.
+                </p>
+
             </div>
 
         </div>
     </div>-->
-   
+
     <div class="content-container feature-benefit">
         <div class="content">
             <div class="screenshot-container">
@@ -155,7 +147,7 @@
 
                 <h2><img class="feature-icon" src="../feature-landing/images/ot-icon.png" />Configuration Versioning</h2>
                 <p>
-                    Tracking down what changed on a server can be time consuming and tedious, especially when that change caused an outage. Otter 2.0's plan versioning feature lets you see when server configuration changed, and allows you to rollback to a previous, working version of that configuration. 
+                    Tracking down what changed on a server can be time consuming and tedious, especially when that change caused an outage. Otter 2.0's plan versioning feature lets you see when server configuration changed, and allows you to rollback to a previous, working version of that configuration.
                     </p>
                 <p>
                     Plan versioning will make you more confident to make changes, and allow for clarity throughout your deployment process.
@@ -163,8 +155,8 @@
             </div>
 
         </div>
-    </div>  
-    
+    </div>
+
    <div class="content-container feature-benefit">
         <div class="content">
             <div class="screenshot-container">
@@ -179,7 +171,7 @@
                     Otter shows you which packages are installed on your servers, and 2.0 provides you with more metadata, including which tool it was installed by (such as <a href="/hedgehog">Hedgehog</a>), where the package came from (a feed in <a href="/proget">ProGet</a>), and which user triggered the installation.
                     </p>
                 <p>
-                    Otter links directly to the installation log and the package source page, giving you quick access to more detailed information. 
+                    Otter links directly to the installation log and the package source page, giving you quick access to more detailed information.
                 </p>
             </div>
 
@@ -197,14 +189,14 @@
 
                 <h2><img class="feature-icon" src="../feature-landing/images/ot-icon.png" />The Inedo SDK</h2>
                 <p>
-                    The <a href="/support/documentation/various/inedo-sdk/the-sdk">Inedo SDK</a> not only lets you build one extension for multiple Inedo products, but also gives you access to cross-product extensions that Inedo, and the community have built, to integrate with popular third-party tools. 
+                    The <a href="/support/documentation/various/inedo-sdk/the-sdk">Inedo SDK</a> not only lets you build one extension for multiple Inedo products, but also gives you access to cross-product extensions that Inedo, and the community have built, to integrate with popular third-party tools.
                 </p>
 
             </div>
 
         </div>
     </div>
- 
+
     <!--<div class="content-container">
         <div class="content">
             <div class="button-container ">
@@ -216,7 +208,7 @@
     <div class="content-container">
         <div style="padding-top: 40px;" class="content">
             <h3 style="text-align:center;">Check out the <a href="/otter/roadmap">Otter Roadmap</a> for past versions of Otter.</h3>
-           
+
         </div>
     </div>
 
