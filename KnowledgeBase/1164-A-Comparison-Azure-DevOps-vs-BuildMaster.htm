@@ -1,31 +1,56 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="id" content="1164" />
     <meta name="description" content="" />
     <meta name="keywords" content="buildmaster, azure, azure-devops" />
-    <title>A Comparison Between BuildMaster vs. Azure DevOps</title>
+    <title>Azure DevOps and BuildMaster Compared</title>
     <link type="text/css" rel="stylesheet" href="/support/documentation/_resources/documentation2.css" />
 
 </head>
 <body>
-    <p>BuildMaster and <a href="https://azure.microsoft.com/en-us/services/devops/">Azure DevOps</a> <em>(along with on-premise TFS, and its predecessors Visual Studio Team Services, Visual Studio Online)</em> are similar products that solve similar problems, and both are commonly used as part of a modern DevOps toolchain.</p>
-    <p>Already familiar with Azure DevOps? The <a href="#terminology">terminology</a> comparison may help you get a quicker understanding of BuildMaster.</p>
-    <h2 id="build-and-release-pipelines">Build and Release Pipelines</h2>
-    <p>Both BuildMaster and Azure DevOps can model and automate end-to-end CI/CD, starting by building source code and deploying to servers, VMs, cloud services, and more. Azure DevOps' has superb support for continuous integration, especially when the eventual deployment target is Azure itself.</p>
-    <p>In Azure DevOps, deployment tasks are the smallest unit of a build/deployment, including operations such as downloading artifacts, publishing, or executing scripts. These tasks may be selected in the web UI or defined in YAML.</p>
-    <p>By comparison, BuildMaster's smallest unit of build/deployment is known as an <em>operation</em>, and they function in the same manner as Azure DevOps' tasks. Operations may be drag/dropped via the plan editor, or defined in a domain-specific language known as <a href="/support/documentation/executionengine/otterscript/overview">OtterScript</a>, a text-based representation of the <a href="/support/documentation/executionengine/overview">Inedo Execution Engine</a>. The execution engine allows common deployment operations to be declared with a simple syntax that enables powerful deployment functionality including:</p>
+    <p>BuildMaster and Azure DevOps are both CI/CD process tools that aim to model and automate end-to-end CI/CD, starting by building source code and ending with the software release. Both programs are popular and are often used together as part of a modern DevOps toolchain. But, there are significant differences between the programs that impact developers’ productivity.</p>
+    <h2>Origin Stories</h2>
+    <p>BuildMaster was designed for one purpose – joining continuous integration with continuous delivery in order to build a self-service release platform that allows different teams to manage their own applications, deploy to their chosen environments, and at the pace the business demands. BuildMaster has remained true to its purpose since its creation. </p>
+    <p>In contrast, Azure DevOps is the newest iteration of a platform that is a hodgepodge of original code, acquired software, and ever-changing features that is popular for its original code’s strengths – software project management through integrated issue tracking and version control. It began as TFS and it was great, but it has suffered four different branding campaigns in the past five years (TFS, Visual Studio Online, Visual Studio Team Services, AzureDevOps). Across the developer community, the complaints are the same: Azure DevOps feels like a product that doesn't know what it wants to be. Luckily though, even after all the changes, the program’s core strengths remain.</p>
+
+    <h2>Is it an Upgrade or a Whole New Program?</h2>
+    <p>When Microsoft rebranded their software from Visual Studio Team Services (VSTS) to Azure DevOps last year, their users were “upgraded” to a program that, in reality, was a brand new product. Users of the on-prem version (TFS, VSTS, Azure DevOps Server) were able to choose when to “upgrade” but after the upgrade, many users felt their needs for project hosting had become an afterthought. The new product deviated from its mission: CI/CD.</p>
+    <p>For cloud-based users, the change happened automatically. This included new URLs (abc.visualstudio.com to dev.azure.com/abc) and <a href="https://blogs.msdn.microsoft.com/devops/2018/06/19/new-navigation/">a new user experience</a>. Though Microsoft offered to continue to iterate the platform based on user feedback, users were put in the position of having to beta-test the new platform while using it for DevOps pipelines at the same time. </p>
+    <p>In contrast to this forced, top down and blackbox approach, BuildMaster’s upgrades are incremental improvements to the functionality of the program based on smarter tech and feedback from developers. Further, Inedo has never and will never thrust a Buildmaster upgrade onto users. We develop programs to perform better, but our users get to choose when the upgrade happens and plan accordingly. </p>
+
+    <h2>UI makes a Difference</h2>
+    <p>One example of the problems Azure’s top down, unaccountable approach creates is its new UI. This “improvement” is frustrating developers around the world because it prioritizes a pretty interface at the expense of functionality. Developers want a power tool, not a Twitter-like interface where functions are hidden. At Inedo, developers designed BuildMaster for developers. The UI is intuitive and powerful because it was developed by true users. </p>
+
+    <h2>Pipeline Differences</h2>
+    <p>Another example of the difference in approach is that while both platforms use the idea of pipelines, only BuildMaster combines the build and deployment processes into a single pipeline. Unlike in Azure, deployment "packages" (whether artifacts, containers, or other) in BuildMaster have their full lifecycle known at their inception. Having this single pipeline is  critical streamlining that allows developers to automate building, automate testing, and quickly verify to deliver ideas to production. </p>
+
+    <h2>Build/Deployment</h2>
+    <p>Each platform also handles build/deployment, including operations such as downloading artifacts, publishing, or executing scripts, in slightly different but important ways. In Azure DevOps, tasks may be selected in the web UI or defined in YAML but the choices are limited. </p>
+    <p>BuildMaster on the other hand uses operations, which may be drag/dropped via the plan editor, or defined in a domain-specific language known as <a href="https://inedo.com/support/documentation/executionengine/otterscript/overview">OtterScript</a>, a text-based representation of the <a href="https://inedo.com/support/documentation/executionengine/overview">Inedo Execution Engine</a>. This allows users more control and the ability to tailor options in the build-deployment phase. The overall effect is like the difference between a drop-down menu and a text box; one is limited to a preset of choices while the other offers the freedom to write in whatever you need.</p>
+    <p>In addition, BuildMaster also created an execution engine that allows common deployment operations to be declared with a simple syntax that enables powerful deployment functionality including:</p>
     <ul>
-        <li>Error handling: <code>try</code>/<code>catch</code> known, acceptable failure conditions</li>
-        <li>Parallel deployment: <code>with async {}</code> blocks can break up parallelizable deployment tasks</li>
-        <li>Retries: <code>with rety = 5 {}</code> blocks can automatically retry operations that may rely on the status of third-parties (e.g. timestamping during code signing)</li>
-        <li>Server context: <code>for server {}</code> blocks can easily switch agent context to execute code remotely on an alternate server even when the pipeline specifies a different one (don't worry; this can be secured by environment)</li>
+        <li><b>Error handling</b>: try/catch known, acceptable failure conditions</li>
+        <li><b>Parallel deployment</b>: <code>with async {}</code> blocks can break up parallelizable deployment tasks</li>
+        <li><b>Retries</b>: <code>with rety = 5 {}</code> blocks can automatically retry operations that may rely on the status of third-parties (e.g. timestamping during code signing)</li>
+        <li><b>Server context</b>: <code>for server {}</code> blocks can easily switch agent context to execute code remotely on an alternate server even when the pipeline specifies a different one (don't worry; this can be secured by environment)</li>
     </ul>
-    <h3 id="pipeline-philosophy">Pipeline Philosophy</h3>
-    <p>The concept of a <em>pipeline</em> itself is nearly identical for both tools (as well as the technical implementation and representation), however BuildMaster's pipelines combine the build and deployment processes into a single pipeline, so deployment "packages" (whether artifacts, containers, etc.) have their full lifecycle known at their inception, but may also be changed to accomodate changes to the release process as necessary.</p>
+
+    <h2>Cost is Known or Unknown</h2>
+    <p>Despite what Microsoft would have you believe, Azure DevOps is not free. Of course, neither is BuildMaster, but the difference is that BuildMaster’s pricing is transparent and designed to provide value - not incrementally lead you into make more and more purchases. </p>
+    <p>Consider that although Azure DevOps Services (cloud-based version) lets users download the program for free, it limits access to 5 users. Then for larger teams, the cost ranges from $30 per month (10 users) to $6,150 per month (1,000 users). The effect is no different than a free-to-download app with in-app purchases - you start off thinking it’s free, make a few incremental purchases, and then discover you’re paying for software that your company didn’t budget. </p>
+    <p>Azure DevOps Server (on-prem version) costs also shift frequently, but as of this writing, the fee is per user for basic features (like Code or Agile Planning). If users have a Visual Studio subscription, then they have the Basic features for “free” as part of the subscription, which then has various monthly fees baked into it based on number of users, pipelines, and features. </p>
+    <p>In stark contrast, BuildMaster has an upfront cost and that’s it. All features are included and you will never pay for an upgrade. You can plan the cost instead of thinking you’re getting something for free and then realizing you’re not. </p>
+
+    <h2>Corporate Philosophy</h2>
+    <p>Inedo’s tools maximize developer time, minimize release risk, and empower stakeholders to bring their vision to life faster. All with the people and technology you have right now. Our commitment is that you will never be subject to forced upgrades or sudden feature changes. You are free to deploy where you want and when you want.  </p>
+    <p>A down-to-earth developer who loves programming and is still reachable on his cell phone by his clients founded Inedo. As a smaller company, Inedo is more responsive and adaptive to customer needs. At Inedo, we remain agile and responsive to the needs and opinions of developers. </p>
+    <p>Microsoft however, is a corporate monolith with multiple priorities. They have great products but their DevOps tool has some flaws and unpredictable changes. Azure DevOps is still excellent at software project management through integrated issue tracking and version control, which BuildMaster does not do. But it lacks the control and attention to users required to makes DevOps processes work as efficiently as possible.</p>
+    <p>Luckily, you don’t have to choose between them. Using BuildMaster with Azure DevOps is an opportunity to use the best that Azure DevOps has to offer and benefit from the superior CI/CD functionality of BuildMaster.</p>
+
     <h2 id="azure-devops-with-buildmaster">Azure DevOps <em>with</em> BuildMaster</h2>
-    <p>Although Azure DevOps is a powerful option for hosted build and deployment, it is very likely that not all of your organization's projects and applications can be built, deployed, or hosted there. While there is an on-premise solution, using it negates many of the benefits traditionally associated with hosting offsite.</p>
-    <p>Because of this, BuildMaster has a tight integration with Azure DevOps. Using the <a href="https://inedo.com/den/inedox/tfs">TFS extension</a>, you can import cloud-stored build artifacts into BuildMaster, create or comment on work items, and apply the necessary automated or manual approvals, ultimately adding a layer of consistency that applies to both legacy and greenfield applications.</p>
+    <p>Azure DevOps remains a powerful option for hosting your projects, specifically the source control and issue tracking. Because of this, BuildMaster has a tight integration with Azure DevOps. </p>
+        <p>Using the <a href="https://inedo.com/den/inedox/tfs">TFS extension</a>, you can import cloud-stored build artifacts into BuildMaster, create or comment on work items, and apply the necessary automated or manual approvals, ultimately adding a layer of consistency that applies to both legacy and greenfield applications.</p>
     <h2 id="terminology-comparison">Terminology Comparison</h2>
     <table>
         <thead>
