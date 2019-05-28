@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="id" content="1167" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="proget,buildmaster,otter,sql-server,database" />
+    <title>SQL Server Implementations With Inedo Tools</title>
+</head>
+<body>
+    <h2>Recommended SQL Edition</h2>
+    <p>
+        All Inedo software merely requires you to have at SQL Server 2008 or newer. We keep our tools flexible so that you can keep the version best suited for your systems.
+    </p>
+    <p>
+        Here are some minimum system requirements for SQL versions that we support.
+    </p>
+    <ul>
+        <li><a href="https://docs.microsoft.com/en-us/sql/sql-server/install/hardware-and-software-requirements-for-installing-sql-server?view=sql-server-2017#top_principal">SQL Server 2016</a></li>
+        <li><a href="https://docs.microsoft.com/en-us/sql/sql-server/install/hardware-and-software-requirements-for-installing-sql-server?view=sql-server-2014">SQL Server 2014</a></li>
+        <li><a href="https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-setup?view=sql-server-2017#system">SQL Server 2017 for Linux</a></li>
+        <li>SQL Azure - We support this version and since it is cloud-based no system requirements are needed.</li>
+    </ul>
+    <p>
+        Note: <b>SQL Server Express</b> is free and can be installed as an Inedo instance during the installation process. SQL Server express has performed fine for nearly all organizations, and the 10GB limit can be mitigated through retention policies. However, this is best suited for evaluation purposes only. If you already have sql server licensed you should consider working with your DBA team to get our tool's database installed and configured, so they can oversee and protect the data as with other databases.
+    </p>
+
+    <h2>When to upgrade SQL server</h2>
+    <p>
+        This should depend on current business needs. Our tools do not demand specific versions and should only prompt an upgrade if clients version is below our minimum specified version.
+    </p>
+
+    <h2>Managing Index Fragmentation</h2>
+    <p>
+        Index maintenance jobs can successfully cleanup indexes and can be scheduled. However, this affects all indexes in a database even the indexes that are not in need of this type of action.
+    </p>
+    <p>
+        An option we suggest is that you REINDEX/REORGANIZE Indexes that reach certain fragmentation thresholds. You can use this SQL script to help you identity the indexes that may be causing some SQL slowness:
+    </p>
+    <code>
+        SELECT dbschemas.[name] as 'Schema',
+        dbtables.[name] as 'Table',
+        dbindexes.[name] as 'Index',
+        indexstats.avg_fragmentation_in_percent,
+        indexstats.page_count
+        FROM sys.dm_db_index_physical_stats (DB_ID(), NULL, NULL, NULL, NULL) AS indexstats
+        INNER JOIN sys.tables dbtables on dbtables.[object_id] = indexstats.[object_id]
+        INNER JOIN sys.schemas dbschemas on dbtables.[schema_id] = dbschemas.[schema_id]
+        INNER JOIN sys.indexes AS dbindexes ON dbindexes.[object_id] = indexstats.[object_id]
+        AND indexstats.index_id = dbindexes.index_id
+        WHERE indexstats.database_id = DB_ID()
+        ORDER BY indexstats.avg_fragmentation_in_percent desc
+    </code>
+    <p>
+        This will return a set of results like this:
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>Schema</th>
+                <th>Table</th>
+                <th>Index</th>
+                <th>Avg Frag %</th>
+                <th>Page Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>dbo</td>
+                <td>PlanVersions</td>
+                <td>PK__PlanVersions</td>
+                <td>87.2</td>
+                <td>47</td>
+            </tr>
+            <tr>
+                <td>dbo</td>
+                <td>BuildPromotions</td>
+                <td>PK__BuildPromotions</td>
+                <td>50.1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>dbo</td>
+                <td>Builds</td>
+                <td>PK__Builds</td>
+                <td>32.3</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        Now that you have pinpointed where your potential problems are you can address them implicitly.
+    </p>
+
+    <h2>SQL Server Database backups</h2>
+    <p>
+        In typical scenarios we recommend a full back-up every 24 hours with a differential every 6 hours. However, your backup schedule will be dictated by several factors. Two of the most important are your data’s criticality, and how busy the database is, which can be thought of as the number of transactions per hour/ day. Consider these predefined sample schedules as examples:
+    </p>
+    <ul>
+        <li>Lazy – Full backup every 168 hours (weekly), Differential every 24 hours: This is ideal for a database with just a few transactions per week, or one whose importance is not mission-critical. The loss of a few hours of data can be tolerated or easily recreated. A real-life example would be a HR/ payroll system for a very small company – very infrequent changes in personnel changes and easy ‘recreatibility’ results in little need for frequent backups.</li>
+        <li>Daily simple – Full backup every 24 hours: In this type of backup you simply take a daily full database backup. This is usable in situations where transactions are more frequent than ‘Lazy’ above, but transactions are still recreatable from manual records or other sources.</li>
+        <li>Daily 4 times – Full backup every 24 hours, Differential every 6 hours: this is suitable for databases that incorporate several more changes during a normal working day, and are thus much busier than ‘Daily simple’ databases.</li>
+        <li>Thorough – Full backup every 24 hours, Differential every 4 hours, Transaction log every 1 hour: now we are into the realms of databases whose loss can be considered catastrophic or at the very least serious hindrances to business operations. Such databases may host applications writing several dozen or hundred transactions per hour, so even waiting the 4 or so hours between differential backups means a potential loss of a significant chunk of the day’s transactions. Additionally, there is likely no manual recording of transactions, so trying to recreate lost transactions would be a major pain – hence the need for transaction log backups.</li>
+    </ul>
+
+    <h2>SQL Server Azure Backups</h2>
+    <p>
+        SQL Database automatically creates database backups that are kept between 7 and 35 days, and uses Azure read-access geo-redundant storage (RA-GRS) to ensure that they are preserved even if the data center is unavailable. These backups are created automatically and at no additional charge.
+    </p>
+
+    <h2>Connect Our tools to SQL Azure</h2>
+    <ol>
+        <li>Create an empty database on an Azure SQL Server. Typically these are named after our tools i.e. ProGet, BuildMaster, Otter, etc. However, any naming standards within your organization would take precedence.</li>
+        <li>Open the IP address of the machine where our software is being installed by <a href="https://docs.microsoft.com/en-us/azure/sql-database/sql-database-server-level-firewall-rule">updating the firewall rule of the server</a>.</li>
+        <li>
+            During installation the connection string for Azure SQL should be formatted as:
+            <code>Server=tcp:{azure-server}.database.windows.net,1433; DataBase={AzureDBName}; Persist Security Info=False; User ID={username}; Password={password}; MultipleActiveResultSets=False; Encrypt=True;TrustServerCertificate=False; Connection Timeout=30;</code>
+        </li>
+    </ol>
+
+    <h2>Database Migrations</h2>
+    <p>
+        If you are going to be migrating your Inedo software database to a different SQL Server we recommend that you perform a full backup the database and restore it on your new server. After it is successfully restored you will need to edit the <a href="/support/documentation/proget/installation/config-files">configuration file</a> and change your connection strings to point to the new server.
+    </p>
+
+    <h2>Querying The Database</h2>
+    <p>
+        We support querying our databases but we do not offer support for writing to them. Our tables, views, and stored procedures are closely linked with foreign keys and indexes. Adding or changing records may lead to instability within the applications.
+    </p>
+</body>
+</html>
