@@ -59,7 +59,7 @@
         <li>Determine feed ID of source feed by visiting the Admin->Manage Feed page and looking at the ?feedId= part of the URL in the browser</li>
         <li>Locate package storage path from source feed by visiting the Admin->Manage Feed page</li>
         <li>Connect to the source instance's database using SSMS (for SQL Server) or pgAdmin (for PostgreSQL)</li>
-        <li>Execute the export script against your ProGet database, substituting the feed ID determined in step 1: (<a href="https://gist.github.com/inedo-builds/3bfdf846fb78fdf5ecd03d736682679f">SQL Server</a> | <a href="https://gist.github.com/inedo-builds/54eb40bb847298df7ec6edca721666f3">PostgreSQL</a></li>
+        <li>Execute the export script against your ProGet database, substituting the feed ID determined in step 1: <a href="https://gist.github.com/inedo-builds/3bfdf846fb78fdf5ecd03d736682679f">SQL Server</a> | <a href="https://gist.github.com/inedo-builds/54eb40bb847298df7ec6edca721666f3">PostgreSQL</a></li>
         <li>Save the XML output from step 3 into a file, and copy the file to the server hosting the target's database</li>
         <li>Create a new feed of the same type in the target instance</li>
         <li>Locate package storage path of target feed by visiting the Admin->Manage Feed page</li>
