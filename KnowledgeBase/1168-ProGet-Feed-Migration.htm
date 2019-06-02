@@ -13,15 +13,12 @@
         There's a few different ways to do this depending on the feed type, and this document will describe the various approaches.
     </p>
 
-    <h3>Option 1: Migrate using Feed Replication</h3>
+    <h3>Prefered Method: Migrate using Feed Replication</h3>
     <p>
         Supported feed types: <b>NuGet, Chocolatey, PowerShell, npm, Maven, PyPI, VSIX, Helm, Debian, Ruby Gems, Universal</b>
     </p>
     <p>
-        This is the preferred method for migration, since it is easy to configure and works across all feed types. However, it requires
-        a ProGet Enterprise license and requires either the source instance to be accessible to the target or the target instance
-        to be accessible to the source over the network. If you do not have ProGet Enterprise or your instances are isolated, see another
-        options below.
+        This is the preferred method for migration, since it is easy to configure and works across all feed types. 
     </p>
     <ol>
         <li>Configure a one-way sync relationship from the old instance to the new instance</li>
@@ -29,8 +26,13 @@
         <li>Delete sync relationship</li>
         <li>Disable old feed</li>
     </ol>
+    <p>
+	Note that this method requires
+        a ProGet Enterprise license and requires either the source instance to be accessible to the target or the target instance
+        to be accessible to the source over the network. If you do not have ProGet Enterprise or your instances are isolated, you will need
+	to use an alternative method.
 
-    <h3>Option 2: Migrate using Drop Path</h3>
+    <h3>Alternative Method (simple): Migrate using Drop Path</h3>
     <p>
         Supported feed types: <b>NuGet, Chocolatey, PowerShell, npm, PyPI, VSIX, Helm, Debian, Ruby Gems, Universal</b>
     </p>
@@ -47,7 +49,7 @@
         <li>Disable old feed</li>
     </ol>
 
-    <h3>Option 3: Direct Database and File System Import/Export</h3>
+    <h3>Alternative Method (complicated): Direct Database and File System Import/Export</h3>
     <p>
         Supported feed types: <b>Maven</b>
     </p>
