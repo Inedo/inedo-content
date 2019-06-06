@@ -86,7 +86,13 @@
         .documentation-content {
             float: right;
             width: @max-content-width - 360;
-            
+
+            blockquote {
+                border-left: 10px solid @light-grey;
+                margin: 0;
+                margin-left: 10px;
+                padding-left: 10px;
+            }
         }
 
         .github-content {
@@ -96,6 +102,7 @@
             background-color: #f6f6f6;
             border: 1px solid #10466e;
             padding: 10px 0;
+
             p {
                 font-size: 14px;
                 padding: 0 36px;
