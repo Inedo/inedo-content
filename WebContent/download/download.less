@@ -1,0 +1,134 @@
+@import "..\resources\styles\library";
+
+@max-content-width: 1000px;
+@main-content-width: 700px;
+
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-lightgrey: #f6f6f6;
+@inedo-darkgrey: #444;
+@inedo-darkblue: #282b3a;
+@inedo-white: #fff;
+@inedo-red: #990033;
+@inedo-blue: #002B54;
+@inedo-lightblue: #10466E;
+@inedo-yellow: #CC9B32;
+@inedo-lightred: #B04950;
+@proget-blue: #3FA9F5;
+@buildmaster-orange: #F15A24;
+@otter-purple: #9163AA;
+
+.mixin-homecc {
+    padding: 50px 0;
+    margin: 0;
+
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        color: @inedo-black;
+        margin: 0;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.content {
+}
+
+
+.content-container#banner {
+    padding-top: 20px;
+    margin: 0;
+    min-height: 500px;
+    background: url(/homepage/homepage-banner-2016.jpg) no-repeat;
+    background-position: center;
+    text-align: center;
+
+
+    .banner-sec {
+      padding: 10px 50px 30px 50px;
+      margin-top: 10px;
+
+        h1 {
+            font-size:280%;
+            color: @inedo-darkblue;
+            font-weight: 800;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+
+        h2 {
+            font-size: 130%;
+            color: @inedo-darkblue;
+            font-weight: bolder;
+            line-height: 1.6em;
+            padding: 0 100px;
+        }
+    }
+
+
+    .tool-chain {
+        .tool-icons {
+            text-decoration: none;
+            width: 325px;
+            float: left;
+            height: 436px;
+            margin: 30px 4px 65px 4px;
+            text-align: left;
+            background-color: @inedo-white;
+            box-shadow: 1px 1px 4px @inedo-darkblue;
+            img {
+                margin-top: 25px;
+                margin-left: 20px;
+                height: 52px;
+            }
+            h4 {
+                margin: 20px;
+                font-weight: 500;
+                font-size: 1.3em;
+            }
+
+            p {
+              padding-bottom: 36px;
+              line-height: 1.6;
+              margin: 0 20px;
+              font-size: 1em;
+              font-weight: 400;
+            }
+            .explore {
+                margin: 0 auto;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+.faq {
+  color: @inedo-darkblue;
+  h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 20px;
+    line-height: 52px;
+  }
+  h3 {
+    //margin-top: 56px;
+    margin-bottom: 8px;
+    padding-top: 16px;
+    border-top: 1px solid #949494;
+    font-size: 1.8em;
+    line-height: 1.25;
+    font-weight: 500;
+  }
+  p {
+    padding-bottom: 24px;
+    line-height: 1.6;
+    //margin: 0 20px;
+    font-size: 1em;
+    font-weight: 400;
+  }
+}
