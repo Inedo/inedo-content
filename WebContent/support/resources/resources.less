@@ -1,0 +1,189 @@
+@import "..\..\resources\styles\library";
+
+@max-content-width: 1000px;
+@inedo-black: #353535;
+@inedo-grey: #E9EADA;
+@inedo-white: #fff;
+@inedo-lightblue: #10466E;
+@buildmaster-orange: #f15a24;
+@proget-blue: #3fa9f5;
+
+
+.content-container#banner {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    background: url(/resources/images/banners/beta-banner.png) no-repeat #011b2d;
+    background-position: center left;
+    z-index: 5;
+    position: relative;
+    border-bottom: 1px solid @inedo-darkblue;
+    .content {
+        padding: 36px 100px;
+
+        h1 {
+            font-size: 250%;
+            color: @inedo-white;
+            margin: 12px 0;
+            font-weight: 700;
+            margin-left: 20px;
+            text-shadow: -3px 0 7px @inedo-darkblue;
+        }
+
+        .circle-button {
+            margin-left: 100px;
+            margin-top: 26px;
+            float: right;
+
+            a.download {
+                background-color: @inedo-white;
+                padding: 8px 16px;
+                color: @inedo-darkblue;
+                border: 3px solid @inedo-white;
+                border-radius: 100px;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-weight: 800;
+                font-size: 12px;
+                letter-spacing: 1px;
+
+                &:hover {
+                    background-color: @inedo-darkblue;
+                    color: @inedo-white;
+                    border: 3px solid @inedo-darkblue;
+                }
+            }
+        }
+    }
+}
+
+.section-page-title {
+      margin-top: 15px;
+      margin-bottom: 8px;
+      padding-bottom: 20px;
+  .container {
+    .breadcrumb {
+
+      a {
+        text-decoration: none;
+        margin: auto 6px;
+        font-size: 14px;
+        font-weight: 500;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:hover {
+          color: @proget-blue;
+        }
+      }
+    }
+    h1 {
+      font-size: 36px;
+      font-weight: 600;
+      margin-top: 50px;
+      line-height: 52px;
+    }
+  }
+}
+
+.content-container#items {
+    min-height: 700px;
+
+    .content {
+        .row {
+            margin-top: 36px;
+            .extension-box {
+                float: left;
+                width: 300px;
+                height: 770px;
+                margin: 24px;
+                position: relative;
+                &:first-child {margin-left: 0}
+                &:last-child {margin-right: 0}
+                img.thumbnail {
+                    width: 300px;
+                    display: block;
+                      border-radius: 6px;
+                      &:hover {
+                        box-shadow: 1px 1px 8px #444444;
+                      }
+                }
+
+                .extension-info {
+                    color: @inedo-darkblue;
+                    //height: 276px;
+                    p {
+                        font-size: 1em;
+                    }
+
+                    .title {
+                        margin-top: 11px;
+                        margin-bottom: 11px;
+                        font-weight: 600;
+                        //font-size: 1.1em;
+                        line-height: 1.3;
+                        color: @inedo-darkblue;
+                    }
+                      .res-type {
+                        margin-top: 23px;
+                        margin-bottom: -1px;
+                        line-height: 1.3;
+                        font-weight: 600;
+                      }
+                    .description {
+                        font-weight: 400;
+                        line-height: 1.6;
+                        margin-top: 0;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 4;
+                        display: -webkit-box;
+                        max-height: 1.5 * 18px * 6;
+                        overflow-y: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+
+                .supported-by {
+                    width: 300px;
+                    height: 30px;
+                    margin-top: 11px;
+                    p {
+                      font-weight: 600;
+                      text-transform: uppercase;
+                      &:hover {
+                        color: @proget-blue;
+                      }
+                    }
+
+                }
+
+                a {
+                    text-decoration: none;
+                    &:hover {
+                      color: inherit;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media print {
+    #banner {
+        display: none !important;
+    }
+
+    #den-mini-nav {
+        display: none !important;
+    }
+
+    #submit {
+        display: none !important;
+    }
+
+    .extension-box {
+        page-break-inside: avoid;
+    }
+}
