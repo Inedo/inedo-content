@@ -41,7 +41,7 @@
 .content-container#banner {
     padding-top: 20px;
     margin: 0;
-    min-height: 500px;
+    min-height: 400px;
     background: url(/homepage/homepage-banner-2016.jpg) no-repeat;
     background-position: center;
     text-align: center;
@@ -52,20 +52,10 @@
       margin-top: 10px;
 
         h1 {
-            font-size:280%;
+            font-size:200%;
             color: @inedo-darkblue;
             font-weight: 800;
             margin-top: 0;
-            margin-bottom: 20px;
-        }
-
-
-        h2 {
-            font-size: 130%;
-            color: @inedo-darkblue;
-            font-weight: bolder;
-            line-height: 1.6em;
-            padding: 0 100px;
         }
     }
 
@@ -75,15 +65,15 @@
             text-decoration: none;
             width: 325px;
             float: left;
-            height: 436px;
-            margin: 30px 4px 65px 4px;
+            //height: 700px;
+            margin: 20px 4px 65px 4px;
             text-align: left;
             background-color: @inedo-white;
             box-shadow: 1px 1px 4px @inedo-darkblue;
             img {
                 margin-top: 25px;
                 margin-left: 20px;
-                height: 52px;
+                height: 36px;
             }
             h4 {
                 margin: 20px;
@@ -91,15 +81,19 @@
                 font-size: 1.3em;
             }
 
-            p {
+            ul {
               padding-bottom: 36px;
               line-height: 1.6;
               margin: 0 20px;
               font-size: 1em;
               font-weight: 400;
+              li {
+                list-style: disc;
+                padding-bottom: 10px;
+              }
             }
             .explore {
-                margin: 0 auto;
+                margin: 30px auto;
                 text-align: center;
             }
         }
