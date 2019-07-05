@@ -554,7 +554,8 @@
   <temporary from="/support/documentation/buildmaster/core-concepts/pipelines" to="/support/documentation/buildmaster/verification/pipelines" />
   <temporary from="/support/documentation/buildmaster/core-concepts/pipelines/pipeline-model" to="/support/documentation/buildmaster/verification/pipelines/json-model" />
   <temporary from="/support/documentation/buildmaster/global-components/value-renderers" to="/support/documentation/buildmaster/administration/value-renderers" />
-
+  <temporary from="/support/documentation/buildmaster/builds/packaging/artifacts-from-drop-path" to="/support/documentation/buildmaster/builds/external-systems/drop-path" />
+  
 <!-- Various Docs -->
 
 	<permanent from="/support/documentation/various/universal-packages/universal-feeds-package-ref" to="/support/documentation/upack/overview"/>
