@@ -9,14 +9,11 @@
   <domain name="www.codeoffset.com" to="http://inedo.com/offset" />
   <domain name="www.codeoffsets.com" to="http://inedo.com/offset" />
   <domain name="links.inedo.com" to="http://inedo.com/" />
-  <domain name="blog.inedo.com" to="http://inedo.com/blog" />
 
   <permanent from="/activation" to="https://my.inedo.com/" />
   <permanent from="/support/activation" to="https://my.inedo.com/" />
   <permanent from="/products/review-board" to="/products"/>
   <permanent from="/products/review-board/thanks" to="/products"/>
-  <permanent from="/submit-blog" to="/blog"/>
-  <permanent from="/blog-thanks" to="/blog"/>
   <permanent from="/case-studies/submit" to="/case-studies"/>
   <permanent from="/case-studies/submission-received" to="/case-studies"/>
 
@@ -237,12 +234,6 @@
   <permanent from="/support/faq" to="/support/questions" />
   <permanent from="/support/test-drive" to="/support" />
 
-  <permanent from="/company/news" to="/blog" />
-  <permanent from="/company/news/proget-36-beta-now-available" to="/blog/proget-36-beta-now-available" />
-  <permanent from="/company/news/announcing-proget-20-and-proget-client-tools" to="/blog/announcing-proget-20-and-proget-client-tools" />
-  <permanent from="/company/news/new-rss-feed-format" to="/blog/new-rss-feed-format" />
-  <permanent from="/company/news/introducing-proget-20" to="/blog/introducing-proget-20" />
-
   <permanent from="/specifics" to="/support/tutorials" />
   <permanent from="/specifics/awarepoint" to="/support/tutorials" />
   <permanent from="/specifics/buildmaster" to="/support/tutorials" />
@@ -302,6 +293,146 @@
 	<temporary from="/proget/4.8" to="/proget" />
 	<temporary from="/proget/4.8/thanks" to="/proget" />
   <temporary from="/blog/proget-as-a-service-introducing-hosted-proget" to="/proget" />
+
+  <!--HubSpot Blog Redirects -->
+
+    <temporary from="/blog" to="https://blog.inedo.com/" />
+  <temporary from="/blog/discover-how-hedgehog-can-help-your-organizations-transition-to-microservice-based-applications" to="https://blog.inedo.com/" />
+  <temporary from="/blog/visibility-ease-of-use-user-interface-making-devops-accessible-to-everyone" to="https://blog.inedo.com/" />
+  <temporary from="/blog/top-10-blogs-of-2017" to="https://blog.inedo.com/" />
+  <temporary from="/blog/top-10-blogs-of-2016" to="https://blog.inedo.com/" />
+  <temporary from="/blog/inedo-recognized-as-one-of-the-top-20-influential-brands" to="https://blog.inedo.com/" />
+  <temporary from="/blog/hedgehog-webinar-tomorrow--sign-up-today" to="https://blog.inedo.com/" />
+  <temporary from="/blog/scale-the-automation-of-hundreds-of-applications-with-buildmaster" to="https://blog.inedo.com/" />
+  <temporary from="/blog/devopsdays-tokyo-is-right-around-the-corner" to="https://blog.inedo.com/" />
+  <temporary from="/blog/devopsdays-tokyo-happened-and-was-a-huge-success" to="https://blog.inedo.com/" />
+  <temporary from="/blog/developer-on-fire" to="https://blog.inedo.com/" />
+  <temporary from="/blog/comparing-deployment-automation--infrastructure-as-code" to="https://blog.inedo.com/" />
+  <temporary from="/blog/launch-of-dasa-devops-agile-skills-association" to="https://blog.inedo.com/" />
+  <temporary from="/blog/were-going-to-code-palousa-2016" to="https://blog.inedo.com/" />
+  <temporary from="/blog/come-visit-inedo-at-codemash" to="https://blog.inedo.com/" />
+  <temporary from="/blog/buildmaster-from-an-it-linux-perspective" to="https://blog.inedo.com/" />
+  <temporary from="/blog/c-is-for-complete-our-second-kickstarter-success" to="https://blog.inedo.com/" />
+  <temporary from="/blog/buildmaster-50-is-released" to="https://blog.inedo.com/" />
+  <temporary from="/blog/birds-of-a-feather-dsc-and-otter-together" to="https://blog.inedo.com/" />
+  <temporary from="/blog/webinar-announcement-an-introduction-to-infrastructure-as-code-with-otter" to="https://blog.inedo.com/" />
+  <temporary from="/blog/all-day-devops-2017-viewing-party" to="https://blog.inedo.com/" />
+  <temporary from="/blog/3-new-buildmaster-features-now-in-beta" to="https://blog.inedo.com/" />
+  <temporary from="/blog/using-powershell-to-install-and-configure-proget" to="https://blog.inedo.com/" />
+  <temporary from="/blog/new-rss-feed-format" to="https://blog.inedo.com/" />
+  <temporary from="/blog/introducing-proget-20" to="https://blog.inedo.com/" />
+  <temporary from="/blog/why-you-absolutely-need-a-private-repository-a-response-to-npmgate" to="https://blog.inedo.com/" />
+  <temporary from="/blog/announcing-proget-20-and-proget-client-tools" to="https://blog.inedo.com/" />
+  <temporary from="/blog/net-assembly-versions-with-buildmaster" to="https://blog.inedo.com/" />
+  <temporary from="/blog/inedo-at-devops-rex" to="https://blog.inedo.com/" />
+  <temporary from="/blog/we-just-want-to-thank-you-for-a-great-2016-nows-your-chance-to-let-us-know-what-we-should-do-in-2017-and-beyond" to="https://blog.inedo.com/" />
+  <temporary from="/blog/who-owns-your-packages-important-licensing-considerations-in-enterprise-package-management" to="https://blog.inedo.com/" />
+  <temporary from="/blog/pipelines-as-code-how-you-can-fully-embrace-agile-and-devops" to="https://blog.inedo.com/" />
+  <temporary from="/blog/announcing-the-release-management-wiki-a-compilation-of-thousands-of-online-resources-about-release-mana" to="https://blog.inedo.com/" />
+  <temporary from="/blog/setting-up-a-devops-structure" to="https://blog.inedo.com/" />
+  <temporary from="/blog/unlocking-the-potential-of-the-cloud" to="https://blog.inedo.com/" />
+  <temporary from="/blog/devops-from-best-practice-to-industry-standard" to="https://blog.inedo.com/" />
+  <temporary from="/blog/we-were-just-reminded-why-its-so-important-to-always-have-a-private-repository" to="https://blog.inedo.com/" />
+  <temporary from="/blog/does-modeling-have-a-place-in-devops" to="https://blog.inedo.com/" />
+  <temporary from="/blog/advancing-devops-with-diagrams" to="https://blog.inedo.com/" />
+  <temporary from="/blog/asset-directories-now-in-beta" to="https://blog.inedo.com/" />
+  <temporary from="/blog/application-release-automation-and-its-role-in-the-devops-toolchain" to="https://blog.inedo.com/" />
+  <temporary from="/blog/inedos-favorite-members-of-the-family-mustelidae" to="https://blog.inedo.com/" />
+  <temporary from="/blog/webinar-recap-windows-infrastructure-configuration-and-management-with-otter" to="https://blog.inedo.com/" />
+  <temporary from="/blog/welcome-to-our-new-blog-format" to="https://blog.inedo.com/" />
+  <temporary from="/blog/5-team-skills-that-make-devops-a-success" to="https://blog.inedo.com/" />
+  <temporary from="/blog/encouraging-collaboration-in-the-workplace" to="https://blog.inedo.com/" />
+  <temporary from="/blog/now-hiring-help-us-expand-and-continue-to-build-great-and-innovative-products" to="https://blog.inedo.com/" />
+  <temporary from="/blog/behind-our-new-branding" to="https://blog.inedo.com/" />
+  <temporary from="/blog/devops-in-the-financial-sector-an-interview-with-sycorr" to="https://blog.inedo.com/" />
+  <temporary from="/blog/devops-before-it-was-devops-an-interview-with-skelton-thatcher" to="https://blog.inedo.com/" />
+  <temporary from="/blog/devops-with-dunne-an-interview-with-chris-dunne-of-daysha" to="https://blog.inedo.com/" />
+  <temporary from="/blog/introducing-inedos-next-cool-project-for-the-development-community" to="https://blog.inedo.com/" />
+  <temporary from="/blog/code-offsets-who-is-konrad-zuse" to="https://blog.inedo.com/" />
+  <temporary from="/blog/the-whos-who-of-code-offsets" to="https://blog.inedo.com/" />
+  <temporary from="/blog/code-offsets-who-is-alan-turing" to="https://blog.inedo.com/" />
+  <temporary from="/blog/code-offsets-who-is-john-von-neumann" to="https://blog.inedo.com/" />
+  <temporary from="/blog/code-offsets-who-is-ada-lovelace" to="https://blog.inedo.com/" />
+  <temporary from="/blog/code-offsets-who-is-grace-hopper" to="https://blog.inedo.com/" />
+  <temporary from="/blog/code-offsets-who-is-herman-hollerith" to="https://blog.inedo.com/" />
+  <temporary from="/blog/code-offsets-who-is-seymour-cray" to="https://blog.inedo.com/" />
+  <temporary from="/blog/code-offsets-who-is-edgar-codd" to="https://blog.inedo.com/" />
+  <temporary from="/blog/code-offsets-who-is-charles-babbage" to="https://blog.inedo.com/" />
+  <temporary from="/blog/reinventing-processes-with-buildmaster" to="https://blog.inedo.com/" />
+  <temporary from="/blog/free-universal-packages-seminar-video-training" to="https://blog.inedo.com/" />
+  <temporary from="/blog/introducing-proget-50-beta" to="https://blog.inedo.com/" />
+  <temporary from="/blog/nuget-essentials-a-free-virtual-seminar" to="https://blog.inedo.com/" />
+  <temporary from="/blog/webinar-recap-managing-vulnerabilities-with-proget" to="https://blog.inedo.com/" />
+  <temporary from="/blog/webinar-announcement-technical-preview-of-romp" to="https://blog.inedo.com/" />
+  <temporary from="/blog/webinar-recap-a-technical-preview-of-romp" to="https://blog.inedo.com/" />
+  <temporary from="/blog/webinar-recap--provision-your-servers-and-manage-configuration" to="https://blog.inedo.com/" />
+  <temporary from="/blog/webinar-recap-a-technical-preview-of-hedgehog" to="https://blog.inedo.com/" />
+  <temporary from="/blog/webinar-announcement-hedgehog-technical-preview-with-alex-papadimoulis" to="https://blog.inedo.com/" />
+  <temporary from="/blog/webinar-recap-chocolatey-package-management-with-proget" to="https://blog.inedo.com/" />
+  <temporary from="/blog/webinar-announcement-windows-chocolatey-package-management-with-proget" to="https://blog.inedo.com/" />
+  <temporary from="/blog/dont-forget-were-hosting-a-webinar-with-vor-security-founder-and-ceo-ken-duck-last-day-to-sign-up" to="https://blog.inedo.com/" />
+  <temporary from="/blog/webinar-announcement-vorsecurity-on-the-importance-of-tracking-vulnerabilities-in-your-universal-package-manager" to="https://blog.inedo.com/" />
+  <temporary from="/blog/the-universal-package-manager-the-most-critical-link-in-your-devops-toolchain" to="https://blog.inedo.com/" />
+  <temporary from="/blog/using-buildmaster-to-scale-exponential-growth" to="https://blog.inedo.com/" />
+  <temporary from="/blog/typo-squatting-another-reason-for-upms" to="https://blog.inedo.com/" />
+  <temporary from="/blog/see-whats-possible-by-effecting-a-devops-culture" to="https://blog.inedo.com/" />
+  <temporary from="/blog/another-great-code-palousa" to="https://blog.inedo.com/" />
+  <temporary from="/blog/automation-with-a-single-click" to="https://blog.inedo.com/" />
+  <temporary from="/blog/join-me-at-the-next-london-software-on-the-rocks" to="https://blog.inedo.com/" />
+  <temporary from="/blog/scotch-of-the-month-searching-for-spring" to="https://blog.inedo.com/" />
+  <temporary from="/blog/scotch-of-the-month-the-first-of-many" to="https://blog.inedo.com/" />
+  <temporary from="/blog/if-you-build-it-they-will-come-scaling-the-enterprise-for-devops" to="https://blog.inedo.com/" />
+  <temporary from="/blog/utilizing-devops-tools-can-build-exponential-growth-in-automation-as-well-as-customer-confidence" to="https://blog.inedo.com/" />
+  <temporary from="/blog/introducing-push-to-proget-a-visual-studio-extension-that-streamlines-your-process" to="https://blog.inedo.com/" />
+  <temporary from="/blog/proget-40-is-here---universal-packages-feeds-and-more" to="https://blog.inedo.com/" />
+  <temporary from="/blog/proget-36-beta-now-available" to="https://blog.inedo.com/" />
+  <temporary from="/blog/webinar-recap-how-to-provision-windows-servers-and-manage-their-configuration-with-powershell-dsc-and-otter" to="https://blog.inedo.com/" />
+  <temporary from="/blog/pipeline-2016" to="https://blog.inedo.com/" />
+  <temporary from="/blog/pipeline-2016-was-a-success" to="https://blog.inedo.com/" />
+  <temporary from="/blog/otter-is-underway-see-our-new-product-firsthand" to="https://blog.inedo.com/" />
+  <temporary from="/blog/nuget-training-using-multiple-package-repositories" to="https://blog.inedo.com/" />
+  <temporary from="/blog/otter-webinar-last-chance-to-sign-up" to="https://blog.inedo.com/" />
+  <temporary from="/blog/webinar-announcement-windows-infrastructure-configuration-and-management-with-otter" to="https://blog.inedo.com/" />
+  <temporary from="/blog/hey-vip-come-to-inedoconfor-free" to="https://blog.inedo.com/" />
+  <temporary from="/blog/come-to-inedocon-for-free" to="https://blog.inedo.com/" />
+  <temporary from="/blog/devops-in-action-feed-replication-supporting-true-collaboration" to="https://blog.inedo.com/blog/replication-usecase" />
+  <temporary from="/blog/multi-site-feed-replication-in-action" to="https://blog.inedo.com/blog/replication-usecase" />
+  <temporary from="/blog/how-to-finally-modernize-a-devops-toolchain-infrastructure-as-code-part-three" to="https://blog.inedo.com/blog/incremental-iac" />
+  <temporary from="/blog/how-to-finally-modernize-a-devops-toolchain-infrastructure-as-code-part-two" to="https://blog.inedo.com/blog/incremental-iac" />
+  <temporary from="/blog/how-to-finally-modernize-a-devops-toolchain-infrastructure-as-code-part-one" to="https://blog.inedo.com/blog/incremental-iac" />
+  <temporary from="/blog/how-to-finally-modernize-a-devops-toolchain-infrastructure-as-code" to="https://blog.inedo.com/blog/incremental-iac" />
+  <temporary from="/blog/learn-how-to-move-away-from-the-monolith-with-bob-vandehey" to="https://blog.inedo.com/inedocon-speakers" />
+  <temporary from="/blog/hear-from-experienced-training-professionals-at-inedocon-2019" to="https://blog.inedo.com/inedocon-speakers" />
+  <temporary from="/blog/inedocon-2019-speaker-and-session-details" to="https://blog.inedo.com/inedocon-2019-announcement" />
+  <temporary from="/blog/jeff-hackert-knows-about-change" to="https://blog.inedo.com/inedocon-speakers" />
+  <temporary from="/blog/get-certified-at-inedocon-2019" to="https://blog.inedo.com/inedocon-2019-announcement" />
+  <temporary from="/blog/join-us-for-inedocon-2019" to="https://blog.inedo.com/inedocon-2019-announcement" />
+  <temporary from="/blog/lets-talk-at-inedocon" to="https://blog.inedo.com/inedocon-speakers" />
+  <temporary from="/blog/reason-14-why-you-should-attend-inedocon-2019" to="https://blog.inedo.com/inedocon-dear-boss-letter" />
+  <temporary from="/blog/learn-how-packages-can-help-you-manage-the-complicated-applications-that-are-overwhelming-your-teams" to="https://blog.inedo.com/manage-complicated-applications-with-packages" />
+  <temporary from="/blog/teamcity-vs-buildmaster-move-beyond-basic-builds-and-continuous-integration" to="https://blog.inedo.com/blog/teamcity-vs-buildmaster" />
+  <temporary from="/blog/how-to-create-version-numbers-that-are-actually-semantic" to="https://blog.inedo.com/blog/release-numbering-scheme" />
+  <temporary from="/blog/avoiding-process-cannot-access-file-errors-with-aspnet-deployments" to="https://blog.inedo.com/blog/file_lock" />
+  <temporary from="/blog/private-packages-and-proget-transform-software-deployments" to="https://blog.inedo.com/blog/abanca-case-study" />
+  <temporary from="/blog/jenkins-vs-buildmaster-why-its-a-faulty-comparison" to="https://blog.inedo.com/blog/jenkins-vs-buildmaster" />
+  <temporary from="/blog/i-messed-up-were-getting-back-to-builds" to="https://blog.inedo.com/blog/getting-back-to-builds" />
+  <temporary from="/blog/inedo-recognized-in-the-2017-gartner-magic-quadrant-for-application-release-automation" to="https://blog.inedo.com/blog/gartner-2017" />
+  <temporary from="/blog/the-top-4-most-disastrous-compliance-failures-and-how-to-avoid-them" to="https://blog.inedo.com/the-top-4-most-disastrous-compliance-failures-and-how-to-avoid-them" />
+  <temporary from="/blog/dice-breakers-using-devops-principles-and-nerdery-to-reimagine-team-building" to="https://blog.inedo.com/blog/dice-breakers-using-devops-principles-and-nerdery-to-reimagine-teambuilding" />
+  <temporary from="/blog/the-top-5-manual-deployment-failures-and-how-they-could-have-been-avoided-with-automation" to="https://blog.inedo.com/blog/deployment-failures" />
+  <temporary from="/blog/how-automation-can-help-you-at-all-five-stages-of-software-testing" to="https://blog.inedo.com/blog/automation-five-stages-testing" />
+  <temporary from="/blog/the-best-devops-tools-buildmaster-integrates-with--sdk" to="https://blog.inedo.com/blog/devops-tools-bm-integration" />
+  <temporary from="/blog/easily-create-and-publish-universal-packages-with-inedos-universal-package-explorer" to="https://blog.inedo.com/blog/create-publish-with-upe" />
+  <temporary from="/blog/common-uses-for-variables" to="https://blog.inedo.com/common-uses-variables" />
+  <temporary from="/blog/using-source-control-to-manage-stored-procedures" to="https://blog.inedo.com/source-control-manage-stored-procedures" />
+  <temporary from="/blog/giving-nuget-server-a-new-home" to="https://blog.inedo.com/nuget-server" />
+  <temporary from="/blog/announcing-user-profiles---create-yours-today" to="/support/kb/1169" />
+
+
+
+
+
+
 
   <!--HubSpot Form Conversion Cleanup -->
   <temporary from="/subscription-thank-you" to="/contact-thank-you" />
@@ -583,7 +714,7 @@
   <temporary from="/support/documentation/proget/installation/hub" to="/support/documentation/desktophub/overview" />
   <temporary from="/support/documentation/proget/installation/hub/inedo-hub-cli" to="/support/documentation/desktophub/inedo-hub-cli" />
   <temporary from="/support/documentation/proget/administration/high-availability" to="/support/documentation/proget/installation/load-balancing-and-automatic-failover" />
-  
+
   <!-- Otter Docs -->
   <permanent from="/support/documentation/otter/installation" to="/support/documentation/otter"/>
   <permanent from="/support/documentation/otter/administration" to="/support/documentation/otter"/>
@@ -1192,9 +1323,6 @@
   <permanent from="/support/documentation/proget/security/users-and-groups/ldap-directory" to="/support/documentation/proget/administration/ldap-active-directory" />
   <permanent from="/support/documentation/proget/scheduled-tasks" to="/support/documentation/proget/administration/feed-cleanup" />
   <permanent from="/support/documentation/core-concepts/plans" to="/support/documentation" />
-  <permanent from="/blog/differences-between-proget-client-tools-and-nuget-tools" to="/downloads/proget-client-tools" />
-  <permanent from="/blog/integrating-buildmaster-and-perforce" to="/buildmaster/extensions/Perforce" />
-  <permanent from="/blog/support/kb/1051/upgrade-notes-for-proget-20" to="/support/kb/1051/upgrade-notes-for-proget-20" />
   <permanent from="/kb/1046" to="/support/kb/1046/supported-sql-server-editions" />
   <permanent from="/buildmaster/training" to="/training" />
   <permanent from="/proget/2.1" to="/proget/roadmap" />
