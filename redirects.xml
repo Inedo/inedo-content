@@ -37,6 +37,7 @@
 	<permanent from="/company/careers/thanks" to="/company/career-culture/thanks" />
 	<permanent from="/company/careers/ceo" to="/company/ceo" />
   <permanent from="/company/career-culture/software-developer" to="/company/career-culture/products-engineer" />
+  <permanent from="/company/career-culture/software-developer-remote" to="/company/career-culture/remote-products-engineer" />
 
   <permanent from="/devops" to="/" />
 
