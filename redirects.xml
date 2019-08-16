@@ -36,6 +36,7 @@
 	<permanent from="/company/careers/handbook" to="/company" />
 	<permanent from="/company/careers/thanks" to="/company/career-culture/thanks" />
 	<permanent from="/company/careers/ceo" to="/company/ceo" />
+  <permanent from="/company/career-culture/software-developer" to="/company/career-culture/products-engineer" />
 
   <permanent from="/devops" to="/" />
 
@@ -555,7 +556,7 @@
   <temporary from="/support/documentation/buildmaster/core-concepts/pipelines/pipeline-model" to="/support/documentation/buildmaster/verification/pipelines/json-model" />
   <temporary from="/support/documentation/buildmaster/global-components/value-renderers" to="/support/documentation/buildmaster/administration/value-renderers" />
   <temporary from="/support/documentation/buildmaster/builds/packaging/artifacts-from-drop-path" to="/support/documentation/buildmaster/builds/external-systems/drop-path" />
-  
+
 <!-- Various Docs -->
 
 	<permanent from="/support/documentation/various/universal-packages/universal-feeds-package-ref" to="/support/documentation/upack/overview"/>
