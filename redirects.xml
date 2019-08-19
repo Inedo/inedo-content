@@ -861,6 +861,8 @@
 	<kb id="1130" to="/support/kb/1111" />
 	<kb id="1126" to="/support/kb/1111" />
 	<kb id="1122" to="/support/kb/1111" />
+  <kb id="1169" to="http://forums.inedo.com/" />
+  
 
 
   <!-- Karl workflow emails-->
@@ -1373,7 +1375,6 @@
   <permanent from="/proget/3.8" to="/proget/roadmap" />
 
   <!-- new forums (Hemlock) -->
-  <permanent from="/users" to="https://forums.inedo.com/" />
   <permanent from="/support/questions" to="https://forums.inedo.com/" />
   <permanent from="/users/benlubar" to="https://forums.inedo.com/user/ben" />
   <permanent from="/users/apapadimoulis" to="https://forums.inedo.com/user/apapadimoulis" />

@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<extensionAdditionalInfo>
-  <info><![CDATA[]]></info>
-  <actionInfo id="Inedo.BuildMasterExtensions.WindowsSdk.SignExe" name="Sign Executable" summary="Signs an executable file with a certificate."><![CDATA[]]></actionInfo>
-</extensionAdditionalInfo>
