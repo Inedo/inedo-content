@@ -255,6 +255,7 @@
 
   <permanent from="/vip/about" to="/vip" />
   <permanent from="/vip/roster" to="/vip" />
+  <permanent from="/vip" to="/" />
 
   <permanent from="/company/media/dailywtf" to="/company/media" />
   <permanent from="/company/media/buildmaster" to="/company/media" />
@@ -862,7 +863,7 @@
 	<kb id="1126" to="/support/kb/1111" />
 	<kb id="1122" to="/support/kb/1111" />
   <kb id="1169" to="http://forums.inedo.com/" />
-  
+
 
 
   <!-- Karl workflow emails-->
@@ -4173,6 +4174,7 @@
   <permanent from="/support/questions/19479" to="https://forums.inedo.com/topic/2768" />
   <permanent from="/support/questions/19486" to="https://forums.inedo.com/topic/2769" />
   <permanent from="/support/questions/19487" to="https://forums.inedo.com/topic/2770" />
+  <permanent from="/support/questions/new" to="https://forums.inedo.com/" />
 
 
   <!-- Uninclused Curios -->

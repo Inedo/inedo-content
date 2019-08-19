@@ -1,0 +1,116 @@
+.user-accordian {
+  width: 498px;
+  margin: 0 auto;
+  padding: 1px;
+  display: inline-block;
+  float: left;
+}
+.user-category {
+  width: 500px;
+  height: 100%;
+}
+.user-category input[type="checkbox"] {
+  display: none;
+}
+.user-category label {
+  position: relative;
+  z-index: 20;
+  display: block;
+  cursor: pointer;
+  background: #353535;
+  border: solid 1px #ffffff;
+}
+.user-category label h2 {
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+  color: #ffffff;
+}
+.user-category label:hover {
+  background: #686868;
+}
+.user-category article {
+  margin-top: -1px;
+  overflow: hidden;
+  height: 0px;
+  position: relative;
+  z-index: 10;
+  transition: height 0.3s ease-in-out;
+  text-align: center;
+}
+.user-category input:checked ~ article {
+  transition: height 0.5s ease-in-out;
+}
+.user-category input:checked ~ article#business_resources {
+  height: 700px;
+}
+.user-category input:checked ~ article#digital_media {
+  height: 252px;
+}
+.user-category input:checked ~ article#education_research {
+  height: 772px;
+}
+.user-category input:checked ~ article#engineering {
+  height: 724px;
+}
+.user-category input:checked ~ article#finance {
+  height: 724px;
+}
+.user-category input:checked ~ article#food {
+  height: 390px;
+}
+.user-category input:checked ~ article#gaming {
+  height: 690px;
+}
+.user-category input:checked ~ article#governmental {
+  height: 690px;
+}
+.user-category input:checked ~ article#healthcare {
+  height: 917px;
+}
+.user-category input:checked ~ article#insurance {
+  height: 492px;
+}
+.user-category input:checked ~ article#lodging {
+  height: 305px;
+}
+.user-category input:checked ~ article#manufacturing {
+  height: 1022px;
+}
+.user-category input:checked ~ article#marketing {
+  height: 624px;
+}
+.user-category input:checked ~ article#security {
+  height: 246px;
+}
+.user-category input:checked ~ article#software {
+  height: 904px;
+}
+.user-category input:checked ~ article#tech {
+  height: 2002px;
+}
+#banner {
+  margin-bottom: 25px;
+}
+#banner .feat-users {
+  padding-top: 30px;
+}
+#banner .feat-users .user {
+  float: left;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+#banner .feat-users .user img {
+  width: 228px;
+  border: 1px solid #002b54;
+}
+#banner .feat-users .user img:hover {
+  box-shadow: 1px 1px 6px #444444;
+}
+.bottom-content {
+  display: inline-block;
+}
+#footer {
+  display: inline-block;
+  margin-top: 25px;
+}
