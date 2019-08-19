@@ -60,14 +60,22 @@
         For the complete listing of issues added to this release, see the release notes on the <a href="/buildmaster/versions">All Versions page</a>.
     </p>
 
-    <div class="attention technical">
-        <p>If upgrading from a pre-6.0 version, please see:</p>
-        <ul>
-            <li><a href="/support/kb/1156">BuildMaster v6.0 Upgrade Notes</a></li>
-            <li><a href="/support/kb/1117">Upgrading from v5</a> </li>
-            <li><a href="/support/kb/1151">Upgrading from v3 or v4</a></li>
-        </ul>
-    </div>
+    <h2 id="upgrade-process">Upgrade Process</h2>
+    <p class="announcement">
+        <b>Upgrading from a v3 or v4?</b> This document is for informational purposes only, and you should upgrade directly to v6; please see <a href="/support/kb/1151" target="_blank">Upgrading from BuildMaster v3 and v4</a> first.<br /><br />
+        <strong>Upgrading from a 5.x?</strong> You should directly upgrade to the latest BuildMaster 5.8 prior to upgrading to v6.
+    </p>
+    <p>You can upgrade from BuildMaster v5.8 to the latest BuildMaster 6.x simply by downloading and running the installer, removing 5.x extension and installing the 6.x extensions</p>
+    <h4 id="risk-mitigation">Risk Mitigation</h4>
+    <p>Although the risks vary depending on which version you're upgrading from, you should take the following precautions to prevent downtime:</p>
+    <ul>
+        <li>Make sure that your BuildMaster database is backed up prior to upgrade</li>
+        <li>Make sure that your Encryption Key is backed up prior to upgrade</li>
+        <li>Make sure that the installation's \Extensions directory is backed up prior to upgrade</li>
+    </ul>
+    <h4 id="rollback">Rollback</h4>
+    <p>Because there are database changes, a rollback will require uninstalling BuildMaster, and then <a href="/support/kb/1001">restoring your BuildMaster instance</a>.</p>
+
 
     <h3 id="builds">Rename "Release Packages" to "Builds"</h3>
     <p>
