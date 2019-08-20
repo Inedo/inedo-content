@@ -98,8 +98,8 @@ WebContent/training/course-objectives.css
 WebContent/training/devops.css
 WebContent/training/training-home.css
 WebContent/training/training.css
-WebContent/users/profile.css
-WebContent/users/users.css
+WebContent/our-users/profile.css
+WebContent/our-users/our-users.css
 WebContent/webinars/webinar-featured-pages.css
 WebContent/webinars/webinars-single-pages.css
 WebContent/training/videos/video-single-pages.css
