@@ -21,6 +21,11 @@
   <permanent from="/company/professional-services" to="/services" />
   <permanent from="/company/scotch-menu" to="/company/scotch" />
   <permanent from="/company/about-us" to="/company" />
+  <permanent from="/company/cool-stuff" to="/company" />
+  <permanent from="/solutions/devops" to="/" />
+  <permanent from="/solutions/release-deployment" to="/" />
+  <permanent from="/solutions/security-compliance" to="/" />
+
 
   <permanent from="/careers" to="/company/careers" />
 	<permanent from="/company/careers/025-marketing-manager" to="/company/careers" />

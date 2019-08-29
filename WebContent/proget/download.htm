@@ -35,17 +35,15 @@
                 <div class="panel">
                     <div class="left">
                         <table class="clean">
-                            <tr>
-                                <td>Latest version: <b>v${ProGet.ReleaseNumber}</b></td>
-                            </tr>
+
                             <tr>
                                 <td>File size: &lt; 1 MB</td>
                             </tr>
                             <tr>
-                                <td><a href="/proget/${ProGet.ReleaseNumberMajorMinor}" class="external">Release overview</a> for ${ProGet.ReleaseNumberMajorMinor}</td>
+                                <td><a href="/proget/5.2" class="external">Release overview</a> for 5.2</td>
                             </tr>
                             <tr>
-                                <td><a href="/proget/versions#v${ProGet.ReleaseNumberMajorMinor}" class="external">Release notes</a></td>
+                                <td><a href="/proget/versions#v5.2" class="external">Release notes</a></td>
                             </tr>
                             <tr>
                                 <td><a href="/proget/versions" class="external">Previous versions</a></td>
@@ -92,7 +90,7 @@
         <h3 id="offline">Offline &amp; Manual Installation (Traditional Installer)</h3>
         <p>
             For environments that do not support installation via the Inedo Hub (such as offline servers), you may download the traditional installer here:
-            <a href="/proget/download/sql/${ProGet.ReleaseNumber}" onclick="gtag ('event', 'download', {
+            <a href="/proget/download/sql/5.2.8" onclick="gtag ('event', 'download', {
 						'event_category' : 'proget',
 						'event_label' : 'sql' });">Download ProGet Traditional Installer</a>.
         </p>
@@ -102,7 +100,7 @@
 
         <h2>Upgrading ProGet</h2>
         <p>
-            You can upgrade to ProGet ${ProGet.ReleaseNumber} from any previous version of ProGet.
+            You can upgrade to ProGet 5.2.8 from any previous version of ProGet.
             Just run an existing Inedo Hub Desktop installation or download the latest traditional installer.
         </p>
 

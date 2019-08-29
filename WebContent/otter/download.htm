@@ -5,41 +5,7 @@
     <meta name="MasterPageFile" content="otter.htm" />
     <meta name="keywords" content="otter, installation" />
     <meta name="require-ssl" content="true" />
-    <style type="text/css">
-        .all-content {
-            width: 800px;
-            margin-left: 100px;
-        }
-        .downloaf-box {
-            border: solid 1px #2e2e2e;
-            padding: 20px;
-            text-align: right;
-            margin-top: 30px;
-        }
 
-            .downloaf-box .left {
-                float: left;
-                margin-right: 20px;
-            }
-
-                .downloaf-box .left h3 {
-                    margin-top: 0;
-                    font-size: 26px;
-                }
-
-            .downloaf-box .right .button {
-                font-size: 26px;
-                padding: 12px 10px;
-                line-height: 65px;
-            }
-
-                .downloaf-box .right .button:hover {
-                    text-decoration: underline;
-                }
-                .started {background-color: #e9eada; padding: 20px 30px; margin-top: 30px;}
-        .started h4 {margin-top: 0; font-weight: bold;}
-        .started p {line-height: 30px; margin-bottom: 0px; font-size: 18px;}
-    </style>
 
     <script type="text/javascript">
 setTimeout(function(){var a=document.createElement("script");
@@ -50,100 +16,85 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 </head>
 <body>
+  <style>
+      .content-container#banner {
+          min-height: 150px;
+      }
 
-    <style>
-        .content-container#banner {
-            min-height: 150px;
-        }
+      #banner .circle-button {
+          display: none;
+      }
 
-        #banner .circle-button {
-            display: none;
-        }
-    </style>
-    <div class="all-content download-page">
-        <h1>Download Otter</h1>
-        <div id="start" class="started">
-            <h4>Getting Started </h4>
-            <p>
-                Otter will install on any supported version of Windows; simply click through the installer to get Otter up and running in minutes.
-                Through the installer, you will select the edition you wish to install, a trial, the free edition, or enter a license key.
-                Refer to the <a href="#edition">screenshot</a> at the bottom of this page for clarity. Alternatively, review the
-                <a href="/support/documentation/otter/installation/windows-guide">Otter Installation Guide</a> for more details.
-            </p>
-        </div>
+  </style>
+  <div class="download-page">
 
-        <div class="inedo-hub-banner">
-            <div class="hub-panel left">
-                <img src="/resources/images/logos/inedo-hub.svg" />
-            </div>
-            <div class="hub-panel center">
-                Otter is now installable from the Inedo Hub desktop application!
-            </div>
-            <div class="hub-panel right">
-                <!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-a6450775-7cdf-4b0c-9df7-9c9ca8276eb3"><span class="hs-cta-node hs-cta-a6450775-7cdf-4b0c-9df7-9c9ca8276eb3" id="hs-cta-a6450775-7cdf-4b0c-9df7-9c9ca8276eb3"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://cta-redirect.hubspot.com/cta/redirect/5416872/a6450775-7cdf-4b0c-9df7-9c9ca8276eb3" ><img class="hs-cta-img" id="hs-cta-img-a6450775-7cdf-4b0c-9df7-9c9ca8276eb3" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/5416872/a6450775-7cdf-4b0c-9df7-9c9ca8276eb3.png"  alt="Download Inedo Hub"/></a></span><script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script><script type="text/javascript"> hbspt.cta.load(5416872, 'a6450775-7cdf-4b0c-9df7-9c9ca8276eb3', {}); </script></span><!-- end HubSpot Call-to-Action Code -->
-                <a class="external" href="/support/documentation/desktophub" target="_blank">Learn More...</a>
-            </div>
-            <div style="clear: both;">
-            </div>
-        </div>
+      <div class="content-container">
+          <div class="content">
+              <div class="panel">
+                  <div class="left">
+                      <table class="clean">
 
-        <div class="downloaf-box">
-            <div class="left">
-                <h3>Latest Version: ${Otter.ReleaseNumber}</h3>
-                <div>File size: ~ 47mb</div>
-            </div>
-            <div class="right">
-                <div><a class="button" href="/otter/download/sql/${Otter.ReleaseNumber}" onclick="gtag ('event', 'download', {
-						'event_category' : 'otter',
-						'event_label' : 'sql' });">Download Otter Installer</a></div>
-                <div>
-                    <a href="/otter/${Otter.ReleaseNumberMajorMinor}">Overview for ${Otter.ReleaseNumberMajorMinor}</a>
-                    &nbsp; &bull; &nbsp;
-                    <a href="/otter/release-notes/#v${Otter.ReleaseNumberMajorMinor}">Release Notes</a>
-                </div>
-            </div>
-        </div>
-        <div class="attention analogy">
-            <p>
-                <strong>CI/CD for Infrastructure &amp; Configuration Management with Otter + BuildMaster</strong><br/><br/>
-                Organizations of all sizes use CI/CD to get business ideas to the market faster than the competitors by delivering higher-quality software releases sooner. But what works great for application changes doesn't work as well for infrastructure changes, and operations teams will often struggle to keep pace while maintaining compliance.
-                <br/><br/>
-                <strong><a href="/support/whitepapers/ci-cd-infrastructure-config-mgmt?utm_source=otter-download-page">This guide</a></strong> will explore how to overcome these challenges and show you how to deliver infrastructure changes using CI/CD pipelines.
-            </p>
-        </div>
+                          <tr>
+                              <td>File size: &lt; 1 MB</td>
+                          </tr>
+                          <tr>
+                              <td><a href="/otter/2.2" class="external">Release overview</a> for 2.2</td>
+                          </tr>
+                          <tr>
+                              <td><a href="/otter/versions#v2.2" class="external">Release notes</a></td>
+                          </tr>
+                          <tr>
+                              <td><a href="/otter/versions" class="external">Previous versions</a></td>
+                          </tr>
+                      </table>
+                  </div>
+                  <div class="left" style="width: 78%;">
+                      <h2>Windows Download</h2>
+                      <p class="padded">
+                          <img class="logo" src="/resources/images/logos/inedo-hub.svg" />
+                      </p>
+                      <p>
+                          Otter on Windows is managed by the Inedo Hub
+                      </p>
+                      <!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-a6450775-7cdf-4b0c-9df7-9c9ca8276eb3"><span class="hs-cta-node hs-cta-a6450775-7cdf-4b0c-9df7-9c9ca8276eb3" id="hs-cta-a6450775-7cdf-4b0c-9df7-9c9ca8276eb3"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://cta-redirect.hubspot.com/cta/redirect/5416872/a6450775-7cdf-4b0c-9df7-9c9ca8276eb3" onclick="_gaq.push(['_trackEvent', 'otter', 'download', 'hub']);"><img class="hs-cta-img" id="hs-cta-img-a6450775-7cdf-4b0c-9df7-9c9ca8276eb3" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/5416872/a6450775-7cdf-4b0c-9df7-9c9ca8276eb3.png"  alt="Download Inedo Hub"/></a></span><script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script><script type="text/javascript"> hbspt.cta.load(5416872, 'a6450775-7cdf-4b0c-9df7-9c9ca8276eb3', {}); </script></span><!-- end HubSpot Call-to-Action Code -->
 
 
-        <h3>Looking to Buy?</h3>
-        <p>
-            To order online with a credit card, go through <a href="https://my.inedo.com/">MyInedo</a>. For other methods of payment,
-            such as a check or wire transfer, use the <a href="/otter/pricing/request-quote">quote request form</a>.
-        </p>
+                    <p class="help-links"><a href="#getting-started-windows">Getting Started</a> &bull; <a class="external" href="/otter/license-agreement">EULA</a></p>
+                  </div>
+                  <div class="clear"> </div>
+              </div>
+          </div>
+      </div>
+      <hr />
+      <h3 id="getting-started-windows">First Steps on Windows</h3>
+      <p>
+          Otter will install on any supported version of Windows; simply click through the Hub installer to get Otter up and running in minutes. During installation you will select the edition you wish to install (Enterprise or free), or enter an existing license key.
+      </p>
+      <!--<p>
+          For more information, visit the <a href="/support/documentation/buildmaster/installation/hub">Inedo Hub Installation Guide</a>.
+      </p>-->
+      <h3>Getting Started</h3>
+      <p>
+          New to Otter? Go through our <a href="/support/tutorials/otter/provisioning-and-configuring-servers-with-otter">Getting Started tutorial</a>, and you will learn how to provision and configure servers with Otter.
+      </p>
+      <h3>Upgrading Otter</h3>
+      <p>
+          You can upgrade to Otter 2.2.5 from any previous version of Otter. Just run the installer to update your installation; the agents will automatically update when the installation is complete.
+      </p>
+      <h3>Looking to Buy?</h3>
+      <p>
+          To order online with a credit card, go through <a href="https://my.inedo.com/">MyInedo</a>. For other methods of payment,
+          such as a check or wire transfer, use the <a href="/otter/pricing/request-quote">quote request form</a>.
+      </p>
+      <h3>Other Downloads</h3>
+      <p>
+          If you need to download an older version of Otter, an alternate installation package, or the Otter Windows agent,
+          <a href="/otter/download/versions">please visit the all versions page</a>.
+      </p>
 
-        <h3>Upgrading Otter</h3>
-        <p>
-            You can upgrade to Otter ${Otter.ReleaseNumber} from any previous version of Otter. Just run the installer to update your installation.
-        </p>
+      <h3>What's Next for Otter</h3>
+      <p>Check out our <a href="/products/roadmap">Product Roadmap</a> to see where it all started, and where we want to take Otter in the future.</p>
+  </div>
 
-        <h3>Other Downloads</h3>
-        <p>
-            If you need to download an older version of Otter or an alternate installation package,
-            <a href="/otter/versions">please visit the all versions page</a>.
-        </p>
-
-        <h3>What's Next for Otter</h3>
-        <p>Check out our <a href="/products/roadmap">Product Roadmap</a> to see where it all started, and where we want to take Otter in the future.</p>
-
-        <h3 id="edition">Selecting the Edition</h3>
-        <p>
-            This is step six in the Otter Installer, this is where you select which edition of Otter you'd like to use (Free, trial, or enter a Key).
-        </p>
-        <img style="" src="/resources/documentation/otter-installation/edition-license-key-otter.png" />
-
-        <div class="button-set">
-            <div class="button">
-                <a href="#start">Back to the download</a>
-            </div>
-        </div>
-    </div>
     </body>
 </html>
