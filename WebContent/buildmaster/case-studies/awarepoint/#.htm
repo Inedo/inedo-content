@@ -32,7 +32,7 @@
     </p>
     <p class="question">How has your team used BuildMaster? </p>
     <p class="answer">Initially our use was pretty basic and limited to pushing out each of the packages to a particular server; these were primarily in-house applications. We would then deploy the web services, use the "deploy all configuration files", start up the web sites, etc. As I said, pretty vanilla to start with. We still have that process in place for some of our legacy applications. </p>
-    <p class="answers">However, as we've moved into the cloud, we've really changed that model quite a bit. In the last six months we've written several <a href="/buildmaster/extensions">extensions</a> to BuildMaster to support our new model, which involves dynamically spinning up a new environment from scratch on Amazon each time we do a deployment. We actually spin up a server per service, load everything, set up the load balancers, etc., which created some challenges and led to us extending the product.</p>
+    <p class="answers">However, as we've moved into the cloud, we've really changed that model quite a bit. In the last six months we've written several <a href="/den">extensions</a> to BuildMaster to support our new model, which involves dynamically spinning up a new environment from scratch on Amazon each time we do a deployment. We actually spin up a server per service, load everything, set up the load balancers, etc., which created some challenges and led to us extending the product.</p>
     <p class="question">Can you tell us a little bit about those extensions?</p>
     <p class="answer">We use a combination of extensions. One example involves registering a new server that doesn't currently exist. In order to build up deployments plans, we decided to use server groups. In another example, we use an extension to swap a new server into a server group dynamically, and then back out of it when we're finished using it.</p>
     <p class="answer">As a starting principle we wanted to avoid manual process if possible. In another example, we wanted to be able to spin a new instance in Amazon without first identifying a name. We're able to create an AMI with the BuildMaster agent, and then use extensions that allowed BuildMaster to recognize the agent and dynamically register these new servers, while also pushing software to them.</p>
@@ -62,5 +62,3 @@
 </body>
 
 </html>
-
-
