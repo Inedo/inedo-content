@@ -436,12 +436,6 @@
   <temporary from="/blog/giving-nuget-server-a-new-home" to="https://blog.inedo.com/nuget-server" />
   <temporary from="/blog/announcing-user-profiles---create-yours-today" to="/support/kb/1169" />
 
-
-
-
-
-
-
   <!--HubSpot Form Conversion Cleanup -->
   <temporary from="/subscription-thank-you" to="/contact-thank-you" />
   <temporary from="/open/request-received" to="/contact-thank-you" />
@@ -456,43 +450,16 @@
   <temporary from="/jp/thank-you" to="/jp" />
   <temporary from="/manga/thanks" to="/jp" />
 
-  <!-- From HubSpot SEO Cleanup may need to be updated better but I know docs are being redone again and I don't want to make it worse, so I just have these all going to the relative doc homepages -->
+<!-- From HubSpot SEO Cleanup may need to be updated better but I know docs are being redone again and I don't want to make it worse, so I just have these all going to the relative doc homepages -->
 
-      <!-- 4xx/5xx Errors -->
+<!-- 4xx/5xx Errors -->
 
   <temporary from="/jp/features" to="/jp/products" />
   <temporary from="/proget/0.9" to="/proget" />
 
-<temporary from="/support/documentation/buildmaster/administration/extensions/create-custom" to="/support/documentation/buildmaster/reference/extensions" />
-  <temporary from="/support/documentation/buildmaster/core-concepts/build" to="/support/documentation/buildmaster/builds/overview" />
-  <temporary from="/support/documentation/buildmaster/core-concepts/servers" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/servers" />
-  <temporary from="/support/documentation/buildmaster/execution-engine/statement-and-blocks/other-statements" to="/support/documentation/executionengine/otterscript/statements-and-blocks/other-statements" />
-  <temporary from="/support/documentation/buildmaster/installation/architecture/architecture" to="/support/documentation/buildmaster/installation-and-maintenance/architecture" />
-    <temporary from="/support/documentation/buildmaster/installation/configuration-options" to="/support/documentation/buildmaster/installation-and-maintenance/config-files" />
-  <temporary from="/support/documentation/buildmaster/installation/execution-engine" to="/support/documentation/executionengine/overview" />
-  <temporary from="/support/documentation/buildmaster/installation/global-components/resource-credentials" to="/support/documentation/buildmaster/administration/resource-credentials" />
-  <temporary from="/support/documentation/buildmaster/modeling-infrastructure/server-roles" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/servers" />
-  <temporary from="/support/documentation/buildmaster/reference/global-components/configuration-variables" to="/support/documentation/buildmaster/administration/configuration-variables" />
-  <temporary from="/support/documentation/buildmaster/reference/operation" to="/support/documentation/buildmaster/reference/operations" />
-  <temporary from="/support/documentation/core-concepts/deployment-plans" to="/support/documentation/buildmaster/deployments/plans" />
-  <temporary from="/support/documentation/executionengine/components/otterscript/statements-and-blocks/if-else" to="/support/documentation/executionengine/otterscript/statements-and-blocks/if-else" />
-  <temporary from="/support/documentation/executionengine/otterscript/statement-and-blocks/other-statements" to="/support/documentation/executionengine/otterscript/statements-and-blocks/other-statement" />
-  <temporary from="/support/documentation/executionengine/reference/comments-and-descriptions" to="/support/documentation/executionengine/otterscript/comments-and-descriptions" />
-  <temporary from="/support/documentation/executionengine/reference/strings-and-literals" to="/support/documentation/executionengine/otterscript/strings-and-literal" />
-  <temporary from="/support/documentation/otter/global-components/configuration-variable" to="/support/documentation/otter/global-components/configuration-variables" />
-  <temporary from="/support/documentation/otter/installation/configuration-options" to="/support/documentation/otter/installation/config-files" />
-  <temporary from="/support/documentation/otter/modeling-infrastructure/server-role" to="/support/documentation/otter/modeling-infrastructure/server-roles" />
-  <temporary from="/support/documentation/otter/reference/operations/powershell/pseval" to="/support/documentation/otter/reference/operations" />
-  <temporary from="/support/documentation/proget/compliance" to="/support/documentation/proget/compliance/vulnerabilities" />
-  <temporary from="/support/documentation/proget/feed-types" to="/support/documentation/proget/core-concepts/feeds" />
-  <temporary from="/support/documentation/proget/feeds/docker" to="/support/documentation/proget/docker/private-registries" />
-  <temporary from="/support/documentation/proget/proget-overview" to="support/documentation/proget/overview" />
-  <temporary from="/support/documentation/romp/getting-started" to="/support/documentation/romp/overview" />
-  <temporary from="/support/documentation/romp/romp-packages/layout/extensions" to="/support/documentation/romp/extensibility/visual-studio" />
-  <temporary from="/support/documentation/romp/romp-packages/layout/package-installation" to="/support/documentation/romp/installation/installation-guide" />
-  <temporary from="/support/documentation/various/execution-engine/otterscript/formal-grammar" to="/support/documentation/executionengine/otterscript/overview" />
-  <temporary from="/support/documentation/various/hub/inedo-hub-cli" to="/support/documentation/desktophub/overview" />
-  <temporary from="/support/documentation/various/hub/what-is" to="/support/documentation/desktophub/overview" />
+  <permanent from="/support/documentation" to="https://docs.inedo.com/"/>
+  <permanent from="/support/documentation/*" to="https://docs.inedo.com/docs/*"/>
+
   <temporary from="/unknown-hh/0.1" to="/hedgehog/versions" />
 
 
@@ -507,257 +474,7 @@
   <permanent from="/t-shirt" to="/promos/t-shirt" />
   <permanent from="/company/get-a-free-license" to="/buildmaster" />
 
-  <!-- Docs -->
-  <permanent from="/support/documentation/table-of-contents" to="/support/documentation" />
-  <permanent from="/support/documentation/proget/deploy" to="/support/documentation/proget/feeds/nuget" />
-  <permanent from="/support/documentation/otter/execution-engine/otter-script" to="/support/documentation/otter/reference/otter-script" />
-  <permanent from="/support/documentation/various/inedo-agent/architecture" to="/support/documentation/various/inedo-agent/the-agent" />
-  <permanent from="/support/documentation/various/inedo-agent/security" to="/support/documentation/various/inedo-agent/installation/security" />
-  <permanent from="/support/documentation/various/inedo-agent/network-protocol" to="/support/documentation/various/inedo-agent/server-architecture/network-protocol" />
-  <permanent from="support/documentation/various/inedo-agent/message-formats" to="/support/documentation/various/inedo-agent/server-architecture/message-formats" />
-
-  <!-- BuildMaster Docs Tree Reorganization (April 2019) -->
-  <temporary from="/support/documentation/buildmaster/core-concepts" to="/support/documentation/buildmaster/overview" />
-  <temporary from="/support/documentation/buildmaster/global-components/configuration-variables" to="/support/documentation/buildmaster/administration/configuration-variables" />
-  <temporary from="/support/documentation/buildmaster/global-components/event-listeners" to="/support/documentation/buildmaster/administration/notifications" />
-  <temporary from="/support/documentation/buildmaster/global-components/resource-credentials" to="/support/documentation/buildmaster/administration/resource-credentials" />
-  <temporary from="/support/documentation/buildmaster/administration/retenion-policies" to="/support/documentation/buildmaster/administration/retention-policies" />
-  <temporary from="/support/documentation/buildmaster/administration/agents" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/agents" />
-  <temporary from="/support/documentation/buildmaster/core-concepts/environments" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/environments" />
-  <temporary from="/support/documentation/buildmaster/infrastructure/server-roles" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/server-roles" />
-  <temporary from="/support/documentation/buildmaster/infrastructure/servers" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/servers" />
-  <temporary from="/support/documentation/buildmaster/administration/configuration" to="/support/documentation/buildmaster/administration/agents-and-infrastructure/sync" />
-  <temporary from="/support/documentation/buildmaster/modeling-applications/applications" to="/support/documentation/buildmaster/administration/applications" />
-  <temporary from="/support/documentation/buildmaster/administration/import-apps" to="/support/documentation/buildmaster/administration/applications/import-export" />
-  <temporary from="/support/documentation/buildmaster/administration/users-and-security" to="/support/documentation/buildmaster/administration/security" />
-  <temporary from="/support/documentation/buildmaster/administration/users-and-security/ldap" to="/support/documentation/buildmaster/administration/security/ldap" />
-  <temporary from="/support/documentation/buildmaster/core-concepts/builds-and-ci" to="/support/documentation/buildmaster/builds/overview" />
-  <temporary from="/support/documentation/buildmaster/core-concepts/builds-and-ci/artifacts" to="/support/documentation/buildmaster/builds/packaging/artifacts" />
-  <temporary from="/support/documentation/buildmaster/core-concepts/builds-and-ci/reports" to="/support/documentation/buildmaster/builds/tests/build-reports" />
-  <temporary from="/support/documentation/buildmaster/builds-and-ci/unit-tests" to="/support/documentation/buildmaster/builds/tests/unit-tests" />
-  <temporary from="/support/documentation/buildmaster/modeling-applications/configuration-files" to="/support/documentation/buildmaster/deployments/configuration-files" />
-  <temporary from="/support/documentation/buildmaster/core-concepts/deployment-plans" to="/support/documentation/buildmaster/deployments/plans" />
-  <temporary from="/support/documentation/buildmaster/execution-engine/overview" to="/support/documentation/buildmaster/deployments/plans/execution-engine" />
-  <temporary from="/support/documentation/buildmaster/modeling-applications/manual-steps-tasks" to="/support/documentation/buildmaster/deployments/plans/manual-steps-tasks" />
-  <temporary from="/support/documentation/buildmaster/modeling-applications/database-changes" to="/support/documentation/buildmaster/deployments/targets/databases" />
-  <temporary from="/support/documentation/buildmaster/installation" to="/support/documentation/buildmaster/installation-and-maintenance" />
-  <temporary from="/support/documentation/buildmaster/installation/backing-up" to="/support/documentation/buildmaster/installation-and-maintenance/backing-up" />
-  <temporary from="/support/documentation/buildmaster/installation/config-files" to="/support/documentation/buildmaster/installation-and-maintenance/config-files" />
-  <temporary from="/support/documentation/buildmaster/installation/diagnostic-center" to="/support/documentation/buildmaster/installation-and-maintenance/diagnostic-center" />
-  <temporary from="/support/documentation/buildmaster/administration/license" to="/support/documentation/buildmaster/installation-and-maintenance/license" />
-  <temporary from="/support/documentation/buildmaster/installation/architecture" to="/support/documentation/buildmaster/installation-and-maintenance/architecture" />
-  <temporary from="/support/documentation/buildmaster/installation/service" to="/support/documentation/buildmaster/installation-and-maintenance/architecture/service" />
-  <temporary from="/support/documentation/buildmaster/installation/installation-guide" to="/support/documentation/buildmaster/installation-and-maintenance/installation-guide" />
-  <temporary from="/support/documentation/buildmaster/installation/installation-guide/agent-installation-guide" to="/support/documentation/buildmaster/installation-and-maintenance/installation-guide/agent-installation-guide" />
-  <temporary from="/support/documentation/buildmaster/installation/installation-guide/manual" to="/support/documentation/buildmaster/installation-and-maintenance/installation-guide/manual" />
-  <temporary from="/support/documentation/buildmaster/installation/installation-guide/silent-installation" to="/support/documentation/buildmaster/installation-and-maintenance/installation-guide/silent-installation" />
-  <temporary from="/support/documentation/buildmaster/administration/extensions" to="/support/documentation/buildmaster/reference/extensions" />
-  <temporary from="/support/documentation/buildmaster/reference/api/release-and-package" to="/support/documentation/buildmaster/reference/api/release-and-build" />
-  <temporary from="/support/documentation/buildmaster/modeling-applications/calendars" to="/support/documentation/buildmaster/releases/calendars" />
-  <temporary from="/support/documentation/buildmaster/modeling-applications/release-notes" to="/support/documentation/buildmaster/releases/notes" />
-  <temporary from="/support/documentation/buildmaster/core-concepts/release" to="/support/documentation/buildmaster/releases/overview" />
-  <temporary from="/support/documentation/buildmaster/administration/rollback" to="/support/documentation/buildmaster/releases/rollback" />
-  <temporary from="/support/documentation/buildmaster/core-concepts/release/templates" to="/support/documentation/buildmaster/releases/templates" />
-  <temporary from="/support/documentation/buildmaster/modeling-applications/issues-projects" to="/support/documentation/buildmaster/verification/issue-tracking" />
-  <temporary from="/support/documentation/buildmaster/core-concepts/pipelines" to="/support/documentation/buildmaster/verification/pipelines" />
-  <temporary from="/support/documentation/buildmaster/core-concepts/pipelines/pipeline-model" to="/support/documentation/buildmaster/verification/pipelines/json-model" />
-  <temporary from="/support/documentation/buildmaster/global-components/value-renderers" to="/support/documentation/buildmaster/administration/value-renderers" />
-  <temporary from="/support/documentation/buildmaster/builds/packaging/artifacts-from-drop-path" to="/support/documentation/buildmaster/builds/external-systems/drop-path" />
-
-<!-- Various Docs -->
-
-	<permanent from="/support/documentation/various/universal-packages/universal-feeds-package-ref" to="/support/documentation/upack/overview"/>
-	<permanent from="/support/documentation/various/universal-packages/universal-feeds-package-ref/package-format" to="/support/documentation/upack/universal-packages/package-format"/>
-	<permanent from="/support/documentation/various/universal-packages/universal-feeds-package-ref/virtual-package" to="/support/documentation/upack/virtual-packages/what-is"/>
-	<permanent from="/support/documentation/various/universal-packages/universal-feeds-package-ref/feed-api" to="/support/documentation/upack/feed-api"/>
-	<permanent from="/support/documentation/various/universal-packages/universal-package-registry" to="/support/documentation/upack/universal-package-registry/what-is"/>
-	<permanent from="/support/documentation/various/universal-packages/upack-reference" to="/support/documentation/upack/upack-cli"/>
-
-	<permanent from="/support/documentation/various/execution-engine/otterscript" to="/support/documentation/executionengine/otterscript/overview"/>
-	<permanent from="/support/documentation/various/execution-engine/otterscript/comments-and-descriptions" to="/support/documentation/executionengine/otterscript/comments-and-descriptions"/>
-	<permanent from="/support/documentation/various/execution-engine/otterscript/strings-and-literals" to="/support/documentation/executionengine/otterscript/strings-and-literals"/>
-	<permanent from="/support/documentation/various/execution-engine/otterscript/formal-specification" to="/support/documentation/executionengine/reference/formal-specification"/>
-	<permanent from="/support/documentation/various/execution-engine/otterscript/formal-specification/formal-grammar" to="/support/documentation/executionengine/reference/formal-grammar"/>
-	<permanent from="/support/documentation/various/execution-engine/operations" to="/support/documentation/executionengine/components/operations-functions"/>
-	<permanent from="/support/documentation/various/execution-engine/functions" to="/support/documentation/executionengine/components/operations-functions"/>
-	<permanent from="/support/documentation/various/execution-engine/text-templates" to="/support/documentation/executionengine/components/text-templating"/>
-	<permanent from="/support/documentation/various/execution-engine/text-templates/application-configuration-files" to="/support/documentation/executionengine/components/text-templating/application-configuration-files"/>
-	<permanent from="/support/documentation/various/execution-engine/resource-pools" to="/support/documentation/executionengine/components/resource-pools"/>
-	<permanent from="/support/documentation/various/execution-engine" to="/support/documentation/executionengine/overview"/>
-	<permanent from="/support/documentation/various/inedo-sdk/the-sdk" to="/support/documentation/inedosdk/overview"/>
-	<permanent from="/support/documentation/various/inedo-sdk/creating" to="/support/documentation/inedosdk/extending/creating"/>
-	<permanent from="/support/documentation/various/inedo-sdk/hosting" to="/support/documentation/inedosdk/hosting"/>
-	<permanent from="/support/documentation/various/inedo-sdk/versions-release-notes" to="/support/documentation/inedosdk/versions-release-notes"/>
-	<permanent from="/support/documentation/various/inedo-sdk/creating/writing" to="/support/documentation/inedosdk/extending/writing"/>
-	<permanent from="/support/documentation/various/inedo-sdk" to="/support/documentation/inedosdk/overview"/>
-	<permanent from="/support/documentation/various/inedo-agent/the-agent" to="/support/documentation/inedoagent/overview"/>
-	<permanent from="/support/documentation/various/inedo-agent/installation" to="/support/documentation/inedoagent/installation/installation-guide"/>
-	<permanent from="/support/documentation/various/inedo-agent/installation/manual" to="/support/documentation/inedoagent/installation/manual"/>
-	<permanent from="/support/documentation/various/inedo-agent/installation/security" to="/support/documentation/inedoagent/installation/security"/>
-	<permanent from="/support/documentation/various/inedo-agent/versions" to="/support/documentation/inedoagent/versions"/>
-	<permanent from="/support/documentation/various/inedo-agent/upgrading" to="/support/documentation/inedoagent/upgrading"/>
-	<permanent from="/support/documentation/various/inedo-agent/server-architecture" to="/support/documentation/inedoagent/server-architecture/server-architecture"/>
-	<permanent from="/support/documentation/various/inedo-agent/server-architecture/message-formats" to="/support/documentation/inedoagent/server-architecture/message-formats"/>
-	<permanent from="/support/documentation/various/inedo-agent/server-architecture/server-flow" to="/support/documentation/inedoagent/server-architecture/server-flow"/>
-	<permanent from="/support/documentation/various/inedo-agent/server-architecture/network-protocol" to="/support/documentation/inedoagent/server-architecture/network-protocol"/>
-	<permanent from="/support/documentation/various/inedo-agent/roadmap" to="/support/documentation/inedoagent/roadmap"/>
-
-	<!--Hedgehog Docs -->
-
-	<permanent from="/support/documentation/hedgehog/getting-started/overview" to="/support/documentation/hedgehog/overview"/>
-	<permanent from="/support/documentation/hedgehog/getting-started/packages" to="/support/documentation/hedgehog/packages/in-hedgehog"/>
-	<permanent from="/support/documentation/hedgehog/modeling-applications/deployment-sets" to="/support/documentation/hedgehog/bundling/deployment-sets"/>
-	<permanent from="/support/documentation/hedgehog/modeling-applications/deployment-sets/templates" to="/support/documentation/hedgehog/bundling/deployment-sets/templates"/>
-	<permanent from="/support/documentation/hedgehog/modeling-applications/deployment-sets/attachments" to="/support/documentation/hedgehog/bundling/deployment-sets/attachments"/>
-	<permanent from="/support/documentation/hedgehog/modeling-applications/releases" to="/support/documentation/hedgehog/bundling/releases"/>
-	<permanent from="/support/documentation/hedgehog/modeling-applications/projects" to="/support/documentation/hedgehog/bundling/projects"/>
-	<permanent from="/support/documentation/hedgehog/modeling-applications/projects/best-practices" to="/support/documentation/hedgehog/bundling/projects/best-practices"/>
-	<permanent from="/support/documentation/hedgehog/modeling-applications/projects/content-name" to="/support/documentation/hedgehog/bundling/projects/content-name"/>
-	<permanent from="/support/documentation/hedgehog/modeling-applications/deployment-plans" to="/support/documentation/hedgehog/deliver-deploy/deployment-plans"/>
-	<permanent from="/support/documentation/hedgehog/execution-engine/overview" to="0/support/documentation/hedgehog/deliver-deploy/execution-engine"/>
-	<permanent from="/support/documentation/hedgehog/execution-engine/statements-and-blocks" to="/support/documentation/executionengine/otterscript/statements-and-blocks"/>
-	<permanent from="/support/documentation/hedgehog/execution-engine/statements-and-blocks/general-blocks" to="/support/documentation/executionengine/otterscript/statements-and-blocks/general-blocks"/>
-	<permanent from="/support/documentation/hedgehog/execution-engine/statements-and-blocks/loop" to="/support/documentation/executionengine/otterscript/statements-and-blocks/loop"/>
-	<permanent from="/support/documentation/hedgehog/execution-engine/statements-and-blocks/try-catch" to="/support/documentation/executionengine/otterscript/statements-and-blocks/try-catch"/>
-	<permanent from="/support/documentation/hedgehog/execution-engine/statements-and-blocks/if-else" to="/support/documentation/executionengine/otterscript/statements-and-blocks/if-else"/>
-	<permanent from="/support/documentation/hedgehog/execution-engine/statements-and-blocks/other-statements" to="/support/documentation/executionengine/otterscript/statements-and-blocks/other-statements"/>
-	<permanent from="/support/documentation/hedgehog/execution-engine/executions" to="/support/documentation/hedgehog/global-components/executions"/>
-	<permanent from="/support/documentation/hedgehog/execution-engine/executions/dispatching-and-running" to="/support/documentation/hedgehog/global-components/executions/dispatching-and-running"/>
-	<permanent from="/support/documentation/hedgehog/execution-engine/executions/viewing" to="/support/documentation/hedgehog/global-components/executions/viewing"/>
-	<permanent from="/support/documentation/hedgehog/execution-engine/executions/types" to="/support/documentation/hedgehog/global-components/executions/types"/>
-	<permanent from="/support/documentation/hedgehog/execution-engine/runtime-variables" to="/support/documentation/executionengine/components/runtime-variables"/>
-	<permanent from="/support/documentation/hedgehog/global-components/configuration-variables" to="/support/documentation/hedgehog/deliver-deploy/configuration-variables"/>
-	<permanent from="/support/documentation/hedgehog/installation/hub" to="/support/documentation/various/hub/what-is"/>
-	<permanent from="/support/documentation/hedgehog/installation/hub/inedo-hub-cli" to="/support/documentation/various/hub/inedo-hub-cli"/>
-	<permanent from="/support/documentation/hedgehog/pipelines" to="/support/documentation/hedgehog/deliver-deploy/pipelines"/>
-	<permanent from="/support/documentation/hedgehog/pipelines/pipeline-model" to="/support/documentation/hedgehog/deliver-deploy/pipelines/pipeline-model"/>
-
-
-
-  <!-- ProGet Docs -->
-  <permanent from="/support/documentation/proget/compliance/vulnerabilities/vor" to="/support/documentation/proget/compliance/ossindex"/>
-  <permanent from="/support/documentation/proget/feeds/retention" to="/support/documentation/proget/administration/retention-policies" />
-  <permanent from="/support/documentation/proget/feeds/connectors" to="/support/documentation/proget/core-concepts/connectors>" />
-  <permanent from="/support/documentation/proget/feeds/cleanup" to="/support/documentation/proget/administration/feed-cleanup" />
-  <permanent from="/support/documentation/proget/feeds/nuget/visual-studio-extension" to="/support/tutorials/using-the-nuget-visual-studio-extension" />
-  <permanent from="/support/documentation/proget/feeds/nuget/api-keys" to="/support/kb/1112/api-keys-in-proget" />
-  <permanent from="/support/documentation/proget/feeds/bower/bower-feed-configuration" to="/support/documentation/proget" />
-  <permanent from="/support/documentation/proget/feeds/maven/maven-feed-configuration" to="/support/documentation/proget" />
-  <permanent from="/support/documentation/proget/feeds/npm/npm-feed-configuration" to="/support/documentation/proget/feeds/nuget/legacy-feeds" />
-  <permanent from="/support/documentation/proget/feeds/nuget/nuget-feed-configuration" to="/support/documentation/proget" />
-
-  <permanent from="/support/documentation/proget/feeds/nuget/legacy-feeds" to="/support/documentation/proget" />
-  <permanent from="/support/documentation/proget/feeds/nuget/feed-sync" to="/support/documentation/proget" />
-  <permanent from="/support/documentation/proget/security/users-and-groups" to="/support/documentation/proget/administration/security"/>
-  <permanent from="/support/documentation/proget/security/integrated-authentication" to="/support/documentation/proget/administration/ldap-active-directory" />
-  <permanent from="/support/documentation/proget/installation/load-balancing" to="/support/documentation/proget/installation/load-balancing-and-automatic-failover" />
-  <permanent from="/support/documentation/proget/installation/high-availability" to="/support/documentation/proget/installation/load-balancing-and-automatic-failover" />
-  <permanent from="/support/documentation/proget/reference/api-keys-nuget" to="/support/kb/1112/api-keys-in-proget" />
-  <permanent from="/support/documentation/proget/administration/feed-replication" to="/support/documentation/proget/storage/feed-replication" />
-  <permanent from="/support/documentation/proget/reference/api-methods" to="/support/documentation/proget/reference/api/native" />
-  <permanent from="/support/documentation/proget/reference/upack" to="/support/documentation/various/universal-packages/upack-reference" />
-  <permanent from="/support/documentation/proget/reference/universal-package-registry" to="/support/documentation/various/universal-packages/universal-package-registry" />
-  <permanent from="/support/documentation/proget/reference/universal-feed-api-and-package-format" to="/support/documentation/various/universal-packages/universal-feed-api" />
-  <permanent from="/support/documentation/proget/administration/ldap/advanced" to="/support/documentation/various/ldap/advanced" />
-  <permanent from="/support/documentation/proget/administration/ldap/integrated-authentication" to="/support/documentation/various/ldap/integrated-authentication" />
-  <permanent from="/support/documentation/proget/administration/ldap/troubleshooting" to="/support/documentation/various/ldap/troubleshooting" />
-  <permanent from="/support/documentation/proget/feed-types/universal" to="/support/documentation/proget/core-concepts/packages"/>
-
-
-  <permanent from="/support/documentation/proget/core-concepts/high-availability" to="/support/documentation/proget/storage/high-availability" />
-  <permanent from="/support/documentation/proget/feed-types/docker" to="/support/documentation/proget/docker/private-registries" />
-  <permanent from="/support/documentation/proget/storage/feed-replication" to="/support/documentation/proget/storage/high-availability/feed-replication" />
-
-  <permanent from="/support/documentation/proget/administration/vulnerability-source" to="/support/documentation/proget/compliance/vulnerabilities" />
-  <permanent from="/support/documentation/proget/core-concepts/compliance/vulnerability" to="/support/documentation/proget/compliance/vulnerabilities"/>
-  <permanent from="/support/documentation/proget/administration/vulnerability-source/vor-security" to="/support/documentation/proget/compliance/vulnerabilities/vor" />
-  <permanent from="/support/documentation/proget/administration/vulnerability-source/whitesource" to="/support/documentation/proget/compliance/whitesource" />
-  <permanent from="/support/documentation/proget/administration/license-filters" to="/support/documentation/proget/core-concepts/compliance/license-filters" />
-  <permanent from="/support/documentation/proget/core-concepts/compliance/license-filters" to="/support/documentation/proget/compliance/license-scanning"/>
   <permanent from= "/proget-overview" to= "/overview"/>
-  <permanent from= "/support/documentation/proget/core-concepts/packages#package-promotion" to= "/advanced/package-promotion"/>
-  <permanent from= "/support/documentation/proget/core-concepts/packages#deployment-records" to= "/advanced/package-promotion#deployment-records"/>
-
-  <permanent from= "/support/documentation/proget/core-concepts/compliance" to= "/support/documentation/proget/compliance"/>
-  <permanent from= "/support/documentation/proget/core-concepts/compliance/vulnerability/vor-security" to= "/support/documentation/proget/compliance/vulnerabilities/vor"/>
-  <permanent from= "/support/documentation/proget/core-concepts/compliance/vulnerability/whitesource" to= "/support/documentation/proget/compliance/vulnerabilities/whitesource"/>
-
-  <permanent from= "/support/documentation/proget/core-concepts/asset-directories" to= "/support/documentation/proget/advanced/assets"/>
-  <permanent from= "/support/documentation/proget/core-concepts/containers" to= "/support/documentation/proget/docker/private-registries"/>
-
-  <permanent from= "/support/documentation/proget/storage/cloud-storage" to= "/support/documentation/proget/advanced/cloud-storage"/>
-  <permanent from= "/support/documentation/proget/storage/webhooks" to= "/support/documentation/proget/advanced/webhooks"/>
-  <permanent from= "/support/documentation/proget/storage/retention-policies" to= "/support/documentation/proget/administration/retention-rules"/>
-  <permanent from="/support/documentation/proget/administration/retention-policies" to="/support/documentation/proget/administration/rentention-rules"/>
-  <permanent from= "/support/documentation/proget/storage/high-availability" to= "/support/documentation/proget/administration/high-availability"/>
-  <permanent from= "/support/documentation/proget/storage/high-availability/feed-replication" to= "/support/documentation/proget/advanced/feed-replication"/>
-  <permanent from= "/support/documentation/proget/administration/package-statistics" to= "/support/documentation/proget/advanced/package-statistics"/>
-  <permanent from= "/support/documentation/proget/administration/feed-cleanup" to= "/support/documentation/proget/advanced/package-statistics"/>
-  <permanent from= "/support/documentation/proget/administration/backing-up" to= "/support/documentation/proget/installation/backing-up"/>
-  <permanent from= "/support/documentation/proget/administration/ldap" to= "/support/documentation/various/ldap/ldap-active-directory"/>
-  <permanent from="/support/documentation/proget/feeds/universal" to= "/support/documentation/proget/core-concepts/packages"/>
-  <permanent from= "/support/documentation/proget/feeds/universal/romp" to= "/support/documentation/proget/core-concepts/packages"/>
-
-  <permanent from= "/support/documentation/proget/reference/asset-directories-api" to=  "/support/documentation/proget/reference/api/asset-directories-api"/>
-  <permanent from="/support/documentation/proget/installation/linux-docker" to= "/support/documentation/proget/installation/installation-guide/linux-docker"/>
-  <permanent from="/support/documentation/proget/installation/silent-installation"  to="/support/documentation/proget/installation/installation-guide/silent-installation"/>
-  <permanent from="/support/documentation/proget/installation/manual" to= "/support/documentation/proget/installation/installation-guide/manual"/>
-
-  <permanent from="/support/documentation/proget/administration/security#api-keys" to="/support/documentation/proget/administration/security/api-keys"/>
-
-  <permanent from="/support/documentation/proget/feed-types/nuget" to="/support/documentation/proget/feeds/nuget"/>
-  <permanent from="/support/documentation/proget/feed-types/powershell" to="/support/documentation/proget/feeds/powershell"/>
-  <permanent from="/support/documentation/proget/feed-types/rubygem" to="/support/documentation/proget/feeds/rubygem"/>
-  <permanent from="/support/documentation/proget/feed-types/vsix" to="/support/documentation/proget/feeds/vsix"/>
-  <permanent from="/support/documentation/proget/feed-types/chocolatey" to="/support/documentation/proget/feeds/chocolatey"/>
-  <permanent from="/support/documentation/proget/feed-types/npm" to="/support/documentation/proget/feeds/npm"/>
-  <permanent from="/support/documentation/proget/feed-types/bower" to="/support/documentation/proget/feeds/bower"/>
-  <permanent from="/support/documentation/proget/feed-types/maven" to="/support/documentation/proget/feeds/maven"/>
-  <permanent from="/support/documentation/proget/feed-types/nuget/symbol-and-source-server" to="/support/documentation/proget/feeds/nuget/symbol-and-source-server"/>
-
-  <permanent from="/support/documentation/proget/reference/sdk" to="/support/documentation/proget/administration/extensions"/>
-
-  <temporary from="/support/documentation/proget/core-concepts/feeds/connectors" to="/support/documentation/proget/core-concepts/connectors" />
-
-  <temporary from="/support/documentation/proget/installation/inedo-hub-guide" to="/support/documentation/proget/installation/installation-guide" />
-  <temporary from="/support/documentation/proget/installation/hub" to="/support/documentation/desktophub/overview" />
-  <temporary from="/support/documentation/proget/installation/hub/inedo-hub-cli" to="/support/documentation/desktophub/inedo-hub-cli" />
-  <temporary from="/support/documentation/proget/administration/high-availability" to="/support/documentation/proget/installation/load-balancing-and-automatic-failover" />
-
-  <!-- Otter Docs -->
-  <permanent from="/support/documentation/otter/installation" to="/support/documentation/otter"/>
-  <permanent from="/support/documentation/otter/administration" to="/support/documentation/otter"/>
-  <permanent from="/support/documentation/otter/reference" to="/support/documentation/otter"/>
-  <permanent from="/support/documentation/otter/global-components" to="/support/documentation/otter"/>
-  <permanent from="/support/documentation/otter/execution-engine" to="/support/documentation/otter"/>
-  <permanent from="/support/documentation/otter/modeling-infrastructure" to="/support/documentation/otter"/>
-  <permanent from="/support/documentation/otter/core-concepts" to="/support/documentation/otter"/>
-  <permanent from="/support/documentation/otter/reference/otter-script/comments-and-descriptions" to="/support/documentation/various/execution-engine/otterscript/comments-and-descriptions"/>
-  <permanent from="/support/documentation/otter/reference/otter-script/formal-grammar" to="/support/documentation/various/execution-engine/otterscript/formal-grammar"/>
-  <permanent from="/support/documentation/otter/reference/otter-script/formal-specification" to="/support/documentation/various/execution-engine/otterscript/formal-specification"/>
-  <permanent from="/support/documentation/otter/reference/otter-script/strings-and-literals" to="/support/documentation/various/execution-engine/otterscript/strings-and-literals"/>
-  <permanent from="/support/documentation/otter/modeling-infrastructure/server-roles/role-dependencies" to="/support/documentation/otter/modeling-infrastructure/server-roles#role-dependencies"/>
-  <permanent from="/support/documentation/otter/modeling-infrastructure/powershell/powershell-plans" to="/support/documentation/otter/modeling-infrastructure/powershell"/>
-  <permanent from="/support/documentation/otter/reference/sdk" to="/support/documentation/otter/administration/extensions"/>
-  <permanent from="/support/documentation/otter/administration/architecture" to="/support/documentation/otter/installation/architecture"/>
-  <permanent from="/support/documentation/otter/administration/backing-up" to="/support/documentation/otter/installation/backing-up"/>
-  <permanent from="/support/documentation/otter/administration/service" to="/support/documentation/otter/installation/architecture/service"/>
-  <permanent from="/support/documentation/otter/installation/windows-guide" to="/support/documentation/otter/installation/installation-guide"/>
-  <permanent from="/support/documentation/otter/installation/agent-installation-guide" to="/support/documentation/otter/installation/installation-guide/agent-installation-guide"/>
-  <permanent from="/support/documentation/otter/installation/manual" to="/support/documentation/otter/installation/installation-guide/manual"/>
-  <permanent from="/support/documentation/otter/installation/silent" to="/support/documentation/otter/installation/installation-guide/silent"/>
-  <permanent from="/support/documentation/otter/reference/romp" to="/romp"/>
-
-
-	 <!-- UPack Docs -->
-  <permanent from="/support/documentation/upack/upe" to="/support/documentation/upack/tools-and-libraries/upe"/>
-	<permanent from="/support/documentation/upack/upack-cli" to="/support/documentation/upack/tools-and-libraries/upack-cli"/>
-	<permanent from="/support/documentation/upack/upacklib-net" to="/support/documentation/upack/tools-and-libraries/upacklib-net"/>
-	<permanent from="/support/documentation/upack/feed-api" to="/support/documentation/upack/feed-api/endpoints"/>
-
-
-  <!-- Various Docs -->
-  <permanent from="/support/documentation/various/universal-packages/universal-feed-api" to="/support/documentation/various/universal-packages/universal-feeds-package-ref"/>
 
   <!-- KB Articles -->
 
