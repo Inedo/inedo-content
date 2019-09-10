@@ -54,32 +54,29 @@
 
   <!-- [Camelot] redirects -->
 
-  <permanent from="/den/feed/*" to="https://proget.inedo.com/upack/Extensions/*" />
-  <permanent from="/files/buildmaster/*" to="https://my.inedo.com/services/legacy/downloads/buildmaster/*" />
-  <permanent from="/buildmaster/download/*" to="https://my.inedo.com/services/legacy/downloads/buildmaster/*" />
-  <permanent from="/files/proget/*" to="https://my.inedo.com/services/legacy/downloads/proget/*" />
-  <permanent from="/proget/download/*" to="https://my.inedo.com/services/legacy/downloads/proget/*" />
-  <permanent from="/files/otter/*" to="https://my.inedo.com/services/legacy/downloads/otter/*" />
-  <permanent from="/otter/download/*" to="https://my.inedo.com/services/legacy/downloads/otter/*" />
-  <permanent from="/romp/download/*" to="https://my.inedo.com/services/legacy/downloads/romp/*" />
-  <permanent from="/files/buildmaster-extensions/*" to="https://my.inedo.com/services/legacy/downloads/extension/*" />
-  <permanent from="/bm/activate" to="https://my.inedo.com/services/v1/activate" />
-  <permanent from="/pg/activate" to="https://my.inedo.com/services/v1/activate" />
-  <permanent from="/ot/activate" to="https://my.inedo.com/services/v1/activate" />
-  <permanent from="/bm/request-key" to="https://my.inedo.com/services/legacy/licensing/request-bm-key" />
-  <permanent from="/pg/request-key" to="https://my.inedo.com/services/legacy/licensing/request-pg-key" />
+  <wildcard from="/den/feed*" to="https://proget.inedo.com/upack/Extensions*" />
+  <wildcard from="/files/buildmaster/*" to="https://my.inedo.com/services/legacy/downloads/buildmaster/*" />
+  <wildcard from="/buildmaster/download/*" to="https://my.inedo.com/services/legacy/downloads/buildmaster/*" />
+  <wildcard from="/files/proget/*" to="https://my.inedo.com/services/legacy/downloads/proget/*" />
+  <wildcard from="/proget/download/*" to="https://my.inedo.com/services/legacy/downloads/proget/*" />
+  <wildcard from="/files/otter/*" to="https://my.inedo.com/services/legacy/downloads/otter/*" />
+  <wildcard from="/otter/download/*" to="https://my.inedo.com/services/legacy/downloads/otter/*" />
+  <wildcard from="/romp/download/*" to="https://my.inedo.com/services/legacy/downloads/romp/*" />
+  <wildcard from="/files/buildmaster-extensions/*" to="https://my.inedo.com/services/legacy/downloads/extension/*" />
+  <wildcard from="/*/activate" to="https://my.inedo.com/services/v1/activate" />
+  <wildcard from="/*/request-key" to="https://my.inedo.com/services/legacy/licensing/request-*-key" />
+  <wildcard from="/products/feed*" to="https://proget.inedo.com/upack/Products*" />
+  <wildcard from="/jp/blog/*" to="https://blog.inedo.com/jp" />
+  <wildcard from="/*/create-release" to="https://my.inedo.com/services/legacy/releases/*/create" />
+  <wildcard from="/*/upload-release-notes" to="https://my.inedo.com/services/legacy/releases/*/upload-notes" />
+  <wildcard from="/support/documentation/*" to="https://docs.inedo.com/docs/*"/>
+
   <permanent from="/proget/activation/request-key" to="https://my.inedo.com/services/legacy/licensing/request-pg-key" />
-  <permanent from="/ot/request-key" to="https://my.inedo.com/services/legacy/licensing/request-ot-key" />
-  <permanent from="/products/feed/*" to="https://proget.inedo.com/upack/Products/*" />
-  <permanent from="/bm/update" to="https://my.inedo.com/services/legacy/updates/buildmaster/*" />
-  <permanent from="/pg/update" to="https://my.inedo.com/services/legacy/updates/proget/*" />
-  <permanent from="/ot/update" to="https://my.inedo.com/services/legacy/updates/otter/*" />
-  <permanent from="/support/documentation/*" to="https://docs.inedo.com/docs/*" />
-  <permanent from="/jp/blog/*" to="https://blog.inedo.com/jp" />
+  <permanent from="/bm/update" to="https://my.inedo.com/services/legacy/updates/buildmaster" />
+  <permanent from="/pg/update" to="https://my.inedo.com/services/legacy/updates/proget" />
+  <permanent from="/ot/update" to="https://my.inedo.com/services/legacy/updates/otter" />
   <permanent from="/rss" to="https://blog.inedo.com/rss.xml" />
   <permanent from="/bm/submit-error-report" to="https://my.inedo.com/services/legacy/reporting/submit-error-report" />
-  <permanent from="/*/create-release" to="https://my.inedo.com/services/legacy/releases/*/create" />
-  <permanent from="/*/upload-release-notes" to="https://my.inedo.com/services/legacy/releases/*/upload-notes" />
 
   <!-- / [Camelot] redirects -->
   
@@ -489,7 +486,6 @@
   <temporary from="/proget/0.9" to="/proget" />
 
   <permanent from="/support/documentation" to="https://docs.inedo.com/"/>
-  <permanent from="/support/documentation/*" to="https://docs.inedo.com/docs/*"/>
 
   <temporary from="/unknown-hh/0.1" to="/hedgehog/versions" />
 
