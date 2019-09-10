@@ -26,7 +26,6 @@
   <permanent from="/solutions/release-deployment" to="/" />
   <permanent from="/solutions/security-compliance" to="/" />
 
-
   <permanent from="/careers" to="/company/careers" />
 	<permanent from="/company/careers/025-marketing-manager" to="/company/careers" />
 	<permanent from="/company/careers/024-dot-net-developer" to="/company/careers" />
@@ -51,7 +50,38 @@
   <permanent from="/company/current-direction" to="/company"/>
   <permanent from="/company/next-generation" to="/company"/>
 
+  <!-- [Camelot] redirects -->
 
+  <wildcard from="/den/feed*" to="https://proget.inedo.com/upack/Extensions*" />
+  <wildcard from="/files/buildmaster/*" to="https://my.inedo.com/services/legacy/downloads/buildmaster/*" />
+  <wildcard from="/buildmaster/download/*" to="https://my.inedo.com/services/legacy/downloads/buildmaster/*" />
+  <wildcard from="/files/proget/*" to="https://my.inedo.com/services/legacy/downloads/proget/*" />
+  <wildcard from="/proget/download/*" to="https://my.inedo.com/services/legacy/downloads/proget/*" />
+  <wildcard from="/files/otter/*" to="https://my.inedo.com/services/legacy/downloads/otter/*" />
+  <wildcard from="/otter/download/*" to="https://my.inedo.com/services/legacy/downloads/otter/*" />
+  <wildcard from="/romp/download/*" to="https://my.inedo.com/services/legacy/downloads/romp/*" />
+  <wildcard from="/files/buildmaster-extensions/*" to="https://my.inedo.com/services/legacy/downloads/extension/*" />
+  <wildcard from="/*/activate" to="https://my.inedo.com/services/v1/activate" />
+  <wildcard from="/proget/activation/request-key" to="https://my.inedo.com/services/legacy/licensing/request-pg-key" />
+  <wildcard from="/*/request-key" to="https://my.inedo.com/services/legacy/licensing/request-*-key" />
+  <wildcard from="/products/feed*" to="https://proget.inedo.com/upack/Products*" />
+  <wildcard from="/jp/blog/*" to="https://blog.inedo.com/jp" />
+  <wildcard from="/*/create-release" to="https://my.inedo.com/services/legacy/releases/*/create" />
+  <wildcard from="/*/upload-release-notes" to="https://my.inedo.com/services/legacy/releases/*/upload-notes" />
+  <wildcard from="/support/documentation/*" to="https://docs.inedo.com/docs/*"/>
+  <wildcard from="/bm/update/*" to="https://my.inedo.com/services/legacy/updates/buildmaster/*" />
+  <wildcard from="/*/versions" to="https://my.inedo.com/*/versions" />
+  <wildcard from="/bm/submit-error-report" to="https://my.inedo.com/services/legacy/reporting/submit-error-report" />
+  <wildcard from="/bm/update" to="https://my.inedo.com/services/legacy/updates/buildmaster" />
+  <wildcard from="/pg/update" to="https://my.inedo.com/services/legacy/updates/proget" />
+  <wildcard from="/ot/update" to="https://my.inedo.com/services/legacy/updates/otter" />
+
+  <temporary from="/support/submit-ticket" to="https://my.inedo.com/tickets/new" />
+  
+  <permanent from="/rss" to="https://blog.inedo.com/rss.xml" />
+
+  <!-- / [Camelot] redirects -->
+  
 	<permanent from="/training/product-training" to="/training/courses" />
 	<permanent from="/training/devops-fundamentals" to="/training" />
   <permanent from="/services" to="/training" />
@@ -458,7 +488,6 @@
   <temporary from="/proget/0.9" to="/proget" />
 
   <permanent from="/support/documentation" to="https://docs.inedo.com/"/>
-  <permanent from="/support/documentation/*" to="https://docs.inedo.com/docs/*"/>
 
   <temporary from="/unknown-hh/0.1" to="/hedgehog/versions" />
 
