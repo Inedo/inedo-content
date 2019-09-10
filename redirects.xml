@@ -26,8 +26,6 @@
   <permanent from="/solutions/release-deployment" to="/" />
   <permanent from="/solutions/security-compliance" to="/" />
 
-  <temporary from="" to="" />
-
   <permanent from="/careers" to="/company/careers" />
 	<permanent from="/company/careers/025-marketing-manager" to="/company/careers" />
 	<permanent from="/company/careers/024-dot-net-developer" to="/company/careers" />
