@@ -11,7 +11,7 @@
           .otter-info { background-color: #f0f0f6; border-color: #9163AA; }
       </style>
       <p>
-        <a href="http://puppet.com/">Puppet</a> and <a href="/otter">Otter</a> are both infrastructure automation products, and if you only read the marketing bullets, they'd probably sound identical. 
+        <a href="http://puppet.com/">Puppet</a> and <a href="/otter">Otter</a> are both infrastructure automation products, and if you only read the marketing bullets, they'd probably sound identical.
         But they're quite different products, and this article compares and contrasts the products and the philosophies behind them.
       </p>
       <p>
@@ -49,7 +49,7 @@
 
       <p>Windows and Linux are very different; not just technologically, but philosophically. Although Windows has been lately offering administrators better command-line, scripting, and detachable components, they will always be two very different operating systems.</p>
 
-      <p class="info otter-info">Otter was built with from the start with first-class Windows support (including <a href="/support/documentation/otter/modeling-infrastructure/powershell">tight integration with PowerShell</a>), and 
+      <p class="info otter-info">Otter was built with from the start with first-class Windows support (including <a href="/support/documentation/otter/modeling-infrastructure/powershell">tight integration with PowerShell</a>), and
       was built using Windows-friendly technologies (.NET), and doesn't need to go through layers of Ruby for core functionality. </p>
 
       <h3 id="orchestration">The Orchestration Challenge</h3>
@@ -61,7 +61,7 @@
       <p class="info otter-info">
           Otter was designed with built-in <a href="/support/documentation/otter/core-concepts/jobs#orchestration">orchestration jobs</a>, not just for Linux and Windows, but cloud and virtualization provisioning as well.
           <br /><br />
-          In addition, Inedo is a Enterprise DevOps company, and our <a href="/products">entire product suite</a> and enabling tools uses the same, powerful execution engine, code base, and extensions providing a comprehensive DevOps solution. 
+          In addition, Inedo is a Enterprise DevOps company, and our <a href="/">entire product suite</a> and enabling tools uses the same, powerful execution engine, code base, and extensions providing a comprehensive DevOps solution. 
 
       </p>
 
@@ -115,7 +115,7 @@
       <p>So far, both are quite clear and the difference is entirely semantics. But let's add a real-world requirement: before making any IIS changes, run a script that will detach the server from the load balancer, and then run reattach it once the site has been tested.</p>
 
       <p>
-          This simple requirement is entirely incompatible with an abstract model of configuration, and thus is quite complex and awkward to implement in Puppet, requiring the proper 
+          This simple requirement is entirely incompatible with an abstract model of configuration, and thus is quite complex and awkward to implement in Puppet, requiring the proper
         <a href="https://docs.puppetlabs.com/puppet/latest/reference/lang_relationships.html#syntax-relationship-metaparameters">relationship metaparameters</a> for those commands.
       </p>
 
@@ -161,23 +161,23 @@
 
       <p>Because of these fundamental differences, comparing the languages feature-for-feature is not all that helpful, although it is worth noting that OtterScript is much simpler than PuppetScript.</p>
 
-      <p>For example, unlike Puppet's <a href="https://docs.puppetlabs.com/puppet/4.3/reference/lang_expressions.html">Expressions</a>, OtterScript 
+      <p>For example, unlike Puppet's <a href="https://docs.puppetlabs.com/puppet/4.3/reference/lang_expressions.html">Expressions</a>, OtterScript
       <a href="/support/documentation/otter/reference/otter-script/strings-and-literals">literal expressions</a>
-      do not support arithmetic expressions, or anything other than 
-      <a href="/support/documentation/otter/reference/otter-script/strings-and-literals#literal-evaluation">variable expansion</a>.  
-      While it may seem limiting, OtterScript instead relies on 
+      do not support arithmetic expressions, or anything other than
+      <a href="/support/documentation/otter/reference/otter-script/strings-and-literals#literal-evaluation">variable expansion</a>.
+      While it may seem limiting, OtterScript instead relies on
       <a href="/support/documentation/otter/execution-engine/runtime-variables#variable-functions">variable functions</a>
        and <a href="/support/documentation/otter/modeling-infrastructure/powershell">tight scripting integration</a>
       to accomplish effectively the same thing, using the method and language of your choice.</p>
 
       <tab-block>
           <tab name="PuppetScript"><pre>$value = (48 + 1) /2 * 7
-debug("The answer is ${value}") 
+debug("The answer is ${value}")
 </pre></tab>
           <tab name="OtterScript"><pre>set $value = $PSEval((48 + 1) /2 * 7);
 Log-Debug The answer is $value;</pre></tab>
       </tab-block>
-      
+
 
       <p>In the example above, PSEval is using PowerShell to evaluate the expression. If the relatively minor performance overhead of using the PowerShell runtime were to ever be a concern, then writing a $EvalMath variable function to parse and evaluate the expression would be quite easy.</p>
 
@@ -241,7 +241,7 @@ Log-Debug The answer is $value;</pre></tab>
           </tbody>
       </table>
 
-      
+
 
 
   </body>

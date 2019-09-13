@@ -7,17 +7,17 @@
       <meta name="product-name" content="BuildMaster" />
   </head>
   <body>
-   
-      
+
+
           <p>
               It’s not uncommon to have a deployment script that inputs a password or other secret in order to deploy to certain environments. This way, the actual secret never needs to be stored in the script itself.
         </p>
-        
+
          <p>
-             When running the script from a command-line, this isn’t a problem. The user running the script can simply type in the secret when prompted. However, it becomes particularly challenging when trying to automate the execution of a script as part of an application release automation process. The password will need to be stored somewhere in order to automatically execute the script.   
+             When running the script from a command-line, this isn’t a problem. The user running the script can simply type in the secret when prompted. However, it becomes particularly challenging when trying to automate the execution of a script as part of an application release automation process. The password will need to be stored somewhere in order to automatically execute the script.
          </p>
    <p>
-       Fortunately, BuildMaster already has features to address this scenario: you can create <a href="/support/documentation/buildmaster/global-components/resource-credentials">Resource Credentials</a> to store secrets that can be used but not viewed, and <a href="http://inedo.com/support/documentation/buildmaster/administration/security">Users &amp; Tasks</a> to restrict who can use those secrets. 
+       Fortunately, BuildMaster already has features to address this scenario: you can create <a href="/support/documentation/buildmaster/global-components/resource-credentials">Resource Credentials</a> to store secrets that can be used but not viewed, and <a href="http://inedo.com/support/documentation/buildmaster/administration/security">Users &amp; Tasks</a> to restrict who can use those secrets.
    </p>
 
       <p>
@@ -32,23 +32,23 @@
     </p>
 
    <p>
-       Just like with any other PowerShell asset, when you add the script using the visual editor, you’ll be prompted to enter values for the parameters. These are what will be passed to the script when the deployment plan runs. Instead of entering the actual password, enter <i>$ServiceUserPassword</i> instead; in the next step, we’ll set up a prompt for that variable. 
+       Just like with any other PowerShell asset, when you add the script using the visual editor, you’ll be prompted to enter values for the parameters. These are what will be passed to the script when the deployment plan runs. Instead of entering the actual password, enter <i>$ServiceUserPassword</i> instead; in the next step, we’ll set up a prompt for that variable.
    </p>
 
       <tab-block>
           <tab name="Visual Mode"><img class="screenshot" src="/resources/tutorials/variable-prompt/PScall.png" alt="" /></tab>
           <tab name="Text Mode"><img class="screenshot" src="/resources/tutorials/variable-prompt/PScall-text.png" alt="" /></tab>
       </tab-block>
-     
+
    <h2>Creating a Release Template</h2>
       <p>
           One major benefit of <a href="/support/documentation/buildmaster/core-concepts/release">Release Templates</a> is the ability to define the variables that must be defined on releases, packages, and deployments. By setting up a deployment variable inside of a release template, you can use it as a password /secret prompt.
       </p>
 
       <p>
-          To create a release template, go to <i>Releases</i> > <i>Release Templates</i> > <i>Create</i>. 
+          To create a release template, go to <i>Releases</i> > <i>Release Templates</i> > <i>Create</i>.
       </p>
-      
+
       <p>
           Note that any deployment variables you add must be entered before the deployment, and if you check <i>Required</i> and <i>Obscured</i>, then it will function just like a password prompt for an interactive script.
       </p>
@@ -57,7 +57,7 @@
           <tab name="Release Template"><img class="screenshot" src="/resources/tutorials/variable-prompt/release-template.png" alt="" /></tab>
           <tab name="Release Template (Json)"><img class="screenshot" src="/resources/tutorials/variable-prompt/json.png" alt="" /></tab>
       </tab-block>
-      
+
       <p>
           Unless you Log or otherwise display <i>$ServiceUserPassword</i> as part of the deployment plan, the value will not be shown to other users.
       </p>
@@ -74,7 +74,7 @@
           <hr />
           <div class="button-set">
               <a href="/buildmaster/download" class="button">Download BuildMaster</a>
-              <a href="/products" class="button">Other Inedo products</a>
+              <a href="/" class="button">Other Inedo products</a>
 
           </div>
       </div>

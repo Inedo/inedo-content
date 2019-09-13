@@ -14,7 +14,7 @@
         </p>
         <hr />
     </div>
-   
+
    <p>
       With BuildMaster you can perform the minification process during an automated build. Using an <i>Execute Process</i>
       operation as part of a deployment plan, we can take advantage of the <a href="http://aspnet.codeplex.com/releases/view/34488">Microsoft Ajax Minifier tool</a>
@@ -31,13 +31,13 @@
     <h2 id="step-two">Step 2: Add the Execute Process Operation to the Deployment Plan</h2>
     <p>
         First, create a <a href="/support/documentation/buildmaster/execution-engine/statements-and-blocks/general-blocks">General block</a> so that server context can be set (server context can also be set in the pipeline). In this case the server is VM-BMCP-1A.
-    </p> 
+    </p>
     <p>
         Next add the <a href="/support/documentation/buildmaster/reference/operations/general/execute-process"><i>Execute Process</i></a> operation adding the file name, arguments, and directory.
     </p>
-  
+
       <img class="screenshot" src="/resources/tutorials/command-line/plan.png" alt="Command Line Action" />
-  
+
     <h2 id="step-three">Step 3: Save to the Deployment Plan</h2>
    <p>
       Once saved , every time the build is executed, the example.js file will be minified into example.min.js.
@@ -69,7 +69,7 @@
         <hr />
         <div class="button-set">
             <a href="/buildmaster/download" class="button">Download BuildMaster</a>
-            <a href="/products" class="button">Other Inedo products</a>
+            <a href="/" class="button">Other Inedo products</a>
 
         </div>
     </div>
