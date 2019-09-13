@@ -12,10 +12,10 @@
 
   <permanent from="/activation" to="https://my.inedo.com/" />
   <permanent from="/support/activation" to="https://my.inedo.com/" />
-  <permanent from="/products/review-board" to="/products"/>
-  <permanent from="/products/review-board/thanks" to="/products"/>
-  <permanent from="/case-studies/submit" to="/case-studies"/>
-  <permanent from="/case-studies/submission-received" to="/case-studies"/>
+  <permanent from="/products/review-board" to="/products" />
+  <permanent from="/products/review-board/thanks" to="/products" />
+  <permanent from="/case-studies/submit" to="/case-studies" />
+  <permanent from="/case-studies/submission-received" to="/case-studies" />
 
 
   <permanent from="/company/professional-services" to="/services" />
