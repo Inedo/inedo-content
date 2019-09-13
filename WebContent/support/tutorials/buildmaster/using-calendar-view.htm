@@ -7,7 +7,7 @@
       <meta name="product-name" content="BuildMaster" />
   </head>
   <body>
-    
+
           <p>
               Calendars in BuildMaster are a customizable way to present data that is most relevant to you. Individuals and teams will define what is most important for them to see, which is why <a href="/support/documentation/buildmaster/modeling-applications/calendars">Calendars</a> offers Global, Team, and Personal Calendars.
         </p>
@@ -15,17 +15,17 @@
       <p>
               In this tutorial we'll create a calendar to keep track of when we expect applications to be released, and then modify it to automatically add deployments so that we can see when applications get released to a specific environment.
         </p>
-       
-         
+
+
       <h2 id="step-one">Step 1: Creating a Target Calendar</h2>
     <p>
         Click on the Calendars icon in top right of your screen.
     </p>
 
    <img class="screenshot" src="/resources/tutorials/calendars/calendar-icon.png" />
-    
+
       <p>
-        Click on <i>Create Calendar</i>. We’ll name this calendar 'Releases' since it will be used to plan and track application releases. We’ll also set the visibility to <b>Global</b> so that everyone who uses BuildMaster can view this calendar. BuildMaster Calendars that will be used for more individualized needs can be created with Team or Personal visibility. Control of creating, and editing, Calendars can be assigned by the creator of a shared calendar. 
+        Click on <i>Create Calendar</i>. We’ll name this calendar 'Releases' since it will be used to plan and track application releases. We’ll also set the visibility to <b>Global</b> so that everyone who uses BuildMaster can view this calendar. BuildMaster Calendars that will be used for more individualized needs can be created with Team or Personal visibility. Control of creating, and editing, Calendars can be assigned by the creator of a shared calendar.
     </p>
 
       <img class="screenshot" src="/resources/tutorials/calendars/create-calendar.png" />
@@ -33,15 +33,15 @@
       <p>
           The calendar now exists but doesn’t have any associated views. To add a view click the button <i>Create View</i>. We’ll name it 'Target' – and set a custom color (green), and select 'Release target dates'. Now any application that has a target release date will show in our calendar in green.
       </p>
-      
+
       <img class="screenshot" src="/resources/tutorials/calendars/target-view.png" />
-      
+
       <p>
           These visual markers can be helpful when doing release planning since often specific releases depend on another application being released first.
       </p>
 
       <p>
-          As an example, assume there are two applications maintained by two different teams. One application called CoreApp, and one called CorePlus. CorePlus is an independent application but is built on top of CoreApp. 
+          As an example, assume there are two applications maintained by two different teams. One application called CoreApp, and one called CorePlus. CorePlus is an independent application but is built on top of CoreApp.
       </p>
 
       <p>
@@ -73,13 +73,13 @@
       <img class="screenshot" src="/resources/tutorials/calendars/calendar-two.png" />
 
       <p>
-          This example shows how a team might use Calendars in BuildMaster to help with their release planning and road-mapping. 
+          This example shows how a team might use Calendars in BuildMaster to help with their release planning and road-mapping.
       </p>
 
       <p class="info">
           This type of planning is also extremely useful if a specific environment in an application’s release pipeline needs a lot of infrastructure for testing. Whenever that application is in that testing stage nothing else should be. By marking that information on a BuildMaster Calendar it allows other teams to know that infrastructure won’t be as available during those days.
       </p>
-    
+
       <h2 id="step-three">Step 3: Adding Releases to the Calendar</h2>
 
       <p>
@@ -89,7 +89,7 @@
       <p>
           At the bottom of the calendar there is a legend with a manage views option. <i>Click Manage Views > Create View</i>
       </p>
-     
+
       <p>
           This time name the view ‘Production’, change the Environment to Production (since that is when an application is live), and select a new color (orange). Last select ‘Past Deployments’ since once an application is in Production that deployment is, by default, in the past.
       </p>
@@ -103,22 +103,22 @@
       <img class="screenshot" src="/resources/tutorials/calendars/calendar-three.png" />
 
       <p>
-          We now see that while CoreApp was released right on schedule, CorePlus was more than a day outside of its planned release window. This minor delay can be quite common, and could be as simple as the lead developer pushing back the release because of an illness. 
+          We now see that while CoreApp was released right on schedule, CorePlus was more than a day outside of its planned release window. This minor delay can be quite common, and could be as simple as the lead developer pushing back the release because of an illness.
       </p>
 
       <p>
           However, this allows for long term tracking that can help show patterns of teams successfully hitting there planned dates, or teams missing meaning their Project Managers need to reassess time lines or dedicate more resources to these teams to achieve success.
       </p>
-      
+
       <p>
-          <a href="/support/documentation/buildmaster/modeling-applications/calendars">BuildMaster Calendars</a>, by their very nature, are flexible, informative, and an extremely quick way to find out information that is important to you. Every organization, and team within that organization will find the best ways to communicate what is most important in their customized calendars. 
+          <a href="/support/documentation/buildmaster/modeling-applications/calendars">BuildMaster Calendars</a>, by their very nature, are flexible, informative, and an extremely quick way to find out information that is important to you. Every organization, and team within that organization will find the best ways to communicate what is most important in their customized calendars.
       </p>
-    
+
       <div id="related-content" class="content">
           <hr />
           <div class="button-set">
               <a href="/buildmaster/download" class="button">Download BuildMaster</a>
-              <a href="/products" class="button">Other Inedo products</a>
+              <a href="/" class="button">Other Inedo products</a>
 
           </div>
       </div>

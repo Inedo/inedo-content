@@ -7,12 +7,12 @@
     <link rel="stylesheet" type="text/css" href="/proget/case-studies/proget-case-studies.css" />
 </head>
 <body>
-    
+
 
     <div id="top-info" class="content-container">
         <div class="content">
             <div style="border: 1px solid #5a85d7; border-left: 8px solid #5a85d7;" class="extension-box buildmaster">
-                <!--290X190--><img src="/proget/case-studies/abanca/abanca-logo.png" />    
+                <!--290X190--><img src="/proget/case-studies/abanca/abanca-logo.png" />
                     <div class="extension-info">
                         <h2>ABANCA Corporaci&#243;n Bancaria, S.A.</h2>
                         <p>
@@ -26,9 +26,9 @@
                             </ul>
                         </div>
                     </div>
-                
+
             </div>
-           
+
         </div>
     </div>
 
@@ -41,10 +41,10 @@
                 The Challenge:
             </h4>
             <p>
-                As a bank headquartered and primarily operating within the European Union, Abanca, like all Spanish banks (or banks within EU member 
-                countries for that matter), is subject to the rules, regulations, and policies set forth by the EU.  In 2007, the EU established the 
-                <a href="http://ec.europa.eu/finance/payments/framework/index_en.htm">Directive in Payment Services</a> (PSD).  
-                According to the EU website and press release,  
+                As a bank headquartered and primarily operating within the European Union, Abanca, like all Spanish banks (or banks within EU member
+                countries for that matter), is subject to the rules, regulations, and policies set forth by the EU.  In 2007, the EU established the
+                <a href="http://ec.europa.eu/finance/payments/framework/index_en.htm">Directive in Payment Services</a> (PSD).
+                According to the EU website and press release,
                 <i>
                     the directive provides the legal foundation for the creation of an EU-wide single market
                     for payments. The PSD aims at establishing a modern and
@@ -55,54 +55,54 @@
                 </i>
             </p>
             <p>
-                A revision to the PSD in August, 2016 required banks to create an API of their software, due by mid-2017.  This in turn kicked off Abanca's 
-                use of ProGet in the form of their internal "Morphe" project; a digitalization of the bank. 
+                A revision to the PSD in August, 2016 required banks to create an API of their software, due by mid-2017.  This in turn kicked off Abanca's
+                use of ProGet in the form of their internal "Morphe" project; a digitalization of the bank.
             </p>
             <p>
-                In light of the fact that Abanca has many developers working on platforms for commercial and personal banking across multiple platforms 
-                (online, mobile, even soon the to be discontinued Blackberry) in both .Net and Java, the Abanca architecture team researched and elected 
-                to adopt a modern package-based methodology for packaging and deploying code.  One of the obvious benefits of this methodology is that 
-                granting developers access to the vast community of third-party packages accelerates development.  Coupled with a solid release process, 
+                In light of the fact that Abanca has many developers working on platforms for commercial and personal banking across multiple platforms
+                (online, mobile, even soon the to be discontinued Blackberry) in both .Net and Java, the Abanca architecture team researched and elected
+                to adopt a modern package-based methodology for packaging and deploying code.  One of the obvious benefits of this methodology is that
+                granting developers access to the vast community of third-party packages accelerates development.  Coupled with a solid release process,
                 this package-based methodology can lead to releasing better software, faster, and more reliably.
             </p>
             <p>
-                Of course, the package-based methodology isn't open and shut; it presented two subsequent challenges to address: for security reasons 
-                (amongst others) a bank can't use public third-party packages because of the risk of a feed going down, or a package being deleted, 
-                so they'd have to internalize them (ie. cache them locally in case of external outages), as well as address the matter of hosting feeds 
+                Of course, the package-based methodology isn't open and shut; it presented two subsequent challenges to address: for security reasons
+                (amongst others) a bank can't use public third-party packages because of the risk of a feed going down, or a package being deleted,
+                so they'd have to internalize them (ie. cache them locally in case of external outages), as well as address the matter of hosting feeds
                 for all of the different types of packages on disparate servers.
             </p>
             <p>
-                With these challenges in mind, but steadfast on using packages, Abanca's architecture team set out to find a Universal Package Manager 
-                that privatizes the package feeds for users.  As a predominantly .Net shop, ProGet was a natural choice. 
+                With these challenges in mind, but steadfast on using packages, Abanca's architecture team set out to find a Universal Package Manager
+                that privatizes the package feeds for users.  As a predominantly .Net shop, ProGet was a natural choice.
             </p>
             <p>
-                In the short year of Morphe's existence, Abanca has been able to automate the delivery of 35 applications and projects, with consistency 
+                In the short year of Morphe's existence, Abanca has been able to automate the delivery of 35 applications and projects, with consistency
                 and security, through this modern "package-based" methodology.
             </p>
             <h4>
                 Solution:
             </h4>
             <p>
-                Prior to the integration of ProGet, Abanca had in place a policy of not allowing developers to deploy applications to servers. 
-                The workflow instead was as follows:  developers can compile and test locally, while releases are pushed to production through 
-                a compilation server. This process had been in place historically through Abanca's Java platform and mainframe where their core 
+                Prior to the integration of ProGet, Abanca had in place a policy of not allowing developers to deploy applications to servers.
+                The workflow instead was as follows:  developers can compile and test locally, while releases are pushed to production through
+                a compilation server. This process had been in place historically through Abanca's Java platform and mainframe where their core
                 banking systems run.
             </p>
             <p>
-                While this is not required by EU regulation as is the creation of an API, Abanca considered this a best practice and lamented that 
-                there was no way to do this in their .Net platform.  Integrating ProGet proved to be an answer to their prayers, as ProGet empowers 
+                While this is not required by EU regulation as is the creation of an API, Abanca considered this a best practice and lamented that
+                there was no way to do this in their .Net platform.  Integrating ProGet proved to be an answer to their prayers, as ProGet empowers
                 Abanca to use a compilation server to deploy applications that is managed and operated very easily.
             </p>
             <p>
-                Taking on the modern, package-driven approach, the deployment process for all developers working on all applications now looks something 
-                like this: A developer uploads source code (not a package - just source code) to a compilation server (a Windows machine with compilation 
-                and building tools installed), server applications are rebuilt and recompiled on a compilation server by msbuild (for .Net projects) 
-                or Maven (for java projects).  On the compilation server different iterations of the same packages developers use are downloaded from 
-                ProGet by the building processes (the build Tool installed points and pulls packages/artifacts from ProGet and then those packages are 
+                Taking on the modern, package-driven approach, the deployment process for all developers working on all applications now looks something
+                like this: A developer uploads source code (not a package - just source code) to a compilation server (a Windows machine with compilation
+                and building tools installed), server applications are rebuilt and recompiled on a compilation server by msbuild (for .Net projects)
+                or Maven (for java projects).  On the compilation server different iterations of the same packages developers use are downloaded from
+                ProGet by the building processes (the build Tool installed points and pulls packages/artifacts from ProGet and then those packages are
                 deployed to the app server), and finally packages are deployed to application server using a typical xcopy deployment method.
             </p>
             <p>
-                According to Abanca's Governor of Architecture, and ProGet power-user, Julio Angel Fernandez Vilas, "the benefits are clear".  
+                According to Abanca's Governor of Architecture, and ProGet power-user, Julio Angel Fernandez Vilas, "the benefits are clear".
                 In his own words he went on to say that the benefits include:
                 <ul>
                     <li>Quality of deployments and promotions of applications throughout 3 different environments</li>
@@ -111,32 +111,32 @@
                 </ul>
             </p>
             <p>
-                If you noticed the detail of downloading an iteration of the same package the developer used when coding on the recompilation server 
-                prior to deployment in Abanca's new process,  then you've also noticed an additional benefit Abanca has found in using ProGet:  
-                after integrating ProGet over roughly a week, Abanca's architecture team cut off their developers access to the public package feeds.  
+                If you noticed the detail of downloading an iteration of the same package the developer used when coding on the recompilation server
+                prior to deployment in Abanca's new process,  then you've also noticed an additional benefit Abanca has found in using ProGet:
+                after integrating ProGet over roughly a week, Abanca's architecture team cut off their developers access to the public package feeds.
                 In this case, if a developer needs access to a (new) package he or she needs to ask the architecture team for it.
             </p>
             <p>
-                This measure was not required by the EU, but a "self-evident" best practice put in place to create a controlled process as well as a 
-                uniform experience for all Abanca users, both internal and external.  The theory underlying this was the prediction that if developers 
-                could access public feeds, then over the course of time they would all start using different libraries with different UI's leading to 
-                an inconsistent experience for Abanca applications.  While there is no way of knowing what would actually happen, over a year later 
-                this process has delivered a very smooth, consistent, and uniform experience.  ProGet not only made the "privatization" aspect of the 
-                measure possible, it empowered Abanca to use multiple feed types all within the same privatized Universal Package Manager, including Bower, 
-                NuGet, NPM, Maven.  
+                This measure was not required by the EU, but a "self-evident" best practice put in place to create a controlled process as well as a
+                uniform experience for all Abanca users, both internal and external.  The theory underlying this was the prediction that if developers
+                could access public feeds, then over the course of time they would all start using different libraries with different UI's leading to
+                an inconsistent experience for Abanca applications.  While there is no way of knowing what would actually happen, over a year later
+                this process has delivered a very smooth, consistent, and uniform experience.  ProGet not only made the "privatization" aspect of the
+                measure possible, it empowered Abanca to use multiple feed types all within the same privatized Universal Package Manager, including Bower,
+                NuGet, NPM, Maven.
             </p>
             <h4>
                 Results:
             </h4>
             <p>
-                In the short year of Morphe's existence, Abanca has been able to automate the delivery of 35 applications and projects, with consistency 
+                In the short year of Morphe's existence, Abanca has been able to automate the delivery of 35 applications and projects, with consistency
                 and security, through this modern "package-based" methodology.
             </p>
             <p>
-                They've also been able to create their own extensions that integrate with ProGet for internal deploying, JSON editors, and ways to 
-                extend the Visual Studio integrated internal development environment. With these extensions, and in light of Morphe's ambitious objectives, 
-                ProGet will continue to provide consistency and security across the many projects and applications Abanca plans to deploy.  
-                We're happy to oblige. 
+                They've also been able to create their own extensions that integrate with ProGet for internal deploying, JSON editors, and ways to
+                extend the Visual Studio integrated internal development environment. With these extensions, and in light of Morphe's ambitious objectives,
+                ProGet will continue to provide consistency and security across the many projects and applications Abanca plans to deploy.
+                We're happy to oblige.
             </p>
 
             <div class="button-set">
@@ -144,7 +144,7 @@
                     <a href="/proget">Discover how ProGet can help you</a>
                 </div>
                 <div class="button">
-                    <a href="/products">Take a quick look at our other DevOps Tools</a>
+                    <a href="/">Take a quick look at our other DevOps Tools</a>
                 </div>
             </div>
 

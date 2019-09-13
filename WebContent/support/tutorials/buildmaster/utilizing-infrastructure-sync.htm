@@ -7,7 +7,7 @@
       <meta name="product-name" content="BuildMaster" />
   </head>
   <body>
-    
+
           <p>
               Managing and monitoring organizational infrastructure is an important part of the software development lifecycle, however it’s commonly done in a less than ideal manner. Often changes and patches to production servers are carried out in an unorganized, manual way. Not only does this introduce the very real possibility of human error, it also can lead to wide outages if changes made to infrastructure aren’t communicated to the team deploying applications to that infrastructure.
         </p>
@@ -23,10 +23,10 @@
             For the following example we’ll start with a simple web application with an Integration -> Testing ->Production pipeline. The application has a series of servers, some configured for the web and other configured for the API.
             Keep in mind this is a simple, trivial example. In most real world scenarios an application will have a more robust release pipeline and more in-depth infrastructure configuration.  This example is designed to show how BuildMaster and Otter can be used in tandem for better infrastructure management.
         </p>
-       
-      
-     
-         
+
+
+
+
       <h2 id="step-one">Step 1: Aligning Infrastructure between BuildMaster and Otter</h2>
     <p>
         As noted, this application has servers in each of its three environments, and there are both Web severs and API severs. Last, this application is being deployed with a simple Plan. The screenshots below show the server set up as well as the plan.
@@ -50,7 +50,7 @@
       <img class="screenshot" src="/resources/tutorials/buildmaster-and-otter/json-import.png" />
       <p>
           Otter now reflects BuildMaster’s servers, however they are still independent of each other. So if a change was made to the servers in BuildMaster, it would not be reflected in Otter unless the change was also manually made there.
-          
+
       </p>
       <img class="screenshot" src="/resources/tutorials/buildmaster-and-otter/otter-servers.png" />
       <p>
@@ -76,7 +76,7 @@
         After saving the plan, Otter will automatically check the configuration for all servers assigned to the <i>hdars-web-server</i> roll to see if they match the desired configuration. Because all of the servers in the <i>hdars-web-role</i> were deployed to from BuildMaster they already have the App Pool HdarsWeb configured appropriately.
     </p>
       <img class="screenshot" src="/resources/tutorials/buildmaster-and-otter/current-configuration.png" />
-   
+
     <p>
         Otter will now continually monitor all servers in this role to make sure that the App Pool exists and is configured as described.
     </p>
@@ -85,9 +85,9 @@
         <a href="/support/documentation/otter/core-concepts/servers">Server drift</a> can happen for a variety of reasons, but commonly occurs when an individual manually changes a setting on a live server. For example, let’s manually change a setting in an HdarsWeb App Pool on a server. We'll change <i>Managed pipeline mode: Integrated</i>  to <i>Managed pipeline mode: Classic</i>.
     </p>
       <img class="screenshot" src="/resources/tutorials/buildmaster-and-otter/setting-change.png" />
-      
+
       <p>
-          When Otter checks the configuration of servers in the <i>hdars-web-server</i> role, it identifies that the configuration differs from the defined configuration and flags the entire server roles as “drifted” 
+          When Otter checks the configuration of servers in the <i>hdars-web-server</i> role, it identifies that the configuration differs from the defined configuration and flags the entire server roles as “drifted”
       </p>
       <img class="screenshot" src="/resources/tutorials/buildmaster-and-otter/otter-drift.png" />
 
@@ -108,20 +108,20 @@
           After running the remediation job, the status of the <i>hdars-web-server</i> role will return to current; meaning all servers associated with that role are configured as defined in Otter.
       </p>
       <h2 id="step-four">Step 4: Remove Ensure App Pool from the BuildMaster plan</h2>
-      
+
       <p>
           After setting up and testing the <b>Ensure App Pool</b> operation in Otter, it should be removed from the BuildMaster deployment plan.
       </p>
       <p>
           If the <b>Ensure App Pool</b> operation was not removed from BuildMaster it’s likely that in the future a setting would be changed in either BuildMaster or Otter. Then as soon as the next deployment was pushed servers would be in drift because the setting was only changed in one place.
     </p>
-    
-    
+
+
       <div id="related-content" class="content">
           <hr />
           <div class="button-set">
               <a href="/buildmaster/download" class="button">Download BuildMaster</a>
-              <a href="/products" class="button">Other Inedo products</a>
+              <a href="/" class="button">Other Inedo products</a>
 
           </div>
       </div>

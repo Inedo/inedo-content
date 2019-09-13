@@ -12,8 +12,8 @@
 
   <permanent from="/activation" to="https://my.inedo.com/" />
   <permanent from="/support/activation" to="https://my.inedo.com/" />
-  <permanent from="/products/review-board" to="/products"/>
-  <permanent from="/products/review-board/thanks" to="/products"/>
+  <permanent from="/products/review-board" to="/"/>
+  <permanent from="/products/review-board/thanks" to="/"/>
   <permanent from="/case-studies/submit" to="/case-studies"/>
   <permanent from="/case-studies/submission-received" to="/case-studies"/>
 
@@ -26,14 +26,14 @@
   <permanent from="/solutions/release-deployment" to="/" />
   <permanent from="/solutions/security-compliance" to="/" />
 
-  <permanent from="/careers" to="/company/careers" />
-	<permanent from="/company/careers/025-marketing-manager" to="/company/careers" />
-	<permanent from="/company/careers/024-dot-net-developer" to="/company/careers" />
-	<permanent from="/company/careers/026-interactive-designer" to="/company/careers" />
-	<permanent from="/company/careers/056-support-analyst" to="/company/careers" />
-	<permanent from="/company/careers/061-marketing-associate" to="/company/careers" />
-	<permanent from="/company/careers/028-intern-dev" to="/company/careers" />
-	<permanent from="/company/careers/029-intern-marketing" to="/company/careers" />
+  <permanent from="/careers" to="/company/career-culture" />
+	<permanent from="/company/careers/025-marketing-manager" to="/company/career-culture" />
+	<permanent from="/company/careers/024-dot-net-developer" to="/company/career-culture" />
+	<permanent from="/company/careers/026-interactive-designer" to="/company/career-culture" />
+	<permanent from="/company/careers/056-support-analyst" to="/company/career-culture" />
+	<permanent from="/company/careers/061-marketing-associate" to="/company/career-cultures" />
+	<permanent from="/company/careers/028-intern-dev" to="/company/career-culture" />
+	<permanent from="/company/careers/029-intern-marketing" to="/company/career-culture" />
 	<permanent from="/company/careers" to="/company/career-culture" />
 	<permanent from="/company/careers/solutions-consultant" to="/company/career-culture/solutions-consultant" />
 	<permanent from="/company/careers/999-you" to="/company/career-culture/you" />
@@ -77,11 +77,11 @@
   <wildcard from="/ot/update" to="https://my.inedo.com/services/legacy/updates/otter" />
 
   <temporary from="/support/submit-ticket" to="https://my.inedo.com/tickets/new" />
-  
+
   <permanent from="/rss" to="https://blog.inedo.com/rss.xml" />
 
   <!-- / [Camelot] redirects -->
-  
+
 	<permanent from="/training/product-training" to="/training/courses" />
 	<permanent from="/training/devops-fundamentals" to="/training" />
   <permanent from="/services" to="/training" />
@@ -90,12 +90,12 @@
   <permanent from="/training/ara-201" to="/training" />
   <permanent from="/training/ara-301" to="/training" />
   <permanent from="/contact-nuget" to="/training" />
-  <permanent from="/incremental" to="/products"/>
+  <permanent from="/incremental" to="/"/>
 
   <permanent from="/contact2" to="/contact"/>
   <permanent from="/professional-services/contact" to="/professional-services" />
-  <permanent from="/try" to="/products" />
-  <permanent from="/pricing" to="/products" />
+  <permanent from="/try" to="/" />
+  <permanent from="/pricing" to="/" />
 
   <permanent from="/videos" to="/" />
   <permanent from="/videos/getting-started-guide" to="/" />
@@ -110,9 +110,9 @@
   <permanent from="/whitepapers/source-control-done-right" to="/" />
   <permanent from="/whitepapers/testing-done-right" to="/" />
   <permanent from="/Resources/pdf/Inedo-Strategic-SW-Development-WP.pdf" to="/support" />
-  <permanent from="/ps" to="/products" />
-  <permanent from="/ps/ps-contact" to="/products" />
-  <permanent from="/ps/ps-contact-thanks" to="/products" />
+  <permanent from="/ps" to="/" />
+  <permanent from="/ps/ps-contact" to="/" />
+  <permanent from="/ps/ps-contact-thanks" to="/" />
 
   <!--Kramerica-->
   <permanent from="/kramerica" to="/" />
@@ -143,8 +143,8 @@
 	<permanent from="/buildmaster/landing/complicated-robot" to="/buildmaster" />
 
 	<!--Promos 2018 Cleanup-->
-  <permanent from="/promos/inedo-devops-toolchain-q12017" to="/products" />
-  <permanent from="/promos/inedo-devops-toolchain-q12017/submission-recieved" to="/products" />
+  <permanent from="/promos/inedo-devops-toolchain-q12017" to="/" />
+  <permanent from="/promos/inedo-devops-toolchain-q12017/submission-recieved" to="/" />
   <permanent from="/promos/otter-iac-devops-blocks-q12017" to="/otter" />
   <permanent from="/promos/otter-iac-devops-blocks-q12017/submission-recieved" to="/otter" />
   <permanent from="/promos/otter-iac-devops-horiz-q12017" to="/otter" />
@@ -175,13 +175,13 @@
   <permanent from="/promos/buildmaster-landing-pipelines" to="/buildmaster" />
   <permanent from="/promos/buildmaster-tdwtf" to="/buildmaster" />
   <permanent from="/promos/buildmaster-v5" to="/buildmaster" />
-  <permanent from="/promos/incremental-continuous-delivery" to="/products" />
-  <permanent from="/promos/incremental-devops" to="/products" />
+  <permanent from="/promos/incremental-continuous-delivery" to="/" />
+  <permanent from="/promos/incremental-devops" to="/" />
   <permanent from="/promos/incremental-infrastructure" to="/otter" />
   <permanent from="/promos/otter-infrastructure" to="/otter" />
   <permanent from="/promos/otter-v1" to="/otter" />
-  <permanent from="/promos/devops-fails" to="/products" />
-  <permanent from="/promos/devops-fails/submission-recieved" to="/products" />
+  <permanent from="/promos/devops-fails" to="/" />
+  <permanent from="/promos/devops-fails/submission-recieved" to="/" />
   <permanent from="/promos/why-buildmaster" to="/buildmaster" />
 
 
@@ -296,9 +296,9 @@
   <permanent from="/company/media/buildmaster" to="/company/media" />
   <permanent from="/company/media/proget" to="/company/media" />
   <permanent from="/company/media/otter" to="/company/media" />
-  <permanent from="/products/bundle" to="/products" />
-  <permanent from="/products/bundle-request" to="/products" />
-  <permanent from="/products/bundle-thanks" to="/products" />
+  <permanent from="/products/bundle" to="/" />
+  <permanent from="/products/bundle-request" to="/" />
+  <permanent from="/products/bundle-thanks" to="/" />
   <permanent from="/otter/tech-preview" to="/otter" />
   <permanent from="/otter/tech-preview-2" to="/otter" />
 
@@ -495,8 +495,8 @@
 
 
   <!-- Uninclused Landing Pages -->
-  <permanent from="/landing/codemash" to="/products" />
-  <permanent from="/codemash2012" to="/products" />
+  <permanent from="/landing/codemash" to="/" />
+  <permanent from="/codemash2012" to="/" />
   <permanent from="/landing/automation" to="/buildmaster" />
   <permanent from="/landing/nuget" to="/proget" />
   <permanent from="/landing/codepalousa" to="/buildmaster" />
@@ -585,7 +585,7 @@
   <kb id="1092" to="/support/kb/1153"/>
   <kb id="1131" to="/support/documentation/proget/docker/private-registries"/>
   <kb id="1036" to="/support/documentation/proget/feeds/nuget/symbol-and-source-server"/>
-  <kb id="1019" to="/products"/>
+  <kb id="1019" to="/"/>
   <kb id="1047" to="/support/kb/1046"/>
   <kb id="1107" to="/support/kb/1118"/>
   <kb id="1116" to="/support/>kb/1117"/>
@@ -626,7 +626,7 @@
   <permanent from="/info/tutorial" to="/support/tutorials?utm_source=Karl&amp;utm_medium=Tutorials&amp;utm_campaign=BMDLTrial2" />
   <permanent from="/doc/proget" to="/support/documentation/proget?utm_source=Karl&amp;utm_medium=PGdocumentation&amp;utm_campaign=PGDLQuestions2" />
   <permanent from="/otter/info" to="/otter?utm_source=Karl&amp;utm_medium=Otter&amp;utm_campaign=PGDLCD1" />
-  <permanent from="/proget/info/features" to="/proget/pricing/features-by-edition?utm_source=Karl&amp;utm_medium=featurebyedition&amp;utm_campaign=PGDLProof2" />
+  <permanent from="/proget/info/features" to="/support/documentation/proget/administration/license?utm_source=Karl&amp;utm_medium=featurebyedition&amp;utm_campaign=PGDLProof2" />
   <permanent from="/proget/info/edition" to="/proget/pricing?utm_source=Karl&amp;utm_medium=progetpricing&amp;utm_campaign=PGDLTrial1" />
   <permanent from="/otter/puppet" to="/support/kb/1109/a-comparison-puppet-vs-otter?utm_source=Karl&amp;utm_medium=vsPuppet&amp;utm_campaign=OTTDLONE1"/>
   <permanent from="/otter/chef" to="/support/kb/1110/a-comparison-chef-vs-otter?utm_source=Karl&amp;utm_medium=vsChef&amp;utm_campaign=OTTDLONE1"/>
@@ -1032,13 +1032,13 @@
   <permanent from="/allrecipes" to="/buildmaster/case-studies/allrecipes" />
   <permanent from="/blog/release-numbering-schemes" to="/blog/how-to-create-version-numbers-that-are-actually-semantic" />
 
-  <permanent from="/license" to="/products" />
-  <permanent from="/proget/proget/features" to="/proget/pricing/features-by-edition" />
-  <permanent from="/videos/introduction" to="/products" />
-  <permanent from="/videos/database-webinar" to="/products" />
+  <permanent from="/license" to="/" />
+  <permanent from="/proget/proget/features" to="/support/documentation/proget/administration/license" />
+  <permanent from="/videos/introduction" to="/" />
+  <permanent from="/videos/database-webinar" to="/" />
   <permanent from="/buildmaster/video" to="/buildmaster" />
   <permanent from="/proget/client-tools" to="/downloads/proget-client-tools" />
-  <permanent from="/downloads/register-optional" to="/products" />
+  <permanent from="/downloads/register-optional" to="/" />
   <permanent from="/downloads/proget" to="/proget/download" />
   <permanent from="/buildmaster/default" to="/buildmaster" />
   <permanent from="/buildmaster/features/all-features" to="/buildmaster" />
