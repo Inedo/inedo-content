@@ -1,0 +1,697 @@
+
+        * { margin:0 ;padding:0; font:inherit; line-height:inherit; }
+        body { background: #ccc; min-width: 400px; width:100%; font-family:'Open Sans', sans-serif; color:#343333; padding:0px; margin:0px;}
+		a {
+			text-decoration:none;
+			color:inherit;
+			}
+		h1 {
+			font-weight:bold;
+			font-size:25px;
+			color:#343333;
+		}
+		
+		.content { 
+            max-width: 800px; 
+            margin:0 auto;
+            padding: 0 10px;
+        }	
+		
+		.abbreviated {
+				display:none;
+			}
+		
+		
+		.list-reset {
+				font-weight:700;
+				font-size:30px;
+		}
+			.list-reset a {
+				color: #fff;
+				text-decoration: none; 
+			}
+			.list-reset ul{  
+			list-style-type: none;
+			margin: 0;
+			padding:0 0 0 5px;
+		}
+	
+		.list-reset li{  
+			display:inline;
+		
+		
+		
+			
+			
+		
+		}
+		
+		.horizontal-card-divider {
+			max-width: 820px;
+            margin:0 auto;
+			height: 75px;
+			background: #fdb813 url(images/scattered_cards.jpg)  center center   no-repeat fixed;
+			border
+			
+		}
+		
+		.side-bar{
+			float:right;
+			margin:15px 0 0 25px;
+
+							
+		}
+		
+		.button { 
+			border-top-left-radius: 30px;
+			border-bottom-right-radius: 30px;
+			width:200px;
+			text-align:center;
+			color:white;
+			}
+			
+		
+		.section {
+			background-color: #fff;
+			padding-bottom: 10px;
+		}
+			.section-title{
+				padding:10px 0 0 15px;
+				text-transform: uppercase;
+			}
+			.section .section-abstract{ 
+				min-width:600px;   
+			}
+			
+			.section .side-bar{
+				width:220px;
+				min-height: 380px; 
+			}
+			
+			.section-abstract p{
+				padding:10px 25px;
+			}
+			
+			.section-abstract img {
+				margin:15px auto;
+			}
+			.section-photo{
+				padding-left:15px;
+				display:block;	
+			}
+		
+		
+		
+		
+		.core-accent {
+			background-color:#343333;
+			}
+		
+		.agility-accent {
+			background-color:#3b97d3;
+			}
+		.anti-accent {
+			background-color:#b72c41;
+			}
+		.automation-accent{
+			background-color:#a87b4f;
+			}
+		.database-accent {
+			background-color:#ef4035;
+			}
+		.delivery-accent {
+			background-color:#babdc0;
+			}
+		.deployments-accent {
+			background-color:#159299;
+			}
+		.devops-accent {
+			background-color:#3088c6;
+			}
+		
+		.efficiency-accent {
+			background-color:#f3a022;
+			}
+		.libraries-accent {
+			background-color:#24ad5f;
+		}
+		.logging-accent {
+			background-color:#f4d14b;
+			}
+		.modeling-accent {
+			background-color:#8cc63e;
+			}
+		.operations-accent {
+			background-color:#6e58a5;
+			}
+		.open-accent {
+			background-color:#5362d3;
+			}
+		
+		.support-accent {
+			background-color:#ef4036;
+			}
+		.visibility-accent {
+			background-color:#59c7dd;
+			}
+		.migrations-accent {
+			background-color:#e90c8a;
+			}
+					
+		
+		
+		
+		
+		#home { 
+			background: #000 url(home-background.jpg)  no-repeat fixed;
+			padding-top: 20px;
+            min-height: 350px; 
+                    
+			}
+			
+		
+			#home-container {
+			margin:0 auto;
+			max-width: 650px;
+			}
+			
+		
+			
+			
+			
+            #home img.logo { 
+                width: 250px; height: 250px;
+            }
+            #home .logo-container{
+                width: 250px; 
+                float:left;
+                margin: 0 35px 10px 0;
+            }
+			#home h1{
+				font-size: 50px; 
+				font-weight:700; text-align:center; 
+				
+			
+			}
+			#home p{
+				font-family: Georgia, Times, "Times New Roman", serif; 
+				font-size: 30px;
+				font-style: italic; 
+				color:#fdb813; 
+				padding: 75px 0 0 0;
+				min-width:400px;
+							
+			}
+		#repository-home { 
+			background:  #fff url(repo-background.jpg)  top no-repeat fixed;
+			padding-top: 20px;
+			min-height:200px;
+                    
+			}
+			#repository-home-container {
+				margin:0 auto;
+				max-width: 650px;
+				padding-top:35px;
+			}	
+			
+			#repository-home h1{
+				
+				font-size: 50px; 
+				font-weight:700; 
+				border-top-left-radius: 40px;
+				border-bottom-right-radius: 40px;
+				text-align:center;
+				color:white; 
+				line-height:85%;
+				padding:15px;
+			
+			}
+			#repository-home p{
+				font-family: Georgia, Times, "Times New Roman", serif; 
+				font-size: 30px;
+				font-style: italic; 
+				min-width:400px;		
+			    text-align:center;
+            }
+		            
+
+        #about-inedo {
+            background-color: #fdb813; 
+            padding: 5px 0; 
+            min-height: 75px; 
+        }
+            #about-inedo img.logo {
+                display: block; float:left;
+                margin: 0 25px 10px 0;
+                }
+            
+			#about-inedo p{ 
+				padding:15px 0;
+				font-family: Georgia, Times, "Times New Roman", serif;
+				font-size:14px;
+				font-weight:bold;
+				color:#fff;
+				min-width:100px;
+				}
+			
+		
+			
+	
+		#navigation-container {
+			background-color: #6d6e70; 
+            min-height: 75px;
+			text-transform: uppercase;
+			
+		}
+		
+				
+			.main-navigation .list-reset {
+				text-align:center;
+				padding: 15px 0 0 163px;
+				
+			}
+			
+			.main-navigation .list-reset li{  
+				margin: 0 10px;	
+				text-align:center;
+				
+			}
+			
+			.main-navigation .list-reset li a:hover{  
+				background-color:#fdb813;
+				border-top-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+				
+			}
+			
+			
+			#navigation-container .social-media-icons {
+				float:right;
+				padding:13px 10px 0 0;	
+							
+			}
+		
+		
+					
+			#social-media-container  {
+				background-color: #343333; 
+				min-height: 55 px;
+				display:none;
+			}
+			#social-media-container .social-media-icons {
+				text-align:center;
+				padding:5px;
+			}
+			
+		
+		
+		
+		
+		#about-release p{
+			indent:none;
+			padding-left:15px;
+			}
+			
+		#about-release .side-bar .button{
+			background-color:#fdb813;
+			height:50px;
+		}
+		
+		#about-release .side-bar p{
+		margin-bottom:10px;
+		}
+		#about-release .side-bar .button img{
+				padding-top:7px;
+		}
+		#about-release .side-bar .button h1{
+			padding-top:7px;
+			color:#fff;
+		}
+		
+		#print-and-play{
+			background-color: #fff; 
+			padding-bottom: 10px;
+			border-top: 20px solid #7dc94f;
+			
+		}
+			
+			#print-and-play .section-photo {
+			float:right;
+			margin-left:10px;
+			}
+		
+		
+		
+		
+		#about-repository{
+			background-color: #fff; 
+			padding-bottom: 10px;
+			min-height:430px;
+			border-top: 20px solid #ff5419;
+		}
+		
+			#about-repository  .side-bar .section-photo{
+			padding:0px;   
+			margin:5px;
+			}
+				
+			#about-repository .side-bar{
+				color:#343333;
+				padding:0px 0 5px 0;
+				text-align:center;
+
+			}
+			
+		
+			#about-repository h1 {
+			margin-bottom:5px;
+			
+			}
+			
+			#about-repository .side-bar h1 {
+			color:white;
+			padding:2px;
+			margin:15px 0 5px 0;
+			
+			}
+		
+
+
+		#pre-order{
+			background-color: #fff; 
+			padding-bottom: 10px;
+		}
+		
+			#pre-order .button {
+			
+				margin:10px auto;
+				min-width: 260px;
+			}
+			#pre-order .button  h1{
+				color:#fff;
+				padding:2px;
+				
+				
+			}
+				
+				
+			.pre-order-form {
+				margin:5px auto 15px auto;
+				max-width: 300px;
+				background: #6d6e70;
+				padding: 20px 30px 20px 30px;
+				color: #fff;
+				border: none;
+				border-top-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+				
+			}
+		
+		
+			.pre-order-form input[type="text"], .pre-order-form input[type="email"],  .pre-order-form textarea, .pre-order-form select {
+				border: none;
+				color: #343333;
+				height: 25px;
+				line-height:15px;
+				margin: 2px auto;
+				outline: 0 none;
+				padding: 5px 0px 5px 5px;
+				width: 100%;
+				border-top-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+				background: #fff;
+			}
+		
+		
+			.pre-order-form .form-button {
+				background: #343333;
+				border: none;
+				padding: 5px;
+				color: #fff;
+				max-width: 100%;
+				border-top-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+				margin-left:35px
+			
+			
+			}
+
+			
+		
+		
+		#repository{
+			background-color: #fff; 
+			padding-bottom: 10px;
+			min-height:430px;
+			
+			
+		}
+			#repository .side-bar{
+				float:right;
+				color:#343333;
+				padding:25px 0 5px 0;
+				text-align:center;
+				width:385px;
+				
+
+			}
+			#repository.abbreviated{
+				color:#fdb813;
+				font-weight:800;
+				}
+				
+			#repository .side-bar .column {
+			
+				list-style-type:none;
+				
+				
+				}
+			
+			#repository .side-bar .column li {
+				float:left;
+				color:white;
+				font-size:20px;
+				font-weight:bold;
+				width:180px;
+				margin: 0 10px 10px 0;
+				border-top-left-radius: 15px;
+				border-bottom-right-radius: 15px;
+				text-transform:uppercase;
+				}
+			#repository .side-bar .column li :nth-child(even){
+				margin-right:0;
+				}
+			
+			
+			
+			
+			
+			
+			.block-color-divider {
+				max-width: 820px;
+				min-height: 50px;
+				margin: 0 auto;
+			}
+						
+			.expansion {
+					background-color:#fff;
+					min-height:250px;
+					padding-bottom:10px;
+					}
+			.expansion .section-photo {
+				padding-left:75px;
+				}
+			.expansion .side-bar {
+					width:220px;
+					padding:0 5px 5px 5px;
+				}
+			.expansion .side-bar p{
+					width:220px;
+					padding-bottom: 15px;
+				}
+			.expansion .button {
+				margin:5px 0 5px 0;
+			}
+			.expansion .button h1 {
+				color:#fff;
+				padding:1px;
+				text-transform:uppercase;
+				
+			}
+			
+			#footer {
+				background-color: #6d6e70; 
+				min-height: 25px;
+				color:white;
+				text-align:center;
+				
+			}
+		
+			
+
+
+
+					
+				
+			@media all and (max-width: 975px) {
+				.main-navigation .list-reset{
+				padding-left:0;
+				}
+                #navigation-container .social-media-icons {
+					display:none;
+				
+				}
+				#social-media-container  {
+				background-color: #343333; 
+				display:block;
+				}
+			}
+		
+		
+			@media all and (max-width: 805px) {
+				.section-photo{
+					display:none;	
+				}
+				
+				.section-title {
+					text-align:center;
+					}
+				
+				#about-release {
+					max-height: 240px;
+				}
+				
+				#about-release .abbreviated {
+					display:block;
+					}
+				#about-release .full-copy {
+					display:none;
+					}
+				
+				#about-release .side-bar {
+					display:none;
+				}
+				#about-repository .side-bar{
+					display:none;
+					}
+				
+				#repository p {
+					display:none;
+					}
+				#repository h1{
+					display:none;
+					}	
+				#repository .side-bar {
+					float:none;
+					margin:0 auto;
+				}
+				
+				#repository .side-bar h1{
+					display:block;
+				}
+				#repository .side-bar p{
+					display:block;
+				}
+				.vendor-blurb{
+					display:none;	
+				}
+				
+							
+				
+			}	
+			@media all and (max-width: 650px) {
+				#home {
+					min-height: 325px;
+					}
+				#home .logo-container{
+					min-width:100px; 
+					float:left;
+					margin: 0 10px 5px 0;
+				}
+			
+				#about-inedo img.logo {
+					float: none; 
+					margin:0 auto;
+				
+					}
+				#about-inedo p{
+					display:none;
+					}
+			
+			}
+			
+			
+			@media all and (max-width: 600px) {
+               
+                .main-navigation .list-reset li{  
+					margin: 0 5px 0 5px;
+				}
+				
+				#home .logo-container{
+                    float: none; 
+					margin:0 auto;
+				}
+				#home p{
+					display:none;
+				}
+				#repository-home p{
+					display:none;
+				}
+				.full-copy { 
+					display: none;
+				}
+				.list-reset .abbreviated {
+					display:inline;
+				}
+				
+				#about-release .section-title {
+					display:none;
+				}
+				
+				#about-release p{
+					display:none;
+				}
+				
+				#about-release {
+				min-height: 100%;
+				}
+
+				#about-release .abbreviated {
+				display:none;
+				}
+						
+				
+				#about-release .side-bar {
+					display:inline;
+					float:none;
+					
+					min-height:100%;
+					
+				}
+				#about-release .side-bar .button {
+					margin: 5px auto;
+				}
+				
+			
+				
+				.expansion .side-bar{
+					float:none;
+					margin: 0 auto;
+					
+				}
+				.expansion .section-abstract h1{
+					padding: 10px 0 10px 0;
+					
+				}			
+			
+				.expansion .section-abstract p{
+					display:none;
+			
+				}			
+				.vendor-logo {
+				padding-top:10px;
+				}
+			}
+			
+		
+		
