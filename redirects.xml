@@ -94,6 +94,8 @@
   <permanent from="/den/proget/jenkins" to="/den/proget/jenkinsplugin"/>
   <wildcard from="/buildmaster/extensions/*" to="/den/buildmaster/*" />
 
+  <wildcard from="/support/sdk-reference/*" to="https://docs.inedo.com/sdk/*" />
+  
   <!-- Blog Redirects -->
   <permanent from="/rss" to="https://blog.inedo.com/rss.xml" />
   <permanent from="/blog" to="https://blog.inedo.com/" />
